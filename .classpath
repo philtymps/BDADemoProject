@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/sendgrid/|com/ibm/yoox/|com/github/scribejava/httpclient/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/RT/javax.servlet_2.5.0.v200910301333.jar"/>
 	<classpathentry kind="lib" path="/RT/ojdbc14.jar"/>
