@@ -1,0 +1,6 @@
+<YFS_DataSecurityGroupList>
+	<DataSecurityGroup DataSecurityGroupId="#{Generic_Store}_TEAM"
+        DataSecurityGroupKey="#{Generic_Store}_TEAM"
+        Description="#{Generic_Store} Team" EnterpriseAccessMode="02" DocumentTypeAccessMode="01" 
+        OrganizationCode="#{Generic_Store}" ShipNodeAccessMode="03" CustomerAccessMode="01"/>
+</YFS_DataSecurityGroupList>

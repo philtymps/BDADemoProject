@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_User_Exit_ImplList>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey="" FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDVerifyAddressWithAVSUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YCDUE00001" Version="" WaitTime="0" WaitingCalls="0"/>
+    <UserExitImpl CallsPerJvm="0" DocumentTypeKey="0001" FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDCheckFraudOnOrderUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YCDUE00004" Version="" WaitTime="0" WaitingCalls="0"/>
+	<!--
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey="0001" FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDOrderRepricingForPromotionsUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YFSUE00068" Version="" WaitTime="0" WaitingCalls="0"/>    
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDPromotionValidationUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YCDUE000100" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetExternalPricesForItemListUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YFSUE00070" Version="" WaitTime="0" WaitingCalls="0"/>
+	-->
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetAppeasementOffersUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YCDUE00099" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDSendFutureOrderCustomerAppeasementUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YCDUE00016" Version="" WaitTime="0" WaitingCalls="0"/>
+		<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetTrackingNumberURLUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitKey="YCDUE00019" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetTrackingNumberURLUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitImplKey="20060223135759179597"
+        UserExitKey="YCDUE00019" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetCarrierServiceOptionsForOrderingUEImpl"
+        OrgKey="DEFAULT" UseFlow="" UserExitImplKey="200612121800000014"
+        UserExitKey="OMPUE79_003" Version="" WaitTime="0" WaitingCalls="0"/>
+</YFS_User_Exit_ImplList>

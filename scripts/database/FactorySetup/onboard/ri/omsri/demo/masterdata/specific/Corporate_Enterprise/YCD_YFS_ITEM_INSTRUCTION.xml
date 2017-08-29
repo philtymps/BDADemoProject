@@ -1,0 +1,14 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Item_InstructionList>
+    <ItemInstruction InstructionText="Fragile Handling"
+        InstructionType="PACK" ItemKey="2009070608451940844" SeqNo="1"/>
+    <ItemInstruction InstructionText="Mark &quot;This Side Up&quot;"
+        InstructionType="PACK" ItemKey="2009070608451940844" SeqNo="2"/>
+    <ItemInstruction InstructionText="Fragile Item"
+        InstructionType="PICK" ItemKey="2009070608451940844" SeqNo="1"/>
+</YFS_Item_InstructionList>

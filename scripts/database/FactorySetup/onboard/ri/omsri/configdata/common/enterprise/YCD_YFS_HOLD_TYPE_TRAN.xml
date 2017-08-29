@@ -1,0 +1,44 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Hold_Type_TranList>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H1" HoldEffectLevel="ORDER" Purpose="APPLY" TransactionId="DRAFT_ORDER_CONFIRM"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H1" HoldEffectLevel="ORDER" Purpose="APPLY" TransactionId="ORDER_CREATE"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="APPLY" TransactionId="DRAFT_ORDER_CONFIRM"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="APPLY" TransactionId="ORDER_CREATE"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="ACCEPT_RESERVATION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="CLOSE_ORDER.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="DRAFT_ORDER_CONFIRM"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="YCD_FRAUD_CHECK.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="PAYMENT_COLLECTION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="PAYMENT_EXECUTION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="RELEASE.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H2" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="SCHEDULE.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="APPLY" TransactionId="DRAFT_ORDER_CONFIRM"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="APPLY" TransactionId="ORDER_CREATE"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="ACCEPT_RESERVATION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="CLOSE_ORDER.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="DRAFT_ORDER_CONFIRM"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="PAYMENT_COLLECTION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="PAYMENT_EXECUTION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="RELEASE.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H3" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="SCHEDULE.0001"/>
+
+	<HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H4" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="ACCEPT_RESERVATION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H4" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="CLOSE_ORDER.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H4" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="DRAFT_ORDER_CONFIRM"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H4" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="RELEASE.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H4" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="SCHEDULE.0001"/>
+
+	<HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H5" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="ACCEPT_RESERVATION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H5" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="CLOSE_ORDER.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H5" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="RELEASE.0001"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H5" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="SCHEDULE.0001"/>
+	<HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H5" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="PAYMENT_EXECUTION"/>
+    <HoldTypeTran HoldTypeKey="#{Generic_Enterprise_Code}_H5" HoldEffectLevel="ORDER" Purpose="PREVENT" TransactionId="PAYMENT_COLLECTION"/>
+
+	<HoldTypeTran HoldEffectLevel="ORDER" HoldTypeKey="#{Generic_Enterprise_Code}_H6" Purpose="PREVENT" TransactionId="CREATE_ORD_FROM_QUOTE"/>
+</YFS_Hold_Type_TranList>

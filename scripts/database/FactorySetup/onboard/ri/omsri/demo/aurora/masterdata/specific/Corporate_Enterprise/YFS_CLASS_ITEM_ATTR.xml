@@ -1,0 +1,3 @@
+<YFS_Class_Item_AttrList>
+	<ClassificationItemAttribute CategoryKey="#{Corporate_Enterprise_Suffix}_SInventory" ATPRule="DEFAULT" InventoryMonitorRule="#{Retail_Channel_Enterprise_Code}_ATPM1" NodeLevelInventoryMonitorRule="#{Retail_Channel_Enterprise_Code}_ATPM1" />
+</YFS_Class_Item_AttrList>

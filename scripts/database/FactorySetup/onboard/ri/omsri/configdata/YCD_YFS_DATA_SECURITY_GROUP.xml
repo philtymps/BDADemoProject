@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_DataSecurityGroupList>
+	<DataSecurityGroup DataSecurityGroupId="#{Retail_Channel_Enterprise_Code}_TEAM"
+        DataSecurityGroupKey="#{Retail_Channel_Enterprise_Code}_TEAM"
+        Description="#{Retail_Channel_Enterprise_Code} Team" EnterpriseAccessMode="02" DocumentTypeAccessMode="01" 
+        OrganizationCode="#{Retail_Channel_Enterprise_Code}" ShipNodeAccessMode="01"/>
+</YFS_DataSecurityGroupList>

@@ -1,0 +1,13 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Category_DomainList>
+	<CategoryDomain CategoryDomain="#{Corporate_Enterprise_Code}RefMasterCatalog"
+		CategoryDomainKey="#{Corporate_Enterprise_Code}_CD0" Description="Master Catalog for #{Corporate_Enterprise_Code}"
+		IsClassification="N" OrganizationCode="#{Corporate_Enterprise_Code}"
+		ShortDescription="#{Corporate_Enterprise_Code} Master Catalog" />
+</YFS_Category_DomainList>
+	

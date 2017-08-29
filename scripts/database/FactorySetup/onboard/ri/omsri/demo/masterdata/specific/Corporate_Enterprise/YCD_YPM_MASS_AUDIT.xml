@@ -1,0 +1,17 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Mass_AuditList>
+	<MassAudit MassAuditID="#{Generic_Enterprise_Code}_MA1" Operation="Insert"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader PricelistHeaderKey=&quot;#{Generic_Enterprise_Code}_PLH1&quot; PricelistName=&quot;MASTER_LIST&quot;/>&#xa;&lt;/PricelistLine>&#xa;" TableName="YPM_PRICELIST_LINE"/>
+    <MassAudit MassAuditID="#{Generic_Enterprise_Code}_MA2" Operation="Update"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader OrganizationCode=&quot;#{Generic_Enterprise_Code}&quot; PricelistHeaderKey=&quot;#{Generic_Enterprise_Code}_PLH1&quot;/>&#xa;&lt;/PricelistLine>&#xa;"
+        TableName="YPM_PRICELIST_LINE" UpdateXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLineUpdate PricingStatus=&quot;ACTIVE&quot;/>"/>
+    <MassAudit MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        OrganizationCode="#{Generic_Enterprise_Code}" SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader PricelistHeaderKey=&quot;#{Generic_Enterprise_Code}_PLH2&quot; PricelistName=&quot;{Generic_Enterprise_Code}MasterPriceList&quot;/>&#xa;&lt;/PricelistLine>&#xa;"/>
+</YPM_Mass_AuditList>

@@ -1,0 +1,600 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attr_Allowed_ValueList>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="30 Days" Value="30 days"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="Y" SequenceNo="2" ShortDescription="1 year" Value="1 year"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="4" ShortDescription="3 years" Value="3 years"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="90 day Limited" Value="90 day Limited"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="6"
+        ShortDescription="1 Year Limited" Value="1 Year Limited"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="7"
+        ShortDescription="1 Year Limited With Onsite Service" Value="1 Year Limited With Onsite Service"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="8"
+        ShortDescription="Lifetime Limited" Value="Lifetime Limited"/>
+    <AttributeAllowedValue AttributeKey="2009070309100738489"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="2 years" Value="2 years"/>
+    <AttributeAllowedValue AttributeKey="2009070605483239186"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="4:3" Value="4:3"/>
+    <AttributeAllowedValue AttributeKey="2009070605483239186"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="16:9" Value="16:9"/>
+    <AttributeAllowedValue AttributeKey="2009070605483239186"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="16:10" Value="16:10"/>
+    <AttributeAllowedValue AttributeKey="2009070605501839198"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="800:1" Value="800:1"/>
+    <AttributeAllowedValue AttributeKey="2009070605501839198"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="500:1" Value="500:1"/>
+    <AttributeAllowedValue AttributeKey="2009070605501839198"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="400:1" Value="400:1"/>
+    <AttributeAllowedValue AttributeKey="2009070605501839198"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="4000:1" Value="4000:1"/>
+    <AttributeAllowedValue AttributeKey="2009070605501839198"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="1000:1" Value="1000:1"/>
+    <AttributeAllowedValue AttributeKey="2009070605521839216"
+        SequenceNo="1" Value="15-52"/>
+    <AttributeAllowedValue AttributeKey="2009070605561839249"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="CRT" Value="CRT"/>
+    <AttributeAllowedValue AttributeKey="2009070605561839249"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Projection" Value="Projection"/>
+    <AttributeAllowedValue AttributeKey="2009070605561839249"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="TFT LCD" Value="TFT LCD"/>
+    <AttributeAllowedValue AttributeKey="2009070605561839249"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="LCD" Value="LCD"/>
+    <AttributeAllowedValue AttributeKey="2009070605580239288"
+        NumericStep="0.001" SequenceNo="1" Value="0.282-0.286"/>
+    <AttributeAllowedValue AttributeKey="2009070606015939331"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="1024 x 768" Value="1024 x 768"/>
+    <AttributeAllowedValue AttributeKey="2009070606015939331"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="800 x 600" Value="800 x 600"/>
+    <AttributeAllowedValue AttributeKey="2009070606071739362"
+        IsDefaultValue="Y" SequenceNo="1" Value="1"/>
+    <AttributeAllowedValue AttributeKey="2009070606101839409"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Japan" Value="Japan"/>
+    <AttributeAllowedValue AttributeKey="2009070606101839409"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="India" Value="India"/>
+    <AttributeAllowedValue AttributeKey="2009070606101839409"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="China" Value="China"/>
+    <AttributeAllowedValue AttributeKey="2009070606101839409"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="USA" Value="USA"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Topaz" Value="Topaz"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Diamond" Value="Diamond"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Emerald" Value="Emerald"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Sapphire" Value="Sapphire"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Onyx" Value="Onyx"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Amethyst" Value="Amethyst"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Alpha" Value="Alpha"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Beta" Value="Beta"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Gamma" Value="Gamma"/>
+	<AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Omega" Value="Omega"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Metals Inc" Value="Metals Inc"/>
+    <AttributeAllowedValue AttributeKey="2009070606115139424"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Alpha Corp" Value="Alpha Corp"/>
+    <AttributeAllowedValue AttributeKey="2009070606162739460"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070606162739460"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070606184039506"
+        IsDefaultValue="Y" SequenceNo="1" Value="10"/>
+    <AttributeAllowedValue AttributeKey="2009070606184039506"
+        NumericStep="10.00" SequenceNo="1" Value="10-200"/>
+    <AttributeAllowedValue AttributeKey="2009070606195539515"
+        IsDefaultValue="Y" SequenceNo="1" Value="128"/>
+    <AttributeAllowedValue AttributeKey="2009070606195539515"
+        NumericStep="64.00" SequenceNo="1" Value="64-1024"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="No OS" Value="No OS"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="Aqua Blue" Value="Aqua Blue"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="Voyage 98" Value="Voyage 98"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="4" ShortDescription="Voyage 2000" Value="Voyage 2000"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="5" ShortDescription="Voyage 2006" Value="Voyage 2006"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="6" ShortDescription="Voyage Me" Value="Voyage Me"/>
+    <AttributeAllowedValue AttributeKey="2009070606214739524"
+        IsDefaultValue="N" SequenceNo="7" ShortDescription="McBlue" Value="McBlue"/>
+    <AttributeAllowedValue AttributeKey="2009070606244139556"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="USB 2.0" Value="USB 2.0"/>
+    <AttributeAllowedValue AttributeKey="2009070606244139556"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="PS/2" Value="PS/2"/>
+    <AttributeAllowedValue AttributeKey="2009070606244139556"
+        IsDefaultValue="N" SequenceNo="4" ShortDescription="Bluetooth" Value="Bluetooth"/>
+    <AttributeAllowedValue AttributeKey="2009070606324039622"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070606324039622"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070606345539635"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070606345539635"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070606360839646"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Wireless Modem" Value="Wireless Modem"/>
+    <AttributeAllowedValue AttributeKey="2009070606360839646"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Ethernet" Value="Ethernet"/>
+    <AttributeAllowedValue AttributeKey="2009070606360839646"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="DSL" Value="DSL"/>
+    <AttributeAllowedValue AttributeKey="2009070606360839646"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Cable Modem" Value="Cable Modem"/>
+    <AttributeAllowedValue AttributeKey="2009070606360839646"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Modem" Value="Modem"/>
+    <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Black" Value="Black"/>
+    <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="White" Value="White"/>
+    <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Silver" Value="Silver"/>
+    <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Black and Gray" Value="Black and Gray"/>
+	<AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Steel and Black" Value="Steel and Black"/>
+    <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Pink" Value="Pink"/>
+    <AttributeAllowedValue AttributeKey="2009070606562139784"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Single" Value="Single"/>
+    <AttributeAllowedValue AttributeKey="2009070606562139784"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="3 Disc Changer" Value="3 Disc Changer"/>
+    <AttributeAllowedValue AttributeKey="2009070606562139784"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="5 Disc Changer" Value="5 Disc Changer"/>
+    <AttributeAllowedValue AttributeKey="2009070606562139784"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="7 Discs" Value="7 Discs"/>
+    <AttributeAllowedValue AttributeKey="2009070606580439831"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="10-20%" Value="10-20%"/>
+    <AttributeAllowedValue AttributeKey="2009070606580439831"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="30-90%" Value="30-90%"/>
+	<AttributeAllowedValue AttributeKey="2009070606580439831"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="55%" Value="55%"/>
+    <AttributeAllowedValue AttributeKey="2009070607010839848"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="480p" Value="480p"/>
+    <AttributeAllowedValue AttributeKey="2009070607010839848"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="1080i" Value="1080i"/>
+    <AttributeAllowedValue AttributeKey="2009070607035439857"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Intel Pentium III - 750 MHz" Value="Intel Pentium III - 750 MHz"/>
+    <AttributeAllowedValue AttributeKey="2009070607035439857"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Intel Pentium III - 730 MHz" Value="Intel Pentium III - 730 MHz"/>
+    <AttributeAllowedValue AttributeKey="2009070607035439857"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Intel Pentium III - 866 MHz" Value="Intel Pentium III - 866 MHz"/>
+    <AttributeAllowedValue AttributeKey="2009070607035439857"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="AMD Athlon - 800 MHz" Value="AMD Athlon - 800 MHz"/>
+    <AttributeAllowedValue AttributeKey="2009070607035439857"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="AMD Athlon - 850 MHz" Value="AMD Athlon - 850 MHz"/>
+    <AttributeAllowedValue AttributeKey="2009070607035439857"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="AMD Athlon - 1 GHz" Value="AMD Athlon - 1 GHz"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="6 x 16 x 9" Value="6 x 16 x 9"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="4.2 x 2.1 x 0.9" Value="4.2 x 2.1 x 0.9"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="8 x 2 x 1" Value="8 x 2 x 1"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="7 x .8 x 20" Value="7 x .8 x 20"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="13 x 8 x 3" Value="13 x 8 x 3"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="20 x 10 x 3" Value="20 x 10 x 3"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="12 x 12 x 24" Value="12 x 12 x 24"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="1 x 3 x 12" Value="1 x 3 x 12"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="12 x 24 x 36" Value="12 x 24 x 36"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="12 x 12 x 6" Value="12x12x6"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="26 x 24 x 60" Value="26 x 24 x 60"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="27 x 40 x 12" Value="27x40x12"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="23 x 12 x 28" Value="23 x 12 x 28"/>
+    <AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="46 x 23 x 3" Value="46 x 23 x 3"/>
+    <AttributeAllowedValue AttributeKey="2009070607322840175"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070607322840175"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070607434940298"
+        IsDefaultValue="Y" SequenceNo="1" Value="600"/>
+    <AttributeAllowedValue AttributeKey="2009070607434940298"
+        NumericStep="300.00" SequenceNo="1" Value="600-1200"/>
+    <AttributeAllowedValue AttributeKey="2009070607535540419"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070607535540419"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070607542040428"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070607542040428"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070607550140437"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070607550140437"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070607561440448"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="English" Value="English"/>
+    <AttributeAllowedValue AttributeKey="2009070607561440448"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="French" Value="French"/>
+    <AttributeAllowedValue AttributeKey="2009070607561440448"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="Spanish" Value="Spanish"/>
+    <AttributeAllowedValue AttributeKey="2009070608023140504"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="None" Value="None"/>
+    <AttributeAllowedValue AttributeKey="2009070608023140504"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="1 Year Limited" Value="1 Year Limited"/>
+    <AttributeAllowedValue AttributeKey="2009070608023140504"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="2 Years" Value="2 Years"/>
+    <AttributeAllowedValue AttributeKey="2009070608071240546"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070608071240546"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070608073640639"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070608073640639"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070608080940650"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070608080940650"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070608091340659"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070608091340659"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070608262240694"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070608262240694"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070608271540705"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070608271540705"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070804131445206"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Black" Value="Black"/>
+    <AttributeAllowedValue AttributeKey="2009070804131445206"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="White" Value="White"/>
+    <AttributeAllowedValue AttributeKey="2009070804131445206"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Stainless Steel" Value="Stainless Steel"/>
+    <AttributeAllowedValue AttributeKey="2009070804144645218"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Top" Value="Top"/>
+    <AttributeAllowedValue AttributeKey="2009070804144645218"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Bottom" Value="Bottom"/>
+    <AttributeAllowedValue AttributeKey="2009070804152845227"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Left" Value="Left"/>
+    <AttributeAllowedValue AttributeKey="2009070804152845227"
+        IsDefaultValue="Y" SequenceNo="2" ShortDescription="Right" Value="Right"/>
+    <AttributeAllowedValue AttributeKey="2009070804570145597"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070804570145597"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070804574745690"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070804574745690"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070804581745701"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070804581745701"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070804584345708"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070804584345708"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071510244054627"
+        SequenceNo="1" Value="1-4"/>
+    <AttributeAllowedValue AttributeKey="2009071510272154658"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071510272154658"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071510275954823"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071510275954823"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071510290454834"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071510290454834"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071510295954855"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071510295954855"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071510304154878"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071510304154878"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071510582255031"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Dolby Digital" Value="Dolby Digital"/>
+    <AttributeAllowedValue AttributeKey="2009071510582255031"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="DTS" Value="DTS"/>
+    <AttributeAllowedValue AttributeKey="2009071510582255031"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Dolby Pro Logic II" Value="Dolby Pro Logic II"/>
+    <AttributeAllowedValue AttributeKey="2009071511190855068"
+        IsDefaultValue="Y" SequenceNo="1"
+        ShortDescription="Whisper Mode" Value="Whisper Mode"/>
+    <AttributeAllowedValue AttributeKey="2009071511190855068"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="Cinema Mode" Value="Cinema Mode"/>
+    <AttributeAllowedValue AttributeKey="2009071511190855068"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Stadium Mode" Value="Stadium Mode"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="DVD" Value="DVD"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="DVD-R" Value="DVD-R"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="CD" Value="CD"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="4" ShortDescription="CD-RW/W" Value="CD-RW/R"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="5" ShortDescription="VCD" Value="VCD"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="6" ShortDescription="JPEG" Value="JPEG"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="7" ShortDescription="MP3" Value="MP3"/>
+    <AttributeAllowedValue AttributeKey="2009071511381855236"
+        IsDefaultValue="N" SequenceNo="8" ShortDescription="WMA" Value="WMA"/>
+    <AttributeAllowedValue AttributeKey="2009071511404555285"
+        SequenceNo="1" Value="1-3"/>
+    <AttributeAllowedValue AttributeKey="2009071511423355309"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071511423355309"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071511432755318"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071511432755318"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071705313858296"
+        IsDefaultValue="Y" SequenceNo="1" Value="2.16"/>
+    <AttributeAllowedValue AttributeKey="2009071705325758303"
+        IsDefaultValue="Y" SequenceNo="1" Value="1"/>
+    <AttributeAllowedValue AttributeKey="2009071705343458312"
+        IsDefaultValue="Y" SequenceNo="1" Value="Serial ATA (5400 rpm)"/>
+    <AttributeAllowedValue AttributeKey="2009071706055058443"
+        IsDefaultValue="Y" SequenceNo="1" Value="Built-in 10/100 Mbps Ethernet network card"/>
+    <AttributeAllowedValue AttributeKey="2009071706070258452"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071706070258452"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071706073958463"
+        IsDefaultValue="Y" SequenceNo="1" Value="Wireless-B+G"/>
+    <AttributeAllowedValue AttributeKey="2009071706092458500"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071706092458500"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009071706102358511"
+        SequenceNo="1" Value="1-3"/>
+    <AttributeAllowedValue AttributeKey="2009071706115258538"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Microsoft Works 9" Value="Microsoft Works 9"/>
+    <AttributeAllowedValue AttributeKey="2009071706115258538"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Adobe Reader 9" Value="Adobe Reader 9"/>
+    <AttributeAllowedValue AttributeKey="2009071706115258538"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Roxio Creator 10 Dell Edition" Value="Roxio Creator 10 Dell Edition"/>
+    <AttributeAllowedValue AttributeKey="2009071706115258538"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="OS-Windows Vista Home Premium with SP1" Value="OS-Windows Vista Home Premium with SP1"/>
+    <AttributeAllowedValue AttributeKey="2009071706132758559"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Windows" Value="Windows"/>
+    <AttributeAllowedValue AttributeKey="2009071706132758559"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="Mac OS" Value="Mac OS"/>
+    <AttributeAllowedValue AttributeKey="2009071706142158569"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Lithium-ion" Value="Lithium-ion"/>
+    <AttributeAllowedValue AttributeKey="2009071706154058578"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Touchpad" Value="Touchpad"/>
+    <AttributeAllowedValue AttributeKey="2009071706154058578"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="External Mouse Included" Value="External Mouse Included"/>
+    <AttributeAllowedValue AttributeKey="2009071706164958591"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009071706164958591"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+	<AttributeAllowedValue AttributeKey="2009090914281536950"
+        IsDefaultValue="N" SequenceNo="1" 
+		ShortDescription="40&quot; - 49&quot;" Value="40-49"/>
+	<AttributeAllowedValue AttributeKey="2009120100012876143"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Black" Value="Black"/>
+    <AttributeAllowedValue AttributeKey="2009120100012876143"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="White" Value="White"/>
+    <AttributeAllowedValue AttributeKey="2009120100012876143"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Stainless Steel" Value="Stainless Steel"/>
+	<AttributeAllowedValue AttributeKey="2009120100012876143"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Steel and Black" Value="Steel and Black"/>
+    <AttributeAllowedValue AttributeKey="2009120100080076158"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Bottom" Value="Bottom"/>
+    <AttributeAllowedValue AttributeKey="2009120100080076158"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Top" Value="Top"/>
+	<AttributeAllowedValue AttributeKey="2009120100080076158"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Side-By-Side" Value="SideBySide"/>
+    <AttributeAllowedValue AttributeKey="2009120100084176161"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Left" Value="Left"/>
+    <AttributeAllowedValue AttributeKey="2009120100084176161"
+        IsDefaultValue="Y" SequenceNo="2" ShortDescription="Right" Value="Right"/>
+    <AttributeAllowedValue AttributeKey="2009120100264476344"
+        NumericStep="1.00" SequenceNo="1" Value="1-4"/>
+    <AttributeAllowedValue AttributeKey="2009120100301876356"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120100301876356"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120100312176403"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120100312176403"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120100335776414"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120100335776414"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120100354976425"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120100354976425"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120101054476746"
+        SequenceNo="1" Value="2;4;6;8"/>
+    <AttributeAllowedValue AttributeKey="2009120113283277863"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Omega brand" Value="Omega"/>
+    <AttributeAllowedValue AttributeKey="2009120113283277863"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Matrix branded products" Value="Matrix"/>
+    <AttributeAllowedValue AttributeKey="2009120120453579725"
+        SequenceNo="1" Value="2.26;3.2"/>
+    <AttributeAllowedValue AttributeKey="2009120120481579735"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Serial ATA" Value="Serial ATA"/>
+    <AttributeAllowedValue AttributeKey="2009120120525879791"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120120525879791"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120121064879875"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Windows XP Server" Value="Windows XP Server"/>
+    <AttributeAllowedValue AttributeKey="2009120121064879875"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Linux" Value="Linux"/>
+    <AttributeAllowedValue AttributeKey="2009120121064879875"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="MatrixUX" Value="MatrixUX"/>
+    <AttributeAllowedValue AttributeKey="2009120121163279948"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Lithium-ion" Value="Lithium-ion"/>
+    <AttributeAllowedValue AttributeKey="2009120201135980133"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Touchpad" Value="Touchpad"/>
+    <AttributeAllowedValue AttributeKey="2009120201135980133"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="Mouse" Value="Mouse"/>
+    <AttributeAllowedValue AttributeKey="2009120201135980133"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="Game Pad" Value="Game Pad"/>
+    <AttributeAllowedValue AttributeKey="2009120201135980133"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Graphics Tablet" Value="Graphics Tablet"/>
+    <AttributeAllowedValue AttributeKey="2009120201475980392"
+        NumericStep="1.00" SequenceNo="1" Value="1-10"/>
+    <AttributeAllowedValue AttributeKey="2009120201491880402"
+        NumericStep="1.00" SequenceNo="1" Value="1-10"/>
+    <AttributeAllowedValue AttributeKey="2009120417385083906"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120417385083906"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120417334083901"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Plasma Flat Panel" Value="Plasma Flat Panel"/>
+    <AttributeAllowedValue AttributeKey="2009120417334083901"
+        IsDefaultValue="Y" SequenceNo="2"
+        ShortDescription="LCD Flat Panel" Value="LCD Flat Panel"/>
+    <AttributeAllowedValue AttributeKey="2009120417334083901"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="LED Flat Panel" Value="LED Flat Panel"/>
+    <AttributeAllowedValue AttributeKey="2009120423240284365"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Flat Panel LCD" Value="Flat Panel LCD"/>
+    <AttributeAllowedValue AttributeKey="2009120423265084372"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120423265084372"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120423295684387"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="80,000:1" Value="80,000:1"/>
+    <AttributeAllowedValue AttributeKey="2009120423313184440"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="yes" Value="yes"/>
+    <AttributeAllowedValue AttributeKey="2009120423313184440"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="no" Value="no"/>
+    <AttributeAllowedValue AttributeKey="2009120423313184440"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="not specified" Value="not specified"/>
+    <AttributeAllowedValue AttributeKey="2009120423344884469"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120423344884469"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120423374984478"
+        IsDefaultValue="Y" SequenceNo="1" Value="2"/>
+    <AttributeAllowedValue AttributeKey="2009120423374984478"
+        SequenceNo="1" Value="2; 4; 6; 8"/>
+    <AttributeAllowedValue AttributeKey="2009120423440884515"
+        SequenceNo="1" Value="2;4;6;8"/>
+    <AttributeAllowedValue AttributeKey="2009120423490184531"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009120423490184531"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009120113283277863"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Alpha" Value="Alpha"/>
+    <AttributeAllowedValue AttributeKey="2009121113404097001"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Audio and Video" Value="AudioVideo"/>
+    <AttributeAllowedValue AttributeKey="2009121113404097001"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Home Theater" Value="HomeTheater"/>
+    <AttributeAllowedValue AttributeKey="2009121113404097001"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Apparrel" Value="Apparrel"/>
+    <AttributeAllowedValue AttributeKey="2009121113460297029"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Televisions" Value="Televisions"/>
+    <AttributeAllowedValue AttributeKey="2009121113460297029"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="TV Accessories" Value="TVAccessories"/>
+	<AttributeAllowedValue AttributeKey="20091216152715111209"
+        SequenceNo="1" ShortDescription="Light" Value="0-20"/>
+    <AttributeAllowedValue AttributeKey="20091216152715111209"
+        SequenceNo="2" ShortDescription="Medium" Value="20.1-50"/>
+    <AttributeAllowedValue AttributeKey="20091216152715111209"
+        SequenceNo="3" ShortDescription="Heavy" Value="50.1-1000"/>
+    <AttributeAllowedValue AttributeKey="20091221154922114250"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Wireless" Value="Wireless"/>
+    <AttributeAllowedValue AttributeKey="20091221154922114250"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="10/100 Base-T" Value="10/100 Base-T"/>
+    <AttributeAllowedValue AttributeKey="20091221154922114250"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="10/100/1GB" Value="10/100/1GB"/>
+    <AttributeAllowedValue AttributeKey="20091221191407114707"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Small" Value="Small"/>
+    <AttributeAllowedValue AttributeKey="20091221191407114707"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Medium" Value="Medium"/>
+    <AttributeAllowedValue AttributeKey="20091221191407114707"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Large" Value="Large"/>
+	<AttributeAllowedValue AttributeKey="2009070607085839942"
+        IsDefaultValue="N" SequenceNo="9"
+        ShortDescription="28 x 41 x 12" Value="28 x 41 x 12"/>
+    <AttributeAllowedValue AttributeKey="2009070605501839198"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="30000:1" Value="30000:1"/>
+	 <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Green" Value="Green"/>
+	 <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Blue" Value="Blue"/>
+	 <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Red" Value="Red"/>
+	 <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Orange" Value="Orange"/>
+	 <AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Brown" Value="Brown"/>
+	<AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Grey" Value="Grey"/>
+	<AttributeAllowedValue AttributeKey="2009070606544939766"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Yellow" Value="Yellow"/>
+</YFS_Attr_Allowed_ValueList>

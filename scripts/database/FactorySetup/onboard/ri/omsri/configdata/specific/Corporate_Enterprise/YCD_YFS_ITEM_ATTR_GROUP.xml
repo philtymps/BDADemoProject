@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Item_Attr_GroupList>
+	<ItemAttributeGroup ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-1"  ItemAttributeGroupType="DISPLAY" 
+		ItemAttributeGroupID="DISPLAY" ItemAttributeGroupDescription="Display" SequenceNo="0" ItemAttributeGroupPath="ItemAttribute/DISPLAY" />
+	<ItemAttributeGroup ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-2" ItemAttributeGroupType="DISTINCT_ATTRIBUTES" 
+		ItemAttributeGroupID="VARIATIONS" ItemAttributeGroupDescription="Variations" SequenceNo="0" ItemAttributeGroupPath="ItemAttribute/VARIATIONS"/>
+</YFS_Item_Attr_GroupList>

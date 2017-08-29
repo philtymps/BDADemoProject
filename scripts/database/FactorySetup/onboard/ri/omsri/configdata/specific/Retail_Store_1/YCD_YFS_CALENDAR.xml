@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_CalendarList>
+    <Calendar CalendarDescription="Calendar_#{Retail_Store_1}"
+        CalendarId="Calendar_#{Retail_Store_1}" CalendarKey="Cal_#{Retail_Store_1}"
+        MeantForInternal="N" MonthFilter="" OrganizationCode="#{Retail_Store_1}" YearFilter=""/>
+</YFS_CalendarList>

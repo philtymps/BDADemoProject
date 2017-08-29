@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<YFS_Payment_Card_TypeList>
+    <PaymentCardType LongDescription="MasterCard"
+        OrganizationCode="#{Generic_Enterprise_Code}" PaymentCardType="MASTERCARD"
+        PaymentType="CREDIT_CARD" ShortDescription="MasterCard">
+        <PaymentConfiguration/>
+    </PaymentCardType>
+    <PaymentCardType LongDescription="Visa" OrganizationCode="#{Generic_Enterprise_Code}"
+        PaymentCardType="VISA"
+        PaymentType="CREDIT_CARD" ShortDescription="Visa">
+        <PaymentConfiguration />
+    </PaymentCardType>
+    <PaymentCardType LongDescription="American Express" OrganizationCode="#{Generic_Enterprise_Code}"
+        PaymentCardType="AMEX"
+        PaymentType="CREDIT_CARD" ShortDescription="American Express">
+        <PaymentConfiguration />
+    </PaymentCardType>
+    <PaymentCardType LongDescription="Diner's Club" OrganizationCode="#{Generic_Enterprise_Code}"
+        PaymentCardType="DINERS_CLUB"
+        PaymentType="CREDIT_CARD" ShortDescription="Diner's Club">
+        <PaymentConfiguration />
+    </PaymentCardType>
+    <PaymentCardType LongDescription="Discover" OrganizationCode="#{Generic_Enterprise_Code}"
+        PaymentCardType="DISCOVER"
+        PaymentType="CREDIT_CARD" ShortDescription="Discover">
+        <PaymentConfiguration />
+    </PaymentCardType>
+    <PaymentCardType LongDescription="JCB" OrganizationCode="#{Generic_Enterprise_Code}"
+        PaymentCardType="JCB"
+        PaymentType="CREDIT_CARD" ShortDescription="JCB">
+        <PaymentConfiguration />
+    </PaymentCardType>
+</YFS_Payment_Card_TypeList>

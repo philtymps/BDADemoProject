@@ -1,0 +1,29 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Return_Disposition>
+    <ReturnDisposition Description="QC-PASSED"
+        DispositionCode="QC-PASSED" DocumentType="0003" IsFinalDisposition="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass="Good"/>
+    <ReturnDisposition Description="Quality check passed"
+        DispositionCode="QC-PASSED" DocumentType="0005" IsFinalDisposition="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass=""/>
+    <ReturnDisposition Description="Quality check passed"
+        DispositionCode="QC-PASSED" DocumentType="0006" IsFinalDisposition="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass=""/>
+    <ReturnDisposition Description="Quality check passed"
+        DispositionCode="QC-PASSED" DocumentType="0005" IsFinalDisposition="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass="Good"/>
+    <ReturnDisposition Description="Quality check passed"
+        DispositionCode="QC-PASSED" DocumentType="0006" IsFinalDisposition="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass="Good"/>
+    <ReturnDisposition Description="Quality check failed"
+        DispositionCode="QC-FAILED" DocumentType="0005" IsDamaged="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass="Damaged"/>
+    <ReturnDisposition Description="Quality check failed"
+        DispositionCode="QC-FAILED" DocumentType="0006" IsDamaged="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ProductClass="Damaged"/>
+</YFS_Return_Disposition>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_ServerList>
+    <Server MonitorStartTime="1" ServerKey="SEARCH_SERVER"
+        ServerName="SearchAgent" ServerType="01" Terminate="N"
+        TransportTypeKey="JMS" WaitTime="1"/>
+</YFS_ServerList>

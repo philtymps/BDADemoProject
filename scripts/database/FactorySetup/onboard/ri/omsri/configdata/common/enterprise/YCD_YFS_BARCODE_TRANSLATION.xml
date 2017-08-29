@@ -1,0 +1,9 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_BarCode_TranslationList>
+	<BarCodeTranslation OrganizationCode="#{Generic_Enterprise_Code}" BarCodeType="Item" TranslationSequence="3" Description="Alternate Item ID" VariableLengthFlag="N" BarCodeLength="12" BarCodeStartPosition="1" BarCodeEndPosition="12" BarCodeTranslationSource="ItemAlias" FlowKey="" ApplicationIdentifier="" AliasName="YCD_ALT_ITEM_ID" />
+</YFS_BarCode_TranslationList>

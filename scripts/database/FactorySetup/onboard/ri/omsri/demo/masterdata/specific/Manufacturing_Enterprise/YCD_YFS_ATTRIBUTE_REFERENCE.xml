@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attribute_ReferenceList>
+    <AttributeReference AttributeKey="2009063016525731310"
+        AttributeReferenceKey="2009063016531131315"
+        ReferenceName="UnitWeight" TableName="YFS_ITEM"/>
+</YFS_Attribute_ReferenceList>

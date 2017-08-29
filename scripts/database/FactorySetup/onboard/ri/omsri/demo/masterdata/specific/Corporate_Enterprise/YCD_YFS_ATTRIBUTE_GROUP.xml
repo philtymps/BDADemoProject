@@ -1,0 +1,146 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attribute_GroupList>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Audio" AttributeGroupKey="2009070308270038324"
+        AttributeGroupPath="/ItemAttribute/Audio"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="100" ShortDescription="Audio"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Capacity"
+        AttributeGroupKey="2009070308275338347"
+        AttributeGroupPath="/ItemAttribute/Capacity"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="401" ShortDescription="Capacity"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Compatibility"
+        AttributeGroupKey="2009070308293938350"
+        AttributeGroupPath="/ItemAttribute/Compatibility"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="501" ShortDescription="Compatibility"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Connectivity"
+        AttributeGroupKey="2009070308313338356"
+        AttributeGroupPath="/ItemAttribute/Connectivity"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="701" ShortDescription="Connectivity"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Display Specifications"
+        AttributeGroupKey="2009070308331938365"
+        AttributeGroupPath="/ItemAttribute/Display Specifications"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1001" ShortDescription="Display Specifications"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="General Specifications"
+        AttributeGroupKey="2009070308335838368"
+        AttributeGroupPath="/ItemAttribute/General Specifications"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1101" ShortDescription="General Specifications"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Manufacturing"
+        AttributeGroupKey="2009070308345938371"
+        AttributeGroupPath="/ItemAttribute/Manufacturing"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1201" ShortDescription="Manufacturing"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Misc Physical"
+        AttributeGroupKey="2009070308390538402"
+        AttributeGroupPath="/ItemAttribute/Misc Physical"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1401" ShortDescription="Other physical characteristics"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Performance"
+        AttributeGroupKey="2009070308402038407"
+        AttributeGroupPath="/ItemAttribute/Performance"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1501" ShortDescription="Performance"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Print Specifications"
+        AttributeGroupKey="2009070308420038413"
+        AttributeGroupPath="/ItemAttribute/Print Specifications"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1701" ShortDescription="Print Specifications"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Product Dimensions"
+        AttributeGroupKey="2009070308430338419"
+        AttributeGroupPath="/ItemAttribute/Product Dimensions"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1901" ShortDescription="Product Dimensions"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="System Requirements"
+        AttributeGroupKey="2009070309064438455"
+        AttributeGroupPath="/ItemAttribute/System Requirements"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="2301" ShortDescription="System Requirements"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="WarrantyService"
+        AttributeGroupKey="2009070309071238458"
+        AttributeGroupPath="/ItemAttribute/WarrantyService"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="2401" ShortDescription="Warranty/Service"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Additional Features"
+        AttributeGroupKey="2009070607532040416"
+        AttributeGroupPath="/ItemAttribute/Additional Features"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3226" ShortDescription="Additional Features"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Included"
+        AttributeGroupKey="2009070608061040543"
+        AttributeGroupPath="/ItemAttribute/Included"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="2601" ShortDescription="Included With Product"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Also Included"
+        AttributeGroupKey="2009070804564045594"
+        AttributeGroupPath="/ItemAttribute/Also Included"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3251" ShortDescription="Also Included"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Video" AttributeGroupKey="2009071511375555233"
+        AttributeGroupPath="/ItemAttribute/Video"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3132" ShortDescription="Video"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Refrigerator Variations"
+        AttributeGroupKey="2009113023570476010"
+        AttributeGroupPath="/ItemAttribute/Refrigerator Variations"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="2763" ShortDescription="Refrigerator Variations"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Refrigerator Attributes"
+        AttributeGroupKey="2009120100215576329"
+        AttributeGroupPath="/ItemAttribute/Refrigerator Attributes"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3751" ShortDescription="Refrigerator Attributes"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Television Attributes"
+        AttributeGroupKey="2009120101035376723"
+        AttributeGroupPath="/ItemAttribute/Television Attributes"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="1801" ShortDescription="Television Attributes"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="BrandName"
+        AttributeGroupKey="2009120113273377860"
+        AttributeGroupPath="/ItemAttribute/BrandName"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3400" ShortDescription="Brand"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Computer Components"
+        AttributeGroupKey="2009120120332179631"
+        AttributeGroupPath="/ItemAttribute/Computer Components"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3651" ShortDescription="Computer Components"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="PricingAttributes"
+        AttributeGroupKey="2009121113385796823"
+        AttributeGroupPath="/ItemAttribute/PricingAttributes"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3851" ShortDescription="Pricing Attributes"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="ProductTypes"
+        AttributeGroupKey="2009121113394396826"
+        AttributeGroupPath="/ItemAttribute/ProductTypes"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        SequenceNo="3951" ShortDescription="Product Types"/>
+</YFS_Attribute_GroupList>

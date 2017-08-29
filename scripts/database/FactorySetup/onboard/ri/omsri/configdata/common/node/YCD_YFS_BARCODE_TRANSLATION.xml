@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_BarCode_TranslationList>
+	<BarCodeTranslation OrganizationCode="#{Retail_Store_1}" BarCodeType="TrackingNo" TranslationSequence="1" Description="Tracking No" VariableLengthFlag="Y" BarCodeLength="0" BarCodeStartPosition="0" BarCodeEndPosition="0" BarCodeTranslationSource="TrackingNo" FlowKey="" ApplicationIdentifier="" AliasName="" />
+	<BarCodeTranslation OrganizationCode="#{Retail_Store_1}" BarCodeType="ShippingContainer" TranslationSequence="2" Description="Carton SCM" VariableLengthFlag="Y" BarCodeLength="0" BarCodeStartPosition="0" BarCodeEndPosition="0" BarCodeTranslationSource="CartonSCM" FlowKey="" ApplicationIdentifier="" AliasName="" />
+	<BarCodeTranslation OrganizationCode="#{Retail_Store_1}" BarCodeType="ShippingContainer" TranslationSequence="3" Description="Pallet SCM" VariableLengthFlag="Y" BarCodeLength="0" BarCodeStartPosition="0" BarCodeEndPosition="0" BarCodeTranslationSource="PalletSCM" FlowKey="" ApplicationIdentifier="" AliasName="" />
+	<BarCodeTranslation OrganizationCode="#{Retail_Store_1}" BarCodeType="Item" TranslationSequence="4" Description="Alternate Item ID" VariableLengthFlag="Y" BarCodeLength="0" BarCodeStartPosition="0" BarCodeEndPosition="0" BarCodeTranslationSource="ItemAlias" FlowKey="" ApplicationIdentifier="" AliasName="YCD_ALT_ITEM_ID" />
+</YFS_BarCode_TranslationList>

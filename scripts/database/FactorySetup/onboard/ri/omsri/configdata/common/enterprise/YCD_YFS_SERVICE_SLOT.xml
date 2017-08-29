@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Service_SlotList>
+    <ServiceSlot EndTime="12:00:00" ServiceSlotDesc="Morning"
+        ServiceSlotGroupKey="#{Generic_Enterprise_Code}_SSG1" StartTime="08:00:00"/>
+    <ServiceSlot EndTime="17:00:00" ServiceSlotDesc="Afternoon"
+        ServiceSlotGroupKey="#{Generic_Enterprise_Code}_SSG1" StartTime="13:00:00"/>
+</YFS_Service_SlotList>

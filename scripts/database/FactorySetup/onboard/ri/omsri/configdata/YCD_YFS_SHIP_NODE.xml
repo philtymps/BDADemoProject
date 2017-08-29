@@ -1,0 +1,45 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Ship_NodeList>        
+    <ShipNode AcceptanceRequired="N" ActivateFlag=""
+        AdvanceNotificationTime="0" AgentCriteriaGroup="" AllowGiftWrap="Y" BolPrefix="00"
+        CanShipToAllNodes="Y" CanShipToOtherAddresses="Y"
+        ContactAddressKey="" CurrentBolNumber=""
+        DcmIntegrationRealTime="N" DefaultDeclaredValue="0.00"
+        DelayedInventoryAllocationSupport="N"
+        Description="#{Retail_Store_1_Name}" ExportLicenseExpDate=""
+        ExportLicenseNo="" ExportTaxpayerId="" GLN=""
+        GenerateBolNumber="N" IdentifiedByParentAs="#{Retail_Store_1}"
+        InheritConfigFromShipNode="" InterfaceSubType=""
+        InterfaceType="YFX" InventoryTracked="Y"
+        Inventorytype="TRACK" Localecode="en_US_EST"
+        MaintainInventoryCost="N" MaxConcurrentWaves="0"
+        MaxDaysToScheduleBefore="0" MinNotificationTime="0"
+        NodeOrgCode="#{Retail_Store_1}" NodeType="Store"
+        OwnerKey="#{Corporate_Enterprise_Code}" OwnerType="" PicklistType=""
+        ProcureToShipAllowed="Y" ReceiptProcessingTime="0.00"
+        ReceivingCalendarKey="Cal_#{Retail_Store_1}" ReceivingNode="N"
+        RequireTransferAcceptance="N" RequiresChangeRequest=""
+        ReturnCenterFlag="N" ReturnsNode="N" SerialTracking="Y"
+        ShipNode="#{Retail_Store_1}" ShipNodeAddressKey=""
+        ShipNodeClass="" ShipnodeKey="#{Retail_Store_1}" ShipnodeType=""
+        ShippingCalendarKey="Cal_#{Retail_Store_1}" ShippingNode="Y" SubstitutionAllowed=""
+        SupplierKey="" TagTrackedAtReceipt="Y" TagTrackedInInventory="Y"
+        ThreePlNode="N" TimeDiff="0.00" UseEndOfShiftTime=""
+        WorkOrderCreationAllowed="N" XDocNode="">	
+		 <ShipNodePersonInfo AddressLine1="#{Retail_Store_1_Address_Line_1}" City="#{Retail_Store_1_City}"
+				Company="#{Retail_Channel_Enterprise_Name}" Country="#{Retail_Store_1_Country}" 
+				State="#{Retail_Store_1_State}"  Longitude="#{Retail_Store_1_Longitude}"
+				Latitude="#{Retail_Store_1_Latitude}"
+				UseCount="0" ZipCode="#{Retail_Store_1_Zip_Code}" DayPhone="#{Retail_Store_1_Phone}"/>
+		 <ContactPersonInfo AddressLine1="#{Retail_Store_1_Address_Line_1}" City="#{Retail_Store_1_City}"
+				Company="#{Retail_Channel_Enterprise_Name}" Country="#{Retail_Store_1_Country}" 
+				State="#{Retail_Store_1_State}"  Longitude="#{Retail_Store_1_Longitude}"
+				Latitude="#{Retail_Store_1_Latitude}"
+				UseCount="0" ZipCode="#{Retail_Store_1_Zip_Code}" DayPhone="#{Retail_Store_1_Phone}"/>
+        </ShipNode>
+</YFS_Ship_NodeList>

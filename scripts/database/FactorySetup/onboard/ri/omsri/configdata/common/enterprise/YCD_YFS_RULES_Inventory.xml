@@ -1,0 +1,53 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_RulesList>
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="ATP_RULE" RuleSetValue="DEFAULT" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="CREATE_DEMAND_DETAILS" RuleSetValue="N" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="DEFAULT_RESERVATION_EXPIRATION_TIME"
+        RuleSetValue="0" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="DISTR_RULE_FOR_NODE_MONITOR" RuleSetValue="" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="FEFO_ALLOWED" RuleSetValue="N" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="INVT_MONITOR_RELOG" RuleSetValue="24" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="LEAD_TIME" RuleSetValue="10" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="MARK_INV_INCORRECT_FOR_HOURS" RuleSetValue="0" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="MARK_INV_INCORRECT_ON_BACKORDER_FROM_NODE"
+        RuleSetValue="N" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="MARK_INV_INCORRECT_ROUND_OFF_TIME"
+        RuleSetValue="" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="SALES_COST_LEVEL" RuleSetValue="01" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="USE_FUTURE_SUPPLY_OF_INVENTORY_CONTROL_NODE"
+        RuleSetValue="N" />
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="USE_REALTIME_ATP_MONITOR" RuleSetValue="Y" />                             
+</YFS_RulesList>
+
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Order Management Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="Y"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="Y">
+                <EntityList>
+                    <Entity AbortOnError="N" Class="YFS_Rules"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_RULES.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Sourcing_Rule_Detail"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_SOURCING_RULE_DTL.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Calendar"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_CALENDAR.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Calendar_Shift_Eff_Perd"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_CALENDAR_SHIFT_EFF_PERD.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Calendar_Shift"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_CALENDAR_SHIFT.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Node_Disposition" CommitCount="50"
+                        Completed="Y" NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="YCD_YFS_NODE_DISPOSITION.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Node_Receiving_Preference"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="YCD_YFS_NODE_RECEIVING_PREFERENCE.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Printer_Type_Prnt_Docs"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="10"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="YCD_YFS_PRINTER_TYPE_PRINT_DOCS.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Device_Sub_Type"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="YCD_YFS_DEVICE_SUB_TYPE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Device"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="YCD_YFS_DEVICE.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Routing_Guide_Detail"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_ROUTING_GUIDE_DETAIL.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_SCAC_Ex"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_SCAC_EX.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>
+

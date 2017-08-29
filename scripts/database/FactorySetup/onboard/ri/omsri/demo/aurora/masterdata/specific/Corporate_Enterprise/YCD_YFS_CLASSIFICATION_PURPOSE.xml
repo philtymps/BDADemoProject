@@ -1,0 +1,6 @@
+<YFS_Classification_PurposeList>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        ClassificationPurposeCode="MasterCatalog" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        ClassificationPurposeCode="SellingCatalog" OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_Classification_PurposeList>

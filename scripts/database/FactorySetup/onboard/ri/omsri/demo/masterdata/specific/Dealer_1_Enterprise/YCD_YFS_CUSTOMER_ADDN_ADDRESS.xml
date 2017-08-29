@@ -1,0 +1,83 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Customer_Additional_AddressList>
+    <CustomerAdditionalAddress AddressType=""
+        CustomerAdditionalAddressID="#{Generic_Enterprise_Code}_AD0"
+        CustomerContactKey="" CustomerKey="#{Dealer_1_Customer_1}_#{Generic_Enterprise_Suffix}1"
+        IsBillTo="Y" IsDefaultBillTo="Y" IsDefaultShipTo="Y"
+        IsDefaultSoldTo="Y" IsInherited="N" IsShipTo="Y" IsSoldTo="Y">
+			<PersonInfo AddressID="" AddressLine1="6579 Kelly Road" AddressLine2=""
+			AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+			AlternateEmailID="" Beeper="" City="Buffalo" Company="#{Dealer_1_Customer_1_Name}"
+			Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="support@#{Dealer_1_Customer_1_Email}"
+			ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName=""
+			HttpUrl="" IsAddressVerified="Y" IsCommercialAddress="Y"
+			JobTitle="" LastName="" MiddleName="" MobilePhone=""
+			OtherPhone="" PersonID="" PreferredShipAddress="" State="NY" Suffix="" Title=""
+			UseCount="0" VerificationStatus="" ZipCode="14218" isHistory="N"/>
+	</CustomerAdditionalAddress>
+	<CustomerAdditionalAddress AddressType=""
+        CustomerAdditionalAddressID="#{Generic_Enterprise_Code}_AD1"
+        CustomerContactKey="" CustomerKey="#{Dealer_1_Customer_2}_#{Generic_Enterprise_Suffix}2"
+        IsBillTo="Y" IsDefaultBillTo="Y" IsDefaultShipTo="Y"
+        IsDefaultSoldTo="Y" IsInherited="N" IsShipTo="Y" IsSoldTo="Y">
+			<PersonInfo AddressID="" AddressLine1="1976 Cole Blvd" AddressLine2=""
+			AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+			AlternateEmailID="" Beeper="" City="Philadelphia" Company="#{Dealer_1_Customer_2_Name}"
+			Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="support@#{Dealer_1_Customer_2_Email}"
+			ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName=""
+			HttpUrl="" IsAddressVerified="Y" IsCommercialAddress="Y"
+			JobTitle="" LastName="" MiddleName="" MobilePhone=""
+			OtherPhone="" PersonID="" PreferredShipAddress="" State="PA" Suffix="" Title=""
+			UseCount="0" VerificationStatus="" ZipCode="19107" isHistory="N"/>
+	</CustomerAdditionalAddress>
+	<CustomerAdditionalAddress AddressType=""
+        CustomerAdditionalAddressID="#{Generic_Enterprise_Code}_AD2"
+        CustomerContactKey="" CustomerKey="#{Dealer_1_Customer_3}_#{Generic_Enterprise_Suffix}3"
+        IsBillTo="Y" IsDefaultBillTo="Y" IsDefaultShipTo="Y"
+        IsDefaultSoldTo="Y" IsInherited="N" IsShipTo="Y" IsSoldTo="Y">
+			<PersonInfo AddressID="" AddressLine1="789 Habersham Road" AddressLine2=""
+			AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+			AlternateEmailID="" Beeper="" City="Paterson" Company="#{Dealer_1_Customer_3_Name}"
+			Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="support@#{Dealer_1_Customer_3_Email}"
+			ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName=""
+			HttpUrl="" IsAddressVerified="Y" IsCommercialAddress="Y"
+			JobTitle="" LastName="" MiddleName="" MobilePhone=""
+			OtherPhone="" PersonID="" PreferredShipAddress="" State="NJ" Suffix="" Title=""
+			UseCount="0" VerificationStatus="" ZipCode="07524" isHistory="N"/>
+	</CustomerAdditionalAddress>
+	<CustomerAdditionalAddress AddressType=""
+        CustomerAdditionalAddressID="#{Generic_Enterprise_Code}_AD3"
+        CustomerContactKey="" CustomerKey="#{Dealer_1_Customer_4}_#{Generic_Enterprise_Suffix}4"
+        IsBillTo="Y" IsDefaultBillTo="Y" IsDefaultShipTo="Y"
+        IsDefaultSoldTo="Y" IsInherited="N" IsShipTo="Y" IsSoldTo="Y">
+			<PersonInfo AddressID="" AddressLine1="456 Turner Road" AddressLine2=""
+			AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+			AlternateEmailID="" Beeper="" City="Berkshire" Company="#{Dealer_1_Customer_4_Name}"
+			Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="support@#{Dealer_1_Customer_4_Email}"
+			ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName=""
+			HttpUrl="" IsAddressVerified="Y" IsCommercialAddress="Y"
+			JobTitle="" LastName="" MiddleName="" MobilePhone=""
+			OtherPhone="" PersonID="" PreferredShipAddress="" State="MA" Suffix="" Title=""
+			UseCount="0" VerificationStatus="" ZipCode="01224" isHistory="N"/>
+	</CustomerAdditionalAddress>
+	<CustomerAdditionalAddress AddressType=""
+        CustomerAdditionalAddressID="#{Generic_Enterprise_Code}_AD4"
+        CustomerContactKey="" CustomerKey="#{Dealer_1_Customer_5}_#{Generic_Enterprise_Suffix}5"
+        IsBillTo="Y" IsDefaultBillTo="Y" IsDefaultShipTo="Y"
+        IsDefaultSoldTo="Y" IsInherited="N" IsShipTo="Y" IsSoldTo="Y">
+			<PersonInfo AddressID="" AddressLine1="2489 Louis Lane" AddressLine2=""
+			AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+			AlternateEmailID="" Beeper="" City="Bethesda" Company="#{Dealer_1_Customer_5_Name}"
+			Country="US" DayFaxNo="" DayPhone="" Department="" EMailID="support@#{Dealer_1_Customer_5_Email}"
+			ErrorTxt="" EveningFaxNo="" EveningPhone="" FirstName=""
+			HttpUrl="" IsAddressVerified="Y" IsCommercialAddress="Y"
+			JobTitle="" LastName="" MiddleName="" MobilePhone=""
+			OtherPhone="" PersonID="" PreferredShipAddress="" State="MD" Suffix="" Title=""
+			UseCount="0" VerificationStatus="" ZipCode="20815" isHistory="N"/>
+	</CustomerAdditionalAddress>
+</YFS_Customer_Additional_AddressList>

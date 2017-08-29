@@ -1,0 +1,18 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Category_DomainList>
+    <CategoryDomain CategoryDomain="#{Generic_Enterprise_Code}RefMasterCatalog"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        Description="Master Catalog for #{Generic_Enterprise_Code}" IsClassification="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" ShortDescription="#{Generic_Enterprise_Code} Master Catalog"/>
+	<CategoryDomain AttributeName="HazmatClass" CategoryDomain="Alpha"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD3" IsClassification="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ShortDescription="Alpha"/>
+    <CategoryDomain AttributeName="UNSPSC" CategoryDomain="UNSPC"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD4" IsClassification="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" ShortDescription="UNSPC Classification Codes"/>
+</YFS_Category_DomainList>

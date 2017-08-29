@@ -1,0 +1,17 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_SCACList>
+    <Scac Account1="" Account2="" BillingAddressKey="" CommProtocol=""
+        ContactAddressKey="" CurrentTrackingNo="" HostInterfaceType=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" Localecode="" MaxTrackingNo=""
+        MinTrackingNo="" ProNoLength="0" Scac="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}"
+        ScacDesc="Any Carrier" ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ServerAddress1=""
+        ServerAddress2="" ServerPassword="" ServerUserid=""
+        SystemIntgForDomesticReqd="N" SystemIntgForIntlReqd="N" TrackNoAlgo="" OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_SCACList>

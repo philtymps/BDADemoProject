@@ -1,0 +1,29 @@
+<XTMAILING>
+  <CAMPAIGN_ID>21157272</CAMPAIGN_ID>
+  <TRANSACT_ID>optional</TRANSACT_ID>
+  <SHOW_ALL_SEND_DETAIL>true</SHOW_ALL_SEND_DETAIL>
+  <NO_RETRY_ON_FAILURE>false</NO_RETRY_ON_FAILURE>
+  <SAVE_COLUMNS>
+    <COLUMN_NAME>First_Name</COLUMN_NAME>
+  </SAVE_COLUMNS>
+  <RECIPIENT>
+     <EMAIL>pfaiola@us.ibm.com</EMAIL>
+     <BODY_TYPE>HTML</BODY_TYPE>
+       <PERSONALIZATION>
+         <TAG_NAME>Subject</TAG_NAME>
+         <VALUE>StarPools Transact</VALUE>
+       </PERSONALIZATION>
+       <PERSONALIZATION>
+         <TAG_NAME>First_Name</TAG_NAME>
+         <VALUE>Pat</VALUE>
+       </PERSONALIZATION>
+       <PERSONALIZATION>
+         <TAG_NAME>INBOUND_HTML</TAG_NAME>
+         <VALUE>
+           <![CDATA[
+           <HTML><h2>Transact Email Test StarPools<h2></HTML>
+           ]]>
+         </VALUE>
+       </PERSONALIZATION>
+  </RECIPIENT>
+</XTMAILING>

@@ -1,0 +1,23 @@
+<Entities>
+	<Entity Name="BDA_FULFILLMENT_PACKAGE" XmlName="FulfillmentPackage" TableName="BDA_FULFILLMENT_PACKAGE">
+		<Attributes>
+			<Attribute Name="FULFILLMENT_PACKAGE_KEY" XmlName="FulfillmentPackageKey" DataType="Integer" PrimaryKey="true" />
+			<Attribute Name="ORGANIZATION_CODE" XmlName="OrganizationCode" DataType="String" />
+			<Attribute Name="PACKAGE_NAME" XmlName="PackageName" DataType="String"  />
+			<Attribute Name="FULFILLMENT_TYPE" XmlName="FulfillmentType" DataType="String" />
+			<Attribute Name="ALLOCATION_RULE_KEY" XmlName="AllocationRuleKey" DataType="String" />
+			<Attribute Name="SOURCING_CONFIG_KEY" XmlName="SourcingConfigKey" DataType="String" />
+		</Attributes>
+	</Entity>
+	<Entity Name="BDA_FULFILLMENT_DETAIL" XmlName="FulfillmentDetails" TableName="BDA_FULFILLMENT_DETAIL">
+		<Attributes>
+			<Attribute Name="FULFILLMENT_DETAIL_KEY" XmlName="FulfillmentDetailKey" DataType="Integer" PrimaryKey="true" />
+			<Attribute Name="FULFILLMENT_PACKAGE_KEY" XmlName="FulfillmentPackageKey" DataType="Integer" ForeignKey="true" />
+			<Attribute Name="SOURCING_RULE_DETAIL_KEY" XmlName="SourcingRuleDetailKey" DataType="String" />
+			<Attribute Name="ITEM_TYPE" XmlName="ItemType" DataType="String"  />
+			<Attribute Name="LEVEL" XmlName="Level" DataType="String" />
+			<Attribute Name="DESCRIPTION" XmlName="Description" DataType="String" />
+			<Attribute Name="EXPAND_CAPACITY" XmlName="ExpandCapacity" DataType="String" />
+		</Attributes>
+	</Entity>
+</Entities>

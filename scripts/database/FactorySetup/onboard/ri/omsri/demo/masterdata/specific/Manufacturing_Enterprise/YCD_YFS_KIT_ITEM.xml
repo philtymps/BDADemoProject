@@ -1,0 +1,32 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Kit_ItemList>
+    <KitItem ComponentItemKey="2009092215482144574"
+        ItemKey="20100113200858186066" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009093023582157233"
+        ItemKey="20100113200858186066" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009101923213967188"
+        ItemKey="20100113200858186066" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009121217255499506"
+        ItemKey="20100113200858186066" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009092321224345541"
+        ItemKey="20100113200858186066" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009121217022099254"
+        ItemKey="20100113200858186066" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="20100106203049125227"
+        ItemKey="20100113203356186696" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009092322430446219"
+        ItemKey="20100113203356186696" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009100100023057254"
+        ItemKey="20100113203356186696" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="2009092322063545815"
+        ItemKey="20100113203356186696" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="20091212203908101063"
+        ItemKey="20100113203356186696" KitQuantity="1.00"/>
+    <KitItem ComponentItemKey="20091212193102100577"
+        ItemKey="20100113203356186696" KitQuantity="1.00"/>
+</YFS_Kit_ItemList>

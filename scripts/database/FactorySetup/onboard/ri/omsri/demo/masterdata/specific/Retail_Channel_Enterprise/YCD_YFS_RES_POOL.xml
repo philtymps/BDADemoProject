@@ -1,0 +1,32 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Res_PoolList>
+    <ResourcePool AllRegionsServiced="Y" AssociateRegionBySlot="N"
+        CalendarKey="" CapacityInfoAvailable="Y"
+        CapacityMaintainAtResourceLevel="N"
+        CapacityOrganizationCode="#{Corporate_Enterprise_Code}" CapacityUnitOfMeasure="UNIT"
+        ItemGroupCode="DS" Node="#{Retail_Store_1}" ProviderContactAddressKey=""
+        ProviderOrganizationCode="#{Generic_Enterprise_Code}" ProvidesAllServices="Y"
+        Purpose="SERVICE" RegionSchemaKey="DEFAULT_RS1"
+        ResourcePoolDescription="#{Generic_Store} Resource Pool"
+        ResourcePoolId="#{Retail_Store_1}_RPR"
+		ResourcePoolKey="#{Retail_Store_1}_RPR"
+        RestrictMaxConcurrentAppointments="N"
+        ServiceSlotGroupId="SlotGroupA" ServiceSupervisorId=""/>
+   <ResourcePool AllRegionsServiced="Y" AssociateRegionBySlot="N"
+        CalendarKey="" CapacityInfoAvailable="Y"
+        CapacityMaintainAtResourceLevel="N"
+        CapacityOrganizationCode="#{Corporate_Enterprise_Code}" CapacityUnitOfMeasure="HR"
+        ItemGroupCode="PS" Node="#{Retail_Store_1}" ProviderContactAddressKey=""
+        ProviderOrganizationCode="#{Generic_Enterprise_Code}" ProvidesAllServices="Y"
+        Purpose="SERVICE" RegionSchemaKey="DEFAULT_RS1"
+        ResourcePoolDescription="#{Generic_Store} Resource Pool for PS"
+        ResourcePoolId="#{Retail_Store_1}_PS_RPR"
+		ResourcePoolKey="#{Retail_Store_1}_PS_RPR"
+        RestrictMaxConcurrentAppointments="N"
+        ServiceSlotGroupId="SlotGroupA" ServiceSupervisorId=""/>
+</YFS_Res_PoolList>

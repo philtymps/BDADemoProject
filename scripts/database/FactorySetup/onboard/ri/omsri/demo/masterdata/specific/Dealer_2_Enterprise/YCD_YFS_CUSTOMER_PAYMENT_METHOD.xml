@@ -1,0 +1,58 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Customer_Payment_MethodList>
+    <CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="234213423463254"
+        CustomerContactKey="" CustomerKey="#{Dealer_2_Customer_1}_#{Generic_Enterprise_Suffix}1"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="3254"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+    <CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="1234567890900"
+        CustomerContactKey="" CustomerKey="#{Dealer_2_Customer_2}_#{Generic_Enterprise_Suffix}2"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="0900"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+	<CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="9874563547458"
+        CustomerContactKey="" CustomerKey="#{Dealer_2_Customer_3}_#{Generic_Enterprise_Suffix}3"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="7458"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+	<CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="687990475679768"
+        CustomerContactKey="" CustomerKey="#{Dealer_2_Customer_4}_#{Generic_Enterprise_Suffix}4"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="9768"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+	<CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="091498037098409"
+        CustomerContactKey="" CustomerKey="#{Dealer_2_Customer_5}_#{Generic_Enterprise_Suffix}5"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="8409"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+</YFS_Customer_Payment_MethodList>

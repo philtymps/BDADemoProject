@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Node_DispositionList>
+	<NodeDisposition DispositionCode="QC-PASSED" DocumentType="0003"
+        EnterpriseCode="#{Generic_Enterprise_Code}" InventoryStatus="" Node="#{Retail_Store_1}"/>
+	<NodeDisposition DispositionCode="QC-PASSED" DocumentType="0003"
+        EnterpriseCode="#{Generic_Enterprise_Code}" InventoryStatus="" Node="#{Retail_Store_2}"/>
+</YFS_Node_DispositionList>

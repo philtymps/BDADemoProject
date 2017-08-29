@@ -1,0 +1,13 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Atp_RulesList>
+    <AtpRules AccumulationDays="730" AdvanceNotificationTime="0"
+        AtpRule="DEFAULT" AtpRuleName="#{Generic_Enterprise_Code}-DEFAULT" BackwardConsumptionDays="730"
+        ConsiderPoForAlloc="N" ForwardConsumptionDays="730"
+        MaxInventoryHoldDays="0" OrganizationCode="#{Generic_Enterprise_Code}"
+        PastDueDemandDays="730" PastDueSupplyDays="730" ProcessingTime="0"/>
+</YFS_Atp_RulesList>

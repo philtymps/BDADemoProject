@@ -1,0 +1,10 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Outbound_ConstraintsList>
+    <OutboundConstraints IsEspMaintained="N"
+        IsRoutingGuideMaintained="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" OutboundConstraintsKey="2011090705182953024"/>
+</YFS_Outbound_ConstraintsList>

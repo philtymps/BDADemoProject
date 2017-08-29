@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Common_CodeList>
+    <CommonCode CodeLength="0" CodeLongDescription="LH_Configurator"
+        CodeShortDescription="LH_Configurator"
+        CodeType="CONTENT_LOCATION"
+        CodeValue="#{Image_Server}/RefData/Images/#{Manufacturing_Enterprise_Code}/Configurator"
+        OrganizationCode="#{Dealer_1_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="LH_Attributes"
+        CodeShortDescription="LH_Attributes" CodeType="CONTENT_LOCATION"
+        CodeValue="#{Image_Server}/RefData/Images/#{Manufacturing_Enterprise_Code}/Attributes"
+        OrganizationCode="#{Dealer_1_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="LH_Category"
+        CodeShortDescription="LH_Category" CodeType="CONTENT_LOCATION"
+        CodeValue="#{Image_Server}/RefData/Images/#{Manufacturing_Enterprise_Code}/Category"
+        OrganizationCode="#{Dealer_1_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="LH_Product"
+        CodeShortDescription="LH_Product" CodeType="CONTENT_LOCATION"
+        CodeValue="#{Image_Server}/RefData/Images/#{Manufacturing_Enterprise_Code}/Product"
+        OrganizationCode="#{Dealer_1_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="LH_Promotions"
+        CodeShortDescription="LH_Promotions" CodeType="CONTENT_LOCATION"
+        CodeValue="#{Image_Server}/RefData/Images/#{Manufacturing_Enterprise_Code}/Promotions"
+        OrganizationCode="#{Dealer_1_Enterprise_Code}" SystemDefinedCode="N"/>
+</YFS_Common_CodeList>

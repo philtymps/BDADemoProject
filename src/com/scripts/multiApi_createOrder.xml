@@ -1,0 +1,193 @@
+<MultiApi>
+<API Name="createOrder">
+<Input>
+<Order OrderNo="SO-00002" OrderDate="2015-10-28T09:30:00" DocumentType="0001" EnterpriseCode="Cactus" SellerOrganizationCode="Cactus_S1">
+	<PriceInfo Currency="USD" />
+	<OrderLines>
+		
+		<OrderLine ReqShipDate="2015-10-28T10:15:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0003_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:15:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0004_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:15:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0022_SKU" UnitOfMeasure="EACH" />
+			<Instructions>
+				<Instruction InstructionText="No onion on Cactus Fajitas" SequenceNo="1" />
+			</Instructions>
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:15:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0019_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:15:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0020_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:15:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="DESSERT_0038_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+	</OrderLines>
+	<PersonInfoBillTo FirstName="Erin" LastName="McBee" City="Seattle" State="WA" ZipCode="98109" 
+		Country="US" DayPhone="929-345-0024" EMailID="emcbee@example.com" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="CREDIT_CARD" CreditCardType="VISA" 
+			CreditCardNo="4111111111111111" CreditCardExpDate="12/2018" 
+			CreditCardName="Erin McBee" MaxChargeLimit="1000" />
+	</PaymentMethods>
+</Order>
+</Input>
+</API>
+<API Name="createOrder">
+<Input>
+<Order OrderNo="SO-00001" OrderDate="2015-10-28T09:33:00" DocumentType="0001" EnterpriseCode="Cactus" SellerOrganizationCode="Cactus_S1">
+	<PriceInfo Currency="USD" />
+	<OrderLines>
+		
+		<OrderLine ReqShipDate="2015-10-28T10:18:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0003_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:18:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0004_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:18:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0022_SKU" UnitOfMeasure="EACH" />
+			<Instructions>
+				<Instruction InstructionText="No onion on Cactus Fajitas" SequenceNo="1" />
+			</Instructions>
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:18:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0019_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:18:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0020_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:18:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="DESSERT_0038_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+	</OrderLines>
+	<PersonInfoBillTo FirstName="Robert" LastName="Craft" City="Seattle" State="WA" ZipCode="98109" 
+		Country="US" DayPhone="929-345-0024" EMailID="rcraft@example.com" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="CREDIT_CARD" CreditCardType="VISA" 
+			CreditCardNo="4111111111111111" CreditCardExpDate="12/2018" 
+			CreditCardName="Robert Craft" MaxChargeLimit="1000" />
+	</PaymentMethods>
+</Order>
+</Input>
+</API>
+<API Name="createOrder">
+<Input>
+<Order OrderNo="SO-00003" OrderDate="2015-10-28T09:45:00" DocumentType="0001" EnterpriseCode="Cactus" SellerOrganizationCode="Cactus_S1">
+	<PriceInfo Currency="USD" />
+	<OrderLines>
+		
+		<OrderLine ReqShipDate="2015-10-28T10:30:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0003_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:30:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0004_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:30:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0022_SKU" UnitOfMeasure="EACH" />
+			<Instructions>
+				<Instruction InstructionText="No onion on Cactus Fajitas" SequenceNo="1" />
+			</Instructions>
+		</OrderLine>
+	</OrderLines>
+	<PersonInfoBillTo FirstName="Andrew" LastName="Campbell" City="Seattle" State="WA" ZipCode="98109" 
+		Country="US" DayPhone="929-345-0024" EMailID="acampbell@example.com" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="CREDIT_CARD" CreditCardType="VISA" 
+			CreditCardNo="4111111111111111" CreditCardExpDate="12/2018" 
+			CreditCardName="Andrew Campbell" MaxChargeLimit="1000" />
+	</PaymentMethods>
+</Order>
+</Input>
+</API>
+<API Name="createOrder">
+<Input>
+<Order OrderNo="SO-00004" OrderDate="2015-10-28T09:38:00" DocumentType="0001" EnterpriseCode="Cactus" SellerOrganizationCode="Cactus_S1">
+	<PriceInfo Currency="USD" />
+	<OrderLines>
+		
+		<OrderLine ReqShipDate="2015-10-28T10:23:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0003_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:23:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0004_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:23:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0022_SKU" UnitOfMeasure="EACH" />
+			<Instructions>
+				<Instruction InstructionText="No onion on Cactus Fajitas" SequenceNo="1" />
+			</Instructions>
+		</OrderLine>
+	</OrderLines>
+	<PersonInfoBillTo FirstName="Caitlin" LastName="Gilman" City="Seattle" State="WA" ZipCode="98109" 
+		Country="US" DayPhone="929-345-0024" EMailID="cgilman@example.com" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="CREDIT_CARD" CreditCardType="VISA" 
+			CreditCardNo="4111111111111111" CreditCardExpDate="12/2018" 
+			CreditCardName="Caitlin Gilman" MaxChargeLimit="1000" />
+	</PaymentMethods>
+</Order>
+</Input>
+</API>
+<API Name="createOrder">
+<Input>
+<Order OrderNo="SO-00005" OrderDate="2015-10-28T09:42:00" DocumentType="0001" EnterpriseCode="Cactus" SellerOrganizationCode="Cactus_S1">
+	<PriceInfo Currency="USD" />
+	<OrderLines>
+		
+		<OrderLine ReqShipDate="2015-10-28T10:27:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0003_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:27:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0004_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:27:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0022_SKU" UnitOfMeasure="EACH" />
+			<Instructions>
+				<Instruction InstructionText="No onion on Cactus Fajitas" SequenceNo="1" />
+			</Instructions>
+		</OrderLine>
+	</OrderLines>
+	<PersonInfoBillTo FirstName="Derek" LastName="Williams" City="Seattle" State="WA" ZipCode="98109" 
+		Country="US" DayPhone="929-345-0024" EMailID="dwilliams@example.com" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="CREDIT_CARD" CreditCardType="VISA" 
+			CreditCardNo="4111111111111111" CreditCardExpDate="12/2018" 
+			CreditCardName="Derek Williams" MaxChargeLimit="1000" />
+	</PaymentMethods>
+</Order>
+</Input>
+</API>
+<API Name="createOrder">
+<Input>
+<Order OrderNo="SO-00006" OrderDate="2015-10-28T09:43:00" DocumentType="0001" EnterpriseCode="Cactus" SellerOrganizationCode="Cactus_S1">
+	<PriceInfo Currency="USD" />
+	<OrderLines>
+		<OrderLine ReqShipDate="2015-10-28T10:28:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0003_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:28:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ANTOJITOS_0004_SKU" UnitOfMeasure="EACH" />
+		</OrderLine>
+		<OrderLine ReqShipDate="2015-10-28T10:28:00" OrderedQty="1" DeliveryMethod="SHP" ShipNode="Cactus_S1">
+			<Item ItemID="ENTRADAS_0022_SKU" UnitOfMeasure="EACH" />
+			<Instructions>
+				<Instruction InstructionText="No onion on Cactus Fajitas" SequenceNo="1" />
+			</Instructions>
+		</OrderLine>
+	</OrderLines>
+	<PersonInfoBillTo FirstName="Annie" LastName="Thompson" City="Seattle" State="WA" ZipCode="98109" 
+		Country="US" DayPhone="929-345-0024" EMailID="athompson@example.com" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="CREDIT_CARD" CreditCardType="VISA" 
+			CreditCardNo="4111111111111111" CreditCardExpDate="12/2018" 
+			CreditCardName="Annie Thompson" MaxChargeLimit="1000" />
+	</PaymentMethods>
+</Order>
+</Input>
+</API>
+</MultiApi>

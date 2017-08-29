@@ -1,0 +1,40 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Item_UOM_MasterList>
+    <ItemUOMMaster AllowFractionsInConversion="N" Description="Hour"
+        IsInventoryUOM="Y" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemGroupCode="DS" LPNType="" OrganizationCode="#{Generic_Enterprise_Code}" PackagingIndicator=""
+        QtyUOMRoundingPrecision="0" TimeUOMRoundingPrecision="0"
+        UOMType="TIME" UnitOfMeasure="HR"/>
+    <ItemUOMMaster AllowFractionsInConversion="N" Description="Unit"
+        IsInventoryUOM="Y" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemGroupCode="DS" LPNType="" OrganizationCode="#{Generic_Enterprise_Code}" PackagingIndicator=""
+        QtyUOMRoundingPrecision="0" TimeUOMRoundingPrecision="0"
+        UOMType="SERVICE_QUANTITY" UnitOfMeasure="UNIT"/>
+	<ItemUOMMaster AllowFractionsInConversion="N" Description="Case"
+        IsInventoryUOM="N" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemGroupCode="PROD" 
+        OrganizationCode="#{Generic_Enterprise_Code}" PackagingIndicator=""
+        QtyUOMRoundingPrecision="0" TimeUOMRoundingPrecision="0"
+        UOMType="QUANTITY" UnitOfMeasure="CASE"/>
+    <ItemUOMMaster AllowFractionsInConversion="N"
+        Description="Each" IsInventoryUOM="Y"
+        IsOperationalUOM="N" IsOrderingUOM="Y" ItemGroupCode="PROD"
+        OrganizationCode="#{Generic_Enterprise_Code}" PackagingIndicator=""
+        QtyUOMRoundingPrecision="0" TimeUOMRoundingPrecision="0"
+        UOMType="QUANTITY" UnitOfMeasure="EACH"/>
+    <ItemUOMMaster AllowFractionsInConversion="N" Description="Hour"
+        IsInventoryUOM="Y" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemGroupCode="PS" LPNType="" OrganizationCode="#{Generic_Enterprise_Code}" PackagingIndicator=""
+        QtyUOMRoundingPrecision="0" TimeUOMRoundingPrecision="0"
+        UOMType="TIME" UnitOfMeasure="HR"/>
+    <ItemUOMMaster AllowFractionsInConversion="N" Description="Unit"
+        IsInventoryUOM="Y" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemGroupCode="PS" LPNType="" OrganizationCode="#{Generic_Enterprise_Code}" PackagingIndicator=""
+        QtyUOMRoundingPrecision="0" TimeUOMRoundingPrecision="0"
+        UOMType="SERVICE_QUANTITY" UnitOfMeasure="UNIT"/>
+</YFS_Item_UOM_MasterList>

@@ -1,0 +1,86 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<SetupValidation>
+    <Validation Entity="YFS_Event_Condition" File="YCD_SOM_YFS_EVENT_CONDITION.xml" NeedToDelete="N">
+        <Entities>
+            <Validate Entity="YFS_Event_Condition" Validation="Match">
+                <Keys>
+                    <Key Name="EVENT_KEY" Value="EventKey"/>
+                    <Key Name="OWNER_KEY" Value="OwnerKey"/>
+                </Keys>
+				<KeyMatches>
+					<Key Name="ACTION_KEY" Value="ActionKey"/>
+					<Key Name="CONDITION_KEY" Value="ConditionKey"/>
+					<Key Name="EVENT_KEY" Value="EventKey"/>
+					<Key Name="MORE_ACTIONS_FLAG" Value="MoreActionsFlag"/>
+					<Key Name="OWNER_KEY" Value="OwnerKey"/>
+					<Key Name="OWNER_TYPE" Value="OwnerType"/>
+					<Key Name="PRIORITY" Value="Priority" DataType="Double" />
+				</KeyMatches>
+            </Validate>
+            <Validate Entity="YFS_Graph_UI" NeedToValidate="N">
+                <Keys>
+                    <Key Name="GRAPH_REF_KEY" Value="EventKey"/>
+                    <Key Name="GRAPH_TYPE" StaticValue="ConditionKey"/>
+                    <Key Name="OWNER_KEY" StaticValue="OwnerKey"/>
+                </Keys>
+            </Validate>
+        </Entities>
+        <Error Description="Event handler is already configured">
+            <ErrorRefs>
+                <ErrorRef Name="OWNER_KEY" Value="OwnerKey"/>
+                <ErrorRef Name="EVENT_KEY" Value="EventKey"/>
+            </ErrorRefs>
+        </Error>
+    </Validation>
+    <Validation Entity="YFS_Pipeline_Condition"
+        File="YCD_SOM_YFS_PIPELINE_CONDITION.xml" NeedToDelete="N">
+        <Entities>
+            <Validate Entity="YFS_Pipeline_Condition" Validation="Match">
+                <Keys>
+                    <Key Name="OWNER_KEY" Value="OwnerKey"/>
+					<Key Name="PRIORITY" Value="Priority" DataType="Double" />
+					<Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+                </Keys>
+				<KeyMatches>
+					<Key Name="ENTERPRISE_KEY" Value="EnterpriseKey"/>
+					<Key Name="OWNER_KEY" Value="OwnerKey"/>
+					<Key Name="PRIORITY" Value="Priority" DataType="Double" />
+					<Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+					<Key Name="CONDITION_KEY" Value="ConditionKey"/>
+					<Key Name="PIPELINE_KEY" Value="PipelineKey"/>
+				</KeyMatches>
+            </Validate>
+        </Entities>
+        <Error Description="Pipeline determination rule has been modified">
+            <ErrorRefs>
+                <ErrorRef Name="Process Type" Value="ProcessTypeKey"/>
+                <ErrorRef Name="Enterprise Key" Value="EnterpriseKey"/>
+				<ErrorRef Name="Priority" Value="Priority" />
+            </ErrorRefs>
+        </Error>
+    </Validation>
+	<Validation Entity="YFS_Pipeline_Condition"
+        File="YCD_SOM_YFS_PIPELINE_CONDITION.xml" NeedToValidate="N">
+        <Entities>
+            <Validate Entity="YFS_Pipeline_Condition">
+                <Keys>
+                    <Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+                    <Key Name="ENTERPRISE_KEY" Value="EnterpriseKey"/>
+                </Keys>
+            </Validate>
+            <Validate Entity="YFS_Graph_UI">
+                <Keys>
+                    <Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+                    <Key Name="GRAPH_REF_KEY" Value="EnterpriseKey"/>
+                    <Key Name="GRAPH_TYPE" StaticValue="PDRule"/>
+                    <Key Name="OWNER_KEY" Value="EnterpriseKey"/>
+                </Keys>
+            </Validate>
+        </Entities>
+    </Validation>
+</SetupValidation>

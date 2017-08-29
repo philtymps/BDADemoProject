@@ -1,0 +1,93 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YIC_BOM_MessageList>
+    <BOMMessage BOMHeaderKey="20100113101514169455"
+        BOMMessageKey="20100113101514169456"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error" Name="HL2040R.MastOptions.MastTypes" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101514169455"
+        BOMMessageKey="20100113101514169457"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error"
+        Name="HL2040R.MastOptions.MastTypes.TriplexVST_Mast" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101514169455"
+        BOMMessageKey="20100113101514169458"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error"
+        Name="HL2040R.HoseGroupOptions.HoseGroupTypes.HoseGroupDuplex" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101514169455"
+        BOMMessageKey="20100113101514169459"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error"
+        Name="HL2040R.HoseGroupOptions.HoseGroupTypes" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101520169528"
+        BOMMessageKey="20100113101520169529"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error" Name="HL2040R.MastOptions.MastTypes" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101520169528"
+        BOMMessageKey="20100113101520169530"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error"
+        Name="HL2040R.MastOptions.MastTypes.TriplexVST_Mast" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101520169528"
+        BOMMessageKey="20100113101520169531"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error"
+        Name="HL2040R.HoseGroupOptions.HoseGroupTypes.HoseGroupDuplex" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113101520169528"
+        BOMMessageKey="20100113101520169532"
+        Message="Carriage Type and Carriage are not compatible!"
+        MessageType="error"
+        Name="HL2040R.HoseGroupOptions.HoseGroupTypes" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113175427175974"
+        BOMMessageKey="20100113175427175975"
+        Message="You selected more than one external accessory, we recommend to add extended warranty!"
+        MessageType="suggest"
+        Name="MXLP-210.Accessories.Additional Battery" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113175427175974"
+        BOMMessageKey="20100113175427175976"
+        Message="You selected more than one external accessory, we recommend to add extended warranty!"
+        MessageType="suggest"
+        Name="MXLP-210.Accessories.FlashMemFingerDisk" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113175427175974"
+        BOMMessageKey="20100113175427175977"
+        Message="You selected more than one external accessory, we recommend to add extended warranty!"
+        MessageType="suggest"
+        Name="MXLP-210.Accessories.External Drives" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113175427175974"
+        BOMMessageKey="20100113175427175978"
+        Message="You selected more than one external accessory, we recommend to add extended warranty!"
+        MessageType="suggest" Name="MXLP-210.Accessories.DockingStation" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113175427175974"
+        BOMMessageKey="20100113175427175979"
+        Message="You selected more than one external accessory, we recommend to add extended warranty!"
+        MessageType="suggest" Name="MXLP-210" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113205339187127"
+        BOMMessageKey="20100113205339187128"
+        Message="Load Backrest is Required due to selection of Carriage!"
+        MessageType="warning" Name="HL2040R.LoadBackrestExtension" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113205046186935"
+        BOMMessageKey="20100113205339187153"
+        Message="Load Backrest is Required due to selection of Carriage!"
+        MessageType="warning" Name="HL2040R.LoadBackrestExtension" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100113205619187192"
+        BOMMessageKey="20100113205619187193"
+        Message="Load Backrest is Required due to selection of Carriage!"
+        MessageType="warning" Name="HL2040R.LoadBackrestExtension" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100210121728503186"
+        BOMMessageKey="20100210121728503187"
+        Message="Please select matching Processor, RAM and Hard Disk Drive!"
+        MessageType="error" Name="MXLP-210.Processor" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100210121728503186"
+        BOMMessageKey="20100210121729503188"
+        Message="Please select matching Processor, RAM and Hard Disk Drive!"
+        MessageType="error" Name="MXLP-210.Memory" isHistory="N"/>
+    <BOMMessage BOMHeaderKey="20100210121728503186"
+        BOMMessageKey="20100210121729503189"
+        Message="Please select matching Processor, RAM and Hard Disk Drive!"
+        MessageType="error" Name="MXLP-210.Harddrive" isHistory="N"/>
+</YIC_BOM_MessageList>

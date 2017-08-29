@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Order Management Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="Y"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="Y">
+                <EntityList>
+                    <Entity AbortOnError="N"
+                        Class="YFS_BarCode_Translation" CommitCount="50"
+                        Completed="Y" NumRecordsProcessed="4"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_BARCODE_TRANSLATION.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Item_Ship_Node"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="4"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_ITEM_SHIP_NODE.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>
+

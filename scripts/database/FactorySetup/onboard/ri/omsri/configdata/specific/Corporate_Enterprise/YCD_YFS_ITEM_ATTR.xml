@@ -1,0 +1,26 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Item_AttrList>
+	<ItemAttribute ItemAttributeKey="#{Corporate_Enterprise_Code}_IAG-1_I-1" 
+		ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-1" ItemAttributeName="ItemID" 
+		ItemAttributeDescription="Item ID" SequenceNo="0" AttributeDomainID="ItemAttribute" CategoryKey="#{Corporate_Enterprise_Code}_Category" AttributeGroupID="DISPLAY" ItemAttributeGroupType="DISPLAY" IsInherited="N" />
+	<ItemAttribute ItemAttributeKey="#{Corporate_Enterprise_Code}_IAG-1_I-2" 
+		ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-1" 
+		ItemAttributeName="ShortDescription" ItemAttributeDescription="Short Description" SequenceNo="1" AttributeDomainID="ItemAttribute" CategoryKey="#{Corporate_Enterprise_Code}_Category" AttributeGroupID="DISPLAY" ItemAttributeGroupType="DISPLAY" IsInherited="N"  />
+	<ItemAttribute ItemAttributeKey="#{Corporate_Enterprise_Code}_IAG-1_I-3" 
+		ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-1" 
+		ItemAttributeName="ManufacturerName" ItemAttributeDescription="Manufacturer Name" SequenceNo="2" AttributeDomainID="ItemAttribute" CategoryKey="#{Corporate_Enterprise_Code}_Category" AttributeGroupID="DISPLAY" ItemAttributeGroupType="DISPLAY" IsInherited="N" />
+	<ItemAttribute ItemAttributeKey="#{Corporate_Enterprise_Code}_IAG-2_I-1" 
+		ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-2" ItemAttributeName="Class" 
+		ItemAttributeDescription="Super Size" SequenceNo="0" AttributeDomainID="ItemAttribute" CategoryKey="#{Corporate_Enterprise_Code}_Category2" AttributeGroupID="VARIATIONS" ItemAttributeGroupType="DISTINCT_ATTRIBUTES" IsInherited="N" />
+	<ItemAttribute ItemAttributeKey="#{Corporate_Enterprise_Code}_IAG-2_I-2" 
+		ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-2" ItemAttributeName="ColorCode" 
+		ItemAttributeDescription="Color Code" SequenceNo="1" AttributeDomainID="ItemAttribute" CategoryKey="#{Corporate_Enterprise_Code}_Category2" AttributeGroupID="VARIATIONS" ItemAttributeGroupType="DISTINCT_ATTRIBUTES" IsInherited="N" />
+	<ItemAttribute ItemAttributeKey="#{Corporate_Enterprise_Code}_IAG-2_I-3" 
+		ItemAttributeGroupKey="#{Corporate_Enterprise_Code}_IAG-2" ItemAttributeName="SizeCode" 
+		ItemAttributeDescription="Size Code" SequenceNo="2" AttributeDomainID="ItemAttribute" CategoryKey="#{Corporate_Enterprise_Code}_Category2" AttributeGroupID="VARIATIONS" ItemAttributeGroupType="DISTINCT_ATTRIBUTES" IsInherited="N" />
+</YFS_Item_AttrList>

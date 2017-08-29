@@ -1,0 +1,28 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Customer_Payment_MethodList>
+    <CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="41341513414321"
+        CustomerContactKey="" CustomerKey="#{Dealer_1_Enterprise_Code}1"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="4321"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+    <CustomerPaymentMethod AccountLimit="5000.00"
+        AccountLimitCurrency="USD" AvailableAccountBalance="5000.00"
+        CreditCardExpDate="" CreditCardName="" CreditCardNo=""
+        CreditCardType="" CustomerAccountNo="1341515623452452345"
+        CustomerContactKey="" CustomerKey="#{Dealer_2_Enterprise_Code}2"
+        DisplayCreditCardNo="" DisplayCustomerAccountNo="2345"
+        DisplayPaymentReference1="" FirstName="" IsDefaultMethod="Y"
+        IsInherited="N" LastName="" MiddleName="" PaymentReference1=""
+        PaymentReference2="" PaymentReference3=""
+        PaymentType="CUSTOMER_ACCOUNT" PersonInfoKey=""/>
+</YFS_Customer_Payment_MethodList>

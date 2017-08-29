@@ -1,0 +1,75 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Store Order Management Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="N"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="N">
+                <EntityList>
+					<Entity AbortOnError="N" Class="YFS_Receiving_Preference" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="Y" TruncateTable="N"
+						XMLFile="YCD_YFS_RECEIVING_PREFERENCE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Hold_Type_User_Group" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_HOLD_TYPE_USER_GROUP.xml"/>		
+					<Entity AbortOnError="N" Class="YFS_Sourcing_Rule_Header" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_SOURCING_RULE_HDR.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Sourcing_Rule_Detail" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_SOURCING_RULE_DTL.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Common_Code" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_COMMON_CODE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Service_Type" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_SERVICE_TYPE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Attribute_Domain" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ATTRIBUTE_DOMAIN.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Attribute_Group" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ATTRIBUTE_GROUP.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Attribute" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ATTRIBUTE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Attribute_Reference" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ATTRIBUTE_REFERENCE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Classification_Purpose" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_CLASSIFICATION_PURPOSE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Category_Domain" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_AURORA_CATEGORY_DOMAIN.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Category" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_AURORA_CATEGORY.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Item_Attr_Group" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ITEM_ATTR_GROUP.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Item_Attr" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ITEM_ATTR.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Item_UOM" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ITEM_UOM.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Flow" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_FLOW.xml"/>
+					<Entity AbortOnError="N" Class="YFS_SubFlow" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_SUB_FLOW.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Agent_Criteria" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_AGENT_CRITERIA.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>

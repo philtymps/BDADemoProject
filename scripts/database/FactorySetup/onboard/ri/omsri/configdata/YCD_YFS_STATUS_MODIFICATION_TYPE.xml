@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Status_Modification_TypeList>
+    <StatusModificationType AuditRequired="Y" CustomModificationType="N"
+        MaxAllowedStatus="9001" MinAllowedStatus="1000"
+        ModificationLevel="ORDER" ModificationLevelScreenName="Order"
+        ModificationType="CHANGE_PROMOTION"
+        ModificationTypeScreenName="Change Promotion"
+        ProcessTypeKey="ORDER_FULFILLMENT" RepriceOrder="Y"
+        RequiresCollaboration="N"
+        StatusModificationTypeKey="PROMO_AWARD" UserModifyAuditRequired="Y"/>
+    <StatusModificationType AuditRequired="Y" CustomModificationType="N"
+        MaxAllowedStatus="1101" MinAllowedStatus="1000"
+        ModificationLevel="ORDER" ModificationLevelScreenName="Order"
+        ModificationType="REMOVE_PROMOTION"
+        ModificationTypeScreenName="Remove Promotion"
+        ProcessTypeKey="ORDER_FULFILLMENT" RepriceOrder="Y"
+        RequiresCollaboration="N"
+        StatusModificationTypeKey="OF_O_REM_PROMOTION" UserModifyAuditRequired="Y"/>
+    <StatusModificationType AuditRequired="Y" CustomModificationType="N"
+        MaxAllowedStatus="9501" MinAllowedStatus="1000"
+        ModificationLevel="ORDER" ModificationLevelScreenName="Order"
+        ModificationType="ADD_LINE"
+        ModificationTypeScreenName="Add Line"
+        ProcessTypeKey="ORDER_FULFILLMENT" RepriceOrder="Y"
+        RequiresCollaboration="N"
+        StatusModificationTypeKey="OF_O_ADD_LINE" UserModifyAuditRequired="N"/>
+    <StatusModificationType AuditRequired="Y" CustomModificationType="N"
+        MaxAllowedStatus="9001" MinAllowedStatus="1000"
+        ModificationLevel="ORDER_LINE"
+        ModificationLevelScreenName="Line"
+        ModificationType="ADD_QUANTITY"
+        ModificationTypeScreenName="Add Quantity"
+        ProcessTypeKey="ORDER_FULFILLMENT" RepriceOrder="Y"
+        RequiresCollaboration="N"
+        StatusModificationTypeKey="OF_OL_ADD_QUANTITY" UserModifyAuditRequired="N"/>
+    <StatusModificationType AuditRequired="Y" CustomModificationType="N"
+        MaxAllowedStatus="3351" MinAllowedStatus="1000"
+        ModificationLevel="ORDER_LINE"
+        ModificationLevelScreenName="Line" ModificationType="CANCEL"
+        ModificationTypeScreenName="Cancel"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OF_OL_CANCEL"/>
+    <StatusModificationType CustomModificationType="N"
+        MaxAllowedStatus="4201" MinAllowedStatus="1000"
+        ModificationLevel="ORDER_LINE"
+        ModificationLevelScreenName="Line"
+        ModificationType="CARRIER_SERVICE_CODE"
+        ModificationTypeScreenName="Change Carrier Service Code"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OFOLCARRIER_SERVICE_CODE"/>
+    <StatusModificationType CustomModificationType="N"
+        MaxAllowedStatus="9501" MinAllowedStatus="1000"
+        ModificationLevel="ORDER_LINE"
+        ModificationLevelScreenName="Line" ModificationType="PRICE"
+        ModificationTypeScreenName="Change Price"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OF_OL_PRICE"/>
+    <StatusModificationType CustomModificationType="N"
+        MaxAllowedStatus="3601" MinAllowedStatus="1000"
+        ModificationLevel="ORDER" ModificationLevelScreenName="Order"
+        ModificationType="CARRIER_SERVICE_CODE"
+        ModificationTypeScreenName="Change Carrier Service Code"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OF_OCARRIER_SERVICE_CODE"/>
+    <StatusModificationType CustomModificationType="N"
+        MaxAllowedStatus="9501" MinAllowedStatus="1000"
+        ModificationLevel="ORDER" ModificationLevelScreenName="Order"
+        ModificationType="PRICE"
+        ModificationTypeScreenName="Change Price"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OF_O_PRICE"/>
+	<StatusModificationType CustomModificationType="N"
+        MaxAllowedStatus="9501" MinAllowedStatus="1000"
+        ModificationLevel="ORDER" ModificationLevelScreenName="Order"
+        ModificationType="OTHERS"
+        ModificationTypeScreenName="Change Other Attributes"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OF_O_OTHERS"/>
+	<StatusModificationType CustomModificationType="N"
+        MaxAllowedStatus="9501" MinAllowedStatus="1000"
+        ModificationLevel="ORDER_LINE" ModificationLevelScreenName="Line"
+        ModificationType="OTHERS"
+        ModificationTypeScreenName="Change Other Attributes"
+        ProcessTypeKey="ORDER_FULFILLMENT" PropagateToChangedOrder=""
+        RepriceOrder="Y" RequiresCollaboration="N" StatusModificationTypeKey="OF_OL_OTHERS"/>
+</YFS_Status_Modification_TypeList>

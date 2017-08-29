@@ -1,0 +1,10 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Region_UsageList>
+    <RegionUsage ItemGroupCode="PROD" OrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        Purpose="ROUTING" RegionSchemaKey="ALL_US" RegionUsageKey="2011090705182953029"/>
+</YFS_Region_UsageList>

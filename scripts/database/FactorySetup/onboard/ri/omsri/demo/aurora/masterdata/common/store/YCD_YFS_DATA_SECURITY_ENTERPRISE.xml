@@ -1,0 +1,8 @@
+<YFS_DataSecurityEnterpriseList>
+	<DataSecurityEnterprise
+                DataSecurityEnterpriseKey="#{Generic_Store}_DS1"
+                DataSecurityGroupKey="#{Generic_Store}_TEAM" EnterpriseOrgCode="#{Corporate_Enterprise_Code}"/>
+     <DataSecurityEnterprise
+                DataSecurityEnterpriseKey="#{Generic_Store}_DS2"
+                DataSecurityGroupKey="#{Generic_Store}_TEAM" EnterpriseOrgCode="#{Retail_Channel_Enterprise_Code}"/>
+</YFS_DataSecurityEnterpriseList>

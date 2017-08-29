@@ -1,0 +1,16 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Calendar_ShiftList>
+	<Shift Action="" FridayValid="Y" MondayValid="" SaturdayValid=""
+        ShiftEffectivePeriodKey="EFF_#{Retail_Store_1}"
+        ShiftEndTime="12:00:00" ShiftName="Morning" ShiftStartTime="08:00:00" ShiftType=""
+        SundayValid="" ThursdayValid="Y" TuesdayValid="Y" ValidForDay="" WednesdayValid="Y"/>
+    <Shift Action="" FridayValid="" MondayValid="Y" SaturdayValid=""
+        ShiftEffectivePeriodKey="EFF_#{Retail_Store_1}"
+        ShiftEndTime="17:00:00" ShiftName="Afternoon" ShiftStartTime="13:00:00" ShiftType=""
+        SundayValid="" ThursdayValid="Y" TuesdayValid="Y" ValidForDay="" WednesdayValid="Y"/>
+</YFS_Calendar_ShiftList>

@@ -1,0 +1,16 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_User_Group_ListList>
+    <!-- <UserGroupList UserKey="#{Manufacturing_Customer_1_Contact_1}" UsergroupKey="BUYER-USER"/>
+    <UserGroupList UserKey="#{Manufacturing_Customer_1_Contact_2}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Manufacturing_Customer_1_Contact_2}" UsergroupKey="BUYER-ADMIN"/>
+	<UserGroupList UserKey="#{Manufacturing_Customer_1_Contact_2}" UsergroupKey="BUYER-APPROVER"/>
+    <UserGroupList UserKey="#{Manufacturing_Customer_2_Contact_1}" UsergroupKey="BUYER-USER"/>
+    <UserGroupList UserKey="#{Manufacturing_Customer_2_Contact_2}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Manufacturing_Customer_2_Contact_2}" UsergroupKey="BUYER-ADMIN"/>
+	<UserGroupList UserKey="#{Manufacturing_Customer_2_Contact_2}" UsergroupKey="BUYER-APPROVER"/>-->
+</YFS_User_Group_ListList>

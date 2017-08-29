@@ -1,0 +1,29 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_CategoryList>
+    <Category CategoryDomainKey="#{Generic_Enterprise_Code}_CD1"
+        CategoryID="DisplayClassification" CategoryKey="#{Generic_Enterprise_Code}_Category"
+        CategoryPath="/Display/DisplayClassification"
+        Description="DisplayClassification"
+        OrganizationCode="#{Generic_Enterprise_Code}" SequenceNo="0"
+        ShortDescription="DisplayClassification" Status="3000"/>
+    <Category CategoryDomainKey="#{Generic_Enterprise_Code}_CD2"
+        CategoryID="Mens_Apparel"
+        CategoryKey="#{Generic_Enterprise_Code}_Category1"
+        CategoryPath="/StyleItem/Mens_Apparel"
+        Description="Clothes for men"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        ShortDescription="Mens_Apparel" Status="3000"/>
+    <Category CategoryDomainKey="#{Generic_Enterprise_Code}_CD2"
+        CategoryID="T-Shirt"
+        CategoryKey="#{Generic_Enterprise_Code}_Category2"
+        CategoryPath="/StyleItem/Mens_Apparel/T-Shirt"
+        Description="T-Shirt"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        ParentCategoryKey="#{Generic_Enterprise_Code}_Category1"
+        ShortDescription="T-Shirt" Status="3000"/>
+</YFS_CategoryList>

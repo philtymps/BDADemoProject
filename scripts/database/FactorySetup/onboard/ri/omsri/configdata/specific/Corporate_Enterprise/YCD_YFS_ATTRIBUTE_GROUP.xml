@@ -1,0 +1,18 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attribute_GroupList>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeGroupKey="#{Corporate_Enterprise_Code}_DISPLAY"
+        AttributeGroupPath="/ItemAttribute/DISPLAY"
+        LongDescription="Attributes for display"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="776" ShortDescription="Display Attributes"/>
+	<AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="VARIATIONS" AttributeGroupKey="#{Corporate_Enterprise_Code}_VARIATIONS"
+        AttributeGroupPath="/ItemAttribute/VARIATIONS"
+        LongDescription="Attributes for Variations"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="777" ShortDescription="Variation Attributes"/>
+</YFS_Attribute_GroupList>

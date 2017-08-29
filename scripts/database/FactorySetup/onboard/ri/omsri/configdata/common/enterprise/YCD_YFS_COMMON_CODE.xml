@@ -1,0 +1,895 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Common_CodeList>
+    <CommonCode CodeLength="0" CodeLongDescription="Customer Refused"
+        CodeShortDescription="Customer Refused"
+        CodeType="YCD_CHARGEOVERRIDE" CodeValue="CUST_REFUSED"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Special Customer"
+        CodeShortDescription="Special Customer"
+        CodeType="YCD_CHARGEOVERRIDE" CodeValue="SPEC_CUST"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Other"
+        CodeShortDescription="Other" CodeType="YCD_CHARGEOVERRIDE"
+        CodeValue="OTHER" DocumentType="0001" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Substitution"
+        CodeShortDescription="Substitution" CodeType="YCD_PRICEOVERRIDE"
+        CodeValue="SUBSTITUTION" DocumentType="0001"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Price Adjustment"
+        CodeShortDescription="Price Adjustment"
+        CodeType="YCD_PRICEOVERRIDE" CodeValue="PRICE_ADJUSTMENT"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Price Match"
+        CodeShortDescription="Price Match" CodeType="YCD_PRICEOVERRIDE"
+        CodeValue="PRICE_MATCH" DocumentType="0001"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Amex"
+        CodeShortDescription="Amex" CodeType="YCD_CREDIT_CARD_TYPE"
+        CodeValue="AMEX" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Carte Blanche"
+        CodeShortDescription="Carte Blanche"
+        CodeType="YCD_CREDIT_CARD_TYPE" CodeValue="CARTE_BLANCHE"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Diner's Club"
+        CodeShortDescription="Diner's Club"
+        CodeType="YCD_CREDIT_CARD_TYPE" CodeValue="DINERS_CLUB"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Discover"
+        CodeShortDescription="Discover" CodeType="YCD_CREDIT_CARD_TYPE"
+        CodeValue="DISCOVER" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="MasterCard"
+        CodeShortDescription="MasterCard"
+        CodeType="YCD_CREDIT_CARD_TYPE" CodeValue="MASTERCARD"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Visa"
+        CodeShortDescription="Visa" CodeType="YCD_CREDIT_CARD_TYPE"
+        CodeValue="VISA" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="JCB"
+        CodeShortDescription="JCB" CodeType="YCD_CREDIT_CARD_TYPE"
+        CodeValue="JCB" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Regular Order"
+        CodeShortDescription="Regular Order" CodeType="ORDER_TYPE"
+        CodeValue="Regular" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Gift Order"
+        CodeShortDescription="Gift Order" CodeType="ORDER_TYPE"
+        CodeValue="Gift" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Exchange Order"
+        CodeShortDescription="Exchange Order" CodeType="ORDER_TYPE"
+        CodeValue="Exchange" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Order was automatically cancelled by FTC processing because it was past the second promised date."
+        CodeShortDescription="Cancel - FTC Auto Cancel"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_FTC_AUTOCANCEL"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Called Customer"
+        CodeShortDescription="Called Customer" CodeType="NOTES_REASON"
+        CodeValue="YCD_CALLED_CUSTOMER" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Wrong Item Received"
+        CodeShortDescription="Wrong Item Received"
+        CodeType="NOTES_REASON" CodeValue="YCD_WRONG_ITEM_RECEIVED"
+        DocumentType="0003"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Customer Called"
+        CodeShortDescription="Customer Called" CodeType="NOTES_REASON"
+        CodeValue="YCD_CUSTOMER_CALLED" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Schedule and Release Information"
+        CodeShortDescription="Schedule and Release Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_SCHEDULE_AND_RELEASE"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Issue Refund Now Information"
+        CodeShortDescription="Issue Refund Now Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_ISSUE_REFUND_NOW"
+        DocumentType="0003"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Increase Line Quantity Information"
+        CodeShortDescription="Increase Line Quantity Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_INCREASE_LINE_QTY"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Return Order Cancellation Information"
+        CodeShortDescription="Return Order Cancellation Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CANCEL_RETURN_ORDER"
+        DocumentType="0003"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Change Return Address"
+        CodeShortDescription="Change Return Address"
+        CodeType="NOTES_REASON" CodeValue="YCD_CHANGE_RETURN_ADDRESS"
+        DocumentType="0003"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Change Return Method"
+        CodeShortDescription="Change Return Method"
+        CodeType="NOTES_REASON" CodeValue="YCD_CHANGE_RETURN_METHOD"
+        DocumentType="0003"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Change Service Appointment"
+        CodeShortDescription="Change Service Appointment"
+        CodeType="NOTES_REASON"
+        CodeValue="YCD_CHANGE_SERVICE_APPOINTMENT" DocumentType="0003"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Called Issuing Bank"
+        CodeShortDescription="Called Issuing Bank"
+        CodeType="NOTES_REASON" CodeValue="YCD_CALLED_BANK"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Marketing Opt-In"
+        CodeShortDescription="Marketing Opt-In" CodeType="NOTES_REASON"
+        CodeValue="YCD_MARKET_OPT_IN" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Cleared Held Order"
+        CodeShortDescription="Cleared Held Order"
+        CodeType="NOTES_REASON" CodeValue="YCD_CLEARED_HOLD"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Return Policy Overridden"
+        CodeShortDescription="Return Policy Overridden"
+        CodeType="NOTES_REASON" CodeValue="YCD_OVERRIDE_RETURN_POLICY"
+        DocumentType="0003" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Cancel - Customer Requested"
+        CodeShortDescription="Cancel - Customer Requested"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CANCEL_CUSTOMER"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Cancel - Duplicate Order"
+        CodeShortDescription="Cancel - Duplicate Order"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CANCEL_DUP"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Cancel - Item No Longer Available"
+        CodeShortDescription="Cancel - Item No Longer Available"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CANCEL_ITEM"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Payment Change - Order Over Settled"
+        CodeShortDescription="Payment Change - Order Over Settled"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_FINANCE_OVER"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Payment Change - Order Under Settled"
+        CodeShortDescription="Payment Change - Order Under Settled"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_FINANCE_UNDER"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Cancel - Address Undeliverable"
+        CodeShortDescription="Cancel - Address Undeliverable"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CANCEL_ADDRESS"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer Request - Address Change"
+        CodeShortDescription="Customer - Address Change"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CUST_ADDR_CHANG"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer Request - Level of Service Change"
+        CodeShortDescription="Customer - Level of Service Change"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CUST_LOS_CHANGE"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Fulfillment - Item Available at Alternate Ship Node"
+        CodeShortDescription="Fulfillment - Alternate Ship Node"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_FULFILL_SN"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer - Consent to Delay"
+        CodeShortDescription="Customer - Consent to Delay"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_CUST_DELAY_CONS"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Payment Change - Credit Card Over Limit"
+        CodeShortDescription="Payment Change - Credit Card Over Limit"
+        CodeType="MODIFICATION_REASON" CodeValue="YCD_FINANCE_CC_LMT"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <!-- Com 2.0 Starts-->
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Fulfillment Type for Product Sourcing"
+        CodeShortDescription="Fulfillment Type for Product Sourcing"
+        CodeType="FULFILLMENT_TYPE" CodeValue="PRODUCT_SOURCING"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Fulfillment Type for Return"
+        CodeShortDescription="Fulfillment Type for Return"
+        CodeType="FULFILLMENT_TYPE" CodeValue="RETURN_FULFILLMENT"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Change Of Mind"
+        CodeShortDescription="Change Of Mind"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN1" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Cheaper Price Found"
+        CodeShortDescription="Cheaper Price Found"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN2" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Late/Failed Delivery"
+        CodeShortDescription="Late/Failed Delivery"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN3" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Unacceptable Delivery Time Promised"
+        CodeShortDescription="Unacceptable Delivery Time Promised"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN4" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Product No Longer Available"
+        CodeShortDescription="Product No Longer Available"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN5" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Fraudulent Order"
+        CodeShortDescription="Fraudulent Order"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN6" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Address Undeliverable"
+        CodeShortDescription="Address Undeliverable"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN7" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Duplicate Order"
+        CodeShortDescription="Duplicate Order"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN8" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Other"
+        CodeShortDescription="Other" CodeType="YCD_CANCEL_REASON"
+        CodeValue="CN9" DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!-- Com 2.0 ends -->
+    <!-- COM5 HF Cancelation Reason Code Starts -->
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Cancellation to comply with FTC regulations"
+        CodeShortDescription="FTC Regulations"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CN10"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!-- COM5 HF Cancelation Reason Code Starts -->
+    <!--    for Order Notes -->
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Backorder Information"
+        CodeShortDescription="Backorder Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_BACKORDER_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Hold Information"
+        CodeShortDescription="Hold Information" CodeType="NOTES_REASON"
+        CodeValue="YCD_HOLD_INFO" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Quantity Validation Overridden"
+        CodeShortDescription="Quantity Validation Overridden"
+        CodeType="NOTES_REASON"
+        CodeValue="YCD_QUANTITY_VALIDATION_OVERRIDDEN"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!--    for Order Notes -->
+    <!--    Appeasement Reasons start for COMv2.0 -->
+    <CommonCode CodeLength="0" CodeLongDescription="Late Shipment"
+        CodeShortDescription="Late Shipment"
+        CodeType="YCD_APPEASEMENT_RSN" CodeValue="LATE_SHIPMENT"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Damaged Item"
+        CodeShortDescription="Damaged Item"
+        CodeType="YCD_APPEASEMENT_RSN" CodeValue="DAMAGED_ITEM"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Bad Phone Experience"
+        CodeShortDescription="Bad Phone Experience"
+        CodeType="YCD_APPEASEMENT_RSN" CodeValue="BAD_PHONE_EXPERIENCE"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Bad Delivery Experience"
+        CodeShortDescription="Bad Delivery Experience"
+        CodeType="YCD_APPEASEMENT_RSN"
+        CodeValue="BAD_DELIVERY_EXPERIENCE" DocumentType="0001"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Bad Online Experience"
+        CodeShortDescription="Bad Online Experience"
+        CodeType="YCD_APPEASEMENT_RSN" CodeValue="BAD_ONLINE_EXPERIENCE"
+        DocumentType="0001" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!--    Appeasement Reasons end for COMv2.0 -->
+    <!--    for Change Delivery Instructions -->
+    <CommonCode CodeLength="0" CodeLongDescription="Delivery"
+        CodeShortDescription="Delivery" CodeType="INSTRUCTION_TYPE"
+        CodeValue="DELIVERY" DocumentType="0001"
+        DocumentTypeSpecific="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!--    for Change Delivery Instructions -->
+    <!--    for Reship -->
+    <CommonCode CodeLength="0" CodeLongDescription="Missing Item"
+        CodeShortDescription="Missing Item" CodeType="YCD_RESHIP_REASON"
+        CodeValue="MISSING_ITEM" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Missing Container"
+        CodeShortDescription="Missing Container"
+        CodeType="YCD_RESHIP_REASON" CodeValue="MISSING_CONTAINER"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Wrong Item"
+        CodeShortDescription="Wrong Item" CodeType="YCD_RESHIP_REASON"
+        CodeValue="WRONG_ITEM" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Cargo Loss"
+        CodeShortDescription="Cargo Loss" CodeType="YCD_RESHIP_REASON"
+        CodeValue="CARGO_LOSS" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Damaged or Defective"
+        CodeShortDescription="Damaged or Defective"
+        CodeType="YCD_RESHIP_REASON" CodeValue="DAMAGED_OR_DEFECTIVE"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!--    for Reship -->
+    <!-- Related Tasks -->
+    <CommonCode CodeLength="0"
+        CodeLongDescription="New Item Information"
+        CodeShortDescription="New Item Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_NEW_ITEM_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Order Entry"
+        CodeShortDescription="Order Entry" CodeType="NOTES_REASON"
+        CodeValue="YCD_ORDER_ENTRY" DocumentType="0001"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Fulfillment Options Change Information"
+        CodeShortDescription="Fulfillment Options Change Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_DELIVERY_OPTIONS"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Delivery Appointment Change Information"
+        CodeShortDescription="Delivery Appointment Change Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_DELIVERY_APPT"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Delivery Instructions Change Information"
+        CodeShortDescription="Delivery Instructions Change Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_DELIVERY_INSTR"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Order Cancellation Information"
+        CodeShortDescription="Order Cancellation Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CANCEL_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Apply Hold Information"
+        CodeShortDescription="Apply Hold Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_ADD_HOLD_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer Option Information"
+        CodeShortDescription="Customer Option Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_TAX_EXEMPT_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Add Lines to Order Information"
+        CodeShortDescription="Add Lines to Order Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_MULTI_ADD_LINES_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Return Information"
+        CodeShortDescription="Return Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_RETURN_INFO"
+        DocumentType="0003" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Order Address Change Information"
+        CodeShortDescription="Order Address Change Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_SHIPPING_ADDRESS"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Reship Information"
+        CodeShortDescription="Reship Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_RESHIP_INFO"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Price Match Information"
+        CodeShortDescription="Price Match Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_PRICE_MATCH"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer Appeasement Information"
+        CodeShortDescription="Customer Appeasement Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CUSTOMER_APPEASE"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="New Promotion Information"
+        CodeShortDescription="New Promotion Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_NEW_PROMOTION"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Payment Change Information"
+        CodeShortDescription="Payment Change Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_PAYMENT_CHANGE"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!-- Related Tasks -->
+    <!-- Return Reasons -->
+    <CommonCode CodeLength="20" CodeLongDescription="Damaged Items"
+        CodeShortDescription="Damaged Items" CodeType="RETURN_REASON"
+        CodeValue="DAMAGED_ITEMS" DocumentType="0003"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Change Of Mind"
+        CodeShortDescription="Change Of Mind" CodeType="RETURN_REASON"
+        CodeValue="CHANGE_OF_MIND" DocumentType="0003"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Lower Price Found"
+        CodeShortDescription="Lower Price Found"
+        CodeType="RETURN_REASON" CodeValue="LOWER_PRICE_FOUND"
+        DocumentType="0003" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Missing Parts"
+        CodeShortDescription="Missing Parts" CodeType="RETURN_REASON"
+        CodeValue="MISSING_PARTS" DocumentType="0003"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Loose Parts"
+        CodeShortDescription="Loose Parts" CodeType="RETURN_REASON"
+        CodeValue="LOOSE_PARTS" DocumentType="0003"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Cargo Damaged"
+        CodeShortDescription="Cargo Damaged" CodeType="RETURN_REASON"
+        CodeValue="CARGO_DAMAGED" DocumentType="0003"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Other"
+        CodeShortDescription="Other" CodeType="RETURN_REASON"
+        CodeValue="OTHER" DocumentType="0003" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <!-- Eof Return Reasons -->
+    <CommonCode CodeLength="20" CodeLongDescription="Simple"
+        CodeShortDescription="Simple" CodeType="SERV_COMPLEXITY_LVL"
+        CodeValue="10" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Complex"
+        CodeShortDescription="Complex" CodeType="SERV_COMPLEXITY_LVL"
+        CodeValue="20" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="FTC Notification"
+        CodeShortDescription="FTC Notification" CodeType="NOTES_REASON"
+        CodeValue="YCD_FTC_NOTIFICATION" DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Alternate Item ID"
+        CodeShortDescription="Alternate Item ID"
+        CodeType="ITEM_ALIAS_TYPE" CodeValue="YCD_ALT_ITEM_ID"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Good"
+        CodeShortDescription="Good" CodeType="PRODUCT_CLASS"
+        CodeValue="Good" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Open Box"
+        CodeShortDescription="Open Box" CodeType="PRODUCT_CLASS"
+        CodeValue="OpenBox" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Store Fulfillment"
+        CodeShortDescription="Store Fulfillment"
+        CodeType="FULFILLMENT_TYPE" CodeValue="YCD_STORE_SEARCH"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="More Store Search"
+        CodeShortDescription="More Store Search"
+        CodeType="FULFILLMENT_TYPE" CodeValue="YCD_MORE_STORE_SEARCH"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="State Tax"
+        CodeShortDescription="State Tax" CodeType="TAX_NAME"
+        CodeValue="YCD_STATE_TAX" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Gift Tax"
+        CodeShortDescription="Gift Tax" CodeType="TAX_NAME"
+        CodeValue="YCD_GIFT_TAX" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="20" CodeLongDescription="Stop Delivery"
+        CodeShortDescription="Stop Delivery" CodeType="RETURN_REASON"
+        CodeValue="STOP_DELIVERY" DocumentType="0003"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Change Of Mind"
+        CodeShortDescription="Change Of Mind"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CHANGE_OF_MIND"
+        DocumentType="0003" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Others"
+        CodeShortDescription="Others" CodeType="YCD_CANCEL_REASON"
+        CodeValue="OTHERS" DocumentType="0003" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Shipment Confirmation Information"
+        CodeShortDescription="Shipment Confirmation Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CONFIRM_SHIPMENT"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer Verification Information"
+        CodeShortDescription="Customer Verification Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CUSTOMER_VERIFICATION"
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Add/Modify Charges"
+        CodeShortDescription="Add Modify Charges"
+        CodeType="NOTES_REASON" CodeValue="YCD_ADD_MODIFY_CHARGES"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Undo-Pick Information"
+        CodeShortDescription="Undo-Pick Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_UNDO_PICK"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Backroom-Pick Shortage Information"
+        CodeShortDescription="Backroom-Pick Shortage Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_BACKROOM_PICK_SHORTAGE"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Create Alert Information"
+        CodeShortDescription="Create Alert Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CREATE_ALERT"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Customer Pick Shortage Information"
+        CodeShortDescription="Customer Pick Shortage Information"
+        CodeType="NOTES_REASON" CodeValue="YCD_CUSTOMER_PICK_SHORTAGE"
+        DocumentType="0001"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Distributor"
+        CodeName="Distributor" CodeShortDescription="Distributor"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="DISTRIBUTOR"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Reseller"
+        CodeName="Reseller" CodeShortDescription="Reseller"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="RESELLER"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Dealer"
+        CodeName="Dealer" CodeShortDescription="Dealer"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="DEALER"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Large Business Customer"
+        CodeName="Large Business Customer"
+        CodeShortDescription="Large Business Customer"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="OEM"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Small to Medium Business Customer"
+        CodeName="Small Business"
+        CodeShortDescription="Small to Medium Business Customer"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="SMALL_BUSINESS"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Retailer"
+        CodeName="Retailer" CodeShortDescription="Retailer"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="RETAILER"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Not Assigned"
+        CodeName="Not Assigned" CodeShortDescription="Not Assigned"
+        CodeType="RELATIONSHIP_TYPE" CodeValue="NA"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Silver"
+        CodeName="Silver" CodeShortDescription="Silver"
+        CodeType="CUSTOMER_LEVEL" CodeValue="SILVER"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Gold"
+        CodeName="Gold" CodeShortDescription="Gold"
+        CodeType="CUSTOMER_LEVEL" CodeValue="GOLD"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Platinum"
+        CodeName="Platinum" CodeShortDescription="Platinum"
+        CodeType="CUSTOMER_LEVEL" CodeValue="PLATINUM"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Not Assigned"
+        CodeName="Not Assigned" CodeShortDescription="Not Assigned"
+        CodeType="CUSTOMER_LEVEL" CodeValue="NA"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="General"
+        CodeName="General" CodeShortDescription="General"
+        CodeType="VERTICAL" CodeValue="GENERAL"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Commercial"
+        CodeName="Commercial" CodeShortDescription="Commercial"
+        CodeType="VERTICAL" CodeValue="COMMERCIAL"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Education"
+        CodeName="Education" CodeShortDescription="Education"
+        CodeType="VERTICAL" CodeValue="EDUCATION"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Government"
+        CodeName="Government" CodeShortDescription="Government"
+        CodeType="VERTICAL" CodeValue="GOVERNMENT"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="High Technology"
+        CodeName="High Technology"
+        CodeShortDescription="High Technology" CodeType="VERTICAL"
+        CodeValue="HIGH_TECH"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Manufacturing"
+        CodeName="Manufacturing" CodeShortDescription="Manufacturing"
+        CodeType="VERTICAL" CodeValue="MANUFACTURING"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Retail"
+        CodeName="Retail" CodeShortDescription="Retail"
+        CodeType="VERTICAL" CodeValue="RETAIL"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Telecommunications"
+        CodeName="Telecommunications"
+        CodeShortDescription="Telecommunications" CodeType="VERTICAL"
+        CodeValue="TELECOMMUNICATIONS"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Relate Item"
+        CodeShortDescription="Relate Item" CodeType="YCD_ASSC_FUNCTION"
+        CodeValue="RELATE" DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Replace Item"
+        CodeShortDescription="Replace Item" CodeType="YCD_ASSC_FUNCTION"
+        CodeValue="REPLACE" DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Mr."
+        CodeShortDescription="Mr." CodeType="YCD_TITLE" CodeValue="Mr."
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Mrs."
+        CodeShortDescription="Mrs." CodeType="YCD_TITLE"
+        CodeValue="Mrs." DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Ms."
+        CodeShortDescription="Ms." CodeType="YCD_TITLE" CodeValue="Ms."
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="Dr."
+        CodeShortDescription="Dr." CodeType="YCD_TITLE" CodeValue="Dr."
+        DocumentType="0001" DocumentTypeSpecific="Y"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Unpublished"
+        CodeShortDescription="Unpublished" CodeType="CATEGORY_STATUS" CodeValue="2000"
+        DocumentType="" DocumentTypeSpecific="N"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Published"
+        CodeShortDescription="Published" CodeType="CATEGORY_STATUS" CodeValue="3000"
+        DocumentType="" DocumentTypeSpecific="N"
+        MeantForEnterprise="Y" MeantForInternal="Y" MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Order Template Demo Quote"
+        CodeName="StandardTemplate" CodeShortDescription="Order Proposal Template" CodeSymbol=""
+        CodeType="SAA_QUOTE_PRNT_TMPLT" CodeValue="StandardTemplate"
+        DocumentType="0015"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N" SystemDefinedCode="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="PDF Output Format"
+        CodeName="PDF" CodeShortDescription="PDF Format" CodeSymbol=""
+        CodeType="SAA_QUOTE_PRNT_FRMT" CodeValue="PDF"
+        DocumentType=""
+        DocumentTypeSpecific="" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N" SystemDefinedCode="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CommonCode CodeLength="0" CodeLongDescription="RTF Output Format"
+        CodeName="RTF" CodeShortDescription="RTF Format" CodeSymbol=""
+        CodeType="SAA_QUOTE_PRNT_FRMT" CodeValue="RTF"
+        DocumentType=""
+        DocumentTypeSpecific="" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N" SystemDefinedCode="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Create Opportunity"
+        CodeShortDescription="Create Opportunity" CodeType="NOTES_REASON"
+        CodeValue="SAA_OPPORTUNITY_CREATED" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Mark as Lost"
+        CodeShortDescription="Mark as Lost" CodeType="NOTES_REASON"
+        CodeValue="SAA_MARK_AS_LOST" DocumentType="0020"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Create Quote"
+        CodeShortDescription="Create Quote" CodeType="NOTES_REASON"
+        CodeValue="SAA_QUOTE_CREATED" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Send for Approval"
+        CodeShortDescription="Send for Approval" CodeType="NOTES_REASON"
+        CodeValue="SAA_SENT_FOR_APPROVAL" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Send to Customer"
+        CodeShortDescription="Send to Customer" CodeType="NOTES_REASON"
+        CodeValue="SAA_SENT_TO_CUSTOMER" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Convert to Order"
+        CodeShortDescription="Convert to Order" CodeType="NOTES_REASON"
+        CodeValue="SAA_CONVERTED_TO_ORDER" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Abandon Quote"
+        CodeShortDescription="Abandon Quote" CodeType="NOTES_REASON"
+        CodeValue="SAA_QUOTE_ABANDONED" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Accept for Customer"
+        CodeShortDescription="Accept for Customer" CodeType="NOTES_REASON"
+        CodeValue="SAA_ACCEPTED_BY_CUSTOMER" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+	<CommonCode CodeLength="0" CodeLongDescription="Reject for Customer"
+        CodeShortDescription="Reject for Customer" CodeType="NOTES_REASON"
+        CodeValue="SAA_REJECTED_BY_CUSTOMER" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+     <CommonCode CodeLength="0" CodeLongDescription="Quote Reworked"
+        CodeShortDescription="Approval Rejected" CodeType="NOTES_REASON"
+        CodeValue="SAA_APPROVAL_REJECTED" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+     <CommonCode CodeLength="0" CodeLongDescription="Quote Reworked"
+        CodeShortDescription="Rework Quote" CodeType="NOTES_REASON"
+        CodeValue="SAA_QUOTE_REWORKED" DocumentType="0015"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+     <CommonCode CodeLength="0"
+        CodeLongDescription="Cannot Negotiate Further"
+        CodeShortDescription="Cannot Negotiate Further"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CNQ1" DocumentType="0015"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Unacceptable Demand"
+        CodeShortDescription="Unacceptable Demand"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CNQ2" DocumentType="0015"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="Found Better Deal"
+        CodeShortDescription="Found Better Deal"
+        CodeType="YCD_CANCEL_REASON" CodeValue="CNQ3" DocumentType="0015"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+      <CommonCode CodeLength="0"
+        CodeLongDescription=""
+        CodeShortDescription="Always Use Default Payment Method"
+        CodeType="PAYMENT_TERMS" CodeValue="PTQ1" DocumentType="0015"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+     <CommonCode CodeLength="0"
+        CodeLongDescription="Use Customer Account For Payments"
+        CodeShortDescription="Found Better Deal"
+        CodeType="PAYMENT_TERMS" CodeValue="PTQ2" DocumentType="0015"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+      <CommonCode CodeLength="0"
+        CodeLongDescription=""
+        CodeShortDescription="Opportunity Expired"
+        CodeType="LOST_REASON_CODE" CodeValue="OPL1" DocumentType="0020"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/>
+     <CommonCode CodeLength="0"
+        CodeLongDescription="Negotiation Failed"
+        CodeShortDescription="Found Better Deal"
+        CodeType="LOST_REASON_CODE" CodeValue="OPL2" DocumentType="0020"
+        DocumentTypeSpecific="Y" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="Y"/> 
+     <CommonCode CodeLength="0" CodeLongDescription="Damaged"
+        CodeShortDescription="Damaged" CodeType="PRODUCT_CLASS"
+        CodeValue="Damaged" MeantForEnterprise="Y" MeantForInternal="Y"
+        MeantForSupplier="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_Common_CodeList>

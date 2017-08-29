@@ -1,0 +1,139 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<SetupValidation>
+    <Validation Entity="YFS_Event_Condition" File="YCD_YFS_EVENT_CONDITION.xml" NeedToDelete="N">
+        <Entities>
+            <Validate Entity="YFS_Event_Condition" Validation="Match">
+                <Keys>
+                    <Key Name="EVENT_KEY" Value="EventKey"/>
+                    <Key Name="OWNER_KEY" Value="OwnerKey"/>
+                </Keys>
+				<KeyMatches>
+					<Key Name="ACTION_KEY" Value="ActionKey"/>
+					<Key Name="CONDITION_KEY" Value="ConditionKey"/>
+					<Key Name="EVENT_KEY" Value="EventKey"/>
+					<Key Name="MORE_ACTIONS_FLAG" Value="MoreActionsFlag"/>
+					<Key Name="OWNER_KEY" Value="OwnerKey"/>
+					<Key Name="OWNER_TYPE" Value="OwnerType"/>
+					<Key Name="PRIORITY" Value="Priority" DataType="Double" />
+				</KeyMatches>
+            </Validate>
+            <Validate Entity="YFS_Graph_UI" NeedToValidate="N">
+                <Keys>
+                    <Key Name="GRAPH_REF_KEY" Value="EventKey"/>
+                    <Key Name="GRAPH_TYPE" StaticValue="ConditionKey"/>
+                    <Key Name="OWNER_KEY" StaticValue="OwnerKey"/>
+                </Keys>
+            </Validate>
+        </Entities>
+        <Error Description="Event handler is already configured">
+            <ErrorRefs>
+                <ErrorRef Name="OWNER_KEY" Value="OwnerKey"/>
+                <ErrorRef Name="EVENT_KEY" Value="EventKey"/>
+            </ErrorRefs>
+        </Error>
+    </Validation>
+	<Validation Entity="YFS_Event" File="YCD_YFS_EVENT.xml" NeedToValidate="N">
+        <Entities>
+            <Validate Entity="YFS_Event_Condition">
+                <Keys>
+                    <Key Name="EVENT_KEY" Value="EventKey"/>
+                    <Key Name="OWNER_KEY" StaticValue="DEFAULT"/>
+                </Keys>
+            </Validate>
+            <Validate Entity="YFS_Graph_UI" NeedToValidate="N">
+                <Keys>
+                    <Key Name="GRAPH_REF_KEY" Value="EventKey"/>
+                    <Key Name="GRAPH_TYPE" StaticValue="EventCondition"/>
+                    <Key Name="OWNER_KEY" StaticValue="DEFAULT"/>
+                </Keys>
+            </Validate>
+        </Entities>
+        <Error Description="Event handler is already configured">
+            <ErrorRefs>
+                <ErrorRef Name="Transaction" Value="TransactionKey"/>
+                <ErrorRef Name="Eventid" Value="Eventid"/>
+            </ErrorRefs>
+        </Error>
+    </Validation>
+    <Validation Entity="YFS_User_Exit_Impl" File="YCD_YFS_USER_EXIT_IMPL.xml">
+        <Entities>
+            <Validate Entity="YFS_User_Exit_Impl" Validation="Match">
+                <Keys>
+                    <Key Name="USER_EXIT_KEY" Value="UserExitKey"/>
+                    <Key Name="DOCUMENT_TYPE_KEY" Value="DocumentTypeKey"/>
+					<Key Name="ORG_KEY" Value="OrgKey"/>
+                </Keys>
+				<KeyMatches>
+					<Key Name="CALLS_PER_JVM" Value="CallsPerJvm" DataType="Int" />
+					<Key Name="DOCUMENT_TYPE_KEY" Value="DocumentTypeKey"/>
+					<Key Name="FLOW_KEY" Value="FlowKey"/>
+					<Key Name="IMPLEMENTATION_NOTES" Value="ImplementationNotes"/>
+					<Key Name="JAVA_CLASS_NAME" Value="JavaClassName"/>
+					<Key Name="ORG_KEY" Value="OrgKey"/>
+					<Key Name="USE_FLOW" Value="UseFlow"/>
+					<Key Name="USER_EXIT_KEY" Value="UserExitKey"/>
+					<Key Name="VERSION" Value="Version"/>
+					<Key Name="WAIT_TIME" Value="WaitTime" DataType="Int" />
+					<Key Name="WAITING_CALLS" Value="WaitingCalls" DataType="Int" />
+				</KeyMatches>
+            </Validate>
+        </Entities>
+        <Error Description="User exit is already configured">
+            <ErrorRefs>
+                <ErrorRef Name="User Exit Key" Value="UserExitKey"/>
+                <ErrorRef Name="Document Type" Value="DocumentTypeKey"/>
+            </ErrorRefs>
+        </Error>
+    </Validation>
+    <Validation Entity="YFS_Pipeline_Condition"
+        File="YCD_AURORA_YFS_PIPELINE_CONDITION.xml" NeedToDelete="N">
+        <Entities>
+            <Validate Entity="YFS_Pipeline_Condition" Validation="Match">
+                <Keys>
+                    <Key Name="OWNER_KEY" Value="OwnerKey"/>
+					<Key Name="PRIORITY" Value="Priority" DataType="Double" />
+					<Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+                </Keys>
+				<KeyMatches>
+					<Key Name="ENTERPRISE_KEY" Value="EnterpriseKey"/>
+					<Key Name="OWNER_KEY" Value="OwnerKey"/>
+					<Key Name="PRIORITY" Value="Priority" DataType="Double" />
+					<Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+					<Key Name="CONDITION_KEY" Value="ConditionKey"/>
+					<Key Name="PIPELINE_KEY" Value="PipelineKey"/>
+				</KeyMatches>
+            </Validate>
+        </Entities>
+        <Error Description="Pipeline determination rule has been modified">
+            <ErrorRefs>
+                <ErrorRef Name="Process Type" Value="ProcessTypeKey"/>
+                <ErrorRef Name="Enterprise Key" Value="EnterpriseKey"/>
+				<ErrorRef Name="Priority" Value="Priority" />
+            </ErrorRefs>
+        </Error>
+    </Validation>
+	<Validation Entity="YFS_Graph_UI"
+        File="YCD_AURORA_YFS_GRAPH_UI.xml" NeedToValidate="N">
+        <Entities>
+            <Validate Entity="YFS_Pipeline_Condition">
+                <Keys>
+                    <Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+                    <Key Name="ENTERPRISE_KEY" Value="EnterpriseKey"/>
+                </Keys>
+            </Validate>
+            <Validate Entity="YFS_Graph_UI">
+                <Keys>
+                    <Key Name="PROCESS_TYPE_KEY" Value="ProcessTypeKey"/>
+                    <Key Name="GRAPH_REF_KEY" Value="EnterpriseKey"/>
+                    <Key Name="GRAPH_TYPE" StaticValue="PDRule"/>
+                    <Key Name="OWNER_KEY" Value="EnterpriseKey"/>
+                </Keys>
+            </Validate>
+        </Entities>
+    </Validation>
+</SetupValidation>

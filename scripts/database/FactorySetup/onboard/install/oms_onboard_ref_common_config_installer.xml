@@ -1,0 +1,141 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Order Management Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="N"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="N">
+                <EntityList>
+					<Entity AbortOnError="N" Class="YFS_Allocation_Rule" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ALLOCATION_RULE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Charge_Category" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_CHARGE_CATEGORY.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Charge_Name" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_CHARGE_NAME.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Common_Code" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_COMMON_CODE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Condition" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_CONDITION.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Hold_Type" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_HOLD_TYPE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Hold_Type_Mod_Type" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_HOLD_TYPE_MOD_TYPE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Hold_Type_Tran" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_HOLD_TYPE_TRAN.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Hold_Type_User_Group" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_HOLD_TYPE_USER_GROUP.xml"/>
+    				<Entity AbortOnError="N" Class="YFS_Purge_Criteria" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_PURGE_CRITERIA.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Distribution_Rule" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_DISTRIBUTION_RULE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Queue" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_QUEUE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Sourcing_Rule_Header" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_SOURCING_RULE_HDR.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Sourcing_Rule_Detail" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_AURORA_SOURCING_RULE_DTL.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Rules" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_RULES_Enterprise.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Rules" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_RULES_Inventory.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Rules" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_RULES_Catalog.xml"/>
+                     <Entity AbortOnError="N" Class="YFS_Status_Mod_Group" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_STATUS_MOD_GROUP.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Status_Modification" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_STATUS_MODIFICATION.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Order_Line_Type" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_ORDER_LINE_TYPE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Base_Config_Task_Status" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_BASE_CONFIG_TASK_STATUS.xml"/>
+					<Entity AbortOnError="N" Class="YFS_BarCode_Translation" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_BARCODE_TRANSLATION.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Line_Relationship_Type" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_LINE_RELATIONSHIP_TYPE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Assc_Relationship" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_ASSC_RELATIONSHIP.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Event_Auditor" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+						TruncateTable="N" XMLFile="YCD_YFS_EVENT_AUDITOR.xml"/>
+					<Entity AbortOnError="N" Class="YFS_User_Exit_Impl" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="Y" TruncateTable="N" 
+						XMLFile="YCD_YFS_USER_EXIT_IMPL_Enterprise.xml"/> 
+					<Entity AbortOnError="N" Class="PLT_Password_Policy" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_PLT_PWD_POLICY.xml"/>
+					<Entity AbortOnError="N" Class="PLT_Pwd_Rule_Cfg" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_PLT_PWD_RULE_CFG.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Organization" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="Y" TruncateTable="N"
+						XMLFile="YCD_YFS_ORGANIZATION_UPDATE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Return_Disposition" CommitCount="50" 
+						 Completed="N" ResetEntityAttributes="Y" TruncateTable="N" 
+						 XMLFile="YCD_YFS_RETURN_DISPOSITION.xml"/> 
+					<Entity AbortOnError="N" Class="YFS_Carrier_Service" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_AURORA_CARRIER_SERVICE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_SCAC" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_SCAC.xml"/>
+					<Entity AbortOnError="N" Class="YFS_SCAC_And_Service" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+						XMLFile="YCD_YFS_AURORA_SCAC_AND_SERVICE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Service_Slot_Group" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_SERVICE_SLOT_GROUP.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Service_Slot" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="YCD_YFS_SERVICE_SLOT.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Atp_Rules" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_ATP_RULES.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Customer_Grade" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="SAA_YFS_CUSTOMER_GRADE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Payment_Type" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_PAYMENT_TYPE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Payment_Card_Type" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_PAYMENT_CARD_TYPE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Payment_Card_Type" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_PAYMENT_CARD_TYPE.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Payment_Card_Type" CommitCount="50" 
+						Completed="N" ResetEntityAttributes="N" TruncateTable="N"
+						XMLFile="YCD_YFS_PAYMENT_CARD_TYPE.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>

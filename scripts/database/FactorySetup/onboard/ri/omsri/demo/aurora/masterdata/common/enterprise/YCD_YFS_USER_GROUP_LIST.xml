@@ -1,0 +1,18 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_User_Group_ListList>
+    <UserGroupList UserKey="#{Generic_CSR_UserName}" UsergroupKey="XYZ-CORP-CSR-KEY"/>
+	<UserGroupList UserKey="#{Generic_CSR_Lead_UserName}" UsergroupKey="XYZ-CORP-CSR-KEY"/>
+    <UserGroupList UserKey="#{Generic_CSR_Lead_UserName}" UsergroupKey="XYZ-CORP-CSRL-KEY"/>
+    <UserGroupList UserKey="#{Generic_Admin_UserName}" UsergroupKey="CATALOG_USERS"/>
+    <UserGroupList UserKey="#{Generic_Admin_UserName}" UsergroupKey="PRICING_USERS"/>
+	<UserGroupList UserKey="#{Generic_SalesRep_UserName}" UsergroupKey="FIELD_SALES_REP_GROUP"/>
+	<UserGroupList UserKey="#{Generic_SalesMgr_UserName}" UsergroupKey="FIELD_SALES_REP_GROUP"/>
+	<UserGroupList UserKey="#{Generic_SalesVp_UserName}" UsergroupKey="FIELD_SALES_REP_GROUP"/>
+	<UserGroupList UserKey="#{Generic_CSR_UserName}" UsergroupKey="IS_CALL_CENTER_GROUP"/>
+	<UserGroupList UserKey="#{Generic_CSR_Lead_UserName}" UsergroupKey="IS_CALL_CENTER_GROUP"/>
+</YFS_User_Group_ListList>

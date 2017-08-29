@@ -1,0 +1,37 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricelist_HeaderList>
+    <PricelistHeader Currency="USD"
+        Description="#{Generic_Enterprise_Code}'s master US price list"
+        EndDateActive="2030-12-01T13:59:32-05:00" MarkedForListPrice="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricelistName="MasterUS_PriceList" PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" StartDateActive="2009-01-01T13:59:05-05:00"/>
+    <PricelistHeader Currency="USD"
+        Description="#{Generic_Enterprise_Code}'s price list for its Gold level Manufacturing Customers"
+        EndDateActive="2020-11-01T14:09:39-05:00"
+        InheritFromPricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        MarkedForListPrice="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PercentAdjustmentOverride="-10.00"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricelistName="Gold_Manufacturers_Customer_PriceList"
+        PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" StartDateActive="2009-01-01T14:09:14-05:00"/>
+	<PricelistHeader Currency="USD"
+        Description="Pricelist for Freedom Industrial Manufacturing"
+        EndDateActive="2055-01-01T22:31:38-05:00"
+        InheritFromPricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        MarkedForListPrice="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PercentAdjustmentOverride="-5.00"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL3"
+        PricelistName="FreedomIndustrialManufacturing"
+        PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" StartDateActive="2010-01-01T22:31:35-05:00"/>
+</YPM_Pricelist_HeaderList>

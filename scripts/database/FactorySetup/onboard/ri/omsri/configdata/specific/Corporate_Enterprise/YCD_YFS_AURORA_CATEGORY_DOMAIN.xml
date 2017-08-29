@@ -1,0 +1,14 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Category_DomainList>
+	<CategoryDomain CategoryDomainKey="#{Corporate_Enterprise_Code}_CD1" OrganizationCode="#{Corporate_Enterprise_Code}" CategoryDomain="Display" ShortDescription="Display" Description="Display" AttributeName="ProductLine" IsClassification="Y"/>
+	<CategoryDomain CategoryDomain="#{Corporate_Enterprise_Code}-StyleItem"
+		CategoryDomainKey="#{Corporate_Enterprise_Code}_CD2" Description="Style Item Classification for - #{Corporate_Enterprise_Code}"
+		IsClassification="Y" OrganizationCode="#{Corporate_Enterprise_Code}"
+		ShortDescription="Style Items" AttributeName="ItemType"/>
+	<CategoryDomain CategoryDomainKey="#{Corporate_Enterprise_Code}_CD3" OrganizationCode="#{Corporate_Enterprise_Code}" CategoryDomain="InventoryMonitor" ShortDescription="Inventory Monitor" Description="Inventory Monitor" AttributeName="StorageType" IsClassification="Y"/>
+</YFS_Category_DomainList>

@@ -1,0 +1,22 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Routing_Guide_Detail_CarrierList>
+    <RoutingGuideDetailCarrier BBNMinVolume="0.00" BBNMinWeight="0.00"
+        BreakBulkNode="" ContactKey="" Cost="0.00" Currency=""
+        Priority="1" RoutingGuideDetailCarrierKey="2011090705163353014"
+        RoutingGuideDetailKey="2011090705155653011"
+        ScacAndServiceCode="FedEx Ground" ShipAttrsMatch="">
+        <ShippingParameters VolumeUOM="" WeightUOM=""/>
+    </RoutingGuideDetailCarrier>
+    <RoutingGuideDetailCarrier BBNMinVolume="0.00" BBNMinWeight="0.00"
+        BreakBulkNode="" ContactKey="" Cost="0.00" Currency=""
+        Priority="2" RoutingGuideDetailCarrierKey="2011090705171653017"
+        RoutingGuideDetailKey="2011090705155653011"
+        ScacAndServiceCode="Standard Overnight" ShipAttrsMatch="">
+        <ShippingParameters VolumeUOM="" WeightUOM=""/>
+    </RoutingGuideDetailCarrier>
+</YFS_Routing_Guide_Detail_CarrierList>

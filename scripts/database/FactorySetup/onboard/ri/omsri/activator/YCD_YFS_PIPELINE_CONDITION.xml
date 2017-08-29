@@ -1,0 +1,176 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Pipeline_ConditionList>
+  	<PipelineCondition ConditionKey="#{Corporate_Enterprise_Code}_YCD2" 
+		EnterpriseKey="#{Corporate_Enterprise_Code}" OwnerKey="#{Corporate_Enterprise_Code}"
+        PipelineKey="YCD-RETURN-PICKUP-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="200502231737417438" 
+		EnterpriseKey="#{Corporate_Enterprise_Code}" OwnerKey="#{Corporate_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SERVICE-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="20060606091158112062"
+        EnterpriseKey="#{Corporate_Enterprise_Code}" OwnerKey="#{Corporate_Enterprise_Code}"
+        PipelineKey="SALES-BUNDLE-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Corporate_Enterprise_Code}" OwnerKey="#{Corporate_Enterprise_Code}" 
+        PipelineKey="YCD_SALES-#{PCA_Version_No}" Priority="2.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey=""
+        EnterpriseKey="#{Corporate_Enterprise_Code}" OwnerKey="#{Corporate_Enterprise_Code}"
+        PipelineKey="SALES-SHIPMENT-#{Foundation_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+	<PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Corporate_Enterprise_Code}" OwnerKey="#{Corporate_Enterprise_Code}" 
+        PipelineKey="YCD_RETURN-#{PCA_Version_No}" Priority="1.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="#{Retail_Channel_Enterprise_Code}_YCD2" 
+		EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}"
+        PipelineKey="YCD-RETURN-PICKUP-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="200502231737417438" 
+		EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SERVICE-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}" 
+        PipelineKey="YCD_SALES-#{PCA_Version_No}" Priority="2.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}" 
+        PipelineKey="YCD_RETURN-#{PCA_Version_No}" Priority="1.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="20060606091158112062"
+        EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}"
+        PipelineKey="SALES-BUNDLE-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey=""
+        EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}"
+        PipelineKey="SALES-SHIPMENT-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+	<PipelineCondition ConditionKey="#{Business_Channel_Enterprise_Code}_YCD2"	
+		EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}"
+        PipelineKey="YCD-RETURN-PICKUP-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="200502231737417438" 
+		EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SERVICE-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="20060606091158112062"
+        EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}"
+        PipelineKey="SALES-BUNDLE-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}" 
+        PipelineKey="YCD_SALES-#{PCA_Version_No}" Priority="2.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}" 
+        PipelineKey="YCD_RETURN-#{PCA_Version_No}" Priority="1.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="2007121344463945790"
+        EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SHIPMENT-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+    <PipelineCondition ConditionKey=""
+        EnterpriseKey="#{Business_Channel_Enterprise_Code}" OwnerKey="#{Business_Channel_Enterprise_Code}"
+        PipelineKey="SALES-SHIPMENT-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+	<PipelineCondition ConditionKey="#{Manufacturing_Enterprise_Code}_YCD2" 
+		EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}"
+        PipelineKey="YCD-RETURN-PICKUP-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="200502231737417438" 
+		EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SERVICE-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="20060606091158112062"
+        EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}"
+        PipelineKey="SALES-BUNDLE-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}" 
+        PipelineKey="YCD_SALES-#{PCA_Version_No}" Priority="2.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}" 
+        PipelineKey="YCD_RETURN-#{PCA_Version_No}" Priority="1.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="2007121344463945790"
+        EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SHIPMENT-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+    <PipelineCondition ConditionKey=""
+        EnterpriseKey="#{Manufacturing_Enterprise_Code}" OwnerKey="#{Manufacturing_Enterprise_Code}"
+        PipelineKey="SALES-SHIPMENT-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+	<PipelineCondition ConditionKey="#{Dealer_1_Enterprise_Code}_YCD2" 
+		EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}"
+        PipelineKey="YCD-RETURN-PICKUP-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="#{Dealer_1_Enterprise_Code}_YCD1" 
+		EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SERVICE-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="20060606091158112062"
+        EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}"
+        PipelineKey="SALES-BUNDLE-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}" 
+        PipelineKey="YCD_SALES-#{PCA_Version_No}" Priority="2.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}" 
+        PipelineKey="YCD_RETURN-#{PCA_Version_No}" Priority="1.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="2007121344463945790"
+        EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SHIPMENT-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+    <PipelineCondition ConditionKey=""
+        EnterpriseKey="#{Dealer_1_Enterprise_Code}" OwnerKey="#{Dealer_1_Enterprise_Code}"
+        PipelineKey="SALES-SHIPMENT-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+	<PipelineCondition ConditionKey="#{Dealer_2_Enterprise_Code}_YCD2" 
+		EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}"
+        PipelineKey="YCD-RETURN-PICKUP-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="#{Dealer_2_Enterprise_Code}_YCD1" 
+		EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SERVICE-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="20060606091158112062"
+        EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}"
+        PipelineKey="SALES-BUNDLE-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+    <PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}" 
+        PipelineKey="YCD_SALES-#{PCA_Version_No}" Priority="2.00" 
+		ProcessTypeKey="ORDER_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="" 
+		EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}" 
+        PipelineKey="YCD_RETURN-#{PCA_Version_No}" Priority="1.00" 
+		ProcessTypeKey="RETURN_FULFILLMENT"/>
+	<PipelineCondition ConditionKey="2007121344463945790"
+        EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}"
+        PipelineKey="YCD-SALES-SHIPMENT-#{PCA_Version_No}" Priority="0.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+    <PipelineCondition ConditionKey=""
+        EnterpriseKey="#{Dealer_2_Enterprise_Code}" OwnerKey="#{Dealer_2_Enterprise_Code}"
+        PipelineKey="SALES-SHIPMENT-#{Foundation_Version_No}" Priority="1.00" 
+		ProcessTypeKey="ORDER_DELIVERY"/>
+	<PipelineCondition ConditionKey="2007121344463945790"
+        EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}"
+        PipelineConditionKey="2011030707291853568"
+        PipelineKey="YCD-SALES-SHIPMENT-#{PCA_Version_No}" Priority="0.00" ProcessTypeKey="ORDER_DELIVERY"/>
+    <!-- <PipelineCondition ConditionKey="2011093009074342006"
+        EnterpriseKey="#{Retail_Channel_Enterprise_Code}" OwnerKey="#{Retail_Channel_Enterprise_Code}"
+        PipelineConditionKey="2011030707291853568"
+        PipelineKey="SALES-SHIPMENT-#{PCA_Version_No}" Priority="1" ProcessTypeKey="ORDER_DELIVERY"/>  -->
+</YFS_Pipeline_ConditionList>

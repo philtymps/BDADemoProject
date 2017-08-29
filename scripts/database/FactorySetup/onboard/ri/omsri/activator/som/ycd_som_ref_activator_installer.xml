@@ -1,0 +1,32 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Task Class="DoNothingMigrator" Description="IBM Sterling Store Order Management Installation" When="AfterChildren">
+	<TaskInfo Completed="N"/>
+	<ChildTasks>
+		<Task Class="XMLMigrator" When="First">
+			<TaskInfo Completed="N" >
+				<EntityList>
+					<Entity AbortOnError="N" Class="YFS_Event" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" TruncateTable="N"
+						XMLFile="activator/som/YCD_SOM_YFS_EVENT.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Event_Condition" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" TruncateTable="N"
+						XMLFile="activator/som/YCD_SOM_YFS_EVENT_CONDITION.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Condition" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" TruncateTable="N"
+						XMLFile="activator/som/YCD_SOM_YFS_CONDITION.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Graph_UI" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" TruncateTable="N"
+						XMLFile="activator/som/YCD_SOM_YFS_GRAPH_UI.xml"/>
+					<Entity AbortOnError="N" Class="YFS_Pipeline_Condition" CommitCount="50" 
+						Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+						TruncateTable="N" XMLFile="activator/som/YCD_SOM_YFS_PIPELINE_CONDITION.xml"/>
+				</EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Order Management Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="Y"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="Y">
+                <EntityList>
+                    <Entity AbortOnError="N" Class="YFS_Payment_Rule"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_PAYMENT_RULE.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>
+

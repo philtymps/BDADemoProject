@@ -1,0 +1,31 @@
+<YFS_OrganizationList>
+	<Organization CapacityOrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        CatalogOrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        CreatorOrganizationKey="DEFAULT" 
+        DefaultPaymentRuleId="#{Retail_Channel_Enterprise_Code}_DEFAULT"
+        InventoryKeptExternally="N" InventoryOrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        InventoryPublished="Y" IsBuyer="N" IsCarrier="N"
+        IsEnterprise="N" IsHubOrganization="N" IsNode="Y" IsSeller="Y" IsSourcingKept="N" 
+		LocaleCode="en_US_EST" OrganizationCode="#{Retail_Store_1}"
+        OrganizationKey="#{Retail_Store_1}" OrganizationName="#{Retail_Store_1_Name}"
+        ParentOrganizationCode="#{Retail_Channel_Enterprise_Code}" PaymentProcessingReqd="Y"
+        PrimaryEnterpriseKey="#{Retail_Channel_Enterprise_Code}" 
+		RequiresChainedOrder="N" SupplyKeptExternally="N"
+        UCCPrefix="0000000">				
+			<CorporatePersonInfo AddressLine1="#{Retail_Store_1_Address_Line_1}" City="#{Retail_Store_1_City}"
+				Company="#{Retail_Channel_Enterprise_Name}" Country="#{Retail_Store_1_Country}" 
+				State="#{Retail_Store_1_State}" Longitude="#{Retail_Store_1_Longitude}"
+				Latitude="#{Retail_Store_1_Latitude}"
+				UseCount="0" ZipCode="#{Retail_Store_1_Zip_Code}" DayPhone="#{Retail_Store_1_Phone}"/>
+			<BillingPersonInfo  AddressLine1="#{Retail_Store_1_Address_Line_1}" City="#{Retail_Store_1_City}"
+				Company="#{Retail_Channel_Enterprise_Name}" Country="#{Retail_Store_1_Country}" 
+				State="#{Retail_Store_1_State}"  Longitude="#{Retail_Store_1_Longitude}"
+				Latitude="#{Retail_Store_1_Latitude}"
+				UseCount="0" ZipCode="#{Retail_Store_1_Zip_Code}" DayPhone="#{Retail_Store_1_Phone}"/>
+			<ContactPersonInfo  AddressLine1="#{Retail_Store_1_Address_Line_1}" City="#{Retail_Store_1_City}"
+				Company="#{Retail_Channel_Enterprise_Name}" Country="#{Retail_Store_1_Country}" 
+				State="#{Retail_Store_1_State}"  Longitude="#{Retail_Store_1_Longitude}"
+				Latitude="#{Retail_Store_1_Latitude}"
+				UseCount="0" ZipCode="#{Retail_Store_1_Zip_Code}" DayPhone="#{Retail_Store_1_Phone}"/>
+	</Organization>
+</YFS_OrganizationList>

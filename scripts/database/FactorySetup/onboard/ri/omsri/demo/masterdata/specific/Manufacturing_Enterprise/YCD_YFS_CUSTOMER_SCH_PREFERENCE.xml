@@ -1,0 +1,16 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Customer_Sch_PreferenceList>
+    <CustomerSchedulingPreferences CancelOrderOnBackorder="N"
+        CustomerKey="#{Dealer_1_Enterprise_Code}1"
+        IsDropShipAllowed="Y" IsLineShipComplete="N"
+        IsLineShipSingleNode="N" IsShipComplete="N" IsShipSingleNode="N" IsSubstitutionAllowed="N"/>
+    <CustomerSchedulingPreferences CancelOrderOnBackorder="N"
+        CustomerKey="#{Dealer_2_Enterprise_Code}2"
+        IsDropShipAllowed="Y" IsLineShipComplete="N"
+        IsLineShipSingleNode="N" IsShipComplete="N" IsShipSingleNode="N" IsSubstitutionAllowed="N"/>
+</YFS_Customer_Sch_PreferenceList>

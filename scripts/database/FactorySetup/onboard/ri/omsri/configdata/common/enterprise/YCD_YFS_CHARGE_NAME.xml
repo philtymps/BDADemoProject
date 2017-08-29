@@ -1,0 +1,59 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Charge_NameList>
+    <ChargeName ChargeCategory="Discount" ChargeName="Discount"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN1" Description="Discount"
+        DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Handling" ChargeName="Handling"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN2" Description="Handling"
+        DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Personalization"
+        ChargeName="Personalization" ChargeNameKey="#{Generic_Enterprise_Code}_CN3"
+        Description="Personalization" DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Shipping" ChargeName="Shipping"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN4" Description="Shipping"
+        DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="CUSTOMER_APPEASEMENT"
+        ChargeName="CUSTOMER_APPEASEMENT" ChargeNameKey="#{Generic_Enterprise_Code}_CN5"
+        Description="Customer Appeasement" DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="PriceMatch" ChargeName="PriceMatch"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN6" Description="Price Match"
+        DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Discount" ChargeName="Discount"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN7" Description="Discount"
+        DocumentType="0003" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Handling" ChargeName="Handling"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN8" Description="Handling"
+        DocumentType="0003" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Personalization"
+        ChargeName="Personalization" ChargeNameKey="#{Generic_Enterprise_Code}_CN9"
+        Description="Personalization" DocumentType="0003" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Shipping" ChargeName="Shipping"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN10" Description="Shipping"
+        DocumentType="0003" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Discount" ChargeName="Discount"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN21" Description="Discount"
+        DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Handling" ChargeName="Handling"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN22" Description="Handling"
+        DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Personalization"
+        ChargeName="Personalization" ChargeNameKey="#{Generic_Enterprise_Code}_CN23"
+        Description="Personalization" DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="Shipping" ChargeName="Shipping"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN24" Description="Shipping"
+        DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="CUSTOMER_APPEASEMENT"
+        ChargeName="CUSTOMER_APPEASEMENT" ChargeNameKey="#{Generic_Enterprise_Code}_CN25"
+        Description="Customer Appeasement" DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeName ChargeCategory="PriceMatch" ChargeName="PriceMatch"
+        ChargeNameKey="#{Generic_Enterprise_Code}_CN26" Description="Price Match"
+        DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}"/>
+<ChargeName ChargeCategory="Shipping" ChargeName="Shipping Charge" ChargeNameKey="#{Generic_Enterprise_Code}_CN27" Description="Shipping Charge" DocumentType="0001" OrganizationCode="#{Generic_Enterprise_Code}" />
+<ChargeName ChargeCategory="Shipping" ChargeName="Shipping Charge" ChargeNameKey="#{Generic_Enterprise_Code}_CN28" Description="Shipping Charge" DocumentType="0003" OrganizationCode="#{Generic_Enterprise_Code}" />
+<ChargeName ChargeCategory="Shipping" ChargeName="Shipping Charge" ChargeNameKey="#{Generic_Enterprise_Code}_CN29" Description="Shipping Charge" DocumentType="0015" OrganizationCode="#{Generic_Enterprise_Code}" />
+</YFS_Charge_NameList>

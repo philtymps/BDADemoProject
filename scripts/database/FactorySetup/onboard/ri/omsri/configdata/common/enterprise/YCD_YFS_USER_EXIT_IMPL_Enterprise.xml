@@ -1,0 +1,23 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_User_Exit_ImplList>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey="" FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDVerifyAddressWithAVSUEImpl"
+        OrgKey="#{Generic_Enterprise_Code}" UseFlow="" UserExitKey="YCDUE00001" Version="" WaitTime="0" WaitingCalls="0"/>
+    <UserExitImpl CallsPerJvm="0" DocumentTypeKey="0001" FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDCheckFraudOnOrderUEImpl"
+        OrgKey="#{Generic_Enterprise_Code}" UseFlow="" UserExitKey="YCDUE00004" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDSendFutureOrderCustomerAppeasementUEImpl"
+        OrgKey="#{Generic_Enterprise_Code}" UseFlow="" UserExitKey="YCDUE00016" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetTrackingNumberURLUEImpl"
+        OrgKey="#{Generic_Enterprise_Code}" UseFlow="" UserExitKey="YCDUE00019" Version="" WaitTime="0" WaitingCalls="0"/>
+	<UserExitImpl CallsPerJvm="0" DocumentTypeKey=" " FlowKey="" ImplementationNotes=""
+        JavaClassName="com.yantra.pca.ycd.demo.YCDGetAppeasementOffersUEImpl"
+        OrgKey="#{Generic_Enterprise_Code}" UseFlow="" UserExitKey="YCDUE00099" Version="" WaitTime="0" WaitingCalls="0"/>
+</YFS_User_Exit_ImplList>

@@ -1,0 +1,30 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Entitle_Rule_Dtl_ItemList>
+	<EntitlementRuleDetail
+        EntitlementRuleDetailKey="20100113215436188641"
+        EntitlementRuleKey="20100113214931188394" InclusionFlag="Y"
+        SequenceNo="2" SourceType="03">
+		<EntitlementRuleDetailItemList>
+			<EntitlementRuleDetailItem ItemID="200362" UnitOfMeasure="EACH" />
+			<EntitlementRuleDetailItem ItemID="200393" UnitOfMeasure="EACH" />
+			<EntitlementRuleDetailItem ItemID="200394" UnitOfMeasure="EACH" />
+			<EntitlementRuleDetailItem ItemID="200005" UnitOfMeasure="EACH" />
+		</EntitlementRuleDetailItemList>
+	</EntitlementRuleDetail>
+    <EntitlementRuleDetail
+        EntitlementRuleDetailKey="20100113215436188651"
+        EntitlementRuleKey="20100113214931188394" InclusionFlag="Y"
+        SequenceNo="3" SourceType="02">
+        <AttributeValue AttributeDomainID="ItemAttribute"
+            AttributeGroupID="Battery" AttributeID="BatteryType" Value="DriveBattery"/>
+    </EntitlementRuleDetail>
+	<EntitlementRuleDetail CategoryKey="2009061717170721295"
+        EntitlementRuleDetailKey="20100113215436188639"
+        EntitlementRuleKey="20100113214931188394" InclusionFlag="N"
+        SequenceNo="1" SourceType="01"/>
+</YFS_Entitle_Rule_Dtl_ItemList>

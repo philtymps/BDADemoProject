@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Customer_GradeList>
+    <CustomerGrade OrganizationCode="#{Generic_Enterprise_Code}" MinimumRating="0" MaximumRating=".49" GradeCode="LOW" GradeDescription="Low Value Customer" />
+	<CustomerGrade OrganizationCode="#{Generic_Enterprise_Code}" MinimumRating=".5" MaximumRating="1.49" GradeCode="MEDIUM" GradeDescription="Medium Value Customer" />
+	<CustomerGrade OrganizationCode="#{Generic_Enterprise_Code}" MinimumRating="1.5" MaximumRating="2" GradeCode="HIGH" GradeDescription="High Value Customer" />
+</YFS_Customer_GradeList>

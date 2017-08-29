@@ -1,0 +1,17 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_EventList>
+	<Event ActiveFlag="Y" EventKey="DEFAULT_EVENT_KEY_244" Eventid="ON_SUCCESS" TransactionKey="CREATE_SHIPMENT"/>
+	<!-- Gemini-COM starts here -->
+	<Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT" EventKey="SO_ROUTE_EVENT_1" EventName="On Success" Eventid="ON_SUCCESS" ExceptionType="ON_SUCCESS" ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey="" TransactionKey="ROUTE_SHIPMENT.0001" Version=""/>
+</YFS_EventList>

@@ -1,0 +1,19 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricelist_HeaderList>
+    <PricelistHeader Currency="USD"
+        Description="#{Generic_Enterprise_Code} Master Price List"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Suffix}-0000000245"
+        PricelistName="#{Generic_Enterprise_Code}MasterPriceList"
+        PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" 
+        EndDateActive="#{Effective_End_Date}" 
+        StartDateActive="#{Effective_Start_Date}"
+        MarkedForListPrice="Y"
+        />
+</YPM_Pricelist_HeaderList>

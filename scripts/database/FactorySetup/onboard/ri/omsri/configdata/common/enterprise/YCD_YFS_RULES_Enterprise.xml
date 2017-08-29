@@ -1,0 +1,168 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_RulesList>
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Validate charge name and charge category"
+        RuleSetFieldName="VALIDATE_CHARGE_NAME_AND_CATEGORY"
+        RuleSetValue="N" />
+    <Rules DocumentType="0002" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Validate charge name and charge category"
+        RuleSetFieldName="VALIDATE_CHARGE_NAME_AND_CATEGORY"
+        RuleSetValue="N" />
+    <Rules DocumentType="0003" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Validate charge name and charge category"
+        RuleSetFieldName="VALIDATE_CHARGE_NAME_AND_CATEGORY"
+        RuleSetValue="N" />
+    <Rules DocumentType="0005" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Validate charge name and charge category"
+        RuleSetFieldName="VALIDATE_CHARGE_NAME_AND_CATEGORY"
+        RuleSetValue="N" />
+    <Rules DocumentType="0006" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Validate charge name and charge category"
+        RuleSetFieldName="VALIDATE_CHARGE_NAME_AND_CATEGORY"
+        RuleSetValue="N" />
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Use Same Authorization Multiple Times"
+        RuleSetFieldName="IS_MULTIPLE_REQ_ALLOWED" RuleSetValue="Y" />
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Backorder Line To Highest Priority Node"
+        RuleSetFieldName="BACKORDER_LINE_TO_HIGHEST_PRIORITY_NODE"
+        RuleSetValue="Y" />
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Post Void Sale Cancellation Time Window (in hrs)"
+        RuleSetFieldName="POST_VOID_SALE_CANCELLATION_WINDOW"
+        RuleSetValue="24" />
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Apply price changes to already invoiced quantity"
+        RuleSetFieldName="APPLY_PRICE_CHANGE_TO_INVOICED_QTY"
+        RuleSetValue="Y" />
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Verify address if AVS is down"
+        RuleSetFieldName="YCD_MUST_VERIFY_ADDRESS_IF_AVS_DOWN"
+        RuleSetValue="Y" />
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Price Match Charge Name"
+        RuleSetFieldName="YCD_PRICE_MATCH_CHARGE_NAME" RuleSetValue="#{Generic_Enterprise_Code}_CN6" />
+<!--START OF ALTERNATE ITEMID RULES -->
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        	OrganizationCode="#{Generic_Enterprise_Code}"
+			RuleSetFieldDescription="Determines which Item Alias being used for the Item as alternate ItemID"
+        	RuleSetFieldName="YCD_ITEM_ALIAS" RuleSetValue="YCD_ALT_ITEM_ID"/>
+<!--END OF ALTERNATE ITEMID RULES-->
+ 	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Compute Expected Date When Requested Date On Pickup Order Lines Are Changed"
+        RuleSetFieldName="KEEP_REQ_AND_EXPECTED_DATES_IN_SYNC_FOR_PICKUP_LINES" RuleSetValue="Y"/>
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Synchronize Dates Between Master Order Dates And Dates On Order Line And Schedules"
+        RuleSetFieldName="SYNCHRONIZE_DATES" RuleSetValue="Y"/>
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Provided Service Relationship Type"
+        RuleSetFieldName="YCD_SERVICE_RELATIONSHIP" RuleSetValue="ServiceLine"/>	
+    <!-- FTC Rule -->
+    <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="YCD_FTC_CANCEL_REASON_CODE" RuleSetValue="CN10"/>	
+    <!-- FTC Rule --> 
+    <Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="DOM Console default URL"
+        RuleSetFieldName="YCD_DOM_CONSOLE_URL" RuleSetValue="http://localhost:7001/smcfs/console/login.jsp"/>
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+		RulesSetFieldDescription="Order Hold user for Order Approval Required Hold"
+		RuleSetFieldName="HOLD_TO_BE_APPLIED_FOR_ORDER_APPROVAL" RuleSetValue="YCD_ORDER_APPROVAL" />
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+		RulesSetFieldDescription="Order Hold used when is Credit Limit Exceeded"
+		RuleSetFieldName="USE_HOLD_TYPE_CUSTOMER_ACCOUNT" RuleSetValue="YCD_CREDIT_LIMIT"/>
+     <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Order Name"
+        RuleSetFieldName="YCDDefaultOrderName" RuleSetValue="IBMSterlingOrder"/>
+     <Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Order Name"
+        RuleSetFieldName="YCD_SHIPMENT_OPTIMIZATION_RULE" RuleSetValue="CORP-SCH"/>
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Show Delivery As Fulfillment Method"
+        RuleSetFieldName="YCD_SHOW_DELIVERY_AS_FULFILLMENT_METHOD" RuleSetValue="Y"/>
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Delivery Method"
+        RuleSetFieldName="YCD_DEFAULT_DELIVERY_METHOD" RuleSetValue="SHP"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Item Search Screen used"
+        RuleSetFieldName="YCD_ITEM_SEARCH_SCREEN" RuleSetValue="INDEX"/>
+	<Rules DocumentType="0015" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="HOLD_TO_BE_APPLIED_FOR_ORDER_APPROVAL"
+        RuleSetValue="APPROVAL_HOLD"/>
+	<Rules DocumentType="0015" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="ORDER_LINE_TYPE_FOR_RECOMMENDED_ITEMS"
+        RuleSetValue="Recommended"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Item Browsing enabled"
+        RuleSetFieldName="YCD_ITEM_BROWSING_ENABLED" RuleSetValue="N"/>
+<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="COUPON_DISCOUNT_CHARGE_CATEGORY_FOR_COMBINATION_TYPE" RuleSetValue="Coupon"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="COUPON_DISCOUNT_CHARGE_CATEGORY_FOR_ITEM_QUANTITY_TYPE" RuleSetValue="Coupon"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="COUPON_DISCOUNT_CHARGE_CATEGORY_FOR_ORDER_TOTAL_TYPE" RuleSetValue="Coupon"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="COUPON_DISCOUNT_CHARGE_CATEGORY_FOR_SHIP_ORDER_TOTAL_TYPE" RuleSetValue="ShippingDiscount"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="PRICING_RULE_DISCOUNT_CHARGE_CATEGORY_FOR_COMBINATION_TYPE" RuleSetValue="Discount"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="PRICING_RULE_DISCOUNT_CHARGE_CATEGORY_FOR_ITEM_QUANTITY_TYPE" RuleSetValue="Discount"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="PRICING_RULE_DISCOUNT_CHARGE_CATEGORY_FOR_ORDER_TOTAL_TYPE" RuleSetValue="Discount"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="PRICING_RULE_DISCOUNT_CHARGE_CATEGORY_FOR_SHIPPING_SURCHARGE_TYPE" RuleSetValue="Shipping"/>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="PRICING_RULE_DISCOUNT_CHARGE_CATEGORY_FOR_SHIP_ORDER_TOTAL_TYPE" RuleSetValue="ShippingDiscount"/>
+    <Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription=""
+        RuleSetFieldName="CHARGE_NAME_FOR_SHIPPING" RuleSetValue="Shipping Charge"/>
+</YFS_RulesList>

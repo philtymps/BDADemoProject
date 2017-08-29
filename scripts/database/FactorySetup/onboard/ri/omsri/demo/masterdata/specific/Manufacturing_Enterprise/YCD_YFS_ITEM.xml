@@ -1,0 +1,2421 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_ItemList>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200001"
+        ItemKey="2009061714264120484"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            BundlePricingStrategy="ALL" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00"
+            ConfigurationModelName="HeavyLift/Forklifts/CushionTireTrucks/HL2040R"
+            CostCurrency="USD" CreditWOReceipt="N"
+            Description="Ideal for medium-heavy duty applications with state-of-the-art features and industry leading power."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Heavy Lift HL2040R truck delivers maximum performance for medium to heavy-duty applications with state-of-the art features and industry leading power. MZDA 2.0L engine offers high performance with outstanding operating costs. The truck's lateral stability has a simple, maintenance-free design that does not compromise when operating on uneven surface travel. Operator comfort is enhanced by the increased foot space in the well designed operator's compartment. The isolated powertrain reduces noise and vibration minimizing operator fatigue and increasing operator productivity throughout a shift. From the rear-opening, one-piece hood and on board diagnostics, to the reliable, most comprehensive parts availability in the industry, this truck was designed with service details in mind."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200001.jpg" ImageLabel="HeavyLift HL2040R"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsHazmat="N" IsModelItem="N"
+            IsPreConfigured="N" IsReturnService="N" IsSoldSeparately="Y"
+            Keywords="Truck, Forklift, Gabelstapler, Material Handling Equipment, Model R, Model2040,"
+            IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE" ManufacturerItem="200001"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="1.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2040R" Status="3000"
+            TaxableFlag="N" UnitCost="21000.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="9000.00" UnitWeightUOM="LBS" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200002"
+        ItemKey="2009062921513927991"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00"
+            ConfigurationModelName="HeavyLift/Forklifts/CushionTireTrucks/HL2070R"
+            CostCurrency="USD" CreditWOReceipt="N"
+            Description="Ideal for medium-heavy duty applications with state-of-the-art features and industry leading power."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Heavy Lift HL2070 delivers maximum performance for medium to heavy-duty applications with state-of-the art features and industry leading power. A MZDA 2.0L engine offers high performance with outstanding operating costs. Operator comfort is enhanced by the increased foot space in the well designed operator's compartment. The isolated powertrain reduces noise and vibration minimizing operator fatigue and increasing operator productivity throughout a shift. From the rear-opening, one-piece hood and on board diagnostics, to the reliable, most comprehensive parts availability in the industry, this truck was designed with service details in mind."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200002.jpg" ImageLabel="HeavyLift HL2070R"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsHazmat="N" IsModelItem="N"
+            IsPreConfigured="N" IsReturnService="N" IsSoldSeparately="Y"
+            IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE" ManufacturerItem="200002"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2070R" Status="3000"
+            TaxableFlag="N" UnitCost="17000.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="9000.00" UnitWeightUOM="LBS" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200003"
+        ItemKey="2009062921581128062"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N" BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00"
+            ConfigurationModelName="HeavyLift/Forklifts/CushionTireTrucks/HL2080R"
+            CostCurrency="USD" CreditWOReceipt="N"
+            Description="Designed and manufactured to be among the most dependable trucks in the industry today."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Heavy Lift HL2080R is designed and manufactured to be among the most dependable trucks in the industry today. The HL2080R has a MZDA 2.0L engine which offers high performance with outstanding operating costs. The trucks lateral stability has a simple, maintenance-free design that does not compromise uneven surface travel. Operator comfort is enhanced by the increased foot space in the well designed operator's compartment. The isolated powertrain reduces noise and vibration minimizing operator fatigue and increasing operator productivity throughout a shift. From the rear-opening, one-piece hood and on board diagnostics, to the reliable, most comprehensive parts availability in the industry, this truck was designed with service details in mind."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200003.jpg" ImageLabel="HeavyLift HL2080R"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsEligibleForShippingDiscount="Y"
+            IsHazmat="N" IsPreConfigured="N" IsReturnService="N"
+            IsSoldSeparately="Y" IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="20.00"
+            MinOrderQuantity="1.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2080R" Status="3000"
+            TaxableFlag="Y" UnitCost="55000.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="9000.00" UnitWeightUOM="LBS" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200004"
+        ItemKey="2009062922014628069"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N" BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00"
+            ConfigurationModelName="HeavyLift/Forklifts/CushionTireTrucks/HL2120R"
+            CostCurrency="USD" CreditWOReceipt="N"
+            Description="Designed and manufactured to be among the most dependable trucks in the industry today."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Heavy Lift HL2120R is designed and manufactured to be among the most dependable trucks in the industry today. The HL2120R has a MZDA 2.0L engine which offers high performance with outstanding operating costs. The trucks lateral stability has a simple, maintenance-free design that does not compromise uneven surface travel. Operator comfort is enhanced by the increased foot space in the well designed operator's compartment. The isolated powertrain reduces noise and vibration minimizing operator fatigue and increasing operator productivity throughout a shift. From the rear-opening, one-piece hood and on board diagnostics, to the reliable, most comprehensive parts availability in the industry, this truck was designed with service details in mind."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200004.jpg" ImageLabel="HeavyLift HL2120R"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsEligibleForShippingDiscount="Y"
+            IsHazmat="N" IsPreConfigured="N" IsReturnService="N"
+            IsSoldSeparately="Y" IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="20.00"
+            MinOrderQuantity="1.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2120R" Status="3000"
+            TaxableFlag="Y" UnitCost="25000.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="9000.00" UnitWeightUOM="LBS" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200005"
+        ItemKey="2009062922034428079"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N" BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CostCurrency="USD"
+            CreditWOReceipt="N"
+            Description="The HL2020R has the ergonomic comfort and the specifications you need."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Reach X-Narrow 16W excels in situations that require operator order selecting, picking and handling of various items in multi-level, narrow aisle applications. The truck features 24-volt power, state-of-the-art technology with infinitely variable travel and lift speeds, excellent visibility, ergonomic controls and operator comfort. Controller Area Network (CANbus) communications and Separately Excited Motor (SEM) control technology streamlines system communications. This reduces wiring and component complexity and eases serviceability. Smart-Glide™ is offered as standard equipment for step-less speed control by optimizing the maximum travel speed at various fork heights."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200005.jpg" ImageLabel="Reach X-Narrow 16W"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsEligibleForShippingDiscount="Y" IsHazmat="N"
+            IsReturnService="N" IsSoldSeparately="Y" IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="20.00"
+            MinOrderQuantity="1.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2020R" Status="3000"
+            TaxableFlag="Y" UnitCost="32000.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200007"
+        ItemKey="2009070910460948121"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CostCurrency="USD"
+            CreditWOReceipt="N"
+            Description="The Pneumatic Tire Truck is designed and manufactured the most demanding applications."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="HeavyLift Pneumatic Lift Trucks are designed and manufactured for some of the most demanding industries and applications. The HeavyLift Pneumatic Tire DB5 uses a rugged 6 cylinder MZDA, GEM, or Cumulus engines in gasoline, LPG and Diesel. These engines are application proven for performance and reliability. HeavyLift Techtronix electronically controlled transmissions offer superior performance &amp; durability. HeavyLift masts incorporate innovative engineering for excellent visibility and solid construction. All components are engineered for outstanding performance and extended, low-maintenance life."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200007.jpg" ImageLabel="HeavyLift HL2030R"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsEligibleForShippingDiscount="Y" IsHazmat="N"
+            IsReturnService="N" IsSoldSeparately="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="20.00"
+            MinOrderQuantity="1.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2030R" Status="3000"
+            TaxableFlag="Y" UnitCost="43000.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="11000.00" UnitWeightUOM="LBS" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200323"
+        ItemKey="2009092215252744381"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200323.jpg" ImageLabel="HeavyLift 9 x 15-12PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200323"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 9 x 15-12PR Solid Soft Drive Tire"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200322"
+        ItemKey="2009092215482144574"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CountryOfOrigin="US"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200322.jpg" ImageLabel="HeavyLift 7 x 12-10PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200322"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 7 x 12-10PR Solid Drive Tire"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200330"
+        ItemKey="2009092216435344680"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CountryOfOrigin="US" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The perfect fit for all-around pneumatic tire needs."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200330.jpg"
+            ImageLabel="HeavyLift 6.5 x 10-10PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerItem="200330" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="1.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 6.5 x 10-10PR Tire" Status="3000"
+            TaxableFlag="Y" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200331"
+        ItemKey="2009092321224345541"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift 6.00 x 9-10PR Tire"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200331.jpg"
+            ImageLabel="HeavyLift 6.00 x 9-10PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 6.00 x 9-10PR Solid Steer Tire"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200342"
+        ItemKey="2009092322063545815"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift 7.00 x 12-12PR Tire"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200342.jpg"
+            ImageLabel="HeavyLift 7.00 x 12-12PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 7.00 x 12-12PR Solid Soft Drive Tire"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200343"
+        ItemKey="2009092322083145847"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CountryOfOrigin="US" CreditWOReceipt="N"
+            Description="HeavyLift 28 x 9 x 15-12PR Tire"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="A general purpose cushion tire."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200343.jpg"
+            ImageLabel="HeavyLift 28 x 9 x 15-12PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerItem="200343" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 28 x 9 x 15-12PR Tire" Status="3000"
+            TaxableFlag="Y" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200345"
+        ItemKey="2009092322363246096"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CountryOfOrigin="US"
+            CreditWOReceipt="N"
+            Description="HeavyLift 6.50 x 10-10PR Tire"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200345.jpg"
+            ImageLabel="HeavyLift 6.50 x 10-10PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200345"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 6.50 x 10-10PR Tire" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200346"
+        ItemKey="2009092322430446219"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CountryOfOrigin="US"
+            CreditWOReceipt="N"
+            Description="HeavyLift 6.00 x 9-12PR Tire"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200346.jpg"
+            ImageLabel="HeavyLift 6.00 x 9-12PR Tire"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200346"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 6.00 x 9-12PR Solid Soft Steer Tire"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200301"
+        ItemKey="2009092419585254280"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Standard HeavyLift radiator"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This standard radiator is the low cost, general purpose radiator for HeavyLift forklifts."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200301.jpg" ImageLabel="Standard Radiator"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 4050 Standard HIVent Radiator"
+            Status="3000" TaxableFlag="Y" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200302"
+        ItemKey="2009093023495957109"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200302.jpg" ImageLabel="Open Core Radiator"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL 4099 Open Core MaxHIVent Radiator"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200201"
+        ItemKey="2009093023582157233"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="MZDA 2.0L Gas Engine"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Mazda LPG engine uses a single barrel carburetor with an LPG injector and a regulator/vaporizer. The Engine Control Unit controls the LPG injector fueling, and the carburetor and the regulator are not adjustable."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200201.jpg" ImageLabel="MZDA 2.0L"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="MZDA 2.0L Engine" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200202"
+        ItemKey="2009093023595057240"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="Mazda 2.2L"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Mazda LPG engine uses a single barrel carburetor with an LPG injector and a regulator/vaporizer. The Engine Control Unit controls the LPG injector fueling, and the carburetor and the regulator are not adjustable."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200202.jpg" ImageLabel="MZDA 2.2L"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="MZDA 2.2L Engine" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200205"
+        ItemKey="2009100100012057247"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Gem V4 Dual Fuel systen 2.5 liter engine"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The GEM LP engines use sequential port fuel injection. The GEM LP engines use a vaporizer/ regulator to convert the fuel from a liquid to a gas for vapor injection. The Engine Control Unit electronically controls the fuel, air, and spark advance to provide the necessary torque. The engine control unit’s inputs include manifold air pressure, manifold air temperature, engine coolant temperature, accelerator pedal position, throttle position, engine speed, cam signal, and oxygen sensor signal."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200205.jpg" ImageLabel="GEM 2.5L V4"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="GEM 2.5L V4 Dual Fuel Engine"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200206"
+        ItemKey="2009100100023057254"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The GEM LP and Gas engines use sequential port fuel injection. The GEM LP engines use a vaporizer/ regulator to convert the fuel from a liquid to a gas for vapor injection. The Engine Control Unit electronically controls the fuel, air, and spark advance to provide the necessary torque. The engine control unit’s inputs include manifold air pressure, manifold air temperature, engine coolant temperature, accelerator pedal position, throttle position, engine speed, cam signal, and oxygen sensor signal."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200206.jpg" ImageLabel="GEM 3.2L V6"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="GEM 3.2L V6 Dual Fuel Engine"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200207"
+        ItemKey="2009100100055457277"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Cumulus Diesel 4.5L V4 engine.  This engine is intended for heavy use with long live features.  With its BlueTec Diesel state of the art technology it beats many other Diesel engines in the market in torque characteristics and fuel consumption."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200207.jpg" ImageLabel="Cumulus 4.5L"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Cumulus 4.5L Diesel Engine" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200350"
+        ItemKey="2009101923213967188"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CountryOfOrigin="US"
+            CreditWOReceipt="N"
+            Description="HeavyLift MFH: 103.5, L: 80.0, FL: 5.5 Simplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200350.jpg"
+            ImageLabel="HeavyLift MFH: 103.5, L: 80.0, FL: 5.5 Simplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200350"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Simplex Mast MFH: 103.5, L: 80.0, FL: 5.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200351"
+        ItemKey="2009102012152867458"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFH: 115.5, L: 94, FL: 5.5 Simplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200351.jpg"
+            ImageLabel="HeavyLift MFH: 115.5, L: 94, FL: 5.5 Simplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" Keywords="forklift mast"
+            ManufacturerItem="200351" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Simplex Mast MFH: 115.5, L: 94, FL: 5.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200352"
+        ItemKey="2009102012193267469"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFH: 127.0, L: 96.0, FL: 5.5 Simplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200352.jpg"
+            ImageLabel="HeavyLift MFH: 127.0, L: 96.0, FL: 5.5 Simplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200352"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Simplex Mast MFH: 127.0, L: 96.0, FL: 5.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200451"
+        ItemKey="2009121216551699119"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Accutouch electro-hydraulic joystick"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200451.jpg"
+            ImageLabel="Accutouch electro-hydraulic joystick"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200451"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Accutouch electro-hydraulic joystick"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200452"
+        ItemKey="2009121216584199130"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Palmtech electro-hydraulic joystick"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200452.jpg"
+            ImageLabel="Palmtech electro-hydraulic joystick"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200452"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Palmtech electro-hydraulic joystick"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200461"
+        ItemKey="2009121217022099254"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="2-Stage Hose for VST Mast internal mounted (1AUX)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200461.jpg" ImageLabel="2-Hose Internal (1AUX)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200461"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="2-Hose Internal (1AUX)" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200462"
+        ItemKey="2009121217041599265"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="2-Stage Hose for VST Mast (2AUX)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200462.jpg" ImageLabel="2-Hose Internal (2AUX)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200462"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="2-Hose Internal (2AUX)" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200463"
+        ItemKey="2009121217061899273"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="4-Hose Internal (1AUX)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200463.jpg" ImageLabel="4-Hose Internal (1AUX)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200463"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="4-Hose Internal (1AUX)" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200390"
+        ItemKey="2009121217255499506"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="36&quot; Pallet Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This standard fork fits all lift trucks of makes, models and sizes. It has 2 5&quot; adjustable blades made out of highest durable steel for heavy industrial applications."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200390.jpg" ImageLabel="36&quot; Pallet Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            ManufacturerItem="200390" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="36&quot; Pallet Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="42.00"
+            UnitHeightUOM="IN" UnitLength="36.00" UnitLengthUOM="IN"
+            UnitWeight="250.00" UnitWeightUOM="LBS" UnitWidth="48.00" UnitWidthUOM="IN"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200391"
+        ItemKey="2009121217283999514"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="42&quot; Pallet Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This standard fork fits all lift trucks of makes, models and sizes. It has 2 5&quot; adjustable blades made out of highest durable steel for heavy industrial applications."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200391.jpg" ImageLabel="42&quot; Pallet Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerItem="200391" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Pallet Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="42.00"
+            UnitHeightUOM="IN" UnitLength="42.00" UnitLengthUOM="IN"
+            UnitWeight="250.00" UnitWeightUOM="LBS" UnitWidth="48.00" UnitWidthUOM="IN"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200392"
+        ItemKey="2009121217320899621"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="48&quot; Pallet Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This standard fork fits all lift trucks of makes, models and sizes. It has 2 5&quot; adjustable blades made out of highest durable steel for heavy industrial applications."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200392.jpg" ImageLabel="48&quot; Pallet Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerItem="200392" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="48&quot; Pallet Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="42.00"
+            UnitHeightUOM="IN" UnitLength="48.00" UnitLengthUOM="IN"
+            UnitWeight="290.00" UnitWeightUOM="LBS" UnitWidth="48.00" UnitWidthUOM="IN"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200393"
+        ItemKey="2009121217335799632"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="54&quot; Pallet Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This standard fork fits all lift trucks of makes, models and sizes. It has 2 5&quot; adjustable blades made out of highest durable steel for heavy industrial applications."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200393.jpg" ImageLabel="54&quot; Pallet Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerItem="200393" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="54&quot; Pallet Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200394"
+        ItemKey="2009121217374999643"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="60&quot; Pallet Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This standard fork fits all lift trucks of makes, models and sizes. It has 2 5&quot; adjustable blades made out of highest durable steel for heavy industrial applications.  The 60&quot; Pallet Fork is ideal for long rolls and other long, or extended pallet items.  This Fork adds great flexibility to your warehouse!"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200394.jpg" ImageLabel="60&quot; Pallet Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerItem="200394" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" PricingUOM="EACH"
+            PricingUOMStrategy="INV" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="60&quot; Pallet Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="42.00"
+            UnitHeightUOM="IN" UnitLength="60.00" UnitLengthUOM="IN"
+            UnitWeight="300.00" UnitWeightUOM="LBS" UnitWidth="48.00" UnitWidthUOM="IN"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200395"
+        ItemKey="2009121217433399730"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="36&quot; Tapered Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200395.jpg" ImageLabel="36&quot; Tapered Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200395"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="36&quot; Tapered Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200396"
+        ItemKey="2009121217461899741"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="42&quot; Tapered Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200396.jpg" ImageLabel="42&quot; Tapered Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200396"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Tapered Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200397"
+        ItemKey="2009121217482799752"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="48&quot; Tapered Fork"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200397.jpg" ImageLabel="48&quot; Tapered Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200397"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="48&quot; Tapered Fork" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200400"
+        ItemKey="2009121217515999839"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Custom Fork" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200400.jpg" ImageLabel="Custom Fork"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200400"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Custom Fork" Status="3000" TaxableFlag="N"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200380"
+        ItemKey="2009121218154299955"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="42&quot; Wide Class II Integral Sideshifter ( Simplex)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This New England(TM) designed sideshifter is specially designed for the Simplex mast and is interoperable with all trucks."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200380.jpg"
+            ImageLabel="42&quot; Wide Class II Integral Sideshifter ( Simplex)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            ManufacturerItem="200380" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Wide Class II Integral Sideshifter ( Simplex)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200381"
+        ItemKey="2009121218184199963"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="42&quot; Wide Class II Integral Sideshifter ( Duplex)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This New England(TM) designed sideshifter is specially designed for the Duplex mast and is interoperable with all trucks."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200381.jpg"
+            ImageLabel="42&quot; Wide Class II Integral Sideshifter ( Duplex)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            ManufacturerItem="200381" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Wide Class II Integral Sideshifter ( Duplex)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200382"
+        ItemKey="20091212183540100050"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="42&quot; Wide Class II Integral Sideshifter ( Triplex)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This New England(TM) designed sideshifter is specially designed for the Triplex mast and is interoperable with all trucks."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200382.jpg"
+            ImageLabel="42&quot; Wide Class II Integral Sideshifter ( Triplex)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            ManufacturerItem="200382" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Wide Class II Integral Sideshifter ( Triplex)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters ATPRule="DEFAULT" DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200370"
+        ItemKey="20091212192748100439"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="42&quot; Wide Class II Carriage (Simplex)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200370.jpg"
+            ImageLabel="42&quot; Wide Class II Carriage (Simplex)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200370"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Wide Class II Carriage (Simplex)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200371"
+        ItemKey="20091212192912100447"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="42&quot; Wide Class II Carriage (Duplex)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200371.jpg"
+            ImageLabel="42&quot; Wide Class II Carriage (Duplex)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200371"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Wide Class II Carriage (Duplex)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200372"
+        ItemKey="20091212193102100577"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="42&quot; Wide Class II Carriage (Triplex)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200372.jpg"
+            ImageLabel="42&quot; Wide Class II Carriage (Triplex)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200372"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="42&quot; Wide Class II Carriage (Triplex)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200353"
+        ItemKey="20091212200521100688"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Simplex Special Lift Height Mast  107.5&quot; - 123&quot;"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200353.jpg"
+            ImageLabel="Simplex Special Lift Height Mast 107.5&quot; - 123&quot;"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200353"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Simplex Special Lift Height Mast 107.5&quot; - 123&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200354"
+        ItemKey="20091212200936100699"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Simplex Special Lift Height Mast 131&quot; - 190&quot;"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200354.jpg"
+            ImageLabel="Simplex Special Lift Height Mast 131&quot; - 190&quot;"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Simplex Special Lift Height Mast 131&quot; - 190&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200355"
+        ItemKey="20091212201254100807"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFH: 126.0, L: 80.0, FL: 40.5 Duplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200355.jpg"
+            ImageLabel="HeavyLift MFH: 126.0, L: 80.0, FL: 40.5 Duplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200355"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Duplex Mast MFH: 126.0, L: 80.0, FL: 40.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200356"
+        ItemKey="20091212201603100818"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFH: 132.5, L: 86.0, FL: 40.5 Duplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200356.jpg"
+            ImageLabel="HeavyLift MFH: 132.5, L: 86.0, FL: 40.5 Duplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200356"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Duplex Mast MFH: 132.5, L: 86.0, FL: 40.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200357"
+        ItemKey="20091212202137100921"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFL: 142.0, L: 88.0, FL: 40.5 Duplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200357.jpg"
+            ImageLabel="HeavyLift MFL: 142.0, L: 88.0, FL: 40.5 Duplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200357"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Duplex Mast MFL: 142.0, L: 88.0, FL: 40.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200358"
+        ItemKey="20091212202444100929"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Duplex Special Lift Height Mast 105,5&quot; - 122&quot;"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200358.jpg"
+            ImageLabel="Duplex Special Lift Height Mast 105,5&quot; - 122&quot;"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200358"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Duplex Special Lift Height Mast 105,5&quot; - 122&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200359"
+        ItemKey="20091212203123101036"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Duplex Special Lift Height Mast 126&quot; - 182&quot;"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200359.jpg"
+            ImageLabel="Duplex Special Lift Height Mast 126&quot; - 182&quot;"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200359"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Duplex Special Lift Height Mast 126&quot; - 182&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200360"
+        ItemKey="20091212203333101047"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFH: 140.5, L: 78.0, FL: 48.5 Triplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200360.jpg"
+            ImageLabel="HeavyLift MFH: 140.5, L: 78.0, FL: 48.5 Triplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200360"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Triplex Mast MFH: 140.5, L: 78.0, FL: 48.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200361"
+        ItemKey="20091212203728101055"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HL Triplex Mast MFH: 172.5, L: 80, FL: 48.5"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200361.jpg"
+            ImageLabel="HeavyLift 80-inch Triplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200361"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Triplex Mast MFH: 172.5, L: 80, FL: 48.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200362"
+        ItemKey="20091212203908101063"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="HeavyLift MFH: 210.5, L: 84.0, FL: 48.5 Triplex Forklift Mast"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200362.jpg"
+            ImageLabel="HeavyLift MFH: 210.5, L: 84.0, FL: 48.5 Triplex Forklift Mast"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200362"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HL Triplex Mast MFH: 210.5, L: 84.0, FL: 48.5"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200363"
+        ItemKey="20091212204030101147"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Triplex Special Lift Height Mast 106.5&quot; - 121&quot;"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200363.jpg"
+            ImageLabel="Triplex Special Lift Height Mast 106.5&quot; - 121&quot;"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200363"
+            ManufacturerName="HeavyLift" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Triplex Special Lift Height Mast 106.5&quot; - 121&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200364"
+        ItemKey="20091212204155101155"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Triplex Special Lift Height Mast 125&quot; - 186&quot;"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200364.jpg"
+            ImageLabel="Triplex Special Lift Height Mast 125&quot; - 186&quot;"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" ManufacturerItem="200364"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Triplex Special Lift Height Mast 125&quot; - 186&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200464"
+        ItemKey="20100106202705125216"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="2-Way Catalysator Diesel Exhaust System for Diesel Engines from world famous manufacturer Bing Corp."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200464.jpg"
+            ImageLabel="Bing  2-Way Catalysator Diesel Exhaust System"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Bing  2-Way Catalysator Diesel Exhaust System"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200465"
+        ItemKey="20100106203049125227"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Specter 2-Way Catalysator Exhaust System fro Gas and LPG.  This system increases HP by 3% and ensures your engine will meet even the strict California emission laws."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200465.jpg"
+            ImageLabel="Specter 2-Way Catalysator Gas/LPG Exhaust System"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Specter 2-Way Catalysator Gas/LPG Exhaust System"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200467"
+        ItemKey="20100106203430125326"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="2-Way Catalysator Exhaust System for LPG engines only."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200467.jpg"
+            ImageLabel="Specter 2-Way Catalysator LPG Exhaust System"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Specter 2-Way Catalysator LPG Exhaust System"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+	<Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200008"
+        ItemKey="20100112145657160524"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="HeavyLift HL3030 Pneumatic Truck"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="HeavyLift 3030 Pneumatic Tire truc is designed and manufactured for the most demanding applications."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200008.jpg" ImageLabel="HL3030PT"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            ManufacturerItem="20008" ManufacturerName="HeavyLift"
+            MaxOrderQuantity="0.00" MinOrderQuantity="1.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLiftHL3030PT" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200468"
+        ItemKey="20100113194700185714"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="American Beauty Hard Hat in snow white"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="Product/200468.jpg" InvoiceBasedOnActuals="N"
+            InvolvesSegmentChange="N" IsHazmat="N" IsReturnService="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsSoldSeparately="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="American Beauty Hard Hat in snow white"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200469"
+        ItemKey="20100113195437185846"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="American Beauty Hard Hat in yellow"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200470"
+        ItemKey="20100113195705185863"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Oscar Outdoor tinted polarized safety glasses"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200471"
+        ItemKey="20100113195903185871"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Precor Safety Glasses clear" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200472"
+        ItemKey="20100113200533186041"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Super Nova 1200amp/hr Endurance Battery"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200473"
+        ItemKey="20100113200657186052"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N"
+            ManufacturerName="01/01/2010" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Moonshine 48 amp/hr Starter Battery"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200474"
+        ItemKey="20100113200858186066"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            BundlePricingStrategy="ALL" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00"
+            ConfigurationKey="20100113201614186322"
+            ConfigurationModelName="HeavyLift/Forklifts/CushionTireTrucks/HL2040R"
+            CreditWOReceipt="N"
+            Description="Heavy Lift  HL2040R Preconfigured Truck that meets basic warehousing needs"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200001.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsHazmat="N" IsPreConfigured="Y"
+            IsReturnService="N" IsSoldSeparately="Y" 
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2040R (Basic Warehouse)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200475"
+        ItemKey="20100113202253186551"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Automatic Eagle Beak Drum Positioner"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200475.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Automatic Eagle Beak Drum Positioner"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200476"
+        ItemKey="20100113203356186696"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            ConfigurationKey="20100113205046186934"
+            ConfigurationModelName="HeavyLift/Forklifts/CushionTireTrucks/HL2040R"
+            CreditWOReceipt="N" Description="Heavy Lift  HL2040R r"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200001.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsHazmat="N" IsPreConfigured="Y"
+            IsReturnService="N" IsSoldSeparately="Y" 
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="PK"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Heavylift HL2040R HeavyDuty (as configured)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200477"
+        ItemKey="20100113220513188954"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_2_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Gorilla Super Duty Shelve 48&quot;x38&quot;x25&quot;"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200478"
+        ItemKey="20100113220644188963"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_2_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Extreme modular shelve 40&quot;x26&quot;x26&quot; unit"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200479"
+        ItemKey="20100115184544307003"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Introducing the most manoeuvrable four-wheel electric forklift in the market. Featuring HeavyLift’s cutting-edge extended steering-axle, the VF maximises floor space utilisation and provides a turning radius comparable with a three-wheel forklift truck."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200479.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y" KitCode="BUNDLE" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Electric Counterbalance VF1" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200480"
+        ItemKey="20100115185219307256"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="The Order Picker XX-Narrow S1 is fast, durable and effecient."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="The Order Picker XX-Narrow S1 is fast, durable and effecient."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200480.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Order Picker XX-Narrow S1" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200481"
+        ItemKey="20100115185450307421"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Heavy duty pedestrian powered pallet truck"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200481.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Hand Pallet Truck VX1" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200482"
+        ItemKey="20100115193433310081"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200482.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Hermix Telehandler A500" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200483"
+        ItemKey="20100115193731311695"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200483.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Bauer Scissor Lift SL600" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200484"
+        ItemKey="20100115193850312377"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200484.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Bauer Boom Lift BL2020" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200485"
+        ItemKey="20100115194014313160"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200485.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Sunn Mountable Halogen Lights 500W"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="200486"
+        ItemKey="20100115194204314235"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="200001.jpg"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+			IsDeliveryAllowed="Y" IsPickupAllowed="Y" IsShippingAllowed="Y"
+            IsHazmat="N" IsReturnService="N" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="HeavyLift HL2040 (used)" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+	<Item CanUseAsServiceTool="N" IsShippingCntr="N" ItemGroupCode="DS"
+        ItemID="Delivery" ItemKey="#{Manufacturing_Enterprise_Code}_IK5"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" UnitOfMeasure="UNIT">
+        <PrimaryInformation AllowGiftWrap="N"
+            AssumeInfiniteInventory="N" CapacityPerOrderedQty="0.00"
+            CapacityQuantityStrategy="ASSOC" CapacityUOM="UNIT"
+            ComputedUnitCost="0.00" Description="Delivery"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvolvesSegmentChange="N" IsAirShippingAllowed="Y"
+            IsDeliveryAllowed="Y" IsEligibleForShippingDiscount="Y"
+            IsFreezerRequired="N" IsHazmat="N"
+            IsParcelShippingAllowed="Y" IsPickupAllowed="Y"
+            IsReturnService="N" IIsReturnable="N" IsShippingAllowed="Y"
+            IsStandaloneService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            ReturnWindow="0" RunQuantity="0.00" SerializedFlag="N"
+            ServiceTypeID="Delivery"
+            ShortDescription="Delivery" Status="3000"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <InventoryParameters AdvanceNotificationTime="0"
+            DefaultExpirationDays="0" IsFifoTracked="N"
+            IsItemBasedAllocationAllowed="Y" IsSerialTracked="N"
+            LeadTime="0" MaximumNotificationTime="0.00"
+            MinNotificationTime="0" ProcessingTime="0" UseUnplannedInventory="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+</YFS_ItemList>

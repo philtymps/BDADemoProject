@@ -1,0 +1,17 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricing_Rule_AssignmentList>
+    <PricingRuleAssignment CustomerType="04"
+        EnterpriseCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleAssignmentKey="20100112112110141078" PricingRuleKey="20100112104250140218"/>
+    <PricingRuleAssignment CustomerType="01"
+        EnterpriseCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleAssignmentKey="20100112112144141081" PricingRuleKey="20100112104804140230"/>
+    <PricingRuleAssignment CustomerType="04"
+        EnterpriseCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleAssignmentKey="20100112115142141884" PricingRuleKey="2009092216573844966"/>
+</YPM_Pricing_Rule_AssignmentList>

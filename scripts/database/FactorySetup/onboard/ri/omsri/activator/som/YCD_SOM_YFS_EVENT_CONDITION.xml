@@ -1,0 +1,42 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Event_ConditionList>
+	<EventCondition ActionKey="SOP_052115586666244" ConditionKey="" 
+        EventConditionKey="2006082114420337999"
+        EventKey="Print_ChgOrd_Event" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+    <EventCondition ActionKey="2006081016411767422" ConditionKey=""
+        EventConditionKey="2006082115001537949"
+        EventKey="Print_ExchOrdSumm_Event" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+    <EventCondition ActionKey="2006081016394567420" ConditionKey=""
+        EventConditionKey="2006082115005037952"
+        EventKey="Print_RetOrdSumm_Event" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+    <EventCondition ActionKey="SOP_052115584444244" ConditionKey=""
+        EventConditionKey="2006081418345611908"
+        EventKey="Print_OrderSummary_Event" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+	<EventCondition ActionKey="YCD_PRINT_PICK_TICKET" ConditionKey=""
+        EventConditionKey="YCD_PRINT_PICK_TICKET"
+        EventKey="YCD_PRINT_PICK_TICKET" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+	<EventCondition ActionKey="CREATE_SHIPMENT.OS"
+        ConditionKey="2012010306564054001"
+        EventConditionKey="2012010309101359019"
+        EventKey="DEFAULT_EVENT_KEY_244" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+	<EventCondition ActionKey="YCD_CSTMR_PCK_AKNWLGMNT" ConditionKey=""
+        EventConditionKey="YCD_CSTMR_PCK_AKNWLGMNT"
+        EventKey="YCD_CSTMR_PCK_AKNWLGMNT" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+	<!-- Gemini-COM starts here -->
+	<EventCondition ActionKey="CREATE_SHIPMENT.OS" ConditionKey=""
+        EventConditionKey="20110907125558138008"
+        EventKey="SO_ROUTE_EVENT_1" MoreActionsFlag="N"
+        OwnerKey="DEFAULT" OwnerType="" Priority="0.00"/>
+</YFS_Event_ConditionList>

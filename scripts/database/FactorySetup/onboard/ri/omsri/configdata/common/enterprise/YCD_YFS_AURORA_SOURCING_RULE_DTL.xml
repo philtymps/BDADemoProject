@@ -1,0 +1,40 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Sourcing_Rule_DetailList>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DG1" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="2"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH2" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DG2" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH2" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DG2" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH1" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DG2" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH3" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DG1" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH4" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DG2" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="2"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH4" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_DEL_DG1"
+        FromNodeKey="" ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRDS1" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="#{Generic_Enterprise_Code}_PS_DG1"
+        FromNodeKey="" ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRPS1" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Distribution_Group" WorkOrderCreationAllowed=""/>
+</YFS_Sourcing_Rule_DetailList>

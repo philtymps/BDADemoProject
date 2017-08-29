@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<PLT_Pwd_Rule_CfgList>
+    <PasswordRuleCfg
+        Params="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;ParamList>&#xa;    &lt;Param Name=&quot;ResetType&quot; Value=&quot;Email&quot;/>&#xa;    &lt;Param Name=&quot;CheckIntervalMinutes&quot; Value=&quot;5&quot;/>&#xa;&lt;/ParamList>&#xa;"
+        PasswordPolicyKey="#{Generic_Enterprise_Code}_PP1" PasswordRuleDefnKey="20090207134125272606"/>
+</PLT_Pwd_Rule_CfgList>

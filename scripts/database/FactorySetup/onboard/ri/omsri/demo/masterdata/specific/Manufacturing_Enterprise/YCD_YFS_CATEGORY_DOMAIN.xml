@@ -1,0 +1,25 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Category_DomainList>
+    <CategoryDomain CategoryDomain="#{Generic_Enterprise_Code}RefMasterCatalog"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        Description="Master Catalog for #{Generic_Enterprise_Code}" IsClassification="N"
+        OrganizationCode="#{Generic_Enterprise_Code}" ShortDescription="#{Generic_Enterprise_Code} Master Catalog"/>
+	<CategoryDomain CategoryDomain="ApplicationsCatalog"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD6" IsClassification="N"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" ShortDescription="Application Catalog"/>
+    <CategoryDomain
+        AuthorizedSubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}"
+        CategoryDomain="#{Dealer_1_Enterprise_Code}RefCatalog"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD4" IsClassification="N"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" ShortDescription="#{Dealer_1_Enterprise_Name} Catalog"/>
+    <CategoryDomain
+        AuthorizedSubCatalogOrganizationCode="#{Dealer_2_Enterprise_Code}"
+        CategoryDomain="#{Dealer_2_Enterprise_Code}RefCatalog"
+        CategoryDomainKey="#{Generic_Enterprise_Code}_CD5" IsClassification="N"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" ShortDescription="#{Dealer_2_Enterprise_Name}  Catalog"/>
+</YFS_Category_DomainList>

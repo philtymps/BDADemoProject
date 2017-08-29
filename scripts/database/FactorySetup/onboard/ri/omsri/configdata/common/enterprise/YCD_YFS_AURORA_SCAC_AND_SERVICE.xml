@@ -1,0 +1,64 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_SCAC_And_ServiceList>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS1"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} - Mail" ScacAndServiceDesc="Mail" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="PARCEL" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS2"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} - Express" ScacAndServiceDesc="Express" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="PARCEL" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS3"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} US - Overnight Delivery" ScacAndServiceDesc="US - Overnight Delivery" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS4"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} US - Regular Delivery" ScacAndServiceDesc="US - Regular Delivery" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS5"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} US - 2-Day Express Delivery" ScacAndServiceDesc="US - 2-Day Express Delivery" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS6"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} International Priority" ScacAndServiceDesc="International Priority" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ScacAndService CarrierServiceKey="#{Generic_Enterprise_Code}_CS7"
+        CarrierType="PARCEL" DistancePerDay="0.00" DistanceUOM=""
+        ElectronicCode="" FixedTransitDays="0" HostCode=""
+        InternalReference1="" InternalReference2=""
+        InternalReference3="" InternalReference4=""
+        InternalReference5="" InternationalShipping=""
+        ScacAndService="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix} International Regular" ScacAndServiceDesc="International Regular" ScacCode=""
+        ScacKey="#{Standard_Service_Level_Carrier_Code}_#{Generic_Enterprise_Suffix}" ShipMode="" OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_SCAC_And_ServiceList>

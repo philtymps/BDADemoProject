@@ -1,0 +1,16 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Routing_GuideList>
+    <RoutingGuide BuyerOrganizationCode="" Comments="" ContactKey=""
+        EffectiveDate="2011-09-06" EnterpriseCode="" ExpectedShipDate=""
+        ExpirationDate="2020-09-07" OrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        PublishDate="2011-09-06" RoutingGuideKey="2011090705134253008"
+        RoutingGuideName="General" RoutingGuideNo="1"
+        SellerOrganizationCode="" SupercedesRoutingGuideNo="" Type="OUTBOUND">
+        <SelectionCriteria DepartmentCode="" FreightTerms="PREPAID" ItemClassification=""/>
+    </RoutingGuide>
+</YFS_Routing_GuideList>

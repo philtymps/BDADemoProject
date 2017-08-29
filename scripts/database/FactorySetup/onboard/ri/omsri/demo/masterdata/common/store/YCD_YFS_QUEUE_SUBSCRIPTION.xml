@@ -1,0 +1,19 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Queue_SubscriptionList>
+    <QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q1" UserKey="#{Generic_Store_Admin_UserId}"/>
+    <QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q1" UserKey="#{Generic_Store_CSR_UserId}"/>
+    <QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q3" UserKey="#{Generic_Store_Admin_UserId}"/>
+    <QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q3" UserKey="#{Generic_Store_CSR_UserId}"/>
+	<QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q4" UserKey="#{Generic_Store_Admin_UserId}"/>
+    <QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q4" UserKey="#{Generic_Store_CSR_UserId}"/>
+    <QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q5" UserKey="#{Generic_Store_Admin_UserId}"/>
+	<QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q5" UserKey="#{Generic_Store_CSR_UserId}"/>
+	<QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q9" UserKey="#{Generic_Store_Admin_UserId}"/>
+	<QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q12" UserKey="#{Generic_Store_CSR_UserId}"/>
+	<QueueSubscription QueueKey="#{Generic_Enterprise_Code}_Q12" UserKey="#{Generic_Store_Admin_UserId}"/>
+</YFS_Queue_SubscriptionList>

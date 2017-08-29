@@ -1,0 +1,361 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricelist_LineList>
+    <PricelistLine ItemID="100810" UnitOfMeasure="EACH" ListPrice="6.49"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100805" UnitOfMeasure="EACH" ListPrice="2.29"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100811" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100812" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100703" UnitOfMeasure="EACH" ListPrice="870.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100706" UnitOfMeasure="EACH" ListPrice="850.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100707" UnitOfMeasure="EACH" ListPrice="850.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100001" UnitOfMeasure="EACH" ListPrice="749.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100002" UnitOfMeasure="EACH" ListPrice="40.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100003" UnitOfMeasure="EACH" ListPrice="10.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100004" UnitOfMeasure="EACH" ListPrice="154.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100005" UnitOfMeasure="EACH" ListPrice="999.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100006" UnitOfMeasure="EACH" ListPrice="749.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100008" UnitOfMeasure="EACH" ListPrice="479.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100009" UnitOfMeasure="EACH" ListPrice="39.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100010" UnitOfMeasure="EACH" ListPrice="32.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100011" UnitOfMeasure="EACH" ListPrice="650.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100012" UnitOfMeasure="EACH" ListPrice="599.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100700" UnitOfMeasure="EACH" ListPrice="900.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100013" UnitOfMeasure="EACH" ListPrice="849.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100701" UnitOfMeasure="EACH" ListPrice="950.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100702" UnitOfMeasure="EACH" ListPrice="950.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100704" UnitOfMeasure="EACH" ListPrice="950.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100705" UnitOfMeasure="EACH" ListPrice="850.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100801" UnitOfMeasure="EACH" ListPrice="24.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100802" UnitOfMeasure="EACH" ListPrice="4.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100181" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100171" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100191" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100015" UnitOfMeasure="EACH" ListPrice="24.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100014" UnitOfMeasure="EACH" ListPrice="24.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100018" UnitOfMeasure="EACH" ListPrice="49.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100019" UnitOfMeasure="EACH" ListPrice="49.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100020" UnitOfMeasure="EACH" ListPrice="49.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100016" UnitOfMeasure="EACH" ListPrice="29.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100022" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100021" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100101" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100102" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100103" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100104" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100105" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100111" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100112" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100113" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100121" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100122" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100123" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100124" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100131" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100132" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100141" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100143" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100151" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100142" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100153" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100161" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100162" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100163" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100164" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100165" UnitOfMeasure="EACH" ListPrice="0.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100821" UnitOfMeasure="EACH" ListPrice="6.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100822" UnitOfMeasure="EACH" ListPrice="6.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100823" UnitOfMeasure="EACH" ListPrice="9.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100824" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100825" UnitOfMeasure="EACH" ListPrice="99.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100826" UnitOfMeasure="EACH" ListPrice="149.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100827" UnitOfMeasure="EACH" ListPrice="99.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100828" UnitOfMeasure="EACH" ListPrice="149.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100829" UnitOfMeasure="EACH" ListPrice="174.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100830" UnitOfMeasure="EACH" ListPrice="199.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100125" UnitOfMeasure="EACH" ListPrice="1249.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100126" UnitOfMeasure="EACH" ListPrice="549.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100182" UnitOfMeasure="EACH" ListPrice="126.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100183" UnitOfMeasure="EACH" ListPrice="99.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100184" UnitOfMeasure="EACH" ListPrice="1249.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100185" UnitOfMeasure="EACH" ListPrice="549.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100192" UnitOfMeasure="EACH" ListPrice="44.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100193" UnitOfMeasure="EACH" ListPrice="55.00"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100601" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100602" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100603" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100604" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100605" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100606" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100607" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+    <PricelistLine ItemID="100608" UnitOfMeasure="EACH" ListPrice="14.99"
+        MassAuditID="#{Generic_Enterprise_Code}_MA3"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricingStatus="ACTIVE"/>
+	<PricelistLine ItemID="WRONGITEM"
+        ItemShortDesc="Item For Blind Returns" ListPrice="0.00"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PLH2" PricingStatus="ACTIVE" 
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        UnitOfMeasure="EACH" UnitPrice="0.00"/>
+</YPM_Pricelist_LineList>

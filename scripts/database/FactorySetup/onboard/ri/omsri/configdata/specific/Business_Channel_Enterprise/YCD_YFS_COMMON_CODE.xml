@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Common_CodeList>
+     <CommonCode CodeLength="0" CodeLongDescription="In Person" CodeName=""
+        CodeShortDescription="In Person" CodeSymbol=""
+        CodeType="CONTACT_TYPE" CodeValue="YCD_CTYPE_INPERSON"
+        DocumentType="0001"
+        DocumentTypeSpecific="" MeantForEnterprise="Y"
+        MeantForInternal="Y" MeantForSupplier="N" SystemDefinedCode="N" OrganizationCode="DEFAULT"/>	
+	<CommonCode CodeLength="0" CodeLongDescription="Undo_Pick Reason: priority to high value order" 
+		CodeName=""
+        CodeShortDescription="High Value Order" CodeSymbol=""
+        CodeType="YCD_UNDO_BCKRM_RSN" CodeValue="High_Value_Order"
+        DocumentType="0001" DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier="" SystemDefinedCode="N" OrganizationCode="#{Generic_Enterprise_Code}"/>   
+	<CommonCode CodeLength="0" CodeLongDescription="&amp;Address Verification" 
+		CodeName="" CodeShortDescription="&amp;Address Verification" 
+		CodeSymbol="" CodeType="YCD_CUST_VERFN_TYP" 
+		CodeValue="YCD_ADDRESS_VERIFICATION" DocumentType="0001" 
+		DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier="" 
+		OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="L&amp;icence Verification" 
+		CodeName="" CodeShortDescription="L&amp;icence Verification" 
+		CodeSymbol="" CodeType="YCD_CUST_VERFN_TYP" 
+		CodeValue="YCD_LICENCE_VERIFICATION" DocumentType="0001" 
+		DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier="" 
+		OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="&amp;Passport Verification" 
+		CodeName="" CodeShortDescription="&amp;Passport Verification" 
+		CodeSymbol="" CodeType="YCD_CUST_VERFN_TYP" 
+		CodeValue="YCD_PASSPORT_VERIFICATION" DocumentType="0001" 
+		DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier="" 
+		OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<CommonCode CodeLength="0" CodeLongDescription="O&amp;ther Verification" 
+		CodeName="" CodeShortDescription="O&amp;ther Verification" 
+		CodeSymbol="" CodeType="YCD_CUST_VERFN_TYP" 
+		CodeValue="YCD_Z_OTHER_VERIFICATION" DocumentType="0001" 
+		DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier="" 
+		OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_Common_CodeList>

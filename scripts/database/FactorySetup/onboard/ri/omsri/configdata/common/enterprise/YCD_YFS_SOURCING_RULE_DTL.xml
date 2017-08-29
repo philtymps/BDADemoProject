@@ -1,0 +1,38 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Sourcing_Rule_DetailList>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH2"
+        SourcingTemplate="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;SourcingTemplate>&#xa;    &lt;NodeTypes ArgID=&quot;NODE_TYPE_1&quot;>&#xa;        &lt;NodeType NodeTypeValue=&quot;Store&quot;/>&#xa;    &lt;/NodeTypes>&#xa;&lt;/SourcingTemplate>"
+        SubstitutionAllowed="" TemplateType="All_Nodes_Of_Type" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="2"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH2"
+        SourcingTemplate="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;SourcingTemplate>&#xa;    &lt;NodeTypes ArgID=&quot;NODE_TYPE_1&quot;>&#xa;        &lt;NodeType NodeTypeValue=&quot;DC&quot;/>&#xa;    &lt;/NodeTypes>&#xa;&lt;/SourcingTemplate>"
+        SubstitutionAllowed="" TemplateType="All_Nodes_Of_Type" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH1"
+        SourcingTemplate="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;SourcingTemplate>&#xa;    &lt;NodeTypes ArgID=&quot;NODE_TYPE_1&quot;>&#xa;        &lt;NodeType NodeTypeValue=&quot;Store&quot;/>&#xa;    &lt;/NodeTypes>&#xa;&lt;/SourcingTemplate>"
+        SubstitutionAllowed="" TemplateType="All_Nodes_Of_Type" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH3"
+        SourcingTemplate="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;SourcingTemplate>     &lt;NodeTypes ArgID=&quot;NODE_TYPE_1&quot;>         &lt;NodeType NodeTypeValue=&quot;Store&quot;/>     &lt;/NodeTypes> &lt;/SourcingTemplate>"
+        SubstitutionAllowed="" TemplateType="All_Nodes_Of_Type" WorkOrderCreationAllowed=""/>
+	<SourcingRuleDetail DistributionRuleId="" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="2"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH4"
+        SourcingTemplate="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;SourcingTemplate>&#xa;    &lt;NodeTypes ArgID=&quot;NODE_TYPE_1&quot;>&#xa;        &lt;NodeType NodeTypeValue=&quot;Store&quot;/>&#xa;    &lt;/NodeTypes>&#xa;&lt;/SourcingTemplate>"
+        SubstitutionAllowed="" TemplateType="All_Nodes_Of_Type" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey=""
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRH4"
+        SourcingTemplate="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;SourcingTemplate>&#xa;    &lt;NodeTypes ArgID=&quot;NODE_TYPE_1&quot;>&#xa;        &lt;NodeType NodeTypeValue=&quot;DC&quot;/>&#xa;    &lt;/NodeTypes>&#xa;&lt;/SourcingTemplate>"
+        SubstitutionAllowed="" TemplateType="All_Nodes_Of_Type" WorkOrderCreationAllowed=""/>
+</YFS_Sourcing_Rule_DetailList>

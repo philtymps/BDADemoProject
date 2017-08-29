@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_EventList>
+	<Event ActiveFlag="Y" EventKey="2002081502" 
+		Eventid="ON_CANCEL" TransactionKey="ORDER_CHANGE"/>
+	<Event ActiveFlag="Y" EventKey="DEFAULT_EVENT_KEY_219" 
+		Eventid="ON_SUCCESS" TransactionKey="ORDER_CHANGE"/>
+    
+    <Event ActiveFlag="Y" EventKey="2002081503" 
+		Eventid="ON_CANCEL" TransactionKey="ORDER_RELEASE_CHANGE"/>
+	
+    <!-- <Event ActiveFlag="Y" EventKey="DEFAULT_EVENT_KEY_224" 
+		Eventid="ON_SUCCESS" TransactionKey="DRAFT_ORDER_CONFIRM"/> -->
+
+    <!-- <Event ActiveFlag="Y" EventKey="DEFAULT_EVENT_KEY_01"
+        Eventid="ON_SUCCESS" TransactionKey="ORDER_CREATE"/> -->
+	
+    <Event ActiveFlag="Y" EventKey="200206122336160071" 
+		Eventid="ON_CANCEL" TransactionKey="SCHEDULE.0001"/>
+    
+    <Event ActiveFlag="Y" EventKey="200403262336077617" 
+		Eventid="ON_CANCEL" TransactionKey="RELEASE.0001"/>
+
+	<Event ActiveFlag="Y" EventKey="DEFAULT_EVENT_KEY_229" 
+		Eventid="ON_SUCCESS" TransactionKey="CHAINED_ORDER_CREATE"/>
+
+	<Event ActiveFlag="Y" EventKey="ON_ASSIGNMENTS_CHANGE"
+        Eventid="ON_ASSIGNMENTS_CHANGE" TransactionKey="CUSTOMER_DEFINITION"/>
+<!-- Aries Enhancements -->
+	<Event ActiveFlag="Y" EventKey="ON_HOLD_TYPE_1"
+		Eventid="ON_HOLD_TYPE_STATUS_CHANGE" TransactionKey="ORDER_CHANGE" />
+
+	<Event ActiveFlag="Y" EventKey="ON_HOLD_TYPE_4"
+        Eventid="ON_HOLD_TYPE_STATUS_CHANGE" TransactionKey="DRAFT_ORDER_CONFIRM" />
+
+	<Event ActiveFlag="Y" EventKey="ON_ACCOUNT_LIMIT_CHANGE"
+        Eventid="ON_ACCOUNT_LIMIT_CHANGE"  TransactionKey="CUSTOMER_DEFINITION"/>
+<!-- Aries Enhancements -->
+	<Event ActionKey="" ActiveFlag="N" EnterpriseKey=""
+        EventKey="200506230954104504" EventName="On Success"
+        Eventid="ON_SUCCESS" ExceptionType="" ExtendEnterpriseFlag="1"
+        ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="200506230954104503" Version=""/>
+    <Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="200506230954104508" EventName="On Fraudulent Order"
+        Eventid="ON_FRAUDULENT_ORDER"
+        ExceptionType="ON_FRAUDULENT_ORDER" ExtendEnterpriseFlag=""
+        ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="200506230954104503" Version=""/>
+
+    <Event ActionKey="" ActiveFlag="N" EnterpriseKey=""
+        EventKey="200506231111425037" EventName="On Success"
+        Eventid="ON_SUCCESS" ExceptionType="" ExtendEnterpriseFlag="1"
+        ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="200506231111425036" Version=""/>
+    <Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="200506231111425039" EventName="On Duplicate Order"
+        Eventid="ON_DUPLICATE_ORDER" ExceptionType="ON_DUPLICATE_ORDER"
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="200506231111425036" Version=""/>
+
+	 <Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="2005042914481564445"
+        EventName="Address Verification Failed"
+        Eventid="VERIFY_ADDRESS_FAILED" ExceptionType=""
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="2005042914140664070" Version=""/>
+
+	<Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="20050512171845155902" EventName="Send Notification"
+        Eventid="SEND_NOTIFICATION" ExceptionType=""
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="20050512125550150054" Version=""/>
+
+	<Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="STOP_DEL0001_ON_SUCCESS" EventName="On Success"
+        Eventid="ON_SUCCESS" ExceptionType="ON_SUCCESS"
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="MNG_STOP_DEL0001" Version=""/>
+
+	<Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="RT_RECEIPT_EVENT_3" EventName="On Success"
+        Eventid="ON_SUCCESS" ExceptionType="ON_SUCCESS"
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="RECEIVE_RECEIPT.0003" Version=""/>
+
+	<Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="RP_ON_REQUEST_KEY" EventName="On Request"
+        Eventid="ON_REQUEST" ExceptionType="ON_SUCCESS"
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="RESET_PASSWORD_TRAN_KEY" Version=""/>
+    <Event ActionKey="" ActiveFlag="Y" EnterpriseKey="DEFAULT"
+        EventKey="RP_ON_SUCCESS_KEY" EventName="On Success"
+        Eventid="ON_SUCCESS" ExceptionType="ON_SUCCESS"
+        ExtendEnterpriseFlag="" ExtendSupplierFlag="" ShipnodeKey=""
+        TransactionKey="RESET_PASSWORD_TRAN_KEY" Version=""/>
+
+</YFS_EventList>

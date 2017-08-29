@@ -1,0 +1,72 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Purge_CriteriaList>
+    <PurgeCriteria CommitCount="100"
+        ErrFileName="Price_Match_Purge_error.log" LeadDays="30"
+        LogFileName="Price_Match_Purge_Data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="YCDPRICEMATCHPRG"
+        PurgeCodeDescription="Price Match Purge"  WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100"
+        ErrFileName="Price_Match_History_Purge_error.log" LeadDays="30"
+        LogFileName="Price_Match_History_Purge_Data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="YCDPRICEMATCHHISTPRG"
+        PurgeCodeDescription="Price Match History Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Negotiation_hist_purge_error.log" LeadDays="30"
+        LogFileName="Negotiation_hist_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="NEGOTIATIONHISTPRG"
+        PurgeCodeDescription="Negotiation History Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Negotiation_purge_error.log" LeadDays="30"
+        LogFileName="Negotiation_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="NEGOTIATIONPRG"
+        PurgeCodeDescription="Negotiation Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Order_history_purge_error.log" LeadDays="30"
+        LogFileName="Order_history_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="ORDERHISTPRG"
+        PurgeCodeDescription="Order History Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="order_purge_error.log" LeadDays="30"
+        LogFileName="order_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="ORDERPRG" PurgeCodeDescription="Order Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DelPackage="" DocumentType="0001"
+        ErrFileName="PickList_purge_error.log" LeadDays="30"
+        LogFileName="PickList_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="PICKLISTPRG" PurgeCodeDescription="PickList Purge" RbSegment=""
+        SelPackage="" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Shipment_Stats_purge_error.log" LeadDays="30"
+        LogFileName="Shipment_Stats_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="PRG_SHIP_STATS"
+        PurgeCodeDescription="Shipment Statistics Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Shipment_history_purge_error.log" LeadDays="30"
+        LogFileName="Shipment_history_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="SHIPMENTHISTPRG"
+        PurgeCodeDescription="Shipment History Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Shipment_purge_error.log" LeadDays="30"
+        LogFileName="Shipment_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="SHIPMENTPRG" PurgeCodeDescription="Shipment Purge" WriteToLog="N"/>
+    <PurgeCriteria CommitCount="100" DocumentType="0001"
+        ErrFileName="Status_audit_purge_error.log" LeadDays="30"
+        LogFileName="Status_audit_purge_data.log"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PurgeCode="STATUSAUDITPRG"
+        PurgeCodeDescription="Status Audit Purge" WriteToLog="N"/>
+</YFS_Purge_CriteriaList>

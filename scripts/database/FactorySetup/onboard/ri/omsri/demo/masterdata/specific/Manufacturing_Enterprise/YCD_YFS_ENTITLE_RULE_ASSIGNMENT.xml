@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Entitle_Rule_AssignmentList>
+    <EntitlementRuleAssignment
+        AssignedToOrganizationCode="#{Dealer_1_Enterprise_Code}"
+        EntitlementRuleKey="#{Manufacturing_Enterprise_Code}_ER1"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" Purpose="SELLING"/>
+</YFS_Entitle_Rule_AssignmentList>

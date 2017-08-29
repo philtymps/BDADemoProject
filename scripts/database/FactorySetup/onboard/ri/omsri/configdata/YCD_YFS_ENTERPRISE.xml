@@ -1,0 +1,18 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_EnterpriseList>
+    <Enterprise Activateflag="" BillingaddressKey=""
+        CommercialContactKey="" ContactaddressKey=""
+        CorporateaddressKey="" DefaultDistributionRuleId=""
+        EnterpriseKey="#{Retail_Channel_Enterprise_Code}"
+        Enterprisecode="#{Retail_Channel_Enterprise_Code}"
+        Enterprisename="#{Retail_Channel_Enterprise_Name}"
+        IsDeliverySourcingKept="" IsServiceSourcingKept=""
+        IsSourcingKept="" LegalContactKey="" Localecode=""
+        LocationLatitude="" LocationLongitude="" Logoimagefile=""
+        Longdesc="" NoteKey="" TaxpayerId="" UseDefaultDistribution="N" UseDefaultOrderStatusRules="N"/>
+</YFS_EnterpriseList>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Promise OrderDate="2016-11-08T12:58:45-05:00" OrderNo="d180d7f0-0b26-440a-b5e8-3b8ebd89b9d2">
+    <PromiseLines>
+        <PromiseLine CarrierServiceCode="STANDARD_AURE"
+            DeliveryMethod="SHP" DistributionRuleId=""
+            ItemID="WSH005_051901" LineId="201611081243584123057706"
+            ProductClass="" ReceivingNode="" RequiredQty="3.00"
+            SCAC="Y_ANY" ShipNode="" UnitOfMeasure="EACH">
+            <PossibleAssignments>
+                <Assignment AssignmentKey="Aurora_WH1::::20161114000000"
+                    Capacity="" CapacityConsumed="8205.0"
+                    CapacityUnitOfMeasure="" CapacityUtilization=""
+                    CarrierServiceCode="STANDARD_AURE"
+                    DeliveryDate="2016-11-21T00:00:00-05:00"
+                    Distance="39.7170723947" ProcuredQty="0"
+                    ProductAvailDate="" Quantity="3" SCAC="Y_ANY"
+                    ShipDate="2016-11-14T00:00:00-05:00" ShipNode="Aurora_WH1">
+                    <PossibleCarriers/>
+                    <Costs Currency="USD"
+                        ItemInventoryCostPerUnit="0.00"
+                        NodePriorityCostPerUnit="0.00"
+                        NodeShippingCapacityCostPerUnit="0.00" OutboundShipmentHandlingCostPerUnit="0.00"/>
+                    <SubstituteItems/>
+                    <Procurements/>
+                </Assignment>
+                <Assignment AssignmentKey="Aurora_WH1::::20161115000000"
+                    Capacity="" CapacityConsumed="8205.0"
+                    CapacityUnitOfMeasure="" CapacityUtilization=""
+                    CarrierServiceCode="STANDARD_AURE"
+                    DeliveryDate="2016-11-22T00:00:00-05:00"
+                    Distance="39.7170723947" ProcuredQty="0"
+                    ProductAvailDate="" Quantity="3" SCAC="Y_ANY"
+                    ShipDate="2016-11-15T00:00:00-05:00" ShipNode="Aurora_WH1">
+                    <PossibleCarriers/>
+                    <Costs Currency="USD"
+                        ItemInventoryCostPerUnit="0.00"
+                        NodePriorityCostPerUnit="0.00"
+                        NodeShippingCapacityCostPerUnit="0.00" OutboundShipmentHandlingCostPerUnit="0.00"/>
+                    <SubstituteItems/>
+                    <Procurements/>
+                </Assignment>
+                <Assignment AssignmentKey="Aurora_WH1::::20161108000000"
+                    Capacity="" CapacityConsumed="8205.0"
+                    CapacityUnitOfMeasure="" CapacityUtilization=""
+                    CarrierServiceCode="STANDARD_AURE"
+                    DeliveryDate="2016-11-15T12:58:45-05:00"
+                    Distance="39.7170723947" ProcuredQty="0"
+                    ProductAvailDate="" Quantity="3" SCAC="Y_ANY"
+                    ShipDate="2016-11-08T12:58:45-05:00" ShipNode="Aurora_WH1">
+                    <PossibleCarriers/>
+                    <Costs Currency="USD"
+                        ItemInventoryCostPerUnit="0.00"
+                        NodePriorityCostPerUnit="0.00"
+                        NodeShippingCapacityCostPerUnit="0.00" OutboundShipmentHandlingCostPerUnit="0.00"/>
+                    <SubstituteItems/>
+                    <Procurements/>
+                </Assignment>
+            </PossibleAssignments>
+            <ShipToAddress AddressLine1="101 Main St." City="Tewksbury"
+                Country="US" State="MA" ZipCode="01876"/>
+        </PromiseLine>
+    </PromiseLines>
+</Promise>
+ 

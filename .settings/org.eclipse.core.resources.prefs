@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//src/com/unica/emessage/webservices/tms/soap/SendMailing.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/soap/SendMailingResponse.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/soap/TMS.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/soap/TMSLocator.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/soap/TMSPortType.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/soap/TMSSOAP11BindingStub.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/xsd/AdvisoryMessage.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/xsd/Attachment.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/xsd/NameValuePair.java=UTF-8
+encoding//src/com/unica/emessage/webservices/tms/xsd/Response.java=UTF-8
+encoding//src/org/w3/www/_2005/_05/xmlmime/Base64Binary.java=UTF-8

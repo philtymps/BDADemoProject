@@ -1,0 +1,35 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_SCAC_ExList>
+    <ScacEx Account1="001200011" Account2="pierbridge"
+        AutoOpenManifest="Y" BillingAddressKey=""
+        CarrierAdapterImplKey="PierbridgeAdaptor" ContactAddressKey=""
+        CurrentTrackingNo="" CustomerReference1="" CustomerReference2=""
+        CustomerReference3="" CustomerReference4=""
+        CustomerReference5="" EmailReturnLabel="N"
+        EnterpriseKey="#{Retail_Channel_Enterprise_Code}" InternalReference1=""
+        InternalReference2="" InternalReference3=""
+        InternalReference4="" InternalReference5=""
+        IsThirdPartyBillingRequiredForOutboundShipment="Y"
+        MaxTrackingNo="" MinTrackingNo="" OnlineControlNumber=""
+        PortalAccount1="" PortalAccount2="" PostOfficeCity=""
+        PostOfficeState="" PostOfficeZipcode="" PrintOrSaveLabel="S"
+        RecordKey="#{Retail_Store_1}" RecordType="SUPPLIER"
+        ReferenceLength1="0" ReferenceLength2="0" ReferenceLength3="0"
+        ReferenceLength4="0" ReferenceLength5="0" ReferencePrefix1=""
+        ReferencePrefix2="" ReferencePrefix3="" ReferencePrefix4=""
+        ReferencePrefix5="" ReferenceStartIndex1="0"
+        ReferenceStartIndex2="0" ReferenceStartIndex3="0"
+        ReferenceStartIndex4="0" ReferenceStartIndex5="0"
+        ReferenceSuffix1="" ReferenceSuffix2="" ReferenceSuffix3=""
+        ReferenceSuffix4="" ReferenceSuffix5="" ReferenceType1=""
+        ReferenceType2="" ReferenceType3="" ReferenceType4=""
+        ReferenceType5="" ScacExKey="#{Retail_Store_1}-FEDX" ScacKey="FEDX"
+        ServerAddress1="" ServerAddress2="" ServerPassword=""
+        ServerUserid="" ShipToHold="N" SystemIntgForDomesticReqd="Y"
+        SystemIntgForIntlReqd="" ThirdPartyOrganizationKey="#{Retail_Store_1}"/>
+</YFS_SCAC_ExList>

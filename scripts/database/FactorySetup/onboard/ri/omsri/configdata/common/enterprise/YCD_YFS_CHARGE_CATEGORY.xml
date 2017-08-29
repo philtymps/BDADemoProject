@@ -1,0 +1,74 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Charge_CategoryList>
+    <ChargeCategory ChargeCategory="Discount"
+        ConsiderForProfitMargin="Y" Description="Discount"
+        DocumentType="0001" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Coupon"
+        ConsiderForProfitMargin="Y" Description="Coupon"
+        DocumentType="0001" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Handling"
+        ConsiderForProfitMargin="Y" Description="Handling"
+        DocumentType="0001" IsBillable="Y" IsDiscount="N" IsRefundable="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Personalization"
+        ConsiderForProfitMargin="Y" Description="Personalization"
+        DocumentType="0001" IsBillable="Y" IsDiscount="N" IsRefundable="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Shipping"
+        ConsiderForProfitMargin="Y" Description="Shipping"
+        DocumentType="0001" IsBillable="Y" IsDiscount="N" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="ShippingDiscount"
+        ConsiderForProfitMargin="Y" Description="Shipping Discount"
+        DocumentType="0001" IsBillable="Y" IsDiscount="N" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="CUSTOMER_APPEASEMENT"
+        ConsiderForProfitMargin="Y" Description="Customer Appeasement"
+        DocumentType="0001" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="PriceMatch"
+        ConsiderForProfitMargin="Y" Description="Price Match"
+        DocumentType="0001" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Discount"
+        ConsiderForProfitMargin="Y" Description="Discount"
+        DocumentType="0003" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Handling"
+        ConsiderForProfitMargin="Y" Description="Handling"
+        DocumentType="0003" IsBillable="Y" IsDiscount="N" IsRefundable="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Personalization"
+        ConsiderForProfitMargin="Y" Description="Personalization"
+        DocumentType="0003" IsBillable="Y" IsDiscount="N" IsRefundable="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Shipping"
+        ConsiderForProfitMargin="Y" Description="Shipping"
+        DocumentType="0003" IsBillable="Y" IsDiscount="N" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="ShippingDiscount"
+        ConsiderForProfitMargin="Y" Description="Shipping Discount"
+        DocumentType="0003" IsBillable="Y" IsDiscount="N" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Coupon"
+        ConsiderForProfitMargin="Y" Description="Coupon"
+        DocumentType="0003" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+	<ChargeCategory ChargeCategory="Discount"
+        ConsiderForProfitMargin="Y" Description="Discount"
+        DocumentType="0015" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Handling"
+        ConsiderForProfitMargin="Y" Description="Handling"
+        DocumentType="0015" IsBillable="Y" IsDiscount="N" IsRefundable="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Personalization"
+        ConsiderForProfitMargin="Y" Description="Personalization"
+        DocumentType="0015" IsBillable="Y" IsDiscount="N" IsRefundable="N" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Shipping"
+        ConsiderForProfitMargin="Y" Description="Shipping"
+        DocumentType="0015" IsBillable="Y" IsDiscount="N" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="CUSTOMER_APPEASEMENT"
+        ConsiderForProfitMargin="Y" Description="Customer Appeasement"
+        DocumentType="0015" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="PriceMatch"
+        ConsiderForProfitMargin="Y" Description="Price Match"
+        DocumentType="0015" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="ShippingDiscount"
+        ConsiderForProfitMargin="Y" Description="Shipping Discount"
+        DocumentType="0015" IsBillable="Y" IsDiscount="N" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <ChargeCategory ChargeCategory="Coupon"
+        ConsiderForProfitMargin="Y" Description="Coupon"
+        DocumentType="0015" IsBillable="Y" IsDiscount="Y" IsRefundable="Y" OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_Charge_CategoryList>

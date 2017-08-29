@@ -1,0 +1,9 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Region_SchemaList>
+	<RegionSchema RegionSchemaKey="DEFAULT_RS1" OrganizationCode="DEFAULT" RegionSchemaName="DemoRegion" RegionSchemaDescription="Demo Region Schema" Country="US" />
+</YFS_Region_SchemaList>

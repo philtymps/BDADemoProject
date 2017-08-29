@@ -1,0 +1,2581 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_ItemList>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100001"
+        ItemKey="2009070608451940844"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="Y" BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CostCurrency="USD"
+            CreditWOReceipt="N"
+            Description="Plasma HDTV features progressive scan"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="This plasma HDTV features progressive scan, a 16:9 aspect ratio and a 2,000,000:1 dynamic contrast ratio for an amazing entertainment experience. Enjoy viewing photos from your digital camera with the TIERRA Image Viewer and the built-in Secure Digital media card slot."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100001.jpg"
+            ImageLabel="Tierra 42&quot; Plasma Television/ HDTV"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsEligibleForShippingDiscount="Y"
+            IsHazmat="N" IsPickupAllowed="Y" IsReturnService="N" IsReturnable="Y"
+            IsShippingAllowed="Y" IsSoldSeparately="Y"
+            Keywords="Plasma, Television, Flat Screen, Aspect Ratio, TIERRA"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Tierra 42&quot; Plasma Television/ HDTV"
+            Status="3000" TaxableFlag="Y" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100002"
+        ItemKey="2009070705284842081"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="Y" BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CostCurrency="USD"
+            CreditWOReceipt="N"
+            Description="High-definition with this DVD player that features 1080p upconversion through the HDMI output."
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100002.jpg"
+            ImageLabel="Omega Progressive-Scan DVD Player with 1080p Upconversion"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsEligibleForShippingDiscount="Y"
+            IsHazmat="N" IsPickupAllowed="Y" IsReturnService="N" IsReturnable="Y"
+            IsShippingAllowed="Y" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Omega Progressive-Scan DVD Player with 1080p Upconversion"
+            Status="3000" TaxableFlag="Y" UnitCost="100.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100003"
+        ItemKey="2009070705354742088"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Alpha 890 Advanced Universal Remote"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100003.jpg"
+            ImageLabel="Alpha 890 Advanced Universal Remote"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y" IsReturnable="Y"
+            IsReturnService="N" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha 890 Advanced Universal Remote"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100004"
+        ItemKey="2009070705381142159"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="X-540 Multimedia Surround Sound Speaker System (6-Piece)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100004.jpg"
+            ImageLabel="X-540 Multimedia Surround Sound Speaker System (6-Piece)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y"
+            IsReturnService="N" IsShippingAllowed="Y" IsReturnable="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="X-540 Multimedia Surround Sound Speaker System (6-Piece)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100005"
+        ItemKey="2009070705402942166"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Alpha-Omega Entertainment System"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100005.jpg"
+            ImageLabel="Alpha-Omega Entertainment System"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y" IsReturnable="Y"
+            IsReturnService="N" IsShippingAllowed="Y" KitCode="BUNDLE"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha-Omega Entertainment System"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100006"
+        ItemKey="2009070705432042173"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Alpha TIERRA/ 42&quot; Class / 1080p / 60Hz / LCD HDTV"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100006.jpg"
+            ImageLabel="Alpha TIERRA/ 42&quot; Class / 1080p / 60Hz / LCD HDTV"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y" IsReturnable="Y"
+            IsReturnService="N" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha TIERRA/ 42&quot; Class / 1080p / 60Hz / LCD HDTV"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100008"
+        ItemKey="2009070706190842364"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00"
+            ConfigurationModelName="Matrix/Computers/Notebooks/MXLP_002D210"
+            CreditWOReceipt="N"
+            Description="Matrix MXLP-210 Laptop Computer"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100008.jpg"
+            ImageLabel="Matrix MXLP-210 Laptop Computer"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsConfigurable="Y" IsHazmat="N" IsPreConfigured="N" IsReturnable="Y"
+            IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" IsSoldSeparately="Y" KitCode="BUNDLE"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix MXLP-210 Laptop Computer"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100009"
+        ItemKey="2009070706225242371"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Beta Rolling Laptop Bag - Black"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100009.jpg"
+            ImageLabel="Beta Rolling Laptop Bag - Black"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y" IsReturnable="Y"
+            IsReturnService="N" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Beta Rolling Laptop Bag - Black"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100010"
+        ItemKey="2009070706272742434"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Beta - Groove Laptop Backpack - Black"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100010.jpg"
+            ImageLabel="Beta - Groove Laptop Backpack - Black"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y" IsReturnable="Y"
+            IsReturnService="N" IsShippingAllowed="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Beta - Groove Laptop Backpack - Black"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100011"
+        ItemKey="2009070706295242441"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Alpha Laptop with Platinum Processor - Blue"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100011.jpg"
+            ImageLabel="Alpha Laptop with Platinum Processor - Blue"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Laptop with Platinum Processor - Blue"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100012"
+        ItemKey="2009070706311242448"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Alpha - Studio XPS Laptop with Core2 Duo Processor"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100012.jpg"
+            ImageLabel="Alpha - Studio XPS Laptop with Core2 Duo Processor"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N" IsReturnable="Y"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha - Studio XPS Laptop with Core2 Duo Processor"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100700"
+        ItemKey="2009070804204545331"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Alpha Refrigerator Avaiable with Variations"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100700.jpg"
+            ImageLabel="Alpha Refrigerator Avaiable with Variations"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsModelItem="Y"
+            IsPickupAllowed="Y" IsReturnService="N"
+            IsShippingAllowed="Y" ItemType="Refrigerator"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator Avaiable with Variations"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100013"
+        ItemKey="2009070804444945478"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="Y"
+            BundlePricingStrategy="PARENT" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CostCurrency="USD"
+            CreditWOReceipt="N"
+            Description="Omega 42&quot; Plasma Television"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100013.jpg"
+            ImageLabel="Omega 42&quot; Plasma Television"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsEligibleForShippingDiscount="Y" IsHazmat="N"
+            IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" IsSoldSeparately="Y"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Omega 42&quot; Plasma Television"
+            Status="3000" TaxableFlag="Y" UnitCost="750.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100701"
+        ItemKey="2009071304570749265"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N"
+            AssumeInfiniteInventory="N" BundleFulfillmentMode="01"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100701.jpg"
+            ImageLabel="Alpha Refrigerator - Stainless Steel / Side by Side / Left"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsAirShippingAllowed="Y" IsDeliveryAllowed="Y"
+            IsEligibleForShippingDiscount="Y" IsFreezerRequired="N"
+            IsHazmat="N" IsParcelShippingAllowed="Y" IsPickupAllowed="Y"
+            IsReturnService="N" IsReturnable="N" IsShippingAllowed="Y"
+            ItemType="Refrigerator" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            ReturnWindow="0" RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - Stainless Steel / Side by Side / Left"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <InventoryParameters AdvanceNotificationTime="0"
+            DefaultExpirationDays="0" IsFifoTracked="N"
+            IsItemBasedAllocationAllowed="Y" IsSerialTracked="N"
+            LeadTime="0" MaximumNotificationTime="0.00"
+            MinNotificationTime="0" ProcessingTime="0"
+            TagControlFlag="N" TimeSensitive="N" UseUnplannedInventory="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100702"
+        ItemKey="2009071304582649336"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N"
+            AssumeInfiniteInventory="N" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100702.jpg"
+            ImageLabel="Alpha Refrigerator - Stainless Steel / Side by Side / Right"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsAirShippingAllowed="Y" IsDeliveryAllowed="Y"
+            IsEligibleForShippingDiscount="Y" IsFreezerRequired="N"
+            IsHazmat="N" IsParcelShippingAllowed="Y" IsPickupAllowed="Y"
+            IsReturnService="N" IsReturnable="N" IsShippingAllowed="Y"
+            ItemType="Refrigerator" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            ReturnWindow="0" RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - Stainless Steel / Side by Side / Right"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <InventoryParameters AdvanceNotificationTime="0"
+            DefaultExpirationDays="0" IsFifoTracked="N"
+            IsItemBasedAllocationAllowed="Y" IsSerialTracked="N"
+            LeadTime="0" MaximumNotificationTime="0.00"
+            MinNotificationTime="0" ProcessingTime="0"
+            TagControlFlag="N" TimeSensitive="N" UseUnplannedInventory="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100704"
+        ItemKey="2009071304594849350"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N"
+            AssumeInfiniteInventory="N" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100704.jpg"
+            ImageLabel="Alpha Refrigerator - Stainless Steel / Bottom / Right"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsAirShippingAllowed="Y" IsDeliveryAllowed="Y"
+            IsEligibleForShippingDiscount="Y" IsFreezerRequired="N"
+            IsHazmat="N" IsParcelShippingAllowed="Y" IsPickupAllowed="Y"
+            IsReturnService="N" IsReturnable="N" IsShippingAllowed="Y"
+            ItemType="Refrigerator" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            ReturnWindow="0" RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - Stainless Steel / Bottom / Right"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <InventoryParameters AdvanceNotificationTime="0"
+            DefaultExpirationDays="0" IsFifoTracked="N"
+            IsItemBasedAllocationAllowed="Y" IsSerialTracked="N"
+            LeadTime="0" MaximumNotificationTime="0.00"
+            MinNotificationTime="0" ProcessingTime="0"
+            TagControlFlag="N" TimeSensitive="N" UseUnplannedInventory="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100705"
+        ItemKey="2009071305004949357"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation AllowGiftWrap="N"
+            AssumeInfiniteInventory="N" CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100705.jpg"
+            ImageLabel="Alpha Refrigerator - White / Top / Right"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsAirShippingAllowed="Y" IsDeliveryAllowed="Y"
+            IsEligibleForShippingDiscount="Y" IsFreezerRequired="N"
+            IsHazmat="N" IsParcelShippingAllowed="Y" IsPickupAllowed="Y"
+            IsReturnService="N" IsReturnable="N" IsShippingAllowed="Y"
+            ItemType="Refrigerator" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            ReturnWindow="0" RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - White / Top / Right"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <InventoryParameters AdvanceNotificationTime="0"
+            DefaultExpirationDays="0" IsFifoTracked="N"
+            IsItemBasedAllocationAllowed="Y" IsSerialTracked="N"
+            LeadTime="0" MaximumNotificationTime="0.00"
+            MinNotificationTime="0" ProcessingTime="0"
+            TagControlFlag="N" TimeSensitive="N" UseUnplannedInventory="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100801"
+        ItemKey="2009071312414850363"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="50/Pack incl Jewelcase&#xd;&#xa;4.7GB/120 minutes &#xd;&#xa;+R = write once &#xd;&#xa;Store up to 2 hours of digital video"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100801.jpg"
+            ImageLabel="Tony 50/Pack 4.7GB DVD+R, w Jewelcase"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Tony 50/Pack 4.7GB DVD+R, w Jewelcase"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100802"
+        ItemKey="2009071312463950370"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Medium point. Ballpoint ink provides vivid lines and smooth writing. Unique contoured grip"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100802.jpg"
+            ImageLabel="Matrix Retractable Ballpoint Pens"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" ManufacturerItem="800002"
+            ManufacturerItemDesc="Design for writing precision. Medium point. Vivid lines and smooth writing. Contoured grip."
+            ManufacturerName="Matrix" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Retractable Ballpoint Pens"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100810"
+        ItemKey="2009071322000851630"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100810.jpg"
+            ImageLabel="Matrix Clear-Front Report Covers, 5/PK Assorted Colors"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Clear-Front Report Covers, 5/PK Assorted Colors"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100805"
+        ItemKey="2009071423541352906"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Matrix Textured 10-Pocket Presentation Book"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Textured poly presentation book with clear tabbed pockets&#xa;&#xa;    * Poly material resists moisture and tears&#xa;    * 10 clear pockets with tabs&#xa;    * Inside pocket on front and back cover&#xa;    * 8 1/2&quot;x11&quot;"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100805.jpg"
+            ImageLabel="Matrix Textured 10-Pocket Presentation Book"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" IsSoldSeparately="Y"
+            ManufacturerItemDesc="Matrix Textured 10-Pocket Presentation Book"
+            ManufacturerName="Matrix" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Textured 10-Pocket Presentation Book"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100811"
+        ItemKey="2009071522523556393"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Matrix Secure Seal Report Covers"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Showcase reports without punching holes&#xa;Paper locks in easily with black side-lock bar &#xa;Holds 30 sheets &#xa;Available in black, red, blue and white"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100811.jpg"
+            ImageLabel="Matrix Secure Seal Report Covers"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" IsSoldSeparately="Y"
+            Keywords="sliding side-lock report cover, report covers, binders, presentation"
+            ManufacturerItem="800011"
+            ManufacturerItemDesc="Matrix Sliding Side-Lock Report Covers"
+            ManufacturerName="Matrix" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Secure Seal Report Covers"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100812"
+        ItemKey="2009071523543756600"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundlePricingStrategy="PARENT"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N" Description="Matrix Clamp Binder, Clear"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            ExtendedDescription="Durable, see-through plastic binder&#xa;Clamp grip securely holds documents &#xa;Holds 100 sheets &#xa;Clear"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100812.jpg" ImageLabel="Matrix Clamp Binder, Clear"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" IsSoldSeparately="Y"
+            ManufacturerItem="800012"
+            ManufacturerItemDesc="Matrix Clamp Binder, Clear"
+            ManufacturerName="Matrix" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Clamp Binder, Clear" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100703"
+        ItemKey="2009071703215256900"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Alpha Refrigerator - White/Bottom/Left"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100703.jpg"
+            ImageLabel="Alpha Refrigerator - White/Bottom/Left"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" ItemType="Refrigerator"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - White/Bottom/Left"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100706"
+        ItemKey="2009071703233756910"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100706.jpg"
+            ImageLabel="Alpha Refrigerator - White / Side by Side / Left"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" ItemType="Refrigerator"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - White / Side by Side / Left"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100707"
+        ItemKey="2009071703254456927"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100707.jpg"
+            ImageLabel="Alpha Refrigerator - White / Top / Left"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" ItemType="Refrigerator"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha Refrigerator - White / Top / Left"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ClassificationCodes Model="100700" OperationalConfigurationComplete="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N" ItemGroupCode="DS"
+        ItemID="Delivery" ItemKey="#{Corporate_Enterprise_Code}_IK5"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="UNIT">
+        <PrimaryInformation AllowGiftWrap="N"
+            AssumeInfiniteInventory="N" CapacityPerOrderedQty="0.00"
+            CapacityQuantityStrategy="ASSOC" CapacityUOM="UNIT"
+            ComputedUnitCost="0.00" Description="Home Delivery"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvolvesSegmentChange="N" IsAirShippingAllowed="Y"
+            IsDeliveryAllowed="Y" IsEligibleForShippingDiscount="Y"
+            IsFreezerRequired="N" IsHazmat="N"
+            IsParcelShippingAllowed="Y" IsPickupAllowed="Y"
+            IsReturnService="N" IsReturnable="N" IsShippingAllowed="Y"
+            IsStandaloneService="N" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            ReturnWindow="0" RunQuantity="0.00" SerializedFlag="N"
+            ServiceTypeID="Delivery"
+            ShortDescription="Delivery" Status="3000"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <InventoryParameters AdvanceNotificationTime="0"
+            DefaultExpirationDays="0" IsFifoTracked="N"
+            IsItemBasedAllocationAllowed="Y" IsSerialTracked="N"
+            LeadTime="0" MaximumNotificationTime="0.00"
+            MinNotificationTime="0" ProcessingTime="0" UseUnplannedInventory="N"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" GlobalItemID=""
+        InheritAttributesFromClassification="" IsShippingCntr="N"
+        ItemGroupCode="DS" ItemID="Return"
+        ItemKey="#{Generic_Enterprise_Code}_IK6"
+        OrganizationCode="#{Generic_Enterprise_Code}" UnitOfMeasure="UNIT">
+        <PrimaryInformation CapacityQuantityStrategy="ASSOC"
+            Description="Home Return" IsReturnService="Y"
+            IsStandaloneService="N" ServiceTypeID="Delivery"
+            ShortDescription="Home Return" Status="3000"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100014"
+        ItemKey="2009120717405486731"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Treat yourself to the full-featured Omega DVD Player at a value price. Ultra slim design."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100014.jpg"
+            ImageLabel="Omega DP2010B Compact DVD Player, Black"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Omega DP2010B Compact DVD Player, Black"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100015"
+        ItemKey="2009120717462286803"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Best Selling DVD Player of 2009. Experience better looking movies with multi-format playback."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100015.jpg"
+            ImageLabel="Omega DP2009B Compact DVD Player, Black"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Omega DP2009B Compact DVD Player, Black"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100018"
+        ItemKey="2009120718140887065"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Get a 12 month subscription to access a new world of explosive gaming fun."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100018.jpg"
+            ImageLabel="Zoomqube 2008 12-Month Subscription Card"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Zoomqube 2008 12-Month Subscription Card"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100019"
+        ItemKey="2009120718154787111"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Get a 12 month subscription to access a new world of explosive gaming fun."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100019.jpg"
+            ImageLabel="Zoomqube 2009 12-Month Subscription Card"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Zoomqube 2009 12-Month Subscription Card"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100020"
+        ItemKey="2009120718165287157"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Get a 12 month subscription to access a new world of explosive gaming fun."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100020.jpg"
+            ImageLabel="Zoomqube 2010 12-Month Subscription Card"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Zoomqube 2010 12-Month Subscription Card"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100016"
+        ItemKey="2009120719042187433"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Chat with friends in Zoomscape with your Zoomqube 360 Messenger Kit (includes a Chatpad and Headset)"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100016.jpg" ImageLabel="Zoomqube 360 Messenger Kit"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" KitCode="PK"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Zoomqube 360 Messenger Kit" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100021"
+        ItemKey="2009120719105587579"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Easy to hold device for staying on top of your game"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100021.jpg" ImageLabel="Zoomqube 360 Gamepad"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Zoomqube 360 Gamepad" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100022"
+        ItemKey="2009120719141287586"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Handsfree, Wirefree Headset for superior performance, freedom, and comfort."
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100022.jpg" ImageLabel="Zoomqube 360 Headset"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Zoomqube 360 Headset" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100101"
+        ItemKey="2009120719394087759"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Platinum PL4540 2.85GHz, M-cache, 1088MHz Bus"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100101.jpg"
+            ImageLabel="Platinum PL4540 2.85GHz, M-cache, 1088MHz Bus"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Platinum PL4540 2.85GHz, M-cache, 1088MHz Bus"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100102"
+        ItemKey="2009120719404087892"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Platinum PL5050 3.0GHz, M-cache, 1088MHz Bus"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100102.jpg"
+            ImageLabel="Platinum PL5050 3.0GHz, M-cache, 1088MHz Bus"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Platinum PL5050 3.0GHz, M-cache, 1088MHz Bus"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100103"
+        ItemKey="2009120719415287922"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Platinum PL5555 3.4GHz, M-cache, 1088MHz Bus"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100103.jpg"
+            ImageLabel="Platinum PL5555 3.4GHz, M-cache, 1088MHz Bus"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Platinum PL5555 3.4GHz, M-cache, 1088MHz Bus"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100104"
+        ItemKey="2009120719425587952"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Platinum PL6040 3.53GHz, M-cache, 1088MHz Bus"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100104.jpg"
+            ImageLabel="Platinum PL6040 3.53GHz, M-cache, 1088MHz Bus"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Platinum PL6040 3.53GHz, M-cache, 1088MHz Bus"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100105"
+        ItemKey="2009120719452587998"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Platinum PL6060 3.8GHz, M-cache, 1088MHz Bus"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100105.jpg"
+            ImageLabel="Platinum PL6060 3.8GHz, M-cache, 1088MHz Bus"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Platinum PL6060 3.8GHz, M-cache, 1088MHz Bus"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100111"
+        ItemKey="2009120719464688044"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="16GB of 1333MHz Dual Channel DDR3 Memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100111.jpg"
+            ImageLabel="16GB of 1333MHz Dual Channel DDR3 Memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="16GB of 1333MHz Dual Channel DDR3 Memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100112"
+        ItemKey="2009120719471788090"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="32GB of 1333MHz Dual Channel DDR3 Memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100112.jpg"
+            ImageLabel="32GB of 1333MHz Dual Channel DDR3 Memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="32GB of 1333MHz Dual Channel DDR3 Memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100113"
+        ItemKey="2009120719475688097"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="64GB of 1333MHz Dual Channel DDR3 Memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100113.jpg"
+            ImageLabel="64GB of 1333MHz Dual Channel DDR3 Memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="64GB of 1333MHz Dual Channel DDR3 Memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100121"
+        ItemKey="2009120719494988107"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="320GB Encrypted Mobility Solid State Drive"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100121.jpg"
+            ImageLabel="320GB Encrypted Mobility Solid State Drive"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="320GB Encrypted Mobility Solid State Drive"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100122"
+        ItemKey="2009120719505588210"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="320GB Hard Drive, 7200RPM"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100122.jpg" ImageLabel="320GB Hard Drive, 7200RPM"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="320GB Hard Drive, 7200RPM" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100123"
+        ItemKey="2009120719515088217"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="500GB Hard Drive, 7200 RPM"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100123.jpg" ImageLabel="500GB Hard Drive, 7200 RPM"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="500GB Hard Drive, 7200 RPM" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100124"
+        ItemKey="2009120719522988224"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="800GB Hard Drive, 7200 RPM"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100124.jpg" ImageLabel="800GB Hard Drive, 7200 RPM"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="800GB Hard Drive, 7200 RPM" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100131"
+        ItemKey="2009120720001788237"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="15.4&quot; WUXGA (1920 x1200)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100131.jpg"
+            ImageLabel="15.4&quot; WUXGA (1920 x1200)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="15.4&quot; WUXGA (1920 x1200)"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100132"
+        ItemKey="2009120720010788311"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="17&quot; WUXGA (1920x1200)"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100132.jpg" ImageLabel="17&quot; WUXGA (1920x1200)"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="17&quot; WUXGA (1920x1200)" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100141"
+        ItemKey="2009120720014988321"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Matrix Graphics with 1GB dedicated memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100141.jpg"
+            ImageLabel="Matrix Graphics with 1GB dedicated memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Graphics with 1GB dedicated memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100142"
+        ItemKey="2009120720025988331"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="EXDX Turbo Graphics with 1GB dedicated memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100142.jpg"
+            ImageLabel="EXDX Turbo Graphics with 1GB dedicated memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="EXDX Turbo Graphics with 1GB dedicated memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100143"
+        ItemKey="2009120720034088338"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="EXDX Dual-KERS Graphics with 2GB dedicated memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100143.jpg"
+            ImageLabel="EXDX Dual-KERS Graphics with 2GB dedicated memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="EXDX Dual-KERS Graphics with 2GB dedicated memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100151"
+        ItemKey="2009120720044188345"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="16X DVD+/-RW" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100151.jpg" ImageLabel="16X DVD+/-RW"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="16X DVD+/-RW" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100153"
+        ItemKey="2009120720053388355"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Green-laser-ray Disc"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100153.jpg" ImageLabel="Green-laser-ray Disc"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Green-laser-ray Disc" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100161"
+        ItemKey="2009120720062888362"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Matrix Wireless 1401 802.11g card"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100161.jpg"
+            ImageLabel="Matrix Wireless 1401 802.11g card"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Wireless 1401 802.11g card"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100162"
+        ItemKey="2009120720075588375"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Matrix Wireless 1511 802.11 agh card"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100162.jpg"
+            ImageLabel="Matrix Wireless 1511 802.11 agh card"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix Wireless 1511 802.11 agh card"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100163"
+        ItemKey="2009120720085388385"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Duometrix Wireless 5350 802.11 agh card"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100163.jpg"
+            ImageLabel="Duometrix Wireless 5350 802.11 agh card"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Duometrix Wireless 5350 802.11 agh card"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100164"
+        ItemKey="2009120720102688465"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Duometrix WWAN Wireless 6205 HSPA-EDVO"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100164.jpg"
+            ImageLabel="Duometrix WWAN Wireless 6205 HSPA-EDVO"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Duometrix WWAN Wireless 6205 HSPA-EDVO"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100165"
+        ItemKey="2009120720111588475"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Duometrix WWAN Wireless 7207 HSDPA"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100165.jpg"
+            ImageLabel="Duometrix WWAN Wireless 7207 HSDPA"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Duometrix WWAN Wireless 7207 HSDPA"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100171"
+        ItemKey="2009120720120088485"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100171.jpg" ImageLabel="Mouse"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Mouse" Status="3000" TaxableFlag="N"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100181"
+        ItemKey="2009120720123888495"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Software" FixedCapacityQtyPerLine="0.00"
+            FixedPricingQtyPerLine="0.00" ImageID="100181.jpg"
+            ImageLabel="Software"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Software" Status="3000" TaxableFlag="N"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100191"
+        ItemKey="2009120720131388502"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Docking Station" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100191.jpg" ImageLabel="Docking Station"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Docking Station" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100821"
+        ItemKey="20091215133615107643"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Hex Key Set - Round Handle Folding"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100821.jpg"
+            ImageLabel="Hex Key Set - Round Handle Folding"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Hex Key Set - Round Handle Folding"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100822"
+        ItemKey="20091215140029107985"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Hex Key Set - T Handle"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100822.jpg" ImageLabel="Hex Key Set - T Handle"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Hex Key Set - T Handle" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100125"
+        ItemKey="20091221151357113927"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Silky 5-Bay RAID NAS 10TB"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100125.jpg" ImageLabel="Silky 5-Bay RAID NAS 10TB"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Silky 5-Bay RAID NAS 10TB" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100126"
+        ItemKey="20091221151505113957"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Silky 2-Bay RAID NAS 4TB"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100126.jpg" ImageLabel="Silky 2-Bay RAID NAS 4TB"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Silky 2-Bay RAID NAS 4TB" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+	<Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100600"
+        ItemKey="20091230202259120231"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt"
+            ExtendedDescription="T-Shirt"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100601.jpg" ImageLabel="T-Shirt"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="Y" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100601"
+        ItemKey="20091230202259120230"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt White"
+            ExtendedDescription="T-Shirt White"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100601.jpg" ImageLabel="T-Shirt 1"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt White" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+		<ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100602"
+        ItemKey="20091230202623120238"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Green"
+            ExtendedDescription="T-Shirt Green"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100602.jpg" ImageLabel="T-Shirt 2"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Green" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100603"
+        ItemKey="20091230202749120246"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Blue"
+            ExtendedDescription="T-Shirt Blue"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100603.jpg" ImageLabel="T-Shirt3"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Blue" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100604"
+        ItemKey="20091230202841120254"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Red" ExtendedDescription="T-Shirt Red"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100604.jpg" ImageLabel="T-Shirt4"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Red" Status="3000" TaxableFlag="N"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100605"
+        ItemKey="20091230202931120262"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Orange"
+            ExtendedDescription="T-Shirt Orange"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100605.jpg" ImageLabel="T-Shirt5"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Orange" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100606"
+        ItemKey="20091230203021120270"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Brown"
+            ExtendedDescription="T-Shirt Brown"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100606.jpg" ImageLabel="T-Shirt6"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Brown" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100607"
+        ItemKey="20091230203126120281" OrganizationCode="#{Corporate_Enterprise_Code}" 
+		UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Grey"
+            ExtendedDescription="T-Shirt Grey"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100607.jpg" ImageLabel="T-Shirt7"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Grey" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100608"
+        ItemKey="20091230203220120385"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="T-Shirt Black"
+            ExtendedDescription="T-Shirt Black"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100608.jpg" ImageLabel="T-Shirt8"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsModelItem="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y"
+            ItemType="T-Shirt" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" ModelItemUnitOfMeasure="EACH"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="T-Shirt Black" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes Model="100600" OperationalConfigurationComplete="N"/>
+    </Item>
+	<Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100182"
+        ItemKey="20100112092952139380"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="PortalOS" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100182.jpg" ImageLabel="PortalOS"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="PortalOS" Status="3000" TaxableFlag="N"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100183"
+        ItemKey="20100112093038139390"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Matrix UX" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100183.jpg" ImageLabel="Matrix UX"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Matrix UX" Status="3000" TaxableFlag="N"
+            UnitCost="0.00" UnitHeight="0.00" UnitLength="0.00"
+            UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100184"
+        ItemKey="20100112093117139403"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="WordProcessor VP" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100184.jpg" ImageLabel="WordProcessor VP"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="WordProcessor VP" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100185"
+        ItemKey="20100112093222139573"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="WordOffice VXP" EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100185.jpg" ImageLabel="WordOffice VXP"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="WordOffice VXP" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100192"
+        ItemKey="20100112093524139580"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Standard Laptop Battery"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100192.jpg" ImageLabel="Standard Laptop Battery"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Standard Laptop Battery" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100193"
+        ItemKey="20100112093701139590"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Extended Life Laptop Battery"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100193.jpg"
+            ImageLabel="Extended Life Laptop Battery"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Extended Life Laptop Battery"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100823"
+        ItemKey="20100113154317174016"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="FingerDisk 8GB Flash Memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100823.jpg"
+            ImageLabel="FingerDisk 8GB Flash Memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="FingerDisk 8GB Flash Memory" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100824"
+        ItemKey="20100113154608174046"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="FingerDisk 16GB Flash Memory"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100824.jpg"
+            ImageLabel="FingerDisk 16GB Flash Memory"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="FingerDisk 16GB Flash Memory"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100825"
+        ItemKey="20100113170708174891"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Silver Level Onsite Hardware Support Service provides response times within 24 hrs, for 1 year"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Onsite Hardware Support Service - Silver Level"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100826"
+        ItemKey="20100113171220175031"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Gold Level Onsite Hardware Support Service provides response times within 4 hrs, for 1 year"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Onsite Hardware Support Service - Gold Level"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100827"
+        ItemKey="20100113171936175067"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Standard Warranty, 1 year"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Standard Warranty, 1 year" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100828"
+        ItemKey="20100113172127175091"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Extended Warranty, 2 years"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Extended Warranty, 2 years" Status="3000"
+            TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00"
+            UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100829"
+        ItemKey="20100113173432175483"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Ruby Level Software Support provides response times within 24 hours for 1 year"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Onsite Software Support Service - Ruby Level"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100830"
+        ItemKey="20100113174046175491"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation CapacityPerOrderedQty="0.00"
+            ComputedUnitCost="0.00" CreditWOReceipt="N"
+            Description="Diamond Level Software Support provides response times within 4 hours for 1 year"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsHazmat="N" IsReturnService="N" IsPickupAllowed="Y" IsDeliveryAllowed="Y" IsShippingAllowed="Y" MaxOrderQuantity="0.00"
+            MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+            NumSecondarySerials="0" OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Onsite Software Support Service - Diamond Level"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+	<Item CanUseAsServiceTool="N" GlobalItemID="" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="WRONGITEM"
+        ItemKey="#{Corporate_Enterprise_Code}_IK30" OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation DefaultProductClass="Good" 
+            Description="Item For Blind Returns"
+            ShortDescription="Item For Blind Returns" Status="3000" IsReturnable="Y" IsPickupAllowed="Y" IsDeliveryAllowed="Y" 
+			IsShippingAllowed="Y" ManufacturerItem="WRONGITEM" ManufacturerItemDesc="Item For Blind Returns" 
+			ManufacturerName="#{Corporate_Enterprise_Name}" ProductLine="DisplayClassification" ReturnWindow="30"  />
+		<ItemAliasList>
+				<ItemAlias AliasName="YCD_ALT_ITEM_ID" AliasValue="678901234567"/>
+		</ItemAliasList>
+		<ClassificationCodes Model=""/>
+    </Item>	
+    <Item CanUseAsServiceTool="N" IsShippingCntr="N"
+        ItemGroupCode="PROD" ItemID="100500"
+        ItemKey="2010092314014100500"
+        OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="EACH">
+        <PrimaryInformation BundleFulfillmentMode="00"
+            CapacityPerOrderedQty="0.00" ComputedUnitCost="0.00"
+            CreditWOReceipt="N"
+            Description="Alpha-Omega HD Entertainment System"
+            EffectiveEndDate="#{Effective_End_Date}"
+            EffectiveStartDate="#{Effective_Start_Date}"
+            FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+            ImageID="100500.jpg"
+            ImageLabel="Alpha-Omega HD Digital Entertainment System"
+            ImageLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+            InvoiceBasedOnActuals="N" InvolvesSegmentChange="N"
+            IsDeliveryAllowed="Y" IsHazmat="N" IsPickupAllowed="Y" IsReturnable="Y"
+            IsReturnService="N" IsShippingAllowed="Y" KitCode="BUNDLE"
+            MaxOrderQuantity="0.00" MinOrderQuantity="0.00"
+            MinimumCapacityQuantity="0.00" NumSecondarySerials="0"
+            OrderingQuantityStrategy="ENT"
+            PricingQuantityConvFactor="0.00" RequiresProdAssociation="N"
+            RunQuantity="0.00" SerializedFlag="N"
+            ShortDescription="Alpha-Omega Digital Entertainment System"
+            Status="3000" TaxableFlag="N" UnitCost="0.00"
+            UnitHeight="0.00" UnitLength="0.00" UnitWeight="0.00" UnitWidth="0.00"/>
+        <ContainerInformation CapacityVolume="0.00"
+            EmptyCntrWeight="0.00" MaxCntrWeight="0.00" VolumeAllowance="0.00"/>
+        <InventoryParameters DefaultExpirationDays="0"
+            IsSerialTracked="N" ProcessingTime="0" TagControlFlag="N" TimeSensitive="N"/>
+        <ClassificationCodes OperationalConfigurationComplete="N"/>
+    </Item>
+    
+    <Item CanUseAsServiceTool="N" GlobalItemID="" EffectiveEndDate="#{Effective_End_Date}"
+        EffectiveStartDate="#{Effective_Start_Date}"
+        InheritAttributesFromClassification="" IsShippingCntr="N"
+        ItemGroupCode="DS" ItemID="Home_Delivery"
+        ItemKey="#{Corporate_Enterprise_Code}_IKP" OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="UNIT">
+		<PrimaryInformation CapacityQuantityStrategy="ASSOC" Status="3000"  ShortDescription="Home Delivery" Description="Home Delivery" IsStandaloneService="N"/>
+	</Item>
+	
+	<Item CanUseAsServiceTool="N" GlobalItemID="" EffectiveEndDate="#{Effective_End_Date}"
+        EffectiveStartDate="#{Effective_Start_Date}"
+		InheritAttributesFromClassification="" IsShippingCntr="N" ItemGroupCode="PS" ItemID="PSELECREP"
+        ItemKey="#{Corporate_Enterprise_Code}_IKD" OrganizationCode="#{Corporate_Enterprise_Code}" UnitOfMeasure="HR">
+		<PrimaryInformation IsReturnService="N" CapacityPerOrderedQty="1.00" CapacityQuantityStrategy="ORD" Status="3000" ServiceTypeID="Elec_Repair"
+		 ShortDescription="Repair of Electronic Items" Description="Repair of Electronic Items" IsStandaloneService="Y"/>
+		<ItemAliasList>
+				<ItemAlias AliasName="YCD_ALT_ITEM_ID" AliasValue="PS2345678901"/>
+		</ItemAliasList>		 
+		<ClassificationCodes Model=""/>		
+	</Item>
+</YFS_ItemList>

@@ -1,0 +1,13 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Org_EnterpriseList>
+    <OrgEnterprise EnterpriseOrganizationKey="#{Generic_Enterprise_Code}" OrganizationKey="#{Dealer_2_Customer_1}_#{Generic_Enterprise_Suffix}"/>
+    <OrgEnterprise EnterpriseOrganizationKey="#{Generic_Enterprise_Code}" OrganizationKey="#{Dealer_2_Customer_2}_#{Generic_Enterprise_Suffix}"/>
+    <OrgEnterprise EnterpriseOrganizationKey="#{Generic_Enterprise_Code}" OrganizationKey="#{Dealer_2_Customer_3}_#{Generic_Enterprise_Suffix}"/>
+    <OrgEnterprise EnterpriseOrganizationKey="#{Generic_Enterprise_Code}" OrganizationKey="#{Dealer_2_Customer_4}_#{Generic_Enterprise_Suffix}"/>
+    <OrgEnterprise EnterpriseOrganizationKey="#{Generic_Enterprise_Code}" OrganizationKey="#{Dealer_2_Customer_5}_#{Generic_Enterprise_Suffix}"/>
+</YFS_Org_EnterpriseList>

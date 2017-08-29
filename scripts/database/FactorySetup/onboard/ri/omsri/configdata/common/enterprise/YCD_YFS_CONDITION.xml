@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_ConditionList>
+    <Condition ConditionID="YCD_ALL_ADDRESSES_NOT_VERIFIED"
+        ConditionKey="#{Generic_Enterprise_Code}_YCD5"
+        ConditionName="All Addresses Not Verified"
+        ConditionType="HOLD_TYPE"
+        ConditionValue="AllAddressesVerified &lt;> 'Y'"
+        OwnerKey="#{Generic_Enterprise_Code}"
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+</YFS_ConditionList>

@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Freight_TermsList>
+    <FreightTerms ChargesPaidBy="SHIPPER" Description="Prepaid"
+        EnterpriseCode="#{Retail_Channel_Enterprise_Code}" FreightTerms="PREPAID"
+        FreightTermsKey="2011090705125353005" ShortDescription="Prepaid" TransportationPreference="02"/>
+</YFS_Freight_TermsList>

@@ -1,0 +1,162 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_CustomerList>
+    <Customer AssignedReps="0" BuyerOrganizationCode="#{Business_Customer_1}_#{Generic_Enterprise_Suffix}"
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Business_Customer_1}"
+        CustomerKey="#{Business_Customer_1}_#{Generic_Enterprise_Suffix}1" CustomerLevel="GOLD"
+        CustomerType="01" ExternalCustomerID="" OrganizationCode="#{Generic_Enterprise_Code}"
+        RelationshipType="RETAILER"
+        RootCustomerKey="#{Business_Customer_1}_#{Generic_Enterprise_Suffix}1" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE"
+        Status="10" Vertical="GENERAL">
+		<CustomerContactList>
+			 <CustomerContact Company="#{Business_Customer_1_Name}" CustomerContactID="#{Business_Customer_1_Contact_1}"
+				CustomerContactKey="#{Business_Customer_1}_CC1" DayFaxNo="9875554322"
+				DayPhone="9875554323" EmailID="#{Business_Customer_1_Contact_1}@#{Business_Customer_1_Email}"
+				EveningFaxNo="9875554828" EveningPhone="9875551385"
+				FirstName="#{Business_Customer_1_Contact_1_First_Name}" 
+				LastName="#{Business_Customer_1_Contact_1_Last_Name}" MiddleName=""
+				MobilePhone="9875554858" SpendingLimit="10000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_1_Contact_1}"/>
+			<CustomerContact ApproverUserId="#{Business_Customer_1_Contact_1}" Company="#{Business_Customer_1_Name}"
+				CustomerContactID="#{Business_Customer_1_Contact_2}"
+				CustomerContactKey="#{Business_Customer_1}_CC2" DayFaxNo="9875554322"
+				DayPhone="9875554321" EmailID="#{Business_Customer_1_Contact_2}@#{Business_Customer_1_Email}"
+				EveningFaxNo="9875551235" EveningPhone="9875551234"
+				FirstName="#{Business_Customer_1_Contact_2_First_Name}" 
+				LastName="#{Business_Customer_1_Contact_2_Last_Name}" MiddleName=""
+				MobilePhone="9875557777" SpendingLimit="1000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_1_Contact_2}"/>
+		</CustomerContactList>
+	</Customer>
+    <Customer AssignedReps="0" BuyerOrganizationCode="#{Business_Customer_2}_#{Generic_Enterprise_Suffix}"
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Business_Customer_2}"
+        CustomerKey="#{Business_Customer_2}_#{Generic_Enterprise_Suffix}2" CustomerLevel="SILVER"
+        CustomerType="01" ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RelationshipType="RESELLER" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE"
+        Status="10" Vertical="MANUFACTURING">
+		<CustomerContactList>
+			<CustomerContact Company="" CustomerContactID="#{Business_Customer_2_Contact_1}"
+				CustomerContactKey="#{Business_Customer_2}_CC1" DayFaxNo="2085553498"
+				DayPhone="2085559842" EmailID="#{Business_Customer_2_Contact_1}@#{Business_Customer_2_Email}"
+				EveningFaxNo="2085559824" EveningPhone="2085558493"
+				FirstName="#{Business_Customer_2_Contact_1_First_Name}" 
+				LastName="#{Business_Customer_2_Contact_1_Last_Name}" MiddleName=""
+				MobilePhone="2085558375" SpendingLimit="5000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_2_Contact_1}"/>
+			<CustomerContact ApproverUserId="#{Business_Customer_2_Contact_1}" Company=""
+				CustomerContactID="#{Business_Customer_2_Contact_2}"
+				CustomerContactKey="#{Business_Customer_2}_CC2" DayFaxNo="2085557461"
+				DayPhone="2085557654" EmailID="#{Business_Customer_2_Contact_2}@#{Business_Customer_2_Email}"
+				EveningFaxNo="2085558349" EveningPhone="2085558423"
+				FirstName="#{Business_Customer_2_Contact_2_First_Name}" 
+				LastName="#{Business_Customer_2_Contact_2_Last_Name}" MiddleName=""
+				MobilePhone="2085553856" SpendingLimit="1000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_2_Contact_2}"/>
+		</CustomerContactList>
+	</Customer>
+	<Customer AssignedReps="0" BuyerOrganizationCode="#{Business_Customer_3}_#{Generic_Enterprise_Suffix}"
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Business_Customer_3}"
+        CustomerKey="#{Business_Customer_3}_#{Generic_Enterprise_Suffix}3" CustomerLevel="SILVER"
+        CustomerType="01" ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RelationshipType="RESELLER" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE"
+        Status="10" Vertical="RETAIL">
+		<CustomerContactList>
+			<CustomerContact Company="" CustomerContactID="#{Business_Customer_3_Contact_1}"
+				CustomerContactKey="#{Business_Customer_3}_CC1" DayFaxNo="2085553498"
+				DayPhone="2085559842" EmailID="#{Business_Customer_3_Contact_1}@#{Business_Customer_3_Email}"
+				EveningFaxNo="2085559824" EveningPhone="2085558493"
+				FirstName="#{Business_Customer_3_Contact_1_First_Name}" 
+				LastName="#{Business_Customer_3_Contact_1_Last_Name}" MiddleName=""
+				MobilePhone="2085558375" SpendingLimit="5000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_3_Contact_1}"/>
+			<CustomerContact ApproverUserId="#{Business_Customer_3_Contact_1}" Company=""
+				CustomerContactID="#{Business_Customer_3_Contact_2}"
+				CustomerContactKey="#{Business_Customer_3}_CC2" DayFaxNo="2085557461"
+				DayPhone="2085557654" EmailID="#{Business_Customer_3_Contact_2}@#{Business_Customer_3_Email}"
+				EveningFaxNo="2085558349" EveningPhone="2085558423"
+				FirstName="#{Business_Customer_3_Contact_2_First_Name}" 
+				LastName="#{Business_Customer_3_Contact_2_Last_Name}" MiddleName=""
+				MobilePhone="2085553856" SpendingLimit="1000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_3_Contact_2}"/>
+		</CustomerContactList>
+	</Customer>
+	<Customer AssignedReps="0" BuyerOrganizationCode="#{Business_Customer_4}_#{Generic_Enterprise_Suffix}"
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Business_Customer_4}"
+        CustomerKey="#{Business_Customer_4}_#{Generic_Enterprise_Suffix}4" CustomerLevel="SILVER"
+        CustomerType="01" ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RelationshipType="RESELLER" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE"
+        Status="10" Vertical="RETAIL">
+		<CustomerContactList>
+			<CustomerContact Company="" CustomerContactID="#{Business_Customer_4_Contact_1}"
+				CustomerContactKey="#{Business_Customer_4}_CC1" DayFaxNo="2085553498"
+				DayPhone="2085559842" EmailID="#{Business_Customer_4_Contact_1}@#{Business_Customer_4_Email}"
+				EveningFaxNo="2085559824" EveningPhone="2085558493"
+				FirstName="#{Business_Customer_4_Contact_1_First_Name}" 
+				LastName="#{Business_Customer_4_Contact_1_Last_Name}" MiddleName=""
+				MobilePhone="2085558375" SpendingLimit="5000.00"
+				SpendingLimitCurrency="USD" Status="10" Title="" UserID="#{Business_Customer_4_Contact_1}"/>
+		</CustomerContactList>
+	</Customer>
+	<Customer AssignedReps="0" BuyerOrganizationCode=""
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Consumer_Customer_4}"
+        CustomerKey="#{Consumer_Customer_4}_#{Generic_Enterprise_Suffix}4" CustomerType="02"
+        ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RootCustomerKey="#{Consumer_Customer_4}_#{Generic_Enterprise_Suffix}4" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE" Status="10">
+		<CustomerContactList>
+		    <CustomerContact Company="" CustomerContactID="#{Consumer_Customer_4}"
+				CustomerContactKey="#{Consumer_Customer_4}_CC1" DateOfBirth=""
+				DayFaxNo="" DayPhone=""
+				EmailID="#{Consumer_Customer_4}@#{Consumer_Email}" EveningFaxNo="2125550948"
+				EveningPhone="2125558697" FirstName="#{Consumer_Customer_4_First_Name}" LastName="#{Consumer_Customer_4_Last_Name}"
+				MiddleName="" MobilePhone="2125554657"
+				SpouseDateOfBirth="" Title="" UserID="#{Consumer_Customer_4}" WeddingAnniversaryDate=""/>
+		</CustomerContactList>
+	</Customer>
+	<Customer AssignedReps="0" BuyerOrganizationCode=""
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Consumer_Customer_5}"
+        CustomerKey="#{Consumer_Customer_5}_#{Generic_Enterprise_Suffix}5" CustomerType="02"
+        ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RootCustomerKey="#{Consumer_Customer_5}_#{Generic_Enterprise_Suffix}5" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE" Status="10">
+		<CustomerContactList>
+		    <CustomerContact Company="" CustomerContactID="#{Consumer_Customer_5}"
+				CustomerContactKey="#{Consumer_Customer_5}_CC1" DateOfBirth=""
+				DayFaxNo="" DayPhone=""
+				EmailID="#{Consumer_Customer_5}@#{Consumer_Email}" EveningFaxNo="2125550948"
+				EveningPhone="2125558697" FirstName="#{Consumer_Customer_5_First_Name}" LastName="#{Consumer_Customer_5_Last_Name}"
+				MiddleName="" MobilePhone="2125554657"
+				SpouseDateOfBirth="" Title="" UserID="#{Consumer_Customer_5}" WeddingAnniversaryDate=""/>
+		</CustomerContactList>
+	</Customer>
+	<Customer AssignedReps="0" BuyerOrganizationCode=""
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Consumer_Customer_6}"
+        CustomerKey="#{Consumer_Customer_6}_#{Generic_Enterprise_Suffix}6" CustomerType="02"
+        ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RootCustomerKey="#{Consumer_Customer_6}_#{Generic_Enterprise_Suffix}6" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE" Status="10">
+		<CustomerContactList>
+		    <CustomerContact Company="" CustomerContactID="#{Consumer_Customer_6}"
+				CustomerContactKey="#{Consumer_Customer_6}_CC1" DateOfBirth=""
+				DayFaxNo="" DayPhone=""
+				EmailID="#{Consumer_Customer_6}@#{Consumer_Email}" EveningFaxNo="2125550948"
+				EveningPhone="2125558697" FirstName="#{Consumer_Customer_6_First_Name}" LastName="#{Consumer_Customer_6_Last_Name}"
+				MiddleName="" MobilePhone="2125554657"
+				SpouseDateOfBirth="" Title="" UserID="#{Consumer_Customer_6}" WeddingAnniversaryDate=""/>
+		</CustomerContactList>
+	</Customer>
+</YFS_CustomerList>

@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Licensed Materials - Property of IBM IBM Call Center for Commerce (5725-P82) 
+	(C) Copyright IBM Corp. 2013 All Rights Reserved. US Government Users Restricted 
+	Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract 
+	with IBM Corp. -->
+<AdditionalDataProviders>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/Order" />
+			<Element path="/OrderList/Order" />
+			<Attribute path="Order" name="EnterpriseCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="EnterpriseName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/InventoryInformation/Item/AvailableToPromiseInventory/Supplies/Supply" />
+			<Element path="/InventoryInformation/Item/InventoryTotals/Supplies/Supply" />
+			<Element path="/InventoryInformation/Item/AvailableToPromiseInventory/Demands/Demand" />
+			<Element path="/InventoryInformation/Item/InventoryTotals/Demands/Demand" />
+			<Element path="/ItemList/Item" />
+			<Element path="/Item" />
+			<Attribute path="Supply" name="OrganizationCode" />
+			<Attribute path="Demand" name="OrganizationCode" />
+			<Attribute path="Item" name="OrganizationCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="OrganizationName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/Order" />
+			<Element path="/OrderList/Order" />
+			<Element path="/Shipment" />
+			<Attribute path="Order" name="SellerOrganizationCode" />
+			<Attribute path="Shipment" name="SellerOrganizationCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="SellerOrganizationName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/Order" />
+			<Element path="/OrderList/Order" />
+			<Attribute path="Order" name="BuyerOrganizationCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="BuyerOrganizationName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/Inbox" />
+			<Element path="/InboxList/Inbox" />
+			<Element path="/DistributionRuleList/DistributionRule/ItemShipNodes/ItemShipNode" />
+			<Element path="/DistributionRule/ItemShipNodes/ItemShipNode" />
+			<Element path="/ItemShipNodes/ItemShipNode" />
+			<Element path="/ItemShipNode" />
+			<Attribute path="Inbox" name="ShipnodeKey" />
+			<Attribute path="ItemShipNode" name="ShipnodeKey"/>
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ShipnodeDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Element path="/Shipment" />
+			<Element path="/Order/Shipments/Shipment" />
+			<Element path="/Item/Supplies/InventorySupply" />
+			<Element path="/DemandDetailsList/DemandDetails" />
+			<Attribute path="OrderLine" name="ShipNode" />
+			<Attribute path="Shipment" name="ShipNode" />
+			<Attribute path="InventorySupply" name="ShipNode" />
+			<Attribute path="DemandDetails" name="ShipNode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ShipnodeDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Attribute path="OrderLine" name="ShipNode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ShipnodeFullDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/Organization" />
+			<Element path="/OrganizationList/Organization" />
+			<Attribute path="Organization" name="LocaleCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="Currency" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderDataProvider">
+		<InterestedIn>
+			<Element path="/Order" />
+			<Element path="/Order/ReturnOrders/ReturnOrder" />
+			<Attribute path="Order" name="EntryType" />
+			<Attribute path="ReturnOrder" name="EntryType" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="DisplayEntryType" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderDataProvider">
+		<InterestedIn>
+			<Element path="/Order" />
+			<Attribute path="Order" name="BillToID" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="CustomerMasterOrganizationCode" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderDataProvider">
+		<InterestedIn>
+			<Element path="/Order" />
+			<Element path="/Order/ExchangeOrders/ExchangeOrder" />
+			<Attribute path="Order" name="ExchangeType" />
+			<Attribute path="ExchangeOrder" name="ExchangeType" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="DisplayExchangeType" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/OrderLines/OrderLine" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />
+			<Element path="/Shipment" />
+			<Element path="/Order/Shipments/Shipment" />
+			<Attribute path="OrderLine" name="DeliveryMethod" />
+			<Attribute path="Shipment" name="DeliveryMethod" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="DeliveryMethodName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/OrderLines/OrderLine" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />
+			<Attribute path="OrderLine" name="ShipNode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ShipnodeFullDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/OrderLines/OrderLine" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />
+			<Element
+				path="/OrderLine/LineTracking/LineExceptions/LineException/OrderLine" />
+			<Element path="/OrderLineList/OrderLine/ReturnOrderLines/OrderLine" />
+			<Attribute path="OrderLine" name="ReturnReason" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ReturnReasonDesc" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/OrderLines/OrderLine" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />>
+			<Attribute path="OrderLine" name="CarrierServiceCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="CarrierServiceName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element
+				path="/OrderLine/LineTracking/LineBreakups/LineBreakup/ShipmentLine/Shipment" />
+			<Element path="/Shipment" />
+			<Attribute path="Shipment" name="CarrierServiceCode" />
+			<Element path="/Containers/Container/Shipment" />
+			<Element path="/Shipments/Shipment" />
+			<Element path="/ShipmentList/Shipment" />
+			<Element path="/Order/Shipments/Shipment" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="CarrierServiceName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element path="/Shipment" />
+			<Element path="/Containers/Container/Shipment" />
+			<Element path="/Shipments/Shipment" />
+			<Element path="/ShipmentList/Shipment" />
+			<Element path="/Order/Shipments/Shipment" />
+			<Attribute path="Shipment" name="SCAC" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="SCACName" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrderLineDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine/Item" />
+			<Element path="/OrderLines/OrderLine/Item" />
+			<Element path="/OrderLineList/OrderLine/Item" />
+			<Element path="/Order/OrderLines/OrderLine/Item" />
+			<Element path="/Shipment/ShipmentLines/ShipmentLine" />
+			<Element path="/ShipmentLines/ShipmentLine" />
+			<Element path="/Container/ContainerDetails/ContainerDetail" />
+			<Element path="/AlternateStores/OrderLines/OrderLine/Item" />
+			<Attribute name="UnitOfMeasure" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="DisplayUnitOfMeasure" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAStatusDataProvider">
+		<InterestedIn>
+			<Element path="/CustomerList/Customer" />
+			<Element path="/Customer" />
+			<Attribute path="Customer" name="AggregateStatus" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="AggregateStatusDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAStatusDataProvider">
+		<InterestedIn>
+			<Element path="/ShipmentList/Shipment" />
+			<Element path="/Shipments/Shipment" />
+			<Element path="/Shipment" />
+			<Element path="/ShipmentLineList/ShipmentLine/Shipment" />
+			<Element path="/ShipmentLine/Shipment" />
+			<Element path="/Order/Shipments/Shipment" />
+			<Attribute path="Shipment" name="Status" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="StatusDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAUnitOfMeasureProvider">
+		<InterestedIn>
+			<Element
+				path="/AlternateStores/OrderLines/OrderLine/AvailabilityList/Availability/Node" />
+			<Element path="/AlternateStores/NodeList/Node" />
+			<Attribute path="Node" name="DistanceUOM" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="DistanceUOMDesc" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAItemDataProvider">
+		<InterestedIn>
+			<Element path="/Item" />
+			<Element path="/ItemList/Item" />
+			<Element
+				path="/ItemList/Item/AssociationTypeList/AssociationType/AssociationList/Association/Item" />
+			<Element path="/CatalogSearch/ItemList/Item" />
+			<Element path="/ItemList/Item/AlternateUOMList/AlternateUOM" />
+			<Attribute path="Item" name="UnitOfMeasure" />
+			<Attribute path="AlternateUOM" name="UnitOfMeasure" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="DisplayUnitOfMeasure" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAInventoryDataProvider">
+		<InterestedIn>
+			<Element path="/InventoryInformation/Item/InventoryTotals/Supplies/Supply" />
+			<Element path="/InventoryInformation/Item/AvailableToPromiseInventory/Supplies/Supply" />
+			<Element path="/InventoryInformation/Item/AvailableToPromiseInventory/Availability/Available" />
+			<Attribute path="Supply" name="SupplyType" />
+			<Attribute path="Available" name="SupplyType" />
+		</InterestedIn>	
+		<NewAttributes>
+			<Attribute name="SupplyTypeDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAInventoryDataProvider">
+		<InterestedIn>
+			<Element path="/InventoryInformation/Item/InventoryTotals/Demands/Demand" />
+			<Element path="/InventoryInformation/Item/AvailableToPromiseInventory/Demands/Demand" />
+			<Attribute path="Demand" name="Demandtype" />
+		</InterestedIn>	
+		<NewAttributes>
+			<Attribute name="DemandTypeDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider class="com.ibm.mobile.dataprovider.BDAServiceDataProvider">
+		<InterestedIn>
+			<Element path="/FlowList/Flow/SubFlowList/SubFlow" />
+			<Element path="/Flow/SubFlowList/SubFlow" />
+			<Attribute path="SubFlow" name="ConfigXML" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ConvertedConfigXML" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+
+</AdditionalDataProviders>

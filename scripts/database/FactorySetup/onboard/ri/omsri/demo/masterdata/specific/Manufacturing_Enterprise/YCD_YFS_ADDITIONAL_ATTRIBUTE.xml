@@ -1,0 +1,1794 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Additional_AttributeList>
+    <AdditionalAttribute AdditionalAttributeKey="2009061715091421026"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="LiftCapacityRange" IntegerValue="4000"
+        Name="LiftCapacityMax" ParentKey="2009061714264120484" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009063016283831055"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" Name="MZDA"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009063016283831056"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" Name="MZDA"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831057"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="127" Name="MZDA" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831058"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="127" Name="MZDA" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831059"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="127" Name="MZDA" ParentKey="2009062921581128062"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831060"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="127" Name="MZDA" ParentKey="2009062922014628069"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831062"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="128" Name="MZDA" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831063"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="128" Name="MZDA" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831064"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="128" Name="MZDA" ParentKey="2009062921581128062"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009063016283831065"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="128" Name="MZDA" ParentKey="2009062922014628069"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919060165493"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="DISP8MNT" ParentKey="2009093023582157233"
+        ParentTable="YFS_ITEM" IntegerValue="122"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919065665497"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="DISP8MNT" ParentKey="2009093023595057240"
+        ParentTable="YFS_ITEM" IntegerValue="134"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919075865501"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="DISP8MNT" ParentKey="2009100100012057247"
+        ParentTable="YFS_ITEM" IntegerValue="122"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919090365505"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="DISP8MNT" ParentKey="2009100100023057254"
+        ParentTable="YFS_ITEM" IntegerValue="262"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919100265509"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="DISP8MNT" ParentKey="2009100100055457277"
+        ParentTable="YFS_ITEM" IntegerValue="275"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919285365813"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="F2E1" ParentKey="2009093023582157233"
+        ParentTable="YFS_ITEM" Value="Gasoline/LPG"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919305365949"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="EX05T" ParentKey="2009093023582157233"
+        ParentTable="YFS_ITEM" Value="Gasoline - 2-way catalytic exhaust purifier"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919473166097"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" Name="DISP8MNT"
+        ParentKey="2009093023582157233" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919591466261"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009093023582157233"
+        ParentTable="YFS_ITEM" Value="Gasoline: Sequential port fuel injection"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101919591466262"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009093023582157233"
+        ParentTable="YFS_ITEM" Value="LPG: Single-barrel carburator with LPG injector"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920490466418"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="F2E1" ParentKey="2009093023595057240"
+        ParentTable="YFS_ITEM" Value="Gasoline/LPG"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920490466419"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="EX05T" ParentKey="2009093023595057240"
+        ParentTable="YFS_ITEM" Value="Gasoline - 2-way catalytic exhaust purifier"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920490466420"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009093023595057240"
+        ParentTable="YFS_ITEM" Value="Gasoline: Sequential port fuel injection"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920490466421"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009093023595057240"
+        ParentTable="YFS_ITEM" Value="LPG: Single-barrel carburator with LPG injector"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920490466422"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="134" Name="DISP8MNT"
+        ParentKey="2009093023595057240" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920500966426"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="F2E1" ParentKey="2009100100012057247"
+        ParentTable="YFS_ITEM" Value="Gasoline/LPG"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920500966427"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="EX05T" ParentKey="2009100100012057247"
+        ParentTable="YFS_ITEM" Value="Gasoline - 2-way catalytic exhaust purifier"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920500966428"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009100100012057247"
+        ParentTable="YFS_ITEM" Value="Gasoline: Sequential port fuel injection"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920500966429"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009100100012057247"
+        ParentTable="YFS_ITEM" Value="LPG: Single-barrel carburator with LPG injector"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920500966430"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" Name="DISP8MNT"
+        ParentKey="2009100100012057247" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920512266510"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="F2E1" ParentKey="2009100100023057254"
+        ParentTable="YFS_ITEM" Value="Gasoline/LPG"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920512266511"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="EX05T" ParentKey="2009100100023057254"
+        ParentTable="YFS_ITEM" Value="Gasoline - 2-way catalytic exhaust purifier"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920512266512"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009100100023057254"
+        ParentTable="YFS_ITEM" Value="Gasoline: Sequential port fuel injection"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920512266513"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009100100023057254"
+        ParentTable="YFS_ITEM" Value="LPG: Single-barrel carburator with LPG injector"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920512266514"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="262" Name="DISP8MNT"
+        ParentKey="2009100100023057254" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920524666518"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="F2E1" ParentKey="2009100100055457277"
+        ParentTable="YFS_ITEM" Value="Diesel"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920524666519"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="EX05T" ParentKey="2009100100055457277"
+        ParentTable="YFS_ITEM" Value="Diesel - 2-way catalytic exhaust purifier"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101920524666520"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="275" Name="DISP8MNT"
+        ParentKey="2009100100055457277" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101921062766643"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009100100012057247"
+        ParentTable="YFS_ITEM" Value="GEM Sequential fuel injection"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009101921073466650"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="FSYST3M" ParentKey="2009100100023057254"
+        ParentTable="YFS_ITEM" Value="GEM Sequential fuel injection"/>
+    <AdditionalAttribute AdditionalAttributeKey="2009111213423971681"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        Name="LiftTruckType" ParentKey="2009061714222120481"
+        ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212205048101354"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="2009101923213967188"
+        ParentTable="YFS_ITEM" Value="Max Fork Height 103.5&quot; - Overall Lowered 72&quot; - Free Lift 5.5&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212205234101358"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="2009102012152867458"
+        ParentTable="YFS_ITEM" Value="Max Fork Height 115.5&quot; - Overall Lowered 78&quot; - Free Lift - 5.5&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212205420101362"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="2009102012193267469"
+        ParentTable="YFS_ITEM" Value="Max Fork Height 127&quot; - Overall Lowered 83.5&quot; - Free Lift - 5.5&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212205945101366"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212200521100688"
+        ParentTable="YFS_ITEM" Value="107.5&quot; to 123&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210046101446"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212200936100699"
+        ParentTable="YFS_ITEM" Value="190&quot; to 313&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210151101450"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212201254100807"
+        ParentTable="YFS_ITEM" Value="Max Fork Height 103.5&quot; - Overall Lowered 72&quot; - Free Lift 5.5&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210244101454"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212201603100818"
+        ParentTable="YFS_ITEM" Value="Max Fork Height 115.5&quot; - Overall Lowered 78&quot; - Free Lift - 5.5&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210328101458"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212202137100921"
+        ParentTable="YFS_ITEM" Value="Max Fork Height 127&quot; - Overall Lowered 83.5&quot; - Free Lift - 5.5&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210425101462"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212202444100929"
+        ParentTable="YFS_ITEM" Value="107.5&quot; to 123&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210506101466"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212203123101036"
+        ParentTable="YFS_ITEM" Value="190&quot; to 313&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210605101470"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212204030101147"
+        ParentTable="YFS_ITEM" Value="107.5&quot; to 123&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="20091212210650101474"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="MastSpec" ParentKey="20091212204155101155"
+        ParentTable="YFS_ITEM" Value="190&quot; to 313&quot;"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009101918551165359"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" IsInherited="Y" MassAuditID="1"
+        Name="DISP8MNT" ParentKey="2009093023582157233" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009101918551165360"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" IsInherited="Y" MassAuditID="1"
+        Name="DISP8MNT" ParentKey="2009093023595057240" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009101918551165361"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" IsInherited="Y" MassAuditID="1"
+        Name="DISP8MNT" ParentKey="2009100100012057247" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009101918551165362"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" IsInherited="Y" MassAuditID="1"
+        Name="DISP8MNT" ParentKey="2009100100023057254" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009101918551165363"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IntegerValue="122" IsInherited="Y" MassAuditID="1"
+        Name="DISP8MNT" ParentKey="2009100100055457277" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971682"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009061714234320482" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971683"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009061717145521244" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971684"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009061717151821254" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971685"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009061717154021264" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971686"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009061717160721274" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971687"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009061717170721295" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971688"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="202009111213423971689"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="11" Name="LiftTruckType"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="CushionTireRider"/>
+	<AdditionalAttribute AdditionalAttributeKey="20100111172154136718"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="SideshiftClass" IntegerValue="1050"
+        Name="Class_II" ParentKey="20091212183540100050" ParentTable="YFS_ITEM"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100111181019137347"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineStandard" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100111181032137352"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100111181032137353"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100111181032137354"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100111181032137355"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Features"
+        Name="Performance" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="RobustTransmissionClutchPacks"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100111181032137356"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Features"
+        Name="Safety" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="SealedDashDisplay"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112131957157739"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineStandard" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112132044157746"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112132942157921"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009062921581128062"
+        ParentTable="YFS_ITEM" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112132942157922"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009062921581128062"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112132942157923"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009062921581128062"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112133813158078"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        Name="MastType" ParentKey="2009062922034428079"
+        ParentTable="YFS_ITEM" Value="DPLX"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112133813158081"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineStandard" ParentKey="2009062922034428079"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158445"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158446"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158447"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="CumulusDieselQSB3.3L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158448"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158449"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158450"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134321158451"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009061714234320482"
+        ParentTable="YFS_CATEGORY" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134402158534"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009062922034428079"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112134402158535"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="2009062922034428079"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112150224160558"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        Name="MastType" ParentKey="20100112145657160524"
+        ParentTable="YFS_ITEM" Value="DPLX"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112150224160559"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="20100112145657160524"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100112150225160560"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        Name="GasEngineOptions" ParentKey="20100112145657160524"
+        ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113212358187729"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" Name="ProductLine"
+        ParentKey="2009061714222120481" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113212533187749"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" Name="ProductLine"
+        ParentKey="2009061717142021243" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113212802187902"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="PartsType" ParentKey="2009061717314321406"
+        ParentTable="YFS_CATEGORY" Value="Engine"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113212848187909"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="PartsType" ParentKey="2009061717321921408"
+        ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113212927187935"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="PartsType" ParentKey="2009061717323721409"
+        ParentTable="YFS_CATEGORY" Value="Carriage"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113212959187940"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="PartsType" ParentKey="2009061717325921410"
+        ParentTable="YFS_CATEGORY" Value="Sideshift"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113213039187945"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="PartsType" ParentKey="2009061717331921411"
+        ParentTable="YFS_CATEGORY" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113213107187967"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        Name="PartsType" ParentKey="2009092119120943944"
+        ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113213205188100"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" Name="ProductLine"
+        ParentKey="20100112191301167984" ParentTable="YFS_CATEGORY" Value="TruckAccessories"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113213951188129"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" Name="ProductLine"
+        ParentKey="20091223134200117615" ParentTable="YFS_CATEGORY" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100113214413188363"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" Name="ProductLine"
+        ParentKey="20100113200159186018" ParentTable="YFS_CATEGORY" Value="DealerBatteries"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101224191663"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Options"
+        Name="Convenience" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="PremiumMonitoringSystem"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101224191664"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Options"
+        Name="FleetCarePackage" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101224191665"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Options"
+        Name="AirIntake" ParentKey="2009061714264120484"
+        ParentTable="YFS_ITEM" Value="HighAirIntakewithPrecleaner"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101413191741"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Options"
+        Name="Convenience" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="ElectroHydraulicControlswithAdjustableArmrest"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101413191742"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Options"
+        Name="AirIntake" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="VentedHood"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101413191744"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Features"
+        Name="Safety" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="ExcellentMastVisibility"/>
+    <AdditionalAttribute AdditionalAttributeKey="20100114101501191749"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Features"
+        Name="Performance" ParentKey="2009062921513927991"
+        ParentTable="YFS_ITEM" Value="IsolatedPowertrain"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158456"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="477" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158457"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="477" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158462"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="478" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158463"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="478" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158474"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="479" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="CumulusDieselQSB3.3L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158475"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="479" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="CumulusDieselQSB3.3L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158484"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="480" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158485"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="480" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158492"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="481" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158493"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="481" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158504"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="482" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158505"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="482" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158516"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="483" Name="GasEngineOptions"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100112134321158517"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="483" Name="GasEngineOptions"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113093121168726"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="551" Name="LiftTruckType"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186071"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="606" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186072"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="607" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186073"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="608" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186074"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="609" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186075"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="610" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186076"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="611" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186077"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="612" Name="GasEngineOptions"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="CumulusDieselQSB3.3L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186078"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="613" Name="MZDA" ParentKey="20100113200858186066"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186079"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="614" Name="MZDA" ParentKey="20100113200858186066"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113200858186080"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="615" Name="LiftTruckType"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186357"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="624" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186358"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="625" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186359"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="626" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186360"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="627" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186361"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="628" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186362"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="629" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186363"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="630" Name="GasEngineOptions"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="CumulusDieselQSB3.3L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186364"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="631" Name="MZDA" ParentKey="2009062922034428079"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186365"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="632" Name="MZDA" ParentKey="2009062922034428079"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113202041186366"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="633" Name="LiftTruckType"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186701"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="654" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="GEM2.4L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186702"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="655" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="GEM4.3LV6"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186703"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="656" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186704"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="657" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186705"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="658" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="CumulusDiesel2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186706"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="659" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="CumulusDiesel4.5L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186707"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Engine"
+        IsInherited="Y" MassAuditID="660" Name="GasEngineOptions"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="CumulusDieselQSB3.3L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186708"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="661" Name="MZDA" ParentKey="20100113203356186696"
+        ParentTable="YFS_ITEM" Value="MZDA2.0L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186709"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GasEngineOptions" IsInherited="Y"
+        MassAuditID="662" Name="MZDA" ParentKey="20100113203356186696"
+        ParentTable="YFS_ITEM" Value="MZDA2.2L"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113203356186710"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="663" Name="LiftTruckType"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187730"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187731"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187732"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187733"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187734"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187735"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187736"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187737"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187738"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187739"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061714234320482" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187740"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061717145521244" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187741"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061717151821254" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187742"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061717154021264" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187743"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061717160721274" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187744"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009061717170721295" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187745"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062922123728245" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212358187746"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="665" Name="ProductLine"
+        ParentKey="2009062922132128320" ParentTable="YFS_CATEGORY" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187780"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009093023582157233" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187781"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009093023595057240" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187782"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009100100012057247" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187783"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009100100023057254" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187784"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009100100055457277" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187785"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212192748100439" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187786"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212192912100447" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187787"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212193102100577" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187788"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121218154299955" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187789"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121218184199963" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187790"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212183540100050" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187791"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217255499506" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187792"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217283999514" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187793"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217320899621" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187794"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217335799632" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187795"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217433399730" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187796"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217461899741" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187797"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217482799752" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187798"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217374999643" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187799"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217515999839" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187800"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121216551699119" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187801"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121216584199130" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187802"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217022099254" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187803"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217041599265" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187804"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217061899273" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187805"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092215252744381" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187806"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092215482144574" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187807"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092216435344680" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187808"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092321224345541" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187809"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322063545815" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187810"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322083145847" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187811"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322363246096" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187812"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322430446219" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187813"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212201254100807" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187814"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212201603100818" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187815"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212202137100921" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187816"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212202444100929" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187817"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212203123101036" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187818"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212203333101047" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187819"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212203728101055" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187820"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212203908101063" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187821"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212204030101147" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187822"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212204155101155" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187823"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923213967188" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187824"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009102012152867458" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187825"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009102012193267469" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187826"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212200521100688" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187827"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20091212200936100699" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187828"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217255499506" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187829"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217283999514" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187830"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217320899621" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187831"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217335799632" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187832"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217433399730" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187833"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217461899741" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187834"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217482799752" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187835"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20100106202705125216" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187836"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20100106203049125227" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187837"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20100106203430125326" ParentTable="YFS_ITEM" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187838"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717314321406" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187839"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717320421407" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187840"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717321921408" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187841"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717323721409" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187842"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717325921410" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187843"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717331921411" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187844"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717333421412" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187845"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717335921413" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187846"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717343421414" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187847"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717345721415" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187848"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009061717351721416" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187849"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092119120943944" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187850"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092215222644379" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187851"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092215233444380" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187852"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322210245946" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187853"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322221045947" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187854"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322241745948" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187855"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009092322251645949" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187856"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923341267318" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187857"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923352367319" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187858"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923364467320" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187859"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923382267321" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187860"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923395467322" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187861"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923404667355" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187862"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923422867356" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187863"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923433667357" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187864"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009101923445567358" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187865"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217224099504" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187866"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="2009121217235399505" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212533187867"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="667" Name="ProductLine"
+        ParentKey="20100106195338125147" ParentTable="YFS_CATEGORY" Value="PartsBusiness"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212802187903"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="669" Name="PartsType"
+        ParentKey="2009093023582157233" ParentTable="YFS_ITEM" Value="Engines"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212802187904"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="669" Name="PartsType"
+        ParentKey="2009093023595057240" ParentTable="YFS_ITEM" Value="Engines"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212802187905"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="669" Name="PartsType"
+        ParentKey="2009100100012057247" ParentTable="YFS_ITEM" Value="Engines"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212802187906"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="669" Name="PartsType"
+        ParentKey="2009100100023057254" ParentTable="YFS_ITEM" Value="Engines"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212802187907"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="669" Name="PartsType"
+        ParentKey="2009100100055457277" ParentTable="YFS_ITEM" Value="Engines"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187910"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212201254100807" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187911"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212201603100818" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187912"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212202137100921" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187913"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212202444100929" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187914"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212203123101036" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187915"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212203333101047" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187916"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212203728101055" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187917"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212203908101063" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187918"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212204030101147" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187919"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212204155101155" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187920"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923213967188" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187921"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009102012152867458" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187922"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009102012193267469" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187923"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212200521100688" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187924"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="20091212200936100699" ParentTable="YFS_ITEM" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187925"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923341267318" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187926"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923352367319" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187927"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923364467320" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187928"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923382267321" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187929"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923395467322" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187930"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923404667355" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187931"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923422867356" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187932"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923433667357" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212848187933"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="670" Name="PartsType"
+        ParentKey="2009101923445567358" ParentTable="YFS_CATEGORY" Value="Mast"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212927187936"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="671" Name="PartsType"
+        ParentKey="20091212192748100439" ParentTable="YFS_ITEM" Value="Carriage"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212927187937"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="671" Name="PartsType"
+        ParentKey="20091212192912100447" ParentTable="YFS_ITEM" Value="Carriage"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212927187938"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="671" Name="PartsType"
+        ParentKey="20091212193102100577" ParentTable="YFS_ITEM" Value="Carriage"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212959187941"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="672" Name="PartsType"
+        ParentKey="2009121218154299955" ParentTable="YFS_ITEM" Value="Sideshift"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212959187942"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="672" Name="PartsType"
+        ParentKey="2009121218184199963" ParentTable="YFS_ITEM" Value="Sideshift"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113212959187943"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="672" Name="PartsType"
+        ParentKey="20091212183540100050" ParentTable="YFS_ITEM" Value="Sideshift"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187946"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217255499506" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187947"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217283999514" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187948"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217320899621" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187949"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217335799632" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187950"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217433399730" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187951"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217461899741" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187952"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217482799752" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187953"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217374999643" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187954"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217515999839" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187955"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217255499506" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187956"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217283999514" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187957"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217320899621" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187958"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217335799632" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187959"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217433399730" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187960"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217461899741" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187961"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217482799752" ParentTable="YFS_ITEM" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187962"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009061717333421412" ParentTable="YFS_CATEGORY" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187963"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009061717335921413" ParentTable="YFS_CATEGORY" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187964"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217224099504" ParentTable="YFS_CATEGORY" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213039187965"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="673" Name="PartsType"
+        ParentKey="2009121217235399505" ParentTable="YFS_CATEGORY" Value="Fork"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187968"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092215252744381" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187969"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092215482144574" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187970"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092216435344680" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187971"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092321224345541" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187972"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322063545815" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187973"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322083145847" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187974"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322363246096" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187975"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322430446219" ParentTable="YFS_ITEM" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187976"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092215222644379" ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187977"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092215233444380" ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187978"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322210245946" ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187979"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322221045947" ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187980"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322241745948" ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213107187981"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="Parts"
+        IsInherited="Y" MassAuditID="674" Name="PartsType"
+        ParentKey="2009092322251645949" ParentTable="YFS_CATEGORY" Value="Tire"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213205188104"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="676" Name="ProductLine"
+        ParentKey="20100113202253186551" ParentTable="YFS_ITEM" Value="TruckAccessories"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213205188105"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="676" Name="ProductLine"
+        ParentKey="20100112191348167985" ParentTable="YFS_CATEGORY" Value="TruckAccessories"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213205188106"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="676" Name="ProductLine"
+        ParentKey="20100112191427167986" ParentTable="YFS_CATEGORY" Value="TruckAccessories"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213205188107"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="676" Name="ProductLine"
+        ParentKey="20100112191513167987" ParentTable="YFS_CATEGORY" Value="TruckAccessories"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213951188132"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="678" Name="ProductLine"
+        ParentKey="20100113194700185714" ParentTable="YFS_ITEM" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213951188133"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="678" Name="ProductLine"
+        ParentKey="20100113195437185846" ParentTable="YFS_ITEM" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213951188134"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="678" Name="ProductLine"
+        ParentKey="20100113195705185863" ParentTable="YFS_ITEM" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213951188135"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="678" Name="ProductLine"
+        ParentKey="20100113195903185871" ParentTable="YFS_ITEM" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213951188136"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="678" Name="ProductLine"
+        ParentKey="20091223134311117616" ParentTable="YFS_CATEGORY" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113213951188137"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="678" Name="ProductLine"
+        ParentKey="20091223134552117617" ParentTable="YFS_CATEGORY" Value="SafetyEquipments"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113214413188366"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="680" Name="ProductLine"
+        ParentKey="20100113200533186041" ParentTable="YFS_ITEM" Value="DealerBatteries"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113214413188367"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="680" Name="ProductLine"
+        ParentKey="20100113200657186052" ParentTable="YFS_ITEM" Value="DealerBatteries"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113214413188368"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="680" Name="ProductLine"
+        ParentKey="20100113200348186039" ParentTable="YFS_CATEGORY" Value="DealerBatteries"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100113214413188369"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="680" Name="ProductLine"
+        ParentKey="20100113200448186040" ParentTable="YFS_CATEGORY" Value="DealerBatteries"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100115184544307008"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="681" Name="ProductLine"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100115184544307009"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="682" Name="LiftTruckType"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100115185219307261"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="683" Name="ProductLine"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100115185219307262"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="684" Name="LiftTruckType"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100115185450307426"
+        AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine" IsInherited="Y"
+        MassAuditID="685" Name="ProductLine"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="ForkliftTrucks"/>
+    <AdditionalAttribute AdditionalAttributeKey="2020100115185450307427"
+        AttributeDomainID="ItemAttribute" AttributeGroupID="General"
+        IsInherited="Y" MassAuditID="686" Name="LiftTruckType"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="CushionTireRider"/>
+	<AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="Accumulator"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="FleetCarePackage"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options" Name="RentalPackage"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="EnhancedInsulatedNonMetalicHood"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="AutoDecelerationSystem"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        Name="IntellixVehicleManagementSystem"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="Y"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="2009061714264120484" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="2009062921513927991" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="2009062921581128062" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="2009062922014628069" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="2009062922034428079" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="20100113200858186066" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="20100113203356186696" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="20100115184544307003" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="20100115185219307256" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="20100115185450307421" ParentTable="YFS_ITEM" Value="N"/>
+    <AdditionalAttribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features" Name="ElectronicSystemsMonitoring"
+        ParentKey="20100112145657160524" ParentTable="YFS_ITEM" Value="N"/>
+</YFS_Additional_AttributeList>

@@ -1,0 +1,28 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Item_UOMList>
+    <ItemUOM Height="0.00" IsOperationalUOM="N" IsOrderingUOM="N"
+        ItemKey="2009070608451940844" ItemUOMKey="2009100215570158605"
+        Length="0.00" NegativePackageToleranceQty="0.00"
+        PositivePackageToleranceQty="0.00" Quantity="10.00"
+        UnitOfMeasure="CASE" Weight="0.00" Width="0.00"/>
+    <ItemUOM Height="0.00" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemKey="2009070804444945478" ItemUOMKey="2009120113242077842"
+        Length="0.00" NegativePackageToleranceQty="0.00"
+        PositivePackageToleranceQty="0.00" Quantity="1.00"
+        UnitOfMeasure="EACH" Weight="0.00" Width="0.00"/>
+    <ItemUOM Height="0.00" IsOperationalUOM="N" IsOrderingUOM="N"
+        ItemKey="2009070608451940844" ItemUOMKey="2009100215570158605"
+        Length="0.00" NegativePackageToleranceQty="0.00"
+        PositivePackageToleranceQty="0.00" Quantity="10.00"
+        UnitOfMeasure="CASE" Weight="0.00" Width="0.00"/>
+    <ItemUOM Height="0.00" IsOperationalUOM="N" IsOrderingUOM="Y"
+        ItemKey="2009070804444945478" ItemUOMKey="2009120113242077842"
+        Length="0.00" NegativePackageToleranceQty="0.00"
+        PositivePackageToleranceQty="0.00" Quantity="1.00"
+        UnitOfMeasure="EACH" Weight="0.00" Width="0.00"/>
+</YFS_Item_UOMList>

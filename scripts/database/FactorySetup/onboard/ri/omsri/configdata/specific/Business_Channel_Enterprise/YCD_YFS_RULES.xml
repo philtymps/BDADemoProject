@@ -1,0 +1,32 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_RulesList>
+	<Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="YCD_MORE_STORE_SEARCH"
+        RuleSetValue="YCD_MORE_STORE_SEARCH"/>
+    <Rules DocumentType="" MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" RuleSetFieldDescription=""
+        RuleSetFieldName="YCD_STORE_SEARCH"
+        RuleSetValue="YCD_STORE_SEARCH"/>
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Customer Type to be used"
+        RuleSetFieldName="YCD_DEFAULT_CUST_SRCH" RuleSetValue="01" /> 
+	<Rules DocumentType="0001" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Customer Type to be used"
+        RuleSetFieldName="YCD_DISP_CUST_SRCH_TYPE" RuleSetValue="Y" /> 
+	<Rules DocumentType="0003" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Customer Type to be used"
+        RuleSetFieldName="YCD_DEFAULT_CUST_SRCH" RuleSetValue="01" /> 
+	<Rules DocumentType="0003" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="Default Customer Type to be used"
+        RuleSetFieldName="YCD_DISP_CUST_SRCH_TYPE" RuleSetValue="Y" /> 
+</YFS_RulesList>

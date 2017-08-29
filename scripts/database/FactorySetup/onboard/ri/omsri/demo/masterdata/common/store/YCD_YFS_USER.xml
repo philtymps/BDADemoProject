@@ -1,0 +1,27 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_UserList>   
+ 		<User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+			ContactaddressKey="" Createprogid="SYSTEM" Createuserid="SYSTEM"
+			CreatorOrganizationKey="DEFAULT" DataSecurityGroupId="#{Generic_Store}_TEAM" Imagefile=""
+	        Localecode="en_US_EST"  Loginid="#{Generic_Store_Admin_UserId}" Longdesc="Store Administrator"
+		    MenuId="SOP_MENU" Modifyprogid="SYSTEM"
+			Modifyuserid="SYSTEM" NoteKey=""
+	        OrganizationKey="#{Generic_Store}" ParentUserKey="" Password="#{Generic_Store_Admin_UserId}"
+		    PreferenceKey="" Pwdlastchangedon="20080504T18:26:09"
+			Theme="ice" UserKey="#{Generic_Store_Admin_UserId}" UsergroupKey="SOP-MANAGER-KEY"
+		    Username="Store Manager" Usertype="INTERNAL"/>
+		<User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+			ContactaddressKey="" Createprogid="SYSTEM" CreatorOrganizationKey="DEFAULT" 
+			DataSecurityGroupId="#{Generic_Store}_TEAM" Imagefile="" Localecode="en_US_EST"
+			Loginid="#{Generic_Store_CSR_UserId}" Longdesc="Store Associate" MenuId="SOP_MENU"
+			Modifyprogid="SYSTEM" Modifyuserid="SYSTEM" NoteKey=""
+			OrganizationKey="#{Generic_Store}" ParentUserKey="" Password="#{Generic_Store_CSR_UserId}"
+	        PreferenceKey="" Pwdlastchangedon="20080504T18:26:09"
+			Theme="ice" UserKey="#{Generic_Store_CSR_UserId}" UsergroupKey="SOP-CSR-KEY"
+			Username="Store Associate" Usertype="INTERNAL"/>
+</YFS_UserList>

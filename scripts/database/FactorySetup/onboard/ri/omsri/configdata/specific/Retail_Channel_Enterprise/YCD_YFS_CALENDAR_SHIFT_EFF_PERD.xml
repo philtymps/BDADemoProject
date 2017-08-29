@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed Materials - Property of IBM
+IBM Call Center for Commerce
+(C) Copyright IBM Corp. 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Calendar_Shift_Eff_PerdList>
+    <EffectivePeriod Action="" CalendarKey="Cal_#{Retail_Store_1}"
+        EffectiveFromDate="2006-08-06" EffectiveToDate="2020-08-08" ShiftEffectivePeriodKey="EFF_#{Retail_Store_1}"/>
+	<EffectivePeriod Action="" CalendarKey="Cal_#{Retail_Store_2}"
+        EffectiveFromDate="2006-08-06" EffectiveToDate="2020-08-08" ShiftEffectivePeriodKey="EFF_#{Retail_Store_2}"/>
+	<EffectivePeriod Action="" CalendarKey="Cal_#{Retail_Store_3}"
+        EffectiveFromDate="2006-08-06" EffectiveToDate="2020-08-08" ShiftEffectivePeriodKey="EFF_#{Retail_Store_3}"/>
+</YFS_Calendar_Shift_Eff_PerdList>

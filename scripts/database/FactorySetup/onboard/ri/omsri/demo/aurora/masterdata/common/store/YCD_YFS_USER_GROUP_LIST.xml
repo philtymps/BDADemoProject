@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_User_Group_ListList>
+	<UserGroupList UserKey="#{Generic_Store_Admin_UserId}" UsergroupKey="SOP-MANAGER-KEY"/>
+	<UserGroupList UserKey="#{Generic_Store_Admin_UserId}" UsergroupKey="SOP-CSR-KEY"/>
+	<UserGroupList UserKey="#{Generic_Store_CSR_UserId}" UsergroupKey="SOP-CSR-KEY"/>
+</YFS_User_Group_ListList>

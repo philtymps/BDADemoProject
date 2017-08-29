@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<PLT_Pwd_PolicyList>
+    <PasswordPolicy Description="Password Reset Policy"
+        Name="#{Generic_Enterprise_Code} Reset" OrganizationCode="#{Generic_Enterprise_Code}"
+        PasswordPolicyKey="#{Generic_Enterprise_Code}_PP1" Status="1"/>
+</PLT_Pwd_PolicyList>

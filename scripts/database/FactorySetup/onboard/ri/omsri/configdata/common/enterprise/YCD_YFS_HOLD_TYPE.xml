@@ -1,0 +1,46 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Hold_TypeList>
+    <HoldType ApplyConditionKey="#{Generic_Enterprise_Code}_YCD5"
+        ApplyOnResolveOfHoldTypeKey="" BaseProcessTypeKey="ORDER_FULFILLMENT" CanAllUsersCreateHoldType="Y"
+        CanAllUsersResolveHoldType="Y" DocumentType="0001" HoldLevel="ORDER" HoldType="YCD_VERIFY_ADDRESS"
+        HoldTypeDescription="Address Verification"
+        HoldTypeKey="#{Generic_Enterprise_Code}_H1" OrganizationCode="#{Generic_Enterprise_Code}"
+        ProcessTransactionId="YCD_VERIFY_ADDRESS.0001" RejectTransactionId=""/>
+    <HoldType ApplyConditionKey="" ApplyOnResolveOfHoldTypeKey=""
+        BaseProcessTypeKey="ORDER_FULFILLMENT" CanAllUsersCreateHoldType="Y" CanAllUsersResolveHoldType="Y"
+        DocumentType="0001" HoldLevel="ORDER" HoldType="YCD_DUPLICATE_ORDER"
+        HoldTypeDescription="Duplicate Order"
+        HoldTypeKey="#{Generic_Enterprise_Code}_H2" OrganizationCode="#{Generic_Enterprise_Code}"
+        ProcessTransactionId="YCD_DUPLICATE_ORDER.0001" RejectTransactionId=""/>
+    <HoldType ApplyConditionKey="" ApplyOnResolveOfHoldTypeKey=""
+        BaseProcessTypeKey="ORDER_FULFILLMENT" CanAllUsersCreateHoldType="Y" CanAllUsersResolveHoldType="N"
+        DocumentType="0001" HoldLevel="ORDER" HoldType="YCD_FRAUD_CHECK"
+        HoldTypeDescription="Fraud Check"
+        HoldTypeKey="#{Generic_Enterprise_Code}_H3" OrganizationCode="#{Generic_Enterprise_Code}"
+        ProcessTransactionId="YCD_FRAUD_CHECK.0001" RejectTransactionId=""/>
+	<HoldType ApplyConditionKey="" ApplyOnResolveOfHoldTypeKey=""
+        BaseProcessTypeKey="ORDER_FULFILLMENT" CanAllUsersCreateHoldType="Y" CanAllUsersResolveHoldType="Y"
+        DocumentType="0001" HoldLevel="ORDER" HoldType="YCD_CREDIT_LIMIT"
+        HoldTypeDescription="Credit Limit Reached"
+        HoldTypeKey="#{Generic_Enterprise_Code}_H4" OrganizationCode="#{Generic_Enterprise_Code}"
+        ProcessTransactionId="" RejectTransactionId=""/>
+	<HoldType ApplyConditionKey="" ApplyOnResolveOfHoldTypeKey=""
+        BaseProcessTypeKey="ORDER_FULFILLMENT" CanAllUsersCreateHoldType="Y" CanAllUsersResolveHoldType="N"
+        DocumentType="0001" HoldLevel="ORDER" HoldType="YCD_ORDER_APPROVAL"
+        HoldTypeDescription="Awaiting Order Approval"
+        HoldTypeKey="#{Generic_Enterprise_Code}_H5" OrganizationCode="#{Generic_Enterprise_Code}"
+        ProcessTransactionId="" RejectTransactionId=""/> 
+	<HoldType ApplyConditionKey="" ApplyOnResolveOfHoldTypeKey=""
+        BaseProcessTypeKey="ORDER_FULFILLMENT"
+        CanAllUsersCreateHoldType="N" CanAllUsersResolveHoldType="N"
+        CanResolveOnCancel="N" DocumentType="0015" HoldLevel="ORDER"
+        HoldType="APPROVAL_HOLD"
+        HoldTypeDescription="Hold to be applied if approval required"
+        HoldTypeKey="#{Generic_Enterprise_Code}_H6" OrganizationCode="#{Generic_Enterprise_Code}"
+        ProcessTransactionId="" RejectTransactionId=""/>
+</YFS_Hold_TypeList>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.tms.webservices.emessage.unica.com" xmlns:ns1="http://tms.webservices.emessage.unica.com/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://soap.tms.webservices.emessage.unica.com" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+<wsdl:documentation>TMS</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.tms.webservices.emessage.unica.com" xmlns:ns="http://soap.tms.webservices.emessage.unica.com">           
+            <xs:element name="sendMailing">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="mailingCode" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="audienceId" nillable="true" type="ns1:NameValuePair"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="fields" nillable="true" type="ns1:NameValuePair"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="cellCodes" nillable="true" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="additionalOptions" nillable="true" type="ns1:NameValuePair"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="attachments" nillable="true" type="ns1:Attachment"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="trackingFields" nillable="true" type="ns1:NameValuePair"/>
+                        <xs:element minOccurs="0" name="locale" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="sendMailingResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns1:Response"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="userName" type="xs:string"/>
+            <xs:element name="password" type="xs:string"/>
+        </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tms.webservices.emessage.unica.com/xsd" xmlns:ax21="http://tms.webservices.emessage.unica.com/xsd">
+        	<xs:import namespace="http://www.w3.org/2005/05/xmlmime" schemaLocation="http://www.w3.org/2005/05/xmlmime"/>
+            
+            <xs:complexType name="NameValuePair">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueAsDate" nillable="true" type="xs:dateTime"/>
+                    <xs:element minOccurs="0" name="valueAsNumeric" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="valueAsString" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valueDataType" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DATA_TYPE_DATETIME" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DATA_TYPE_NUMERIC" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="DATA_TYPE_STRING" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Response">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="advisoryMessages" nillable="true" type="ax21:AdvisoryMessage"/>
+                    <xs:element minOccurs="0" name="apiVersion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="statusCode" type="xs:int"/>
+                    <xs:element minOccurs="0" name="STATUS_ERROR" type="xs:int"/>
+                    <xs:element minOccurs="0" name="STATUS_SUCCESS" type="xs:int"/>
+                    <xs:element minOccurs="0" name="STATUS_WARNING" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AdvisoryMessage">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="detailMessage" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="messageCode" type="xs:int"/>
+                    <xs:element minOccurs="0" name="statusLevel" type="xs:int"/>
+                    <xs:element minOccurs="0" name="STATUS_LEVEL_ERROR" type="xs:int"/>
+                    <xs:element minOccurs="0" name="STATUS_LEVEL_INFO" type="xs:int"/>
+                    <xs:element minOccurs="0" name="STATUS_LEVEL_WARNING" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+                                      	                                              
+            <xs:complexType name="Attachment">
+                <xs:sequence>
+                	<xs:element name="fileName" type="xs:string"/>
+                	<xs:element minOccurs="0" name="label" type="xs:string"/>
+                	<xs:element name="fileContent" type="xmime:base64Binary"/>                	        				        			       
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sendMailingResponse">
+    <wsdl:part name="parameters" element="ns0:sendMailingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendMailingRequest">
+    <wsdl:part name="parameters" element="ns0:sendMailing">
+    </wsdl:part>
+    <wsdl:part name="userName_header" element="ns0:userName">
+    </wsdl:part>
+    <wsdl:part name="password_header" element="ns0:password">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TMSPortType">
+    <wsdl:operation name="sendMailing">
+      <wsdl:input message="ns0:sendMailingRequest" wsaw:Action="urn:sendMailing">
+    </wsdl:input>
+      <wsdl:output message="ns0:sendMailingResponse" wsaw:Action="urn:sendMailingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TMSHttpBinding" type="ns0:TMSPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="sendMailing">
+      <http:operation location="TMS/sendMailing"/>
+      <wsdl:input>
+        <mime:content part="sendMailing" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="sendMailing" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TMSSOAP12Binding" type="ns0:TMSPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendMailing">
+      <soap12:operation soapAction="urn:sendMailing" style="document"/>
+      <wsdl:input>
+        <soap:header message="ns0:sendMailingRequest" part="userName_header" use="literal">
+        </soap:header>
+        <soap:header message="ns0:sendMailingRequest" part="password_header" use="literal">
+        </soap:header>
+        <soap12:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TMSSOAP11Binding" type="ns0:TMSPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendMailing">
+      <soap:operation soapAction="urn:sendMailing" style="document"/>
+      <wsdl:input>
+        <soap:header message="ns0:sendMailingRequest" part="userName_header" use="literal">
+        </soap:header>
+        <soap:header message="ns0:sendMailingRequest" part="password_header" use="literal">
+        </soap:header>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TMS">
+    <wsdl:port name="TMSSOAP12port_http" binding="ns0:TMSSOAP12Binding">
+      <soap12:address location="https://tms-em.unicaondemand.com/emessageds/services/TMS"/>
+    </wsdl:port>
+    <wsdl:port name="TMSHttpport" binding="ns0:TMSHttpBinding">
+      <http:address location="https://tms-em.unicaondemand.com/emessageds/services/TMS"/>
+    </wsdl:port>
+    <wsdl:port name="TMSSOAP11port_http" binding="ns0:TMSSOAP11Binding">
+      <soap:address location="https://tms-em.unicaondemand.com/emessageds/services/TMS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

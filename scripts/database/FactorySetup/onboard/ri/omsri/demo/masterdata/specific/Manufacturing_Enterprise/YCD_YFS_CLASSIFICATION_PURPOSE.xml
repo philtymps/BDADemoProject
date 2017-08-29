@@ -1,0 +1,24 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Classification_PurposeList>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        ClassificationPurposeCode="MasterCatalog" OrganizationCode="#{Manufacturing_Enterprise_Code}"/>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        ClassificationPurposeCode="SellingCatalog" OrganizationCode="#{Manufacturing_Enterprise_Code}"/>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        ClassificationPurposeCode="MasterCatalog"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" SubCatalogOrganizationCode="#{Dealer_2_Enterprise_Code}"/>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD5"
+        ClassificationPurposeCode="SellingCatalog"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" SubCatalogOrganizationCode="#{Dealer_2_Enterprise_Code}"/>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD0"
+        ClassificationPurposeCode="MasterCatalog"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}"/>
+    <ClassificationPurpose CategoryDomainKey="#{Generic_Enterprise_Code}_CD4"
+        ClassificationPurposeCode="SellingCatalog"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" SubCatalogOrganizationCode="#{Dealer_1_Enterprise_Code}"/>
+</YFS_Classification_PurposeList>

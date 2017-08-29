@@ -1,0 +1,26 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Device_Sub_TypeList>
+	<DeviceSubType Description="Laserjet printers"
+        DeviceSubType="Laserjet" DeviceSubTypeKey="#{Retail_Store_1}_Printer1"
+        DeviceType="Printer" OrganizationCode="#{Retail_Store_1}"/>
+    <DeviceSubType Description="Zebra Printers" 
+		DeviceSubType="Zebra" DeviceSubTypeKey="#{Retail_Store_1}_Printer2" 
+		DeviceType="Printer" OrganizationCode="#{Retail_Store_1}"/>
+	<DeviceSubType Description="Laserjet printers"
+        DeviceSubType="Laserjet" DeviceSubTypeKey="#{Retail_Store_2}_Printer1"
+        DeviceType="Printer" OrganizationCode="#{Retail_Store_2}"/>
+    <DeviceSubType Description="Zebra Printers" 
+		DeviceSubType="Zebra" DeviceSubTypeKey="#{Retail_Store_2}_Printer2" 
+		DeviceType="Printer" OrganizationCode="#{Retail_Store_2}"/>
+	<DeviceSubType Description="Laserjet printers"
+        DeviceSubType="Laserjet" DeviceSubTypeKey="#{Retail_Store_3}_Printer1"
+        DeviceType="Printer" OrganizationCode="#{Retail_Store_3}"/>
+    <DeviceSubType Description="Zebra Printers" 
+		DeviceSubType="Zebra" DeviceSubTypeKey="#{Retail_Store_3}_Printer2" 
+		DeviceType="Printer" OrganizationCode="#{Retail_Store_3}"/>
+</YFS_Device_Sub_TypeList>

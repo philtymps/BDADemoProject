@@ -1,0 +1,49 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Allocation_RuleList>
+    <AllocationRule ActivateFlag="Y" AllocationRuleId="SYSTEM"
+        AllocationRuleKey="#{Generic_Enterprise_Code}_ALLOC_RULE"
+        AllowedShipmentDelayDays="30" ApplyFutureSafetyFactor="Y"
+        ApplyOnhandSafetyFactor="Y" AssumeInfInvAfterLeadTime="N"
+        BackOrderWaitPeriod="5.00" BackorderfromnodeWaitPeriod="2.00"
+        CancelOrderOnExcpFlag="N" ConsiderUnplannedInventoryMode="ALL"
+        DelayCurrentProcurements="Y" DelayCurrentShipment="Y"
+        Description="Default Scheduling Rule For #{Generic_Enterprise_Code}"
+        DetermineShipnodeExternally="N" HoldAllocationFlag="N"
+        IgnoreFillQuantityForReservations="Y" IgnoreLandedCost="N"
+        IgnoreMerging="N" IgnoreSequenceConstraintsForReservations="N"
+        IsReservationAllowedDuringScheduling="N"
+        LineShipCompleteFlag="N" LineShipSingleNodeFlag="N"
+        MinTimeBtwSchAndRls="0.00" OptimizationType="01"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        ReserveKitsOutOfRatio="Y" RetrySchTimeForProd="5.00"
+        RetrySchTimeForSrvc="5.00" ScheduleLeadTime="60"
+        ServiceSearchWindow="60" ShipCompleteFlag="N"
+        ShipSingleNodeFlag="N" UseGeography="N"
+        UseShipmentConsolidationWindow="N" WeightByDistribution="1.00" WeightByGeography="1.00"/>
+    <AllocationRule ActivateFlag="Y" AllocationRuleId="CORP-SCH"
+        AllocationRuleKey="#{Generic_Enterprise_Code}_ALLOC_RULE2"
+        AllowedShipmentDelayDays="30" ApplyFutureSafetyFactor="Y"
+        ApplyOnhandSafetyFactor="Y" AssumeInfInvAfterLeadTime="N"
+        BackOrderWaitPeriod="5.00" BackorderfromnodeWaitPeriod="2.00"
+        CancelOrderOnExcpFlag="N" ConsiderUnplannedInventoryMode="ALL"
+        DelayCurrentProcurements="Y" DelayCurrentShipment="Y"
+        Description="Group items available within 5 days"
+        DetermineShipnodeExternally="N" HoldAllocationFlag="N"
+        IgnoreFillQuantityForReservations="Y" IgnoreLandedCost="N"
+        IgnoreMerging="N" IgnoreSequenceConstraintsForReservations="N"
+        IsReservationAllowedDuringScheduling="N"
+        LineShipCompleteFlag="N" LineShipSingleNodeFlag="N"
+        MinTimeBtwSchAndRls="0.00" OptimizationType="03"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        ReserveKitsOutOfRatio="Y" RetrySchTimeForProd="5.00"
+        RetrySchTimeForSrvc="5.00" ScheduleLeadTime="60"
+        ServiceSearchWindow="60" ShipCompleteFlag="N"
+        ShipSingleNodeFlag="N" ShipmentConsolidationWindow="5"
+        UseGeography="N" UseShipmentConsolidationWindow="Y"
+        WeightByDistribution="1.00" WeightByGeography="1.00"/>
+</YFS_Allocation_RuleList>

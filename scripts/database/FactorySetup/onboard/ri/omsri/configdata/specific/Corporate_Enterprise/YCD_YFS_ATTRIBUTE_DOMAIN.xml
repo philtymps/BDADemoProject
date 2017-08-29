@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attribute_DomainList>
+    <AttributeDomain AttributeDomainID="ItemAttribute"
+        AttributeDomainKey="#{Corporate_Enterprise_Code}_AK1"
+        LongDescription="Item Attribute"
+        OrganizationCode="#{Corporate_Enterprise_Code}" Purpose="ITEM" ShortDescription="Item Attribute"/>
+</YFS_Attribute_DomainList>

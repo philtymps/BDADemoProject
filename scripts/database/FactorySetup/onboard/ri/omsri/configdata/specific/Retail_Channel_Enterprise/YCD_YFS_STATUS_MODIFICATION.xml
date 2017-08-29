@@ -1,0 +1,46 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Status_ModificationList>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1000" StatusModGroupKey="#{Generic_Enterprise_Code}_OF" StatusModificationTypeKey="OF_OL_CHANGE_DEL_METHOD" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Generic_Enterprise_Code}_OF" StatusModificationTypeKey="OF_OL_CHANGE_DEL_METHOD" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Generic_Enterprise_Code}_OF" StatusModificationTypeKey="OF_O_OTHERS" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Generic_Enterprise_Code}_OF" StatusModificationTypeKey="OF_OL_OTHERS" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1100.70.06.10" StatusModGroupKey="#{Generic_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_4" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1100.70.06.30" StatusModGroupKey="#{Generic_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_4" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Generic_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Generic_Enterprise_Code}_OF" StatusModificationTypeKey="OF_OL_CHANGE_OL_RSRV" SystemDefinedCode="N"/>
+	<!-- Gemini-COM starts here -->
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.40" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_9" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.50" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_9" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.50" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_7" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.70" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_7" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.50" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_10" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.70" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_10" SystemDefinedCode="N"/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.50" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIP_ADD_CNTR_MNFST_OD" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.70" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIP_ADD_CNTR_MNFST_OD" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1300" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIP_ADD_CNTR_MNFST_OD" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1300" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_8" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100.70.06.70" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_OD" StatusModificationTypeKey="SHIPMENT_MOD_8" SystemDefinedCode=""/>
+	
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1400" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_10" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_10" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600.01" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_10" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_9" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600.01" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_9" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1400" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_9" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_7" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_PF" StatusModificationTypeKey="PO_SHIPMENT_MOD_9" SystemDefinedCode=""/>
+	
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1400" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424531106" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424531106" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600.001" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424531106" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1400" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424521076" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424521076" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1600.001" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424521076" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424531115" SystemDefinedCode=""/>
+	<StatusModification AccessGroupId="" AllowValue="01" OrganizationCode="#{Retail_Channel_Enterprise_Code}" Status="1100" StatusModGroupKey="#{Retail_Channel_Enterprise_Code}_TF" StatusModificationTypeKey="200307081424521076" SystemDefinedCode=""/>
+</YFS_Status_ModificationList>
+

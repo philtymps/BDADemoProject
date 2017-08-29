@@ -1,0 +1,314 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricelist_LineList>
+    <PricelistLine ItemID="200001" ListPrice="15000.00"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200002" ListPrice="17000.00"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200003" ListPrice="21000.00"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200004" ListPrice="25000.00"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200005" ListPrice="30000.00"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="-1000.00" ItemID="200001"
+        ListPrice="15000.00" MassAuditID="2009100100141457376"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="-1000.00" ItemID="200002"
+        ListPrice="17000.00" MassAuditID="2009100100141457376"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="-1000.00" ItemID="200003"
+        ListPrice="21000.00" MassAuditID="2009100100141457376"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="-1000.00" ItemID="200004"
+        ListPrice="25000.00" MassAuditID="2009100100141457376"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="-1000.00" ItemID="200005"
+        ListPrice="30000.00" MassAuditID="2009100100141457376"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricingStatus="ACTIVE"  UnitOfMeasure="EACH"/>
+	<PricelistLine ItemID="200322" ListPrice="325.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200323" ListPrice="325.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200330" ListPrice="355.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200331" ListPrice="355.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200342" ListPrice="219.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200345" ListPrice="219.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200346" ListPrice="219.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200343" ListPrice="219.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200201" ListPrice="605.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200202" ListPrice="1860.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200205" ListPrice="904.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200206" ListPrice="2295.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200207" ListPrice="1600.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200004" ListPrice="25000.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200001" ListPrice="21000.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200002" ListPrice="32000.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}" PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200003" ListPrice="55000.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+		PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200005" ListPrice="43000.00"
+        MassAuditID="20100106181054124082"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+		PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+	<PricelistLine AbsoluteAdjustment="0.00" ItemID="200381" ListPrice="485.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+		PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="0.00" ItemID="200382" ListPrice="635.00" 
+		OrganizationCode="#{Generic_Enterprise_Code}"
+		PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine AbsoluteAdjustment="0.00" ItemID="200380" ListPrice="985.00" 
+		OrganizationCode="#{Generic_Enterprise_Code}"
+		PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200372" ListPrice="1989.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200371" ListPrice="1499.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200370" ListPrice="1200.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200390" ListPrice="385.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200391" ListPrice="479.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200392" ListPrice="589.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200393" ListPrice="689.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200394" ListPrice="799.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200301" ListPrice="233.20"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200302" ListPrice="489.55"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200350" ListPrice="2563.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200351" ListPrice="2734.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200352" ListPrice="2931.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200353" ListPrice="0.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200354" ListPrice="0.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200355" ListPrice="3891.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200356" ListPrice="4166.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200357" ListPrice="4376.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200358" ListPrice="0.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200359" ListPrice="0.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200360" ListPrice="4754.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200361" ListPrice="5139.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200362" ListPrice="5454.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200008" ListPrice="18079.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200010" ListPrice="100.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200363" ListPrice="4565.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200364" ListPrice="4870.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200395" ListPrice="320.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200396" ListPrice="410.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200397" ListPrice="483.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200400" ListPrice="0.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200451" ListPrice="390.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200452" ListPrice="568.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200461" ListPrice="187.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200462" ListPrice="231.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200463" ListPrice="566.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200464" ListPrice="1539.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200465" ListPrice="1390.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200467" ListPrice="999.90"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200474" ListPrice="21990.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200475" ListPrice="1580.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200476" ListPrice="30990.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200480" ListPrice="11900.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200479" ListPrice="5430.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+    <PricelistLine ItemID="200481" ListPrice="1809.00"
+		OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricingStatus="ACTIVE" UnitOfMeasure="EACH"/>
+</YPM_Pricelist_LineList>

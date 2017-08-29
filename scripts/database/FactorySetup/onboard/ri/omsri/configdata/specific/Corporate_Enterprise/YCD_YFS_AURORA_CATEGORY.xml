@@ -1,0 +1,20 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_CategoryList>
+    <Category CategoryDomainKey="#{Corporate_Enterprise_Code}_CD1"
+        CategoryID="DisplayClassification" CategoryKey="#{Corporate_Enterprise_Code}_Category"
+        CategoryPath="/Display/DisplayClassification"
+        Description="DisplayClassification"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="0"
+        ShortDescription="DisplayClassification" Status="3000"/>
+    <Category CategoryDomainKey="#{Corporate_Enterprise_Code}_CD3"
+        CategoryID="Standard" CategoryKey="#{Corporate_Enterprise_Suffix}_SInventory"
+        CategoryPath="/InventoryMonitor/Standard"
+        Description="Standard Inventory"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="0"
+        ShortDescription="Standard Inventory" Status="3000"/>
+</YFS_CategoryList>

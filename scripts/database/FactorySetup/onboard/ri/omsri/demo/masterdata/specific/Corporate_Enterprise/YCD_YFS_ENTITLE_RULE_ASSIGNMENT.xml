@@ -1,0 +1,31 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Entitle_Rule_AssignmentList>
+    <EntitlementRuleAssignment
+        AssignedToOrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        EntitlementRuleAssignmentKey="2009120113594678312"
+        EntitlementRuleKey="2009120113541778306"
+        OrganizationCode="#{Corporate_Enterprise_Code}" Purpose="SELLING"/>
+    <EntitlementRuleAssignment CustomerType="03"
+        EntitlementRuleAssignmentKey="2009121118540797931"
+        EntitlementRuleKey="2009121118491397852"
+        OrganizationCode="#{Corporate_Enterprise_Code}" Purpose="BUYING"/>
+    <EntitlementRuleAssignment CustomerType="02"
+        EntitlementRuleAssignmentKey="2009121118540797934"
+        EntitlementRuleKey="2009121118491397852"
+        OrganizationCode="#{Corporate_Enterprise_Code}" Purpose="BUYING"/>
+    <EntitlementRuleAssignment CustomerLevel="GOLD"
+        EntitlementRuleAssignmentKey="2009121118583697958"
+        EntitlementRuleKey="2009121118564997936"
+        OrganizationCode="#{Corporate_Enterprise_Code}" Purpose="BUYING"
+        RelationshipType="NA" Vertical="GENERAL"/>
+    <EntitlementRuleAssignment CustomerLevel="SILVER"
+        EntitlementRuleAssignmentKey="2009121118594497963"
+        EntitlementRuleKey="2009121118564997936"
+        OrganizationCode="#{Corporate_Enterprise_Code}" Purpose="BUYING"
+        RelationshipType="NA" Vertical="GENERAL"/>
+</YFS_Entitle_Rule_AssignmentList>

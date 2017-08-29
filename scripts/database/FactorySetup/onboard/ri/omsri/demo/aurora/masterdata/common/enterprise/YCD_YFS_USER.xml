@@ -1,0 +1,58 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_UserList>
+    <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" 
+        CreatorOrganizationKey="DEFAULT" DataSecurityGroupId="#{Generic_Enterprise_Code}_TEAM" Imagefile=""
+        Localecode="en_US_EST"  Loginid="#{Generic_CSR_UserName}" Longdesc=""
+        MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="#{Generic_CSR_UserName}"
+        PreferenceKey="" Pwdlastchangedon="20010504T18:26:09"
+	    Theme="ice" UserKey="#{Generic_CSR_UserName}" UsergroupKey="SYSTEM"
+        Username="#{Generic_CSR_Name}" Usertype=""/>
+    <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" CreatorOrganizationKey=""
+        DataSecurityGroupId="#{Generic_Enterprise_Code}_TEAM" Imagefile="" Localecode="en_US_EST"
+        Loginid="#{Generic_CSR_Lead_UserName}" Longdesc="" MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="#{Generic_CSR_Lead_UserName}"
+        PreferenceKey="" Pwdlastchangedon="2005-06-07" SystemName=""
+        Theme="ice" UserKey="#{Generic_CSR_Lead_UserName}" UsergroupKey=""
+        Username="#{Generic_CSR_Lead_Name}" Usertype=""  IsSupervisor="Y" />
+	<User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" CreatorOrganizationKey=""
+        DataSecurityGroupId="#{Generic_Enterprise_Code}_TEAM" Imagefile="" Localecode="en_US_EST"
+        Loginid="#{Generic_Admin_UserName}" Longdesc="" MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="#{Generic_Admin_UserName}"
+        PreferenceKey="" Pwdlastchangedon="2005-06-07" SystemName=""
+        Theme="ice" UserKey="#{Generic_Admin_UserName}" UsergroupKey="SYSTEM"
+        Username="#{Generic_Admin_Name}" Usertype=""/>
+	<User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" 
+        CreatorOrganizationKey="DEFAULT" DataSecurityGroupId="#{Generic_Enterprise_Code}_TEAM" Imagefile=""
+        Localecode="en_US_EST"  Loginid="#{Generic_SalesRep_UserName}" Longdesc=""
+        MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="#{Generic_SalesRep_UserName}"
+        PreferenceKey="" Pwdlastchangedon="20010504T18:26:09"
+	    Theme="ice" UserKey="#{Generic_SalesRep_UserName}" UsergroupKey="SYSTEM"
+        Username="#{Generic_SalesRep_Name}" Usertype=""/>
+    <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" CreatorOrganizationKey=""
+        DataSecurityGroupId="#{Generic_Enterprise_Code}_TEAM" Imagefile="" Localecode="en_US_EST"
+        Loginid="#{Generic_SalesMgr_UserName}" Longdesc="" MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="#{Generic_SalesMgr_UserName}"
+        PreferenceKey="" Pwdlastchangedon="2005-06-07" SystemName=""
+        Theme="ice" UserKey="#{Generic_SalesMgr_UserName}" UsergroupKey=""
+        Username="#{Generic_SalesMgr_Name}" Usertype=""  IsSupervisor="Y" />
+	<User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" CreatorOrganizationKey=""
+        DataSecurityGroupId="#{Generic_Enterprise_Code}_TEAM" Imagefile="" Localecode="en_US_EST"
+        Loginid="#{Generic_SalesVp_UserName}" Longdesc="" MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="#{Generic_SalesVp_UserName}"
+        PreferenceKey="" Pwdlastchangedon="2005-06-07" SystemName=""
+        Theme="ice" UserKey="#{Generic_SalesVp_UserName}" UsergroupKey="SYSTEM"
+        Username="#{Generic_SalesVp_Name}" Usertype=""/>
+</YFS_UserList>

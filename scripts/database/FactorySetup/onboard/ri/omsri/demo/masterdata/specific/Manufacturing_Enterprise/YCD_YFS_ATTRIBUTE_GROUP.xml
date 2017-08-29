@@ -1,0 +1,90 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attribute_GroupList>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Forklift"
+        AttributeGroupKey="2009061714362420580"
+        AttributeGroupPath="/ItemAttribute/Forklift"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SequenceNo="100" ShortDescription="Forklift"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="General"
+        AttributeGroupKey="2009061714365720583"
+        AttributeGroupPath="/ItemAttribute/Forklift/General"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="100" ShortDescription="General"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="LiftCapacityRange"
+        AttributeGroupKey="2009061714411920708"
+        AttributeGroupPath="/ItemAttribute/Forklift/LiftCapacityRange"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="200" ShortDescription="Lift Capacity Range"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="TruckDiminsions"
+        AttributeGroupKey="2009061810411621727"
+        AttributeGroupPath="/ItemAttribute/Forklift/TruckDiminsions"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="300" ShortDescription="Truck Diminsions"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Engine"
+        AttributeGroupKey="2009061811583422281"
+        AttributeGroupPath="/ItemAttribute/Forklift/Engine"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="400" ShortDescription="Engine"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Drive" AttributeGroupKey="2009061814060122683"
+        AttributeGroupPath="/ItemAttribute/Forklift/Drive"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="500" ShortDescription="Drive"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Options"
+        AttributeGroupKey="2009063012574129071"
+        AttributeGroupPath="/ItemAttribute/Forklift/Options"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="800" ShortDescription="Options"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Features"
+        AttributeGroupKey="2009070610290341351"
+        AttributeGroupPath="/ItemAttribute/Forklift/Features"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009061714362420580" SequenceNo="900" ShortDescription="Features"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Parts" AttributeGroupKey="2009062915555526244"
+        AttributeGroupPath="/ItemAttribute/Parts"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SequenceNo="200" ShortDescription="Parts"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Battery"
+        AttributeGroupKey="2009101918101764735"
+        AttributeGroupPath="/ItemAttribute/Battery"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SequenceNo="400" ShortDescription="Battery"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Battery Specification"
+        AttributeGroupKey="2009101918133464783"
+        AttributeGroupPath="/ItemAttribute/Battery/Battery Specification"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="2009101918101764735" SequenceNo="100" ShortDescription="Battery Specification"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="SideshiftClass"
+        AttributeGroupKey="20091212184038100153"
+        AttributeGroupPath="/ItemAttribute/SideshiftClass"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SequenceNo="500" ShortDescription="Sideshift Class"/>
+	<AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="GeneralCrossProductLine"
+        AttributeGroupKey="20100113211420187572"
+        AttributeGroupPath="/ItemAttribute/GeneralCrossProductLine"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SequenceNo="600" ShortDescription="General Cross Product Line"/>
+    <AttributeGroup AttributeDomainID="ItemAttribute"
+        AttributeGroupID="PriceFilter"
+        AttributeGroupKey="20100115202837339428"
+        AttributeGroupPath="/ItemAttribute/GeneralCrossProductLine/PriceFilter"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        ParentAttributeGroupKey="20100113211420187572" SequenceNo="99" ShortDescription="Price Filter"/>
+</YFS_Attribute_GroupList>

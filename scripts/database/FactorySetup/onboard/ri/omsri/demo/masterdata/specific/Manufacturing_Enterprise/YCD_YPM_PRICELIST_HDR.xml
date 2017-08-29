@@ -1,0 +1,35 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricelist_HeaderList>
+    <PricelistHeader Currency="USD"
+        Description="#{Generic_Enterprise_Code} Master Price List"
+        EndDateActive="2021-01-01T02:59:59-05:00" MarkedForListPrice="Y"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        PricelistName="#{Generic_Enterprise_Code}MasterPriceList"
+        PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" StartDateActive="2009-01-01T17:48:13-05:00"/>
+    <PricelistHeader Currency="USD"
+        Description="#{Generic_Enterprise_Code} valid for Trade Shows"
+        EndDateActive="2011-02-09T02:59:59-05:00" MarkedForListPrice="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL2"
+        PricelistName="#{Generic_Enterprise_Code}Trade2011ShowPriceList"
+        PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" StartDateActive="2011-02-01T03:00:00-05:00"/>
+    <PricelistHeader Currency="USD"
+        Description="#{Generic_Enterprise_Code}'s dependent price list assigned to dealer #{Dealer_1_Enterprise_Name}"
+        EndDateActive="2024-12-01T12:34:25-05:00"
+        InheritFromPricelistHeaderKey="#{Generic_Enterprise_Code}_PL1"
+        MarkedForListPrice="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PercentAdjustmentOverride="-10.00"
+        PricelistHeaderKey="#{Generic_Enterprise_Code}_PL3"
+        PricelistName="#{Dealer_1_Enterprise_Code}DealerDependentPriceList"
+        PricingStatus="ACTIVE"
+        SellerOrganizationCode="#{Generic_Enterprise_Code}" StartDateActive="2009-01-01T12:34:07-05:00"/>
+</YPM_Pricelist_HeaderList>

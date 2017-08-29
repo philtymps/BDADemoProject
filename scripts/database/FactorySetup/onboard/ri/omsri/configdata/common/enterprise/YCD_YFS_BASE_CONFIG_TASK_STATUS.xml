@@ -1,0 +1,90 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<BaseConfigTaskStatusList>
+    <!-- HUB level configurations -->
+    <BaseConfigTaskStatus ConfigTaskID="Node_Types"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Shipment_Modes"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Agent_Criteria_Groups"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Quantity"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Service_Quantity"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Dimension"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Volume"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Weight"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Time" OrganizationCode="DEFAULT"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Locales"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Countries"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Languages"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Date_Formats"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Time_Formats"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Date_Time_Formats"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Currency_Definitions"
+        OrganizationCode="DEFAULT" PCAModuleCode="YCD" Status="Complete"/>
+    <!-- Parent-enterprise level configurations -->
+    <BaseConfigTaskStatus  ConfigTaskID="EnterpriseData"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus  ConfigTaskID="Fulfillment_Types"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus  ConfigTaskID="Service_Complexity_Levels"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus  ConfigTaskID="Payment_Failure_Rules"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus  ConfigTaskID="Price_Match_Rules"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Address_Verification_Rules"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Order_Modification_Rules"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Modifications_Impacting_Pricing"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Order_History_Notes"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Appeasement_Reasons"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Cancellation_Reasons"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Reship_Reasons"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="VAS_Modification_Rules"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Inventory_Types_and_Considerations"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Status_Inventory_Types"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+    <BaseConfigTaskStatus ConfigTaskID="Return_Reason"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        PCAModuleCode="YCD" Status="Complete"/>
+</BaseConfigTaskStatusList>

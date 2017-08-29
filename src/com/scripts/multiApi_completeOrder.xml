@@ -1,0 +1,32 @@
+<MultiApi>
+<API FlowName="CompleteOrder">
+<Input>
+<Order OrderNo="SO-00001" DocumentType="0001" EnterpriseCode="Cactus" />
+</Input>
+</API>
+<API FlowName="CompleteOrder">
+<Input>
+<Order OrderNo="SO-00002" DocumentType="0001" EnterpriseCode="Cactus" />
+</Input>
+</API>
+<API FlowName="CompleteOrder">
+<Input>
+<Order OrderNo="SO-00003" DocumentType="0001" EnterpriseCode="Cactus" />
+</Input>
+</API>
+<API FlowName="CompleteOrder">
+<Input>
+<Order OrderNo="SO-00004" DocumentType="0001" EnterpriseCode="Cactus" />
+</Input>
+</API>
+<API FlowName="CompleteOrder">
+<Input>
+<Order OrderNo="SO-00005" DocumentType="0001" EnterpriseCode="Cactus" />
+</Input>
+</API>
+<API FlowName="CompleteOrder">
+<Input>
+<Order OrderNo="SO-00006" DocumentType="0001" EnterpriseCode="Cactus" />
+</Input>
+</API>
+</MultiApi>

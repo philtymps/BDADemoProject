@@ -1,0 +1,24 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Customer_Sch_PreferenceList>
+    <CustomerSchedulingPreferences CancelOrderOnBackorder="N"
+        CustomerKey="#{Business_Customer_1}_#{Generic_Enterprise_Suffix}1"
+        IsDropShipAllowed="Y" IsLineShipComplete="N"
+        IsLineShipSingleNode="N" IsShipComplete="N" IsShipSingleNode="N" IsSubstitutionAllowed="N"/>
+    <CustomerSchedulingPreferences CancelOrderOnBackorder="N"
+        CustomerKey="#{Business_Customer_2}_#{Generic_Enterprise_Suffix}2"
+        IsDropShipAllowed="Y" IsLineShipComplete="N"
+        IsLineShipSingleNode="N" IsShipComplete="N" IsShipSingleNode="N" IsSubstitutionAllowed="N"/>
+	<CustomerSchedulingPreferences CancelOrderOnBackorder="N"
+        CustomerKey="#{Business_Customer_3}_#{Generic_Enterprise_Suffix}3"
+        IsDropShipAllowed="Y" IsLineShipComplete="N"
+        IsLineShipSingleNode="N" IsShipComplete="N" IsShipSingleNode="N" IsSubstitutionAllowed="N"/>
+	<CustomerSchedulingPreferences CancelOrderOnBackorder="N"
+        CustomerKey="#{Business_Customer_4}_#{Generic_Enterprise_Suffix}4"
+        IsDropShipAllowed="Y" IsLineShipComplete="N"
+        IsLineShipSingleNode="N" IsShipComplete="N" IsShipSingleNode="N" IsSubstitutionAllowed="N"/>
+</YFS_Customer_Sch_PreferenceList>

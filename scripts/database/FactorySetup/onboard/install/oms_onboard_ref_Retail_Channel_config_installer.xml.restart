@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Order Management Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="Y"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="Y">
+                <EntityList>
+                    <Entity AbortOnError="N" Class="YFS_Rules"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="10"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_RULES.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Status_Modification" CommitCount="50"
+                        Completed="Y" NumRecordsProcessed="34"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_STATUS_MODIFICATION.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Sourcing_Rule_Header"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_SOURCING_RULE_HDR.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Common_Code"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="6"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_COMMON_CODE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Common_Code"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_AURORA_COMMON_CODES.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_User"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="YCD_YFS_CUSTOMER_USER.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_User_Group_List"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="0"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_USER_GROUP_LIST.xml"/>
+                    <!-- Gemini-COM starts here -->
+                    <Entity AbortOnError="N" Class="YFS_Freight_Terms"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_FREIGHT_TERMS.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Outbound_Constraints"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_OUTBOUND_CONSTRAINTS.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Region_Usage"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_REGION_USAGE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Routing_Guide"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_ROUTING_GUIDE.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Routing_Guide_Detail_Carrier"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_ROUTING_GUIDE_DETAIL_CARRIER.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Inventory_Monitor_Rules"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="YCD_YFS_INVENTORY_MONITOR_RULES.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>
+

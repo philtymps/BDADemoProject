@@ -1,0 +1,22 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Entitlement_Rule_HdrList>
+    <EntitlementRule
+        Description="Entitlement for #{Manufacturing_Enterprise_Name} dealer #{Dealer_2_Enterprise_Name}."
+        EffectiveFromDate="2009-12-01" EffectiveToDate="2025-12-01"
+        EntitlementRuleID="#{Dealer_2_Enterprise_Code}_MH_Entitle"
+        EntitlementRuleKey="#{Manufacturing_Enterprise_Code}_ER2"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" 
+		Purpose="SELLING" StartWithAllCatalogItems="Y"/>
+    <EntitlementRule
+        Description="#{Manufacturing_Enterprise_Name} entitlement to dealer #{Dealer_1_Enterprise_Name}"
+        EffectiveFromDate="2009-01-01" EffectiveToDate="2024-12-23"
+        EntitlementRuleID="#{Dealer_1_Enterprise_Code}_Entitlement"
+        EntitlementRuleKey="#{Manufacturing_Enterprise_Code}_ER1"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        Purpose="SELLING" StartWithAllCatalogItems="Y"/>
+</YFS_Entitlement_Rule_HdrList>

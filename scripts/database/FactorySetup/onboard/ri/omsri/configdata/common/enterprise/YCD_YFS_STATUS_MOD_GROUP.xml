@@ -1,0 +1,26 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2011, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Status_Mod_GroupList>
+  <StatusModGroup StatusModGroupKey="#{Generic_Enterprise_Code}_OF" ProcessTypeKey="ORDER_FULFILLMENT" StatusModGroupId="Default_Group" IsOverride="N" StatusModGroupDescription="Default Group" OrganizationCode="#{Generic_Enterprise_Code}" />
+
+  <StatusModGroup StatusModGroupKey="#{Generic_Enterprise_Code}_OD" ProcessTypeKey="ORDER_DELIVERY" StatusModGroupId="Default_Group" IsOverride="N" StatusModGroupDescription="Default Group" OrganizationCode="#{Generic_Enterprise_Code}" />
+
+  <StatusModGroup StatusModGroupKey="#{Generic_Enterprise_Code}_QF" ProcessTypeKey="QUOTE_FULFILLMENT"  StatusModGroupId="Default_Group" IsOverride="N" StatusModGroupDescription="Default Group" OrganizationCode="#{Generic_Enterprise_Code}" />
+
+  <StatusModGroup StatusModGroupKey="#{Generic_Enterprise_Code}_RF" ProcessTypeKey="RETURN_FULFILLMENT" StatusModGroupId="Default_Group" IsOverride="N" StatusModGroupDescription="Default Group" OrganizationCode="#{Generic_Enterprise_Code}" />
+
+  <StatusModGroup StatusModGroupKey="#{Generic_Enterprise_Code}_VAS" ProcessTypeKey="VAS" 
+  StatusModGroupId="Default_Group" IsOverride="N" StatusModGroupDescription="Default Group" OrganizationCode="#{Generic_Enterprise_Code}" />
+  
+   <StatusModGroup OrganizationCode="#{Generic_Enterprise_Code}" ProcessTypeKey="PO_SHIPMENT"
+        StatusModGroupDescription="Default_Group"
+        StatusModGroupId="Default_Group" StatusModGroupKey="#{Generic_Enterprise_Code}_PF"/>
+   
+   <StatusModGroup OrganizationCode="#{Generic_Enterprise_Code}" ProcessTypeKey="200307081424521056"
+        StatusModGroupDescription="Transfer_Order"
+        StatusModGroupId="Transfer_Order" StatusModGroupKey="#{Generic_Enterprise_Code}_TF"/>
+</YFS_Status_Mod_GroupList>

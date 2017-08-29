@@ -1,0 +1,18 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_UserList>
+    <User Activateflag="Y" ChangePassNext="0"
+        DataSecurityGroupId="Matrix_TEAM" DisplayUserID="ajones"
+        EnterpriseCode="Matrix" IsPasswordEncrypted="Y" IsSupervisor="N"
+        Localecode="en_US_EST" Loginid="ajones"
+        MaxCustomerAssignments="0" MenuId="DEFAULT_MENU"
+        OrganizationKey="#{Corporate_Enterprise_Code}"
+        Password="nxe8DeQHnJ96I0/knxYXNcQXMTcoM618ysPVPtxy4lQ="
+        Pwdlastchangedon="2009-09-24T11:31:59-04:00"
+        Salt="McitFdyerHmimrL3Eu59AA==" SessionTimeout="6000"
+        SuperUser="0" Theme="ice" UserKey="ajones" UsergroupKey="SYSTEM" Username="Admin User"/>
+</YFS_UserList>

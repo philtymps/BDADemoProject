@@ -1,0 +1,24 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Service_TypeList>
+    <ServiceType CapacityUOM="HR" Description="TV Installation Provided Service Type"
+        ItemGroupCode="PS" OrganizationCode="#{Corporate_Enterprise_Code}"
+        ReferenceItemID="" ReferenceItemUOM=""
+        ServiceComplexityLevel="10" ServiceTypeID="TV_Install"/> 
+    <ServiceType CapacityUOM="HR" Description="Repair Service for Electronic Items"
+        ItemGroupCode="PS" OrganizationCode="#{Corporate_Enterprise_Code}"
+        ReferenceItemID="" ReferenceItemUOM=""
+        ServiceComplexityLevel="10" ServiceTypeID="Elec_Repair"/>         
+    <ServiceType CapacityUOM="UNIT" Description="Delivery"
+        ItemGroupCode="DS" OrganizationCode="#{Corporate_Enterprise_Code}"
+        ReferenceItemID="" ReferenceItemUOM=""
+        ServiceComplexityLevel="10" ServiceTypeID="Delivery"/>
+    <ServiceType CapacityUOM="HR" Description="Dining Set Assembly"
+        ItemGroupCode="PS" OrganizationCode="#{Corporate_Enterprise_Code}"
+        ReferenceItemID="" ReferenceItemUOM=""
+        ServiceComplexityLevel="10" ServiceTypeID="Furniture_Assembly"/>       
+</YFS_Service_TypeList>

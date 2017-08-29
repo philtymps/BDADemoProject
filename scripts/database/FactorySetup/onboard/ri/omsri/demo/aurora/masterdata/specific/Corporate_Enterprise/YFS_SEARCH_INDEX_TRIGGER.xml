@@ -1,0 +1,12 @@
+<YFS_Search_Index_TriggerList>
+	<SearchIndexTrigger 
+	    CategoryDomain="#{Corporate_Enterprise_Code}RefMasterCatalog" 
+	    IndexPath="/SearchIndex/#{Corporate_Enterprise_Code}/#{Corporate_Enterprise_Code}/#{Corporate_Enterprise_Code}RefMasterCatalog/CommonIndex" 
+	    OrganizationCode="#{Corporate_Enterprise_Code}" 
+	    EnterpriseCode="#{Corporate_Enterprise_Code}"
+	    Purpose="CatalogSearch"
+	    SearchIndexTriggerID="#{Corporate_Enterprise_Suffix}-IndexTrigger" 
+	    SearchIndexTriggerKey="#{Corporate_Enterprise_Suffix}-IndexTrigger" 
+	    Status="01" 
+	    TriggerTimestamp="2013-07-15T16:00:00" />
+</YFS_Search_Index_TriggerList>

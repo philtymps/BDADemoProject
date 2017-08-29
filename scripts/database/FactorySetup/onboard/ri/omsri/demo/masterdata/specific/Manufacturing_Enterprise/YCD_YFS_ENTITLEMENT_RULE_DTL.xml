@@ -1,0 +1,16 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Entitlement_Rule_DtlList>
+    <EntitlementRuleDetail CategoryKey="2009092419573454279"
+        EntitlementRuleDetailKey="20100115134140302144"
+        EntitlementRuleKey="#{Manufacturing_Enterprise_Code}_ER1" InclusionFlag="N"
+        SequenceNo="1" SourceType="01"/>
+    <EntitlementRuleDetail CategoryKey="2009092419573454279"
+        EntitlementRuleDetailKey="20100115195956324264"
+        EntitlementRuleKey="#{Manufacturing_Enterprise_Code}_ER2" InclusionFlag="N"
+        SequenceNo="1" SourceType="01"/>
+</YFS_Entitlement_Rule_DtlList>

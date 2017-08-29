@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Payment_RuleList>
+	<PaymentRule CollectExternalThroughAr="N" DefaultFlag="N"
+        DeferredCreditOnReturnRequired="N" FinancialHandlingRequired="B"
+        InterfaceTime="AT_COLLECT" MerchantId="" CustomerAccountMaintainedInternally="Y"
+        OrganizationCode="#{Generic_Store}" PaymentRuleId="#{Generic_Enterprise_Code}_DEFAULT" />
+</YFS_Payment_RuleList>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Agent_CriteriaList>
+	<AgentCriteria AgentCriteriaId="#{Generic_Enterprise_Code}_INDEX_BUILD"
+        AgentCriteriaKey="#{Generic_Enterprise_Code}_AC1"
+        FlowKey="#{Generic_Enterprise_Code}_F1"
+        MessageXml="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;Attributes>&#xa;    &lt;Attribute DataType=&quot;Text-20&quot; DisplayName=&quot;Action&quot; Modifiable=&quot;N&quot;&#xa;        Name=&quot;Action&quot; Value=&quot;Get&quot;/>&#xa;    &lt;Attribute DataType=&quot;Integer4AgentCriteria&quot;&#xa;        DisplayName=&quot;Number of Records To Buffer&quot; Modifiable=&quot;Y&quot;&#xa;        Name=&quot;NumRecordsToBuffer&quot; Value=&quot;0&quot;/>&#xa;    &lt;Attribute DataType=&quot;Key&quot; DisplayName=&quot;Organization Code&quot;&#xa;        Modifiable=&quot;Y&quot; Name=&quot;OrganizationCode&quot; Value=&quot;#{Generic_Enterprise_Code}&quot;/>&#xa;    &lt;Attribute DataType=&quot;Boolean&quot; DisplayName=&quot;CollectPendingJobs&quot;&#xa;        Modifiable=&quot;Y&quot; Name=&quot;CollectPendingJobs&quot; Value=&quot;Y&quot;/>&#xa;    &lt;Attribute DataType=&quot;Integer4AgentCriteria&quot;&#xa;        DisplayName=&quot;NumberOfMessages&quot; Modifiable=&quot;Y&quot;&#xa;        Name=&quot;NumberOfMessages&quot; Value=&quot;1&quot;/>&#xa;    &lt;Attribute DataType=&quot;Text-200&quot; DisplayName=&quot;IncrementalBuildFlag&quot;&#xa;        Modifiable=&quot;Y&quot; Name=&quot;IncrementalBuildFlag&quot; Value=&quot;N&quot;/>&#xa;    &lt;Attribute DataType=&quot;Boolean&quot; DisplayName=&quot;AutoActivate&quot;&#xa;        Modifiable=&quot;Y&quot; Name=&quot;AutoActivate&quot; Value=&quot;Y&quot;/>&#xa;    &lt;Attribute DataType=&quot;Boolean&quot;&#xa;        DisplayName=&quot;AutoInsertSearchIndexTrigger&quot; Modifiable=&quot;Y&quot;&#xa;        Name=&quot;AutoInsertSearchIndexTrigger&quot; Value=&quot;Y&quot;/>&#xa;&lt;/Attributes>&#xa;"
+        ServerKey="SEARCH_SERVER" TransactionKey="CATALOG_INDEX_BUILD">
+        <MessageXml>
+            <Attributes>
+                <Attribute DataType="Text-20" DisplayName="Action"
+                    Modifiable="N" Name="Action" Value="Get"/>
+                <Attribute DataType="Integer4AgentCriteria"
+                    DisplayName="Number of Records To Buffer"
+                    Modifiable="Y" Name="NumRecordsToBuffer" Value="0"/>
+                <Attribute DataType="Key"
+                    DisplayName="Organization Code" Modifiable="Y"
+                    Name="OrganizationCode" Value="#{Generic_Enterprise_Code}"/>
+                <Attribute DataType="Boolean"
+                    DisplayName="CollectPendingJobs" Modifiable="Y"
+                    Name="CollectPendingJobs" Value="Y"/>
+                <Attribute DataType="Integer4AgentCriteria"
+                    DisplayName="NumberOfMessages" Modifiable="Y"
+                    Name="NumberOfMessages" Value="1"/>
+                <Attribute DataType="Text-200"
+                    DisplayName="IncrementalBuildFlag" Modifiable="Y"
+                    Name="IncrementalBuildFlag" Value="N"/>
+                <Attribute DataType="Boolean" DisplayName="AutoActivate"
+                    Modifiable="Y" Name="AutoActivate" Value="Y"/>
+                <Attribute DataType="Boolean"
+                    DisplayName="AutoInsertSearchIndexTrigger"
+                    Modifiable="Y" Name="AutoInsertSearchIndexTrigger" Value="Y"/>
+            </Attributes>
+        </MessageXml>
+    </AgentCriteria>
+</YFS_Agent_CriteriaList>

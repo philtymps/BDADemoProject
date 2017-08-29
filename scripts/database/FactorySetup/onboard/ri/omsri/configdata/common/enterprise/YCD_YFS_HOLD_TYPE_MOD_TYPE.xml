@@ -1,0 +1,60 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Hold_Type_Mod_TypeList>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H1" ProcessTypeKey="ORDER_FULFILLMENT"
+        ModificationLevel="ORDER" ModificationType="BILLTO" Purpose="APPLY"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H1" ProcessTypeKey="ORDER_FULFILLMENT"
+        ModificationLevel="ORDER" ModificationType="SHIPTO" Purpose="APPLY"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H1" ProcessTypeKey="ORDER_FULFILLMENT"
+        ModificationLevel="ORDER_LINE" ModificationType="SHIPTO" Purpose="APPLY"/>
+	<HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="ADD_LINE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="BILLTO"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="EXPIRATION_DATE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="CHANGE_ORDER_DATE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="CHANGE_PROMOTION"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="LEVEL_OF_SERVICE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="PAYMENT_METHOD"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="PRICE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="REMOVE_PROMOTION"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="SHIPTO"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="SOLDTO"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="TAX"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE" ModificationType="ADD_COMPONENT"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE" ModificationType="ADD_QUANTITY"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE" ModificationType="CANCEL"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER" ModificationType="CARRIER"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE"
+        ModificationType="CHANGE_BUNDLE_DEFINITION" ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE"
+        ModificationType="CHANGE_BUNDLE_PARENT" ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE"
+        ModificationType="CHANGE_PROMOTION" ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE" ModificationType="DELETE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE" ModificationType="PRICE"
+        ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE"
+        ModificationType="REMOVE_PROMOTION" ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+    <HoldTypeModType HoldTypeKey="#{Generic_Enterprise_Code}_H6" ModificationLevel="ORDER_LINE"
+        ModificationType="REMOVE_COMPONENT" ProcessTypeKey="QUOTE_FULFILLMENT" Purpose="PREVENT"/>
+</YFS_Hold_Type_Mod_TypeList>

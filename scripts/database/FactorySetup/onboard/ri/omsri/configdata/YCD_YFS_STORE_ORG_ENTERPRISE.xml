@@ -1,0 +1,4 @@
+<YFS_Org_EnterpriseList>
+	<OrgEnterprise EnterpriseOrganizationKey="#{Corporate_Enterprise_Code}" OrganizationKey="#{Retail_Store_1}"/>
+	<OrgEnterprise EnterpriseOrganizationKey="#{Retail_Channel_Enterprise_Code}" OrganizationKey="#{Retail_Store_1}"/>
+</YFS_Org_EnterpriseList>

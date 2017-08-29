@@ -1,0 +1,35 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Carrier_ServiceList>
+    <CarrierService CanDeliverOnFriday="" CanDeliverOnMonday=""
+        CanDeliverOnSaturday="" CanDeliverOnSunday=""
+        CanDeliverOnThursday="" CanDeliverOnTuesday=""
+        CanDeliverOnWednesday="" CanShipOnFriday="" CanShipOnMonday=""
+        CanShipOnSaturday="" CanShipOnSunday="" CanShipOnThursday=""
+        CanShipOnTuesday="" CanShipOnWednesday=""
+        CarrierServiceCode="STANDARD_#{Generic_Enterprise_Suffix}" CarrierServiceDesc="Standard"
+        CarrierServiceKey="#{Generic_Enterprise_Code}_CS1" DistancePerDay="0.00"
+        DistanceUOM="" FixedTransitDays="7" UsedForOrdering="Y" MaximumTransitDays="9" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CarrierService CanDeliverOnFriday="" CanDeliverOnMonday=""
+        CanDeliverOnSaturday="" CanDeliverOnSunday=""
+        CanDeliverOnThursday="" CanDeliverOnTuesday=""
+        CanDeliverOnWednesday="" CanShipOnFriday="" CanShipOnMonday=""
+        CanShipOnSaturday="" CanShipOnSunday="" CanShipOnThursday=""
+        CanShipOnTuesday="" CanShipOnWednesday=""
+        CarrierServiceCode="EXPRESS_#{Generic_Enterprise_Suffix}" CarrierServiceDesc="Express"
+        CarrierServiceKey="#{Generic_Enterprise_Code}_CS2" DistancePerDay="0.00"
+        DistanceUOM="" FixedTransitDays="2" UsedForOrdering="Y" MaximumTransitDays="3" OrganizationCode="#{Generic_Enterprise_Code}"/>
+    <CarrierService CanDeliverOnFriday="" CanDeliverOnMonday=""
+        CanDeliverOnSaturday="" CanDeliverOnSunday=""
+        CanDeliverOnThursday="" CanDeliverOnTuesday=""
+        CanDeliverOnWednesday="" CanShipOnFriday="" CanShipOnMonday=""
+        CanShipOnSaturday="" CanShipOnSunday="" CanShipOnThursday=""
+        CanShipOnTuesday="" CanShipOnWednesday=""
+        CarrierServiceCode="PREMIUM_#{Generic_Enterprise_Suffix}" CarrierServiceDesc="Premium"
+        CarrierServiceKey="#{Generic_Enterprise_Code}_CS3" DistancePerDay="0.00"
+        DistanceUOM="" FixedTransitDays="1" UsedForOrdering="Y" MaximumTransitDays="2" OrganizationCode="#{Generic_Enterprise_Code}"/>
+</YFS_Carrier_ServiceList>

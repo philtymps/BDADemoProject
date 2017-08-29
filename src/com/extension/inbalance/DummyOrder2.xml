@@ -1,0 +1,29 @@
+<Promise OrderDate="2016-08-27T08:51:15-04:00" OrderNo="d3a3325b-2fa6-43bc-a014-fd2de280d80a"> 
+    <PromiseLines> 
+        <PromiseLine CarrierServiceCode="Standard Ground" 
+            DeliveryMethod="SHP" DistributionRuleId="" 
+            ItemID="MCL008_080303" LineId="201608231039584211991514" 
+            ProductClass="" ReceivingNode="" RequiredQty="1.00" SCAC="" 
+            ShipNode="" UnitOfMeasure="EACH"> 
+            <PossibleAssignments> 
+                <Assignment 
+                    AssignmentKey="Auro_Store_192::::20160827000000" 
+                    CapacityUtilization="" 
+                    CarrierServiceCode="Standard Ground" 
+                    DeliveryDate="2016-08-27T08:51:10-04:00" 
+                    Distance="171.5694452236" ProcuredQty="0" 
+                    ProductAvailDate="" Quantity="1" SCAC="" 
+                    ShipDate="2016-08-27T08:51:10-04:00" ShipNode="Auro_Store_165"> 
+                    <PossibleCarriers/> 
+                    <Costs Currency="USD" 
+                        ItemInventoryCostPerUnit="0.00" 
+                        NodePriorityCostPerUnit="0.00" 
+                        NodeShippingCapacityCostPerUnit="0.00" OutboundShipmentHandlingCostPerUnit="0.00"/> 
+                    <SubstituteItems/> 
+                    <Procurements/> 
+                </Assignment> 
+            </PossibleAssignments> 
+            <ShipToAddress Country="US" ZipCode="02118"/> 
+        </PromiseLine> 
+    </PromiseLines> 
+</Promise> 

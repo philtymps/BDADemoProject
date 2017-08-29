@@ -1,0 +1,19 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Mass_AuditList>
+    <MassAudit MassAuditID="2009092322544646334"
+        MassAuditKey="2009092322544746340"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}" SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader PricelistHeaderKey=&quot;2009092322544646329&quot; PricelistName=&quot;HeavyLiftTrade2011ShowPriceList&quot;/>&#xa;    &lt;CopyFromPricelistHeader PricelistHeaderKey=&quot;2009071717500359749&quot; PricelistName=&quot;HeavyLiftTradeShowPriceList&quot;/>&#xa;&lt;/PricelistLine>&#xa;"/>
+    <MassAudit MassAuditID="2009100100141457376"
+        MassAuditKey="2009100100141457377"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader OrganizationCode=&quot;HeavyLift&quot; PricelistHeaderKey=&quot;2009092322544646329&quot;/>&#xa;&lt;/PricelistLine>&#xa;" UpdateXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLineUpdate PricingStatus=&quot;ACTIVE&quot;/>"/>
+    <MassAudit MassAuditID="20100106181054124082"
+        MassAuditKey="20100106181054124084"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader OrganizationCode=&quot;HeavyLift&quot; PricelistHeaderKey=&quot;2009071717454859598&quot;/>&#xa;&lt;/PricelistLine>&#xa;" UpdateXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLineUpdate PricingStatus=&quot;ACTIVE&quot;/>"/>
+</YPM_Mass_AuditList>

@@ -1,0 +1,26 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Order_Line_TypeList>
+    <OrderLineType DocumentType="0003" LineType="Exchange"
+        LineTypeDesc="Exchange"
+        OrganizationCode="#{Generic_Enterprise_Code}" OverReceiptPercentage="0.00"/>
+    <OrderLineType DocumentType="0003" LineType="Credit"
+        LineTypeDesc="Credit"
+        OrganizationCode="#{Generic_Enterprise_Code}" OverReceiptPercentage="0.00"/>
+    <OrderLineType DocumentType="0003" LineType="YCD_EXTRANEOUS"
+        LineTypeDesc="YCD_EXTRANEOUS_LINE_TYPE"
+        OrganizationCode="#{Generic_Enterprise_Code}" OverReceiptPercentage="0.00"/>
+    <OrderLineType DocumentType="0003" LineType="YCD_WRONGLY_SHIPPED"
+        LineTypeDesc="YCD_WRONGLY_SHIPPED_LINE_TYPE"
+        OrganizationCode="#{Generic_Enterprise_Code}" OverReceiptPercentage="0.00"/>
+    <OrderLineType DocumentType="0003" LineType="ExtraLine_Credit"
+        LineTypeDesc="ExtraLine_Credit"
+        OrganizationCode="#{Generic_Enterprise_Code}" OverReceiptPercentage="0.00"/>
+	<OrderLineType DocumentType="0015" LineType="Recommended"
+        LineTypeDesc="Recommended Line"
+        OrganizationCode="#{Generic_Enterprise_Code}" OverReceiptPercentage="0.00"/>
+</YFS_Order_Line_TypeList>

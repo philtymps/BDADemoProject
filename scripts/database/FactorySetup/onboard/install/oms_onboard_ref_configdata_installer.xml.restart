@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Application Onboarding Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="Y"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="Y">
+                <EntityList>
+                    <Entity AbortOnError="N" Class="YFS_Organization"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_ORGANIZATION.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Org_Theme"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_ORG_THEME.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Enterprise"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_ENTERPRISE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Org_Enterprise"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_ORG_ENTERPRISE.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Data_Access_Policy_Rules"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_DATA_ACCESS_POL_RULES.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Data_Security_Enterprise"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="configdata/YCD_YFS_DATA_SECURITY_ENTERPRISE.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Data_Security_Group" CommitCount="50"
+                        Completed="Y" NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="configdata/YCD_YFS_DATA_SECURITY_GROUP.xml"/>
+                    <Entity AbortOnError="N"
+                        Class="YFS_Status_Modification_Type"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="11"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_STATUS_MODIFICATION_TYPE.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Server"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="1"
+                        ResetEntityAttributes="N" TruncateTable="N" XMLFile="configdata/YCD_YFS_SERVER.xml"/>
+                    <Entity AbortOnError="N" Class="YFS_Rules"
+                        CommitCount="50" Completed="Y"
+                        NumRecordsProcessed="2"
+                        ResetEntityAttributes="Y" TruncateTable="N" XMLFile="configdata/YCD_YFS_HUB_RULES.xml"/>
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>
+

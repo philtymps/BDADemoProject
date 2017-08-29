@@ -1,0 +1,87 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricing_RuleList>
+    <PricingRule Currency="USD"
+        Description="Buy two now, get $550.59 off the second"
+        EndDateActive="2009-10-01T02:45:00-04:00"
+        IgnoreRuleOnPriceLock="N" IsItemAttributeValueRule="N"
+        IsItemRule="Y"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleKey="2009092216573844966"
+        PricingRuleName="SeptemberSpecial" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ITEM_QUANTITY" StartDateActive="2009-09-01T17:00:22-04:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-550.59" AdjustmentType="ABSOLUTE"
+			  ChargeCategory="Discount" ChargeName="Discount"
+			  Quantity="1.00" WhenToApply="SINGLE_ITEM"/>
+		</PricingRuleActionList>
+		<PricingRuleTargetItemList>
+			<PricingRuleTargetItem TargetItemID="200007" TargetUnitOfMeasure="EACH"/>
+		</PricingRuleTargetItemList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Factory Discount for Cushion Rider Foklifts"
+        EndDateActive="2017-07-12T19:07:13-04:00"
+        IsItemAttributeValueRule="Y" IsItemRule="Y" IsManualRule="Y"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleKey="20100105190910122203"
+        PricingRuleName="FactoryDiscount" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ITEM_QUANTITY" StartDateActive="2010-01-01T19:06:46-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-3.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				MaximumManualAdjustment="-5.00"
+				Quantity="0.00" WhenToApply="ALL"/>
+		</PricingRuleActionList>
+		<PricingRuleTargetAttributeValueList>
+			<PricingRuleTargetAttributeValue
+				TargetAttributeDomainID="ItemAttribute"
+				TargetAttributeGroupID="General"
+				TargetAttributeID="LiftTruckType" TargetAttributeValue="CushionTireRider"/>
+		</PricingRuleTargetAttributeValueList>
+		<PricingRuleAssignmentList>
+			<PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Manufacturing_Enterprise_Code}" />
+		</PricingRuleAssignmentList>
+	</PricingRule>
+	<PricingRule Currency="USD"
+        Description="Receive 15% off of total order when purchasing over $200,000, 18% for orders of  $500,000 or more"
+        DistributeAdjustment="N"
+        EndDateActive="2020-01-12T10:41:38-05:00"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleKey="20100112104250140218"
+        PricingRuleName="15%of$200,000" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ORDER_TOTAL" StartDateActive="2010-01-04T00:00:00-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-15.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="200000.00" WhenToApply="SINGLE_ITEM"/>
+			<PricingRuleAction Adjustment="-18.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="500000.00" WhenToApply="SINGLE_ITEM"/>
+		</PricingRuleActionList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Receive FREE 60&quot; Pallet Fork with purchase of 3 HL 2040R"
+        EndDateActive="2020-01-04T10:46:56-05:00"
+        IgnoreRuleOnPriceLock="Y" IsItemRule="Y"
+        ItemOperatorCode="ALL_ITEMS"
+        OrganizationCode="#{Manufacturing_Enterprise_Code}"
+        PricingRuleKey="20100112104804140230"
+        PricingRuleName="200001_bonus" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="COMBINATION" StartDateActive="2010-01-04T10:46:46-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-100.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount" WhenToApply="EACH_COMBINATION"/>
+		</PricingRuleActionList>
+		<PricingRuleItemList>
+			<PricingRuleItem ItemID="200001" Quantity="3.00" UnitOfMeasure="EACH"/>
+		</PricingRuleItemList>
+		<PricingRuleTargetItemList>
+			<PricingRuleTargetItem TargetItemID="200394" TargetUnitOfMeasure="EACH"/>
+		</PricingRuleTargetItemList>
+	</PricingRule>
+</YPM_Pricing_RuleList>

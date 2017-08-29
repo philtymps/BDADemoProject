@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<YFS_AttributeList>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="swatchSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10001"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="0" ShortDescription="Available Sizes"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="swatchcolor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10002"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="1" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="construction"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10003"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="2" ShortDescription="Construction"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="length"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10004"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="3" ShortDescription="Length"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="material"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10005"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="4" ShortDescription="Material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="occasion"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10006"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="5" ShortDescription="Occasion"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenShirtsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10007"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="6" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenShirtsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10008"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="7" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Collar"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10009"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="8" ShortDescription="Collar"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Sleeve length"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10010"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="9" ShortDescription="Sleeve length"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Sleeve Length"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10011"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="10" ShortDescription="Sleeve Length"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Material"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10012"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="11" ShortDescription="Material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Style"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10013"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="12" ShortDescription="Style"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Occasion"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10014"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="13" ShortDescription="Occasion"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Pattern"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10015"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="14" ShortDescription="Pattern"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenSuitsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10016"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="15" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenSuitsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10017"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="16" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenShoesShoe Size"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10018"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="17" ShortDescription="Shoe Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenShoesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10019"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="18" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Width"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10020"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="19" ShortDescription="Width"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenPantsInseam Length"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10021"
+        DataType="INTEGER" IsAllowedValueDefined="Y"
+        IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="20" ShortDescription="Inseam Length"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenPantsWaist Size"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10022"
+        DataType="INTEGER" IsAllowedValueDefined="Y"
+        IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="21" ShortDescription="Waist Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenPantsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10023"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="22" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Front"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10024"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="23" ShortDescription="Front"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenJacketsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10025"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="24" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenJacketsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10026"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="25" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenAccessoriesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10027"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="26" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MenAccessoriesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10028"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="27" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Feature"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10029"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="28" ShortDescription="Feature"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenAccessoriesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10030"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="29" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenAccessoriesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10031"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="30" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Color"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10032"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="31" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenHandbagsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10033"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="32" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Size"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10034"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="33" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenShoesShoe Size"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10035"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="34" ShortDescription="Shoe Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenShoesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10036"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="35" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Toe"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10037"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="36" ShortDescription="Toe"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenPantsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10038"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="37" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenPantsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10039"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="38" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Cleaning"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10040"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="39" ShortDescription="Cleaning"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Leg"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10041"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="40" ShortDescription="Leg"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenSkirtsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10042"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="41" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenSkirtsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10043"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="42" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Length"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10044"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="43" ShortDescription="Length"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Shape"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10045"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="44" ShortDescription="Shape"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenSweatersSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10046"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="45" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenSweatersColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10047"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="46" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Neckline"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10048"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="47" ShortDescription="Neckline"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenShirtsBlousesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10049"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="48" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="WomenShirtsBlousesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10050"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="49" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsPantsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10051"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="50" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsPantsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10052"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="51" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Age"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10053"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="52" ShortDescription="Age"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsShoesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10054"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="53" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsShoesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10055"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="54" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsTopsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10056"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="55" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsTopsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10057"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="56" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsDressesSkirtsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10058"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="57" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="GirlsDressesSkirtsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10059"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="58" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BoysTopsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10060"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="59" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BoysTopsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10061"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="60" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BoysPantsColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10062"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="61" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BoysPantsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10063"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="62" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BoysShoesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10064"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="63" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BoysShoesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10065"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="64" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersAccessoriesBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10066"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="65" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersAccessoriesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10067"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="66" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersAccessoriesSpeed"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10068"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="67" ShortDescription="Speed"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Speed"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10069"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="68" ShortDescription="Speed"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Computer OS Class"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10070"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="69" ShortDescription="Operating System Class"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersComponentsRecording Speed"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10071"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="70" ShortDescription="Recording Speed"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersComponentsVRAM"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10072"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="71" ShortDescription="VRAM"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersComponentsRAM Size"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10073"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="72" ShortDescription="RAM Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersComponentsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10074"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="73" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersComponentsCores"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10075"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="74" ShortDescription="Cores"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="CPU Support"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10076"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="75" ShortDescription="CPU Support"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="RAM Size"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10077"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="76" ShortDescription="RAM Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Operating System Support"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10078"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="77" ShortDescription="Operating System Support"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="VRAM"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10079"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="78" ShortDescription="VRAM"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersDesktopsBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10080"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="79" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersDesktopsMemory"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10081"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="80" ShortDescription="Memory"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersDesktopsHard Drive"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10082"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="81" ShortDescription="Hard Drive"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Memory"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10083"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="82" ShortDescription="Memory"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Hard Drive"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10084"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="83" ShortDescription="Hard Drive"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersLaptopsBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10085"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="84" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersLaptopsBattery Life"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10086"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="85" ShortDescription="Battery Life"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersLaptopsMemory"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10087"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="86" ShortDescription="Memory"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersLaptopsWeight"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10088"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="87" ShortDescription="Weight"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Battery Life"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10089"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="88" ShortDescription="Battery Life"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Weight"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10090"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="89" ShortDescription="Weight"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersTabletsSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10091"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="90" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="ComputersTabletsBattery Life"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10092"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="91" ShortDescription="Battery Life"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersTabletsBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10093"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="92" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="ComputersTabletsStorage"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10094"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="93" ShortDescription="Storage"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Storage"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10095"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="94" ShortDescription="Storage"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="DairyType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10096"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="95" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="DairyBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10097"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="96" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Category"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10098"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="97" ShortDescription="Category"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Type"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10099"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="98" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="FruitType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10100"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="99" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="FruitBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10101"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="100" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Price"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10102"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="101" ShortDescription="Price"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MeatType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10103"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="102" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MeatBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10104"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="103" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="VegetablesBrand"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10105"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="104" ShortDescription="Brand"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="VegetablesType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10106"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="105" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="VitaminsCategory"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10107"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="106" ShortDescription="Category"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="VitaminsType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10108"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="107" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Packaging"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10109"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="108" ShortDescription="Packaging"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MedicinceCategory"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10110"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="109" ShortDescription="Category"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="MedicinceType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10111"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="110" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BathAccessoriesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10112"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="111" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="BathAccessoriesSize"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10113"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="112" ShortDescription="Size"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="FurnitureType"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10114"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="113" ShortDescription="Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="FurnitureColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10115"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="114" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Finish"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10116"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="115" ShortDescription="Finish"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Assembly"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10117"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="116" ShortDescription="Assembly"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="KitchenwareMaterial"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10118"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="117" ShortDescription="Material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="KitchenwarePot material"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10119"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="118" ShortDescription="Pot material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="KitchenwareLid material"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10120"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="119" ShortDescription="Lid material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="KitchenwareContainer"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10121"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="120" ShortDescription="Container"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="KitchenwareHandle material"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10122"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="121" ShortDescription="Handle material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="KitchenwareStyle"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10123"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="122" ShortDescription="Style"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora"
+        AttributeID="KitchenwareBlade material"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10124"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="123" ShortDescription="Blade material"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="KitchenwareColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10125"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="124" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="LightingColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10126"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="125" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Height"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10127"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="126" ShortDescription="Height"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Fixture Type"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10128"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="127" ShortDescription="Fixture Type"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="TablewareColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10129"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="128" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="AppliancesColor"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10130"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="129" ShortDescription="Color"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Energy Rating"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10131"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="130" ShortDescription="Energy Rating"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Dimensions"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10132"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="131" ShortDescription="Dimensions"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="fulfillmentFrequency"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10133"
+        DataType="INTEGER" IsAllowedValueDefined="Y"
+        IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="132" ShortDescription="Subscription frequency"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="paymentFrequency"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10134"
+        DataType="INTEGER" IsAllowedValueDefined="Y"
+        IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="133" ShortDescription="Subscription payment option"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="timePeriod"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10135"
+        DataType="INTEGER" IsAllowedValueDefined="Y"
+        IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="134" ShortDescription="Subscription period"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Published"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10136"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="135" ShortDescription="Published"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="PickUpInStore"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10137"
+        DataType="TEXT" IsAllowedValueDefined="N" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="136" ShortDescription="In store purchase"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Exclusive"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10138"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="137" ShortDescription="Exclusive"/>
+    <Attribute AllowMultipleValues="N" AttributeDomainID="ItemAttribute"
+        AttributeGroupID="Aurora" AttributeID="Clearance"
+        AttributeKey="#{Corporate_Enterprise_Suffix}-10139"
+        DataType="TEXT" IsAllowedValueDefined="Y" IsValueMandatory="N"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="138" ShortDescription="Clearance"/>
+</YFS_AttributeList>

@@ -1,0 +1,96 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<Task Class="DoNothingMigrator"
+    Description="IBM Sterling Applications Reference Implementation" When="AfterChildren">
+    <TaskInfo Completed="N"/>
+    <ChildTasks>
+        <Task Class="XMLMigrator" When="First">
+            <TaskInfo Completed="N">
+                <EntityList>
+                <Entity AbortOnError="N" Class="YFS_Master_Catalog" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_MASTER_CATALOG.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Item_UOM_Master" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YCD_YFS_ITEM_UOM_MASTER.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Attribute_Group" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ATTRIBUTE_GROUP.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Attribute" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ATTRIBUTE.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Attr_Allowed_Value" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ATTR_ALLOWED_VALUE.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Category_Domain" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_CATEGORY_DOMAIN.xml"/>
+			<!-- <Entity AbortOnError="N" Class="YFS_Sub_Cat_Org_Assign" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YCD_YFS_SUB_CAT_ORG_ASSIGN.xml"/> -->
+			<Entity AbortOnError="N" Class="YFS_Classification_Purpose" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YCD_YFS_CLASSIFICATION_PURPOSE.xml"/> 
+			<Entity AbortOnError="N" Class="YFS_Category" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N"  
+				TruncateTable="N" XMLFile="YFS_CATEGORY.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Item" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+				TruncateTable="N" XMLFile="YFS_ITEM.xml"/>
+			<!-- <Entity AbortOnError="N" Class="YFS_Item_Alias" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+				TruncateTable="N" XMLFile="YCD_YFS_ITEM_ALIAS.xml"/> -->
+			<!-- <Entity AbortOnError="N" Class="YFS_Kit_Item" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+				TruncateTable="N" XMLFile="YCD_YFS_KIT_ITEM.xml"/> -->
+			<!-- <Entity AbortOnError="N" Class="YFS_Item_Instruction" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+				TruncateTable="N" XMLFile="YCD_YFS_ITEM_INSTRUCTION.xml"/> -->
+			<Entity AbortOnError="N" Class="YFS_Item_Attr" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+				TruncateTable="N" XMLFile="YFS_ITEM_ATTR.xml"/>
+			 <Entity AbortOnError="N" Class="YFS_Category_Item" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_CATEGORY_ITEM.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Additional_Attribute" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ADDITIONAL_ATTRIBUTE.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Item_Service_Assoc" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+				XMLFile="YFS_ITEM_SERVICE_ASSOC.xml"/>
+			<!-- <Entity AbortOnError="N" Class="YFS_Association" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" 
+				TruncateTable="N" XMLFile="YCD_YFS_ASSOCIATION.xml"/> -->
+<!--		<Entity AbortOnError="N" Class="YPM_Pricelist_Header" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YPM_PRICELIST_HDR.xml"/>-->
+			<Entity AbortOnError="N" Class="YPM_Pricelist_Line" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YPM_PRICELIST_LINE.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Rules" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+				XMLFile="YCD_YFS_RULES.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Res_Pool" CommitCount="50"
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="N" TruncateTable="N" 
+				XMLFile="YCD_YFS_RES_POOL.xml"/>
+			<Entity AbortOnError="N" Class="YPM_Pricelist_Assignment" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YPM_PRICELIST_ASSIGNMENT.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Asset" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ASSET.xml"/>
+			<Entity AbortOnError="N" Class="YFS_Asset_Locale" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ASSET_LOCALE.xml"/>
+			<!-- <Entity AbortOnError="N" Class="YFS_AssetTag" CommitCount="50" 
+				Completed="N" NumRecordsProcessed="0" ResetEntityAttributes="Y" 
+				TruncateTable="N" XMLFile="YFS_ASSET_TAG.xml"/> -->
+                </EntityList>
+            </TaskInfo>
+        </Task>
+    </ChildTasks>
+</Task>

@@ -1,0 +1,946 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_AssetList>
+    <Asset AssetID="AttrVal_Color_Black" AssetKey="20100112124057151315"
+        Description="AttrVal_Color_Black" Label="AttrVal_Color_Black"
+        ParentKey="2009070606544939766" ParentTable="YFS_ATTRIBUTE" Type="ATTR_VAL_IMAGE"/>
+    <Asset AssetID="AletrnativeView1" AssetKey="20100112162840162253"
+        ContentID="200001.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="AlternativeView1" ParentKey="2009070608451940844"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="AlternativeView2" AssetKey="20100112162921162257"
+        ContentID="100001.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="AletrnativeView2" ParentKey="2009070608451940844"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="AlternativeImage3Blank"
+        AssetKey="20100112163001162261" ContentID="1000xx.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Description="AlternativeImage3Blank"
+        Label="AlternativeImage3Blank" ParentKey="2009070608451940844"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="ItemImage3" AssetKey="20100112170611165470"
+        ContentID="200001.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="ItemImage3" ParentKey="2009070608451940844"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_3"/>
+	<Asset AssetID="TVAccessoryPromo" AssetKey="2009121114065597389"
+        Description="Buy 3 and get a 4th free"
+        Label="TV Accessory Promotion" ParentKey="200908281206239938"
+        ParentTable="YFS_CATEGORY_DOMAIN" Type="SWC_HOME_PAGE_HOT_SPOT1"/>
+    
+    <Asset AssetID="HotSpot1" AssetKey="20100115181923306119"
+        ContentID="HOTSPOT1.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Promotion"
+        Label="Hot Spot 1" ParentKey="200908281206239938"
+        ParentTable="YFS_CATEGORY_DOMAIN" Type="SWC_HOME_PAGE_HOT_SPOT1"/>
+    <Asset AssetID="HotSpot2" AssetKey="20100115181956306120"
+        ContentID="HOTSPOT2.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Promotion"
+        Label="Hot Spot 2" ParentKey="200908281206239938"
+        ParentTable="YFS_CATEGORY_DOMAIN" Type="SWC_HOME_PAGE_HOT_SPOT2"/>
+    <Asset AssetID="HotSpot3" AssetKey="20100115182036306121"
+        ContentID="HOTSPOT3.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Promotion"
+        Label="Hot Spot3" ParentKey="200908281206239938"
+        ParentTable="YFS_CATEGORY_DOMAIN" Type="SWC_HOME_PAGE_HOT_SPOT3"/>
+	 <Asset AssetID="Image_100001" AssetKey="2010012709164900100001"
+        ContentID="100001.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100001" ParentKey="2009070608451940844"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100002" AssetKey="2010012709164900100002"
+        ContentID="100002.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100002" ParentKey="2009070705284842081"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100003" AssetKey="2010012709164900100003"
+        ContentID="100003.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100003" ParentKey="2009070705354742088"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100004" AssetKey="2010012709164900100004"
+        ContentID="100004.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100004" ParentKey="2009070705381142159"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100005" AssetKey="2010012709164900100005"
+        ContentID="100005.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100005" ParentKey="2009070705402942166"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+        
+    <Asset AssetID="Image_100500" AssetKey="2010012709164900100500"
+        ContentID="100500.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100500" ParentKey="2010092314014100500"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+        
+    <Asset AssetID="Image_100006" AssetKey="2010012709164900100006"
+        ContentID="100006.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100006" ParentKey="2009070705432042173"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100008" AssetKey="2010012709164900100008"
+        ContentID="100008.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100008" ParentKey="2009070706190842364"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100009" AssetKey="2010012709164900100009"
+        ContentID="100009.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100009" ParentKey="2009070706225242371"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100010" AssetKey="2010012709164900100010"
+        ContentID="100010.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100010" ParentKey="2009070706272742434"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100011" AssetKey="2010012709164900100011"
+        ContentID="100011.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100011" ParentKey="2009070706295242441"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100012" AssetKey="2010012709164900100012"
+        ContentID="100012.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100012" ParentKey="2009070706311242448"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100013" AssetKey="2010012709164900100013"
+        ContentID="100013.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100013" ParentKey="2009070804444945478"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100014" AssetKey="2010012709164900100014"
+        ContentID="100014.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100014" ParentKey="2009120717405486731"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100015" AssetKey="2010012709164900100015"
+        ContentID="100015.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100015" ParentKey="2009120717462286803"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100016" AssetKey="2010012709164900100016"
+        ContentID="100016.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100016" ParentKey="2009120719042187433"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100018" AssetKey="2010012709164900100018"
+        ContentID="100018.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100018" ParentKey="2009120718140887065"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100019" AssetKey="2010012709164900100019"
+        ContentID="100019.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100019" ParentKey="2009120718154787111"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100020" AssetKey="2010012709164900100020"
+        ContentID="100020.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100020" ParentKey="2009120718165287157"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100021" AssetKey="2010012709164900100021"
+        ContentID="100021.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100021" ParentKey="2009120719105587579"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100022" AssetKey="2010012709164900100022"
+        ContentID="100022.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100022" ParentKey="2009120719141287586"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100101" AssetKey="2010012709164900100101"
+        ContentID="100101.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100101" ParentKey="2009120719394087759"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100102" AssetKey="2010012709164900100102"
+        ContentID="100102.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100102" ParentKey="2009120719404087892"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100103" AssetKey="2010012709164900100103"
+        ContentID="100103.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100103" ParentKey="2009120719415287922"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100104" AssetKey="2010012709164900100104"
+        ContentID="100104.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100104" ParentKey="2009120719425587952"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100105" AssetKey="2010012709164900100105"
+        ContentID="100105.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100105" ParentKey="2009120719452587998"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100111" AssetKey="2010012709164900100111"
+        ContentID="100111.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100111" ParentKey="2009120719464688044"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100112" AssetKey="2010012709164900100112"
+        ContentID="100112.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100112" ParentKey="2009120719471788090"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100113" AssetKey="2010012709164900100113"
+        ContentID="100113.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100113" ParentKey="2009120719475688097"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100121" AssetKey="2010012709164900100121"
+        ContentID="100121.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100121" ParentKey="2009120719494988107"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100122" AssetKey="2010012709164900100122"
+        ContentID="100122.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100122" ParentKey="2009120719505588210"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100123" AssetKey="2010012709164900100123"
+        ContentID="100123.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100123" ParentKey="2009120719515088217"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100124" AssetKey="2010012709164900100124"
+        ContentID="100124.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100124" ParentKey="2009120719522988224"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100125" AssetKey="2010012709164900100125"
+        ContentID="100125.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100125" ParentKey="20091221151357113927"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100126" AssetKey="2010012709164900100126"
+        ContentID="100126.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100126" ParentKey="20091221151505113957"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100131" AssetKey="2010012709164900100131"
+        ContentID="100131.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100131" ParentKey="2009120720001788237"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100132" AssetKey="2010012709164900100132"
+        ContentID="100132.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100132" ParentKey="2009120720010788311"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100141" AssetKey="2010012709164900100141"
+        ContentID="100141.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100141" ParentKey="2009120720014988321"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100142" AssetKey="2010012709164900100142"
+        ContentID="100142.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100142" ParentKey="2009120720025988331"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100143" AssetKey="2010012709164900100143"
+        ContentID="100143.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100143" ParentKey="2009120720034088338"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100151" AssetKey="2010012709164900100151"
+        ContentID="100151.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100151" ParentKey="2009120720044188345"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100153" AssetKey="2010012709164900100153"
+        ContentID="100153.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100153" ParentKey="2009120720053388355"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100161" AssetKey="2010012709164900100161"
+        ContentID="100161.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100161" ParentKey="2009120720062888362"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100162" AssetKey="2010012709164900100162"
+        ContentID="100162.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100162" ParentKey="2009120720075588375"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100163" AssetKey="2010012709164900100163"
+        ContentID="100163.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100163" ParentKey="2009120720085388385"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100164" AssetKey="2010012709164900100164"
+        ContentID="100164.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100164" ParentKey="2009120720102688465"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100165" AssetKey="2010012709164900100165"
+        ContentID="100165.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100165" ParentKey="2009120720111588475"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100171" AssetKey="2010012709164900100171"
+        ContentID="100171.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100171" ParentKey="2009120720120088485"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100181" AssetKey="2010012709164900100181"
+        ContentID="100181.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100181" ParentKey="2009120720123888495"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100182" AssetKey="2010012709164900100182"
+        ContentID="100182.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100182" ParentKey="20100112092952139380"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100183" AssetKey="2010012709164900100183"
+        ContentID="100183.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100183" ParentKey="20100112093038139390"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100184" AssetKey="2010012709164900100184"
+        ContentID="100184.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100184" ParentKey="20100112093117139403"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100185" AssetKey="2010012709164900100185"
+        ContentID="100185.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100185" ParentKey="20100112093222139573"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100191" AssetKey="2010012709164900100191"
+        ContentID="100191.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100191" ParentKey="2009120720131388502"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100192" AssetKey="2010012709164900100192"
+        ContentID="100192.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100192" ParentKey="20100112093524139580"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100193" AssetKey="2010012709164900100193"
+        ContentID="100193.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100193" ParentKey="20100112093701139590"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+	<Asset AssetID="Image_100600" AssetKey="2009012709164900100601"
+        ContentID="100601.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100601" ParentKey="20091230202259120231"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100601" AssetKey="2010012709164900100601"
+        ContentID="100601.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100601" ParentKey="20091230202259120230"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100602" AssetKey="2010012709164900100602"
+        ContentID="100602.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100602" ParentKey="20091230202623120238"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100603" AssetKey="2010012709164900100603"
+        ContentID="100603.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100603" ParentKey="20091230202749120246"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100604" AssetKey="2010012709164900100604"
+        ContentID="100604.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100604" ParentKey="20091230202841120254"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100605" AssetKey="2010012709164900100605"
+        ContentID="100605.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100605" ParentKey="20091230202931120262"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100606" AssetKey="2010012709164900100606"
+        ContentID="100606.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100606" ParentKey="20091230203021120270"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100607" AssetKey="2010012709164900100607"
+        ContentID="100607.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100607" ParentKey="20091230203126120281"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100608" AssetKey="2010012709164900100608"
+        ContentID="100608.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100608" ParentKey="20091230203220120385"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100700" AssetKey="2010012709164900100700"
+        ContentID="100700.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100700" ParentKey="2009070804204545331"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100701" AssetKey="2010012709164900100701"
+        ContentID="100701.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100701" ParentKey="2009071304570749265"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100702" AssetKey="2010012709164900100702"
+        ContentID="100702.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100702" ParentKey="2009071304582649336"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100703" AssetKey="2010012709164900100703"
+        ContentID="100703.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100703" ParentKey="2009071703215256900"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100704" AssetKey="2010012709164900100704"
+        ContentID="100704.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100704" ParentKey="2009071304594849350"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100705" AssetKey="2010012709164900100705"
+        ContentID="100705.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100705" ParentKey="2009071305004949357"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100706" AssetKey="2010012709164900100706"
+        ContentID="100706.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100706" ParentKey="2009071703233756910"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100707" AssetKey="2010012709164900100707"
+        ContentID="100707.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100707" ParentKey="2009071703254456927"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100801" AssetKey="2010012709164900100801"
+        ContentID="100801.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100801" ParentKey="2009071312414850363"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100802" AssetKey="2010012709164900100802"
+        ContentID="100802.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100802" ParentKey="2009071312463950370"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100805" AssetKey="2010012709164900100805"
+        ContentID="100805.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100805" ParentKey="2009071423541352906"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100810" AssetKey="2010012709164900100810"
+        ContentID="100810.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100810" ParentKey="2009071322000851630"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100811" AssetKey="2010012709164900100811"
+        ContentID="100811.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100811" ParentKey="2009071522523556393"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100812" AssetKey="2010012709164900100812"
+        ContentID="100812.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100812" ParentKey="2009071523543756600"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100821" AssetKey="2010012709164900100821"
+        ContentID="100821.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100821" ParentKey="20091215133615107643"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100822" AssetKey="2010012709164900100822"
+        ContentID="100822.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100822" ParentKey="20091215140029107985"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100823" AssetKey="2010012709164900100823"
+        ContentID="100823.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100823" ParentKey="20100113154317174016"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100824" AssetKey="2010012709164900100824"
+        ContentID="100824.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100824" ParentKey="20100113154608174046"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100825" AssetKey="2010012709164900100825"
+        ContentID="100825.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100825" ParentKey="20100113170708174891"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100826" AssetKey="2010012709164900100826"
+        ContentID="100826.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100826" ParentKey="20100113171220175031"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100827" AssetKey="2010012709164900100827"
+        ContentID="100827.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100827" ParentKey="20100113171936175067"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100828" AssetKey="2010012709164900100828"
+        ContentID="100828.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100828" ParentKey="20100113172127175091"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100829" AssetKey="2010012709164900100829"
+        ContentID="100829.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100829" ParentKey="20100113173432175483"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+    <Asset AssetID="Image_100830" AssetKey="2010012709164900100830"
+        ContentID="100830.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Image_100830" ParentKey="20100113174046175491"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_1"/>
+	<Asset AssetID="Alt_100001" AssetKey="2010012709165233100001"
+        ContentID="100001.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100001" ParentKey="2009070608451940844"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100002" AssetKey="2010012709165233100002"
+        ContentID="100002.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100002" ParentKey="2009070705284842081"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100003" AssetKey="2010012709165233100003"
+        ContentID="100003.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100003" ParentKey="2009070705354742088"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100004" AssetKey="2010012709165233100004"
+        ContentID="100004.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100004" ParentKey="2009070705381142159"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100005" AssetKey="2010012709165233100005"
+        ContentID="100005.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100005" ParentKey="2009070705402942166"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+        
+    <Asset AssetID="Alt_100500" AssetKey="2010092309165233100500"
+        ContentID="100500.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100500" ParentKey="2010092314014100500"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+        
+    <Asset AssetID="Alt_100006" AssetKey="2010012709165233100006"
+        ContentID="100006.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100006" ParentKey="2009070705432042173"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100008" AssetKey="2010012709165233100008"
+        ContentID="100008.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100008" ParentKey="2009070706190842364"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100009" AssetKey="2010012709165233100009"
+        ContentID="100009.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100009" ParentKey="2009070706225242371"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100010" AssetKey="2010012709165233100010"
+        ContentID="100010.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100010" ParentKey="2009070706272742434"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100011" AssetKey="2010012709165233100011"
+        ContentID="100011.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100011" ParentKey="2009070706295242441"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100012" AssetKey="2010012709165233100012"
+        ContentID="100012.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100012" ParentKey="2009070706311242448"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100013" AssetKey="2010012709165233100013"
+        ContentID="100013.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100013" ParentKey="2009070804444945478"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100014" AssetKey="2010012709165233100014"
+        ContentID="100014.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100014" ParentKey="2009120717405486731"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100015" AssetKey="2010012709165233100015"
+        ContentID="100015.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100015" ParentKey="2009120717462286803"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100016" AssetKey="2010012709165233100016"
+        ContentID="100016.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100016" ParentKey="2009120719042187433"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100018" AssetKey="2010012709165233100018"
+        ContentID="100018.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100018" ParentKey="2009120718140887065"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100019" AssetKey="2010012709165233100019"
+        ContentID="100019.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100019" ParentKey="2009120718154787111"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100020" AssetKey="2010012709165233100020"
+        ContentID="100020.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100020" ParentKey="2009120718165287157"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100021" AssetKey="2010012709165233100021"
+        ContentID="100021.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100021" ParentKey="2009120719105587579"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100022" AssetKey="2010012709165233100022"
+        ContentID="100022.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100022" ParentKey="2009120719141287586"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100101" AssetKey="2010012709165233100101"
+        ContentID="100101.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100101" ParentKey="2009120719394087759"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100102" AssetKey="2010012709165233100102"
+        ContentID="100102.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100102" ParentKey="2009120719404087892"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100103" AssetKey="2010012709165233100103"
+        ContentID="100103.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100103" ParentKey="2009120719415287922"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100104" AssetKey="2010012709165233100104"
+        ContentID="100104.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100104" ParentKey="2009120719425587952"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100105" AssetKey="2010012709165233100105"
+        ContentID="100105.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100105" ParentKey="2009120719452587998"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100111" AssetKey="2010012709165233100111"
+        ContentID="100111.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100111" ParentKey="2009120719464688044"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100112" AssetKey="2010012709165233100112"
+        ContentID="100112.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100112" ParentKey="2009120719471788090"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100113" AssetKey="2010012709165233100113"
+        ContentID="100113.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100113" ParentKey="2009120719475688097"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100121" AssetKey="2010012709165233100121"
+        ContentID="100121.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100121" ParentKey="2009120719494988107"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100122" AssetKey="2010012709165233100122"
+        ContentID="100122.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100122" ParentKey="2009120719505588210"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100123" AssetKey="2010012709165233100123"
+        ContentID="100123.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100123" ParentKey="2009120719515088217"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100124" AssetKey="2010012709165233100124"
+        ContentID="100124.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100124" ParentKey="2009120719522988224"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100125" AssetKey="2010012709165233100125"
+        ContentID="100125.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100125" ParentKey="20091221151357113927"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100126" AssetKey="2010012709165233100126"
+        ContentID="100126.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100126" ParentKey="20091221151505113957"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100131" AssetKey="2010012709165233100131"
+        ContentID="100131.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100131" ParentKey="2009120720001788237"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100132" AssetKey="2010012709165233100132"
+        ContentID="100132.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100132" ParentKey="2009120720010788311"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100141" AssetKey="2010012709165233100141"
+        ContentID="100141.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100141" ParentKey="2009120720014988321"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100142" AssetKey="2010012709165233100142"
+        ContentID="100142.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100142" ParentKey="2009120720025988331"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100143" AssetKey="2010012709165233100143"
+        ContentID="100143.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100143" ParentKey="2009120720034088338"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100151" AssetKey="2010012709165233100151"
+        ContentID="100151.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100151" ParentKey="2009120720044188345"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100153" AssetKey="2010012709165233100153"
+        ContentID="100153.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100153" ParentKey="2009120720053388355"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100161" AssetKey="2010012709165233100161"
+        ContentID="100161.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100161" ParentKey="2009120720062888362"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100162" AssetKey="2010012709165233100162"
+        ContentID="100162.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100162" ParentKey="2009120720075588375"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100163" AssetKey="2010012709165233100163"
+        ContentID="100163.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100163" ParentKey="2009120720085388385"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100164" AssetKey="2010012709165233100164"
+        ContentID="100164.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100164" ParentKey="2009120720102688465"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100165" AssetKey="2010012709165233100165"
+        ContentID="100165.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100165" ParentKey="2009120720111588475"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100171" AssetKey="2010012709165233100171"
+        ContentID="100171.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100171" ParentKey="2009120720120088485"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100181" AssetKey="2010012709165233100181"
+        ContentID="100181.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100181" ParentKey="2009120720123888495"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100182" AssetKey="2010012709165233100182"
+        ContentID="100182.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100182" ParentKey="20100112092952139380"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100183" AssetKey="2010012709165233100183"
+        ContentID="100183.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100183" ParentKey="20100112093038139390"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100184" AssetKey="2010012709165233100184"
+        ContentID="100184.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100184" ParentKey="20100112093117139403"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100185" AssetKey="2010012709165233100185"
+        ContentID="100185.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100185" ParentKey="20100112093222139573"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100191" AssetKey="2010012709165233100191"
+        ContentID="100191.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100191" ParentKey="2009120720131388502"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100192" AssetKey="2010012709165233100192"
+        ContentID="100192.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100192" ParentKey="20100112093524139580"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100193" AssetKey="2010012709165233100193"
+        ContentID="100193.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100193" ParentKey="20100112093701139590"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+	<Asset AssetID="Alt_100600" AssetKey="2009012709165233100601"
+        ContentID="100601.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100600" ParentKey="20091230202259120231"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100601" AssetKey="2010012709165233100601"
+        ContentID="100601.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100601" ParentKey="20091230202259120230"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100602" AssetKey="2010012709165233100602"
+        ContentID="100602.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100602" ParentKey="20091230202623120238"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100603" AssetKey="2010012709165233100603"
+        ContentID="100603.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100603" ParentKey="20091230202749120246"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100604" AssetKey="2010012709165233100604"
+        ContentID="100604.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100604" ParentKey="20091230202841120254"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100605" AssetKey="2010012709165233100605"
+        ContentID="100605.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100605" ParentKey="20091230202931120262"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100606" AssetKey="2010012709165233100606"
+        ContentID="100606.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100606" ParentKey="20091230203021120270"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100607" AssetKey="2010012709165233100607"
+        ContentID="100607.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100607" ParentKey="20091230203126120281"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100608" AssetKey="2010012709165233100608"
+        ContentID="100608.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100608" ParentKey="20091230203220120385"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100700" AssetKey="2010012709165233100700"
+        ContentID="100700.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100700" ParentKey="2009070804204545331"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100701" AssetKey="2010012709165233100701"
+        ContentID="100701.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100701" ParentKey="2009071304570749265"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100702" AssetKey="2010012709165233100702"
+        ContentID="100702.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100702" ParentKey="2009071304582649336"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100703" AssetKey="2010012709165233100703"
+        ContentID="100703.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100703" ParentKey="2009071703215256900"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100704" AssetKey="2010012709165233100704"
+        ContentID="100704.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100704" ParentKey="2009071304594849350"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100705" AssetKey="2010012709165233100705"
+        ContentID="100705.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100705" ParentKey="2009071305004949357"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100706" AssetKey="2010012709165233100706"
+        ContentID="100706.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100706" ParentKey="2009071703233756910"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100707" AssetKey="2010012709165233100707"
+        ContentID="100707.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100707" ParentKey="2009071703254456927"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100801" AssetKey="2010012709165233100801"
+        ContentID="100801.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100801" ParentKey="2009071312414850363"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100802" AssetKey="2010012709165233100802"
+        ContentID="100802.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100802" ParentKey="2009071312463950370"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100805" AssetKey="2010012709165233100805"
+        ContentID="100805.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100805" ParentKey="2009071423541352906"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100810" AssetKey="2010012709165233100810"
+        ContentID="100810.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100810" ParentKey="2009071322000851630"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100811" AssetKey="2010012709165233100811"
+        ContentID="100811.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100811" ParentKey="2009071522523556393"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100812" AssetKey="2010012709165233100812"
+        ContentID="100812.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100812" ParentKey="2009071523543756600"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100821" AssetKey="2010012709165233100821"
+        ContentID="100821.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100821" ParentKey="20091215133615107643"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100822" AssetKey="2010012709165233100822"
+        ContentID="100822.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100822" ParentKey="20091215140029107985"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100823" AssetKey="2010012709165233100823"
+        ContentID="100823.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100823" ParentKey="20100113154317174016"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100824" AssetKey="2010012709165233100824"
+        ContentID="100824.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100824" ParentKey="20100113154608174046"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100825" AssetKey="2010012709165233100825"
+        ContentID="100825.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100825" ParentKey="20100113170708174891"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100826" AssetKey="2010012709165233100826"
+        ContentID="100826.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100826" ParentKey="20100113171220175031"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100827" AssetKey="2010012709165233100827"
+        ContentID="100827.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100827" ParentKey="20100113171936175067"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100828" AssetKey="2010012709165233100828"
+        ContentID="100828.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100828" ParentKey="20100113172127175091"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100829" AssetKey="2010012709165233100829"
+        ContentID="100829.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100829" ParentKey="20100113173432175483"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+    <Asset AssetID="Alt_100830" AssetKey="2010012709165233100830"
+        ContentID="100830.jpg"
+        ContentLocation="#{Image_Server}/RefData/Images/#{Generic_Enterprise_Code}/Product"
+        Label="Alt_100830" ParentKey="20100113174046175491"
+        ParentTable="YFS_ITEM" Type="ITEM_IMAGE_LRG_1"/>
+</YFS_AssetList>

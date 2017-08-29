@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_RulesList>
+	<Rules DocumentType="" MeantForInternal="Y" MeantForSupplier="N"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RuleSetFieldDescription="BLIND RETURN ITEM ID"
+        RuleSetFieldName="YCD_BLIND_RETURN_ITEM_ID" RuleSetValue="WRONGITEM"/>
+</YFS_RulesList>

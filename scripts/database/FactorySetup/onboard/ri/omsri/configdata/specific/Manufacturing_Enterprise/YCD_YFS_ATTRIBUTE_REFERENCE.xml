@@ -1,0 +1,20 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attribute_ReferenceList>
+	<YFS_Attribute_Reference AttributeReferenceKey="#{Generic_Enterprise_Code}_ATTR1" AttributeKey="#{Generic_Enterprise_Code}_ATTR1"
+		TableName="YFS_ITEM" ReferenceName="ItemID" />
+	<YFS_Attribute_Reference AttributeReferenceKey="#{Generic_Enterprise_Code}_ATTR2" AttributeKey="#{Generic_Enterprise_Code}_ATTR2"
+		TableName="YFS_ITEM" ReferenceName="ShortDescription"/>
+	<YFS_Attribute_Reference AttributeReferenceKey="#{Generic_Enterprise_Code}_ATTR3" AttributeKey="#{Generic_Enterprise_Code}_ATTR3" 
+		TableName="YFS_ITEM" ReferenceName="ManufacturerName" />
+	<YFS_Attribute_Reference AttributeReferenceKey="#{Generic_Enterprise_Code}_ATTR4" AttributeKey="#{Generic_Enterprise_Code}_ATTR4" 
+		TableName="YFS_ITEM" ReferenceName="Class" />
+	<YFS_Attribute_Reference AttributeReferenceKey="#{Generic_Enterprise_Code}_ATTR5" AttributeKey="#{Generic_Enterprise_Code}_ATTR5"	
+		TableName="YFS_ITEM" ReferenceName="ColorCode" />
+	<YFS_Attribute_Reference AttributeReferenceKey="#{Generic_Enterprise_Code}_ATTR6" AttributeKey="#{Generic_Enterprise_Code}_ATTR6"	
+		TableName="YFS_ITEM" ReferenceName="SizeCode" />
+</YFS_Attribute_ReferenceList>

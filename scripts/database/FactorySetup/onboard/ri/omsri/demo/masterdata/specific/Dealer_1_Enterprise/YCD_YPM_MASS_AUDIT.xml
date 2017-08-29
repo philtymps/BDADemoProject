@@ -1,0 +1,11 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Mass_AuditList>
+    <MassAudit MassAuditID="20091223140512117865"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        SearchCriteriaXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLine>&#xa;    &lt;PricelistHeader OrganizationCode=&quot;#{Generic_Enterprise_Code}&quot; PricelistHeaderKey=&quot;#{Generic_Enterprise_Code}_PL1&quot;/>&#xa;&lt;/PricelistLine>&#xa;" UpdateXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;PricelistLineUpdate PricingStatus=&quot;ACTIVE&quot;/>"/>
+</YPM_Mass_AuditList>

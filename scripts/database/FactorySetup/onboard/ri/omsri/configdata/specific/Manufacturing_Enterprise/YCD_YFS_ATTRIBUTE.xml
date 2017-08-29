@@ -1,0 +1,23 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_AttributeList>
+    <YFS_Attribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeID="ItemID"
+        AttributeKey="#{Generic_Enterprise_Code}_ATTR1"
+        DataType="TEXT" LongDescription="Item ID"
+        OrganizationCode="#{Generic_Enterprise_Code}" SequenceNo="0" ShortDescription="Item ID"/>
+    <Attribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeID="ShortDescription"
+        AttributeKey="#{Generic_Enterprise_Code}_ATTR2" DataType="TEXT"
+        LongDescription="Short Description"
+        OrganizationCode="#{Generic_Enterprise_Code}" SequenceNo="1" ShortDescription="Short Description"/>
+    <YFS_Attribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeID="ManufacturerName"
+        AttributeKey="#{Generic_Enterprise_Code}_ATTR3"
+        DataType="TEXT" LongDescription="Manufacturer Name"
+        OrganizationCode="#{Generic_Enterprise_Code}" SequenceNo="2" ShortDescription="Manufacturer Name"/>
+</YFS_AttributeList>

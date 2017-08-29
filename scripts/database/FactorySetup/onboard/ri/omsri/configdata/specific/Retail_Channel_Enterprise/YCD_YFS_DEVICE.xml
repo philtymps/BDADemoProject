@@ -1,0 +1,80 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_DeviceList>
+	 <Device DeviceId="HP-LASERJET-4300"
+        DeviceParamsXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;Attributes&gt;         &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;DropDirectory&quot; Value=&quot;.&quot;/&gt;     &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;PrinterAlias&quot; Value=&quot;\\patriot\HP LaserJet 4300 PCL 6&quot;/&gt; &lt;/Attributes&gt; "
+        DeviceSubType="Laserjet" DeviceType="Printer" OrganizationCode="#{Retail_Store_1}">
+        <DeviceParamsXML>
+            <Attributes>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="DropDirectory" DisplayName="DropDirectory" Value=""/>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="PrinterAlias" DisplayName="PrinterAlias" Value=""/>
+            </Attributes>
+        </DeviceParamsXML>
+    </Device>
+    <Device DeviceId="Zebra-140XIII"
+        DeviceParamsXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;Attributes&gt;         &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;DropDirectory&quot; Value=&quot;.&quot;/&gt;     &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;PrinterAlias&quot; Value=&quot;Zebra&quot;/&gt;   &lt;/Attributes&gt; "
+        DeviceSubType="Zebra" DeviceType="Printer" OrganizationCode="#{Retail_Store_1}">
+        <DeviceParamsXML>
+            <Attributes>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="DropDirectory" DisplayName="DropDirectory" Value=""/>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="PrinterAlias" DisplayName="PrinterAlias" Value=""/>
+            </Attributes>
+        </DeviceParamsXML>
+    </Device>
+	<Device DeviceId="HP-LASERJET-4300"
+        DeviceParamsXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;Attributes&gt;         &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;DropDirectory&quot; Value=&quot;.&quot;/&gt;     &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;PrinterAlias&quot; Value=&quot;\\patriot\HP LaserJet 4300 PCL 6&quot;/&gt; &lt;/Attributes&gt; "
+        DeviceSubType="Laserjet" DeviceType="Printer" OrganizationCode="#{Retail_Store_2}">
+        <DeviceParamsXML>
+            <Attributes>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="DropDirectory" DisplayName="DropDirectory" Value=""/>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="PrinterAlias" DisplayName="PrinterAlias" Value=""/>
+            </Attributes>
+        </DeviceParamsXML>
+    </Device>
+    <Device DeviceId="Zebra-140XIII"
+        DeviceParamsXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;Attributes&gt;         &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;DropDirectory&quot; Value=&quot;.&quot;/&gt;     &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;PrinterAlias&quot; Value=&quot;Zebra&quot;/&gt;   &lt;/Attributes&gt; "
+        DeviceSubType="Zebra" DeviceType="Printer" OrganizationCode="#{Retail_Store_2}">
+        <DeviceParamsXML>
+            <Attributes>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="DropDirectory" DisplayName="DropDirectory" Value=""/>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="PrinterAlias" DisplayName="PrinterAlias" Value=""/>
+            </Attributes>
+        </DeviceParamsXML>
+    </Device>
+	<Device DeviceId="HP-LASERJET-4300"
+        DeviceParamsXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;Attributes&gt;         &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;DropDirectory&quot; Value=&quot;.&quot;/&gt;     &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;PrinterAlias&quot; Value=&quot;\\patriot\HP LaserJet 4300 PCL 6&quot;/&gt; &lt;/Attributes&gt; "
+        DeviceSubType="Laserjet" DeviceType="Printer" OrganizationCode="#{Retail_Store_3}">
+        <DeviceParamsXML>
+            <Attributes>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="DropDirectory" DisplayName="DropDirectory" Value=""/>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="PrinterAlias" DisplayName="PrinterAlias" Value=""/>
+            </Attributes>
+        </DeviceParamsXML>
+    </Device>
+    <Device DeviceId="Zebra-140XIII"
+        DeviceParamsXML="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;Attributes&gt;         &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;DropDirectory&quot; Value=&quot;.&quot;/&gt;     &lt;Attribute DataType=&quot;Text-40&quot; Modifiable=&quot;Y&quot; Name=&quot;PrinterAlias&quot; Value=&quot;Zebra&quot;/&gt;   &lt;/Attributes&gt; "
+        DeviceSubType="Zebra" DeviceType="Printer" OrganizationCode="#{Retail_Store_3}">
+        <DeviceParamsXML>
+            <Attributes>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="DropDirectory" DisplayName="DropDirectory" Value=""/>
+                <Attribute DataType="Text-40" Modifiable="Y"
+                    Name="PrinterAlias" DisplayName="PrinterAlias" Value=""/>
+            </Attributes>
+        </DeviceParamsXML>
+    </Device>
+</YFS_DeviceList>

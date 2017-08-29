@@ -1,0 +1,545 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2013 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Attr_Allowed_ValueList>
+    <AttributeAllowedValue AttributeKey="2009061714381620702"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cushion Tire Rider" Value="CushionTireRider"/>
+    <AttributeAllowedValue AttributeKey="2009061714421020711"
+        NumericStep="1000.00" SequenceNo="1" Value="2000-15000"/>
+    <AttributeAllowedValue AttributeKey="2009061714421020711"
+        IsDefaultValue="Y" SequenceNo="1" Value="3000"/>
+    <AttributeAllowedValue AttributeKey="2009061714471520723"
+        IsDefaultValue="Y" SequenceNo="1" Value="3000"/>
+    <AttributeAllowedValue AttributeKey="2009061714471520723"
+        NumericStep="1000.00" SequenceNo="1" Value="2000-15000"/>
+    <AttributeAllowedValue AttributeKey="2009061810293921589"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="VX 40" Value="VX40"/>
+    <AttributeAllowedValue AttributeKey="2009061810293921589"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="VX 70" Value="VX70"/>
+    <AttributeAllowedValue AttributeKey="2009061810293921589"
+        IsDefaultValue="N" SequenceNo="3" ShortDescription="VX 80" Value="VX80"/>
+    <AttributeAllowedValue AttributeKey="2009061810293921589"
+        IsDefaultValue="N" SequenceNo="4" ShortDescription="VX 120" Value="VX120"/>
+    <AttributeAllowedValue AttributeKey="2009061810293921589"
+        IsDefaultValue="N" SequenceNo="5" ShortDescription="VX 155" Value="VX155"/>
+    <AttributeAllowedValue AttributeKey="2009061810325021614"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Gas" Value="Gas"/>
+    <AttributeAllowedValue AttributeKey="2009061810325021614"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="LPG" Value="LPG"/>
+    <AttributeAllowedValue AttributeKey="2009061810340321626"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009061810340321626"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009061810415021730"
+        NumericStep="0.10" SequenceNo="1" Value="50-120"/>
+    <AttributeAllowedValue AttributeKey="2009061810562922043"
+        NumericStep="0.10" SequenceNo="1" Value="20-80"/>
+    <AttributeAllowedValue AttributeKey="2009061810572622050"
+        NumericStep="1.00" SequenceNo="1" Value="40-100"/>
+    <AttributeAllowedValue AttributeKey="2009061810583622140"
+        NumericStep="0.10" SequenceNo="1" Value="40-120"/>
+    <AttributeAllowedValue AttributeKey="2009061810575722057"
+        NumericStep="0.10" SequenceNo="1" Value="40-100"/>
+    <AttributeAllowedValue AttributeKey="2009061811012422151"
+        NumericStep="1.00" SequenceNo="1" Value="100-180"/>
+    <AttributeAllowedValue AttributeKey="2009061810415021730"
+        IsDefaultValue="Y" SequenceNo="1" Value="80"/>
+    <AttributeAllowedValue AttributeKey="2009061810562922043"
+        IsDefaultValue="Y" SequenceNo="1" Value="40"/>
+    <AttributeAllowedValue AttributeKey="2009061810572622050"
+        IsDefaultValue="Y" SequenceNo="1" Value="80"/>
+    <AttributeAllowedValue AttributeKey="2009061810575722057"
+        IsDefaultValue="Y" SequenceNo="1" Value="85"/>
+    <AttributeAllowedValue AttributeKey="2009061810583622140"
+        IsDefaultValue="Y" SequenceNo="1" Value="70"/>
+    <AttributeAllowedValue AttributeKey="2009061811012422151"
+        IsDefaultValue="Y" SequenceNo="1" Value="125"/>
+    <AttributeAllowedValue AttributeKey="2009061811173922223"
+        IsDefaultValue="Y" SequenceNo="1" Value="125"/>
+    <AttributeAllowedValue AttributeKey="2009061811173922223"
+        NumericStep="1.00" SequenceNo="1" Value="100-180"/>
+    <AttributeAllowedValue AttributeKey="2009061811234422240"
+        IsDefaultValue="Y" SequenceNo="1" Value="175"/>
+    <AttributeAllowedValue AttributeKey="2009061811234422240"
+        NumericStep="1.00" SequenceNo="1" Value="125-250"/>
+    <AttributeAllowedValue AttributeKey="2009061814034122663"
+        IsDefaultValue="Y" SequenceNo="1" Value="120"/>
+    <AttributeAllowedValue AttributeKey="2009061814034122663"
+        NumericStep="20.00" SequenceNo="1" Value="60-300"/>
+    <AttributeAllowedValue AttributeKey="2009061813573522582"
+        IsDefaultValue="Y" SequenceNo="1" Value="4"/>
+    <AttributeAllowedValue AttributeKey="2009061813573522582"
+        SequenceNo="1" Value="4;6;8"/>
+    <AttributeAllowedValue AttributeKey="2009061814062422686"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="1-Speed" Value="1-Speed"/>
+    <AttributeAllowedValue AttributeKey="2009061814070322694"
+        IsDefaultValue="Y" SequenceNo="1" Value="25"/>
+    <AttributeAllowedValue AttributeKey="2009061814070322694"
+        NumericStep="1.00" SequenceNo="1" Value="0-40"/>
+    <AttributeAllowedValue AttributeKey="2009061814062422686"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Standard Electronic Transmission" Value="StandardElectronicTransmission"/>
+    <AttributeAllowedValue AttributeKey="2009061814062422686"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Techtronix 100x Transmission" Value="Techtronix100xTransmission"/>
+    <AttributeAllowedValue AttributeKey="2009062915573126258"
+        IsDefaultValue="Y" SequenceNo="1" Value="12"/>
+    <AttributeAllowedValue AttributeKey="2009062915573126258"
+        SequenceNo="1" Value="12;24;48"/>
+    <AttributeAllowedValue AttributeKey="2009062915594826403"
+        IsDefaultValue="Y" SequenceNo="1" Value="25"/>
+    <AttributeAllowedValue AttributeKey="2009062915594826403"
+        NumericStep="1.00" SequenceNo="1" Value="10-80"/>
+    <AttributeAllowedValue AttributeKey="2009063012580329074"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009063012580329074"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Audible Alarm and Strobe Lights" Value="AudibleAlarmandStrobeLights"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Drive Lights and Rear Work Lights with Halogen Bulbs" Value="DriveLightsandRearWorkLightswithHalogenBulbs"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Operator Password" Value="OperatorPassword"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Side View Mirrors" Value="SideViewMirrors"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Rear Handle with Horn Button" Value="RearHandlewithHornButton"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="6"
+        ShortDescription="LED Brake and Backup Lights" Value="LEDBrakeandBackupLights"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="7"
+        ShortDescription="Oil Cooled Wet Disc Brakes" Value="OilCooledWetDiscBrakes"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="8"
+        ShortDescription="Work Lights with Halogen Bulbs" Value="WorkLightswithHalogenBulbs"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="9"
+        ShortDescription="Traction Speed Limiter" Value="TractionSpeedLimiter"/>
+    <AttributeAllowedValue AttributeKey="2009063012582329085"
+        IsDefaultValue="N" SequenceNo="10"
+        ShortDescription="Powertrain Protection System with Engine Shutdown" Value="PowertrainProtectionSystemwithEngineShutdown"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Keyless Start" Value="KeylessStart"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Dual Inch Brake Pedals" Value="DualInchBrakePedals"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Electro-Hydraulic Controls with Adjustable Armrest" Value="ElectroHydraulicControlswithAdjustableArmrest"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Box Car Special - Short Turning Radius" Value="BoxCarSpecialShortTurningRadius"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Foot Direction Control Pedal" Value="FootDirectionControlPedal"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="6"
+        ShortDescription="Full Suspension Swivel Seats" Value="FullSuspensionSwivelSeats"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="7"
+        ShortDescription="Minilever Electro-Hydraulic Controls with Adjustable Armrest" Value="MinileverElectroHydraulicControlswithAdjustableArmrest"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="8"
+        ShortDescription="Premium Monitoring System" Value="PremiumMonitoringSystem"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="9"
+        ShortDescription="Return-to-set Tilt" Value="ReturntosetTilt"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="10"
+        ShortDescription="Swing-out, Drop-down EZ-Tank Bracket" Value="SwingoutDropdownEZTankBracket"/>
+    <AttributeAllowedValue AttributeKey="2009063013183529213"
+        IsDefaultValue="N" SequenceNo="11"
+        ShortDescription="Operator Pre-shift Checklist" Value="OperatorPreshiftChecklist"/>
+    <AttributeAllowedValue AttributeKey="2009063013251529261"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009063013251529261"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009063013253929270"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009063013253929270"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009063013260029279"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Heavy Duty Combi-Cooler Radiator" Value="HeavyDutyCombiCoolerRadiator"/>
+    <AttributeAllowedValue AttributeKey="2009063013260029279"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Heavy Duty Anti-Clog Square Wave Radiator" Value="HeavyDutyAntiClogSquareWaveRadiator"/>
+    <AttributeAllowedValue AttributeKey="2009063013260029279"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Radiator Lint Screen" Value="RadiatorLintScreen"/>
+    <AttributeAllowedValue AttributeKey="2009063013280029319"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="High Air Intake with Precleaner" Value="HighAirIntakewithPrecleaner"/>
+    <AttributeAllowedValue AttributeKey="2009063013280029319"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="Vented Hood" Value="VentedHood"/>
+    <AttributeAllowedValue AttributeKey="2009063013291329331"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Productivity Package" Value="ProductivityPackage"/>
+    <AttributeAllowedValue AttributeKey="2009063013291329331"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Quick Disconnects with Extension Tubes" Value="QuickDisconnectswithExtensionTubes"/>
+    <AttributeAllowedValue AttributeKey="2009063013291329331"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Paper Roll Special - Extra Attachement Capacity" Value="PaperRollSpecialExtraAttachementCapacity"/>
+    <AttributeAllowedValue AttributeKey="2009063013310929347"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="10 degrees forward / 5 degrees back" Value="10degreesforward5degreesback"/>
+    <AttributeAllowedValue AttributeKey="2009063013310929347"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="8 degrees forward / 5 degrees back" Value="8degreesforward5degreesback"/>
+    <AttributeAllowedValue AttributeKey="2009063013310929347"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="6 degrees forward / 6 degrees back" Value="6degreesforward6degreesback"/>
+    <AttributeAllowedValue AttributeKey="2009061714381620702"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Electric Power" Value="ElectricPower"/>
+    <AttributeAllowedValue AttributeKey="2009061714381620702"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Narrow Aisle" Value="NarrowAisle"/>
+    <AttributeAllowedValue AttributeKey="2009061714381620702"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Motorized Hand" Value="MotorizedHand"/>
+    <AttributeAllowedValue AttributeKey="2009061714381620702"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Pneumatic Tire Rider" Value="PneumaticTireRider"/>
+    <AttributeAllowedValue AttributeKey="2009070610294741354"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070610294741354"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070610303441361"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070610303441361"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070610311341372"
+        IsDefaultValue="N" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070610311341372"
+        IsDefaultValue="Y" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070610315841385"
+        IsDefaultValue="Y" SequenceNo="1" Value="N"/>
+    <AttributeAllowedValue AttributeKey="2009070610315841385"
+        IsDefaultValue="N" SequenceNo="1" Value="Y"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="10-Micron In-Tank Hydraulic Oil Filter" Value="10MicronInTankHydraulicOilFilter"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="100% Shock Mounted Radiators" Value="100ShockMountedRadiators"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="CANbus Electrical System" Value="CANbusElectricalSystem"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Counterweight Designed to Maximize Air Flow" Value="CounterweightDesignedtoMaximizeAirFlow"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Cowl Mounted Hydraulics" Value="CowlMountedHydraulics"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="6"
+        ShortDescription="Directional Change Lever" Value="DirectionalChangeLever"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="7"
+        ShortDescription="Rugged Powertrain" Value="RuggedPowertrain"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="8"
+        ShortDescription="Sealed Electrical Connectors" Value="SealedElectricalConnectors"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="9"
+        ShortDescription="Single Inching Brake Pedal" Value="SingleInchingBrakePedal"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="10"
+        ShortDescription="Standard Serpentine Core Radiator" Value="StandardSerpentineCoreRadiator"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="11"
+        ShortDescription="Superior Filtration System" Value="SuperiorFiltrationSystem"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="12"
+        ShortDescription="Electronically Controlled Transmissions" Value="ElectronicallyControlledTransmissions"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="13"
+        ShortDescription="Heavy Duty Combi-Cooler Radiator" Value="HeavyDutyCombiCoolerRadiator"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="14"
+        ShortDescription="Heavy Duty Anti-Clog Square Wave Radiator" Value="HeavyDutyAntiClogSquareWaveRadiator"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="15"
+        ShortDescription="Isolated Powertrain" Value="IsolatedPowertrain"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="16"
+        ShortDescription="Precise Wire Harness Routings" Value="PreciseWireHarnessRoutings"/>
+    <AttributeAllowedValue AttributeKey="2009070610322041394"
+        IsDefaultValue="N" SequenceNo="17"
+        ShortDescription="Robust Transmission Clutch Packs" Value="RobustTransmissionClutchPacks"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Excellent Mast Visibility" Value="ExcellentMastVisibility"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Excellent Rearward Visibility" Value="ExcellentRearwardVisibility"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Controlled Power Reversal" Value="ControlledPowerReversal"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="6"
+        ShortDescription="Continuous Stability Enhancement" Value="ContinuousStabilityEnhancement"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="7"
+        ShortDescription="Dash Display Positioned For Optimum Visibility" Value="DashDisplayPositionedForOptimumVisibility"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="8"
+        ShortDescription="Infinite Adjustment Steer Column" Value="InfiniteAdjustmentSteerColumn"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="9"
+        ShortDescription="No-Cinch Seatbelt" Value="NoCinchSeatbelt"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="10"
+        ShortDescription="Hall Effect Sensors and Solid State Components" Value="HallEffectSensorsandSolidStateComponents"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Sealed Electrical Connectors" Value="SealedElectricalConnectors"/>
+    <AttributeAllowedValue AttributeKey="2009070611062641518"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Sealed Dash Display" Value="SealedDashDisplay"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="12-Inch Steering Wheel with Spinner Knob" Value="12InchSteeringWheelwithSpinnerKnob"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="Floormat" Value="Floormat"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Easy Floorplate Removal" Value="EasyFloorplateRemoval"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Optimized Step Height 13.8 Inches" Value="OptimizedStepHeight13.8Inches"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Optimized Step Height 19.7 Inches" Value="OptimizedStepHeight19.7Inches"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="6"
+        ShortDescription="Cowl-to-Counterweight Access" Value="CowltoCounterweightAccess"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="7"
+        ShortDescription="Daily Checks Located on Same Side of Truck" Value="DailyChecksLocatedonSameSideofTruck"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="8"
+        ShortDescription="Simplified Daily Checks" Value="SimplifiedDailyChecks"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="9"
+        ShortDescription="Storage Compartment" Value="StorageCompartment"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="10"
+        ShortDescription="Swing-out LP Tank Bracket" Value="SwingoutLPTankBracket"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="11"
+        ShortDescription="PC Based Diagnostics" Value="PCBasedDiagnostics"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="12"
+        ShortDescription="Low Brake Pedal Effort" Value="LowBrakePedalEffort"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="13"
+        ShortDescription="Low Noise Hydraulic Pump" Value="LowNoiseHydraulicPump"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="14"
+        ShortDescription="On-Board Diagnostics with Advanced Display" Value="OnBoardDiagnosticswithAdvancedDisplay"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="15"
+        ShortDescription="Electronic Horn" Value="ElectronicHorn"/>
+    <AttributeAllowedValue AttributeKey="2009070611143141594"
+        IsDefaultValue="N" SequenceNo="16"
+        ShortDescription="Electronic Inching" Value="ElectronicInching"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="MZDA 2.0L" Value="MZDA2.0L"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="2" ShortDescription="MZDA 2.2L" Value="MZDA2.2L"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="GEM 4.3L V6" Value="GEM4.3LV6"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="GEM 2.4L" Value="GEM2.4L"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cumulus Diesel 2.0L" Value="CumulusDiesel2.0L"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cumulus Diesel 4.5L" Value="CumulusDiesel4.5L"/>
+    <AttributeAllowedValue AttributeKey="2009070715561844791"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cumulus Diesel QSB 3.3L" Value="CumulusDieselQSB3.3L"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="MZDA 2.0L" Value="MZDA2.0L"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="MZDA 2.2L" Value="MZDA2.2L"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="GEM 2.4L" Value="GEM2.4L"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="GEM 4.3L V6" Value="GEM4.3LV6"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cumulus Diesel QSB 3.3L" Value="CumulusDieselQSB3.3L"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cumulus Diesel 2.0L" Value="CumulusDiesel2.0L"/>
+    <AttributeAllowedValue AttributeKey="2009070909514547152"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Cumulus Diesel 4.5L" Value="CumulusDiesel4.5L"/>
+	<AttributeAllowedValue AttributeKey="2009101916580364231"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Gasoline - 2-way catalytic exhaust purifier" Value="Gasoline - 2-way catalytic exhaust purifier"/>
+    <AttributeAllowedValue AttributeKey="2009101916580364231"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Diesel - 2-way catalytic exhaust purifier" Value="Diesel - 2-way catalytic exhaust purifier"/>
+    <AttributeAllowedValue AttributeKey="2009101917030564270"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Gasoline: fuel injection" Value="Gasoline: Sequential port fuel injection"/>
+    <AttributeAllowedValue AttributeKey="2009101917030564270"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="LPG: single-barrel carburator" Value="LPG: Single-barrel carburator with LPG injector"/>
+    <AttributeAllowedValue AttributeKey="2009101917355964460"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Diesel" Value="Diesel"/>
+    <AttributeAllowedValue AttributeKey="2009101917355964460"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Gasoline/LPG" Value="Gasoline/LPG"/>
+    <AttributeAllowedValue AttributeKey="2009101917573964653"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Diesel - 2-way catalytic exhaust purifier" Value="Diesel - 2-way catalytic exhaust purifier"/>
+    <AttributeAllowedValue AttributeKey="2009101917573964653"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Gasoline - 2-way catalytic exhaust purifier" Value="Gasoline - 2-way catalytic exhaust purifier"/>
+    <AttributeAllowedValue AttributeKey="2009101918031364707"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="LPG: single-barrel carburator" Value="LPG: Single-barrel carburator with LPG injector"/>
+    <AttributeAllowedValue AttributeKey="2009101918031364707"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Gasoline: fuel injection" Value="Gasoline: Sequential port fuel injection"/>
+    <AttributeAllowedValue AttributeKey="2009101918145764786"
+        IsDefaultValue="Y" SequenceNo="1" Value="12"/>
+    <AttributeAllowedValue AttributeKey="2009101918145764786"
+        SequenceNo="1" Value="12;24;48"/>
+    <AttributeAllowedValue AttributeKey="2009101918161264795"
+        IsDefaultValue="Y" SequenceNo="1" Value="25"/>
+    <AttributeAllowedValue AttributeKey="2009101918161264795"
+        NumericStep="1.00" SequenceNo="1" Value="10-80"/>
+    <AttributeAllowedValue AttributeKey="2009101919331465951"
+        SequenceNo="1" Value="122;134;262;275"/>
+    <AttributeAllowedValue AttributeKey="2009101916511164209"
+        SequenceNo="1" Value="122;134;262;275"/>
+    <AttributeAllowedValue AttributeKey="2009101918031364707"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="GEM Sequential fuel injection" Value="GEM Sequential fuel injection"/>
+    <AttributeAllowedValue AttributeKey="2009102012425167682"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Max Fork Height 103.5&quot; - Overall Lowered 72&quot; - Free Lift 5.5&quot;" Value="Max Fork Height 103.5&quot; - Overall Lowered 72&quot; - Free Lift 5.5&quot;"/>
+    <AttributeAllowedValue AttributeKey="2009102012425167682"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="Max Fork Height 115.5&quot; - Overall Lowered 78&quot; - Free Lift - 5.5&quot;" Value="Max Fork Height 115.5&quot; - Overall Lowered 78&quot; - Free Lift - 5.5&quot;"/>
+    <AttributeAllowedValue AttributeKey="2009102012425167682"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Max Fork Height 127&quot; - Overall Lowered 83.5&quot; - Free Lift - 5.5&quot;" Value="Max Fork Height 127&quot; - Overall Lowered 83.5&quot; - Free Lift - 5.5&quot;"/>
+    <AttributeAllowedValue AttributeKey="2009102012425167682"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="107.5&quot; to 123&quot;" Value="107.5&quot; to 123&quot;"/>
+    <AttributeAllowedValue AttributeKey="2009102012425167682"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="190&quot; to 313&quot;" Value="190&quot; to 313&quot;"/>
+    <AttributeAllowedValue AttributeKey="20091212184347100159"
+        SequenceNo="1" Value="820;920;10000;1020;1040;1050;1100;1150"/>
+    <AttributeAllowedValue AttributeKey="20091212184843100166"
+        SequenceNo="1" Value="1100;1150;1200;1250;1300;1350"/>
+    <AttributeAllowedValue AttributeKey="20091212185357100221"
+        SequenceNo="1" Value="1350;1400;1500;1535;1800;1845;2000;2200;2400"/>
+	<AttributeAllowedValue AttributeKey="20100113210633187407"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Engine" Value="Engine"/>
+    <AttributeAllowedValue AttributeKey="20100113210633187407"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Mast" Value="Mast"/>
+    <AttributeAllowedValue AttributeKey="20100113210633187407"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Carriage" Value="Carriage"/>
+    <AttributeAllowedValue AttributeKey="20100113210633187407"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Tire" Value="Tire"/>
+    <AttributeAllowedValue AttributeKey="20100113210633187407"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Sideshift" Value="Sideshift"/>
+    <AttributeAllowedValue AttributeKey="20100113210633187407"
+        IsDefaultValue="N" SequenceNo="1" ShortDescription="Fork" Value="Fork"/>
+    <AttributeAllowedValue AttributeKey="20100113210957187429"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Drive Battery" Value="DriveBattery"/>
+    <AttributeAllowedValue AttributeKey="20100113210957187429"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Starter Battery" Value="StarterBattery"/>
+    <AttributeAllowedValue AttributeKey="20100113211439187575"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Forklift Trucks" Value="ForkliftTrucks"/>
+    <AttributeAllowedValue AttributeKey="20100113211439187575"
+        IsDefaultValue="N" SequenceNo="2"
+        ShortDescription="PartsBusiness" Value="PartsBusiness"/>
+    <AttributeAllowedValue AttributeKey="20100113211439187575"
+        IsDefaultValue="N" SequenceNo="5"
+        ShortDescription="Truck Accessories" Value="TruckAccessories"/>
+    <AttributeAllowedValue AttributeKey="20100113211439187575"
+        IsDefaultValue="N" SequenceNo="3"
+        ShortDescription="Safety Equipments" Value="SafetyEquipments"/>
+    <AttributeAllowedValue AttributeKey="20100113211439187575"
+        IsDefaultValue="N" SequenceNo="4"
+        ShortDescription="Shelving Systems" Value="ShelvingSystems"/>
+    <AttributeAllowedValue AttributeKey="20100113211439187575"
+        IsDefaultValue="N" SequenceNo="1"
+        ShortDescription="Dealer Batteries" Value="DealerBatteries"/>
+    <AttributeAllowedValue AttributeKey="20100115200329326328"
+        SequenceNo="1" Value="4;6;8"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="1" ShortDescription="100 lbs - 300 lbs" Value="100-300"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="2" ShortDescription="301 lbs - 600 lbs" Value="301-600"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="3" ShortDescription="601 lbs - 900 lbs" Value="601-900"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="4" ShortDescription="901 lbs - 1200 lbs" Value="901-1200"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="5" ShortDescription="1201 lbs - 1600 lbs" Value="1201-1600"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="6" ShortDescription="1601 lbs - 2000 lbs" Value="1601-2000"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="1" ShortDescription="100 lbs - 300 lbs" Value="100-300"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="2" ShortDescription="301 lbs - 600 lbs" Value="301-600"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="3" ShortDescription="601 lbs - 900 lbs" Value="601-901"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="4" ShortDescription="901 lbs - 1200 lbs" Value="901-1200"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="5" ShortDescription="1201 lbs - 1600 lbs" Value="1201-1600"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="6" ShortDescription="1601 lbs - 2000 lbs" Value="1601-2000"/>
+    <AttributeAllowedValue AttributeKey="20100115201755333696"
+        SequenceNo="7" ShortDescription="2000 lbs &lt;" Value="2001-99999"/>
+    <AttributeAllowedValue AttributeKey="20100115201301331200"
+        SequenceNo="7" ShortDescription="2000 lbs >" Value="2001-99999"/>
+    <AttributeAllowedValue AttributeKey="20100115203503342609"
+        SequenceNo="1" ShortDescription="&lt;  $100" Value="0-100"/>
+    <AttributeAllowedValue AttributeKey="20100115203503342609"
+        SequenceNo="2" ShortDescription="&lt; $1,000" Value="0-1000"/>
+    <AttributeAllowedValue AttributeKey="20100115203503342609"
+        SequenceNo="3" ShortDescription="&lt; $5,000" Value="0-5000"/>
+    <AttributeAllowedValue AttributeKey="20100115203503342609"
+        SequenceNo="4" ShortDescription="&lt; $10,000" Value="0-10000"/>
+    <AttributeAllowedValue AttributeKey="20100115203503342609"
+        SequenceNo="5" ShortDescription="&lt; $20,000" Value="0-20000"/>
+    <AttributeAllowedValue AttributeKey="20100115204127342648"
+        SequenceNo="1" ShortDescription="&lt; 100 &#x20AC;" Value="0-100"/>
+    <AttributeAllowedValue AttributeKey="20100115204127342648"
+        SequenceNo="2" ShortDescription="&lt; 1,000 &#x20AC;" Value="0-1000"/>
+    <AttributeAllowedValue AttributeKey="20100115204127342648"
+        SequenceNo="3" ShortDescription="&lt; 5,000 &#x20AC;" Value="0-5000"/>
+    <AttributeAllowedValue AttributeKey="20100115204127342648"
+        SequenceNo="4" ShortDescription="&lt; 10,000 &#x20AC;" Value="0-10000"/>
+    <AttributeAllowedValue AttributeKey="20100115204127342648"
+        SequenceNo="5" ShortDescription="&lt; 20,000 &#x20AC;" Value="0-20000"/>
+</YFS_Attr_Allowed_ValueList>

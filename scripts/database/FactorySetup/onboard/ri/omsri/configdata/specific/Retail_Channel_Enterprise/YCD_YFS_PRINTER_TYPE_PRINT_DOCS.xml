@@ -1,0 +1,38 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Printer_Type_Prnt_DocsList>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_ORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer1"/> 
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_ORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_ORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_ORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_ORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_ORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer2"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_RETURNORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_RETURNORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer2"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_RETURNORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_RETURNORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_RETURNORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_RETURNORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer2"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_EXCHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_EXCHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer2"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_EXCHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_EXCHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_EXCHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_EXCHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer2"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_CHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_CHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_1}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_CHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_CHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_2}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_CHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_CHANGEORDER_SUMMARY" PrinterTypeKey="#{Retail_Store_3}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_PICK_TICKET" PrinterTypeKey="#{Retail_Store_1}_Printer1" />
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_PICK_TICKET" PrinterTypeKey="#{Retail_Store_1}_Printer2" />
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_PICK_TICKET" PrinterTypeKey="#{Retail_Store_2}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_PICK_TICKET" PrinterTypeKey="#{Retail_Store_2}_Printer2"/>
+	<PrinterTypePrintDocument PrintDocumentId="PRINT_PICK_TICKET" PrinterTypeKey="#{Retail_Store_3}_Printer1"/>
+    <PrinterTypePrintDocument PrintDocumentId="PRINT_PICK_TICKET" PrinterTypeKey="#{Retail_Store_3}_Printer2"/>
+</YFS_Printer_Type_Prnt_DocsList>

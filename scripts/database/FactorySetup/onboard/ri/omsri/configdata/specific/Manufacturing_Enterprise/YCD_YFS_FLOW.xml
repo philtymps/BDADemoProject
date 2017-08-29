@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_FlowList>
+	<Flow FlowGroupName="DefaultAgentGroup"
+        FlowKey="#{Generic_Enterprise_Code}_F1" FlowName="#{Generic_Enterprise_Code}_INDEX_BUILD"
+        FlowType="01" GraphUIKey="AgentGraphUI" IsOutGoing="Y"
+        IsPrintService="N" IsRealTime="Y" OwnerKey="DEFAULT"
+        ProcessTypeKey="GENERAL" SystemDefined="N" TransportTypeKey="LOCAL"/>
+</YFS_FlowList>

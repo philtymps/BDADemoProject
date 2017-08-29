@@ -1,0 +1,59 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_CustomerList>
+    <Customer AssignedReps="0" BuyerOrganizationCode=""
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Consumer_Customer_1}"
+        CustomerKey="#{Consumer_Customer_1}_#{Generic_Enterprise_Suffix}1" CustomerType="02"
+        ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RootCustomerKey="#{Consumer_Customer_1}_#{Generic_Enterprise_Suffix}1" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE" Status="10">
+		<CustomerContactList>
+			<CustomerContact Company="" CustomerContactID="#{Consumer_Customer_1}"
+			CustomerContactKey="#{Consumer_Customer_1}_CC1"
+			DateOfBirth="1972-03-01" DayFaxNo="2145557383" DayPhone="2145557432"
+			EmailID="#{Consumer_Customer_1}@#{Consumer_Email}" EveningFaxNo="2145557323"
+			EveningPhone="2145558339" FirstName="#{Consumer_Customer_1_First_Name}" LastName="#{Consumer_Customer_1_Last_Name}"
+			MiddleName="" MobilePhone="2145550987"
+			SpouseDateOfBirth="1975-01-02" Title="" UserID="#{Consumer_Customer_1}" WeddingAnniversaryDate="1998-07-17"/>
+		</CustomerContactList>
+	</Customer>
+    <Customer AssignedReps="0" BuyerOrganizationCode=""
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Consumer_Customer_2}"
+        CustomerKey="#{Consumer_Customer_2}_#{Generic_Enterprise_Suffix}2" CustomerType="02"
+        ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RootCustomerKey="#{Consumer_Customer_2}_#{Generic_Enterprise_Suffix}2" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE" Status="10">
+		<CustomerContactList>
+		    <CustomerContact Company="" CustomerContactID="#{Consumer_Customer_2}"
+				CustomerContactKey="#{Consumer_Customer_2}_CC1" DateOfBirth="1954-03-16"
+				DayFaxNo="2125557765" DayPhone="2125558989"
+				EmailID="#{Consumer_Customer_2}@#{Consumer_Email}" EveningFaxNo="2125550948"
+				EveningPhone="2125558697" FirstName="#{Consumer_Customer_2_First_Name}" LastName="#{Consumer_Customer_2_Last_Name}"
+				MiddleName="" MobilePhone="2125554657"
+				SpouseDateOfBirth="1956-01-08" Title="" UserID="#{Consumer_Customer_2}" WeddingAnniversaryDate="1978-05-27"/>
+		</CustomerContactList>
+	</Customer>
+	<Customer AssignedReps="0" BuyerOrganizationCode=""
+        CanConsumeSupplementalCapacity="N" CustomerID="#{Consumer_Customer_3}"
+        CustomerKey="#{Consumer_Customer_3}_#{Generic_Enterprise_Suffix}3" CustomerType="02"
+        ExternalCustomerID="" MaxAssignRepsOrTeams="0"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        RootCustomerKey="#{Consumer_Customer_3}_#{Generic_Enterprise_Suffix}3" SendsAsn="N"
+        SendsCommitment="N" SendsFuncAck="N" SlotPreferenceType="NONE" Status="10">
+		<CustomerContactList>
+			<CustomerContact Company="" CustomerContactID="#{Consumer_Customer_3}"
+			CustomerContactKey="#{Consumer_Customer_3}_CC1"
+			DateOfBirth="" DayFaxNo="2145557383" DayPhone="2145557432"
+			EmailID="#{Consumer_Customer_1}@#{Consumer_Email}" EveningFaxNo="2145557323"
+			EveningPhone="2145558339" FirstName="#{Consumer_Customer_3_First_Name}" LastName="#{Consumer_Customer_3_Last_Name}"
+			MiddleName="" MobilePhone="2145550987"
+			SpouseDateOfBirth="" Title="" UserID="#{Consumer_Customer_3}" WeddingAnniversaryDate=""/>
+		</CustomerContactList>
+	</Customer>
+</YFS_CustomerList>

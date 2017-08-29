@@ -1,0 +1,60 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Event_AuditorList>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_ADDED_EVENT"
+        HoldType="YCD_VERIFY_ADDRESS" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_REJECTED_EVENT"
+        HoldType="YCD_VERIFY_ADDRESS" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_RESOLVED_EVENT"
+        HoldType="YCD_VERIFY_ADDRESS" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_ADDED_EVENT"
+        HoldType="YCD_DUPLICATE_ORDER" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_RESOLVED_EVENT"
+        HoldType="YCD_DUPLICATE_ORDER" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_REJECTED_EVENT"
+        HoldType="YCD_DUPLICATE_ORDER" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_ADDED_EVENT" HoldType="YCD_FRAUD_CHECK"
+        NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_REJECTED_EVENT"
+        HoldType="YCD_FRAUD_CHECK" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="HOLD_RESOLVED_EVENT"
+        HoldType="YCD_FRAUD_CHECK" NoteType="YCD_HOLD_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}" TransformationFile="YCD_Log_Note_On_Hold_Status_Change_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="TRANSACTION_EVENT" Eventid="ON_BACKORDER"
+        NoteType="YCD_BACKORDER_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        Tranid="SCHEDULE.0001" TransformationFile="YCD_Log_Note_On_Back_Order_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="TRANSACTION_EVENT" Eventid="ON_BACKORDER"
+        NoteType="YCD_BACKORDER_INFO"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        Tranid="RELEASE.0001" TransformationFile="YCD_Log_Note_On_Back_Order_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="TRANSACTION_EVENT" Eventid="ON_SUCCESS"
+        NoteType="YCD_CONFIRM_SHIPMENT"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        Tranid="CONFIRM_SHIPMENT" TransformationFile="YCD_Log_Note_On_Confirm_Shipment_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="TRANSACTION_EVENT"
+        Eventid="ON_WORK_ORDER_COMPLETION" NoteType="YCD_DELIVERY_APPT"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        Tranid="CONFIRM_WORK_ORDER" TransformationFile="YCD_Log_Note_On_Appointment_Completion_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="TRANSACTION_EVENT"
+        Eventid="ON_WORK_ORDER_EXECUTION_FAILURE"
+        NoteType="YCD_DELIVERY_APPT"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        Tranid="CONFIRM_WORK_ORDER" TransformationFile="YCD_Log_Note_On_Appointment_Failure_8.0.xsl.sample"/>
+    <EventAuditor Active="Y" EventAuditorType="TRANSACTION_EVENT" Eventid="ON_SUCCESS"
+        NoteType="YCD_CREATE_ALERT"
+        OrganizationCode="#{Generic_Enterprise_Code}"
+        Tranid="CREATE_EXCEPTION" TransformationFile="YCD_Log_Note_On_Create_Exception_8.0.xsl.sample"/>
+</YFS_Event_AuditorList>

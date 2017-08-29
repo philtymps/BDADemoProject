@@ -1,0 +1,18 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricing_Rule_AssignmentList>
+    <PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR1"/>
+	<PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR2"/>
+	<PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR3"/>
+    <PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR5"/>
+    <PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR4"/>
+    <PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR6"/>
+    <PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR7"/>
+	<PricingRuleAssignment CustomerType="02" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR8"/>
+	<PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR10"/>
+	<PricingRuleAssignment CustomerType="04" EnterpriseCode="#{Generic_Enterprise_Code}" PricingRuleKey="#{Corporate_Enterprise_Code}_PR11"/>
+</YPM_Pricing_Rule_AssignmentList>

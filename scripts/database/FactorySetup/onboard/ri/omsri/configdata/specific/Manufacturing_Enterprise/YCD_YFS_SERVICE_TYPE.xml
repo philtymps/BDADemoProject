@@ -1,0 +1,12 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Service_TypeList>
+    <ServiceType CapacityUOM="UNIT" Description="Delivery"
+        ItemGroupCode="DS" OrganizationCode="#{Generic_Enterprise_Code}"
+        ReferenceItemID="" ReferenceItemUOM=""
+        ServiceComplexityLevel="10" ServiceTypeID="Delivery"/>
+</YFS_Service_TypeList>

@@ -1,0 +1,17 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Sourcing_Rule_DetailList>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey="#{Retail_Store_1}"
+        ProcureToShipAllowed="N" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRDS1" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Specific_Node" WorkOrderCreationAllowed=""/>
+        SubstitutionAllowed="" TemplateType="Specific_Node" WorkOrderCreationAllowed=""/>
+    <SourcingRuleDetail DistributionRuleId="" FromNodeKey="#{Retail_Store_1}"
+        ProcureToShipAllowed="" SeqNo="1"
+        SourcingRuleHeaderKey="#{Generic_Enterprise_Code}_SRPS1" SourcingTemplate=""
+        SubstitutionAllowed="" TemplateType="Specific_Node" WorkOrderCreationAllowed=""/>
+</YFS_Sourcing_Rule_DetailList>

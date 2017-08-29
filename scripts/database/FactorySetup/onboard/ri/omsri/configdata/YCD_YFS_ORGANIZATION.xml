@@ -1,0 +1,49 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_OrganizationList>
+	<Organization AccountWithHub="" AuthorityType=""
+        BillingAddressKey="" BusinessCalendarKey=""
+        CapacityKeptExternally="" CapacityOrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        CatalogOrganizationCode="#{Retail_Channel_Enterprise_Code}" ContactAddressKey=""
+        CorporateAddressKey="" CreatorOrganizationKey="DEFAULT" 
+        CustomerMasterOrganizationCode="#{Corporate_Enterprise_Code}" DefaultDistributionRuleId=""
+        DefaultFulfillmentType="PRODUCT_SOURCING"
+        DefaultPaymentRuleId="#{Retail_Channel_Enterprise_Code}_DEFAULT" DefaultPriceProgramKey=""
+        DunsNumber="" InventoryKeptExternally="N"
+        InventoryOrganizationCode="#{Retail_Channel_Enterprise_Code}" InventoryPublished="Y"
+        IsBuyer="N" IsCarrier="N" IsDeliverySourcingKept="Y"
+        IsEnterprise="Y" IsHubOrganization="N" IsLegalEntity=""
+        IsNode="N" IsSeller="Y" IsServiceSourcingKept="Y"
+        IsSourcingKept="Y" IssuingAuthority="" ItemXrefRule=""
+        LocaleCode="en_US_PST" OrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        OrganizationKey="#{Retail_Channel_Enterprise_Code}" OrganizationName="#{Retail_Channel_Enterprise_Name}"
+        ParentOrganizationCode="#{Corporate_Enterprise_Code}" PaymentProcessingReqd="Y"
+        PrimaryEnterpriseKey="#{Retail_Channel_Enterprise_Code}" PrimarySicCode="" PrimaryUrl="#{Retail_Channel_Enterprise_URL}"
+        RequiresChainedOrder="N" RequiresChangeRequest=""  PricingOrganizationCode="#{Retail_Channel_Enterprise_Code}"
+        RequiresVasCompliance="" TaxExemptFlag=""
+        TaxExemptionCertificate="" TaxJurisdiction="" TaxpayerId=""
+        UCCPrefix="0000000" XrefAliasType="" XrefOrganizationCode="" OrganizationSuffix="#{Retail_Channel_Enterprise_Suffix}">
+        <BillingPersonInfo AddressLine1="1 Park West" AddressLine2=""
+            AddressLine3="" AddressLine4="" AddressLine5=""
+            AddressLine6="" AlternateEmailID="" Beeper=""
+            City="Tewksbury" Company="#{Retail_Channel_Enterprise_BillTo_Company_Name}" Country="US"
+            DayFaxNo="" DayPhone="" Department="" EMailID="" ErrorTxt=""
+            EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl=""
+            JobTitle="" LastName="" MiddleName="" MobilePhone=""
+            OtherPhone="" PersonID="" PreferredShipAddress="" State="MA"
+            Suffix="" Title="" UseCount="0" VerificationStatus="" ZipCode="01876"/>
+        <CorporatePersonInfo AddressLine1="1 Park West" AddressLine2=""
+            AddressLine3="" AddressLine4="" AddressLine5=""
+            AddressLine6="" AlternateEmailID="" Beeper=""
+            City="Tewksbury" Company="#{Retail_Channel_Enterprise_Name}" Country="US"
+            DayFaxNo="" DayPhone="" Department="" EMailID="" ErrorTxt=""
+            EveningFaxNo="" EveningPhone="" FirstName="" HttpUrl=""
+            JobTitle="" LastName="" MiddleName="" MobilePhone=""
+            OtherPhone="" PersonID="" PreferredShipAddress="" State="MA"
+            Suffix="" Title="" UseCount="0" VerificationStatus="" ZipCode="01876"/>
+    </Organization>
+</YFS_OrganizationList>

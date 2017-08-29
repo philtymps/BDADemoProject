@@ -1,0 +1,172 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YPM_Pricing_RuleList>
+    <PricingRule Currency="USD"
+        Description="TV and Refrigerator discount offer"
+        EndDateActive="2014-01-01T03:00:00-05:00"
+        IgnoreRuleOnPriceLock="Y" IsItemRule="Y"
+        ItemOperatorCode="ANY_ITEM"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="2009093013494656838"
+        PricingRuleName="TV and Refridgerator" PricingStatus="INACTIVE"
+        RuleCategory="PRICING" RuleType="COMBINATION" StartDateActive="2009-01-01T03:00:00-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-50.00" AdjustmentType="ABSOLUTE"
+				ChargeCategory="Discount" ChargeName="Discount" WhenToApply="ALL"/>
+		</PricingRuleActionList>
+		<PricingRuleItemList>
+			<PricingRuleItem ItemID="100001" UnitOfMeasure="EACH" Quantity="1.00"/>
+			<PricingRuleItem ItemID="100700" UnitOfMeasure="EACH" Quantity="1.00"/>
+		</PricingRuleItemList>
+		<PricingRuleTargetItemList>
+			<PricingRuleTargetItem TargetUnitOfMeasure="EACH" TargetItemID="100001"/>
+		</PricingRuleTargetItemList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="TV Discount for 42&quot; TV"
+        EndDateActive="2014-01-30T03:00:00-05:00"
+        IgnoreRuleOnPriceLock="Y" IsItemAttributeValueRule="Y"
+        IsItemRule="Y" OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="2009093014051056930"
+        PricingRuleName="TV Discount" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ITEM_QUANTITY" StartDateActive="2009-01-01T03:00:00-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-5.00" AdjustmentType="PERCENT" Quantity="0.00"
+				ChargeCategory="Discount" ChargeName="Discount" WhenToApply="ALL"/>
+		</PricingRuleActionList>
+		<PricingRuleTargetAttributeValueList>
+			<PricingRuleTargetAttributeValue TargetAttributeDomainID="ItemAttribute"
+				TargetAttributeGroupID="Television Attributes" TargetAttributeID="Screen Size (Measured Diagonally)" TargetAttributeValue="42"/>
+		</PricingRuleTargetAttributeValueList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Buy 3 and get the 4th one free"
+        EndDateActive="2015-12-31T13:21:24-05:00"
+        IgnoreRuleOnPriceLock="Y" IsItemAttributeValueRule="Y"
+        IsItemRule="Y" OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="2009121113214096568"
+        PricingRuleName="Buy 3 get 4th free" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ITEM_QUANTITY" StartDateActive="2009-12-31T13:21:15-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-100.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount" Quantity="3.00" WhenToApply="SINGLE_ITEM"/>
+		</PricingRuleActionList>
+		<PricingRuleTargetAttributeValueList>
+		    <PricingRuleTargetAttributeValue TargetAttributeDomainID="ItemAttribute"
+				TargetAttributeGroupID="ProductTypes"
+				TargetAttributeID="Electronics" TargetAttributeValue="TVAccessories"/>
+			<PricingRuleTargetAttributeValue TargetAttributeDomainID="ItemAttribute"
+				TargetAttributeGroupID="PricingAttributes"
+				TargetAttributeID="ProductLines" TargetAttributeValue="AudioVideo"/>
+		</PricingRuleTargetAttributeValueList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Spend $100 and receive a 50% discount on shipping. Spend at least $150 and receive free shipping."
+        DistributeAdjustment="N"
+        EndDateActive="2015-12-31T14:38:06-05:00"
+        MinimizeNumberOfShipments="Y"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="20091214143922103643"
+        PricingRuleName="Shipping Discount" PricingStatus="ACTIVE"
+        RuleCategory="SHIPPING" RuleType="ORDER_TOTAL" StartDateActive="2009-12-31T14:38:02-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-50.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="100.00" WhenToApply="SINGLE_ITEM"/>
+			<PricingRuleAction Adjustment="-100.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="150.00" WhenToApply="SINGLE_ITEM"/>
+		</PricingRuleActionList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Buy any TV and receive a free Universal Remote"
+        EndDateActive="2015-12-31T14:51:53-05:00"
+        IgnoreRuleOnPriceLock="Y" IsItemRule="Y"
+        ItemOperatorCode="ANY_ITEM"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="20091214145318103931"
+        PricingRuleName="Buy a TV, get a free Universal Remote"
+        PricingStatus="ACTIVE" RuleCategory="PRICING"
+        RuleType="COMBINATION" StartDateActive="2009-12-31T14:51:48-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-100.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount" WhenToApply="ALL"/>
+		</PricingRuleActionList>
+		<PricingRuleItemList>
+		    <PricingRuleItem ItemID="100001" UnitOfMeasure="EACH" Quantity="1.00"/>
+			<PricingRuleItem ItemID="100006" UnitOfMeasure="EACH" Quantity="1.00"/>
+			<PricingRuleItem ItemID="100013" UnitOfMeasure="EACH" Quantity="1.00"/>
+		</PricingRuleItemList>
+		<PricingRuleTargetItemList>
+			<PricingRuleTargetItem TargetUnitOfMeasure="EACH" TargetItemID="100003"/>
+		</PricingRuleTargetItemList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Spend $100 and receive 10% off, $200 and receive 15% off, $300 and receive 25% off"
+        DistributeAdjustment="N"
+        EndDateActive="2015-12-31T14:55:26-05:00"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="20091214145608103944"
+        PricingRuleName="Order Level Discount" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ORDER_TOTAL" StartDateActive="2009-12-31T14:55:22-05:00">
+		<PricingRuleActionList>
+		    <PricingRuleAction Adjustment="-10.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="100.00" WhenToApply="SINGLE_ITEM"/>
+			<PricingRuleAction Adjustment="-15.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="200.00" WhenToApply="SINGLE_ITEM"/>
+			<PricingRuleAction Adjustment="-25.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="300.00" WhenToApply="SINGLE_ITEM"/>
+		</PricingRuleActionList>
+	</PricingRule>
+    <PricingRule Currency="USD"
+        Description="Spend $100 and receive 10% off, $200 and receive 15% off, or $300 and receive 25% off"
+        DistributeAdjustment="N"
+        EndDateActive="2015-12-31T14:57:58-05:00" IsCouponRule="Y"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="20091214145821103953"
+        PricingRuleName="Order Level Coupon" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="ORDER_TOTAL" StartDateActive="2009-12-31T14:57:53-05:00">
+		<PricingRuleActionList>
+		    <PricingRuleAction Adjustment="-15.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="100.00"  WhenToApply="SINGLE_ITEM"/>
+			<PricingRuleAction Adjustment="-15.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="200.00" WhenToApply="SINGLE_ITEM"/>
+			<PricingRuleAction Adjustment="-25.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount"
+				OrderTotal="300.00" WhenToApply="SINGLE_ITEM"/>
+		</PricingRuleActionList>
+		<Coupon CouponID="Order Level Coupon" IsExclusive="Y"
+        OrganizationCode="#{Corporate_Enterprise_Code}" />
+	</PricingRule>
+	<PricingRule Currency="USD"
+        Description="Buy an Omega 42&quot; Plasma TV and get 50% off an Omega Progressive Scan DVD Player"
+        EndDateActive="2015-01-01T09:23:46-05:00"
+        IgnoreRuleOnPriceLock="Y" IsCouponRule="Y" IsItemRule="Y"
+        ItemOperatorCode="ALL_ITEMS"
+        OrganizationCode="#{Corporate_Enterprise_Code}"
+        PricingRuleKey="20100115092348286593"
+        PricingRuleName="Combination Coupon" PricingStatus="ACTIVE"
+        RuleCategory="PRICING" RuleType="COMBINATION" StartDateActive="2010-01-01T09:23:39-05:00">
+		<PricingRuleActionList>
+			<PricingRuleAction Adjustment="-50.00" AdjustmentType="PERCENT"
+				ChargeCategory="Discount" ChargeName="Discount" WhenToApply="EACH_COMBINATION"/>
+		</PricingRuleActionList>
+		<PricingRuleItemList>
+			<PricingRuleItem ItemID="100013" Quantity="1.00" UnitOfMeasure="EACH"/>
+		</PricingRuleItemList>
+		<PricingRuleTargetItemList>
+			<PricingRuleTargetItem TargetItemID="100002" TargetUnitOfMeasure="EACH"/>
+		</PricingRuleTargetItemList>
+		<Coupon CouponID="Combination Coupon"
+			IsExclusive="Y" OrganizationCode="#{Corporate_Enterprise_Code}" />
+	</PricingRule>
+</YPM_Pricing_RuleList>        

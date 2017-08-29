@@ -1,0 +1,38 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_AttributeList>
+    <YFS_Attribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeID="ItemID"
+        AttributeKey="#{Corporate_Enterprise_Code}_ATTR1"
+        DataType="TEXT" LongDescription="Item ID"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="0" ShortDescription="Item ID"/>
+    <Attribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeID="ShortDescription"
+        AttributeKey="#{Corporate_Enterprise_Code}_ATTR2" DataType="TEXT"
+        LongDescription="Short Description"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="1" ShortDescription="Short Description"/>
+    <YFS_Attribute AttributeDomainID="ItemAttribute"
+        AttributeGroupID="DISPLAY" AttributeID="ManufacturerName"
+        AttributeKey="#{Corporate_Enterprise_Code}_ATTR3"
+        DataType="TEXT" LongDescription="Manufacturer Name"
+        OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="2" ShortDescription="Manufacturer Name"/>
+	<YFS_Attribute AttributeDomainID="ItemAttribute"
+		AttributeGroupID="VARIATIONS" AttributeID="Class"
+		AttributeKey="#{Corporate_Enterprise_Code}_ATTR4"
+		DataType="TEXT" LongDescription="Super Size" 
+		OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="0" ShortDescription="Super Size" 	/>
+	<YFS_Attribute AttributeDomainID="ItemAttribute"
+		AttributeGroupID="VARIATIONS" AttributeID="ColorCode"
+		AttributeKey="#{Corporate_Enterprise_Code}_ATTR5"
+		DataType="TEXT" LongDescription="Color Code" 
+		OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="1" ShortDescription="Color Code"  />
+	<YFS_Attribute AttributeDomainID="ItemAttribute"
+		AttributeGroupID="VARIATIONS" AttributeID="SizeCode"
+		AttributeKey="#{Corporate_Enterprise_Code}_ATTR6"
+		DataType="TEXT" LongDescription="Size Code" 
+		OrganizationCode="#{Corporate_Enterprise_Code}" SequenceNo="2" ShortDescription="Size Code" 	/>
+</YFS_AttributeList>

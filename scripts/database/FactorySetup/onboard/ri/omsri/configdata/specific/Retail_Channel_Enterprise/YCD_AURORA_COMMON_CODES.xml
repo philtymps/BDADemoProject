@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_Common_CodeList>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="#{Generic_Enterprise_Code} DG1"
+        CodeName="" CodeShortDescription="#{Generic_Enterprise_Code} DG1"
+        CodeSymbol="" CodeType="DIST_GRP_LVL_MTR"
+        CodeValue="#{Generic_Enterprise_Code}_DG1" DocumentType=""
+        DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+    <CommonCode CodeLength="0"
+        CodeLongDescription="#{Generic_Enterprise_Code} DG2"
+        CodeName="" CodeShortDescription="#{Generic_Enterprise_Code} DG2"
+        CodeSymbol="" CodeType="DIST_GRP_LVL_MTR"
+        CodeValue="#{Generic_Enterprise_Code}_DG2" DocumentType=""
+        DocumentTypeSpecific="" MeantForEnterprise=""
+        MeantForInternal="" MeantForSupplier=""
+        OrganizationCode="#{Generic_Enterprise_Code}" SystemDefinedCode="N"/>
+</YFS_Common_CodeList>

@@ -1,0 +1,24 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_User_Group_ListList>
+	<!--<UserGroupList UserKey="#{Business_Customer_1_Contact_1}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Business_Customer_1_Contact_2}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Business_Customer_1_Contact_2}" UsergroupKey="BUYER-ADMIN"/>
+	<UserGroupList UserKey="#{Business_Customer_1_Contact_2}" UsergroupKey="BUYER-APPROVER"/>
+	<UserGroupList UserKey="#{Business_Customer_2_Contact_1}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Business_Customer_2_Contact_2}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Business_Customer_2_Contact_2}" UsergroupKey="BUYER-ADMIN"/>
+	<UserGroupList UserKey="#{Business_Customer_2_Contact_2}" UsergroupKey="BUYER-APPROVER"/>
+	<UserGroupList UserKey="#{Business_Customer_3_Contact_1}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Business_Customer_3_Contact_2}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Business_Customer_3_Contact_2}" UsergroupKey="BUYER-ADMIN"/>
+	<UserGroupList UserKey="#{Business_Customer_3_Contact_2}" UsergroupKey="BUYER-APPROVER"/>
+	<UserGroupList UserKey="#{Business_Customer_4_Contact_1}" UsergroupKey="PROCUREMENT-USER"/>
+	<UserGroupList UserKey="#{Consumer_Customer_4}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Consumer_Customer_5}" UsergroupKey="BUYER-USER"/>
+	<UserGroupList UserKey="#{Consumer_Customer_6}" UsergroupKey="BUYER-USER"/>-->
+</YFS_User_Group_ListList>

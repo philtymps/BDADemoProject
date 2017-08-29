@@ -1,0 +1,16 @@
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Selling and Fulfillment Suite - Foundation
+(C) Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_UserList>
+    <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+        ContactaddressKey="" CreatorOrganizationKey=""
+        DataSecurityGroupId="" Imagefile="" Localecode="en_US_EST"
+        Loginid="guest_#{Generic_Enterprise_Code}" Longdesc="" MenuId="DEFAULT_MENU" NoteKey=""
+        OrganizationKey="#{Generic_Enterprise_Code}" ParentUserKey="" Password="guest_#{Generic_Enterprise_Code}"
+        PreferenceKey="" Pwdlastchangedon="2005-06-07" SystemName=""
+        Theme="ice" UserKey="guest_#{Generic_Enterprise_Code}" UsergroupKey="GUEST-USER"
+        Username="guest_#{Generic_Enterprise_Code}" Usertype="INTERNAL"/>
+</YFS_UserList>

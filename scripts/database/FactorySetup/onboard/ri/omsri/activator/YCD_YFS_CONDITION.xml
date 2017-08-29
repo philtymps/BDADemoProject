@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Licensed Materials - Property of IBM
+IBM Sterling Call Center and Store
+(C) Copyright IBM Corp. 2010, 2011 All Rights Reserved.
+US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<YFS_ConditionList>
+	<Condition ConditionID="#{Corporate_Enterprise_Code}_SOD"
+        ConditionKey="#{Corporate_Enterprise_Code}_YCD1"
+        ConditionName="Is Service Or Delivery"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'PS'  OR ItemGroupCode = 'DS'"
+        GroupId="" OwnerKey="#{Corporate_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+    <Condition ConditionID="#{Corporate_Enterprise_Code}_Is_Pickup"
+        ConditionKey="#{Corporate_Enterprise_Code}_YCD2"
+        ConditionName="Is Pickup Service"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'DS'" GroupId=""
+        OwnerKey="#{Corporate_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="RETURN_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+	<Condition ConditionID="#{Retail_Channel_Enterprise_Code}_SOD"
+        ConditionKey="#{Retail_Channel_Enterprise_Code}_YCD1"
+        ConditionName="Is Service Or Delivery"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'PS'  OR ItemGroupCode = 'DS'"
+        GroupId="" OwnerKey="#{Retail_Channel_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+    <Condition ConditionID="#{Retail_Channel_Enterprise_Code}_Is_Pickup"
+        ConditionKey="#{Retail_Channel_Enterprise_Code}_YCD2"
+        ConditionName="Is Pickup Service"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'DS'" GroupId=""
+        OwnerKey="#{Retail_Channel_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="RETURN_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+	<Condition ConditionID="#{Business_Channel_Enterprise_Code}_SOD"
+        ConditionKey="#{Business_Channel_Enterprise_Code}_YCD1"
+        ConditionName="Is Service Or Delivery"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'PS'  OR ItemGroupCode = 'DS'"
+        GroupId="" OwnerKey="#{Business_Channel_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+    <Condition ConditionID="#{Business_Channel_Enterprise_Code}_Is_Pickup"
+        ConditionKey="#{Business_Channel_Enterprise_Code}_YCD2"
+        ConditionName="Is Pickup Service"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'DS'" GroupId=""
+        OwnerKey="#{Business_Channel_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="RETURN_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+	<Condition ConditionID="#{Manufacturing_Enterprise_Code}_SOD"
+        ConditionKey="#{Manufacturing_Enterprise_Code}_YCD1"
+        ConditionName="Is Service Or Delivery"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'PS'  OR ItemGroupCode = 'DS'"
+        GroupId="" OwnerKey="#{Manufacturing_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+    <Condition ConditionID="#{Manufacturing_Enterprise_Code}_Is_Pickup"
+        ConditionKey="#{Manufacturing_Enterprise_Code}_YCD2"
+        ConditionName="Is Pickup Service"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'DS'" GroupId=""
+        OwnerKey="#{Manufacturing_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="RETURN_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+	<Condition ConditionID="#{Dealer_1_Enterprise_Code}_SOD"
+        ConditionKey="#{Dealer_1_Enterprise_Code}_YCD1"
+        ConditionName="Is Service Or Delivery"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'PS'  OR ItemGroupCode = 'DS'"
+        GroupId="" OwnerKey="#{Dealer_1_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+    <Condition ConditionID="#{Dealer_1_Enterprise_Code}_Is_Pickup"
+        ConditionKey="#{Dealer_1_Enterprise_Code}_YCD2"
+        ConditionName="Is Pickup Service"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'DS'" GroupId=""
+        OwnerKey="#{Dealer_1_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="RETURN_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+	<Condition ConditionID="#{Dealer_2_Enterprise_Code}_SOD"
+        ConditionKey="#{Dealer_2_Enterprise_Code}_YCD1"
+        ConditionName="Is Service Or Delivery"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'PS'  OR ItemGroupCode = 'DS'"
+        GroupId="" OwnerKey="#{Dealer_2_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="ORDER_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+    <Condition ConditionID="#{Dealer_2_Enterprise_Code}_Is_Pickup"
+        ConditionKey="#{Dealer_2_Enterprise_Code}_YCD2"
+        ConditionName="Is Pickup Service"
+        ConditionType="PROCESS_MODELLING"
+        ConditionValue="ItemGroupCode = 'DS'" GroupId=""
+        OwnerKey="#{Dealer_2_Enterprise_Code}" OwnerType=""
+        ProcessTypeKey="RETURN_FULFILLMENT" SeqNo="0" Type="STATIC"/>
+</YFS_ConditionList>

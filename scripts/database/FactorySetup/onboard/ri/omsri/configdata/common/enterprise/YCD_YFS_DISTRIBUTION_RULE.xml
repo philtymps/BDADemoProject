@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<YFS_Distribution_RuleList>
+    <DistributionRule DistributionRuleKey="#{Generic_Enterprise_Code}_DG1" DefaultFlag="N" Description="#{Generic_Enterprise_Code} DS"
+        DistributionRuleId="#{Generic_Enterprise_Code}_DG1" ItemGroupCode="PROD"
+        OwnerKey="#{Generic_Enterprise_Code}" Purpose="SOURCING">
+    </DistributionRule>
+    <DistributionRule DistributionRuleKey="#{Generic_Enterprise_Code}_DG2" DefaultFlag="N" Description="#{Generic_Enterprise_Code} Stores"
+        DistributionRuleId="#{Generic_Enterprise_Code}_DG2" ItemGroupCode="PROD"
+        OwnerKey="#{Generic_Enterprise_Code}" Purpose="SOURCING">
+    </DistributionRule>
+    <DistributionRule DistributionRuleKey="#{Generic_Enterprise_Code}_DEL_DG1" DefaultFlag="N" Description="#{Generic_Enterprise_Code} Delivery DG1"
+        DistributionRuleId="#{Generic_Enterprise_Code}_DEL_DG1" ItemGroupCode="DS"
+        OwnerKey="#{Generic_Enterprise_Code}" Purpose="SOURCING">
+    </DistributionRule>
+    <DistributionRule DistributionRuleKey="#{Generic_Enterprise_Code}_PS_DG1" DefaultFlag="N" Description="#{Generic_Enterprise_Code} Service DG"
+        DistributionRuleId="#{Generic_Enterprise_Code}_PS_DG1" ItemGroupCode="PS"
+        OwnerKey="#{Generic_Enterprise_Code}" Purpose="SOURCING">
+    </DistributionRule>
+</YFS_Distribution_RuleList>
