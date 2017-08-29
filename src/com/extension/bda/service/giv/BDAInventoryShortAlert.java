@@ -78,23 +78,45 @@ public class BDAInventoryShortAlert implements IBDAService {
 	
 	private void clearInventorySupply(YFCElement eItems, YFCElement eShortage, String sNode){
 		
-		YFCElement eItem = eItems.createChild("Item");
-		eItem.setAttribute("AdjustmentType", "ABSOLUTE");
-		eItem.setAttribute("Availability", "TRACK");
-		eItem.setAttribute("ItemID", eShortage.getAttribute("ItemID"));
-		eItem.setAttribute("UnitOfMeasure", eShortage.getAttribute("UnitOfMeasure"));
-		if(!YFCCommon.isVoid(eShortage.getAttribute("ProductClass"))){
-			eItem.setAttribute("ProductClass", eShortage.getAttribute("ProductClass"));
-		}
-		eItem.setAttribute("Quantity", "0");
-		eItem.setAttribute("ShipNode", sNode);
-		if(!YFCCommon.isVoid(eShortage.getAttribute("SupplyType"))){
-			eItem.setAttribute("SupplyType", eShortage.getAttribute("SupplyType"));
-		} else {
-			eItem.setAttribute("SupplyType", "ONHAND");
-		}
-	
+		String psql = "SELECT SUP.QUANTITY, SUP.SHIPNODE_KEY FROM OMDB.YFS_INVENTORY_SUPPLY SUP INNER JOIN OMDB.YFS_INVENTORY_ITEM II ON II.INVENTORY_ITEM_KEY = SUP.INVENTORY_ITEM_KEY WHERE II.ITEM_ID = ? AND SUP.SHIPNODE_KEY = ?";
+		Connection conn = null;
+		try {
+			
+			conn = DatabaseConnection.getConnection();
+			PreparedStatement ps = conn.prepareStatement(psql);
+			ps.setString(1, eShortage.getAttribute("ItemID"));
+			ps.setString(2, sNode);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()){
+				YFCElement eItem = eItems.createChild("Item");
+				eItem.setAttribute("AdjustmentType", "ADJUSTMENT");
+				eItem.setAttribute("Availability", "TRACK");
+				eItem.setAttribute("ItemID", eShortage.getAttribute("ItemID"));
+				eItem.setAttribute("UnitOfMeasure", eShortage.getAttribute("UnitOfMeasure"));
+				if(!YFCCommon.isVoid(eShortage.getAttribute("ProductClass")) && !YFCCommon.equals(eShortage.getAttribute("ProductClass"), "undefined")){
+					eItem.setAttribute("ProductClass", eShortage.getAttribute("ProductClass"));
+				}
+				eItem.setAttribute("Quantity", rs.getDouble("QUANTITY") * -1);
+				eItem.setAttribute("ShipNode", sNode);
+				if(!YFCCommon.isVoid(eShortage.getAttribute("SupplyType"))){
+					eItem.setAttribute("SupplyType", eShortage.getAttribute("SupplyType"));
+				} else {
+					eItem.setAttribute("SupplyType", "ONHAND");
+				}
+			}
+			
 		
+		}catch(SQLException | ClassNotFoundException e){
+			e.printStackTrace();
+		} finally {
+			if(!YFCCommon.isVoid(conn)){
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 	private void createAlert(YFCElement eMultiApi, YFCElement eOrder, YFCElement eShortage){
 		YFCElement eApi = eMultiApi.createChild("API");
@@ -108,6 +130,16 @@ public class BDAInventoryShortAlert implements IBDAService {
 		if(!YFCCommon.isVoid(eOrder.getAttribute("EnterpriseCode"))){
 			eInbox.setAttribute("EnterpriseKey", eOrder.getAttribute("EnterpriseCode"));
 			eInbox.setAttribute("OwnerKey", eOrder.getAttribute("EnterpriseCode"));
+		}
+		if(!YFCCommon.isVoid(eShortage.getAttribute("QueueKey"))){
+			eInbox.setAttribute("QueueKey", eShortage.getAttribute("QueueKey"));
+		}
+		if(!YFCCommon.isVoid(eShortage.getAttribute("ExceptionType"))){
+			eInbox.setAttribute("ExceptionType", eShortage.getAttribute("ExceptionType"));
+		} else if(YFCCommon.isVoid(eShortage.getAttribute("InboxType"))) {
+			eInbox.setAttribute("ExceptionType", "SOP_INVENTORY_SHORTAGE");
+		} else {
+			eInbox.setAttribute("InboxType", eShortage.getAttribute("InboxType"));
 		}
 		eInbox.setAttribute("ItemId", eShortage.getAttribute("ItemID"));
 		eInbox.setAttribute("Description", eShortage.getAttribute("ReasonCode"));
@@ -128,7 +160,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 			if(!YFCCommon.isVoid(eShortage.getAttribute("ItemID")) && !YFCCommon.isVoid(eShortage.getChildElement("ShipNodes", true).getChildElement("ShipNode"))){
 				Connection conn = null;
 				
-				StringBuilder sb = new StringBuilder("SELECT OH.ORDER_NO, OL.ORDER_HEADER_KEY, OH.ENTERPRISE_CODE, OL.ORDER_LINE_KEY, ORS.STATUS, OL.ITEM_ID, OL.ORDERED_QTY, ID.DEMAND_TYPE, ID.OWNER_KEY, ID.SHIPNODE_KEY, ID.QUANTITY, OH.BILL_TO_ID, OH.CUSTOMER_EMAILID ");
+				StringBuilder sb = new StringBuilder("SELECT OH.ORDER_NO, OL.ORDER_HEADER_KEY, OH.ENTERPRISE_KEY, OL.ORDER_LINE_KEY, ORS.STATUS, OL.ITEM_ID, OL.ORDERED_QTY, ID.DEMAND_TYPE, ID.OWNER_KEY, ID.SHIPNODE_KEY, ID.QUANTITY, OH.BILL_TO_ID, OH.CUSTOMER_EMAILID ");
 				sb.append("FROM OMDB.YFS_ORDER_RELEASE_STATUS ORS ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE_SCHEDULE OLS ON OLS.ORDER_LINE_SCHEDULE_KEY = ORS.ORDER_LINE_SCHEDULE_KEY ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE OL ON OL.ORDER_LINE_KEY = OLS.ORDER_LINE_KEY ");
@@ -152,17 +184,17 @@ public class BDAInventoryShortAlert implements IBDAService {
 					ResultSet rs = ps.executeQuery();
 					while (rs.next()){
 						YFCElement eOrderRecord = dOrderList.getDocumentElement().createChild("OrderRecord");
-						eOrderRecord.setAttribute("OrderHeaderKey", rs.getString("ORDER_HEADER_KEY"));
-						eOrderRecord.setAttribute("OrderNo", rs.getString("ORDER_NO"));
-						eOrderRecord.setAttribute("EnterpriseCode", rs.getString("ENTERPRISE_CODE"));
-						eOrderRecord.setAttribute("OrderLineKey", rs.getString("ORDER_LINE_KEY"));
-						eOrderRecord.setAttribute("ShipNode", rs.getString("SHIPNODE_KEY"));
-						eOrderRecord.setAttribute("DemandType", rs.getString("DEMAND_TYPE"));
-						eOrderRecord.setAttribute("DemandQuantity", rs.getString("QUANTITY"));
-						eOrderRecord.setAttribute("Status", rs.getString("STATUS"));
-						eOrderRecord.setAttribute("BillToID", rs.getString("BILL_TO_ID"));
-						eOrderRecord.setAttribute("CustomerEMailID", rs.getString("CUSTOMER_EMAILID"));
-						eOrderRecord.setAttribute("OrderedQty", rs.getString("ORDERED_QTY"));
+						eOrderRecord.setAttribute("OrderHeaderKey", rs.getString("ORDER_HEADER_KEY").trim());
+						eOrderRecord.setAttribute("OrderNo", rs.getString("ORDER_NO").trim());
+						eOrderRecord.setAttribute("EnterpriseCode", rs.getString("ENTERPRISE_KEY").trim());
+						eOrderRecord.setAttribute("OrderLineKey", rs.getString("ORDER_LINE_KEY").trim());
+						eOrderRecord.setAttribute("ShipNode", rs.getString("SHIPNODE_KEY").trim());
+						eOrderRecord.setAttribute("DemandType", rs.getString("DEMAND_TYPE").trim());
+						eOrderRecord.setAttribute("DemandQuantity", rs.getString("QUANTITY").trim());
+						eOrderRecord.setAttribute("Status", rs.getString("STATUS").trim());
+						eOrderRecord.setAttribute("BillToID", rs.getString("BILL_TO_ID").trim());
+						eOrderRecord.setAttribute("CustomerEMailID", rs.getString("CUSTOMER_EMAILID").trim());
+						eOrderRecord.setAttribute("OrderedQty", rs.getString("ORDERED_QTY").trim());
 					}
 				} catch(SQLException | ClassNotFoundException e){
 					e.printStackTrace();
