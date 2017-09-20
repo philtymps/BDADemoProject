@@ -68,6 +68,12 @@ public class BDAOrganizationDataProvider implements IBDADataProvider {
 						interestingElement.setAttribute("ShipnodeFullDescription", temp);
 					}
 				}
+				if (interestingElement.hasAttribute("ReceivingNode")  && !YFCCommon.isVoid(interestingElement.getAttribute("ReceivingNode")) && !interestingElement.hasAttribute("ReceivingNodeDescription") && YFCCommon.equals(sAttribute, "ReceivingNodeDescription")){
+					String temp = BDADataProviderUtils.getShipnodeDescription(context, localApi, interestingElement.getAttribute("ReceivingNode"));
+					if(!YFCCommon.isVoid(temp)){
+						interestingElement.setAttribute("ReceivingNodeDescription", temp);
+					}
+				}
 			}
 		}
 	}

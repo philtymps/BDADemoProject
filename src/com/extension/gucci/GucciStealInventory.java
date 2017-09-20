@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.w3c.dom.Document;
 
 import com.extension.bda.object.DatabaseConnection;
+import com.extension.bda.service.IBDAService;
 import com.ibm.CallInteropServlet;
 import com.yantra.yfc.date.YTimestamp;
 import com.yantra.yfc.dom.YFCDocument;
@@ -16,7 +17,7 @@ import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 
-public class GucciStealInventory {
+public class GucciStealInventory implements IBDAService {
 
 
 	private Properties p;
@@ -25,7 +26,7 @@ public class GucciStealInventory {
 		p = new Properties();
 	}
 	
-	public void setProperties(Properties properties) throws Exception {
+	public void setProperties(Properties properties){
 		this.p = properties;
 	}
 	
@@ -110,6 +111,18 @@ public class GucciStealInventory {
 			return output2.getDocument();
 		}
 		return YFCDocument.createDocument("Order").getDocument();
+	}
+
+	@Override
+	public String getServiceName() {
+		// TODO Auto-generated method stub
+		return "stealInventoryFromLine";
+	}
+
+	@Override
+	public Document invoke(YFSEnvironment env, Document input) {
+		// TODO Auto-generated method stub
+		return stealInventoryFromLine(env, input);
 	}
 	
 	

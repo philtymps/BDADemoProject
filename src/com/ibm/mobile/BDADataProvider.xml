@@ -77,6 +77,7 @@
 		<InterestedIn>
 			<Element path="/OrderLine" />
 			<Element path="/Order/OrderLines/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine/OrderStatuses/OrderStatus" />
 			<Element path="/OrderLineList/OrderLine" />
 			<Element path="/Shipment" />
 			<Element path="/Order/Shipments/Shipment" />
@@ -84,11 +85,31 @@
 			<Element path="/DemandDetailsList/DemandDetails" />
 			<Attribute path="OrderLine" name="ShipNode" />
 			<Attribute path="Shipment" name="ShipNode" />
+			<Attribute path="OrderStatus" name="ShipNode" />
 			<Attribute path="InventorySupply" name="ShipNode" />
 			<Attribute path="DemandDetails" name="ShipNode" />
 		</InterestedIn>
 		<NewAttributes>
 			<Attribute name="ShipnodeDescription" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAOrganizationDataProvider">
+		<InterestedIn>
+			<Element path="/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine" />
+			<Element path="/Order/OrderLines/OrderLine/OrderStatuses/OrderStatus" />
+			<Element path="/OrderLineList/OrderLine" />
+			<Element path="/Shipment" />
+			<Element path="/Order/Shipments/Shipment" />
+			<Element path="/Item/Supplies/InventorySupply" />
+			<Element path="/DemandDetailsList/DemandDetails" />
+			<Attribute path="OrderLine" name="ReceivingNode" />
+			<Attribute path="Shipment" name="ReceivingNode" />
+			<Attribute path="OrderStatus" name="ReceivingNode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ReceivingNodeDescription" />
 		</NewAttributes>
 	</AdditionalDataProvider>
 	<AdditionalDataProvider

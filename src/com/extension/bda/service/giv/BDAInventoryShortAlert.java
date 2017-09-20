@@ -1,6 +1,5 @@
 package com.extension.bda.service.giv;
 
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,11 +37,16 @@ public class BDAInventoryShortAlert implements IBDAService {
 			YFCDocument dMultiApi = YFCDocument.createDocument("MultiApi");
 			YFCElement eMultiApi = dMultiApi.getDocumentElement();
 			boolean callMultiApi = false;
-			if(eShortage.getBooleanAttribute("RaiseAlert") || eShortage.getBooleanAttribute("NotifyCustomers")){
+			if(eShortage.getBooleanAttribute("RaiseAlert") || eShortage.getBooleanAttribute("NotifyCustomers") || eShortage.getBooleanAttribute("UnscheduleOrders", true)){
 				YFCElement eOrders = getOrdersForItem(eShortage);
-				if(eShortage.getBooleanAttribute("RaiseAlert")){
+				if(eShortage.getBooleanAttribute("RaiseAlert") || eShortage.getBooleanAttribute("UnscheduleOrders", true)){
 					for(YFCElement eOrder : eOrders.getChildren()){
-						createAlert(eMultiApi, eOrder, eShortage);
+						if(eShortage.getBooleanAttribute("RaiseAlert")){
+							createAlert(eMultiApi, eOrder, eShortage);
+						}
+						if(eShortage.getBooleanAttribute("UnscheduleOrders", true)){
+							unscheduleOrderLine(eMultiApi, eOrder, eShortage);
+						}						
 						callMultiApi = true;
 					}
 				}
@@ -118,6 +122,18 @@ public class BDAInventoryShortAlert implements IBDAService {
 			}
 		}
 	}
+	private void unscheduleOrderLine(YFCElement eMultiApi, YFCElement eOrder, YFCElement eShortage){
+		YFCElement eApi = eMultiApi.createChild("API");
+		eApi.setAttribute("Name", "unScheduleOrder");
+		YFCElement eInput = eApi.createChild("Input").createChild("UnScheduleOrder");
+		eInput.setAttribute("OrderHeaderKey", eOrder.getAttribute("OrderHeaderKey"));
+		eInput.setAttribute("RemoveProductFromWorkOrder", "Y");
+		eInput.setAttribute("Override", "Y");
+		for(YFCElement eOL : eOrder.getChildElement("OrderLines", true).getChildren()){
+			YFCElement eOrderLine = eInput.getChildElement("OrderLines", true).createChild("OrderLine");
+			eOrderLine.setAttribute("OrderLineKey", eOL.getAttribute("OrderLineKey"));
+		}
+	}
 	private void createAlert(YFCElement eMultiApi, YFCElement eOrder, YFCElement eShortage){
 		YFCElement eApi = eMultiApi.createChild("API");
 		eApi.setAttribute("Name", "createException");
@@ -154,7 +170,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 			eInbox.setAttribute("AssignedToUserId", eShortage.getAttribute("AssignToUserId"));
 		}
 	}
-	private YFCElement getOrdersForItem(YFCElement eShortage){
+	public static YFCElement getOrdersForItem(YFCElement eShortage){
 		YFCDocument dOrderList = YFCDocument.createDocument("OrderList");
 		if(!YFCCommon.isVoid(eShortage)){
 			if(!YFCCommon.isVoid(eShortage.getAttribute("ItemID")) && !YFCCommon.isVoid(eShortage.getChildElement("ShipNodes", true).getChildElement("ShipNode"))){
@@ -175,26 +191,43 @@ public class BDAInventoryShortAlert implements IBDAService {
 						sb.append(", '" + eShipNode.getAttribute("Node") + "'");
 					}					
 				}
-				sb.append(") AND OH.DOCUMENT_TYPE = '0001' AND II.ORGANIZATION_CODE = ?");
+				sb.append(") AND OH.DOCUMENT_TYPE = '0001' AND ID.QUANTITY > 0 AND II.ORGANIZATION_CODE = ? ORDER BY OH.ORDER_NO, OH.ENTERPRISE_KEY");
 				try {
 					conn = DatabaseConnection.getConnection();
 					PreparedStatement ps = conn.prepareStatement(sb.toString());
 					ps.setString(1, eShortage.getAttribute("ItemID"));
 					ps.setString(2, eShortage.getAttribute("InventoryOrganizationCode"));
 					ResultSet rs = ps.executeQuery();
+					YFCElement eOrderRecord = null;
+					
 					while (rs.next()){
-						YFCElement eOrderRecord = dOrderList.getDocumentElement().createChild("OrderRecord");
-						eOrderRecord.setAttribute("OrderHeaderKey", rs.getString("ORDER_HEADER_KEY").trim());
-						eOrderRecord.setAttribute("OrderNo", rs.getString("ORDER_NO").trim());
-						eOrderRecord.setAttribute("EnterpriseCode", rs.getString("ENTERPRISE_KEY").trim());
-						eOrderRecord.setAttribute("OrderLineKey", rs.getString("ORDER_LINE_KEY").trim());
-						eOrderRecord.setAttribute("ShipNode", rs.getString("SHIPNODE_KEY").trim());
-						eOrderRecord.setAttribute("DemandType", rs.getString("DEMAND_TYPE").trim());
-						eOrderRecord.setAttribute("DemandQuantity", rs.getString("QUANTITY").trim());
-						eOrderRecord.setAttribute("Status", rs.getString("STATUS").trim());
-						eOrderRecord.setAttribute("BillToID", rs.getString("BILL_TO_ID").trim());
-						eOrderRecord.setAttribute("CustomerEMailID", rs.getString("CUSTOMER_EMAILID").trim());
-						eOrderRecord.setAttribute("OrderedQty", rs.getString("ORDERED_QTY").trim());
+						if(YFCCommon.isVoid(eOrderRecord) || !YFCCommon.equals(eOrderRecord.getAttribute("OrderHeaderKey"), rs.getString("ORDER_HEADER_KEY").trim())){
+							eOrderRecord = dOrderList.getDocumentElement().createChild("OrderRecord");
+							eOrderRecord.setAttribute("OrderHeaderKey", rs.getString("ORDER_HEADER_KEY").trim());
+							eOrderRecord.setAttribute("OrderNo", rs.getString("ORDER_NO").trim());
+							eOrderRecord.setAttribute("EnterpriseCode", rs.getString("ENTERPRISE_KEY").trim());
+							eOrderRecord.setAttribute("BillToID", rs.getString("BILL_TO_ID").trim());
+							eOrderRecord.setAttribute("CustomerEMailID", rs.getString("CUSTOMER_EMAILID").trim());
+							
+						}
+						YFCElement eLine = null;
+						for(YFCElement eOrderLine : eOrderRecord.getChildElement("OrderLines", true).getChildren()){
+							if(YFCCommon.equals(eOrderLine.getAttribute("OrderLineKey"), rs.getString("ORDER_LINE_KEY").trim())){
+								eLine = eOrderLine;
+								break;
+							}
+						}
+						if(YFCCommon.isVoid(eLine)){
+							eLine = eOrderRecord.getChildElement("OrderLines", true).createChild("OrderLine");
+							eLine.setAttribute("OrderLineKey", rs.getString("ORDER_LINE_KEY").trim());
+							eLine.setAttribute("OrderedQty", rs.getString("ORDERED_QTY").trim());
+						}
+						YFCElement eDemand = eLine.getChildElement("Demands", true).createChild("Demand");
+						eDemand.setAttribute("ShipNode", rs.getString("SHIPNODE_KEY").trim());
+						eDemand.setAttribute("DemandType", rs.getString("DEMAND_TYPE").trim());
+						eDemand.setAttribute("DemandQuantity", rs.getString("QUANTITY").trim());
+						eDemand.setAttribute("Status", rs.getString("STATUS").trim());
+					
 					}
 				} catch(SQLException | ClassNotFoundException e){
 					e.printStackTrace();

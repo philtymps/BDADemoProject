@@ -1,9 +1,11 @@
 package com.scripts;
 
 import java.util.HashMap;
+import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.IBDAService;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.shared.ycp.YFSContext;
@@ -12,7 +14,7 @@ import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 
-public class CompleteOrder {
+public class CompleteOrder implements IBDAService {
 
 	public CompleteOrder(){
 	
@@ -75,7 +77,7 @@ public class CompleteOrder {
 		            env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
 					dOrder = localApi.invoke(env, "getOrderDetails", inputDoc);
             	}
-            	confirmShipment(env, dOrder, eResults, localApi, false, false);
+            	//confirmShipment(env, dOrder, eResults, localApi, false, false);
             	env.setApiTemplate("getCompleteOrderDetails", getOrderDetailsTemplate());
     			dOrder = localApi.invoke(env, "getCompleteOrderDetails", inputDoc);
     			eGetOrderDetailsOutput = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
@@ -85,6 +87,11 @@ public class CompleteOrder {
 		}
 		
 	}
+	
+	public Document invoke(YFSEnvironment env, Document inputDoc){
+		return completeOrder(env, inputDoc);
+	}
+	
 	public Document completeOrder(YFSEnvironment env, Document inputDoc){
 		YFCDocument output = YFCDocument.createDocument("Results");
 		YFCElement eResults = output.getDocumentElement();
@@ -105,6 +112,7 @@ public class CompleteOrder {
 				YFCElement eOrder = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 				if(YFCCommon.equals(eOrder.getAttribute("DocumentType"), "0005") || YFCCommon.equals(eOrder.getAttribute("DocumentType"), "0006")){
 					completeTPOrder(env,l_OutputXml,eResults, localApi,inputDoc);
+					invoicedOrder = false;
 				} else {
 					try {
 			            removeHolds(env, l_OutputXml, eResults, localApi);
@@ -382,7 +390,19 @@ public class CompleteOrder {
 						if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("OrderReleaseKey")) && eOrderLineStatus.getAttribute("Status").compareTo("3350") < 0) {
 							if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 								YFCDocument dShipment;
-								if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) && eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("STORE") ||  eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("_S")){
+								if (!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001")){
+									dShipment = confirmShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
+									if (YFCCommon.isVoid(dShipment)){
+										dShipment = YFCDocument.createDocument("Shipment");
+										YFCElement eShipment = dShipment.getDocumentElement();
+										eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
+										//eShipment.setAttribute("TrackingNo", "1B"+eOrderLineStatus.getAttribute("OrderReleaseKey"));
+										eShipment.setAttribute("TrackingNo", "JD0002215620664620");
+										if (bCashAndCarry)
+											eShipment.setAttribute("ShipmentType", "CashAndCarry");
+										confirmShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
+									}
+								} else if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) && eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("STORE") ||  eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("_S")){
 									dShipment = createShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
 									if (YFCCommon.isVoid(dShipment)){
 										dShipment = YFCDocument.createDocument("Shipment");
@@ -474,6 +494,11 @@ public class CompleteOrder {
 						eCreatedShipment.setAttribute("Confirm", "Y");
 						eCreatedShipment.setAttribute("Create", "Y");
 					} catch(Exception yex) {
+						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
+						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
+						eCreatedShipment.setAttribute("Confirm", "N");
+						eCreatedShipment.setAttribute("Create", "N");
+						eCreatedShipment.setAttribute("Error", yex.toString());
 			        	System.out.println("The api call confirmShipment failed using the following input xml: " + confirmShipments.get(key));
 			        	System.out.println("The error thrown was: " );    
 			        	System.out.println(yex.toString());
@@ -493,6 +518,10 @@ public class CompleteOrder {
 						}
 						
 					} catch(Exception yex) {
+						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
+						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
+						eCreatedShipment.setAttribute("Create", "N");
+						eCreatedShipment.setAttribute("Error", yex.toString());
 			        	System.out.println("The api call confirmShipment failed using the following input xml: " + createShipments.get(key));
 			        	System.out.println("The error thrown was: " );    
 			        	System.out.println(yex.toString());
@@ -582,5 +611,17 @@ public class CompleteOrder {
 	        	System.out.println(yex.toString());
 	            yex.printStackTrace();
 	        }
+	}
+
+	@Override
+	public String getServiceName() {
+		// TODO Auto-generated method stub
+		return "completeOrder";
+	}
+
+	@Override
+	public void setProperties(Properties props) {
+		// TODO Auto-generated method stub
+		
 	}
 }

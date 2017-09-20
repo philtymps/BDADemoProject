@@ -28,6 +28,11 @@ public class BDAEasyService {
 						serviceInput = dServiceInput.getDocument();
 					}
 				}
+				if(!YFCCommon.isVoid(eInput.getChildElement("Template"))){
+					YFCElement eActualTemplate = eInput.getChildElement("Template").getFirstChildElement();
+					YFCDocument template = YFCDocument.getDocumentFor(eActualTemplate.getString());
+					env.setTxnObject("serviceTemplate", template.getDocument());
+				}
 				if(!YFCCommon.isVoid(eInput.getChildElement("Properties"))){
 					Properties p = new Properties();
 					for(YFCElement eProp : eInput.getChildElement("Properties").getChildren()){
@@ -37,11 +42,18 @@ public class BDAEasyService {
 				}
 				
 				if(!YFCCommon.isVoid(service)){
-					return service.invoke(env, serviceInput);
+					Document output = service.invoke(env, serviceInput);
+					if(!YFCCommon.isVoid(env.getTxnObject("serviceTemplate"))){
+						env.setTxnObject("serviceTemplate", null);
+					}
+					return output;
 				} else {
 					YFCDocument output = YFCDocument.createDocument("Error");
 					YFCElement eOutput = output.getDocumentElement();
 					eOutput.setAttribute("Message", "Service " + sServiceName + " not defined in Service Collection");
+					if(!YFCCommon.isVoid(env.getTxnObject("serviceTemplate"))){
+						env.setTxnObject("serviceTemplate", null);
+					}
 					return output.getDocument();
 				}
 			} 
