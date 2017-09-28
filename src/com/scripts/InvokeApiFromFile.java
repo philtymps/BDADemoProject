@@ -125,6 +125,7 @@ public class InvokeApiFromFile {
 					if (tmp.exists()){
 						YFCDocument dFileInput = YFCDocument.getDocumentForXMLFile(sFileName);
 						try {	
+							dFileInput = replaceVariables(dFileInput);
 							YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
 							Document temp = localApi.invoke(env, sApiName, dFileInput.getDocument());
 							YFCElement eApiOut = eOutput.createChild("Api");

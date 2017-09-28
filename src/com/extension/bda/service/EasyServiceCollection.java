@@ -3,10 +3,12 @@ package com.extension.bda.service;
 import java.util.HashMap;
 
 import com.extension.bda.service.expose.BDAEntityApi;
+import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
 import com.extension.bda.service.giv.BDAGetDemandOrders;
 import com.extension.bda.service.giv.BDAInventoryShortAlert;
 import com.extension.bda.service.giv.BDAProcessPurchaseOrder;
 import com.extension.bda.service.promotions.BDAGetPreviouslyViewedItems;
+import com.extension.bda.service.shipments.BDASetCarrierOnShipmentIfRequired;
 import com.extension.gucci.GucciGetLinesToStealFrom;
 import com.extension.gucci.GucciStealInventory;
 import com.scripts.CompleteOrder;
@@ -28,6 +30,8 @@ public class EasyServiceCollection {
 		map.put("completeOrder", new CompleteOrder());
 		map.put("stealInventoryFromLine", new GucciStealInventory());
 		map.put("getOrdersToStealFrom", new GucciGetLinesToStealFrom());
+		map.put("resolveHoldsAndPayment", new BDAHoldsAndPayment());
+		map.put("setCarrierOnShipment", new BDASetCarrierOnShipmentIfRequired());
 	}
 	
 	public IBDAService getService(String sServiceName){

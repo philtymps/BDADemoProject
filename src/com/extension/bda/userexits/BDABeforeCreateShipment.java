@@ -21,10 +21,6 @@ public class BDABeforeCreateShipment implements YDMBeforeCreateShipment {
 		YFCDocument inDoc = YFCDocument.getDocumentFor(dInput);
 		
 		YFCElement eShipment = inDoc.getDocumentElement();
-		
-		if(YFCCommon.isVoid(eShipment.getAttribute("SCAC"))){
-			eShipment.setAttribute("SCAC", "Y_ANY");
-		}
 		for(YFCElement eShipmentLine : eShipment.getChildElement("ShipmentLines", true).getChildren()){
 			if(YFCCommon.isVoid(eShipmentLine.getAttribute("DepartmentCode"))){
 				String sDepartment = getDepartmentForSku(eShipmentLine.getAttribute("ItemID"));

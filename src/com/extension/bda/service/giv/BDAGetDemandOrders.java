@@ -68,7 +68,7 @@ public class BDAGetDemandOrders implements IBDAService {
 			if(!YFCCommon.isVoid(eItemDemand.getAttribute("ItemID"))){
 				Connection conn = null;
 				
-				StringBuilder sb = new StringBuilder("SELECT OH.ORDER_NO, OL.ORDER_HEADER_KEY, OH.ENTERPRISE_KEY, OL.ORDER_LINE_KEY, ORS.STATUS, OL.ITEM_ID, OL.ORDERED_QTY, ID.DEMAND_TYPE, ID.OWNER_KEY, ID.SHIPNODE_KEY, ID.QUANTITY, OH.BILL_TO_ID, OH.CUSTOMER_EMAILID ");
+				StringBuilder sb = new StringBuilder("SELECT OH.ORDER_NO, OH.DOCUMENT_TYPE, OH.ORDER_DATE, OL.ORDER_HEADER_KEY, OH.ENTERPRISE_KEY, IDD.ORDER_LINE_KEY, ORS.STATUS, OL.ITEM_ID, OL.ORDERED_QTY, ID.DEMAND_TYPE, ID.OWNER_KEY, ID.SHIPNODE_KEY, IDD.QUANTITY, OH.BILL_TO_ID, OH.CUSTOMER_EMAILID ");
 				sb.append("FROM OMDB.YFS_ORDER_RELEASE_STATUS ORS ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE_SCHEDULE OLS ON OLS.ORDER_LINE_SCHEDULE_KEY = ORS.ORDER_LINE_SCHEDULE_KEY ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE OL ON OL.ORDER_LINE_KEY = OLS.ORDER_LINE_KEY ");
@@ -85,8 +85,9 @@ public class BDAGetDemandOrders implements IBDAService {
 							sb.append(", '" + eShipNode.getAttribute("Node") + "'");
 						}					
 					}
+					sb.append(") ");
 				}
-				sb.append(") AND ID.QUANTITY > 0 ");
+				sb.append("AND ID.QUANTITY > 0 AND ORS.STATUS_QUANTITY > 0 ");
 				if(!YFCCommon.isVoid(eItemDemand.getAttribute("DemandType"))){
 					 sb.append("AND ID.DEMAND_TYPE = ? ");
 				}
@@ -107,6 +108,8 @@ public class BDAGetDemandOrders implements IBDAService {
 							eOrderRecord = dOrderList.getDocumentElement().createChild("Order");
 							eOrderRecord.setAttribute("OrderHeaderKey", rs.getString("ORDER_HEADER_KEY").trim());
 							eOrderRecord.setAttribute("OrderNo", rs.getString("ORDER_NO").trim());
+							eOrderRecord.setAttribute("DocumentType", rs.getString("DOCUMENT_TYPE").trim());
+							eOrderRecord.setAttribute("OrderDate", rs.getString("ORDER_DATE").trim());
 							eOrderRecord.setAttribute("EnterpriseCode", rs.getString("ENTERPRISE_KEY").trim());
 							if(!YFCCommon.isVoid(rs.getString("BILL_TO_ID"))){
 								eOrderRecord.setAttribute("BillToID", rs.getString("BILL_TO_ID").trim());

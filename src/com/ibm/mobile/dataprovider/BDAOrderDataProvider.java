@@ -33,6 +33,14 @@ public class BDAOrderDataProvider implements IBDADataProvider {
 				}
 				interestingElement.setAttribute("DisplayExchangeType", description);
 			}
+			if (interestingElement.hasAttribute("PaymentStatus") && !interestingElement.hasAttribute("PaymentStatusDesc") && !YFCCommon.isVoid(interestingElement.getAttribute("PaymentStatus")) && YFCCommon.equals(sAttribute, "PaymentStatusDesc")){
+				String sCodeValue = interestingElement.getAttribute("PaymentStatus");
+				String description = BDADataProviderUtils.getPaymentStatusDesc(context, localApi, sCodeValue);
+				if(YFCCommon.isVoid(description)){
+					description=sCodeValue;
+				}
+				interestingElement.setAttribute("PaymentStatusDesc", description);
+			}
 			if (interestingElement.hasAttribute("BillToID") && !interestingElement.hasAttribute("CustomerMasterOrganizationCode") && !YFCCommon.isVoid(interestingElement.getAttribute("BillToID")) && !YFCCommon.isVoid(interestingElement.getAttribute("EnterpriseCode")) && YFCCommon.equals(sAttribute, "DisplayEntryType")){
 				String enterpriseCode = interestingElement.getAttribute("EnterpriseCode");
 				interestingElement.setAttribute("CustomerMasterOrganizationCode", BDADataProviderUtils.getCustomerMasterOrg(context, localApi, enterpriseCode));

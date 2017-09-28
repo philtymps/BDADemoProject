@@ -390,6 +390,7 @@ public class CompleteOrder implements IBDAService {
 						if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("OrderReleaseKey")) && eOrderLineStatus.getAttribute("Status").compareTo("3350") < 0) {
 							if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 								YFCDocument dShipment;
+								boolean confirm = false;
 								if (!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001")){
 									dShipment = confirmShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
 									if (YFCCommon.isVoid(dShipment)){
@@ -401,6 +402,7 @@ public class CompleteOrder implements IBDAService {
 										if (bCashAndCarry)
 											eShipment.setAttribute("ShipmentType", "CashAndCarry");
 										confirmShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
+										confirm = true;
 									}
 								} else if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) && eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("STORE") ||  eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("_S")){
 									dShipment = createShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
@@ -423,9 +425,12 @@ public class CompleteOrder implements IBDAService {
 										if (bCashAndCarry)
 											eShipment.setAttribute("ShipmentType", "CashAndCarry");
 										confirmShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
+										confirm = true;
 									}
 								}
+									
 								
+										
 								YFCElement eShipmentLine = dShipment.getDocumentElement().getChildElement("ShipmentLines", true).createChild("ShipmentLine"); 
 								eShipmentLine.setAttribute("DocumentType", eOrderOut.getAttribute("DocumentType"));
 								eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
@@ -437,6 +442,18 @@ public class CompleteOrder implements IBDAService {
 								eShipmentLine.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
 								eShipmentLine.setAttribute("Quantity", eOrderLineStatus.getAttribute("StatusQty"));
 								eShipmentLine.setAttribute("OrderReleaseKey", eOrderLineStatus.getAttribute("OrderReleaseKey"));
+								if(confirm){
+									if(eOrderLine.getChildElement("Item", true).getAttribute("ItemID").contains("IPH")){
+										long serialNo = System.currentTimeMillis();									
+										for(int j = 0; j < eOrderLineStatus.getIntAttribute("StatusQty"); j++){
+											String serial =  (serialNo + j) + "-X39";
+											YFCElement eShipmentTagSerial = eShipmentLine.getChildElement("ShipmentTagSerials", true).createChild("ShipmentTagSerial");
+											eShipmentTagSerial.setAttribute("Quantity", 1);
+											eShipmentTagSerial.setAttribute("SerialNo", serial);											
+										}
+									}
+								}
+								
 								linesExist = true;
 							}
 						}

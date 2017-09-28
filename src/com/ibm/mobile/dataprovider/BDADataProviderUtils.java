@@ -39,6 +39,7 @@ public class BDADataProviderUtils {
 	private static BDASimpleCache <String, String> orgLocaleMap;
 	private static BDASimpleCache <String, String> ruleMap;
 	private static BDASimpleCache <String, String> statusMap;
+	private static BDASimpleCache <String, String> paymentStatusMap;
 	
 	public static boolean flushCache(){
 		try {
@@ -53,6 +54,7 @@ public class BDADataProviderUtils {
 			getLocaleMap().clear();
 			getOrgLocaleMap().clear();
 			getRuleMap().clear();
+			getPaymentStatusMap().clear();
 		} catch (Exception e){
 			return false;
 		}
@@ -143,6 +145,14 @@ public class BDADataProviderUtils {
 		return statusMap;
 		
 	}
+	
+	private static BDASimpleCache <String, String> getPaymentStatusMap(){
+		if(paymentStatusMap == null){
+			paymentStatusMap = new BDASimpleCache<String, String>(50);
+		}
+		return paymentStatusMap;
+	}
+	
 	public static String getOrganizationCode(YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement) {
 		if (!YFCCommon.isVoid(interestingElement.getAttribute("OrganizationCode"))){
 			return interestingElement.getAttribute("OrganizationCode");
@@ -271,6 +281,22 @@ public class BDADataProviderUtils {
 		return map.get("SCAC_" + sCallingOrg + "_" + sScac);
 	}
 	
+	public static String getPaymentStatusDesc(YFSEnvironment context, YIFApi localApi, String sPaymentStatus){
+		BDASimpleCache<String, String> map = getPaymentStatusMap();
+		if (!map.containsKey(sPaymentStatus)) {
+			YFCDocument dInput = YFCDocument.createDocument("PaymentStatus");
+			YFCElement eInput = dInput.getDocumentElement();
+			YFCDocument dTemplate = YFCDocument.createDocument("PaymentStatusList");
+			YFCElement eO = dTemplate.getDocumentElement().createChild("PaymentStatus");
+			eO.setAttribute("CodeType", "");
+			eO.setAttribute("Description", "");
+			YFCElement eOutput = invokeApi(localApi, context,"getPaymentStatusList", dInput.getDocument(), dTemplate.getDocument());
+			for (YFCElement eOrg : eOutput.getChildren()){
+				map.put(eOrg.getAttribute("CodeType"), eOrg.getAttribute("Description"));
+			}
+		}
+		return map.get(sPaymentStatus);
+	}
 	public static String getUnitOfMeasureDescription(YFSEnvironment context, YIFApi localApi,String uom, String callingOrg, String itemGroupCode) {
 		BDASimpleCache<String, String> mapDesc = getUnitOfMeasureMap();
 		String key = getUOMKey(uom, callingOrg, itemGroupCode);

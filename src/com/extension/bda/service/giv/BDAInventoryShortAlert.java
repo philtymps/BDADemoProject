@@ -10,6 +10,7 @@ import org.w3c.dom.Document;
 
 import com.extension.bda.object.DatabaseConnection;
 import com.extension.bda.service.IBDAService;
+import com.scripts.CompleteOrder;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
@@ -41,6 +42,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 				YFCElement eOrders = getOrdersForItem(eShortage);
 				if(eShortage.getBooleanAttribute("RaiseAlert") || eShortage.getBooleanAttribute("UnscheduleOrders", true)){
 					for(YFCElement eOrder : eOrders.getChildren()){
+						
 						if(eShortage.getBooleanAttribute("RaiseAlert")){
 							createAlert(eMultiApi, eOrder, eShortage);
 						}
@@ -123,15 +125,21 @@ public class BDAInventoryShortAlert implements IBDAService {
 		}
 	}
 	private void unscheduleOrderLine(YFCElement eMultiApi, YFCElement eOrder, YFCElement eShortage){
-		YFCElement eApi = eMultiApi.createChild("API");
-		eApi.setAttribute("Name", "unScheduleOrder");
-		YFCElement eInput = eApi.createChild("Input").createChild("UnScheduleOrder");
-		eInput.setAttribute("OrderHeaderKey", eOrder.getAttribute("OrderHeaderKey"));
-		eInput.setAttribute("RemoveProductFromWorkOrder", "Y");
-		eInput.setAttribute("Override", "Y");
 		for(YFCElement eOL : eOrder.getChildElement("OrderLines", true).getChildren()){
-			YFCElement eOrderLine = eInput.getChildElement("OrderLines", true).createChild("OrderLine");
-			eOrderLine.setAttribute("OrderLineKey", eOL.getAttribute("OrderLineKey"));
+			for(YFCElement eDemand : eOL.getChildElement("Demands", true).getChildren()){
+				if(CompleteOrder.statusGreaterThan(eDemand.getAttribute("Status"), "1499") && CompleteOrder.statusLessThan(eDemand.getAttribute("Status"), "3700")){
+					YFCElement eApi = eMultiApi.createChild("API");
+					eApi.setAttribute("Name", "unScheduleOrder");
+					YFCElement eInput = eApi.createChild("Input").createChild("UnScheduleOrder");
+					eInput.setAttribute("OrderHeaderKey", eOrder.getAttribute("OrderHeaderKey"));
+					eInput.setAttribute("RemoveProductFromWorkOrder", "Y");
+					eInput.setAttribute("Override", "Y");
+					YFCElement eOrderLine = eInput.getChildElement("OrderLines", true).createChild("OrderLine");
+					eOrderLine.setAttribute("OrderLineKey", eOL.getAttribute("OrderLineKey"));
+					break;
+				}
+			}
+			
 		}
 	}
 	private void createAlert(YFCElement eMultiApi, YFCElement eOrder, YFCElement eShortage){
@@ -176,13 +184,12 @@ public class BDAInventoryShortAlert implements IBDAService {
 			if(!YFCCommon.isVoid(eShortage.getAttribute("ItemID")) && !YFCCommon.isVoid(eShortage.getChildElement("ShipNodes", true).getChildElement("ShipNode"))){
 				Connection conn = null;
 				
-				StringBuilder sb = new StringBuilder("SELECT OH.ORDER_NO, OL.ORDER_HEADER_KEY, OH.ENTERPRISE_KEY, OL.ORDER_LINE_KEY, ORS.STATUS, OL.ITEM_ID, OL.ORDERED_QTY, ID.DEMAND_TYPE, ID.OWNER_KEY, ID.SHIPNODE_KEY, ID.QUANTITY, OH.BILL_TO_ID, OH.CUSTOMER_EMAILID ");
-				sb.append("FROM OMDB.YFS_ORDER_RELEASE_STATUS ORS ");
-				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE_SCHEDULE OLS ON OLS.ORDER_LINE_SCHEDULE_KEY = ORS.ORDER_LINE_SCHEDULE_KEY ");
-				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE OL ON OL.ORDER_LINE_KEY = OLS.ORDER_LINE_KEY ");
+				StringBuilder sb = new StringBuilder("SELECT OH.ORDER_NO, OL.ORDER_HEADER_KEY, OH.ENTERPRISE_KEY, OL.ORDER_LINE_KEY, OL.ITEM_ID, OL.ORDERED_QTY, ORS.STATUS,ORS.STATUS_QUANTITY, ID.DEMAND_TYPE, ID.OWNER_KEY, ID.SHIPNODE_KEY, ID.QUANTITY, OH.BILL_TO_ID, OH.CUSTOMER_EMAILID ");
+				sb.append("FROM OMDB.YFS_ORDER_LINE OL ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_HEADER OH ON OH.ORDER_HEADER_KEY = OL.ORDER_HEADER_KEY ");
-				sb.append("INNER JOIN OMDB.YFS_INVENTORY_ITEM II ON (II.ITEM_ID = OL.ITEM_ID AND II.UOM = OL.UOM) ");
-				sb.append("INNER JOIN OMDB.YFS_INVENTORY_DEMAND ID ON (ID.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY AND OLS.SHIP_NODE  = ID.SHIPNODE_KEY) ");
+				sb.append("INNER JOIN OMDB.YFS_INVENTORY_DEMAND_DTLS IDD ON IDD.ORDER_LINE_KEY = OL.ORDER_LINE_KEY ");
+				sb.append("INNER JOIN OMDB.YFS_INVENTORY_DEMAND ID ON ID.INVENTORY_DEMAND_KEY = IDD.INVENTORY_DEMAND_KEY ");
+				sb.append("INNER JOIN OMDB.YFS_ORDER_RELEASE_STATUS ORS ON ORS.ORDER_LINE_KEY = OL.ORDER_LINE_KEY ");
 				sb.append("WHERE OL.ITEM_ID = ? AND ID.SHIPNODE_KEY in (");
 				for (YFCElement eShipNode : eShortage.getChildElement("ShipNodes").getChildren()){
 					if(eShipNode.equals(eShortage.getChildElement("ShipNodes", true).getFirstChildElement())){
@@ -191,12 +198,11 @@ public class BDAInventoryShortAlert implements IBDAService {
 						sb.append(", '" + eShipNode.getAttribute("Node") + "'");
 					}					
 				}
-				sb.append(") AND OH.DOCUMENT_TYPE = '0001' AND ID.QUANTITY > 0 AND II.ORGANIZATION_CODE = ? ORDER BY OH.ORDER_NO, OH.ENTERPRISE_KEY");
+				sb.append(") AND OH.DOCUMENT_TYPE = '0001' AND ID.QUANTITY > 0 AND ORS.STATUS_QUANTITY > 0 ORDER BY OH.ORDER_NO, OH.ENTERPRISE_KEY");
 				try {
 					conn = DatabaseConnection.getConnection();
 					PreparedStatement ps = conn.prepareStatement(sb.toString());
 					ps.setString(1, eShortage.getAttribute("ItemID"));
-					ps.setString(2, eShortage.getAttribute("InventoryOrganizationCode"));
 					ResultSet rs = ps.executeQuery();
 					YFCElement eOrderRecord = null;
 					
@@ -225,9 +231,9 @@ public class BDAInventoryShortAlert implements IBDAService {
 						YFCElement eDemand = eLine.getChildElement("Demands", true).createChild("Demand");
 						eDemand.setAttribute("ShipNode", rs.getString("SHIPNODE_KEY").trim());
 						eDemand.setAttribute("DemandType", rs.getString("DEMAND_TYPE").trim());
-						eDemand.setAttribute("DemandQuantity", rs.getString("QUANTITY").trim());
+						eDemand.setAttribute("DemandQuantity", rs.getString("QUANTITY").trim());	
 						eDemand.setAttribute("Status", rs.getString("STATUS").trim());
-					
+						eDemand.setAttribute("StatusQuantity", rs.getString("STATUS_QUANTITY").trim());
 					}
 				} catch(SQLException | ClassNotFoundException e){
 					e.printStackTrace();

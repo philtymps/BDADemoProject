@@ -44,15 +44,20 @@ public class GucciStealInventory implements IBDAService {
 			YFCElement eInput = dInput.getDocumentElement();
 			if(!YFCCommon.isVoid(eInput.getAttribute("ItemID"))){
 				Connection conn = null;
-				StringBuilder sb = new StringBuilder("SELECT OH.PRIORITY_CODE, OL.ORDER_HEADER_KEY, OL.ORDER_LINE_KEY, OLS.SHIP_NODE, ID.DEMAND_TYPE, ID.QUANTITY AS DEMAND_QUANTITY, OLS.EXPECTED_SHIPMENT_DATE, ORS.STATUS, SUP.QUANTITY AS SUPPLY_QUANTITY ");
+				StringBuilder sb = new StringBuilder("SELECT OH.PRIORITY_CODE, OL.ORDER_HEADER_KEY, OL.ORDER_LINE_KEY, ID.SHIPNODE_KEY AS SHIP_NODE, ID.DEMAND_TYPE, ID.QUANTITY AS DEMAND_QUANTITY, OLS.EXPECTED_SHIPMENT_DATE, ORS.STATUS, SUP.QUANTITY AS SUPPLY_QUANTITY ");
 				sb.append("FROM OMDB.YFS_ORDER_HEADER OH ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE OL ON OL.ORDER_HEADER_KEY = OH.ORDER_HEADER_KEY ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_RELEASE_STATUS ORS ON ORS.ORDER_LINE_KEY = OL.ORDER_LINE_KEY ");
 				sb.append("INNER JOIN OMDB.YFS_ORDER_LINE_SCHEDULE OLS ON OLS.ORDER_LINE_SCHEDULE_KEY = ORS.ORDER_LINE_SCHEDULE_KEY ");
 				sb.append("INNER JOIN OMDB.YFS_INVENTORY_ITEM II ON (II.ITEM_ID = OL.ITEM_ID AND II.UOM = OL.UOM) ");
-				sb.append("INNER JOIN OMDB.YFS_INVENTORY_DEMAND ID ON ID.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY AND OLS.SHIP_NODE = ID.SHIPNODE_KEY ");
+				sb.append("INNER JOIN OMDB.YFS_INVENTORY_DEMAND_DTLS IDD ON IDD.ORDER_LINE_KEY = OL.ORDER_LINE_KEY ");
+				sb.append("INNER JOIN OMDB.YFS_INVENTORY_DEMAND ID ON ID.INVENTORY_DEMAND_KEY = IDD.INVENTORY_DEMAND_KEY ");
 				sb.append("INNER JOIN OMDB.YFS_INVENTORY_SUPPLY SUP ON SUP.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY AND OLS.SHIP_NODE = SUP.SHIPNODE_KEY ");
+				sb.append("INNER JOIN OMDB.YFS_INVENTORY_CONSIDERATIONS IC ON IC.DEMAND_TYPE = ID.DEMAND_TYPE AND IC.SUPPLY_TYPE = SUP.SUPPLY_TYPE ");
 				sb.append("WHERE II.ITEM_ID = ? AND ORS.STATUS < ? AND ORS.STATUS_QUANTITY > 0 AND ID.QUANTITY > 0");
+				if(!YFCCommon.isVoid(eInput.getAttribute("SupplyType"))){
+					sb.append("AND SUP.SUPPLY_TYPE = ? ");
+				}
 				try {
 					conn = DatabaseConnection.getConnection();
 					PreparedStatement ps = conn.prepareStatement(sb.toString());
@@ -62,6 +67,10 @@ public class GucciStealInventory implements IBDAService {
 					} else {
 						ps.setString(2, "3700");
 					}
+					if(!YFCCommon.isVoid(eInput.getAttribute("SupplyType"))){
+						ps.setString(3, eInput.getAttribute("SupplyType"));
+					}
+					System.out.println(sb.toString());
 					ResultSet rs = ps.executeQuery();
 					while (rs.next()){
 						YFCElement eOrderRecord = dOrderList.getDocumentElement().createChild("OrderRecord");

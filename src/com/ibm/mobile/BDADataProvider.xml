@@ -140,11 +140,14 @@
 		<InterestedIn>
 			<Element path="/Order" />
 			<Element path="/Order/ReturnOrders/ReturnOrder" />
+			<Element path="/OrderList/Order" />
 			<Attribute path="Order" name="EntryType" />
 			<Attribute path="ReturnOrder" name="EntryType" />
+			<Attribute path="Order" name="PaymentStatus" />
 		</InterestedIn>
 		<NewAttributes>
 			<Attribute name="DisplayEntryType" />
+			<Attribute name="PaymentStatusDesc" />
 		</NewAttributes>
 	</AdditionalDataProvider>
 	<AdditionalDataProvider
