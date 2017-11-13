@@ -1,5 +1,6 @@
 package com.scripts;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -266,6 +267,10 @@ public class CompleteOrder implements IBDAService {
 	}
 	
 	public static boolean processOrderPayments(YFSEnvironment env, Document dOrder, boolean auth, YFCElement eOutput, YIFApi m_YifApi){
+		if(dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("NOT_APPLICABLE")){
+			eOutput.setAttribute("Authorized", "NA");
+			return true;
+		}
 		if (auth && (dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("AUTHORIZED") || dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("INVOICED"))){
 			eOutput.setAttribute("Pre-Authorized", "Y");
 			return true;
@@ -344,24 +349,128 @@ public class CompleteOrder implements IBDAService {
 		eOrderLine.setAttribute("DeliveryMethod", "");
 		eOrderLine.setAttribute("IsBundleParent","");
 		eOrderLine.setAttribute("ShipNode","");
+		eOrderLine.setAttribute("OrderHeaderKey", "");
 		YFCElement eItem = eOrderLine.getChildElement("Item", true);
 		eItem.setAttribute("ItemID", "");
 		eItem.setAttribute("UnitOfMeasure", "");
 		eItem.setAttribute("ProductClass", "");
+		YFCElement eSchedule = eOrderLine.getChildElement("Schedules", true).getChildElement("Schedule", true);
+		eSchedule.setAttribute("BatchNo", "");
+		eSchedule.setAttribute("LotNumber", "");
+		eSchedule.setAttribute("RevisionNo", "");
+		eSchedule.setAttribute("Quantity", "");
+		eSchedule.setAttribute("OrderLineScheduleKey", "");
 		YFCElement eShipmentLine = eOrderLine.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine", true);
 		eShipmentLine.setAttribute("ActualQuantity", "");
 		eShipmentLine.setAttribute("OrderReleaseKey", "");
 		eShipmentLine.setAttribute("Quantity", "");
 		eShipmentLine.setAttribute("ShipmentLineKey", "");
 		eShipmentLine.setAttribute("ShipmentKey", "");
+		YFCElement eShipmentTagSerial = eShipmentLine.getChildElement("ShipmentTagSerials", true).getChildElement("ShipmentTagSerial", true);
+		eShipmentTagSerial.setAttribute("BatchNo", "");
+		eShipmentTagSerial.setAttribute("SerialNo", "");
+		eShipmentTagSerial.setAttribute("LotNumber", "");
+		eShipmentTagSerial.setAttribute("RevisionNo", "");
+		eShipmentTagSerial.setAttribute("Quantity", "");
 		YFCElement eOrderStatus = eOrderLine.getChildElement("OrderStatuses", true).getChildElement("OrderStatus",true);
 		eOrderStatus.setAttribute("OrderLineKey", "");
 		eOrderStatus.setAttribute("OrderReleaseKey", "");
+		eOrderStatus.setAttribute("OrderLineScheduleKey", "");
 		eOrderStatus.setAttribute("ShipNode", "");
 		eOrderStatus.setAttribute("Status", "");
 		eOrderStatus.setAttribute("StatusQty", "");
 		eOrderStatus.setAttribute("OrderHeaderKey", "");
 		return eOrder.getOwnerDocument().getDocument();
+	}
+	
+	public static YFCElement getScheduleForScheduleKey(YFCElement eOrderLine, String sScheduleKey){
+		YFCElement eSchedules = eOrderLine.getChildElement("Schedules", true);
+		for(YFCElement eSchedule : eSchedules.getChildren()){
+			if(eSchedule.getAttribute("OrderLineScheduleKey").equals(sScheduleKey)){
+				return eSchedule;
+			}
+		}
+		return null;
+	}
+
+	public static String getSerialForLine(long serialNo, YFCElement eOriginalOrderLine, YFCElement eSerialItem){
+		for(YFCElement eOSL : eOriginalOrderLine.getChildElement("ShipmentLines", true).getChildren()){
+			for(YFCElement eSTS : eOSL.getChildElement("ShipmentTagSerials", true).getChildren()){
+				if(!YFCCommon.isVoid(eSTS.getAttribute("SerialNo"))){
+					eSTS.setAttribute("Used", true);
+					return eSTS.getAttribute("SerialNo");
+				}
+			}
+		}
+		String serial =  serialNo + "-X39";
+		if(!YFCCommon.isVoid(eSerialItem.getAttribute("Serial"))){
+			serial = eSerialItem.getAttribute("Serial").replace("{serial}", serialNo + "");
+		} 
+		return serial;
+	}
+	
+	public static YFCDocument createShipment(String sIdentifier, YFCElement eOrderLineStatus, boolean bCashAndCarry, HashMap<String, YFCDocument> shipments){
+		if(shipments.containsKey(eOrderLineStatus.getAttribute(sIdentifier))){
+			return shipments.get(eOrderLineStatus.getAttribute(sIdentifier));
+		}
+		YFCDocument	dShipment = YFCDocument.createDocument("Shipment");
+		shipments.put(eOrderLineStatus.getAttribute(sIdentifier), dShipment);
+		YFCElement eShipment = dShipment.getDocumentElement();
+		eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute(sIdentifier) + "_S");
+		eShipment.setAttribute("TrackingNo", "JD" + eOrderLineStatus.getAttribute(sIdentifier));
+		if (bCashAndCarry)
+			eShipment.setAttribute("ShipmentType", "CashAndCarry");
+		return dShipment;
+	}
+	
+	public static YFCElement createShipmentTag(YFCElement eSchedule, YFCElement eShipmentLine, int quantity, String serial){
+		if(!YFCCommon.isVoid(serial) || (!YFCCommon.isVoid(eSchedule) && (!YFCCommon.isVoid(eSchedule.getAttribute("BatchNo")) || !YFCCommon.isVoid(eSchedule.getAttribute("LotNumber")) || !YFCCommon.isVoid(eSchedule.getAttribute("RevisionNo"))))){
+			YFCElement eShipmentTagSerial = eShipmentLine.getChildElement("ShipmentTagSerials", true).createChild("ShipmentTagSerial");
+			eShipmentTagSerial.setAttribute("Quantity", quantity);
+			if(!YFCCommon.isVoid(serial)){
+				eShipmentTagSerial.setAttribute("SerialNo", serial);
+			}
+			if(!YFCCommon.isVoid(eSchedule.getAttribute("BatchNo"))){
+				eShipmentTagSerial.setAttribute("BatchNo", eSchedule.getAttribute("BatchNo"));
+			}
+			if(!YFCCommon.isVoid(eSchedule.getAttribute("LotNumber"))){
+				eShipmentTagSerial.setAttribute("LotNumber", eSchedule.getAttribute("LotNumber"));
+			}
+			if(!YFCCommon.isVoid(eSchedule.getAttribute("RevisionNo"))){
+				eShipmentTagSerial.setAttribute("RevisionNo", eSchedule.getAttribute("RevisionNo"));
+			}
+			return eShipmentTagSerial;
+		}
+		return null;
+	}
+	
+	public static YFCElement createShipmentLine(YFCDocument dShipment, YFCElement eOrderLine, YFCElement eOrderLineStatus, int lineNo, String sDocumentType){
+		YFCElement eShipmentLine = dShipment.getDocumentElement().getChildElement("ShipmentLines", true).createChild("ShipmentLine"); 
+		eShipmentLine.setAttribute("DocumentType", sDocumentType);
+		eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
+		eShipmentLine.setAttribute("UnitOfMeasure", eOrderLine.getChildElement("Item", true).getAttribute("UnitOfMeasure"));
+		eShipmentLine.setAttribute("ProductClass", eOrderLine.getChildElement("Item", true).getAttribute("ProductClass"));
+		eShipmentLine.setAttribute("PrimeLineNo", eOrderLine.getAttribute("PrimeLineNo"));
+		eShipmentLine.setAttribute("SubLineNo", eOrderLine.getAttribute("SubLineNo"));
+		eShipmentLine.setAttribute("ShipmentLineNo", lineNo);
+		eShipmentLine.setAttribute("OrderHeaderKey", eOrderLine.getAttribute("OrderHeaderKey"));
+		eShipmentLine.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
+		eShipmentLine.setAttribute("Quantity", eOrderLineStatus.getAttribute("StatusQty"));
+		if(!YFCCommon.isVoid(eOrderLineStatus.getAttribute("OrderReleaseKey"))){
+			eShipmentLine.setAttribute("OrderReleaseKey", eOrderLineStatus.getAttribute("OrderReleaseKey"));
+		}
+		return eShipmentLine;
+	}
+	
+	public static YFCElement createShipmentResponse(YFCElement eOutput, String sShipmentKey, boolean confirm, boolean create, String error){
+		YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
+		eCreatedShipment.setAttribute("ShipmentKey", sShipmentKey);
+		eCreatedShipment.setAttribute("Confirm", confirm);
+		eCreatedShipment.setAttribute("Create", create);
+		if(!YFCCommon.isVoid(error)){
+			eCreatedShipment.setAttribute("Error", error);
+		}		
+		return eCreatedShipment;
 	}
 	
 	public static String confirmShipment(YFSEnvironment env, Document dOrder, YFCElement eOutput, YIFApi m_YifApi, boolean pushBackroom, boolean bCashAndCarry) {
@@ -378,6 +487,7 @@ public class CompleteOrder implements IBDAService {
             yex.printStackTrace();
         } 
 		
+		
 		if (!YFCCommon.isVoid(getOrderDetailsOutput)){
 			boolean linesExist = false;
 			HashMap<String, YFCDocument> confirmShipments = new HashMap<String, YFCDocument>();
@@ -391,67 +501,36 @@ public class CompleteOrder implements IBDAService {
 							if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 								YFCDocument dShipment;
 								boolean confirm = false;
-								if (!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001")){
-									dShipment = confirmShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
-									if (YFCCommon.isVoid(dShipment)){
-										dShipment = YFCDocument.createDocument("Shipment");
-										YFCElement eShipment = dShipment.getDocumentElement();
-										eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
-										//eShipment.setAttribute("TrackingNo", "1B"+eOrderLineStatus.getAttribute("OrderReleaseKey"));
-										eShipment.setAttribute("TrackingNo", "JD0002215620664620");
-										if (bCashAndCarry)
-											eShipment.setAttribute("ShipmentType", "CashAndCarry");
-										confirmShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
-										confirm = true;
-									}
-								} else if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) && eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("STORE") ||  eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("_S")){
-									dShipment = createShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
-									if (YFCCommon.isVoid(dShipment)){
-										dShipment = YFCDocument.createDocument("Shipment");
-										YFCElement eShipment = dShipment.getDocumentElement();
-										eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
-										if (bCashAndCarry)
-											eShipment.setAttribute("ShipmentType", "CashAndCarry");
-										createShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
-									}
+								if(!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001") || YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) || (!eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("STORE") && !eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("_S"))){
+									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, confirmShipments);
+									confirm = true;
 								} else {
-									dShipment = confirmShipments.get(eOrderLineStatus.getAttribute("OrderReleaseKey"));
-									if (YFCCommon.isVoid(dShipment)){
-										dShipment = YFCDocument.createDocument("Shipment");
-										YFCElement eShipment = dShipment.getDocumentElement();
-										eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
-										//eShipment.setAttribute("TrackingNo", "1B"+eOrderLineStatus.getAttribute("OrderReleaseKey"));
-										eShipment.setAttribute("TrackingNo", "JD0002215620664620");
-										if (bCashAndCarry)
-											eShipment.setAttribute("ShipmentType", "CashAndCarry");
-										confirmShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
-										confirm = true;
-									}
+									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, createShipments);
 								}
 									
+								YFCElement eShipmentLine = createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
+								YFCElement eSchedule = getScheduleForScheduleKey(eOrderLine, eOrderLineStatus.getAttribute("OrderLineScheduleKey"));
 								
-										
-								YFCElement eShipmentLine = dShipment.getDocumentElement().getChildElement("ShipmentLines", true).createChild("ShipmentLine"); 
-								eShipmentLine.setAttribute("DocumentType", eOrderOut.getAttribute("DocumentType"));
-								eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
-								eShipmentLine.setAttribute("UnitOfMeasure", eOrderLine.getChildElement("Item", true).getAttribute("UnitOfMeasure"));
-								eShipmentLine.setAttribute("ProductClass", eOrderLine.getChildElement("Item", true).getAttribute("ProductClass"));
-								eShipmentLine.setAttribute("PrimeLineNo", eOrderLine.getAttribute("PrimeLineNo"));
-								eShipmentLine.setAttribute("SubLineNo", eOrderLine.getAttribute("SubLineNo"));
-								eShipmentLine.setAttribute("ShipmentLineNo", ++i);
-								eShipmentLine.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
-								eShipmentLine.setAttribute("Quantity", eOrderLineStatus.getAttribute("StatusQty"));
-								eShipmentLine.setAttribute("OrderReleaseKey", eOrderLineStatus.getAttribute("OrderReleaseKey"));
+								
+								boolean serialize = false;
 								if(confirm){
-									if(eOrderLine.getChildElement("Item", true).getAttribute("ItemID").contains("IPH")){
-										long serialNo = System.currentTimeMillis();									
-										for(int j = 0; j < eOrderLineStatus.getIntAttribute("StatusQty"); j++){
-											String serial =  (serialNo + j) + "-X39";
-											YFCElement eShipmentTagSerial = eShipmentLine.getChildElement("ShipmentTagSerials", true).createChild("ShipmentTagSerial");
-											eShipmentTagSerial.setAttribute("Quantity", 1);
-											eShipmentTagSerial.setAttribute("SerialNo", serial);											
-										}
-									}
+									File temp = new File("/opt/Sterling/Scripts/serialItems.xml");
+									if(temp.exists()){
+										YFCDocument serialItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/serialItems.xml");
+										YFCElement eSerialItems = serialItems.getDocumentElement();
+										for(YFCElement eSerialItem : eSerialItems.getChildren()){
+											if(YFCCommon.equals(eOrderLine.getChildElement("Item", true).getAttribute("ItemID"), eSerialItem.getAttribute("ItemID"))){
+												long serialNo = System.currentTimeMillis();					
+												serialize = true;
+												for(int j = 0; j < eOrderLineStatus.getIntAttribute("StatusQty"); j++){
+													createShipmentTag(eSchedule, eShipmentLine, 1, getSerialForLine(serialNo + j, eOrderLine, eSerialItem));
+												}
+											}
+										}										
+									}									
+								}
+								if(!serialize){
+									createShipmentTag(eSchedule, eShipmentLine, eOrderLineStatus.getIntAttribute("StatusQty"), null);
 								}
 								
 								linesExist = true;
@@ -483,18 +562,7 @@ public class CompleteOrder implements IBDAService {
 										createShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
 									}
 								}
-								
-								YFCElement eShipmentLine = dShipment.getDocumentElement().getChildElement("ShipmentLines", true).createChild("ShipmentLine"); 
-								eShipmentLine.setAttribute("DocumentType", eOrderOut.getAttribute("DocumentType"));
-								eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
-								eShipmentLine.setAttribute("UnitOfMeasure", eOrderLine.getChildElement("Item", true).getAttribute("UnitOfMeasure"));
-								eShipmentLine.setAttribute("ProductClass", eOrderLine.getChildElement("Item", true).getAttribute("ProductClass"));
-								eShipmentLine.setAttribute("PrimeLineNo", eOrderLine.getAttribute("PrimeLineNo"));
-								eShipmentLine.setAttribute("SubLineNo", eOrderLine.getAttribute("SubLineNo"));
-								eShipmentLine.setAttribute("ShipmentLineNo", ++i);
-								eShipmentLine.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
-								eShipmentLine.setAttribute("Quantity", eOrderLineStatus.getAttribute("StatusQty"));
-								eShipmentLine.setAttribute("OrderReleaseKey", eOrderLineStatus.getAttribute("OrderReleaseKey"));
+								createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
 								linesExist = true;
 							}
 						}
@@ -506,17 +574,10 @@ public class CompleteOrder implements IBDAService {
 				for(String key : confirmShipments.keySet()){
 					try {
 						getOrderDetailsOutput = m_YifApi.invoke(env, "confirmShipment", confirmShipments.get(key).getDocument());
-						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
-						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
-						eCreatedShipment.setAttribute("Confirm", "Y");
-						eCreatedShipment.setAttribute("Create", "Y");
+						createShipmentResponse(eOutput, key + "_S", true, true, null);
 					} catch(Exception yex) {
-						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
-						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
-						eCreatedShipment.setAttribute("Confirm", "N");
-						eCreatedShipment.setAttribute("Create", "N");
-						eCreatedShipment.setAttribute("Error", yex.toString());
-			        	System.out.println("The api call confirmShipment failed using the following input xml: " + confirmShipments.get(key));
+						createShipmentResponse(eOutput, key + "_S", false, false, yex.toString());
+						System.out.println("The api call confirmShipment failed using the following input xml: " + confirmShipments.get(key));
 			        	System.out.println("The error thrown was: " );    
 			        	System.out.println(yex.toString());
 			            yex.printStackTrace();
@@ -526,19 +587,14 @@ public class CompleteOrder implements IBDAService {
 				for(String key : createShipments.keySet()){
 					try {
 						getOrderDetailsOutput = m_YifApi.invoke(env, "createShipment", createShipments.get(key).getDocument());
-						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
-						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
-						eCreatedShipment.setAttribute("Confirm", "N");
-						eCreatedShipment.setAttribute("Create", "Y");
+						createShipmentResponse(eOutput, key + "_S", false, true, null);
+						YFCElement eCreatedShipment = createShipmentResponse(eOutput, key + "_S", false, true, null);
 						if (pushBackroom){
 							backroomPick(env, getOrderDetailsOutput, eCreatedShipment, m_YifApi);
 						}
 						
 					} catch(Exception yex) {
-						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
-						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
-						eCreatedShipment.setAttribute("Create", "N");
-						eCreatedShipment.setAttribute("Error", yex.toString());
+						createShipmentResponse(eOutput, key + "_S", false, false, yex.toString());
 			        	System.out.println("The api call confirmShipment failed using the following input xml: " + createShipments.get(key));
 			        	System.out.println("The error thrown was: " );    
 			        	System.out.println(yex.toString());
@@ -550,6 +606,8 @@ public class CompleteOrder implements IBDAService {
 		}		
 		return null;
 	}
+	
+
 	
 	private static void backroomPick(YFSEnvironment env, Document dShipment, YFCElement eCreatedShipment, YIFApi m_YifApi) {
 		YFCElement eShipment = YFCDocument.getDocumentFor(dShipment).getDocumentElement();

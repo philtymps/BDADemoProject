@@ -1,13 +1,5 @@
 package com.extension.silverpop;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
@@ -23,25 +15,39 @@ public class SilverpopSMS extends SilverpopRest {
 		super();
 	}
 	
-
-	private String getSMSApi(){
+	public String getRestApi(){
 		return getTransactURL() + "rest/channels/sms/externalconsentsends";
 	}
 
 	public static void main(String[] args){
-	    SilverpopSMS t = new SilverpopSMS();
-		t.callRequest(t.getMessage(), t.getPhoneNumber()); 
+	    SilverpopSMS t = new SilverpopSMS();	    
+		t.sendSMSMessage(null, null); 
+	}
+	
+	public String getServiceName() {
+		// TODO Auto-generated method stub
+		return "silverpopSMS";
+	}
+	
+	public Document invoke(YFSEnvironment env, Document dInput){
+		return sendSMSMessage(env, dInput);
 	}
 	
 	public Document sendSMSMessage(YFSEnvironment env, Document dInput){
 		String sMessage = getMessage();
+		YFCElement eInput;
 		if (!YFCCommon.isVoid(dInput)){
-			YFCElement eInput = YFCDocument.getDocumentFor(dInput).getDocumentElement();
+			eInput = YFCDocument.getDocumentFor(dInput).getDocumentElement();
 			sMessage.replaceAll("%OrderNo%", eInput.getAttribute("OrderNo"));
 			sMessage.replaceAll("%FirstName%", eInput.getAttribute("CustomerFirstName"));
 			sMessage.replaceAll("%LastName%", eInput.getAttribute("CustomerLastName"));
+		} else {
+			eInput = YFCDocument.createDocument("Input").getDocumentElement();
 		}
-		callRequest(sMessage, getPhoneNumber());
+		
+		eInput.setAttribute("Message", sMessage);
+		eInput.setAttribute("PhoneNumbers",  getPhoneNumber());
+		callRequest(eInput);
 		return dInput;
 	}
 	
@@ -61,39 +67,9 @@ public class SilverpopSMS extends SilverpopRest {
 		return "You have order(s) you need to pick!";
 	}
 	
-	public void callRequest(String sMessage, String sPhoneNumbers){
-		try {
-			String sOutput = getRequest(sMessage, sPhoneNumbers).toString();
-			URL url = new URL(getSMSApi());
-	        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	        connection.setDoOutput(true);
-	        connection.setRequestMethod("POST");
-	        connection.setRequestProperty("Content-Type", "application/json");
-	        connection.setRequestProperty("Content-Length",  String.valueOf(sOutput.length()));
-	        connection.setRequestProperty("Authorization", "Bearer " +  getTokenFromResponse());
-	        
-	       // connection.setRequestProperty("Authorization", value);
-	        // Write data
-	        OutputStream os = connection.getOutputStream();
-	        os.write(sOutput.getBytes());
-			StringBuffer sb = new StringBuffer();
-			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			String res;
-			while ((res = in.readLine()) != null) {
-				sb.append(res);
-			}
-			in.close();
-			System.out.println(sb);
-		} catch (UnsupportedEncodingException e) {
-			
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	}
-	
-	private JSONObject getRequest(String sMessage, String sPhoneNumbers){
+	public JSONObject getRequest(YFCElement eInput){
+		String sMessage = eInput.getAttribute("Message");
+		String sPhoneNumbers = eInput.getAttribute("PhoneNumbers");
 		JSONObject root = new JSONObject();
 		root.put("content", sMessage);
 		root.put("channelQualifier", "131918");
@@ -112,16 +88,10 @@ public class SilverpopSMS extends SilverpopRest {
 			JSONObject contact = new JSONObject();
 			contact.put("phoneNumber", ph);
 			contacts.put(contact);
-		}
-		
+		}		
 		
 		root.put("contacts", contacts);
 		return root;
 	}
-    
-  
- 
- 
-    
    
 }

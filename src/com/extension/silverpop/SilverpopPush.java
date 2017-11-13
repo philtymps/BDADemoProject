@@ -1,14 +1,9 @@
 package com.extension.silverpop;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import com.yantra.yfc.dom.YFCElement;
 
 public class SilverpopPush extends SilverpopRest {
 	
@@ -16,55 +11,21 @@ public class SilverpopPush extends SilverpopRest {
 		super();
 	}
 	
-	private String getContactApi(){
+	public String getRestApi(){
 		return getTransactURL() + "rest/channels/push/sends";
 	}
 	
+	public String getServiceName() {
+		// TODO Auto-generated method stub
+		return "silverpopPush";
+	}
+	
 	public static void main(String[] args){
-		String clientId = "8bddc347-dc91-46b5-aa7b-4c839ec3d64c";
-	    String clientSecret = "0085e74a-e39d-4328-a0b5-1764e6065d81";
-	    String refreshToken = "rnMbxKGBAp6hZt63dqX9PnI4aUIk_eQSGdC_4kdagiiIS1";
-	        
 		SilverpopPush t = new SilverpopPush();
-	
-		String accessToken = t.retrieveToken(clientId, clientSecret, refreshToken);
-	   
-		t.callRequest(); 
+		t.invoke(null, null); 
 	}
 	
-	public void callRequest(){
-		try {
-			String sOutput = getRequest().toString();
-			URL url = new URL(getContactApi());
-	        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	        connection.setDoOutput(true);
-	        connection.setRequestMethod("POST");
-	        connection.setRequestProperty("Content-Type", "application/json");
-	        connection.setRequestProperty("Content-Length",  String.valueOf(sOutput.length()));
-	        connection.setRequestProperty("Authorization", "Bearer " +  getTokenFromResponse());
-	        
-	       // connection.setRequestProperty("Authorization", value);
-	        // Write data
-	        OutputStream os = connection.getOutputStream();
-	        os.write(sOutput.getBytes());
-			StringBuffer sb = new StringBuffer();
-			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			String res;
-			while ((res = in.readLine()) != null) {
-				sb.append(res);
-			}
-			in.close();
-			System.out.println(sb);
-		} catch (UnsupportedEncodingException e) {
-			
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-	}
-	
-	private JSONObject getRequest(){
+	public JSONObject getRequest(YFCElement eInput){
 		
 		JSONObject root = new JSONObject();
 		

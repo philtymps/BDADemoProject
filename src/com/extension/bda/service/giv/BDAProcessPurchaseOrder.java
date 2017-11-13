@@ -1,5 +1,6 @@
 package com.extension.bda.service.giv;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -8,6 +9,7 @@ import org.w3c.dom.Document;
 import com.extension.bda.service.IBDAService;
 import com.scripts.CompleteOrder;
 import com.yantra.interop.japi.YIFApi;
+import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -33,11 +35,12 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 	}
 
 	
-	public static String confirmShipment(YFSEnvironment env, Document dOrder, YFCElement eOutput, YIFApi m_YifApi) {
+	public static String confirmShipment(YFSEnvironment env, YFCElement eResults, boolean confirm) throws YIFClientCreationException {
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
-		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
+		eOrder.setAttribute("OrderHeaderKey", eResults.getAttribute("OrderHeaderKey"));
 		Document getOrderDetailsOutput = null;
+		YIFApi m_YifApi = YIFClientFactory.getInstance().getLocalApi();
 		try {
 			env.setApiTemplate("getCompleteOrderDetails", CompleteOrder.getOrderDetailsForShipmentTemplate());
 			getOrderDetailsOutput = m_YifApi.invoke(env, "getCompleteOrderDetails", getOrderDetailsInput.getDocument());
@@ -62,58 +65,47 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 						}
 						if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 							YFCDocument dShipment;
-							if(YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0006")){
-								dShipment = createShipments.get(eOrderLineStatus.getAttribute(shipmentID));
-								if (YFCCommon.isVoid(dShipment)){
-									dShipment = YFCDocument.createDocument("Shipment");
-									YFCElement eShipment = dShipment.getDocumentElement();
-									eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute(shipmentID) + "_S");
-									//eShipment.setAttribute("TrackingNo", "1B"+eOrderLineStatus.getAttribute("OrderReleaseKey"));
-									eShipment.setAttribute("TrackingNo", "JD0002215620664620");
-									createShipments.put(eOrderLineStatus.getAttribute(shipmentID), dShipment);
-								}
+							if(!confirm || YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0006")){
+								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, createShipments);
 							} else {
-								dShipment = confirmShipments.get(eOrderLineStatus.getAttribute(shipmentID));
-								if (YFCCommon.isVoid(dShipment)){
-									dShipment = YFCDocument.createDocument("Shipment");
-									YFCElement eShipment = dShipment.getDocumentElement();
-									eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute(shipmentID) + "_S");
-									//eShipment.setAttribute("TrackingNo", "1B"+eOrderLineStatus.getAttribute("OrderReleaseKey"));
-									eShipment.setAttribute("TrackingNo", "JD0002215620664620");
-									confirmShipments.put(eOrderLineStatus.getAttribute(shipmentID), dShipment);
-								}
+								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, confirmShipments);
 							}
 							
-							YFCElement eShipmentLine = dShipment.getDocumentElement().getChildElement("ShipmentLines", true).createChild("ShipmentLine"); 
-							eShipmentLine.setAttribute("DocumentType", eOrderOut.getAttribute("DocumentType"));
-							eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
-							eShipmentLine.setAttribute("UnitOfMeasure", eOrderLine.getChildElement("Item", true).getAttribute("UnitOfMeasure"));
-							eShipmentLine.setAttribute("ProductClass", eOrderLine.getChildElement("Item", true).getAttribute("ProductClass"));
-							eShipmentLine.setAttribute("PrimeLineNo", eOrderLine.getAttribute("PrimeLineNo"));
-							eShipmentLine.setAttribute("SubLineNo", eOrderLine.getAttribute("SubLineNo"));
-							eShipmentLine.setAttribute("OrderHeaderKey", eOrderOut.getAttribute("OrderHeaderKey"));
-							eShipmentLine.setAttribute("ShipmentLineNo", ++i);
-							eShipmentLine.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute(shipmentID) + "_S");
-							eShipmentLine.setAttribute("Quantity", eOrderLineStatus.getAttribute("StatusQty"));
-							if(!YFCCommon.isVoid(eOrderLineStatus.getAttribute("OrderReleaseKey"))){
-								eShipmentLine.setAttribute("OrderReleaseKey", eOrderLineStatus.getAttribute("OrderReleaseKey"));
+							YFCElement eShipmentLine = CompleteOrder.createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
+							YFCElement eSchedule = CompleteOrder.getScheduleForScheduleKey(eOrderLine, eOrderLineStatus.getAttribute("OrderLineScheduleKey"));
+							boolean serialize = false;
+							File temp = new File("/opt/Sterling/Scripts/serialItems.xml");
+							if(temp.exists()){
+								YFCDocument serialItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/serialItems.xml");
+								YFCElement eSerialItems = serialItems.getDocumentElement();
+								for(YFCElement eSerialItem : eSerialItems.getChildren()){
+									if(YFCCommon.equals(eOrderLine.getChildElement("Item", true).getAttribute("ItemID"), eSerialItem.getAttribute("ItemID"))){
+										long serialNo = System.currentTimeMillis();					
+										serialize = true;
+										for(int j = 0; j < eOrderLineStatus.getIntAttribute("StatusQty"); j++){
+											String serial = CompleteOrder.getSerialForLine(serialNo + j, eOrderLine, eSerialItem);
+											YFCElement eShipmentTagSerial = CompleteOrder.createShipmentTag(eSchedule, eShipmentLine, 1, serial);
+											eShipmentTagSerial.setAttribute("SerialNo", serial);	
+										}
+									}
+								}										
+							}	
+							if(!serialize){
+								CompleteOrder.createShipmentTag(eSchedule, eShipmentLine, eOrderLineStatus.getIntAttribute("StatusQty"), null);
 							}
 							linesExist = true;
 						}
 					}
 				}
 			}
-			
 			if (linesExist){
 				for(String key : confirmShipments.keySet()){
 					try {
 						getOrderDetailsOutput = m_YifApi.invoke(env, "confirmShipment", confirmShipments.get(key).getDocument());
-						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
-						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
-						eCreatedShipment.setAttribute("Confirm", "Y");
-						eCreatedShipment.setAttribute("Create", "Y");
+						CompleteOrder.createShipmentResponse(eResults, key + "_S", true, true, null);
 					} catch(Exception yex) {
-			        	System.out.println("The api call confirmShipment failed using the following input xml: " + confirmShipments.get(key));
+						CompleteOrder.createShipmentResponse(eResults, key + "_S", false, false, yex.toString());
+						System.out.println("The api call confirmShipment failed using the following input xml: " + confirmShipments.get(key));
 			        	System.out.println("The error thrown was: " );    
 			        	System.out.println(yex.toString());
 			            yex.printStackTrace();
@@ -123,11 +115,10 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 				for(String key : createShipments.keySet()){
 					try {
 						getOrderDetailsOutput = m_YifApi.invoke(env, "createShipment", createShipments.get(key).getDocument());
-						YFCElement eCreatedShipment = eOutput.getChildElement("Shipments", true).createChild("Shipment");
-						eCreatedShipment.setAttribute("ShipmentKey", key + "_S");
-						eCreatedShipment.setAttribute("Confirm", "N");
-						eCreatedShipment.setAttribute("Create", "Y");
+						CompleteOrder.createShipmentResponse(eResults, key + "_S", false, true, null);
+										
 					} catch(Exception yex) {
+						CompleteOrder.createShipmentResponse(eResults, key + "_S", false, false, yex.toString());
 			        	System.out.println("The api call confirmShipment failed using the following input xml: " + createShipments.get(key));
 			        	System.out.println("The error thrown was: " );    
 			        	System.out.println(yex.toString());
@@ -139,6 +130,7 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 		}		
 		return null;
 	}
+	
 	@Override
 	public Document invoke(YFSEnvironment env, Document inputDoc){
 		YFCDocument output = YFCDocument.createDocument("Results");
@@ -156,17 +148,13 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 	            yex.printStackTrace();
 	        } 
 			if (!YFCCommon.isVoid(l_OutputXml)){
-				YFCElement eOrder = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
-				if(YFCCommon.equals(eOrder.getAttribute("DocumentType"), "0005") || YFCCommon.equals(eOrder.getAttribute("DocumentType"), "0006")){
-					try {
-			           	confirmShipment(env, l_OutputXml, eResults, localApi);
-			        } catch(Exception yex) {
-			        	System.out.println("The error thrown was: " );    
-			        	System.out.println(yex.toString());
-			            yex.printStackTrace();
-			        }
-				}
-				
+				try {
+		           	confirmShipment(env, eResults, true);
+		        } catch(Exception yex) {
+		        	System.out.println("The error thrown was: " );    
+		        	System.out.println(yex.toString());
+		            yex.printStackTrace();
+		        }
 			}
 		}
 		catch (Exception e ) {

@@ -72,7 +72,7 @@ public class Store extends BDASynchronization {
 			Connection dbConn = null;
 			try {
 				dbConn = getOMSConnection();
-				String sSql = "SELECT PERSON_INFO_KEY, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTRY FROM OMDB.YFS_PERSON_INFO WHERE COUNTRY = 'AU' AND LATITUDE IS NULL";
+				String sSql = "SELECT PERSON_INFO_KEY, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTRY FROM OMDB.YFS_PERSON_INFO WHERE COUNTRY = 'DE' AND LATITUDE IS NULL";
 				PreparedStatement ps = dbConn.prepareStatement(sSql);
 				ResultSet rs = ps.executeQuery();
 				while ( rs.next() ) {

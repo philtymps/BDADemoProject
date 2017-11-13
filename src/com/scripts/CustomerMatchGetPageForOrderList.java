@@ -19,13 +19,13 @@ public class CustomerMatchGetPageForOrderList {
 			YFCElement eInput = eApi.getChildElement("Input");
 			if (!YFCCommon.isVoid(eInput)){
 				YFCElement eOrder = eInput.getChildElement("Order");
-				if (!YFCCommon.isVoid(eOrder.getChildElement("ComplexQuery"))){
-					return inputDoc;
-				}
+				//if (!YFCCommon.isVoid(eOrder.getChildElement("ComplexQuery"))){
+				//	return inputDoc;
+				//}
 				YFCElement eContact = getCustomerContact(env, eOrder);
-				if (!YFCCommon.isVoid(eContact) && !YFCCommon.isVoid(eOrder.getAttribute("BuyerUserId"))){
-					YFCElement eComplexQuery = eOrder.createChild("ComplexQuery");
-					YFCElement eOr = eComplexQuery.createChild("Or");
+				if (!YFCCommon.isVoid(eContact)){
+					YFCElement eComplexQuery = eOrder.getChildElement("ComplexQuery", true);
+					YFCElement eOr = eComplexQuery.getChildElement("Or", true);
 					YFCElement eExp = eOr.createChild("Exp");
 					eExp.setAttribute("Name", "BuyerUserId");
 					eExp.setAttribute("Value", eOrder.getAttribute("BuyerUserId"));
@@ -39,7 +39,9 @@ public class CustomerMatchGetPageForOrderList {
 						eExp.setAttribute("Name", "CustomerEMailID");
 						eExp.setAttribute("Value", eContact.getAttribute("EmailID"));
 					}
-					eOrder.removeAttribute("BuyerUserId");
+					if(!YFCCommon.isVoid(eOrder.getYDateAttribute("BuyerUserId"))){
+						eOrder.removeAttribute("BuyerUserId");
+					}
 					if (!YFCCommon.isVoid(eOrder.getAttribute("BuyerUserIdQryType"))){
 						eOrder.removeAttribute("BuyerUserIdQryType");
 					}
@@ -52,21 +54,32 @@ public class CustomerMatchGetPageForOrderList {
 	public static YFCElement getCustomerContact(YFSEnvironment env, YFCElement eOrder){
 		YFCDocument dGetCustomerListInput = YFCDocument.createDocument("CustomerContact");
 		YFCElement eContact = dGetCustomerListInput.getDocumentElement();
-		eContact.setAttribute("UserID", eOrder.getAttribute("BuyerUserId"));
-		YFCElement eCustInput = eContact.getChildElement("Customer",true);
-		eCustInput.setAttribute("CallingOrganizationCode", eOrder.getAttribute("EnterpriseCode"));
 		
-		try {
-			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
-			env.setApiTemplate("getCustomerContactList", DemoCreateCustomerForOrder.getCustomerContactListTemplate());
-			Document l_OutputXml = localApi.invoke(env, "getCustomerContactList", dGetCustomerListInput.getDocument());
-			YFCElement output = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
-			return output.getFirstChildElement();
-		} catch(Exception yex) {
-        	System.out.println("The error thrown was: " );    
-        	System.out.println(yex.toString());
-            yex.printStackTrace();
-        } 
+		if(!YFCCommon.isVoid(eOrder.getAttribute("BuyerUserId"))){
+			eContact.setAttribute("UserID", eOrder.getAttribute("BuyerUserId"));
+		} else if(!YFCCommon.isVoid(eOrder.getChildElement("ComplexQuery"))){
+			String sContact = eOrder.getChildElement("ComplexQuery", true).getChildElement("Or", true).getChildElement("Exp", true).getAttribute("Value");
+			if(!YFCCommon.isVoid(sContact)){
+				eContact.setAttribute("UserID", sContact);	
+			}
+		}
+		if(!YFCCommon.isVoid(eContact.getAttribute("UserID"))){
+			YFCElement eCustInput = eContact.getChildElement("Customer",true);
+			eCustInput.setAttribute("CallingOrganizationCode", eOrder.getAttribute("EnterpriseCode"));
+			
+			try {
+				YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
+				env.setApiTemplate("getCustomerContactList", DemoCreateCustomerForOrder.getCustomerContactListTemplate());
+				Document l_OutputXml = localApi.invoke(env, "getCustomerContactList", dGetCustomerListInput.getDocument());
+				YFCElement output = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
+				return output.getFirstChildElement();
+			} catch(Exception yex) {
+	        	System.out.println("The error thrown was: " );    
+	        	System.out.println(yex.toString());
+	            yex.printStackTrace();
+	        } 
+		}
+		
 		return null;
 	}
 }

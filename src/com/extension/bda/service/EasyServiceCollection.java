@@ -2,15 +2,18 @@ package com.extension.bda.service;
 
 import java.util.HashMap;
 
+import com.extension.afg.BDARepriceOrderFromLine;
 import com.extension.bda.service.expose.BDAEntityApi;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
 import com.extension.bda.service.giv.BDAGetDemandOrders;
 import com.extension.bda.service.giv.BDAInventoryShortAlert;
 import com.extension.bda.service.giv.BDAProcessPurchaseOrder;
+import com.extension.bda.service.giv.BDAProcessReturnOrder;
 import com.extension.bda.service.promotions.BDAGetPreviouslyViewedItems;
 import com.extension.bda.service.shipments.BDASetCarrierOnShipmentIfRequired;
 import com.extension.gucci.GucciGetLinesToStealFrom;
 import com.extension.gucci.GucciStealInventory;
+import com.extension.silverpop.SilverpopEmailSegment;
 import com.scripts.CompleteOrder;
 import com.yantra.yfc.util.YFCCommon;
 
@@ -26,12 +29,15 @@ public class EasyServiceCollection {
 		map.put("getPreviouslyViewedItems", new BDAGetPreviouslyViewedItems());
 		map.put("shortInventory", new BDAInventoryShortAlert());
 		map.put("processPurchaseOrder", new BDAProcessPurchaseOrder());
+		map.put("processReturnOrder", new BDAProcessReturnOrder());
 		map.put("getDemandOrders", new BDAGetDemandOrders());
 		map.put("completeOrder", new CompleteOrder());
 		map.put("stealInventoryFromLine", new GucciStealInventory());
 		map.put("getOrdersToStealFrom", new GucciGetLinesToStealFrom());
 		map.put("resolveHoldsAndPayment", new BDAHoldsAndPayment());
 		map.put("setCarrierOnShipment", new BDASetCarrierOnShipmentIfRequired());
+		map.put("silverpopEmailSegment", new SilverpopEmailSegment());
+		map.put("repriceOrderFromLine", new BDARepriceOrderFromLine());
 	}
 	
 	public IBDAService getService(String sServiceName){
