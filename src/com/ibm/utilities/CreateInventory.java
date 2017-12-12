@@ -18,12 +18,9 @@ public class CreateInventory {
 	private static YFCDocument getInput(){
 		YFCDocument dOutput = YFCDocument.createDocument("Item");
 		YFCElement eInput = dOutput.getDocumentElement();
-		eInput.setAttribute("CallingOrganizationCode", "greenwheels");
+		eInput.setAttribute("CallingOrganizationCode", "Aurora");
 		YFCElement ePriInfo = eInput.createChild("PrimaryInformation");
 		ePriInfo.setAttribute("Status", "3000");
-		YFCElement eCatFilter = eInput.createChild("CategoryFilter");
-		eCatFilter.setAttribute("CategoryPath", "/bikes");
-		eCatFilter.setAttribute("CategoryPathQryType", "FLIKE");
 		return dOutput;
 	}
 	
@@ -64,7 +61,10 @@ public class CreateInventory {
 		}		
 	}
 	
+	
+	
 	public Document getAdjustInventoryInput (YFSEnvironment env, Document input){
+		String[] nodes = {"Aurora_WH3", "Auro_Store_5", "Auro_Store_1", "Auro_Store_7"};
 		YFCDocument dInput;
 		if (!YFCCommon.isVoid(input)){
 			dInput = YFCDocument.getDocumentFor(input);	
@@ -76,13 +76,16 @@ public class CreateInventory {
 		YFCDocument dItems = YFCDocument.createDocument("Items");
 		YFCElement eItems = dItems.getDocumentElement();
 		YFCDocument dItemList = CallInteropServlet.invokeApi(getInput(), getItemTemplate(), "getItemList", getServer());
-		
-		YFCDocument dShipNodeList = CallInteropServlet.invokeApi(getShipNodeListInput(), getShipNodeTemplate(), "getShipNodeList", getServer());
-		
+		int count = 0;
 		for (YFCElement eItem : dItemList.getDocumentElement().getChildren()){
 			if (eItem.getAttribute("ItemID").length() <= 40){
-			for (YFCElement eShipNode : dShipNodeList.getDocumentElement().getChildren()){
-				if (YFCCommon.equals(eShipNode.getAttribute("ShipNode"),"Auro_Store_4")){
+				for (String sShipNode : nodes){
+					if(count % 1000 == 0){
+						CallInteropServlet.invokeApi(dItems, null, "adjustInventory", getServer());
+						dItems = YFCDocument.createDocument("Items");
+						eItems = dItems.getDocumentElement();
+					}
+					count++;
 					YFCElement eAdjustment = eItems.createChild("Item");
 					eAdjustment.setAttribute("AdjustmentType", "ADJUSTMENT");
 					eAdjustment.setAttribute("Availability", "TRACK");
@@ -93,11 +96,10 @@ public class CreateInventory {
 					if (!YFCCommon.isVoid(eItem.getAttribute("UnitOfMeasure"))){
 						eAdjustment.setAttribute("UnitOfMeasure", eItem.getAttribute("UnitOfMeasure"));
 					}
-					eAdjustment.setAttribute("Quantity", eInput.getDoubleAttribute("Quantity", 1000));
+					eAdjustment.setAttribute("Quantity", eInput.getDoubleAttribute("Quantity", 100));
 					eAdjustment.setAttribute("SupplyType", "ONHAND");
-					eAdjustment.setAttribute("ShipNode", eShipNode.getAttribute("ShipNode"));
+					eAdjustment.setAttribute("ShipNode", sShipNode);
 				}
-			}
 			}
 		}
 		CallInteropServlet.invokeApi(dItems, null, "adjustInventory", getServer());

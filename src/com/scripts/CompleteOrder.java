@@ -417,7 +417,7 @@ public class CompleteOrder implements IBDAService {
 		shipments.put(eOrderLineStatus.getAttribute(sIdentifier), dShipment);
 		YFCElement eShipment = dShipment.getDocumentElement();
 		eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute(sIdentifier) + "_S");
-		eShipment.setAttribute("TrackingNo", "JD" + eOrderLineStatus.getAttribute(sIdentifier));
+		eShipment.setAttribute("TrackingNo", "1B" + eOrderLineStatus.getAttribute(sIdentifier));
 		if (bCashAndCarry)
 			eShipment.setAttribute("ShipmentType", "CashAndCarry");
 		return dShipment;
