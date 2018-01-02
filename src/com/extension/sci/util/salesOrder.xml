@@ -1,0 +1,9 @@
+<Order OrderNo="OM100000001" BillToID="10000001" EnterpriseCode="Aurora" OrderDate="2017-12-14T11:28:23">
+	<OrderLines>
+		<OrderLine Status="Created" OrderLineKey="20171214112823010923" OrderedQty="1">
+			<Item ItemID="AuroraWMDRS-151" />
+			<ComputedPrice LineTotal="50" />
+		</OrderLine>		
+	</OrderLines>
+	<PriceInfo Currency="USD" />
+</Order>
