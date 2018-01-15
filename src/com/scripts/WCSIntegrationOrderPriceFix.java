@@ -32,6 +32,7 @@ public class WCSIntegrationOrderPriceFix {
 		YFCDocument input = YFCDocument.getDocumentFor(inputDoc);
 		YFCElement eInput = (YFCElement) input.getDocumentElement().cloneNode(true);
 		logger.debug("storeOrderInput - inputDoc - " + input);
+		boolean removeAll = false;
 		YFCElement modifyInput = input.getDocumentElement();
 		if (YFCCommon.equals(eInput.getNodeName(), "Order") && !YFCCommon.isVoid(modifyInput.getChildElement("PaymentMethod"))){
 			YFCElement ePayment = modifyInput.getChildElement("PaymentMethod");
@@ -71,6 +72,10 @@ public class WCSIntegrationOrderPriceFix {
 					found = true;
 				} 
 			}
+			if(!eInput.getChildElement("OrderLines", true).hasChildNodes()){
+				removeAll = true;
+				env.setTxnObject("removedAll", "Y");
+			}
 			if(found){
 				env.setTxnObject("serviceItems", dExtra);
 			}
@@ -102,12 +107,19 @@ public class WCSIntegrationOrderPriceFix {
 					found = true;
 				}
 			}
+			if(!eInput.getChildElement("LineItems", true).hasChildNodes()){
+				removeAll = true;
+				env.setTxnObject("removedAll", "Y");
+			}
 			if(found){
 				env.setTxnObject("serviceItems", dExtra);
 			}
 		}
 		
 		env.setTxnObject("orderInput", eInput);
+		if(removeAll){
+			eInput.setAttribute("RemovedAll", true);
+		}
 		return YFCDocument.getDocumentFor(eInput.getString()).getDocument();
 	}
 	
@@ -168,6 +180,7 @@ public class WCSIntegrationOrderPriceFix {
 				YFCDocument dServiceItems = (YFCDocument) env.getTxnObject("serviceItems");
 				File services = new File("/opt/Sterling/Scripts/service_items.xml");
 				YFCDocument dExternalServiceItems = null;
+				env.setTxnObject("removedAll", "N");
 				if(services.exists()){
 					dExternalServiceItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/service_items.xml");
 				}		

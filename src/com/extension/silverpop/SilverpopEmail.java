@@ -1,8 +1,10 @@
 package com.extension.silverpop;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,15 +12,19 @@ import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Properties;
 
 import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import com.bda.Utilities;
+import com.custom.yantra.xmlmapper.Converter;
 import com.yantra.util.YFCXSLTransformer;
 import com.yantra.util.YFCXSLTransformerImpl;
 import com.yantra.yfc.dom.YFCDocument;
@@ -48,6 +54,21 @@ public class SilverpopEmail {
 		return this.properties.get(sProp);
 	}
 	
+	public ArrayList<String> getTagProperties(){
+		ArrayList<String> keys = new ArrayList<String>();
+		
+		for(Object key : this.properties.keySet()){
+			if(key instanceof String){
+				String sKey = (String) key;
+				if(sKey.toUpperCase().startsWith("TAG-")){
+					keys.add(sKey);
+				}
+			}		
+		}
+		
+		return keys;
+	}
+	
 	private String getTransactURL(){
 		if(!YFCCommon.isVoid(getProperty("TransactURL"))){
 			return (String) getProperty("TransactURL");
@@ -59,6 +80,9 @@ public class SilverpopEmail {
 		if (!YFCCommon.isVoid(getProperty("FromEmail"))){
 			try{
 				String sXPath = (String) getProperty("FromEmail");
+				if(sXPath.startsWith("xml:")){
+					sXPath = sXPath.substring(4);
+				}
 				XPath xPath = XPathFactory.newInstance().newXPath();
 				String sResponse = xPath.evaluate(sXPath, eInput.getDOMNode());
 				if(!YFCCommon.isVoid(sResponse)){
@@ -77,8 +101,7 @@ public class SilverpopEmail {
 		if (!YFCCommon.isVoid(getProperty("FromName"))){
 			try{
 				String sXPath = (String) getProperty("FromName");
-				XPath xPath = XPathFactory.newInstance().newXPath();
-				String sResponse = xPath.evaluate(sXPath, eInput.getDOMNode());
+				String sResponse = getValueForProperty(eInput, sXPath);
 				if(!YFCCommon.isVoid(sResponse)){
 					return sResponse;
 				}
@@ -87,7 +110,7 @@ public class SilverpopEmail {
 			}
 			return (String)getProperty("FromName");
 		} 
-		return "Base Demo Asset";
+		return "Base Demo Asset" ;
 	}
 	
 	private String getToAddress(YFCElement eInput){
@@ -97,6 +120,9 @@ public class SilverpopEmail {
 		} else if (!YFCCommon.isVoid(getProperty("To"))){
 			try{
 				String sXPath = (String) getProperty("To");
+				if(sXPath.startsWith("xml:")){
+					sXPath = sXPath.substring(4);
+				}
 				XPath xPath = XPathFactory.newInstance().newXPath();
 				String sResponse = xPath.evaluate(sXPath, eInput.getDOMNode());
 				if(!YFCCommon.isVoid(sResponse)){
@@ -107,15 +133,56 @@ public class SilverpopEmail {
 			}
 			return (String)getProperty("To");
 		} 
-		return "pfaiola@us.ibm.com";
+		return "optdemouser@gmail.com";
 	
 	}
+	
+	private boolean sendsEmail(){
+		return Utilities.getBoolean((String)getProperty("SendEmail"), true);
+	}
+	
+	private boolean writeEmailToFile(){
+		return Utilities.getBoolean((String)getProperty("writeEmail"), true);
+	}
+	
+	private String getWriteFilePath(){
+		if(!YFCCommon.isVoid(getProperty("FilePath"))){
+			return (String) getProperty("FilePath");
+		} else {
+			return "/opt/Sterling/Emails";
+		}
+	}
+	
+	private String getWriteFileName(YFCElement eInput){
+		if (!YFCCommon.isVoid(getProperty("FileName"))){
+			try{
+				String sXPath = (String) getProperty("FileName");
+				XPath xPath = XPathFactory.newInstance().newXPath();
+				String sResponse = xPath.evaluate(sXPath, eInput.getDOMNode());
+				if(!YFCCommon.isVoid(sResponse)){
+					return sResponse;
+				}
+			} catch(Exception e){
+				
+			}
+			return (String)getProperty("FileName");
+		} 
+		return "email";
+	}
+	
+	private String getWriteFileExtn(){
+		if (!YFCCommon.isVoid(getProperty("FileExtn"))){
+			return (String)getProperty("FileExtn");
+		} 
+		return ".xml";
+	}
+
 	
 	private String getSubject(YFCElement eInput){
 		if(!YFCCommon.isVoid(eInput) && !YFCCommon.isVoid(eInput.getAttribute("Subject"))){
 			return eInput.getAttribute("Subject");
 		} else if (!YFCCommon.isVoid(getProperty("Subject"))){
-			return (String)getProperty("Subject");
+			return getValueForProperty(eInput, (String) getProperty("Subject"));
 		} 
 		return "Test";
 	}
@@ -137,6 +204,7 @@ public class SilverpopEmail {
 		}
 		
 	}
+	
 	
 	private String getDummyEmailContent(){
 		String t = "<html><head></head><body><h2>Sample Email</h2><p>Test email to verify service is working</p></body></html>";
@@ -164,78 +232,270 @@ public class SilverpopEmail {
 		return null;
 	}
 	
+
+	public Document writeToFile(YFSEnvironment env, Document inputDoc){
+		
+		if(writeEmailToFile()){
+			YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
+			YFCElement eInput = dInput.getDocumentElement();
+			String sFileName = getWriteFilePath() + "/" + getWriteFileName(eInput) + getWriteFileExtn();
+			String sContentName = getWriteFilePath() + "/" + getWriteFileName(eInput) + "_content.xml";
+			
+			File path = new File(getWriteFilePath());
+			if(!path.exists()){
+				path.mkdirs();
+			}
+			File f = new File(sFileName);
+			int i = 0;
+			while(f.exists()){
+				i++;
+				sFileName = getWriteFilePath() + "/" + getWriteFileName(eInput) + i + getWriteFileExtn();
+				sContentName = getWriteFilePath() + "/" + getWriteFileName(eInput) + "_content" + i + ".xml";
+				f = new File(sFileName);
+			}
+			
+			YFCDocument dOutput = YFCDocument.createDocument("Output");
+			YFCElement eOutput = dOutput.getDocumentElement();
+			eOutput.createChild("To").setNodeValue(getToAddress(eInput));
+			eOutput.createChild("From").setNodeValue(getFromAddress(eInput));
+			eOutput.createChild("Subject").setNodeValue(getSubject(eInput));
+			getBody((Element)eOutput.createChild("Body").getDOMNode(), eInput);
+		
+			String content = null;
+			if(!YFCCommon.isVoid(eInput)){
+				content = getTransformation(eInput);
+			} else if (!YFCCommon.isVoid(getProperty("Body"))){
+				content = (String) getProperty("Body");
+			} else {
+				content = getDummyEmailContent();
+			}
+			
+			// write the properties into the output file
+			try {
+				FileOutputStream sOut = new FileOutputStream  (sFileName);
+				sOut.write (content.getBytes());
+				sOut.flush();
+				sOut.close();
+				sOut = new FileOutputStream  (sContentName);
+				sOut.write (dOutput.toString().getBytes());
+				sOut.flush();
+				sOut.close();
+			} catch (Exception e){
+				e.printStackTrace();
+			}
+			
+			return dOutput.getDocument();
+		}
+		return inputDoc;
+	}
+	
+	public String getValueForProperty(YFCElement eInput, String sXPath) {
+		String sOutput = "";
+		if(!Utilities.isVoid(sXPath)){
+			String[] words = sXPath.split(" ");
+			int i = 0;
+			for(String sWord : words){
+				if(i > 0){
+					sOutput += " ";
+				}
+				if(sWord.startsWith("xml:")){
+					try {
+						XPath xPath = XPathFactory.newInstance().newXPath();
+						String sResponse = xPath.evaluate(sWord.replace("xml:", ""), eInput.getDOMNode());
+						sOutput += sResponse;
+					} catch (XPathExpressionException ex){
+						sOutput += sWord;
+					}
+				} else {
+					sOutput += sWord;
+				}
+				i++;
+			}			
+		}
+		return sOutput;
+	}
+	
+	private String[] getSaveColumns(){
+		if(!YFCCommon.isVoid(getProperty("SAVE_COLUMNS"))){
+			return ((String) getProperty("SAVE_COLUMNS")).split(",");
+		}
+		return new String[]{};
+	}
+	
+	public Document sendCustomWCAEmail(YFSEnvironment env, Document inputDoc){
+		if(!YFCCommon.isVoid(inputDoc)){
+			writeToFile(env, inputDoc);
+			if(sendsEmail()){
+				YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
+				YFCElement eInput = dInput.getDocumentElement();
+				if(!YFCCommon.isVoid(getToAddress(eInput))){
+					YFCDocument dMailing = YFCDocument.createDocument("XTMAILING");
+					YFCElement eMailing = dMailing.getDocumentElement();
+					YFCElement eCampaign = eMailing.createChild("CAMPAIGN_ID");
+					eCampaign.setNodeValue(getCampaignID(true));
+					
+					if(getSaveColumns().length > 0){
+						YFCElement eSaveColumns = eMailing.createChild("SAVE_COLUMNS");
+						for(String col : getSaveColumns()){
+							YFCElement eColumnName = eSaveColumns.createChild("COLUMN_NAME");
+							eColumnName.setNodeValue(col);
+						}
+					}
+					
+					YFCElement eShowSendDetails = eMailing.createChild("SHOW_ALL_SEND_DETAIL");
+					eShowSendDetails.setNodeValue(getShowAllSendDetails());
+					
+					YFCElement eNoRetryOnFailure = eMailing.createChild("NO_RETRY_ON_FAILURE");
+					eNoRetryOnFailure.setNodeValue(getNoRetryOnFailure());
+					
+					
+					YFCElement eRecipient = eMailing.createChild("RECIPIENT");
+					YFCElement eMail = eRecipient.createChild("EMAIL");
+					eMail.setNodeValue(getToAddress(eInput));
+					YFCElement eBodyType = eRecipient.createChild("BODY_TYPE");
+					eBodyType.setNodeValue("HTML");
+					
+					YFCElement ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					YFCElement eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("Subject");
+					YFCElement eValue = ePersonalization.createChild("VALUE");
+					eValue.setNodeValue(getSubject(eInput));
+					
+					ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("From Name");
+					eValue = ePersonalization.createChild("VALUE");
+					eValue.setNodeValue(getFromName(eInput));
+					
+					ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("From Address");
+					eValue = ePersonalization.createChild("VALUE");
+					eValue.setNodeValue(getFromAddress(eInput));
+					
+					for(String key : this.getTagProperties()){
+						ePersonalization = eRecipient.createChild("PERSONALIZATION");
+						eTagName = ePersonalization.createChild("TAG_NAME");
+						eTagName.setNodeValue(key.substring(4));
+						eValue = ePersonalization.createChild("VALUE");
+						eValue.setNodeValue(getValueForProperty(eInput, (String) getProperty(key)));
+					}
+					
+					System.out.println(dMailing);
+					String sOutput = dMailing.toString();
+					
+					try {
+						
+						URL url = new URL(getTransactURL());
+				        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				        connection.setDoOutput(true);
+				        connection.setRequestMethod("POST");
+				        connection.setRequestProperty("Content-Type", "application/xml");
+				        connection.setRequestProperty("Content-Length",  String.valueOf(sOutput.length()));
+				        // Write data
+				        OutputStream os = connection.getOutputStream();
+				        connection.connect();
+				        os.write(sOutput.getBytes());
+						StringBuffer sb = new StringBuffer();
+						BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+						String res;
+						while ((res = in.readLine()) != null) {
+							sb.append(res);
+						}
+						in.close();
+						connection.disconnect();
+						System.out.println(YFCDocument.getDocumentFor(sb.toString()));
+						return YFCDocument.getDocumentFor(sb.toString()).getDocument();
+					
+					} catch (UnsupportedEncodingException e) {
+						
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+				}
+			}
+		}
+		return inputDoc;
+	}
 	
 	public Document sendCustomEmail(YFSEnvironment env, Document inputDoc){
 		if(!YFCCommon.isVoid(inputDoc)){
-			YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
-			YFCElement eInput = dInput.getDocumentElement();
-			if(!YFCCommon.isVoid(getToAddress(eInput))){
-				YFCDocument dMailing = YFCDocument.createDocument("XTMAILING");
-				YFCElement eMailing = dMailing.getDocumentElement();
-				YFCElement eCampaign = eMailing.createChild("CAMPAIGN_ID");
-				eCampaign.setNodeValue(getCampaignID(true));
-				YFCElement eRecipient = eMailing.createChild("RECIPIENT");
-				YFCElement eMail = eRecipient.createChild("EMAIL");
-				eMail.setNodeValue(getToAddress(eInput));
-				YFCElement eBodyType = eRecipient.createChild("BODY_TYPE");
-				eBodyType.setNodeValue("HTML");
-				
-				YFCElement ePersonalization = eRecipient.createChild("PERSONALIZATION");
-				YFCElement eTagName = ePersonalization.createChild("TAG_NAME");
-				eTagName.setNodeValue("Subject");
-				YFCElement eValue = ePersonalization.createChild("VALUE");
-				eValue.setNodeValue(getSubject(eInput));
-				
-				ePersonalization = eRecipient.createChild("PERSONALIZATION");
-				eTagName = ePersonalization.createChild("TAG_NAME");
-				eTagName.setNodeValue("From Name");
-				eValue = ePersonalization.createChild("VALUE");
-				eValue.setNodeValue(getFromName(eInput));
-				
-				ePersonalization = eRecipient.createChild("PERSONALIZATION");
-				eTagName = ePersonalization.createChild("TAG_NAME");
-				eTagName.setNodeValue("From Address");
-				eValue = ePersonalization.createChild("VALUE");
-				eValue.setNodeValue(getFromAddress(eInput));
-				
-				ePersonalization = eRecipient.createChild("PERSONALIZATION");
-				eTagName = ePersonalization.createChild("TAG_NAME");
-				eTagName.setNodeValue("HTMLBody");
-				eValue = ePersonalization.createChild("VALUE");
-				getBody((Element)eValue.getDOMNode(), eInput);
-				System.out.println(dMailing);
-				String sOutput = dMailing.toString();
-				try {
+			writeToFile(env, inputDoc);
+			if(sendsEmail()){
+				YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
+				YFCElement eInput = dInput.getDocumentElement();
+				if(!YFCCommon.isVoid(getToAddress(eInput))){
+					YFCDocument dMailing = YFCDocument.createDocument("XTMAILING");
+					YFCElement eMailing = dMailing.getDocumentElement();
+					YFCElement eCampaign = eMailing.createChild("CAMPAIGN_ID");
+					eCampaign.setNodeValue(getCampaignID(true));
+					YFCElement eRecipient = eMailing.createChild("RECIPIENT");
+					YFCElement eMail = eRecipient.createChild("EMAIL");
+					eMail.setNodeValue(getToAddress(eInput));
+					YFCElement eBodyType = eRecipient.createChild("BODY_TYPE");
+					eBodyType.setNodeValue("HTML");
 					
-					URL url = new URL(getTransactURL());
-			        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			        connection.setDoOutput(true);
-			        connection.setRequestMethod("POST");
-			        connection.setRequestProperty("Content-Type", "application/xml");
-			        connection.setRequestProperty("Content-Length",  String.valueOf(sOutput.length()));
-			        // Write data
-			        OutputStream os = connection.getOutputStream();
-			        connection.connect();
-			        os.write(sOutput.getBytes());
-					StringBuffer sb = new StringBuffer();
-					BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-					String res;
-					while ((res = in.readLine()) != null) {
-						sb.append(res);
+					YFCElement ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					YFCElement eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("Subject");
+					YFCElement eValue = ePersonalization.createChild("VALUE");
+					eValue.setNodeValue(getSubject(eInput));
+					
+					ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("From Name");
+					eValue = ePersonalization.createChild("VALUE");
+					eValue.setNodeValue(getFromName(eInput));
+					
+					ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("From Address");
+					eValue = ePersonalization.createChild("VALUE");
+					eValue.setNodeValue(getFromAddress(eInput));
+					
+					ePersonalization = eRecipient.createChild("PERSONALIZATION");
+					eTagName = ePersonalization.createChild("TAG_NAME");
+					eTagName.setNodeValue("HTMLBody");
+					eValue = ePersonalization.createChild("VALUE");
+					getBody((Element)eValue.getDOMNode(), eInput);
+					System.out.println(dMailing);
+					String sOutput = dMailing.toString();
+					
+					try {
+						
+						URL url = new URL(getTransactURL());
+				        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				        connection.setDoOutput(true);
+				        connection.setRequestMethod("POST");
+				        connection.setRequestProperty("Content-Type", "application/xml");
+				        connection.setRequestProperty("Content-Length",  String.valueOf(sOutput.length()));
+				        // Write data
+				        OutputStream os = connection.getOutputStream();
+				        connection.connect();
+				        os.write(sOutput.getBytes());
+						StringBuffer sb = new StringBuffer();
+						BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+						String res;
+						while ((res = in.readLine()) != null) {
+							sb.append(res);
+						}
+						in.close();
+						connection.disconnect();
+						System.out.println(YFCDocument.getDocumentFor(sb.toString()));
+						return YFCDocument.getDocumentFor(sb.toString()).getDocument();
+					
+					} catch (UnsupportedEncodingException e) {
+						
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
-					in.close();
-					connection.disconnect();
-					System.out.println(YFCDocument.getDocumentFor(sb.toString()));
-					return YFCDocument.getDocumentFor(sb.toString()).getDocument();
-				
-				} catch (UnsupportedEncodingException e) {
 					
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}
-				
 			}
 		}
 		return inputDoc;
@@ -374,6 +634,8 @@ public class SilverpopEmail {
 	private String getShowAllSendDetails(){
 		if (!YFCCommon.isVoid(getProperty("ShowAllSendDetails"))){
 			return (String) getProperty("ShowAllSendDetails");
+		} else if(!YFCCommon.isVoid(getProperty("SHOW_ALL_SEND_DETAILS"))){
+			return (String) getProperty("SHOW_ALL_SEND_DETAILS");
 		}
 		return "true";
 	}
@@ -381,6 +643,8 @@ public class SilverpopEmail {
 	private String getNoRetryOnFailure(){
 		if (!YFCCommon.isVoid(getProperty("NoRetryOnFailure"))){
 			return (String) getProperty("NoRetryOnFailure");
+		} else if(!YFCCommon.isVoid(getProperty("NO_RETRY_ON_FAILURE"))){
+			return (String) getProperty("NO_RETRY_ON_FAILURE");
 		}
 		return "false";
 	}

@@ -16,6 +16,7 @@
 	<classpathentry kind="lib" path="lib/interact_client.jar"/>
 	<classpathentry kind="lib" path="lib/mongo-java-driver-3.3.0.jar"/>
 	<classpathentry kind="lib" path="/RT/force-wsc-40.0.0.jar" sourcepath="/Users/pfaiola/git/WebServiceConnector/wsc/target/force-wsc-40.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="/RT/DemoExtns.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OM951"/>
 	<classpathentry kind="lib" path="/RT/Foundation-Core.jar"/>
 	<classpathentry kind="lib" path="/RT/Catalog-Client.jar"/>
