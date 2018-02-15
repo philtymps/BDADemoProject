@@ -1,6 +1,7 @@
 package com.scripts;
 
 import java.io.File;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -14,6 +15,7 @@ import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
+import com.yantra.yfs.japi.YFSException;
 
 public class CompleteOrder implements IBDAService {
 
@@ -473,7 +475,48 @@ public class CompleteOrder implements IBDAService {
 		return eCreatedShipment;
 	}
 	
-	public static String confirmShipment(YFSEnvironment env, Document dOrder, YFCElement eOutput, YIFApi m_YifApi, boolean pushBackroom, boolean bCashAndCarry) {
+	private static HashMap<String, YFCElement> _nodeCache;
+	
+	public static HashMap<String, YFCElement> getNodeCache(){
+		if(YFCCommon.isVoid(_nodeCache)){
+			_nodeCache = new HashMap<String, YFCElement>();
+		}
+		return _nodeCache;
+	}
+	
+	private static Document getNodeTemplate(){
+		YFCDocument dTemp = YFCDocument.createDocument("ShipNodeList");
+		YFCElement eList = dTemp.getDocumentElement();
+		YFCElement eShipNode = eList.createChild("ShipNode");
+		eShipNode.setAttribute("ShipNode", "");
+		eShipNode.setAttribute("NodeType", "");
+		eShipNode.setAttribute("ShipnodeType", "");
+		return dTemp.getDocument();
+	}
+	
+	public static boolean isStoreNode(YFSEnvironment env, YIFApi m_YifApi, String sShipNode) throws YFSException, RemoteException{
+		if(!getNodeCache().containsKey(sShipNode)){
+			YFCDocument dInput = YFCDocument.createDocument("ShipNode");
+			YFCElement eInput = dInput.getDocumentElement();
+			eInput.setAttribute("ShipNode", sShipNode);
+			
+			env.setApiTemplate("getShipNodeList", getNodeTemplate());
+			Document dResponse = m_YifApi.invoke(env, "getShipNodeList", dInput.getDocument());
+			YFCDocument dShipNodeList = YFCDocument.getDocumentFor(dResponse);
+			for(YFCElement eShipNode : dShipNodeList.getDocumentElement().getChildren()){
+				getNodeCache().put(eShipNode.getAttribute("ShipNode"), eShipNode);
+			}
+		}
+		
+		if(getNodeCache().containsKey(sShipNode)){
+			YFCElement eNode = getNodeCache().get(sShipNode);
+			return eNode.getAttribute("NodeType").toUpperCase().contains("STORE") || eNode.getAttribute("ShipnodeType").toUpperCase().contains("STORE");
+		} else {
+			return sShipNode.toUpperCase().contains("STORE") && sShipNode.toUpperCase().contains("_S");
+		}
+	}
+	
+	public static String confirmShipment(YFSEnvironment env, Document dOrder, YFCElement eOutput, YIFApi m_YifApi, boolean pushBackroom, boolean bCashAndCarry) throws YFSException, RemoteException {
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
@@ -501,7 +544,7 @@ public class CompleteOrder implements IBDAService {
 							if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 								YFCDocument dShipment;
 								boolean confirm = false;
-								if(!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001") || YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) || (!eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("STORE") && !eOrderLineStatus.getAttribute("ShipNode").toUpperCase().contains("_S"))){
+								if(!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001") || YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) || !isStoreNode(env, m_YifApi, eOrderLineStatus.getAttribute("ShipNode"))){
 									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, confirmShipments);
 									confirm = true;
 								} else {

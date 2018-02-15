@@ -143,6 +143,7 @@ public class CallInteropServlet {
             	sb.append(response);
             }
             in.close();
+            System.out.println("Invoked: " + url.toString() + " for " + sApiName);
             return YFCDocument.getDocumentFor(sb.toString());
            
 		} catch(MalformedURLException e){

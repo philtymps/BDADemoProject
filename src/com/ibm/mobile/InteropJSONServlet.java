@@ -1,6 +1,10 @@
 package com.ibm.mobile;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.rmi.RemoteException;
 import java.security.Principal;
 import java.util.HashMap;
 
@@ -90,8 +94,56 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		return dataProviders;
 	}
 	
+	protected JSONObject getRequestInput(HttpServletRequest request){
+		
+		try {
+			InputStream inputStreamObject = request.getInputStream();
+		
+			BufferedReader streamReader = new BufferedReader(new InputStreamReader(inputStreamObject, "UTF-8"));
+			StringBuilder responseStrBuilder = new StringBuilder();
+		
+			String inputStr;
+			while ((inputStr = streamReader.readLine()) != null)
+				responseStrBuilder.append(inputStr);
+		
+			JSONObject jsonObject = new JSONObject(responseStrBuilder.toString());
+		
+			//returns the json object
+			return jsonObject;
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		super.processRequest(request, response);
+		if(YFCCommon.equals(request.getContentType(), "application/json")){
+			
+			//Create input stream
+			JSONObject input = getRequestInput(request);
+			if(!YFCCommon.isVoid(input)){
+				String apiName = input.getString("InteropApiName");
+				if(isAuthorized(apiName, request)){
+					HttpSession session = request.getSession(false);
+					if(apiName != null){
+						handleJSONApiRequest(request, input, response);
+					}
+				}else {
+		    		response.sendError(HttpServletResponse.SC_FORBIDDEN);
+		    	}	
+			}
+		
+		} else {
+			String apiName = getParameter(request, "InteropApiName");
+			if(isAuthorized(apiName, request)) {
+				if(apiName != null){
+					handleApiRequest(request, response);
+				}
+	    	} else {
+	    		response.sendError(HttpServletResponse.SC_FORBIDDEN);
+	    	}			
+		}
+		
 	}
 
 	protected boolean isSecurityEnabled() {
@@ -115,16 +167,27 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		retVal = retVal.trim();
 		return retVal;
 	}
-
-	protected void handleApiRequest(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-		String apiName = getParameter(req, "InteropApiName");
-		cat.debug("Processing api: " + apiName);
-		cat.assertLog(null != apiName, "Api Name in the request cannot be null");
-
-		String isFlow = getParameter(req, "IsFlow");
-		String envUserId = getParameter(req, "YFSEnvironment.userId");
-		String envProgId = getParameter(req, "YFSEnvironment.progId");
+	
+	protected boolean isAuthorized(String apiName, HttpServletRequest req) throws YFSException, RemoteException{
+		return true;
+	}
+	
+	protected InteropEnvStub getEnvStub(HttpServletRequest req){
+		HttpSession session = req.getSession(false);
+		String envProgId = null;
+		if(!YFCCommon.isVoid(envProgId)){
+			envProgId = getParameter(req, "YFSEnvironment.progId");
+		}
+		if(YFCCommon.isVoid(envProgId)){
+			envProgId = "mobileStore";
+		}
+		String envUserId = null;
+		if(!YFCCommon.isVoid(session) && !YFCCommon.isVoid(session.getAttribute("CurrentUser"))){
+			envUserId = (String) session.getAttribute("CurrentUser");
+		} else if(YFCCommon.isVoid(envUserId)){
+			envUserId = "admin";
+		}
+		
 		String resourceId = getParameter(req, "YFSEnvironment.resourceId");
 		String adapterName = getParameter(req, "YFSEnvironment.adapterName");
 		String systemName = getParameter(req, "YFSEnvironment.systemName");
@@ -133,26 +196,7 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		String rollbackOnly = getParameter(req, "YFSEnvironment.rollbackOnly");
 		boolean isRollbackOnly = Utils.isTrue(rollbackOnly);
 
-		// ADC UNMESH CR 83667 83860
-		HttpSession session = req.getSession(false);
-
-		cat.debug("UserId: " + envUserId);
-		cat.debug("ProgId: " + envProgId);
-		cat.debug("ResourceId: " + resourceId);
-		cat.debug("RollbackOnly: " + isRollbackOnly);
-		String apiData = getParameter(req, "InteropApiData");
-		String templateData = getParameter(req, "TemplateData");
 		
-		if (!YFCCommon.isVoid(getParameter(req, "FlushDataProvider"))){
-			dataProviders = null;
-		}
-		if(YFCCommon.isVoid(envUserId)){
-			envUserId = "admin";
-		}
-		if(YFCCommon.isVoid(envProgId)){
-			envProgId = "mobileStore";
-		}
-		cat.verbose("Api Data is: " + apiData);
 		InteropEnvStub envStub = new InteropEnvStub(envUserId, envProgId);
 		envStub.setAdapterName(adapterName);
 		envStub.setSystemName(systemName);
@@ -160,7 +204,7 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		envStub.setLocaleCode(localeCode);
 		envStub.setVersion(version);
 		envStub.setRollbackOnly(isRollbackOnly);
-
+		
 		setClientIP(envStub, req);
 		if (envStub instanceof ClientVersionSupport) {
 			if (cat.isDebugEnabled()) {
@@ -198,33 +242,138 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		if (tokenId != null) {
 			envStub.setTokenID(tokenId);
 		}
+		
+		return envStub;
+	}
+	protected void handleJSONApiRequest(HttpServletRequest req, JSONObject input, HttpServletResponse res) throws ServletException, IOException {
+		String apiName = input.getString("InteropApiName");
+		cat.debug("Processing api: " + apiName);
+		cat.assertLog(null != apiName, "Api Name in the request cannot be null");
+
+		String isFlow = null;
+		if(input.has("IsFlow")){
+			isFlow = input.getString("IsFlow");
+		}
+		String envProgId = null;
+		if(input.has("progId")){
+			envProgId = input.getString("progId");
+		}
+		
+		String envUserId = getParameter(req, "YFSEnvironment.userId");
+		
+
+		JSONObject apiData = null;
+		if(input.has("InteropApiData")){
+			apiData = input.getJSONObject("InteropApiData");
+		}
+		JSONObject templateData = null;
+		if(input.has("TemplateData")){
+			templateData = input.getJSONObject("TemplateData");
+		}
+		
+		if (input.has("FlushDataProvider")){
+			dataProviders = null;
+		}
+		
+		
+		
+		cat.verbose("Api Data is: " + apiData);
+		
+		InteropEnvStub envStub = getEnvStub(req);
+		
 		cat.assertLog(req.getContentLength() > 0, "Content length of servlet request must be positive");
 
 		Principal principal = req.getUserPrincipal();
 		if (principal != null) {
 			((ContainerUserIdHolder) localApi).setContainerUserId(principal.getName());
 		}
+		YFCDocument apiDoc = null;
+		try {
+			if(!YFCCommon.isVoid(apiData)){
+				apiDoc = YFCDocument.getDocumentFor(PLTJSONUtils.getXmlFromJSON(apiData.toString(), null));
+			}
+		} catch (Exception e){
+			
+		}
+	
+		
+		YFCDocument templateDoc = null;
+		try{
+			if (!YFCObject.isVoid(templateData)) {
+				templateDoc = YFCDocument.getDocumentFor(PLTJSONUtils.getXmlFromJSON(templateData.toString(), null));
+			}
+		} catch (Exception e){
+			
+		}
+		
+		getResponse(envStub, req, res, apiDoc, templateDoc, apiName, isFlow);
+		
+		
+	}
+	
+	protected void handleApiRequest(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		String apiName = getParameter(req, "InteropApiName");
+		cat.debug("Processing api: " + apiName);
+		cat.assertLog(null != apiName, "Api Name in the request cannot be null");
+		String isFlow = getParameter(req, "IsFlow");
+		String apiData = getParameter(req, "InteropApiData");
+		String templateData = getParameter(req, "TemplateData");
+		
+		if (!YFCCommon.isVoid(getParameter(req, "FlushDataProvider"))){
+			dataProviders = null;
+		}
+		
+		cat.verbose("Api Data is: " + apiData);
+		InteropEnvStub envStub = getEnvStub(req);
+		
+		cat.assertLog(req.getContentLength() > 0, "Content length of servlet request must be positive");
+
+		Principal principal = req.getUserPrincipal();
+		if (principal != null) {
+			((ContainerUserIdHolder) localApi).setContainerUserId(principal.getName());
+		}
+		YFCDocument apiDoc = null;
+		try {
+			if(apiData.contains("{")){
+				apiDoc = YFCDocument.getDocumentFor(PLTJSONUtils.getXmlFromJSON(apiData, null));
+			} else {
+				apiDoc = YFCDocument.parse(apiData);
+			}
+		} catch (Exception e){
+			
+		}
+		
+		YFCDocument templateDoc = null;
+		try {
+			if(!YFCCommon.isVoid(templateData)){
+				if(templateData.contains("{")){
+					templateDoc = YFCDocument.getDocumentFor(PLTJSONUtils.getXmlFromJSON(templateData, null));
+				} else {
+					templateDoc = YFCDocument.getDocumentFor(templateData);;
+				}
+			}
+		} catch (Exception e){
+			
+		}		
+		getResponse(envStub, req, res, apiDoc, templateDoc, apiName, isFlow);
+		
+	}
+	
+	protected Document handleCustomApi(InteropEnvStub envStub, HttpServletRequest req, String apiName, YFCDocument apiDoc, String isFlow, YFCDocument templateDoc){
+		return null;
+	}
+	
+	private void getResponse(InteropEnvStub envStub, HttpServletRequest req, HttpServletResponse res, YFCDocument apiDoc, YFCDocument templateDoc, String apiName, String isFlow ) throws IOException{
 		try {
 			res.setHeader("InteropSentData", "true");
 			res.setHeader("Access-Control-Allow-Origin", "*");
 			res.setHeader("Access-Control-Request-Method", "*");
 			res.setHeader("Access-Control-Allow-Credentials", "true");
 			res.setContentType("text/json; charset=UTF-8");
-			YFCDocument apiDoc = null;
-			if(apiData.contains("{")){
-				apiDoc = YFCDocument.getDocumentFor(PLTJSONUtils.getXmlFromJSON(apiData, null));
-			} else {
-				apiDoc = YFCDocument.parse(apiData);
-			}
 			
-			YFCDocument templateDoc = null;
-			if (!YFCObject.isVoid(templateData)) {
-				if(templateData.contains("{")){
-					templateDoc = YFCDocument.getDocumentFor(PLTJSONUtils.getXmlFromJSON(templateData, null));
-				} else {
-					templateDoc = YFCDocument.getDocumentFor(templateData);;
-				}
+			
+			if (!YFCObject.isVoid(templateDoc)) {
 				envStub.setApiTemplate(apiName, templateDoc.getDocument());
 			}
 			
@@ -242,13 +391,16 @@ public class InteropJSONServlet extends InteropHttpServlet {
 			envStub.setSystemCall(!isSecurityEnabled());
 
 			if (!apiName.equals("createEnvironment") && !apiName.equals("releaseEnvironment")) {
-				if (!YFCCommon.isVoid(isFlow) && Utils.isTrue(isFlow)) {
-					preInvoke(envStub, apiName, apiDoc.getDocument(), true);
-					retDoc = localApi.executeFlow(envStub, apiName, apiDoc.getDocument());
-				} else {
-					preInvoke(envStub, apiName, apiDoc.getDocument(), false);
-					retDoc = localApi.invoke(envStub, apiName, apiDoc.getDocument());
-				}
+				retDoc = handleCustomApi(envStub, req, apiName, apiDoc, isFlow, templateDoc);
+				if(YFCCommon.isVoid(retDoc)){
+					if (!YFCCommon.isVoid(isFlow) && Utils.isTrue(isFlow)) {
+						preInvoke(envStub, apiName, apiDoc.getDocument(), true);
+						retDoc = localApi.executeFlow(envStub, apiName, apiDoc.getDocument());
+					} else {
+						preInvoke(envStub, apiName, apiDoc.getDocument(), false);
+						retDoc = localApi.invoke(envStub, apiName, apiDoc.getDocument());
+					}
+				}				
 			}
 
 			if (null == retDoc) {
@@ -258,20 +410,17 @@ public class InteropJSONServlet extends InteropHttpServlet {
 			if (!YFCCommon.isVoid(retDoc)){
 				YFCDocument dDoc = YFCDocument.getDocumentFor(retDoc);
 				try {
-					if (!YFCCommon.isVoid(templateData)){
+					if (!YFCCommon.isVoid(templateDoc)){
 						evaluateDataProviders(envStub, templateDoc, dDoc, apiDoc);
 					}
 				} catch (Exception e){
 					
 				}
-				JSONObject obj = XML.toJSONObject(dDoc.toString());
+				authenticate(envStub, apiName, req, dDoc);
+				org.apache.commons.json.JSONObject obj = PLTJSONUtils.getJSONObjectFromXML(dDoc.getDocument().getDocumentElement(), null, null);
 				res.getWriter().write(obj.toString());
 			}
 			//YFCDocument.getDocumentFor(retDoc).serialize(res.getWriter());
-		} catch (SAXException e) {
-			cat.fatal(G11N.getString(G11N.AFC_DEFAULT_BUNDLE, "SAX Exception while invoking api {1}", new String[] { apiName }), e);
-			
-			res.getWriter().write(XML.toJSONObject(new YFCException(e).getXMLErrorBuf()).toString());
 		} catch (IOException e) {
 			cat.fatal(G11N.getString(G11N.AFC_DEFAULT_BUNDLE, "IO Exception while invoking api {1}", new String[] { apiName }), e);
 			res.getWriter().write(XML.toJSONObject(new YFCException(e).getXMLErrorBuf()).toString());
@@ -295,7 +444,16 @@ public class InteropJSONServlet extends InteropHttpServlet {
 			res.getWriter().write(error.toString());
 		}
 	}
+
 	
+	protected void authenticate(InteropEnvStub envStub, String apiName, HttpServletRequest req, YFCDocument dDoc) throws YFSException, RemoteException {
+		if(YFCCommon.equals(apiName, "login")){
+			if(!YFCCommon.equals(dDoc.getNodeName(), "Errors")){
+				HttpSession session = req.getSession(true);
+				session.setAttribute("CurrentUser", dDoc.getDocumentElement().getAttribute("LoginID"));
+			}
+		}
+	}
 	private void runDataProviderLogic(YFSEnvironment context, IBDADataProvider dataProvider, YFCDocument response, YFCDocument dInput, String sNode, String sAttribute){
 		YFCNodeList nodes = response.getElementsByTagName(sNode);
 		for (Object node : nodes){
