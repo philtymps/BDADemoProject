@@ -149,8 +149,12 @@ public class MiraklOrder {
 	}
 	
 	private void addLineToApi(YFCElement eMiraklOrderLine, YFCElement eExistingOrder, HashMap<String, YFCDocument> mApis, String sNewOMSStatus, String sTransactionID){
+		//System.out.println("Add Mirakl Line: " + eMiraklOrderLine );
+		//System.out.println("New Status: " + sNewOMSStatus);
 		for(YFCElement eExistingLine : eExistingOrder.getChildElement("OrderLines", true).getChildren()){
 			if(YFCCommon.equals(eExistingLine.getAttribute("OrderLineKey"), eMiraklOrderLine.getChildElement("order_line_id", true).getNodeValue())){
+				
+				//System.out.println("Existing Line: " + eExistingLine);
 				if(!YFCCommon.isVoid(sNewOMSStatus)){
 					boolean found = false;
 					for(YFCElement eLineStatus : eExistingLine.getChildElement("OrderStatuses", true).getChildren()){
@@ -160,6 +164,7 @@ public class MiraklOrder {
 						}
 					}
 					if(!found){
+						//System.out.println("Match Not Found");
 						if(sNewOMSStatus.equals("3700")){
 							if(!mApis.containsKey("confirmShipment")){
 								YFCDocument	dShipment = YFCDocument.createDocument("Shipment");
@@ -181,7 +186,8 @@ public class MiraklOrder {
 							eOrderLineInput.setAttribute("Override", true);
 							eOrderLineInput.setAttribute("OrderedQty", eMiraklOrderLine.getChildElement("quantity", true).getNodeValue());
 						} else if(sNewOMSStatus.startsWith("1")){
-							if(eMiraklOrderLine.getIntAttribute("Quantity", 0) > 0){
+						//	System.out.println("new Status: " + sNewOMSStatus);
+							if(eMiraklOrderLine.getChildElement("quantity").getLongNodeValue() > 0){
 								if(!mApis.containsKey("changeOrderStatus")){
 									YFCDocument dOrderStatusChange = YFCDocument.createDocument("OrderStatusChange");
 									YFCElement eOrderStatus = dOrderStatusChange.getDocumentElement();

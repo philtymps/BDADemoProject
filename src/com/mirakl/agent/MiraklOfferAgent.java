@@ -234,7 +234,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 					MiraklUtils.callApi(env, dManageItem, null, "manageItem");
 					MiraklUtils.callApi(env, dAdjustInput, null, "adjustInventory");
 				}
-			} else if(executionMessage.getDocumentElement().getNodeName().equals("Order")){
+			} else if(executionMessage.getDocumentElement().getNodeName().equals("order")){
 				MiraklOrder mo = new MiraklOrder(dMirakl);
 				mo.updateOrder(env, eRoot.getAttribute("TransactionId"), eRoot.getAttribute("Translation"));
 			}
@@ -424,10 +424,12 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 	}
 	
 	protected int parseOrderUpdateReponse(InputStream input, ArrayList<Document> jobs, Document criteria) throws IOException, SAXException {
-		
+		//System.out.println("parseOrderUpdateResponse");
 		YFCDocument dBody = YFCDocument.parse(input);
+		//System.out.println(dBody);
 		YFCElement eBody = dBody.getDocumentElement();
 		for(YFCElement eOrder : eBody.getChildElement("orders", true).getChildren()){
+			//System.out.println("Order: " + eOrder);
 			Document dJob = new MiraklOrder(eOrder).getObjectXML();
 			dJob.getDocumentElement().setAttribute("Translation", this.getTranslationFile(criteria));
 			dJob.getDocumentElement().setAttribute("TransactionId", this.getTransactionID(criteria));

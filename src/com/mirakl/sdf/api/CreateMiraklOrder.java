@@ -192,10 +192,19 @@ public class CreateMiraklOrder extends MiraklBase implements IBDAService {
 				}
 				YFCElement eTaxes = eOffer.createChild("taxes");
 				for(YFCElement eTax : eChainedLine.getChildElement("LineTaxes", true).getChildren()){
-					YFCElement eNewTax = eTaxes.createChild("tax");
-					createNode(eNewTax, "amount", eTax.getAttribute("Tax", "0.00"));
-					createNodeTranslate(eNewTax, "code", eTax.getAttribute("TaxName", "SalesTax"), false);
+					if(eTax.getDoubleAttribute("Tax", 0) > 0){
+						if(!eTax.getAttribute("TaxName").equals("Shipping Tax")){
+							YFCElement eNewTax = eTaxes.createChild("tax");
+							createNode(eNewTax, "amount", eTax.getAttribute("Tax", "0.00"));
+							createNodeTranslate(eNewTax, "code", eTax.getAttribute("TaxName", "SalesTax"), false);
+						} else {
+							YFCElement eShippngTax = eOffer.createChild("shipping_taxes").createChild("shipping_tax");
+							createNode(eShippngTax, "amount", eTax.getAttribute("Tax", "0.00"));
+							createNodeTranslate(eShippngTax, "code", eTax.getAttribute("TaxName", "Shipping Tax"), false);
+						}						
+					}
 				}
+				
 			}
 			try {
 				YFCDocument response = postOrder(dMiraklInput);
