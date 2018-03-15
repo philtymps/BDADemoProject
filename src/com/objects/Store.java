@@ -72,7 +72,7 @@ public class Store extends BDASynchronization {
 			Connection dbConn = null;
 			try {
 				dbConn = getOMSConnection();
-				String sSql = "SELECT PERSON_INFO_KEY, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTRY FROM OMDB.YFS_PERSON_INFO WHERE COUNTRY = 'NE' AND LATITUDE IS NULL";
+				String sSql = "SELECT PERSON_INFO_KEY, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTRY FROM OMDB.YFS_PERSON_INFO WHERE LATITUDE IS NULL AND PERSON_INFO_KEY IN (SELECT SHIP_NODE_ADDRESS_KEY FROM OMDB.YFS_SHIP_NODE)";
 				PreparedStatement ps = dbConn.prepareStatement(sSql);
 				ResultSet rs = ps.executeQuery();
 				while ( rs.next() ) {
@@ -94,10 +94,13 @@ public class Store extends BDASynchronization {
 			try {
 				dbConn = getOMSConnection();
 				String sSql = "UPDATE OMDB.YFS_PERSON_INFO SET LATITUDE = ?, LONGITUDE = ? WHERE PERSON_INFO_KEY = ?";
+				String sUpdateStore = "UPDATE OMDB.YFS_SHIP_NODE SET LATITUDE = ?, LONGITUDE = ? WHERE SHIP_NODE_ADDRESS_KEY = ?";
+				
 				String zipLocation = "INSERT INTO OMDB.YFS_ZIP_CODE_LOCATION (ZIP_CODE_LOCATION_KEY, COUNTRY, STATE, ZIP_CODE, CITY, LATITUDE, LONGITUDE) VALUES(?, ?, ?, ?, ?, ?, ?)";
 				
 				PreparedStatement ps = dbConn.prepareStatement(sSql);
 				PreparedStatement zip = dbConn.prepareStatement(zipLocation);
+				PreparedStatement store = dbConn.prepareStatement(sUpdateStore);
 				for(Store s : stores){
 					try{
 						if(!YFCCommon.isVoid(s.getLatitude())){
@@ -108,7 +111,18 @@ public class Store extends BDASynchronization {
 						}						
 						Thread.sleep(100);	
 					} catch (Exception e){
-						e.printStackTrace();
+						System.out.println("Error Updating YFS_PERSON_INFO: " + s.getName());
+					}
+					try{
+						if(!YFCCommon.isVoid(s.getLatitude())){
+							store.setDouble(1, Double.parseDouble(s.getLatitude()));
+							store.setDouble(2, Double.parseDouble(s.getLongitude()));
+							store.setString(3, s.getName());
+							store.executeUpdate();
+						}						
+						Thread.sleep(100);	
+					} catch (Exception e){
+						System.out.println("Error Updating YFS_SHIP_NODE: " + s.getName());
 					}
 					try {
 						if(!YFCCommon.isVoid(s.getLatitude())){
@@ -122,7 +136,7 @@ public class Store extends BDASynchronization {
 							zip.executeUpdate();
 						}
 					} catch (Exception e){
-						e.printStackTrace();
+						System.out.println("Error Inserting Location: " + s.getName());
 					}
 				}
 			} catch (Exception e){

@@ -10,5 +10,5 @@ public interface IBDAService {
 
 	public String getServiceName();
 	public void setProperties(Properties props);
-	public Document invoke (YFSEnvironment env, Document input);
+	public Document invoke (YFSEnvironment env, Document input) throws Exception;
 }

@@ -1,6 +1,7 @@
 package com.scripts;
 
 import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -8,6 +9,7 @@ import org.w3c.dom.Document;
 
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
+import com.yantra.yfc.date.YDate;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.log.YFCLogCategory;
@@ -44,7 +46,20 @@ public class InvokeApiFromFile {
 				while (eParent.getAttribute(sAttribute).indexOf("#{") > -1 && eParent.getAttribute(sAttribute).indexOf("}") > -1) {
 					String sVariable = eParent.getAttribute(sAttribute);
 					String content = sVariable.substring(sVariable.indexOf("#{") + 2, sVariable.indexOf("}"));
-					if (variables.containsKey(content)){
+					if(content.startsWith("NOW")){
+						YDate now = YDate.newDate();
+						if(YFCCommon.equals(content, "NOW")){
+							eParent.setAttribute(sAttribute, now);
+						} else if (content.contains("+")) {
+							String[] args = content.split("[+]");
+							int days = Integer.parseInt(args[1]);
+							eParent.setAttribute(sAttribute, YDate.newDate(now, days));
+						} else {
+							String[] args = content.split("[-]");
+							int days = Integer.parseInt(args[1]);
+							eParent.setAttribute(sAttribute, YDate.newDate(now, (days * -1)));
+						}
+					} else if (variables.containsKey(content)){
 						try {
 							String newValue = sVariable.replaceAll("#\\{" + content + "\\}", variables.get(content));
 							eParent.setAttribute(sAttribute, newValue);

@@ -1,0 +1,7 @@
+<Order OrderHeaderKey="" DocumentType="" EntryType="" CustomerEMailID="" BillToID="" CustomerFirstName="" CustomerLastName="" OrderNo="" OrderDate="" EnterpriseCode="" SellerOrganizationCode="">
+	<PriceInfo Currency="" />
+	<PersonInfoBillTo FirstName="" LastName="" City="" State="" ZipCode="" Country="" AddressLine1="" AddressLine2="" DayPhone="" EveningPhone="" EmailID="" />
+	<PaymentMethods>
+		<PaymentMethod PaymentType="" PaymentTypeGroup="" CreditCardType="" />
+	</PaymentMethods>
+</Order>

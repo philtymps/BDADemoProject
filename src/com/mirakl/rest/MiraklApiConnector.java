@@ -33,7 +33,7 @@ public class MiraklApiConnector implements YIFCustomApi {
 				return props.getProperty("API-KEY");
 			}
 		}
-		return "7467faa1-474b-4cf2-b9d0-0c44b983660e";
+		return "e67db8ef-0387-4bb3-9903-c2b323e78e19";
 	}
 	
 	public String getDomain() {

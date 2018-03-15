@@ -10,7 +10,7 @@ import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 
 public class BDAEasyService {
-	public Document callEasyService(YFSEnvironment env, Document input){
+	public Document callEasyService(YFSEnvironment env, Document input) throws Exception {
 		
 		YFCDocument dInput = YFCDocument.getDocumentFor(input);
 		YFCElement eInput = dInput.getDocumentElement();

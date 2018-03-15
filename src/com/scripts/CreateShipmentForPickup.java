@@ -184,7 +184,7 @@ public class CreateShipmentForPickup {
 			            	if (!YFCCommon.isVoid(eShipments)){
 			            		for (YFCElement eShipment : eShipments.getChildren()){
 			            			if (eShipment.getBooleanAttribute("Confirm", false)){
-			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), localApi);
+			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"), localApi);
 				            			eShipment.setAttribute("ShipmentInvoiced", "Y");
 			            			}
 			            		}
@@ -245,7 +245,7 @@ public class CreateShipmentForPickup {
 			            	if (!YFCCommon.isVoid(eShipments)){
 			            		for (YFCElement eShipment : eShipments.getChildren()){
 			            			if (eShipment.getBooleanAttribute("Confirm", false)){
-			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), localApi);
+			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"), localApi);
 				            			eShipment.setAttribute("ShipmentInvoiced", "Y");
 			            			}
 			            		}

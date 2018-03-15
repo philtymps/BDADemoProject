@@ -14,18 +14,23 @@ public class MiraklOffer  {
 	private YFCDocument dOffer = null;
 	private YFCElement eOffer = null;
 	
-	public MiraklOffer(){
+	public MiraklOffer(String sCatalogOrg, String sInventoryOrg, String sClassification){
 		dOffer = YFCDocument.createDocument("Offer");
 		eOffer = dOffer.getDocumentElement();
+		eOffer.setAttribute("CatalogOrganizationCode", sCatalogOrg);
+		eOffer.setAttribute("InventoryOrganizationCode", sInventoryOrg);
+		eOffer.setAttribute("Classification", sClassification);
 	}
 	
-	public MiraklOffer(ArrayList<String> header, String[] record){
-		this();
+	public MiraklOffer(ArrayList<String> header, String[] record, String sCatalogOrg, String sInventoryOrg, String sClassification){
+		this(sCatalogOrg, sInventoryOrg, sClassification);
 		for(int i = 0; i < header.size(); i++){
-			//System.out.println("Header: " + header.get(i) + " Value: " + record[i]);
-			eOffer.setAttribute(header.get(i), record[i].substring(1, record[i].length() - 1));
+			String value = record[i].trim().substring(1, record[i].trim().length() - 1);
+			if(!YFCCommon.isVoid(value)){
+				eOffer.setAttribute(header.get(i), value);
+			}
+			
 		}
-		System.out.println("Offer: " + eOffer);
 	}
 	
 	public MiraklOffer(YFCDocument dOffer) {
@@ -35,8 +40,10 @@ public class MiraklOffer  {
 	}
 	
 	public MiraklOffer(YFCElement eOffer){
-		dOffer = eOffer.cloneNode(true).getOwnerDocument();
-		this.eOffer = dOffer.getDocumentElement();
+		if(!YFCCommon.isVoid(eOffer)){
+			dOffer = YFCDocument.getDocumentFor(eOffer.toString());
+			this.eOffer = dOffer.getDocumentElement();
+		}	
 	}
 	
 	public Document getXmlDocument() {
@@ -49,15 +56,39 @@ public class MiraklOffer  {
 	
 	public void appendInventoryAdjustment(YFCElement eRoot){
 		YFCElement eItem = eRoot.createChild("Item");
-		eItem.setAttribute("ItemID", this.getOfferId());
+		eItem.setAttribute("ItemID", this.getItemID());
+		eItem.setAttribute("UnitOfMeasure", this.getUnitOfMeasure());
 		eItem.setAttribute("AdjustmentType", "ABSOLUTE");
 		eItem.setAttribute("Quantity", this.getQuantity());
 		eItem.setAttribute("ShipNode", this.getShopId());
 		eItem.setAttribute("SupplyType", "ONHAND");	
 	}
 	
-	public void appendShipNode(YFCElement eRoot){
-		
+	public void appendItem(YFCElement eRoot){
+		YFCElement eItem = eRoot.createChild("Item");
+		eItem.setAttribute("ItemID", this.getItemID());
+		eItem.setAttribute("UnitOfMeasure", this.getUnitOfMeasure());
+				
+		eItem.setAttribute("ItemGroupCode", "PROD");
+		eItem.setAttribute("OrganizationCode", this.getCatalogOrganizationCode());
+		YFCElement ePrimaryInfo = eItem.createChild("PrimaryInformation");
+		ePrimaryInfo.setAttribute("MinOrderQuantity", this.getMinQuantityAlert());
+		if(!YFCCommon.isVoid(getAvailableStartDate())){
+			ePrimaryInfo.setAttribute("EffectiveStartDate", this.getAvailableStartDate());	
+		}
+		if(eOffer.getBooleanAttribute("active", true)){
+			ePrimaryInfo.setAttribute("Status", "3000");
+		} else {
+			ePrimaryInfo.setAttribute("Status", "2000");
+		}	
+		ePrimaryInfo.setAttribute("IsPickupAllowed", "N");
+		ePrimaryInfo.setAttribute("IsShippingAllowed", "Y");
+		ePrimaryInfo.setAttribute("IsDeliveryAllowed", "N");
+		ePrimaryInfo.setAttribute("IsReturnable", "N");
+		if(!YFCCommon.isVoid(getClassification())){
+			YFCElement eClassificationCode = eItem.createChild("ClassificationCodes");
+			eClassificationCode.setAttribute("StorageType", getClassification());
+		}		
 	}
 	
 	public boolean isActive() {
@@ -66,11 +97,26 @@ public class MiraklOffer  {
 	public void setActive(boolean active) {
 		eOffer.setAttribute("active", active);
 	}
+	public String getCatalogOrganizationCode(){
+		return eOffer.getAttribute("CatalogOrganizationCode");
+	}
+	public void setCatalogOrganizationCode(String sOrgCode){
+		eOffer.setAttribute("CatalogOrganizationCode", sOrgCode);
+	}
+	public String getClassification(){
+		return eOffer.getAttribute("Classification");
+	}
+	public void setClassification(String sClassification){
+		eOffer.setAttribute("Classification", sClassification);
+	}
 	public boolean isAllowQuoteRequests() {
 		return eOffer.getBooleanAttribute("allow-quote-requests", false);
 	}
 	public void setAllowQuoteRequests(boolean allow_quote_requests) {
 		eOffer.setAttribute("allow-quote-requests", allow_quote_requests);
+	}
+	public String getProductSku(){
+		return eOffer.getAttribute("product-sku");
 	}
 	public boolean isPremium() {
 		return eOffer.getBooleanAttribute("premium", false);
@@ -126,6 +172,12 @@ public class MiraklOffer  {
 	public void setCurrencyIsoCode(String currency_iso_code) {
 		eOffer.setAttribute("currency-iso-code", currency_iso_code);
 	}
+	public String getItemID() {
+		return "MKO_" + getOfferId();
+	}
+	public String getUnitOfMeasure() {
+		return "EACH";
+	}
 	public int getOfferId() {
 		return eOffer.getIntAttribute("offer-id");
 	}
@@ -138,8 +190,8 @@ public class MiraklOffer  {
 	public void setQuantity(int quantity) {
 		eOffer.setAttribute("quantity", quantity);
 	}
-	public int getShopId() {
-		return eOffer.getIntAttribute("shop-id");
+	public String getShopId() {
+		return "MRK_SHOP_" + eOffer.getIntAttribute("shop-id");
 	}
 	public void setShopId(int shop_id) {
 		eOffer.setAttribute("shop-id", shop_id);
@@ -228,8 +280,8 @@ public class MiraklOffer  {
 	public void setAvailableEndDate(YDate available_end_date) {
 		eOffer.setAttribute("available-end-date", available_end_date);
 	}
-	public Date getAvailableStartDate() {
-		return eOffer.getDateAttribute("available-start-date");
+	public YDate getAvailableStartDate() {
+		return eOffer.getYDateAttribute("available-start-date");
 	}
 	public void setAvailableStartDate(YDate available_start_date) {
 		eOffer.setAttribute("available-start-date", available_start_date);

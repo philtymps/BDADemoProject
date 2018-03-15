@@ -35,6 +35,7 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 	}
 
 	
+	
 	public static String confirmShipment(YFSEnvironment env, YFCElement eResults, boolean confirm) throws YIFClientCreationException {
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();

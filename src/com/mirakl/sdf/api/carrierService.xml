@@ -1,0 +1,11 @@
+<CarrierServiceCodes>
+	<CarrierServiceCode SCAC="UPSN" CarrierServiceCode="2nd Day Air" FlatFee="15" PricePerPound="3" PricePerUnit="2" />
+	<CarrierServiceCode SCAC="UPSN" CarrierServiceCode="Next Day Air" FlatFee="30" PricePerPound="5" PricePerUnit="3" />
+	<CarrierServiceCode SCAC="UPSN" CarrierServiceCode="Ground" FlatFee="6.50" PricePerPound=".5" PricePerUnit=".25" />
+	<CarrierServiceCode CarrierServiceCode="STANDARD_AURE" FlatFee="6.50" PricePerPound=".5" PricePerUnit=".25"  />
+	<CarrierServiceCode CarrierServiceCode="STANDARD_AURO" FlatFee="6.50" PricePerPound=".5" PricePerUnit=".25"  />
+	<CarrierServiceCode CarrierServiceCode="EXPRESS_AURE" FlatFee="10.50" PricePerPound="1" PricePerUnit=".5"  />
+	<CarrierServiceCode CarrierServiceCode="EXPRESS_AURO" FlatFee="10.50" PricePerPound="1" PricePerUnit=".5"  />
+	<CarrierServiceCode CarrierServiceCode="PREMIUM_AURE" FlatFee="13.50" PricePerPound="1.5" PricePerUnit=".75"  />
+	<CarrierServiceCode CarrierServiceCode="PREMIUM_AURO" FlatFee="13.50" PricePerPound="1.5" PricePerUnit=".75"  />
+</CarrierServiceCodes>

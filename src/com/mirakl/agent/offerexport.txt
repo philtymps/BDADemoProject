@@ -1,0 +1,373 @@
+offer-id;product-sku;min-shipping-price;min-shipping-price-additional;min-shipping-zone;min-shipping-type;price;total-price;price-additional-info;quantity;description;state-code;shop-id;shop-name;professional;premium;logistic-class;active;favorite-rank;channels;deleted;origin-price;discount-start-date;discount-end-date;available-start-date;available-end-date;discount-price;currency-iso-code;discount-ranges;leadtime-to-ship;allow-quote-requests;price-ranges;ecotax;gift-wrap;min-quantity-ordered
+"2000";"MKP100000000094331";"0.00";"0.00";"DOM1";"CLC";"2.00";"2.00";"";"10";"This is description of the offer 2300: 
+ The Emerge Linen Tank has a scoop neckline and is available in a range of colours. This is one of our best-selling styles, an easy layering piece and a beautiful lightweight fabric.
+
+100% linen.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"10.00";"";"";"";"";"2.00";"EUR";"1|2.00";"5";"true";"1|10.00";"";"";""
+"2002";"MKP100000000046634";"0.00";"0.00";"DOM1";"CLC";"11.00";"11.00";"";"10";"This is description of the offer 1100: 
+ Join Diego, his sister Alicia and their friends all over the world as they race to the rescue of animals in trouble - from Latin America to India to Egypt to under the sea!";"11";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"11.00";"2014-12-31T23:00:00Z";"2015-01-30T23:00:00Z";"";"";"5.00";"EUR";"1|5.00";"";"false";"1|11.00";"";"";""
+"2003";"MKP100000000089708";"0.00";"0.00";"DOM1";"CLC";"119.00";"119.00";"";"10";"This is description of the offer 1850: 
+ The Capture Leather Jacket has a mandarin collar with zip fastening and gathering detail at the shoulders. This classic fit jacket is fully lined and has pleated panels at the front with top stitching detail. This style has long sleeves and is available in Berry.
+
+100% leather. Lining 100% polyester.";"11";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"119.00";"";"";"";"";"";"EUR";"";"10";"true";"1|119.00";"";"";""
+"2004";"MKP100000000046965";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"56";"This is description of the offer 1200: 
+ When the planet is threatened by Super Villains, time traveling conquerors, alien invaders, mythical monsters or mad robots bent on the total destruction of humanity, when the forces of evil are so overwhelming that no single hero has the power to save the world";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"true";"1|12.00";"";"";""
+"2005";"MKP100000000089609";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 1800: 
+ The Capture Lace Top has a round neckline and is lined through the body. This classic fit design has unlined three quarter sleeves, perfect for in between weather.Nylon/elastane. Lining polyester/elastane.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2006";"MKP100000000089909";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 1900: 
+ The Capture Lace Top has a round neckline and is lined through the body. This classic fit design has unlined three quarter sleeves, perfect for in between weather.Nylon/elastane. Lining polyester/elastane.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2007";"MKP100000000149788";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"7";"This is description of the offer 3450: 
+ The Capture Stretch Twill Secret Support Skirt  has a waistband with elastic at the back and belt loops. This EziFit style has secret support tummy panels to slim and smooth in all the right places, and a fly front with button fastening. This style has side front pockets and back cargo pockets with button closure add extra detail to this skirt. Available in a range of colours - you'll find the perfect shade for you.
+
+Cotton/elastane. Denim cotton/polyester/elastane. Length 60cm.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2008";"MKP100000000149838";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 3500: 
+ The Capture Stretch Twill Secret Support Skirt  has a waistband with elastic at the back and belt loops. This EziFit style has secret support tummy panels to slim and smooth in all the right places, and a fly front with button fastening. This style has side front pockets and back cargo pockets with button closure add extra detail to this skirt. Available in a range of colours - you'll find the perfect shade for you.
+
+Cotton/elastane. Denim cotton/polyester/elastane. Length 60cm.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2009";"MKP100000000166358";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 4650: 
+ Viscose/elastane. Elasticated waistband. EziFit.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"15";"false";"1|12.00";"";"";""
+"2010";"MKP100000000194724";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 5250: 
+ Polyamide/polyester/elastane. Beautiful embroidered lace with full cup styling.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2012";"MKP100000000196169";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"8";"This is description of the offer 5550: 
+ Polyamide/elastane. Underwired cup. Lace embroidered.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"true";"1|12.00";"";"";""
+"2013";"MKP100000000196352";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 5600: 
+ Nylon/elastane. Underwire bra with soft moulded `cups and adjustable  straps. Fabric gives great stretch, comfort and support  with a soft smooth finish and elastic that won? dig in.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2014";"MKP100000000198329";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 6000: 
+ Polyamide/elastane. Soft underwire cup. Front fastening. Adjustable straps.";"4";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2015";"MKP100000000086895";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"82";"This is description of the offer 1350: 
+ The Capture Denim Skirt has a mid rise waistband with belt loops. This classic fit skirt has a fly front with button fastening. This style has angled, zip welt pockets at the front and welt pockets at the back. Available in a range or washes, colours and prints.
+
+Cotton/polyester/elastane. Colours cotton/elastane.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2016";"MKP100000000088896";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"31";"This is description of the offer 1650: 
+ The Capture Super Stretch Pull On Support Jean has flat front support with wide waistband and mock fly. This classic fit jean also has five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane. Inside leg 80cm.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"true";"1|15.00";"";"";""
+"2017";"MKP100000000089144";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1750: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2018";"MKP100000000090552";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"6";"This is description of the offer 2100: 
+ The Capture 1/2 Button Fleece has a collared neckline with button fastenings. This EziFit style has side pockets and long sleeves. Available in a range of colours and stripes.
+
+100% polyester.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2019";"MKP100000000094547";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2350: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2020";"MKP100000000094694";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"8";"This is description of the offer 2400: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2021";"MKP100000000106169";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2700: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2022";"MKP100000000155602";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4200: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2023";"MKP100000000157174";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4300: 
+ Cotton/elastane. Pencil shape. Fly front with button  fastening. Angled, zip welt pockets at front. Functional back welt pockets. Back split. Classic fit.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2024";"MKP100000000158719";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"9";"This is description of the offer 4400: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2025";"MKP100000000158879";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4450: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2026";"MKP100000000160981";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"7";"This is description of the offer 4550: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2027";"MKP100000000162214";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4600: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"true";"1|15.00";"";"";""
+"2028";"MKP100000000166526";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4700: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"2";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2029";"MKP100000000091749";"0.00";"0.00";"DOM1";"CLC";"16.00";"16.00";"";"10";"This is description of the offer 2200: 
+ The Capture Blouse with Camisole has a mandarin collar and a half button placket. This EziFit style has gathering at the shoulders and three quarter roll-up sleeves. Available in a range of prints and colours, and with a camisole included, this blouse is hard to go past.100% polyester.";"10";"3";"* Super Shop";"false";"false";"M";"true";"";"US";"false";"16.00";"";"";"";"";"";"EUR";"";"";"false";"1|16.00";"";"";""
+"2030";"MKP100000000106160";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2695: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2031";"MKP100000000155597";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4195: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2032";"MKP100000000157169";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4295: 
+ Cotton/elastane. Pencil shape. Fly front with button  fastening. Angled, zip welt pockets at front. Functional back welt pockets. Back split. Classic fit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2033";"MKP100000000158714";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4395: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2034";"MKP100000000158865";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4445: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"true";"1|15.00";"";"";""
+"2035";"MKP100000000160962";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4545: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2036";"MKP100000000162200";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"9";"This is description of the offer 4595: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"true";"1|15.00";"";"";""
+"2037";"MKP100000000166515";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4695: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2038";"MKP100000000166719";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4745: 
+ Cotton/elastane. Straight, slim leg jeans with hidden shaping techniques that flatter and naturally highlight feminine curves. Five pocket styling. Front fly with button closure and belt loops. True size is slim fitting, order up a size for a more relaxed fit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2039";"MKP100000000233983";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 6395: 
+ 100% cotton 250 thread count per 10cm square. Quilted skirt with polyester fill and polyester/cotton top with 35cm drop.  See product code 107356 for more colours in this style.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2040";"MKP100000000086993";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 1395: 
+ Cotton/elastane. Scoop neck dress with petal sleeves. Knee length.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"USD";"";"";"false";"1|19.00";"";"";""
+"2041";"MKP100000000090279";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 2045: 
+ The Capture Zip-Through Fleece has panel detailing and concealed front pockets. This Ezifit style has long sleeves and a soft microfleece fabrication. Available in a range of colours and stripes. You won't want to wear anything else this winter.
+
+100% polyester. Mocha/White and Black/White spot lining.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"USD";"";"";"false";"1|19.00";"";"";""
+"2042";"MKP100000000090597";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 2145: 
+ The Capture 1/2 Button Fleece has a collared neckline with button fastenings. This EziFit style has side pockets and long sleeves. Available in a range of colours and stripes.
+
+100% polyester.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"USD";"";"";"false";"1|19.00";"";"";""
+"2043";"MKP100000000097079";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"5";"This is description of the offer 2545: 
+ 100% cotton. 'V' neck with ribbed cuffs and hem. 3/4 sleeves. Classic fit.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"USD";"";"";"true";"1|19.00";"";"";""
+"2044";"MKP100000000154604";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 3945: 
+ The Essentials Lean Jean has a mid rise waistband with belt loops. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints, colours and lengths, you'll find the perfect slim leg jean for you.
+
+Coloured cotton/elastane. Inside leg 80cm.
+
+Denim washes cotton/polyester/elastane. Short inside leg 76cm. Regular inside leg 80cm. Long inside leg 84cm.";"10";"4";"* Super Shop USA";"false";"false";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"USD";"";"";"false";"1|19.00";"";"";""
+"2045";"MKP100000000198343";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"7";"This is description of the offer 6008: 
+ Polyamide/elastane. Soft underwire cup. Front fastening. Adjustable straps.";"3";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"CAD";"";"";"false";"1|12.00";"";"";""
+"2046";"MKP100000000087952";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1458: 
+ The Capture Denim Skirt has a mid rise waistband with belt loops. This classic fit skirt has a fly front with button fastening. This style has angled, zip welt pockets at the front and welt pockets at the back. Available in a range or washes, colours and prints.
+
+Cotton/polyester/elastane. Colours cotton/elastane.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2047";"MKP100000000088836";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"7";"This is description of the offer 1608: 
+ The Capture Super Stretch Pull On Support Jean has flat front support with wide waistband and mock fly. This classic fit jean also has five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane. Inside leg 80cm.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"true";"1|15.00";"";"";""
+"2048";"MKP100000000089055";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1708: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2049";"MKP100000000089177";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"6";"This is description of the offer 1758: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2051";"MKP100000000094734";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2408: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2052";"MKP100000000106184";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2708: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2053";"MKP100000000155610";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4208: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2054";"MKP100000000156618";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4258: 
+ Canvas upper and lining. Contrast stripes with woven heel. Heel height 60mm.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"true";"1|15.00";"";"";""
+"2055";"MKP100000000157475";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4308: 
+ Cotton/elastane. Front pockets and back patch pockets. Fly front  with button fastening. Belt loops. Classic fit.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2056";"MKP100000000158733";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4408: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"true";"1|15.00";"";"";""
+"2058";"MKP100000000161016";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4558: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"true";"1|15.00";"";"";""
+"2059";"MKP100000000162255";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4608: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"false";"1|15.00";"";"";""
+"2060";"MKP100000000166547";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4708: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"2";"5";"* Super Shop Canada";"false";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"CAD";"";"";"true";"1|15.00";"";"";""
+"2061";"MKP100000000198343";"0";"0";"DOM1";"CLC";"12";"12";"";"7000";"This is description of the offer 6008: 
+ Polyamide/elastane. Soft underwire cup. Front fastening. Adjustable straps.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"12";"";"";"";"";"";"CLP";"";"";"false";"1|12.00";"";"";""
+"2062";"MKP100000000087952";"0";"0";"DOM1";"CLC";"15";"15";"";"6995";"This is description of the offer 1458: 
+ The Capture Denim Skirt has a mid rise waistband with belt loops. This classic fit skirt has a fly front with button fastening. This style has angled, zip welt pockets at the front and welt pockets at the back. Available in a range or washes, colours and prints.
+
+Cotton/polyester/elastane. Colours cotton/elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"true";"1|15.00";"";"";""
+"2063";"MKP100000000088836";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 1608: 
+ The Capture Super Stretch Pull On Support Jean has flat front support with wide waistband and mock fly. This classic fit jean also has five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane. Inside leg 80cm.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2064";"MKP100000000089055";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 1708: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2065";"MKP100000000089177";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 1758: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2066";"MKP100000000094555";"0";"0";"DOM1";"CLC";"15";"15";"";"6999";"This is description of the offer 2358: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2067";"MKP100000000094734";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 2408: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2068";"MKP100000000106184";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 2708: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"2";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2069";"MKP100000000155610";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 4208: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2070";"MKP100000000156618";"0";"0";"DOM1";"CLC";"15";"15";"";"6995";"This is description of the offer 4258: 
+ Canvas upper and lining. Contrast stripes with woven heel. Heel height 60mm.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2071";"MKP100000000157475";"0";"0";"DOM1";"CLC";"15";"15";"";"7000";"This is description of the offer 4308: 
+ Cotton/elastane. Front pockets and back patch pockets. Fly front  with button fastening. Belt loops. Classic fit.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2072";"MKP100000000158733";"0";"0";"DOM1";"CLC";"15";"15";"";"6968";"This is description of the offer 4408: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"true";"1|15.00";"";"";""
+"2073";"MKP100000000159191";"0";"0";"DOM1";"CLC";"15";"15";"";"6997";"This is description of the offer 4458: 
+ Wide elasticated waistband. Asymmetric drape hem.
+Polyester elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2074";"MKP100000000161016";"0";"0";"DOM1";"CLC";"15";"15";"";"6997";"This is description of the offer 4558: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"true";"1|15.00";"";"";""
+"2075";"MKP100000000162255";"0";"0";"DOM1";"CLC";"15";"15";"";"6978";"This is description of the offer 4608: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"true";"1|15.00";"";"";""
+"2076";"MKP100000000166547";"0";"0";"DOM1";"CLC";"15";"15";"";"6995";"This is description of the offer 4708: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"11";"6";"* Super Shop Chile";"false";"false";"M";"true";"";"US";"false";"15";"";"";"";"";"";"CLP";"";"";"false";"1|15.00";"";"";""
+"2077";"MKP100000000094331";"0.00";"0.00";"DOM1";"CLC";"10.00";"10.00";"";"10";"This is description of the offer 2300: 
+ The Emerge Linen Tank has a scoop neckline and is available in a range of colours. This is one of our best-selling styles, an easy layering piece and a beautiful lightweight fabric.
+
+100% linen.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"10.00";"";"";"";"";"";"EUR";"";"";"false";"1|10.00";"";"";""
+"2078";"MKP100000000195360";"0.00";"0.00";"DOM1";"CLC";"10.00";"10.00";"";"10";"This is description of the offer 5400: 
+ Polyamide/elastane. Front lined.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"10.00";"";"";"";"";"";"EUR";"";"";"false";"1|10.00";"";"";""
+"2079";"MKP100000000046634";"0.00";"0.00";"DOM1";"CLC";"11.00";"11.00";"";"10";"This is description of the offer 1100: 
+ Join Diego, his sister Alicia and their friends all over the world as they race to the rescue of animals in trouble - from Latin America to India to Egypt to under the sea!";"11";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"11.00";"";"";"";"";"";"EUR";"";"";"false";"1|11.00";"";"";""
+"2080";"MKP100000000089708";"0.00";"0.00";"DOM1";"CLC";"119.00";"119.00";"";"10";"This is description of the offer 1850: 
+ The Capture Leather Jacket has a mandarin collar with zip fastening and gathering detail at the shoulders. This classic fit jacket is fully lined and has pleated panels at the front with top stitching detail. This style has long sleeves and is available in Berry.
+
+100% leather. Lining 100% polyester.";"11";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"119.00";"";"";"";"";"";"EUR";"";"";"false";"1|119.00";"";"";""
+"2081";"MKP100000000046965";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"52";"This is description of the offer 1200: 
+ When the planet is threatened by Super Villains, time traveling conquerors, alien invaders, mythical monsters or mad robots bent on the total destruction of humanity, when the forces of evil are so overwhelming that no single hero has the power to save the world";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2082";"MKP100000000089609";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"9";"This is description of the offer 1800: 
+ The Capture Lace Top has a round neckline and is lined through the body. This classic fit design has unlined three quarter sleeves, perfect for in between weather.Nylon/elastane. Lining polyester/elastane.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2083";"MKP100000000089909";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 1900: 
+ The Capture Lace Top has a round neckline and is lined through the body. This classic fit design has unlined three quarter sleeves, perfect for in between weather.Nylon/elastane. Lining polyester/elastane.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2084";"MKP100000000149788";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"7";"This is description of the offer 3450: 
+ The Capture Stretch Twill Secret Support Skirt  has a waistband with elastic at the back and belt loops. This EziFit style has secret support tummy panels to slim and smooth in all the right places, and a fly front with button fastening. This style has side front pockets and back cargo pockets with button closure add extra detail to this skirt. Available in a range of colours - you'll find the perfect shade for you.
+
+Cotton/elastane. Denim cotton/polyester/elastane. Length 60cm.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2085";"MKP100000000149838";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 3500: 
+ The Capture Stretch Twill Secret Support Skirt  has a waistband with elastic at the back and belt loops. This EziFit style has secret support tummy panels to slim and smooth in all the right places, and a fly front with button fastening. This style has side front pockets and back cargo pockets with button closure add extra detail to this skirt. Available in a range of colours - you'll find the perfect shade for you.
+
+Cotton/elastane. Denim cotton/polyester/elastane. Length 60cm.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2086";"MKP100000000166358";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 4650: 
+ Viscose/elastane. Elasticated waistband. EziFit.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2087";"MKP100000000194724";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 5250: 
+ Polyamide/polyester/elastane. Beautiful embroidered lace with full cup styling.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2088";"MKP100000000195610";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 5450: 
+ Nylon/elastane. Lace trim with wide supportive straps.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2089";"MKP100000000196169";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 5550: 
+ Polyamide/elastane. Underwired cup. Lace embroidered.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2090";"MKP100000000196352";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"8";"This is description of the offer 5600: 
+ Nylon/elastane. Underwire bra with soft moulded cups and adjustable  straps. Fabric gives great stretch, comfort and support  with a soft smooth finish and elastic that won? dig in.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2091";"MKP100000000198329";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 6000: 
+ Polyamide/elastane. Soft underwire cup. Front fastening. Adjustable straps.";"4";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"EUR";"";"";"false";"1|12.00";"";"";""
+"2092";"MKP100000000086895";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"82";"This is description of the offer 1350: 
+ The Capture Denim Skirt has a mid rise waistband with belt loops. This classic fit skirt has a fly front with button fastening. This style has angled, zip welt pockets at the front and welt pockets at the back. Available in a range or washes, colours and prints.
+
+Cotton/polyester/elastane. Colours cotton/elastane.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2093";"MKP100000000088896";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"31";"This is description of the offer 1650: 
+ The Capture Super Stretch Pull On Support Jean has flat front support with wide waistband and mock fly. This classic fit jean also has five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane. Inside leg 80cm.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2094";"MKP100000000089144";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1750: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2095";"MKP100000000090552";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2100: 
+ The Capture 1/2 Button Fleece has a collared neckline with button fastenings. This EziFit style has side pockets and long sleeves. Available in a range of colours and stripes.
+
+100% polyester.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2096";"MKP100000000094547";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2350: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2097";"MKP100000000094694";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2400: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2098";"MKP100000000106169";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2700: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2099";"MKP100000000155602";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4200: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2100";"MKP100000000157174";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4300: 
+ Cotton/elastane. Pencil shape. Fly front with button  fastening. Angled, zip welt pockets at front. Functional back welt pockets. Back split. Classic fit.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2101";"MKP100000000158719";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4400: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2102";"MKP100000000158879";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4450: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2103";"MKP100000000160981";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4550: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2104";"MKP100000000162214";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4600: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2105";"MKP100000000166526";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4700: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"2";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2106";"MKP100000000091749";"0.00";"0.00";"DOM1";"CLC";"16.00";"16.00";"";"10";"This is description of the offer 2200: 
+ The Capture Blouse with Camisole has a mandarin collar and a half button placket. This EziFit style has gathering at the shoulders and three quarter roll-up sleeves. Available in a range of prints and colours, and with a camisole included, this blouse is hard to go past.100% polyester.";"10";"101";"Four Leaf Clover";"true";"true";"M";"true";"";"US";"false";"16.00";"";"";"";"";"";"EUR";"";"";"false";"1|16.00";"";"";""
+"2107";"MKP100000000198343";"0.00";"0.00";"DOM1";"CLC";"12.00";"12.00";"";"10";"This is description of the offer 6008: 
+ Polyamide/elastane. Soft underwire cup. Front fastening. Adjustable straps.";"3";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"12.00";"";"";"";"";"";"USD";"";"";"false";"1|12.00";"";"";""
+"2108";"MKP100000000087952";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"8";"This is description of the offer 1458: 
+ The Capture Denim Skirt has a mid rise waistband with belt loops. This classic fit skirt has a fly front with button fastening. This style has angled, zip welt pockets at the front and welt pockets at the back. Available in a range or washes, colours and prints.
+
+Cotton/polyester/elastane. Colours cotton/elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2109";"MKP100000000088836";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1608: 
+ The Capture Super Stretch Pull On Support Jean has flat front support with wide waistband and mock fly. This classic fit jean also has five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane. Inside leg 80cm.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2110";"MKP100000000089055";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1708: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"true";"1|15.00";"";"";""
+"2111";"MKP100000000089177";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 1758: 
+ The Capture Super Stretch Control Straight Leg Jean has a mid rise waistband with belt loops and internal support panels. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints and colours, there's a jean for every occasion.
+
+Cotton/polyester/elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2112";"MKP100000000094555";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2358: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2113";"MKP100000000094734";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2408: 
+ The Capture Poplin Shirt has a collared and button fastening. This classic fit style has three quarter sleeves and is available in a range of colours and prints.
+
+Cotton/elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2114";"MKP100000000106184";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"8";"This is description of the offer 2708: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"true";"1|15.00";"";"";""
+"2115";"MKP100000000155610";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"8";"This is description of the offer 4208: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2116";"MKP100000000156618";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4258: 
+ Canvas upper and lining. Contrast stripes with woven heel. Heel height 60mm.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"true";"1|15.00";"";"";""
+"2117";"MKP100000000157475";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"6";"This is description of the offer 4308: 
+ Cotton/elastane. Front pockets and back patch pockets. Fly front  with button fastening. Belt loops. Classic fit.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"true";"1|15.00";"";"";""
+"2118";"MKP100000000158733";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"6";"This is description of the offer 4408: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2119";"MKP100000000159191";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4458: 
+ Wide elasticated waistband. Asymmetric drape hem.
+Polyester elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2120";"MKP100000000161016";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4558: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2121";"MKP100000000162255";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"7";"This is description of the offer 4608: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2122";"MKP100000000166547";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4708: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"2";"109";"White Hen Pantry";"true";"false";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"USD";"";"";"false";"1|15.00";"";"";""
+"2123";"MKP100000000106160";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 2695: 
+ Synthetic upper, lining and sock. Round toe with bow detail.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"true";"1|15.00";"";"";""
+"2124";"MKP100000000155597";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4195: 
+ Cotton/elastane. Straight leg capris with zip fly and concealed hook and bar closure. Belt loops. Front pockets and back welt pockets with button fastening. Inside leg 53cm. Classic fit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"true";"1|15.00";"";"";""
+"2125";"MKP100000000157169";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"5";"This is description of the offer 4295: 
+ Cotton/elastane. Pencil shape. Fly front with button  fastening. Angled, zip welt pockets at front. Functional back welt pockets. Back split. Classic fit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2126";"MKP100000000158714";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4395: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"true";"1|15.00";"";"";""
+"2127";"MKP100000000158865";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"2";"This is description of the offer 4445: 
+ 100% linen. Front angled pockets and back button-down welt pockets. 1/2 shirring waistband at front with non-functional button tabs. Shirring waistband at back. Wide leg. EziFit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2128";"MKP100000000160962";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"8";"This is description of the offer 4545: 
+ Cotton/elastane. Internal support panels at waist. Centre front fly closure. Two side pockets. Classic fit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2129";"MKP100000000162200";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4595: 
+ 100% viscose. Lining 100% cotton. 3/4 sleeves with lace trims at cuff and hem. Classic fit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2130";"MKP100000000166515";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 4695: 
+ The Essentials Secret Support Ponti Slimleg Pant has a high rise, secret support waistband and is a flattering slim leg cut. This classic fit style features a new stretch lining through the waistband, which smooths, flattens and lifts in all the right places.
+
+Rayon/nylon/elastane.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"true";"1|15.00";"";"";""
+"2132";"MKP100000000233983";"0.00";"0.00";"DOM1";"CLC";"15.00";"15.00";"";"10";"This is description of the offer 6395: 
+ 100% cotton 250 thread count per 10cm square. Quilted skirt with polyester fill and polyester/cotton top with 35cm drop.  See product code 107356 for more colours in this style.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"15.00";"";"";"";"";"";"EUR";"";"";"false";"1|15.00";"";"";""
+"2133";"MKP100000000086993";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 1395: 
+ Cotton/elastane. Scoop neck dress with petal sleeves. Knee length.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"EUR";"";"";"true";"1|19.00";"";"";""
+"2134";"MKP100000000090279";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 2045: 
+ The Capture Zip-Through Fleece has panel detailing and concealed front pockets. This Ezifit style has long sleeves and a soft microfleece fabrication. Available in a range of colours and stripes. You won't want to wear anything else this winter.
+
+100% polyester. Mocha/White and Black/White spot lining.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"EUR";"";"";"false";"1|19.00";"";"";""
+"2135";"MKP100000000090597";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 2145: 
+ The Capture 1/2 Button Fleece has a collared neckline with button fastenings. This EziFit style has side pockets and long sleeves. Available in a range of colours and stripes.
+
+100% polyester.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"EUR";"";"";"true";"1|19.00";"";"";""
+"2136";"MKP100000000097079";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"7";"This is description of the offer 2545: 
+ 100% cotton. 'V' neck with ribbed cuffs and hem. 3/4 sleeves. Classic fit.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"EUR";"";"";"false";"1|19.00";"";"";""
+"2137";"MKP100000000154604";"0.00";"0.00";"DOM1";"CLC";"19.00";"19.00";"";"10";"This is description of the offer 3945: 
+ The Essentials Lean Jean has a mid rise waistband with belt loops. This classic fit jean has a fly front with button fastening and five pocket styling. Available in a range of washes, prints, colours and lengths, you'll find the perfect slim leg jean for you.
+
+Coloured cotton/elastane. Inside leg 80cm.
+
+Denim washes cotton/polyester/elastane. Short inside leg 76cm. Regular inside leg 80cm. Long inside leg 84cm.";"10";"146";"Cut Rite";"true";"true";"M";"true";"";"US";"false";"19.00";"";"";"";"";"";"EUR";"";"";"false";"1|19.00";"";"";""

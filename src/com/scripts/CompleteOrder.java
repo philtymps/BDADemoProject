@@ -2,6 +2,7 @@ package com.scripts;
 
 import java.io.File;
 import java.rmi.RemoteException;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -11,9 +12,12 @@ import com.extension.bda.service.IBDAService;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.shared.ycp.YFSContext;
+import com.yantra.yfc.date.YDate;
+import com.yantra.yfc.date.YTimestamp;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfc.util.YFCDate;
 import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSException;
 
@@ -148,7 +152,7 @@ public class CompleteOrder implements IBDAService {
 				            	if (!YFCCommon.isVoid(eShipments)){
 				            		for (YFCElement eShipment : eShipments.getChildren()){
 				            			if (statusGreaterThan(getBaseStatus(eShipment.getAttribute("Status")), "1400") && !eShipment.getBooleanAttribute("InvoiceComplete", false)){
-				            				createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), localApi);
+				            				createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"), localApi);
 				            				YFCElement eOutputShipments = eResults.getChildElement("Shipments", true);
 				            				boolean foundShipment = false;
 				            				for (YFCElement eOutputShipment : eOutputShipments.getChildren()){
@@ -549,6 +553,14 @@ public class CompleteOrder implements IBDAService {
 									confirm = true;
 								} else {
 									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, createShipments);
+									Calendar c = Calendar.getInstance();
+									if(c.get(Calendar.HOUR_OF_DAY) > 18){
+										c.add(Calendar.DATE, 1);
+									} 
+									c.set(Calendar.HOUR_OF_DAY, 18);
+									c.set(Calendar.MINUTE, 0);
+									c.set(Calendar.SECOND, 0);
+									dShipment.getDocumentElement().setAttribute("ExpectedShipmentDate", YTimestamp.newMutableTimestamp(c.getTimeInMillis()));
 								}
 									
 								YFCElement eShipmentLine = createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
@@ -603,6 +615,20 @@ public class CompleteOrder implements IBDAService {
 										eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute("OrderReleaseKey") + "_S");
 										eShipment.setAttribute("ShipNode", eOrderLineStatus.getAttribute("ShipNode"));
 										createShipments.put(eOrderLineStatus.getAttribute("OrderReleaseKey"), dShipment);
+										Calendar c = Calendar.getInstance();
+										if(c.get(Calendar.HOUR_OF_DAY) > 18){
+											c.add(Calendar.DATE, 1);
+											c.set(Calendar.HOUR_OF_DAY, 9);
+											c.set(Calendar.MINUTE, 0);
+											c.set(Calendar.SECOND, 0);
+										} else if(c.get(Calendar.HOUR_OF_DAY) < 9){
+											c.set(Calendar.HOUR_OF_DAY, 9);
+											c.set(Calendar.MINUTE, 0);
+											c.set(Calendar.SECOND, 0);
+										} else {
+											c.add(Calendar.MINUTE, 30);
+										}
+										dShipment.getDocumentElement().setAttribute("ExpectedShipmentDate", YTimestamp.newMutableTimestamp(c.getTimeInMillis()));
 									}
 								}
 								createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
@@ -706,11 +732,15 @@ public class CompleteOrder implements IBDAService {
 		return dShipment.getDocument();
 	}
 	
-	public static void createShipmentInvoice (YFSEnvironment env, String sShipmentKey, YIFApi m_YifApi){
+	public static void createShipmentInvoice (YFSEnvironment env, String sShipmentKey, String sDocumentType, YIFApi m_YifApi){
 		YFCDocument shipment = YFCDocument.createDocument("Shipment");
 		YFCElement eShipment = shipment.getDocumentElement();
 		eShipment.setAttribute("ShipmentKey", sShipmentKey);
-		eShipment.setAttribute("TransactionId", "CREATE_SHMNT_INVOICE.0001");
+		if(YFCCommon.equals(sDocumentType, "0001")){
+			eShipment.setAttribute("TransactionId", "CREATE_SHMNT_INVOICE.0001");
+		} else if(YFCCommon.equals(sDocumentType, "0005")) {
+			eShipment.setAttribute("TransactionId", "CREATE_DROP_SHIP_INVOICE.0005.ex");
+		}
 		try {
 			m_YifApi.invoke(env, "createShipmentInvoice", shipment.getDocument());
 		} catch(Exception yex) {

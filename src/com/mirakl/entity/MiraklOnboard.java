@@ -5,6 +5,7 @@ import com.mirakl.utilities.MiraklUtils;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfs.japi.YFSEnvironment;
 
 public class MiraklOnboard {
 	
@@ -32,9 +33,9 @@ public class MiraklOnboard {
 		this.sOrgName = "Mirakl";
 		this.exists = false;
 	}
-	public boolean shopExists() {
+	public boolean shopExists(YFSEnvironment env) {
 		if(!exists){
-			exists = MiraklUtils.organizationExists(sOrgCode);
+			exists = MiraklUtils.organizationExists(sOrgCode, env);
 		}
 		return exists;
 	}
@@ -48,14 +49,14 @@ public class MiraklOnboard {
 		eAddress.setAttribute("ZipCode", "02144");
 	}
 	
-	public void createEnterprise(){
-		if(!shopExists()){
+	public void createEnterprise(YFSEnvironment env, String sCatalogOrg, String sInventoryOrg){
+		if(!shopExists(env)){
 			YFCDocument dOrg = YFCDocument.createDocument("Organization");
 			YFCElement eOrg = dOrg.getDocumentElement();
 			eOrg.setAttribute("OrganizationCode", sOrgCode);
 			eOrg.setAttribute("OrganizationName", sOrgName);
-			eOrg.setAttribute("CatalogOrganizationCode", sOrgCode);
-			eOrg.setAttribute("InventoryOrganizationCode", sOrgCode);
+			eOrg.setAttribute("CatalogOrganizationCode", sCatalogOrg);
+			eOrg.setAttribute("InventoryOrganizationCode", sInventoryOrg);
 			eOrg.setAttribute("CapacityOrganizationCode", sOrgCode);
 			eOrg.setAttribute("PricingOrganizationCode", sOrgCode);
 			eOrg.setAttribute("CustomerMasterOrganizationCode", sOrgCode);
@@ -67,12 +68,15 @@ public class MiraklOnboard {
 			eOrg.setAttribute("LocaleCode", "en_US_EST");
 			eOrg.setAttribute("IsSourcingKept", "Y");
 			eOrg.setAttribute("PrimaryEnterpriseKey", sOrgCode);
-			
+			eOrg.setAttribute("RequiresChainedOrder", "Y");
 			createAddress("CorporatePersonInfo", eOrg);
 			createAddress("ContactPersonInfo", eOrg);
 			createAddress("BillingPersonInfo", eOrg);
-			
-			YFCDocument dResponse = CallInteropServlet.invokeApi(dOrg, null, "manageOrganizationHierarchy", "http://oms.omfulfillment.com:9080");			
+			MiraklUtils.callApi(env, dOrg, null, "manageOrganizationHierarchy");			
 		}
+	}
+	
+	public void createNodeType(){
+		
 	}
 }
