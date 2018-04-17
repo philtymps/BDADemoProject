@@ -174,17 +174,17 @@ public class MiraklOrder {
 								mApis.put("confirmShipment", dShipment);
 							}
 							createShipmentLine(mApis.get("confirmShipment").getDocumentElement(), eExistingLine, eMiraklOrderLine.getChildElement("quantity", true).getNodeValue(), eExistingOrder.getAttribute("OrderHeaderKey"));
-						} else if(sNewOMSStatus.equals("9000")){
+						} else if(sNewOMSStatus.equals("9000") || sNewOMSStatus.equals("1100.REFUSED")){
 							if(!mApis.containsKey("cancelOrder")){
 								YFCDocument	dOrder = YFCDocument.createDocument("Order");
 								dOrder.getDocumentElement().setAttribute("OrderHeaderKey", eExistingOrder.getAttribute("OrderHeaderKey"));
 								dOrder.getDocumentElement().setAttribute("Override", true);
-								mApis.put("changeOrder", dOrder);
+								mApis.put("cancelOrder", dOrder);
 							}
 							YFCElement eOrderLineInput = mApis.get("cancelOrder").getDocumentElement().getChildElement("OrderLines", true).createChild("OrderLine");
 							eOrderLineInput.setAttribute("OrderLineKey", eMiraklOrderLine.getChildElement("order_line_id", true).getNodeValue());
 							eOrderLineInput.setAttribute("Override", true);
-							eOrderLineInput.setAttribute("OrderedQty", eMiraklOrderLine.getChildElement("quantity", true).getNodeValue());
+							eOrderLineInput.setAttribute("OrderedQty", 0);
 						} else if(sNewOMSStatus.startsWith("1")){
 						//	System.out.println("new Status: " + sNewOMSStatus);
 							if(eMiraklOrderLine.getChildElement("quantity").getLongNodeValue() > 0){

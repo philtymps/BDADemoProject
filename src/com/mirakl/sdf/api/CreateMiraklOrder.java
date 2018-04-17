@@ -182,7 +182,7 @@ public class CreateMiraklOrder extends MiraklBase implements IBDAService {
 				
 				boolean shippingFound = false;
 				for(YFCElement eCharge : eChainedLine.getChildElement("LineCharges", true).getChildren()){
-					if(eCharge.getBooleanAttribute("IsShippingCharge", false)){
+					if(eCharge.getBooleanAttribute("IsShippingCharge", false) || YFCCommon.equals(eCharge.getAttribute("ChargeCategory"), "Shipping")){
 						createNode(eOffer, "shipping_price", eCharge.getAttribute("ChargeAmount", "0.00"));
 						shippingFound = true;
 					}

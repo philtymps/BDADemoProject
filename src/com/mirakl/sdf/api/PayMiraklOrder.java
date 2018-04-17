@@ -1,9 +1,11 @@
 package com.mirakl.sdf.api;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -35,6 +37,7 @@ public class PayMiraklOrder extends MiraklBase implements IBDAService {
 		
 		ArrayList<String> orderids = new ArrayList<String>();
 		
+		
 		for(YFCElement eInvoiceCollection : eOrder.getChildElement("InvoiceCollections", true).getChildren()){
 			System.out.println("In Invoice Collection: " + eInvoiceCollection);
 			
@@ -49,7 +52,20 @@ public class PayMiraklOrder extends MiraklBase implements IBDAService {
 							String orderid = eOrderLine.getChildElement("CustomAttributes").getAttribute(this.getMiraklOrderID());							
 							if(!orderids.contains(orderid)){
 								YFCElement order = eOrders.createChild("order");
-								createNode(order, "amount", eInvoiceCollection.getChildElement("OrderInvoice").getAttribute("AmountCollected"));
+								
+								try {
+									YFCDocument dMiraklOrders = getMiraklOrder(orderid);
+									YFCElement eMiraklOrder = dMiraklOrders.getDocumentElement().getChildElement("orders", true).getChildElement("order", true);
+									Double total = eMiraklOrder.getChildElement("total_price").getDoubleNodeValue();
+									if(total <= eInvoiceCollection.getChildElement("OrderInvoice").getDoubleAttribute("AmountCollected")){
+										createNode(order, "amount", total);
+									} else {
+										createNode(order, "amount", eInvoiceCollection.getChildElement("OrderInvoice").getAttribute("AmountCollected"));
+									}								
+								} catch (Exception e){
+									createNode(order, "amount", eInvoiceCollection.getChildElement("OrderInvoice").getAttribute("AmountCollected"));
+								
+								}
 								createNode(order, "customer_id", eOrder.getAttribute("CustomerEMailID", "no_email"));
 								createNode(order, "order_id", orderid);
 								if(YFCCommon.equals(eInvoiceCollection.getChildElement("OrderInvoice").getAttribute("AmountCollected"), eInvoiceCollection.getChildElement("OrderInvoice").getAttribute("TotalAmount"))){
@@ -71,6 +87,43 @@ public class PayMiraklOrder extends MiraklBase implements IBDAService {
 		}
 		
 		return input;
+	}
+	
+	
+	private YFCDocument getMiraklOrder(String sOrderHeaderKey) throws MalformedURLException, IOException{
+		YFCDocument dResponse = null;
+		URL url;
+		url = new URL(getURL("/api/orders?order_ids=" + sOrderHeaderKey));
+		System.out.println("Mirakl Input: " + url.toString());
+		
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		conn.setRequestMethod("GET");
+		conn.setRequestProperty("Authorization", getApiKey());
+		conn.setRequestProperty("Accept", "application/xml");
+		conn.setDoOutput(true);
+			
+		StringBuffer sb = new StringBuffer();
+		BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+		String res;
+		while ((res = in.readLine()) != null) {
+			sb.append(res);
+		}		
+		in.close();
+		
+		if(conn.getResponseCode() != 200) {
+			throw new RuntimeException("Failed: HTTP error code return : " + conn.getResponseCode());
+		}
+		
+		try {
+			dResponse = YFCDocument.getDocumentFor(sb.toString());
+			System.out.println("Mirakl Response: " + dResponse);
+		} catch (Exception e) {
+			System.out.println("Response is not a document");
+			System.out.println(sb.toString());
+		}
+		conn.disconnect();
+	
+		return dResponse;
 	}
 	
 	private YFCDocument postPayment(YFCDocument dInput) throws Exception{
@@ -103,7 +156,7 @@ public class PayMiraklOrder extends MiraklBase implements IBDAService {
 			return dInput;
 		} else if(conn.getResponseCode() != 200) {
 			conn.disconnect();
-			throw new RuntimeException("Failed: HTTP error code return : " + conn.getResponseCode());
+			//throw new RuntimeException("Failed: HTTP error code return : " + conn.getResponseCode());
 		}
 		
 		try {

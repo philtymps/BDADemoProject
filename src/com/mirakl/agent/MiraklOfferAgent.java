@@ -389,7 +389,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 			int count = parseShopUpdateResponse(new InputStreamReader(conn.getInputStream()), jobs, criteria);
 			conn.disconnect();
 			
-			if(count >= 99){
+			if(count == 100){
 				getShopUpdates(criteria, jobs, offset + 1);
 			}
 		} catch (Exception e) {
@@ -461,7 +461,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 			}
 			
 			int count = parseOrderUpdateReponse(conn.getInputStream(), jobs, criteria);
-			if(count >= 99){
+			if(count == 100){
 				getOrderUpdates(criteria, jobs, offset + 1);
 			}
 			System.out.println("Added " + count + " orders for processing.");

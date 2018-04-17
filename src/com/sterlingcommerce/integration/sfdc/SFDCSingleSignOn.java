@@ -151,7 +151,7 @@ public class SFDCSingleSignOn implements YCPSSOManager, IYFSAuthenticateType {
 						//All we need to do is return the username.
 						return username;
 					} else {
-						return "ibmcpquser@ibm.com";
+						return "fdoe.ibm@gmail.com";
 					}
 				}
 			}catch(Exception e){
