@@ -35,14 +35,18 @@ public class BDARequestedDateCondition implements YCPDynamicConditionEx  {
 			Document dOrderLine = getOrderLineDetails(localApi, env, (String) mapData.get("OrderLineKey"));
 			if(!YFCCommon.isVoid(dOrderLine)){
 				YFCElement eOrderLine = YFCDocument.getDocumentFor(dOrderLine).getDocumentElement();
-				if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqShipDate"))){
-					if(eOrderLine.getDateAttribute("ReqShipDate").after(c.getTime())){
+				if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqShipDate")) || !YFCCommon.isVoid(eOrderLine.getAttribute("ReqDeliveryDate"))){
+					if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqShipDate")) && eOrderLine.getDateAttribute("ReqShipDate").after(c.getTime())){
+						return true;
+					} else if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqDeliveryDate")) && eOrderLine.getDateAttribute("ReqDeliveryDate").after(c.getTime())){
 						return true;
 					}
 				} else {
 					YFCElement eOrder = eOrderLine.getChildElement("Order");
-					if(!YFCCommon.isVoid(eOrder) && !YFCCommon.isVoid(eOrder.getAttribute("ReqShipDate"))){
-						if(eOrder.getDateAttribute("ReqShipDate").after(c.getTime())){
+					if(!YFCCommon.isVoid(eOrder) && (!YFCCommon.isVoid(eOrder.getAttribute("ReqShipDate")) || !YFCCommon.isVoid(eOrder.getAttribute("ReqDeliveryDate")))){
+						if(!YFCCommon.isVoid(eOrder.getAttribute("ReqShipDate")) && eOrder.getDateAttribute("ReqShipDate").after(c.getTime())){
+							return true;
+						} else if(!YFCCommon.isVoid(eOrder.getAttribute("ReqDeliveryDate")) && eOrder.getDateAttribute("ReqDeliveryDate").after(c.getTime())){
 							return true;
 						}
 					}

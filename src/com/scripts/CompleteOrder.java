@@ -246,7 +246,7 @@ public class CompleteOrder implements IBDAService {
 			YFCElement eGetOrderDetailsOutput = YFCDocument.getDocumentFor(getOrderDetailsOutput).getDocumentElement();
 			for (YFCElement eOrderHoldType : eGetOrderDetailsOutput.getChildElement("OrderHoldTypes", true).getChildren()){
 				resolve = true;
-				if (!eOrderHoldType.getAttribute("Status").equals("1100")){
+				if (!eOrderHoldType.getAttribute("Status").startsWith("1100")){
 					resolve = false;
 					break;
 				} else {
