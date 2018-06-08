@@ -348,11 +348,16 @@ public class CompleteOrder implements IBDAService {
 		eOrder.setAttribute("DocumentType", "");
 		eOrder.setAttribute("EnterpriseCode", "");
 		eOrder.setAttribute("OrderNo", "");
+		eOrder.setAttribute("CarrierServiceCode", "");
+		eOrder.setAttribute("SCAC", "");
+		eOrder.setAttribute("ScacAndService", "");
 		YFCElement eOrderLine = eOrder.getChildElement("OrderLines", true).getChildElement("OrderLine", true);
 		eOrderLine.setAttribute("PrimeLineNo", "");
 		eOrderLine.setAttribute("SubLineNo", "");
 		eOrderLine.setAttribute("OrderedQty", "");
 		eOrderLine.setAttribute("DeliveryMethod", "");
+		eOrderLine.setAttribute("CarrierServiceCode", "");
+		eOrderLine.setAttribute("SCAC", "");
 		eOrderLine.setAttribute("IsBundleParent","");
 		eOrderLine.setAttribute("ShipNode","");
 		eOrderLine.setAttribute("OrderHeaderKey", "");
@@ -415,7 +420,7 @@ public class CompleteOrder implements IBDAService {
 		return serial;
 	}
 	
-	public static YFCDocument createShipment(String sIdentifier, YFCElement eOrderLineStatus, boolean bCashAndCarry, HashMap<String, YFCDocument> shipments){
+	public static YFCDocument createShipment(String sIdentifier, YFCElement eOrderLineStatus, boolean bCashAndCarry, String sCarrierServiceCode, String sScac, HashMap<String, YFCDocument> shipments){
 		if(shipments.containsKey(eOrderLineStatus.getAttribute(sIdentifier))){
 			return shipments.get(eOrderLineStatus.getAttribute(sIdentifier));
 		}
@@ -424,6 +429,13 @@ public class CompleteOrder implements IBDAService {
 		YFCElement eShipment = dShipment.getDocumentElement();
 		eShipment.setAttribute("ShipmentKey", eOrderLineStatus.getAttribute(sIdentifier) + "_S");
 		eShipment.setAttribute("TrackingNo", "1B" + eOrderLineStatus.getAttribute(sIdentifier));
+		if(!YFCCommon.isVoid(sCarrierServiceCode)) {
+			eShipment.setAttribute("CarrierServiceCode", sCarrierServiceCode);
+		}
+		if(!YFCCommon.isVoid(sScac)) {
+			eShipment.setAttribute("SCAC", sScac);
+		}
+
 		if (bCashAndCarry)
 			eShipment.setAttribute("ShipmentType", "CashAndCarry");
 		return dShipment;
@@ -542,17 +554,26 @@ public class CompleteOrder implements IBDAService {
 			YFCElement eOrderOut = YFCDocument.getDocumentFor(getOrderDetailsOutput).getDocumentElement();
 			int i = 0;
 			for (YFCElement eOrderLine : eOrderOut.getChildElement("OrderLines", true).getChildren()){
+				
 				if (eOrderLine.getAttribute("DeliveryMethod").equals("SHP")){
+					String sScac = eOrderLine.getAttribute("SCAC");
+					if(YFCCommon.isVoid(sScac)) {
+						sScac = eOrderOut.getAttribute("SCAC");
+					}
+					String sCarrierServiceCode = eOrderLine.getAttribute("CarrierServiceCode");
+					if(YFCCommon.isVoid(sCarrierServiceCode)) {
+						sCarrierServiceCode = eOrderOut.getAttribute("CarrierServiceCode");
+					}
 					for (YFCElement eOrderLineStatus : eOrderLine.getChildElement("OrderStatuses", true).getChildren()){
 						if (!YFCCommon.isVoid(eOrderLineStatus.getAttribute("OrderReleaseKey")) && eOrderLineStatus.getAttribute("Status").compareTo("3350") < 0) {
 							if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 								YFCDocument dShipment;
 								boolean confirm = false;
 								if(!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001") || YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) || !isStoreNode(env, m_YifApi, eOrderLineStatus.getAttribute("ShipNode"))){
-									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, confirmShipments);
+									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, sCarrierServiceCode, sScac, confirmShipments);
 									confirm = true;
 								} else {
-									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, createShipments);
+									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, sCarrierServiceCode, sScac, createShipments);
 									Calendar c = Calendar.getInstance();
 									if(c.get(Calendar.HOUR_OF_DAY) > 18){
 										c.add(Calendar.DATE, 1);
