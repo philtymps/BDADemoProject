@@ -67,9 +67,9 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 						if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 							YFCDocument dShipment;
 							if(!confirm || YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0006")){
-								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, createShipments);
+								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, null, null, createShipments);
 							} else {
-								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, confirmShipments);
+								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, null, null, confirmShipments);
 							}
 							
 							YFCElement eShipmentLine = CompleteOrder.createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
