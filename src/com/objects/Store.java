@@ -75,7 +75,9 @@ public class Store extends BDASynchronization {
 				String sSql = "SELECT PERSON_INFO_KEY, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTRY FROM OMDB.YFS_PERSON_INFO WHERE LATITUDE IS NULL AND PERSON_INFO_KEY IN (SELECT SHIP_NODE_ADDRESS_KEY FROM OMDB.YFS_SHIP_NODE)";
 				PreparedStatement ps = dbConn.prepareStatement(sSql);
 				ResultSet rs = ps.executeQuery();
+				int i = 0;
 				while ( rs.next() ) {
+					System.out.println("Record Found: " + ++i);
 					stores.add(new Store(rs.getString("PERSON_INFO_KEY"), rs.getString("ADDRESS_LINE1"), rs.getString("ADDRESS_LINE2"), rs.getString("CITY"), rs.getString("STATE"), rs.getString("ZIP_CODE"), rs.getString("COUNTRY")));
 					
 				}

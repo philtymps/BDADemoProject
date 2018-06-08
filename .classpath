@@ -10,13 +10,14 @@
 	<classpathentry kind="lib" path="lib/javax.json-1.0.4.jar"/>
 	<classpathentry kind="lib" path="lib/rxjava-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_cuf_generator.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_uifwk_ide_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_uifwk_ide_ui.jar" sourcepath="/Users/pfaiola/RTC/afc.uiproduct/platform_uifwk_ide"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_uifwk_ui.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/interact_client.jar"/>
 	<classpathentry kind="lib" path="lib/mongo-java-driver-3.3.0.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/force-wsc-40.0.0.jar" sourcepath="/Users/pfaiola/git/WebServiceConnector/wsc/target/force-wsc-40.0.0-sources.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/DemoExtns.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycsbe.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Foundation-Core.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Catalog-Client.jar"/>
@@ -27,7 +28,11 @@
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdfop.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdjasper.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdshared.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/wsc/wsc_ui.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/OTMZWebClient.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/wsc_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_uifwk_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_afc_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_afc_ui_impl_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_afc_rest.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
