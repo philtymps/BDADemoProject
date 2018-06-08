@@ -345,6 +345,18 @@
 		</NewAttributes>
 	</AdditionalDataProvider>
 	<AdditionalDataProvider
+		class="com.ibm.mobile.dataprovider.BDAReasonCodeDataProvider">
+		<InterestedIn>
+			<Element path="/NoteList/Note/" />
+			<Element path="/Order/NoteList/Note" />
+			<Element path="/Order/OrderLines/OrderLine/NoteList/Note" />
+			<Attribute path="Note" name="ReasonCode" />
+		</InterestedIn>
+		<NewAttributes>
+			<Attribute name="ReasonCodeDesc" />
+		</NewAttributes>
+	</AdditionalDataProvider>
+	<AdditionalDataProvider
 		class="com.ibm.mobile.dataprovider.BDAInventoryDataProvider">
 		<InterestedIn>
 			<Element path="/InventoryInformation/Item/InventoryTotals/Demands/Demand" />

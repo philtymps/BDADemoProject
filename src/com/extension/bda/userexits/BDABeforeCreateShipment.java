@@ -29,6 +29,13 @@ public class BDABeforeCreateShipment implements YDMBeforeCreateShipment {
 				}
 			}
 		}
+		
+		if(YFCCommon.isVoid(eShipment.getAttribute("SCAC"))) {
+			eShipment.setAttribute("SCAC", "Y_ANY");
+		}
+		if(YFCCommon.isVoid(eShipment.getAttribute("CarrierServiceCode"))) {
+			eShipment.setAttribute("CarrierServiceCode", "STANDARD_AURE");
+		}
 		return inDoc.getDocument();
 	}
 
