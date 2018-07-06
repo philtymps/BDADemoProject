@@ -83,11 +83,18 @@
 			<Element path="/Order/Shipments/Shipment" />
 			<Element path="/Item/Supplies/InventorySupply" />
 			<Element path="/DemandDetailsList/DemandDetails" />
+			<Element path="/Promise/SuggestedOption/Option/PromiseLines/PromiseLine/Assignments/Assignment/Procurements/Procurement" />
+			<Element path="/Promise/Options/Option/PromiseLines/PromiseLine/Assignments/Assignment/SubstituteItems/SubstituteItem/Procurements/Procurement" />
+			<Element path="/Promise/SuggestedOption/Option/PromiseLines/PromiseLine/Assignments/Assignment/SubstituteItems/SubstituteItem/Procurements/Procurement" />
+			<Element path="/Promise/Options/Option/PromiseLines/PromiseLine/Assignments/Assignment/Procurements/Procurement" />
+			<Element path="/Order/WorkOrders/WorkOrder" />
 			<Attribute path="OrderLine" name="ShipNode" />
 			<Attribute path="Shipment" name="ShipNode" />
 			<Attribute path="OrderStatus" name="ShipNode" />
 			<Attribute path="InventorySupply" name="ShipNode" />
 			<Attribute path="DemandDetails" name="ShipNode" />
+			<Attribute path="WorkOrder" name="NodeKey" />
+			<Attribute path="Procurement" name="ProcureFromNode" />
 		</InterestedIn>
 		<NewAttributes>
 			<Attribute name="ShipnodeDescription" />

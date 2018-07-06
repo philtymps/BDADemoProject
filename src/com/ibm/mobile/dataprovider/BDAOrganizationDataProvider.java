@@ -56,6 +56,18 @@ public class BDAOrganizationDataProvider implements IBDADataProvider {
 						interestingElement.setAttribute("ShipnodeDescription", temp);
 					}
 				}
+				if (interestingElement.hasAttribute("NodeKey") &&  !YFCCommon.isVoid(interestingElement.getAttribute("NodeKey")) && !interestingElement.hasAttribute("ShipnodeDescription") && YFCCommon.equals(sAttribute, "ShipnodeDescription")){
+					String temp = BDADataProviderUtils.getShipnodeDescription(context, localApi, interestingElement.getAttribute("NodeKey"));
+					if(!YFCCommon.isVoid(temp)){
+						interestingElement.setAttribute("ShipnodeDescription", temp);
+					}
+				}
+				if (interestingElement.hasAttribute("ProcureFromNode") &&  !YFCCommon.isVoid(interestingElement.getAttribute("ProcureFromNode")) && !interestingElement.hasAttribute("ShipnodeDescription") && YFCCommon.equals(sAttribute, "ShipnodeDescription")){
+					String temp = BDADataProviderUtils.getShipnodeDescription(context, localApi, interestingElement.getAttribute("ProcureFromNode"));
+					if(!YFCCommon.isVoid(temp)){
+						interestingElement.setAttribute("ShipnodeDescription", temp);
+					}
+				}
 				if (interestingElement.hasAttribute("ShipNode") && !YFCCommon.isVoid(interestingElement.getAttribute("ShipNode")) && !interestingElement.hasAttribute("ShipnodeDescription") && YFCCommon.equals(sAttribute, "ShipnodeDescription")){
 					String temp = BDADataProviderUtils.getShipnodeDescription(context, localApi, interestingElement.getAttribute("ShipNode"));
 					if(!YFCCommon.isVoid(temp)){
