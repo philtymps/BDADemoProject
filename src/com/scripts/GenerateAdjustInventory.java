@@ -28,8 +28,8 @@ public class GenerateAdjustInventory {
 		//t.removeSpecialInventory(null, null);
 		YFCDocument dInput = YFCDocument.createDocument("Input");
 		YFCElement eInput = dInput.getDocumentElement();
-		eInput.setAttribute("OrganizationCode", "Aurora-Corp");
-		eInput.setAttribute("DistRuleId", "Aurora_Shipping_Network");
+		eInput.setAttribute("OrganizationCode", "NEWTEL");
+		eInput.setAttribute("DistRuleId", "Vodafone-Shipping");
 		Document dOutput = t.createStandardInventory(null, dInput.getDocument());
 		
 		if(!YFCCommon.isVoid(dOutput)){
@@ -127,7 +127,7 @@ public class GenerateAdjustInventory {
 			}
 			
 			WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
-			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
+			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = 'NEWTEL' GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
 			Connection conn = null;
 			try {
 				conn = demoConn.getDBConnection();
@@ -137,7 +137,7 @@ public class GenerateAdjustInventory {
 				ResultSet rso = ps.executeQuery();
 				int count = 0;
 				while (rso.next()){
-					if(count > 1000){
+					if(count > 800){
 						break;
 					}
 					if(!vars.containsValue(rso.getString("ITEM_ID"))){
@@ -305,11 +305,7 @@ public class GenerateAdjustInventory {
 		eItem.setAttribute("AdjustmentType", "ADJUSTMENT");
 		eItem.setAttribute("Availability", "TRACK");
 		eItem.setAttribute("ItemID", sItemID);
-		if(sNode.indexOf("WH") > -1){
-			eItem.setAttribute("Quantity", Math.round(Math.random() * 1000));
-		} else{
-			eItem.setAttribute("Quantity", Math.round(Math.random() * 20));
-		}		
+		eItem.setAttribute("Quantity", 300);	
 		eItem.setAttribute("ShipNode", sNode);
 		eItem.setAttribute("SupplyType", "ONHAND");
 		eItem.setAttribute("UnitOfMeasure", sUnitOfMeasure);

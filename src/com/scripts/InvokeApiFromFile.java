@@ -1,7 +1,6 @@
 package com.scripts;
 
 import java.io.File;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -21,7 +20,7 @@ public class InvokeApiFromFile {
 	
 	private Properties properties;
 	private static YFCLogCategory logger = YFCLogCategory.instance(InvokeApiFromFile.class);
-	private HashMap<String, String> variables;
+	private HashMap<String, YFCElement> variables;
 	public InvokeApiFromFile(){
 		
 	}
@@ -61,7 +60,14 @@ public class InvokeApiFromFile {
 						}
 					} else if (variables.containsKey(content)){
 						try {
-							String newValue = sVariable.replaceAll("#\\{" + content + "\\}", variables.get(content));
+							String newValue = sVariable.replaceAll("#\\{" + content + "\\}", variables.get(content).getAttribute("Value"));
+							if(YFCCommon.equals(variables.get(content).getAttribute("TYPE"), "ITEM")) {
+								if(variables.get(content).hasAttribute("UnitOfMeasure")) {
+									eParent.setAttribute("UnitOfMeasure", variables.get(content).getAttribute("UnitOfMeasure"));
+								} else if(eParent.hasAttribute("UnitOfMeasure")) {
+									eParent.setAttribute("UnitOfMeasure", "");
+								}								
+							}
 							eParent.setAttribute(sAttribute, newValue);
 						} catch (Exception e){
 							logger.debug(e.getMessage());
@@ -77,9 +83,9 @@ public class InvokeApiFromFile {
 			replaceChildVariables(eChild);
 		}
 	}
-	private void addVariable(String sName, String sValue){
+	private void addVariable(String sName, YFCElement sValue){
 		if(YFCCommon.isVoid(variables)){
-			variables = new HashMap<String, String>();
+			variables = new HashMap<String, YFCElement>();
 		}
 		variables.put(sName, sValue);
 	}
@@ -93,12 +99,12 @@ public class InvokeApiFromFile {
 	private void loadVariableFile(){
 		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
 		for (YFCElement eChild : temp.getDocumentElement().getChildren()){
-			addVariable(eChild.getAttribute("Name"), eChild.getAttribute("Value"));
+			addVariable(eChild.getAttribute("Name"), eChild);
 		}
 	}
 	
 	public Document invokeApiFromFile(YFSEnvironment env, Document inputDoc){
-		variables = new HashMap<String, String>();
+		variables = new HashMap<String, YFCElement>();
 		YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
 		YFCElement eInput = dInput.getDocumentElement();
 		String sApiName = eInput.getAttribute("ApiName");
@@ -107,7 +113,7 @@ public class InvokeApiFromFile {
 		loadVariableFile();
 		if(!YFCCommon.isVoid(eVariables)){
 			for(YFCElement eVariable : eVariables.getChildren()){
-				addVariable(eVariable.getAttribute("Name"), eVariable.getAttribute("Value"));
+				addVariable(eVariable.getAttribute("Name"), eVariable);
 			}
 		}
 		if (!YFCCommon.isVoid(sApiName) && !YFCCommon.isVoid(sFileName)){
