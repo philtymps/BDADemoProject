@@ -28,8 +28,8 @@ public class GenerateAdjustInventory {
 		//t.removeSpecialInventory(null, null);
 		YFCDocument dInput = YFCDocument.createDocument("Input");
 		YFCElement eInput = dInput.getDocumentElement();
-		eInput.setAttribute("OrganizationCode", "NEWTEL");
-		eInput.setAttribute("DistRuleId", "Vodafone-Shipping");
+		eInput.setAttribute("CatalogOrganizationCode", "Aurora-Corp");
+		eInput.setAttribute("InventoryOrganizationCode", "Aurora");
 		Document dOutput = t.createStandardInventory(null, dInput.getDocument());
 		
 		if(!YFCCommon.isVoid(dOutput)){
@@ -42,7 +42,8 @@ public class GenerateAdjustInventory {
 					output = YFCDocument.getDocumentFor(dOutput);
 				}
 			}
-			
+			System.out.println("Output: " + output.toString());
+			CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.omfulfillment.com:9080");
 		}
 	}
 	
@@ -108,32 +109,32 @@ public class GenerateAdjustInventory {
 		if(!YFCCommon.isVoid(input)){
 			YFCDocument dInput = YFCDocument.getDocumentFor(input);
 			YFCElement eInput = dInput.getDocumentElement();
-			if(!YFCCommon.isVoid(eInput.getAttribute("OrganizationCode"))){
-				createStandardInventoryForOrg(env, eOutput, eInput, eInput.getAttribute("OrganizationCode"));
+			if(!YFCCommon.isVoid(eInput.getAttribute("CatalogOrganizationCode")) && !YFCCommon.isVoid(eInput.getAttribute("InventoryOrganizationCode"))){
+				createStandardInventoryForOrg(env, eOutput, eInput, eInput.getAttribute("CatalogOrganizationCode"), eInput.getAttribute("InventoryOrganizationCode"));
 			}
 		}
 		return dOutput.getDocument();
 	}
 	
-	private void createStandardInventoryForOrg(YFSEnvironment env, YFCElement eOutput, YFCElement eInput, String sOrgCode) throws IOException{
+	private void createStandardInventoryForOrg(YFSEnvironment env, YFCElement eOutput, YFCElement eInput, String sCatOrgCode, String sInventoryOrg) throws IOException{
 		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
 		if(!YFCCommon.isVoid(dVariables)){
 			HashMap<String, String> vars = replaceVariables(dVariables);
 			YFCElement eShipNodes;
 			if(!YFCCommon.isVoid(eInput.getAttribute("DistRuleId"))){
-				eShipNodes = getOptimizerShipNodes(env, eInput, sOrgCode);
+				eShipNodes = getOptimizerShipNodes(env, eInput, sInventoryOrg);
 			} else {
-				eShipNodes = getShipNodes(env, eInput, sOrgCode);
+				eShipNodes = getShipNodes(env, eInput, sInventoryOrg);
 			}
 			
 			WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
-			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = 'NEWTEL' GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
+			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_GROUP_CODE = 'PROD' AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = ? GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
 			Connection conn = null;
 			try {
 				conn = demoConn.getDBConnection();
 				PreparedStatement ps = conn.prepareStatement(sStatement);
-				ps.setString(1, sOrgCode );
-				
+				ps.setString(1, sCatOrgCode );
+				ps.setString(2, sInventoryOrg );
 				ResultSet rso = ps.executeQuery();
 				int count = 0;
 				while (rso.next()){
@@ -152,6 +153,8 @@ public class GenerateAdjustInventory {
 				e.printStackTrace();
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
 				try {

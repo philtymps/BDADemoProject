@@ -33,6 +33,11 @@ public class BDASynchronizeItems extends BDASynchronization {
 	private HashMap<String, String> orgToCatalog;
 	private HashMap<String, String> suffixForOrg;
 	private HashMap<String, String> getCatalogOrgForOrg;
+	
+	private String catalogId = "10001";
+	private String language = "-5";
+	private String currency = "USD";
+	
 	public BDASynchronizeItems(){
 		super();
 	}
@@ -568,7 +573,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 		Connection omdbConn = null;
 		try {
 			dbConn = getCommerceConnection();
-			String sSql = "SELECT C.CATENTRY_ID, C.PARTNUMBER, L.LISTPRICE, SE.STOREENT_ID FROM CATENTRY C INNER JOIN LISTPRICE L ON L.CATENTRY_ID = C.CATENTRY_ID INNER JOIN STOREENT SE ON SE.MEMBER_ID = C.MEMBER_ID WHERE L.CURRENCY LIKE 'USD%'";
+			String sSql = "SELECT C.CATENTRY_ID, C.PARTNUMBER, L.LISTPRICE, SE.STOREENT_ID FROM CATENTRY C INNER JOIN LISTPRICE L ON L.CATENTRY_ID = C.CATENTRY_ID INNER JOIN STOREENT SE ON SE.MEMBER_ID = C.MEMBER_ID WHERE L.CURRENCY LIKE '" + currency + "%'";
 			PreparedStatement ps = dbConn.prepareStatement(sSql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			
 			
@@ -603,7 +608,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 					eApi.setAttribute("Name", "managePricelistHeader");
 					YFCElement eList = eApi.createChild("Input").createChild("PricelistHeader");
 					eList.setAttribute("OrganizationCode", sOrgCode);
-					eList.setAttribute("Currency", "USD");
+					eList.setAttribute("Currency", currency);
 					eList.setAttribute("AddAllItemsFromCatalog", "N");
 					eList.setAttribute("Description", sOrgCode + " Price List");
 					eList.setAttribute("EndDateActive", "2025-01-01");
@@ -694,7 +699,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 	private void loadProductAttributes (HashMap<String, HashMap<String, Attribute>> attributes, YFSEnvironment env){
 		try {
 			Connection dbConn = getCommerceConnection();
-			String sSql = "SELECT A.ATTR_ID, A.IDENTIFIER, A.ATTRTYPE_ID, A.ATTRUSAGE, A.SEQUENCE, D.NAME, D.DESCRIPTION, C.CATALOG_ID FROM ATTR A INNER JOIN ATTRDESC D ON D.ATTR_ID = A.ATTR_ID INNER JOIN CATGRPTPC C ON C.STORE_ID = A.STOREENT_ID WHERE LANGUAGE_ID = -1";
+			String sSql = "SELECT A.ATTR_ID, A.IDENTIFIER, A.ATTRTYPE_ID, A.ATTRUSAGE, A.SEQUENCE, D.NAME, D.DESCRIPTION, C.CATALOG_ID FROM ATTR A INNER JOIN ATTRDESC D ON D.ATTR_ID = A.ATTR_ID INNER JOIN CATGRPTPC C ON C.STORE_ID = A.STOREENT_ID WHERE LANGUAGE_ID = " + language;
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next() ) {
@@ -730,7 +735,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 	private void loadAllowedValues(HashMap<String, HashMap<String, Attribute>> attributes, YFSEnvironment env){
 		try {
 			Connection dbConn = getCommerceConnection();
-			String sSql = "SELECT V.ATTR_ID, V.IDENTIFIER, V.VALUSAGE, D.SEQUENCE, D.VALUE, D.STRINGVALUE, D.INTEGERVALUE, D.FLOATVALUE, C.CATALOG_ID  FROM ATTRVAL V INNER JOIN ATTRVALDESC D ON D.ATTRVAL_ID = V.ATTRVAL_ID INNER JOIN CATGRPTPC C ON C.STORE_ID = V.STOREENT_ID WHERE D.LANGUAGE_ID = -1";
+			String sSql = "SELECT V.ATTR_ID, V.IDENTIFIER, V.VALUSAGE, D.SEQUENCE, D.VALUE, D.STRINGVALUE, D.INTEGERVALUE, D.FLOATVALUE, C.CATALOG_ID  FROM ATTRVAL V INNER JOIN ATTRVALDESC D ON D.ATTRVAL_ID = V.ATTRVAL_ID INNER JOIN CATGRPTPC C ON C.STORE_ID = V.STOREENT_ID WHERE D.LANGUAGE_ID = " + language;
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next() ) {		
@@ -754,7 +759,16 @@ public class BDASynchronizeItems extends BDASynchronization {
 		HashMap<String, HashMap<String, String>> existing = getExistingItems();
 		try {
 			Connection dbConn = getCommerceConnection();
-			String sSql = "SELECT C.BASEITEM_ID, C.CATENTRY_ID, C.ITEMSPC_ID, C.PARTNUMBER AS ITEM_ID, 'PROD' AS ITEM_GROUP_CODE, TRIM(CD.NAME) AS NAME, CD.SHORTDESCRIPTION, CD.LONGDESCRIPTION, C.MFNAME, C.MFPARTNUMBER, C.STARTDATE, C.ENDDATE, C.URL, CS.WEIGHT, CS.HEIGHT, CS.LENGTH, CS.WIDTH, CD.FULLIMAGE, CD.THUMBNAIL, 'EACH' AS UNIT_OF_MEASURE, TRIM(C.CATENTRY_ID) AS ITEM_KEY, CG.CATALOG_ID, m.REFERENCE as BUNDLE_CODE, m.CONFIGURATION, C.CATENTTYPE_ID FROM CATENTRY C	INNER JOIN CATENTDESC CD ON C.CATENTRY_ID = CD.CATENTRY_ID 	INNER JOIN LANGUAGE L ON CD.LANGUAGE_ID = L.LANGUAGE_ID 	LEFT OUTER JOIN CATENTSHIP CS ON CS.CATENTRY_ID = C.CATENTRY_ID INNER JOIN STOREENT SE ON SE.MEMBER_ID = C.MEMBER_ID INNER JOIN CATGRPTPC CG ON CG.STORE_ID = SE.STOREENT_ID LEFT JOIN CATCONFINF m ON m.CATENTRY_ID = C.CATENTRY_ID WHERE L.LANGUAGE LIKE 'en%' AND C.MARKFORDELETE <> 1";
+			String sSql = "SELECT C.BASEITEM_ID, C.CATENTRY_ID, C.ITEMSPC_ID, C.PARTNUMBER AS ITEM_ID, 'PROD' AS ITEM_GROUP_CODE, TRIM(CD.NAME) AS NAME, CD.SHORTDESCRIPTION, CD.LONGDESCRIPTION, "
+					+ "C.MFNAME, C.MFPARTNUMBER, C.STARTDATE, C.ENDDATE, C.URL, CS.WEIGHT, CS.HEIGHT, CS.LENGTH, CS.WIDTH, CD.FULLIMAGE, CD.THUMBNAIL, 'EACH' AS UNIT_OF_MEASURE, TRIM(C.CATENTRY_ID) AS ITEM_KEY, "
+					+ "CG.CATALOG_ID, m.REFERENCE as BUNDLE_CODE, m.CONFIGURATION, C.CATENTTYPE_ID "
+					+ "FROM CATENTRY C	"
+					+ "INNER JOIN CATENTDESC CD ON C.CATENTRY_ID = CD.CATENTRY_ID 	"
+					+ "LEFT OUTER JOIN CATENTSHIP CS ON CS.CATENTRY_ID = C.CATENTRY_ID " 
+					+ "INNER JOIN STOREENT SE ON SE.MEMBER_ID = C.MEMBER_ID "
+					+ "INNER JOIN CATGRPTPC CG ON CG.STORE_ID = SE.STOREENT_ID "
+					+ "LEFT JOIN CATCONFINF m ON m.CATENTRY_ID = C.CATENTRY_ID "
+					+ "WHERE CD.LANGUAGE_ID = " + language + " AND C.MARKFORDELETE <> 1";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next() ) {	
@@ -835,7 +849,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 	private void addAdditionalAttribute(Map<String, Item> items, HashMap<String, HashMap<String, Attribute>> attributes, YFSEnvironment env){
 		try {
 			Connection dbConn = getCommerceConnection();
-			String sSql = "SELECT CA.ATTR_ID, A.IDENTIFIER, C.CATENTRY_ID, CA.USAGE, C.PARTNUMBER, CA.ATTRVAL_ID, D.VALUE, D.STRINGVALUE, D.INTEGERVALUE, D.FLOATVALUE, CG.CATALOG_ID FROM CATENTRYATTR CA INNER JOIN CATENTRY C ON C.CATENTRY_ID = CA.CATENTRY_ID INNER JOIN ATTR A ON A.ATTR_ID = CA.ATTR_ID  INNER JOIN ATTRVAL V ON V.ATTRVAL_ID = CA.ATTRVAL_ID INNER JOIN ATTRVALDESC D ON D.ATTRVAL_ID = V.ATTRVAL_ID INNER JOIN STOREENT SE ON SE.MEMBER_ID = C.MEMBER_ID INNER JOIN CATGRPTPC CG ON CG.STORE_ID = SE.STOREENT_ID WHERE CA.USAGE = '1' AND D.LANGUAGE_ID = -1";
+			String sSql = "SELECT CA.ATTR_ID, A.IDENTIFIER, C.CATENTRY_ID, CA.USAGE, C.PARTNUMBER, CA.ATTRVAL_ID, D.VALUE, D.STRINGVALUE, D.INTEGERVALUE, D.FLOATVALUE, CG.CATALOG_ID FROM CATENTRYATTR CA INNER JOIN CATENTRY C ON C.CATENTRY_ID = CA.CATENTRY_ID INNER JOIN ATTR A ON A.ATTR_ID = CA.ATTR_ID  INNER JOIN ATTRVAL V ON V.ATTRVAL_ID = CA.ATTRVAL_ID INNER JOIN ATTRVALDESC D ON D.ATTRVAL_ID = V.ATTRVAL_ID INNER JOIN STOREENT SE ON SE.MEMBER_ID = C.MEMBER_ID INNER JOIN CATGRPTPC CG ON CG.STORE_ID = SE.STOREENT_ID WHERE CA.USAGE = '1' AND D.LANGUAGE_ID = " + language;
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next() ) {	
@@ -872,7 +886,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 		}
 		try {
 			Connection dbConn = getCommerceConnection();
-			String sSql1 = "SELECT DISTINCT cp.CATGROUP_ID, cp.CATALOG_ID, G.IDENTIFIER FROM cattogrp cp INNER JOIN CATGROUP G ON cp.CATGROUP_ID = G.CATGROUP_ID WHERE cp.CATGROUP_ID > 12100 AND cp.CATALOG_ID = 10001 order by cp.CATALOG_ID";
+			String sSql1 = "SELECT DISTINCT cp.CATGROUP_ID, cp.CATALOG_ID, G.IDENTIFIER FROM cattogrp cp INNER JOIN CATGROUP G ON cp.CATGROUP_ID = G.CATGROUP_ID WHERE cp.CATGROUP_ID > 12100 AND cp.CATALOG_ID = " + catalogId + " order by cp.CATALOG_ID";
 			System.out.println(sSql1);
 			PreparedStatement parents = dbConn.prepareStatement(sSql1);
 			ResultSet r = parents.executeQuery();
@@ -897,7 +911,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 				}
 			}
 			//String sSql = "SELECT G1.IDENTIFIER AS PARENT_NAME, G1.CATGROUP_ID AS PARENT_ID, G2.IDENTIFIER AS CHILD_NAME, G2.CATGROUP_ID AS CHILD_ID, R.SEQUENCE, R.CATALOG_ID FROM CATGRPREL R INNER JOIN CATGROUP G1 ON R.CATGROUP_ID_PARENT = G1.CATGROUP_ID	INNER JOIN CATGROUP G2 ON R.CATGROUP_ID_CHILD = G2.CATGROUP_ID ORDER BY G1.CATGROUP_ID";
-			String sSql = "SELECT G1.IDENTIFIER AS PARENT_NAME, G1.CATGROUP_ID AS PARENT_ID, G2.IDENTIFIER AS CHILD_NAME, G2.CATGROUP_ID AS CHILD_ID, R.SEQUENCE, R.CATALOG_ID FROM CATGRPREL R INNER JOIN CATGROUP G1 ON R.CATGROUP_ID_PARENT = G1.CATGROUP_ID	INNER JOIN CATGROUP G2 ON R.CATGROUP_ID_CHILD = G2.CATGROUP_ID WHERE CATALOG_ID = 10001 AND G2.CATGROUP_ID > 12000 ORDER BY G1.CATGROUP_ID";
+			String sSql = "SELECT G1.IDENTIFIER AS PARENT_NAME, G1.CATGROUP_ID AS PARENT_ID, G2.IDENTIFIER AS CHILD_NAME, G2.CATGROUP_ID AS CHILD_ID, R.SEQUENCE, R.CATALOG_ID FROM CATGRPREL R INNER JOIN CATGROUP G1 ON R.CATGROUP_ID_PARENT = G1.CATGROUP_ID	INNER JOIN CATGROUP G2 ON R.CATGROUP_ID_CHILD = G2.CATGROUP_ID WHERE CATALOG_ID = " + catalogId + " AND G2.CATGROUP_ID > 12000 ORDER BY G1.CATGROUP_ID";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next() ) {

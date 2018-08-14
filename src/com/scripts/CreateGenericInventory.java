@@ -27,16 +27,20 @@ public class CreateGenericInventory {
 	
 	public CreateGenericInventory(){
 		nonStandardInventory = new ArrayList<String>();
-		YFCDocument dAdjustInventory = YFCDocument.getDocumentForXMLFile("/home/pfaiola/workspace/OMS/Use Cases/PreDemo_adjustInventory.xml");
-		if (!YFCCommon.isVoid(dAdjustInventory)){
-			for (YFCElement eItem : dAdjustInventory.getDocumentElement().getChildren()){
-				String sItemID = eItem.getAttribute("ItemID");
-				if (!nonStandardInventory.contains(sItemID)){
-					nonStandardInventory.add(sItemID);
+		try {	
+			YFCDocument dAdjustInventory = YFCDocument.getDocumentForXMLFile("/home/pfaiola/workspace/OMS/Use Cases/PreDemo_adjustInventory.xml");
+			if (!YFCCommon.isVoid(dAdjustInventory)){
+				for (YFCElement eItem : dAdjustInventory.getDocumentElement().getChildren()){
+					String sItemID = eItem.getAttribute("ItemID");
+					if (!nonStandardInventory.contains(sItemID)){
+						nonStandardInventory.add(sItemID);
+					}
 				}
-			}
+			}		
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
+
 		Connection insertConn = null; 
 		Connection getConn = null; 
 		String sStatement = null;
