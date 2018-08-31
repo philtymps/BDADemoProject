@@ -228,6 +228,9 @@ public class CompleteOrder implements IBDAService {
 		eOrderHoldType.setAttribute("Status", "");
 		YFCElement eOrderLine = eOrder.getChildElement("OrderLines", true).getChildElement("OrderLine", true);
 		eOrderLine.setAttribute("OrderLineKey", "");
+		YFCElement eOrderLineHoldType = eOrderLine.getChildElement("OrderHoldTypes", true).getChildElement("OrderHoldType", true);
+		eOrderLineHoldType.setAttribute("HoldType", "");
+		eOrderLineHoldType.setAttribute("Status", "");
 		YFCElement eOrderStatus = eOrderLine.getChildElement("OrderStatuses", true).getChildElement("OrderStatus", true);
 		eOrderStatus.setAttribute("Status", "");
 		YFCElement eShipment = eOrder.getChildElement("Shipments", true).getChildElement("Shipment", true);
@@ -245,16 +248,30 @@ public class CompleteOrder implements IBDAService {
 			eChangeOrderInput.setAttribute("OrderHeaderKey", getOrderDetailsOutput.getDocumentElement().getAttribute("OrderHeaderKey"));
 			YFCElement eGetOrderDetailsOutput = YFCDocument.getDocumentFor(getOrderDetailsOutput).getDocumentElement();
 			for (YFCElement eOrderHoldType : eGetOrderDetailsOutput.getChildElement("OrderHoldTypes", true).getChildren()){
-				resolve = true;
-				if (!eOrderHoldType.getAttribute("Status").startsWith("1100")){
-					resolve = false;
-					break;
-				} else {
+				if (eOrderHoldType.getAttribute("Status").startsWith("1100")){
+					resolve = true;
 					YFCElement eOrderHoldTypeInput = eChangeOrderInput.getChildElement("OrderHoldTypes", true).createChild("OrderHoldType");
 					eOrderHoldTypeInput.setAttribute("HoldType",eOrderHoldType.getAttribute("HoldType"));
 					eOrderHoldTypeInput.setAttribute("Status", "1300");
 					YFCElement eResolve = eResults.getChildElement("ResolveHold", true).createChild("Hold");
 					eResolve.setAttribute("HoldType", eOrderHoldType.getAttribute("HoldType"));
+				}
+				for(YFCElement eOrderLine : eGetOrderDetailsOutput.getChildElement("OrderLines", true).getChildren()) {
+					YFCElement eLine = null;
+					for (YFCElement eOrderLineHoldType : eOrderLine.getChildElement("OrderHoldTypes", true).getChildren()){
+						if (eOrderLineHoldType.getAttribute("Status").startsWith("1100")){
+							resolve = true;
+							if (eLine == null) {
+								eLine = eChangeOrderInput.getChildElement("OrderLines", true).createChild("OrderLine");
+								eLine.setAttribute("OrderLineKey", eOrderLine.getAttribute("OrderLineKey"));
+							}
+							YFCElement eOrderHoldTypeInput = eLine.getChildElement("OrderHoldTypes", true).createChild("OrderHoldType");
+							eOrderHoldTypeInput.setAttribute("HoldType",eOrderLineHoldType.getAttribute("HoldType"));
+							eOrderHoldTypeInput.setAttribute("Status", "1300");
+							YFCElement eResolve = eResults.getChildElement("ResolveHold", true).createChild("Hold");
+							eResolve.setAttribute("HoldType", eOrderHoldType.getAttribute("HoldType"));
+						}
+					}
 				}
 			}
 			if (resolve){
@@ -277,7 +294,7 @@ public class CompleteOrder implements IBDAService {
 			eOutput.setAttribute("Authorized", "NA");
 			return true;
 		}
-		if (auth && (dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("AUTHORIZED") || dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("INVOICED"))){
+		if (auth && (dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("AUTHORIZED") || dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("INVOICED")) || dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("PAID")){
 			eOutput.setAttribute("Pre-Authorized", "Y");
 			return true;
 		} else if (!auth && dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("PAID")){
