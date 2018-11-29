@@ -1,2 +1,2 @@
-<Database DBServer="oms.omfulfillment.com" DBPort="50000" Database="OMDB" Username="demouser" Password="meeting265bridge" Schema="OMDB">
+<Database DBServer="oms.innovationcloud.info" DBPort="50000" Database="OMDB" Username="demouser" Password="meeting265bridge" Schema="OMDB">
 </Database>

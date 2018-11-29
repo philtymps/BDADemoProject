@@ -10,6 +10,8 @@ import com.ibm.utilities.ConnectionUtils;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfs.japi.YFSConnectionHolder;
+import com.yantra.yfs.japi.YFSEnvironment;
 
 public class DatabaseConnection {
 private static Properties properties = new Properties();
@@ -54,11 +56,11 @@ private static YFCElement eProperties = null;
 		return "DB2";
 	}
 	
-	protected static String getDBServer(){
+	public static String getDBServer(){
 		if (!YFCCommon.isVoid(getProperty("DBServer"))){
 			return (String) getProperty("DBServer");
 		}
-		return "oms.omfulfillment.com";
+		return "oms.innovationcloud.info";
 	}
 		
 	protected static String getDBPort(){
@@ -96,9 +98,9 @@ private static YFCElement eProperties = null;
 		return "OMDB";
 	}
 
-	public static Connection getConnection() throws SQLException, ClassNotFoundException {
-		Connection dbConn = ConnectionUtils.getDBConnection(getDBType(), getDBServer(), getDBPort(), getDatabase(), getDBUsername(), getDBPassword());
-		return dbConn;
+	public static Connection getConnection(YFSEnvironment env){
+	    YFSConnectionHolder yfsConnHolder = (YFSConnectionHolder)env;
+	    return yfsConnHolder.getDBConnection();
 	}
 	
 }

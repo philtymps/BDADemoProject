@@ -25,7 +25,7 @@ import javax.naming.NamingException;
 public class OrderReader {
 	public static void main(String[] args) throws NamingException, JMSException, IOException{
 		
-		String sProvider = "corbaloc::oms.omfulfillment.com:2809";
+		String sProvider = "corbaloc::oms.innovationcloud.info:2809";
 		String sQueue = "OrderQueue";
 		for (int i = 0; i < args.length; i++){
 			if (args[i].equals("-provider")){

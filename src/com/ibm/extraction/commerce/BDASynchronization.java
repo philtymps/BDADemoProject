@@ -41,7 +41,7 @@ public class BDASynchronization {
 		if (!YFCCommon.isVoid(getProperty("OMSDBServer"))){
 			return (String) getProperty("OMSDBServer");
 		}
-		return "oms.omfulfillment.com";
+		return "oms.innovationcloud.info";
 	}
 	
 	protected static String getDBPort(){
@@ -115,7 +115,7 @@ public class BDASynchronization {
 		if (!YFCCommon.isVoid(getProperty("ImageServer"))){
 			return (String) getProperty("ImageServer");
 		}
-		return "http://oms.omfulfillment.com";
+		return "https://oms.innovationcloud.info";
 	}
 	
 	protected static Connection getCommerceConnection() throws SQLException, ClassNotFoundException {

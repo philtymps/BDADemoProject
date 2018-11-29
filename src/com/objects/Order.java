@@ -57,7 +57,7 @@ public class Order {
 	public static void main(String[] args){
 		HashMap<String, Order> orders = Order.getOrders();
 		for(Order o : orders.values()){
-			 System.out.println(CallInteropServlet.invokeApi(o.getOrderXml(), null, "createOrder", "http://oms.omfulfillment.com:9080"));
+			 System.out.println(CallInteropServlet.invokeApi(o.getOrderXml(), null, "createOrder", "http://oms.innovationcloud.info:9080"));
 		}
 	}
 	

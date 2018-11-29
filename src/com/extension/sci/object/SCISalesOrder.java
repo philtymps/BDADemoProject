@@ -1,5 +1,7 @@
 package com.extension.sci.object;
 
+import java.util.ArrayList;
+
 import com.yantra.yfc.date.YDate;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -7,9 +9,11 @@ import com.yantra.yfc.util.YFCCommon;
 
 public class SCISalesOrder extends SCIObject {
 
-	public SCISalesOrder(YFCElement eOrderLine, YFCElement eOrder){
-		super(eOrderLine.getAttribute("OrderLineKey"), eOrder.getAttribute("OrderHeaderKey"));
-		
+	private ArrayList<SCIOrderLine> lines;
+	
+	public SCISalesOrder(YFCElement eOrder){
+		super();
+		setString("_id", eOrder.getAttribute("OrderNo"));
 	
 		
 		if(!YFCCommon.isVoid(eOrder.getAttribute("BillToID"))){
@@ -18,33 +22,36 @@ public class SCISalesOrder extends SCIObject {
 		if(!YFCCommon.isVoid(eOrder.getAttribute("CustomerPONo"))){
 			setString("customerPoNumber", eOrder.getAttribute("CustomerPONo"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("Status"))){
-			setString("orderStatus", eOrderLine.getAttribute("Status"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getChildElement("Item", true).getAttribute("ItemID"))){
-			setString("product", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
-		}
 		if(!YFCCommon.isVoid(eOrder.getAttribute("OrderDate"))){
 			setDate("datePlaced", eOrder.getYDateAttribute("OrderDate"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ExpectedDeliveryDate"))){
-			setDate("estimatedDeliveryDate", eOrderLine.getYDateAttribute("ExpectedDeliveryDate"));
+		if(!YFCCommon.isVoid(eOrder.getChildElement("PriceInfo", true).getAttribute("TotalAmount"))){
+			setDouble("orderValue", eOrder.getChildElement("PriceInfo", true).getDoubleAttribute("TotalAmount"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ExpectedShipmentDate"))){
-			setDate("plannedShipDate", eOrderLine.getYDateAttribute("ExpectedShipmentDate"));
+		if(!YFCCommon.isVoid(eOrder.getAttribute("Status"))){
+			setString("orderStatus", eOrder.getAttribute("Status"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqShipDate"))){
-			setDate("requestedShipDate", eOrderLine.getYDateAttribute("ReqShipDate"));
+		
+		YFCElement eFirstLine = eOrder.getChildElement("OrderLines").getFirstChildElement();
+
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ExpectedShipmentDate"))){
+			setDate("plannedShipDate", eFirstLine.getYDateAttribute("ExpectedShipmentDate"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqDeliveryDate"))){
-			setDate("requestedShipDate", eOrderLine.getYDateAttribute("ReqDeliveryDate"));
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ReqShipDate"))){
+			setDate("requestedShipDate", eFirstLine.getYDateAttribute("ReqShipDate"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getChildElement("ComputedPrice", true).getAttribute("LineTotal"))){
-			setDouble("orderValue", eOrderLine.getChildElement("ComputedPrice", true).getDoubleAttribute("LineTotal"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("OrderedQty"))){
-			setDouble("quantity", eOrderLine.getDoubleAttribute("OrderedQty"));
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ReqDeliveryDate"))){
+			setDate("requestedShipDate", eFirstLine.getYDateAttribute("ReqDeliveryDate"));
 		}		
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ExpectedDeliveryDate"))){
+			setDate("estimatedDeliveryDate", eFirstLine.getYDateAttribute("ExpectedDeliveryDate"));
+		}
+
+		for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()) {
+			SCIOrderLine ol = new SCIOrderLine(eOrderLine.getAttribute("OrderLineKey"), eOrderLine.getChildElement("Item", true).getAttribute("ItemID"), eOrderLine.getDoubleAttribute("OrderedQty"), "sales");
+			this.addToArray("salesOrderLines", ol.getBulkObject());
+		}
+	
 	}
 	
 	public static YFCDocument getSalesOrderListTemplate(){
@@ -114,25 +121,6 @@ public class SCISalesOrder extends SCIObject {
 		
 		return order;
 	}
-	
-	public SCISalesOrder(String orderLineKey, String customer, String customerPoNumber, String orderStatus, String product,
-			String shipment, YDate datePlaced, YDate estimatedDeliveryDate, YDate plannedShipDate,
-			YDate requestedDeliveryDate, YDate requestedShipDate, double orderValue, double quantity) {
-		super(orderLineKey);
-		
-		setString("customer", customer);
-		setString("customerPoNumber", customerPoNumber);
-		setString("orderStatus", orderStatus);
-		setString("product", product);
-		setString("shipment", shipment);
-		setDate("datePlaced", datePlaced);
-		setDate("estimatedDeliveryDate", estimatedDeliveryDate);
-		setDate("plannedShipDate", plannedShipDate);
-		setDate("requestedDeliveryDate", requestedDeliveryDate);
-		setDate("requestedShipDate", requestedShipDate);
-		setDouble("orderValue", orderValue);
-		setDouble("quantity", quantity);
-	}
 		
 	public String getCustomer() {
 		return getString("customer");
@@ -152,18 +140,7 @@ public class SCISalesOrder extends SCIObject {
 	public void setOrderStatus(String orderStatus) {
 		setString("orderStatus", orderStatus);
 	}
-	public String getProduct() {
-		return getString("product");
-	}
-	public void setProduct(String product) {
-		setString("product", product);
-	}
-	public String getShipment() {
-		return getString("shipment");
-	}
-	public void setShipment(String shipment) {
-		setString("shipment", shipment);
-	}
+
 	public YDate getDatePlaced() {
 		return getDate("datePlaced");
 	}
@@ -200,12 +177,7 @@ public class SCISalesOrder extends SCIObject {
 	public void setOrderValue(double orderValue) {
 		setDouble("orderValue", orderValue);
 	}
-	public double getQuantity() {
-		return getDouble("quantity");
-	}
-	public void setQuantity(double quantity) {
-		setDouble("quantity", quantity);
-	}
+
 	@Override
 	public String getBulkAPIURL() {
 		return "/api/salesorders/bulk";

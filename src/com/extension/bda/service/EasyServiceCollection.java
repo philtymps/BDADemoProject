@@ -3,6 +3,7 @@ package com.extension.bda.service;
 import java.util.HashMap;
 
 import com.extension.afg.BDARepriceOrderFromLine;
+import com.extension.bda.service.expose.BDADataProvider;
 import com.extension.bda.service.expose.BDAEntityApi;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
 import com.extension.bda.service.giv.BDAGetDemandOrders;
@@ -44,6 +45,7 @@ public class EasyServiceCollection {
 		map.put("getMyAlerts", new BDAGetMyAlerts());
 		map.put("createReturnTransfer", new BDACreateReturnTransfer());
 		map.put("getNodeCapacityDetails", new BDAGetNodeCapacityDetails());
+		map.put("bdaDataProvider", new BDADataProvider());
 	}
 	
 	public IBDAService getService(String sServiceName){

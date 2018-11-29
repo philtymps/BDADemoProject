@@ -39,7 +39,7 @@ public class Inventory {
             	if(Order.isItemUsed(item[1].trim())){
 	                if(count % 750 == 0){
 	                	System.out.println("Inventory Adjustment: " + count + " after " + linesRead + " lines read");
-	                	CallInteropServlet.invokeApi(dItemList, null, "adjustInventory", "http://oms.omfulfillment.com:9080");
+	                	CallInteropServlet.invokeApi(dItemList, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
 	                	dItemList = YFCDocument.createDocument("Items");
 	                }
 	            	
@@ -56,7 +56,7 @@ public class Inventory {
                 
             }
             
-            System.out.println(CallInteropServlet.invokeApi(dItemList, null, "adjustInventory", "http://oms.omfulfillment.com:9080"));
+            System.out.println(CallInteropServlet.invokeApi(dItemList, null, "adjustInventory", "http://oms.innovationcloud.info:9080"));
    	      
             
         } catch (Exception e){

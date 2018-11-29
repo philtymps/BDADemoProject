@@ -5,43 +5,46 @@ import com.yantra.yfc.util.YFCCommon;
 
 public class SCIPurchaseOrder extends SCIObject {
 
-	public SCIPurchaseOrder(YFCElement eOrderLine, YFCElement eOrder){
-		super(eOrderLine.getAttribute("OrderLineKey"), eOrder.getAttribute("OrderHeaderKey"));
-		
-
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("Status"))){
-			setString("orderStatus", eOrderLine.getAttribute("Status"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getChildElement("Item", true).getAttribute("ItemID"))){
-			setString("item", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
-		}
+	public SCIPurchaseOrder(YFCElement eOrder){
+		super();
+		setString("_id", eOrder.getAttribute("OrderNo"));
 		
 		if(!YFCCommon.isVoid(eOrder.getAttribute("OrderDate"))){
 			setDate("datePlaced", eOrder.getYDateAttribute("OrderDate"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ExpectedDeliveryDate"))){
-			setDate("estimatedDeliveryDate", eOrderLine.getYDateAttribute("ExpectedDeliveryDate"));
+		if(!YFCCommon.isVoid(eOrder.getAttribute("Status"))){
+			setString("orderStatus", eOrder.getAttribute("Status"));
 		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ExpectedShipmentDate"))){
-			setDate("plannedShipDate", eOrderLine.getYDateAttribute("ExpectedShipmentDate"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqShipDate"))){
-			setDate("requestedShipDate", eOrderLine.getYDateAttribute("ReqShipDate"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReqDeliveryDate"))){
-			setDate("requestedShipDate", eOrderLine.getYDateAttribute("ReqDeliveryDate"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getChildElement("ComputedPrice", true).getAttribute("LineTotal"))){
-			setDouble("orderValue", eOrderLine.getChildElement("ComputedPrice", true).getDoubleAttribute("LineTotal"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("OrderedQty"))){
-			setDouble("quantity", eOrderLine.getDoubleAttribute("OrderedQty"));
-		}
-		if(!YFCCommon.isVoid(eOrderLine.getAttribute("ReceivingNode"))){
-			setString("destination", eOrderLine.getAttribute("ReceivingNode"));
+		if(!YFCCommon.isVoid(eOrder.getChildElement("PriceInfo", true).getAttribute("TotalAmount"))){
+			setDouble("orderValue", eOrder.getChildElement("PriceInfo", true).getDoubleAttribute("TotalAmount"));
 		}
 		if(!YFCCommon.isVoid(eOrder.getAttribute("SellerOrganizationCode"))){
-			setString("supplier", eOrderLine.getAttribute("SellerOrganizationCode"));
+			setString("supplier", eOrder.getAttribute("SellerOrganizationCode"));
+		}
+		
+				
+		YFCElement eFirstLine = eOrder.getChildElement("OrderLines").getFirstChildElement();
+		
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ReceivingNode"))){
+			setString("destination", eFirstLine.getAttribute("ReceivingNode"));
+		}
+
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ExpectedShipmentDate"))){
+			setDate("plannedShipDate", eFirstLine.getYDateAttribute("ExpectedShipmentDate"));
+		}
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ReqShipDate"))){
+			setDate("requestedShipDate", eFirstLine.getYDateAttribute("ReqShipDate"));
+		}
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ReqDeliveryDate"))){
+			setDate("requestedShipDate", eFirstLine.getYDateAttribute("ReqDeliveryDate"));
+		}		
+		if(!YFCCommon.isVoid(eFirstLine.getAttribute("ExpectedDeliveryDate"))){
+			setDate("estimatedDeliveryDate", eFirstLine.getYDateAttribute("ExpectedDeliveryDate"));
+		}
+
+		for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()) {
+			SCIOrderLine ol = new SCIOrderLine(eOrderLine.getAttribute("OrderLineKey"), eOrderLine.getChildElement("Item", true).getAttribute("ItemID"), eOrderLine.getDoubleAttribute("OrderedQty"), "supply");
+			this.addToArray("supplyOrderLines", ol.getBulkObject());
 		}
 		
 	}

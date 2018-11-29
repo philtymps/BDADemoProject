@@ -91,6 +91,7 @@ public class DemoCreateCustomerForOrder implements YFSBeforeCreateOrderUE {
 				if (!YFCCommon.isVoid(eCustomer)) {
 					if (updateOrder) {
 						eOrder.setAttribute("BillToID", eCustomer.getAttribute("CustomerID"));
+						eOrder.setAttribute("CustomerContactID", eContact.getAttribute("CustomerContactID"));
 					}
 					return eCustomer.getAttribute("CustomerID");
 				}
@@ -106,14 +107,8 @@ public class DemoCreateCustomerForOrder implements YFSBeforeCreateOrderUE {
 				YFCElement ePersonInfo = eOrder.getChildElement("PersonInfoBillTo");
 				YFCDocument dCreateCustomer = YFCDocument.createDocument("Customer");
 				YFCElement eCustomer = dCreateCustomer.getDocumentElement();
-				if (DemoCreateCustomerForOrder.isBusinessCustomer(eOrder.getAttribute("EnterpriseCode"))) {
-					eCustomer.setAttribute("CustomerType", "01");
-					YFCElement eBuyerOrganization = eCustomer.createChild("BuyerOrganization");
-					eBuyerOrganization.setAttribute("IsBuyer", "Y");
-				} else {
-					eCustomer.setAttribute("CustomerType", "02");
-				}
-
+				eCustomer.setAttribute("CustomerType", "02");
+		
 				eCustomer.setAttribute("Status", "10");
 				String sOrg = getCustomerMasterOrg(env, eOrder.getAttribute("EnterpriseCode"));
 				if (YFCCommon.isVoid(sOrg)) {
@@ -188,43 +183,6 @@ public class DemoCreateCustomerForOrder implements YFSBeforeCreateOrderUE {
 						eCustomerAdditionalAddress.setAttribute("IsDefaultSoldTo", "Y");
 						YFCElement eSPersonInfo = eCustomerAdditionalAddress.createChild("PersonInfo");
 						eSPersonInfo.setAttributes(eShipPersonInfo.getAttributes());
-					}
-				}
-				if (DemoCreateCustomerForOrder.isBusinessCustomer(eOrder.getAttribute("EnterpriseCode"))) {
-					eCustomerAdditionalAddress = eCustomer.getChildElement("CustomerAdditionalAddressList", true)
-							.createChild("CustomerAdditionalAddress");
-					eCustomerAdditionalAddress.setAttribute("IsBillTo", "Y");
-					eCustomerAdditionalAddress.setAttribute("IsShipTo", "Y");
-					eCustomerAdditionalAddress.setAttribute("IsSoldTo", "Y");
-					eCustomerAdditionalAddress.setAttribute("IsDefaultBillTo", "Y");
-					eCustomerAdditionalAddress.setAttribute("IsDefaultShipTo", "Y");
-					eCustomerAdditionalAddress.setAttribute("IsDefaultSoldTo", "Y");
-					eCPersonInfo = eCustomerAdditionalAddress.createChild("PersonInfo");
-					eCPersonInfo.setAttributes(ePersonInfo.getAttributes());
-					eShipPersonInfo = eOrder.getChildElement("PersonInfoShipTo");
-					if (!YFCCommon.isVoid(eShipPersonInfo)) {
-						if (!YFCCommon.equals(eShipPersonInfo.getAttribute("ZipCode"),
-								ePersonInfo.getAttribute("ZipCode"))
-								|| !YFCCommon.equals(eShipPersonInfo.getAttribute("State"),
-										ePersonInfo.getAttribute("State"))
-								|| !YFCCommon.equals(eShipPersonInfo.getAttribute("AddressLine1"),
-										ePersonInfo.getAttribute("AddressLine1"))
-								|| !YFCCommon.equals(eShipPersonInfo.getAttribute("City"),
-										ePersonInfo.getAttribute("City"))
-								|| !YFCCommon.equals(eShipPersonInfo.getAttribute("AddressLine2"),
-										ePersonInfo.getAttribute("AddressLine2"))) {
-							eCustomerAdditionalAddress.setAttribute("IsDefaultShipTo", "N");
-							eCustomerAdditionalAddress = eContact.getChildElement("CustomerAdditionalAddressList", true)
-									.createChild("CustomerAdditionalAddress");
-							eCustomerAdditionalAddress.setAttribute("IsBillTo", "Y");
-							eCustomerAdditionalAddress.setAttribute("IsShipTo", "Y");
-							eCustomerAdditionalAddress.setAttribute("IsSoldTo", "Y");
-							eCustomerAdditionalAddress.setAttribute("IsDefaultBillTo", "N");
-							eCustomerAdditionalAddress.setAttribute("IsDefaultShipTo", "Y");
-							eCustomerAdditionalAddress.setAttribute("IsDefaultSoldTo", "Y");
-							YFCElement eSPersonInfo = eCustomerAdditionalAddress.createChild("PersonInfo");
-							eSPersonInfo.setAttributes(eShipPersonInfo.getAttributes());
-						}
 					}
 				}
 				try {
@@ -306,26 +264,4 @@ public class DemoCreateCustomerForOrder implements YFSBeforeCreateOrderUE {
 		return dOutput.getDocument();
 	}
 
-	public static boolean isBusinessCustomer(String sEnterpriseCode) {
-		if (!YFCCommon.isVoid(sEnterpriseCode)) {
-			try {
-				YFCDocument dInput = YFCDocument.getDocumentFor("/opt/Sterling/Runtime/properties/ValueMaps.xml");
-				if (!YFCCommon.isVoid(dInput)) {
-					YFCElement eInput = dInput.getDocumentElement();
-					for (YFCElement eMap : eInput.getChildren()) {
-						if (YFCCommon.equals(eMap.getAttribute("name"), "OrgType")) {
-							for (YFCElement eEntry : eMap.getChildren()) {
-								if (YFCCommon.equals(eEntry.getAttribute("key"), sEnterpriseCode)) {
-									return YFCCommon.equals(eEntry.getNodeValue(), "Business");
-								}
-							}
-						}
-					}
-				}
-			} catch (Exception e) {
-				return false;
-			}
-		}
-		return false;
-	}
 }

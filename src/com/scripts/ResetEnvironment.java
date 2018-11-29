@@ -77,7 +77,7 @@ public class ResetEnvironment {
 				}
 				t += .1;
 			}
-			YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.omfulfillment.com:9080");
+			YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.innovationcloud.info:9080");
 			YFCElement eCreateOrder = eReset.createChild("CreateOrder");
 			YFCElement eInput = eCreateOrder.createChild("Input");
 			eInput.importNode(createOrder);
@@ -99,7 +99,7 @@ public class ResetEnvironment {
 		if(created){
 			try{
 				YFCDocument createOrder = YFCDocument.parse(ResetEnvironment.class.getResourceAsStream("multiApi_completeOrder.xml"));
-				YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.omfulfillment.com:9080");
+				YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.innovationcloud.info:9080");
 				YFCElement eComplete = eReset.createChild("CompleteOrder1");
 				YFCElement eInput = eComplete.createChild("Input");
 				eInput.importNode(createOrder);
@@ -119,7 +119,7 @@ public class ResetEnvironment {
 			
 			try{
 				YFCDocument createOrder = YFCDocument.parse(ResetEnvironment.class.getResourceAsStream("multiApi_completeOrder.xml"));
-				YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.omfulfillment.com:9080");
+				YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.innovationcloud.info:9080");
 				YFCElement eComplete = eReset.createChild("CompleteOrder2");
 				YFCElement eInput = eComplete.createChild("Input");
 				eInput.importNode(createOrder);

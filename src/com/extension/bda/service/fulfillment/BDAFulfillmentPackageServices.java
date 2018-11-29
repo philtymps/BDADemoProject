@@ -25,7 +25,7 @@ public class BDAFulfillmentPackageServices extends BDAServiceApi {
 		
 	}
 	public Document getFulfillmentPackageList(YFSEnvironment env, Document docInput) {
-		return BDAEntityServices.getObjectList(docInput, "BDA_FULFILLMENT_PACKAGE");
+		return BDAEntityServices.getObjectList(env, docInput, "BDA_FULFILLMENT_PACKAGE");
 	}
 	
 	public Document getFulfillmentPackage(YFSEnvironment env, Document docInput){
@@ -33,9 +33,9 @@ public class BDAFulfillmentPackageServices extends BDAServiceApi {
 			YFCElement eInput = YFCDocument.getDocumentFor(docInput).getDocumentElement();
 			FulfillmentPackage fp = null;
 			if(eInput.hasAttribute("FulfillmentPackageKey")){
-				fp = new FulfillmentPackage(eInput.getIntAttribute("FulfillmentPackageKey"));
+				fp = new FulfillmentPackage(env, eInput.getIntAttribute("FulfillmentPackageKey"));
 			} else if(eInput.hasAttribute("OrganizationCode") && eInput.hasAttribute("FulfillmentType")){
-				fp = new FulfillmentPackage(eInput.getAttribute("OrganizationCode"), eInput.getAttribute("FulfillmentType"));
+				fp = new FulfillmentPackage(env, eInput.getAttribute("OrganizationCode"), eInput.getAttribute("FulfillmentType"));
 			}
 			if(fp != null){
 				fp.loadSourcingRules(env);
@@ -61,7 +61,7 @@ public class BDAFulfillmentPackageServices extends BDAServiceApi {
 			FulfillmentPackage fp = null;
 			HashMap<Integer, FulfillmentDetails> fds = new HashMap<Integer, FulfillmentDetails>();
 			if(!YFCCommon.isVoid(eInput.getAttribute("FulfillmentPackageKey"))){
-				fp = new FulfillmentPackage(eInput.getIntAttribute("FulfillmentPackageKey"));
+				fp = new FulfillmentPackage(env, eInput.getIntAttribute("FulfillmentPackageKey"));
 			} else {
 				YFCDocument dFulfillmentType = YFCDocument.createDocument("CommonCode");
 				YFCElement eFulfillmentType = dFulfillmentType.getDocumentElement();
@@ -76,7 +76,7 @@ public class BDAFulfillmentPackageServices extends BDAServiceApi {
 				Document dResponse = callApi(env, dFulfillmentType.getDocument(), null, "manageCommonCode");
 				YFCElement eResponse = YFCDocument.getDocumentFor(dResponse).getDocumentElement();
 				fp = new FulfillmentPackage(eInput.getAttribute("OrganizationCode"), eResponse.getAttribute("CodeValue"), eInput.getAttribute("PackageName"), eInput.getAttribute("AllocationRuleKey"), eInput.getAttribute("SourcingConfigKey"));
-				fp.save();
+				fp.save(env);
 			}
 			
 			
@@ -139,10 +139,10 @@ public class BDAFulfillmentPackageServices extends BDAServiceApi {
 					fds.get(eSRD.getIntAttribute("SeqNo")).updateSourcingRuleDetailKey(eSRD.getAttribute("SourcingRuleDetailKey"));
 				}
 				for (FulfillmentDetails fd : fds.values()){
-					fd.save();
+					fd.save(env);
 				}
 			}
-			fp.save();
+			fp.save(env);
 			return fp.getXml().getOwnerDocument().getDocument();
 		}
 		

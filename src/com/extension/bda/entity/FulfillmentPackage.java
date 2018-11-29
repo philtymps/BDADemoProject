@@ -19,20 +19,20 @@ public class FulfillmentPackage extends BDAEntityObject {
 	public FulfillmentPackage(){
 		fulfillmentDetails = new ArrayList<FulfillmentDetails>();
 	}
-	public FulfillmentPackage (int sFulfillmentPackageKey){
+	public FulfillmentPackage (YFSEnvironment env, int sFulfillmentPackageKey){
 		this();
 		if(!YFCCommon.isVoid(sFulfillmentPackageKey) && sFulfillmentPackageKey > 0){
-			loadRecordForKey(sFulfillmentPackageKey);
+			loadRecordForKey(env, sFulfillmentPackageKey);
 		}
 	}
 	
-	public FulfillmentPackage (String sOrganizationCode, String sFulfillmentType){
+	public FulfillmentPackage (YFSEnvironment env, String sOrganizationCode, String sFulfillmentType){
 		this();
 		if(!YFCCommon.isVoid(sOrganizationCode) && !YFCCommon.isVoid(sFulfillmentType)){
 			Map <String, String> m = new HashMap<String, String>();
 			m.put("FULFILLMENT_TYPE", sFulfillmentType);
 			m.put("ORGANIZATION_CODE", sOrganizationCode);
-			loadOneRecord(m);
+			loadOneRecord(env, m);
 		}
 	}
 	
@@ -67,23 +67,23 @@ public class FulfillmentPackage extends BDAEntityObject {
 		return null;
 	}
 	
-	public YFCElement save(){
+	public YFCElement save(YFSEnvironment env){
 		if(isDirty()){
-			YFCElement eResponse = saveRecord(eEntityData);
+			YFCElement eResponse = saveRecord(env, eEntityData);
 			if(!YFCCommon.isVoid(eResponse)){
 				setClean();
 			} else {
 				Map <String, String> m = new HashMap<String, String>();
 				m.put("FULFILLMENT_TYPE", eEntityData.getAttribute("FulfillmentType"));
 				m.put("ORGANIZATION_CODE", eEntityData.getAttribute("OrganizationCode"));
-				loadOneRecord(m);
+				loadOneRecord(env, m);
 			}
 			return eResponse;
 		}
 		return eEntityData;
 	}
 	
-	private void createFlagsForSourcingRuleHeader(YFCElement eSourcingRuleHeader){
+	private void createFlagsForSourcingRuleHeader(YFSEnvironment env, YFCElement eSourcingRuleHeader){
 		YFCElement eSourcingRuleHeaderConfig = eSourcingRuleHeader.getChildElement("SourcingRuleHeaderConfig", true);
 		eSourcingRuleHeaderConfig.setAttribute("DefineSellerOrg", YFCCommon.isVoid(eSourcingRuleHeader.getAttribute("SellerOrganizationCode")));
 		eSourcingRuleHeaderConfig.setAttribute("DefineSourcingClass", YFCCommon.isVoid(eSourcingRuleHeader.getAttribute("OrderSourcingClassification")));
@@ -99,7 +99,7 @@ public class FulfillmentPackage extends BDAEntityObject {
 		eSourcingRuleHeaderConfig.setAttribute("ProductClassification", !YFCCommon.isVoid(eSourcingRuleHeader.getAttribute("ItemID")) || !YFCCommon.isVoid(eSourcingRuleHeader.getAttribute("ItemClassification")) || !YFCCommon.isVoid(eSourcingRuleHeader.getAttribute("ItemClassification2")));
 		YFCElement eSRDList = eSourcingRuleHeader.getChildElement("SourcingRuleDetails", true);
 		for (YFCElement eSRD : eSRDList.getChildren()){
-			FulfillmentDetails fd = new FulfillmentDetails(eSRD.getAttribute("SourcingRuleDetailKey"));
+			FulfillmentDetails fd = new FulfillmentDetails(env, eSRD.getAttribute("SourcingRuleDetailKey"));
 			if(!YFCCommon.isVoid(fd.getPrimaryKey())){
 				eSRD.setAttributes(fd.getXml().getAttributes());
 				fulfillmentDetails.add(fd);
@@ -115,7 +115,7 @@ public class FulfillmentPackage extends BDAEntityObject {
 		loadRemoteData(env, dSRH.getDocument(), getSourcingRuleHeaderTemplate(), "getSourcingRuleList", false);
 		YFCElement eSourcingRuleHeaders = super.getXml().getChildElement("SourcingRuleHeaders");
 		for(YFCElement eHeader : eSourcingRuleHeaders.getChildren()){
-			createFlagsForSourcingRuleHeader(eHeader);
+			createFlagsForSourcingRuleHeader(env, eHeader);
 		}
 	}
 	

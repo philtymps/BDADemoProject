@@ -7,12 +7,13 @@ import com.yantra.yfc.util.YFCCommon;
 
 public class SCISalesShipment extends SCIObject {
 
-	public SCISalesShipment(String _internalID){
-		super(_internalID);
+	public SCISalesShipment(){
+		super();
 	}
 	
 	public SCISalesShipment(YFCElement eShipment){
-		super(eShipment.getAttribute("ShipmentKey"));
+		super();
+		this.setString("_id", eShipment.getAttribute("ShipmentKey"));
 			
 		if(!YFCCommon.isVoid(eShipment.getAttribute("ActualShipmentDate"))){
 			setDate("actualShipDate", eShipment.getYDateAttribute("ActualShipmentDate"));
@@ -38,7 +39,7 @@ public class SCISalesShipment extends SCIObject {
 			setString("origin", eShipment.getAttribute("ShipNode"));
 		}
 		if(!YFCCommon.isVoid(eShipment.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine"))){
-			setString("salesOrder", eShipment.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine").getAttribute("OrderLineKey"));
+			setString("salesOrder", eShipment.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine").getAttribute("OrderNo"));
 		}
 		if(!YFCCommon.isVoid(eShipment.getAttribute("CarrierServiceCode"))){
 			setBoolean("expeditedShipping", eShipment.getAttribute("CarrierServiceCode").toLowerCase().contains("express") || eShipment.getAttribute("CarrierServiceCode").toLowerCase().contains("priority"));		
@@ -65,44 +66,11 @@ public class SCISalesShipment extends SCIObject {
 		eShipment.setAttribute("TotalActualCharge", "");
 		YFCElement eShipmentLine = eShipment.createChild("ShipmentLines").createChild("ShipmentLine");
 		eShipmentLine.setAttribute("OrderLineKey", "");
+		eShipmentLine.setAttribute("OrderHeaderKey", "");
+		eShipmentLine.setAttribute("OrderNo", "");
 		return dShipmentList;
 	}
-	public SCISalesShipment(String _internalID, YDate actualShipDate, YDate actualTimeofArrival,
-			YDate committedTimeOfArrival, YDate estimatedTimeOfArrival, YDate predicatedTimeOfArrival,
-			YDate requestedTimeOfArrival, String airwayMasterNumber, String billOfLadingNumber, String carrier,
-			String carrierContainer, String currentLocationCoordinates, String currentRegion, String destination,
-			String expectedPathOfShipment, String freightForwarder, String houseAirwayBill, String origin,
-			String parcelTrackingNumber, String predictedTimeOfArrivalLocation, String salesOrder,
-			String transportDescription, String transportMode, boolean expeditedShipping, double shippingCost,
-			double expeditedShippingCost) {
-		super(_internalID);
-		
-		setDate("actualShipDate", actualShipDate);
-		setDate("actualTimeofArrival", actualTimeofArrival);
-		setDate("committedTimeOfArrival", committedTimeOfArrival);
-		setDate("estimatedTimeOfArrival", estimatedTimeOfArrival);
-		setDate("predicatedTimeOfArrival", predicatedTimeOfArrival);
-		setDate("requestedTimeOfArrival", requestedTimeOfArrival);
-		setString("airwayMasterNumber", airwayMasterNumber);
-		setString("billOfLadingNumber", billOfLadingNumber);
-		setString("carrier", carrier);
-		setString("carrierContainer", carrierContainer);
-		setString("currentLocationCoordinates", currentLocationCoordinates);
-		setString("currentRegion", currentRegion);
-		setString("destination", destination);
-		setString("expectedPathOfShipment", expectedPathOfShipment);
-		setString("freightForwarder", freightForwarder);
-		setString("houseAirwayBill", houseAirwayBill);
-		setString("origin", origin);
-		setString("parcelTrackingNumber", parcelTrackingNumber);
-		setString("predictedTimeOfArrivalLocation", predictedTimeOfArrivalLocation);
-		setString("salesOrder", salesOrder);
-		setString("transportDescription", transportDescription);
-		setString("transportMode", transportMode);
-		setBoolean("expeditedShipping", expeditedShipping);
-		setDouble("shippingCost", shippingCost);
-		setDouble("expeditedShippingCost", expeditedShippingCost);
-	}
+	
 	
 	public YDate getActualShipDate() {
 		return getDate("actualShipDate");

@@ -34,7 +34,7 @@ public class BDAGetDemandOrders implements IBDAService {
 		if(!YFCCommon.isVoid(input)){
 			YFCDocument dInput = YFCDocument.getDocumentFor(input);
 			YFCElement eItemDemand = dInput.getDocumentElement();
-			YFCElement output = getOrdersForItemDemand(eItemDemand);
+			YFCElement output = getOrdersForItemDemand(env, eItemDemand);
 			if(!YFCCommon.isVoid(env.getTxnObject("serviceTemplate"))){
 				YFCDocument dOrderInput = YFCDocument.createDocument("Order");
 				YFCElement eOrderInput = dOrderInput.getDocumentElement();
@@ -62,7 +62,7 @@ public class BDAGetDemandOrders implements IBDAService {
 		return input;
 	}
 
-	private static YFCElement getOrdersForItemDemand(YFCElement eItemDemand){
+	private static YFCElement getOrdersForItemDemand(YFSEnvironment env, YFCElement eItemDemand){
 		YFCDocument dOrderList = YFCDocument.createDocument("OrderList");
 		if(!YFCCommon.isVoid(eItemDemand)){
 			if(!YFCCommon.isVoid(eItemDemand.getAttribute("ItemID"))){
@@ -93,7 +93,7 @@ public class BDAGetDemandOrders implements IBDAService {
 				}
 				sb.append("ORDER BY OH.ORDER_NO, OH.ENTERPRISE_KEY");
 				try {
-					conn = DatabaseConnection.getConnection();
+					conn = DatabaseConnection.getConnection(env);
 					System.out.println(sb.toString());
 					PreparedStatement ps = conn.prepareStatement(sb.toString());
 					ps.setString(1, eItemDemand.getAttribute("ItemID"));
@@ -139,7 +139,7 @@ public class BDAGetDemandOrders implements IBDAService {
 						eDemand.setAttribute("Status", rs.getString("STATUS").trim());
 					
 					}
-				} catch(SQLException | ClassNotFoundException e){
+				} catch(SQLException e){
 					e.printStackTrace();
 				} finally {
 					if(!YFCCommon.isVoid(conn)){

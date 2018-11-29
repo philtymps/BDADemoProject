@@ -56,7 +56,7 @@ public class Item {
             	if(Order.isItemUsed(item[0].trim())){
             		if(count % 500 == 0){
             			System.out.println("Installed " + count + " items");
-	                	System.out.println(CallInteropServlet.invokeApi(dItemList, null, "manageItem", "http://oms.omfulfillment.com:9080"));
+	                	System.out.println(CallInteropServlet.invokeApi(dItemList, null, "manageItem", "http://oms.innovationcloud.info:9080"));
 	         	       
 	                	dItemList = YFCDocument.createDocument("ItemList");
 	                }
@@ -87,7 +87,7 @@ public class Item {
                 
             }
             
-            System.out.println(CallInteropServlet.invokeApi(dItemList, null, "manageItem", "http://oms.omfulfillment.com:9080"));
+            System.out.println(CallInteropServlet.invokeApi(dItemList, null, "manageItem", "http://oms.innovationcloud.info:9080"));
    	      
             
         } catch (Exception e){

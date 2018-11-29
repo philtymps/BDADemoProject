@@ -117,7 +117,7 @@ public class TriggerXtify {
 		} else if (xProperties.containsKey("server")){
 			return xProperties.getProperty("server");
 		}
-		return "http://oms.omfulfillment.com:9080";
+		return "http://oms.innovationcloud.info:9080";
 	}
 
 	public String getXID(YFCElement eOrder) throws YIFClientCreationException{

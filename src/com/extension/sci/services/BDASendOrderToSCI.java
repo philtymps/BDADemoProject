@@ -30,10 +30,8 @@ public class BDASendOrderToSCI extends BDAPushToSCI {
 		JSONObject bulk = new JSONObject();
 		bulk.put("allOrNothing", false);
 		JSONArray upserts = new JSONArray();
-		for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){
-			SCISalesOrder sciso = new SCISalesOrder(eOrderLine, eOrder);
-			upserts.put(sciso.getBulkObject());
-		}
+		SCISalesOrder sciso = new SCISalesOrder(eOrder);
+		upserts.put(sciso.getBulkObject());
 		bulk.put("upserts", upserts);
 		
 		this.callRequest(SCI_BULK_SALES_ORDER, bulk);

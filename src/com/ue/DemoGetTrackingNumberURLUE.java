@@ -34,7 +34,7 @@ public class DemoGetTrackingNumberURLUE implements YCDGetTrackingNumberURLUE {
 		if (!YFCCommon.isVoid(getProperty("URL"))){
 			return (String) getProperty("URL");
 		}
-		return "http://oms.omfulfillment.com/bps_shipments/";
+		return "http://oms.innovationcloud.info/bps_shipments/";
 	}
 	
 	private YFCElement eGetRelease(YFSEnvironment env, String sOrderReleaseKey){

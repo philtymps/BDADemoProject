@@ -27,7 +27,7 @@ public abstract class BDAPushToSCI implements IBDAService {
 	public static final String SCI_BULK_SALES_SHIPMENT = "https://api.ibm.com/scinsights/run/api/salesshipments/bulk";
 	public static final String SCI_BULK_PURCHASE_ORDER = "https://api.ibm.com/scinsights/run/api/supplyorders/bulk";
 	public static final String SCI_BULK_PURCHASE_SHIPMENT = "https://api.ibm.com/scinsights/run/api/supplyshipments/bulk";
-	
+	public static final String SCI_BULK_LOCATIONS = "https://api.ibm.com/scinsights/run/api/locations/bulk";
 	
  	private Properties properties = null;
 	
@@ -57,28 +57,34 @@ public abstract class BDAPushToSCI implements IBDAService {
 	private String getClientID(){
 		if(!YFCCommon.isVoid(getProperty("ClientID"))){
 			return getProperty("ClientID");
-		//} else if(!YFCCommon.isVoid(YFSSystem.getProperty("sci.client-id"))){
-			//return YFSSystem.getProperty("sci.client-id");
 		}
-		return "7cbf0b5c-1405-40dc-86b5-50e61dc8f6ef";
+		// Primary Tenant
+		// return "7cbf0b5c-1405-40dc-86b5-50e61dc8f6ef";
+		
+		// Development Demo Tenant
+		return "0676e2bc-436c-4ba4-9d75-a230a78ecbe3";
 	}
 	
 	private String getClientSecret(){
 		if(!YFCCommon.isVoid(getProperty("ClientSecret"))){
 			return getProperty("ClientSecret");
-		//} else if(!YFCCommon.isVoid(YFSSystem.getProperty("sci.client-secret"))){
-			//return YFSSystem.getProperty("sci.client-secret");
 		}
-		return "X7bV0lC4bA4wU5dM7rN1pT2cE8jS2qG5yG0rN7wK6qV5rD0yJ6";
+		// Primary Tenant
+		// return "X7bV0lC4bA4wU5dM7rN1pT2cE8jS2qG5yG0rN7wK6qV5rD0yJ6";
+		
+		// Development Demo Tenant
+		return "B4fT4pE5kM7hH0hP1yN2nA7yN3vF3fU1fH4fD2eD1dC5yK1yO5";
 	}
 	
 	private String getUserSecret(){
 		if(!YFCCommon.isVoid(getProperty("UserSecret"))){
 			return getProperty("UserSecret");
-		//} else if(!YFCCommon.isVoid(YFSSystem.getProperty("sci.user-secret"))){
-			//return YFSSystem.getProperty("sci.user-secret");
 		}
-		return "ef786ec3-6ce3-40e7-80cd-db258bf3d4b8";
+		// Primary Tenant
+		// return "ef786ec3-6ce3-40e7-80cd-db258bf3d4b8";
+		
+		// Development Demo Tenant
+		return "80a9750a-6374-489a-8396-c9f2ed24c634";
 	}
 	
 	public void callRequest(String postURL, JSONObject input){

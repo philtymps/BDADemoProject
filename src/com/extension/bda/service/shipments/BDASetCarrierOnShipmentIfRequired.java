@@ -44,6 +44,7 @@ public class BDASetCarrierOnShipmentIfRequired implements IBDAService {
 			l_OutputXml = localApi.invoke(env, "getShipmentDetails", dInput.getDocument());
 			if(YFCCommon.isVoid(l_OutputXml.getDocumentElement().getAttribute("SCAC")) && YFCCommon.equals(l_OutputXml.getDocumentElement().getAttribute("DeliveryMethod"), "SHP")){
 				l_OutputXml.getDocumentElement().setAttribute("SCAC", "Y_ANY");
+				l_OutputXml.getDocumentElement().setAttribute("CarrierServiceCode", "STANDARD_AURE");
 				localApi.invoke(env, "changeShipment", l_OutputXml);
 			}
 		} catch(Exception yex) {

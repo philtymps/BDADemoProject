@@ -39,7 +39,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 			YFCElement eMultiApi = dMultiApi.getDocumentElement();
 			boolean callMultiApi = false;
 			if(eShortage.getBooleanAttribute("RaiseAlert") || eShortage.getBooleanAttribute("NotifyCustomers") || eShortage.getBooleanAttribute("UnscheduleOrders", true)){
-				YFCElement eOrders = getOrdersForItem(eShortage);
+				YFCElement eOrders = getOrdersForItem(env, eShortage);
 				if(eShortage.getBooleanAttribute("RaiseAlert") || eShortage.getBooleanAttribute("UnscheduleOrders", true)){
 					for(YFCElement eOrder : eOrders.getChildren()){
 						
@@ -61,7 +61,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 				eApi.setAttribute("Name", "adjustInventory");
 				YFCElement eItems = eApi.createChild("Input").createChild("Items");
 				for(YFCElement eShipNode : eShortage.getChildElement("ShipNodes", true).getChildren()){
-					clearInventorySupply(eItems, eShortage, eShipNode.getAttribute("Node"));
+					clearInventorySupply(env, eItems, eShortage, eShipNode.getAttribute("Node"));
 					callMultiApi = true;
 				}
 				
@@ -82,13 +82,13 @@ public class BDAInventoryShortAlert implements IBDAService {
 		return input;
 	}
 	
-	private void clearInventorySupply(YFCElement eItems, YFCElement eShortage, String sNode){
+	private void clearInventorySupply(YFSEnvironment env, YFCElement eItems, YFCElement eShortage, String sNode){
 		
 		String psql = "SELECT SUP.QUANTITY, SUP.SHIPNODE_KEY FROM OMDB.YFS_INVENTORY_SUPPLY SUP INNER JOIN OMDB.YFS_INVENTORY_ITEM II ON II.INVENTORY_ITEM_KEY = SUP.INVENTORY_ITEM_KEY WHERE II.ITEM_ID = ? AND SUP.SHIPNODE_KEY = ?";
 		Connection conn = null;
 		try {
 			
-			conn = DatabaseConnection.getConnection();
+			conn = DatabaseConnection.getConnection(env);
 			PreparedStatement ps = conn.prepareStatement(psql);
 			ps.setString(1, eShortage.getAttribute("ItemID"));
 			ps.setString(2, sNode);
@@ -112,7 +112,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 			}
 			
 		
-		}catch(SQLException | ClassNotFoundException e){
+		}catch(SQLException e){
 			e.printStackTrace();
 		} finally {
 			if(!YFCCommon.isVoid(conn)){
@@ -178,7 +178,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 			eInbox.setAttribute("AssignedToUserId", eShortage.getAttribute("AssignToUserId"));
 		}
 	}
-	public static YFCElement getOrdersForItem(YFCElement eShortage){
+	public static YFCElement getOrdersForItem(YFSEnvironment env, YFCElement eShortage){
 		YFCDocument dOrderList = YFCDocument.createDocument("OrderList");
 		if(!YFCCommon.isVoid(eShortage)){
 			if(!YFCCommon.isVoid(eShortage.getAttribute("ItemID")) && !YFCCommon.isVoid(eShortage.getChildElement("ShipNodes", true).getChildElement("ShipNode"))){
@@ -200,7 +200,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 				}
 				sb.append(") AND OH.DOCUMENT_TYPE = '0001' AND ID.QUANTITY > 0 AND ORS.STATUS_QUANTITY > 0 ORDER BY OH.ORDER_NO, OH.ENTERPRISE_KEY");
 				try {
-					conn = DatabaseConnection.getConnection();
+					conn = DatabaseConnection.getConnection(env);
 					PreparedStatement ps = conn.prepareStatement(sb.toString());
 					ps.setString(1, eShortage.getAttribute("ItemID"));
 					ResultSet rs = ps.executeQuery();
@@ -235,7 +235,7 @@ public class BDAInventoryShortAlert implements IBDAService {
 						eDemand.setAttribute("Status", rs.getString("STATUS").trim());
 						eDemand.setAttribute("StatusQuantity", rs.getString("STATUS_QUANTITY").trim());
 					}
-				} catch(SQLException | ClassNotFoundException e){
+				} catch(SQLException e){
 					e.printStackTrace();
 				} finally {
 					if(!YFCCommon.isVoid(conn)){

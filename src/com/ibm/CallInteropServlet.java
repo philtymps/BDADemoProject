@@ -155,7 +155,7 @@ public class CallInteropServlet {
 	}
 	public static void main(String[] args) {
 		
-		System.out.println(invokeApi(getFindInventoryInput(), getFindInventoryTemplate(), "findInventory", "http://oms.omfulfillment.com:9080"));
+		System.out.println(invokeApi(getFindInventoryInput(), getFindInventoryTemplate(), "findInventory", "http://oms.innovationcloud.info:9080"));
 
 	}
 

@@ -36,14 +36,14 @@ public class GenerateAdjustInventory {
 			YFCDocument output = YFCDocument.getDocumentFor(dOutput);
 			while(!YFCCommon.isVoid(output.getDocumentElement().getChildElement("Item"))){
 				System.out.println("Output: " + output.toString());
-				CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.omfulfillment.com:9080");
+				CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
 				dOutput = t.createStandardInventory(null, dInput.getDocument());
 				if(!YFCCommon.isVoid(dOutput)){
 					output = YFCDocument.getDocumentFor(dOutput);
 				}
 			}
 			System.out.println("Output: " + output.toString());
-			CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.omfulfillment.com:9080");
+			CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
 		}
 	}
 	

@@ -13,6 +13,7 @@ import com.extension.bda.object.DatabaseConnection;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfs.japi.YFSEnvironment;
 
 public abstract class BDATable {
 	private BDAEntity e = null;
@@ -26,10 +27,10 @@ public abstract class BDATable {
 	}
 	
 
-	protected YFCElement saveRecord(YFCElement eElement){
+	protected YFCElement saveRecord(YFSEnvironment env, YFCElement eElement){
 		Connection conn = null;
 		try {
-			conn = DatabaseConnection.getConnection();
+			conn = DatabaseConnection.getConnection(env);
 			if (eElement.hasAttribute(getEntity().getXmlTableKeyName())){
 				String sSql = "UPDATE " + DatabaseConnection.getDBSchema() + "." + getEntity().getTableName() + " SET ";
 				boolean first = true;
@@ -52,7 +53,7 @@ public abstract class BDATable {
 				PreparedStatement ps = conn.prepareStatement(sSql);
 				populateValues(ps, values, eElement);
 				if (ps.executeUpdate() > 0){
-					return getRecordForKey(eElement.getIntAttribute(getEntity().getXmlTableKeyName()));
+					return getRecordForKey(env, eElement.getIntAttribute(getEntity().getXmlTableKeyName()));
 				}
 				return null;
 			} else {
@@ -82,7 +83,7 @@ public abstract class BDATable {
 				if ( ps.executeUpdate() > 0){
 					try (ResultSet generatedKeys = ps.getGeneratedKeys()){
 						if(generatedKeys.next()){
-							return getRecordForKey(generatedKeys.getInt(1));
+							return getRecordForKey(env, generatedKeys.getInt(1));
 						}
 					}
 				}
@@ -104,20 +105,20 @@ public abstract class BDATable {
 	
 	
 	
-	protected YFCElement getOneRecord(Map<String, String> nameValuePairs){
+	protected YFCElement getOneRecord(YFSEnvironment env, Map<String, String> nameValuePairs){
 		YFCDocument dOutput = YFCDocument.createDocument(getEntity().getXmlName());
 		YFCElement eResponse = dOutput.getDocumentElement();
-		YFCElement eList = getRecords(nameValuePairs, getEntity());
+		YFCElement eList = getRecords(env, nameValuePairs, getEntity());
 		if(!YFCCommon.isVoid(eList)){
 			eResponse.setAttributes(eList.getChildElement(getEntity().getXmlName(), true).getAttributes());
 		}
 		return eResponse;
 	}
 	
-	protected YFCElement getRecordForKey(int primaryKey) {
+	protected YFCElement getRecordForKey(YFSEnvironment env, int primaryKey) {
 		Connection conn = null;
 		try {
-			conn = DatabaseConnection.getConnection();
+			conn = DatabaseConnection.getConnection(env);
 			String sSql = "SELECT * FROM " + DatabaseConnection.getDBSchema() + "." + getEntity().getTableName() + " WHERE " + getEntity().getTableKeyName() + " = ?"; 
 			System.out.println("SQL: " + sSql);
 			PreparedStatement ps = conn.prepareStatement(sSql);
@@ -140,10 +141,10 @@ public abstract class BDATable {
 	}
 	
 	
-	public static YFCElement getRecords(Map<String, String> nameValuePairs, BDAEntity entity){
+	public static YFCElement getRecords(YFSEnvironment env, Map<String, String> nameValuePairs, BDAEntity entity){
 		Connection conn = null;
 		try {
-			conn = DatabaseConnection.getConnection();
+			conn = DatabaseConnection.getConnection(env);
 			
 			String sSql = "SELECT * FROM " + DatabaseConnection.getDBSchema() + "." + entity.getTableName() + " WHERE "; 
 			boolean first = true;

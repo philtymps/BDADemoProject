@@ -42,7 +42,7 @@ public class UnicaMailing {
 		if (!YFCCommon.isVoid(getProperty("server"))){
 			return (String)getProperty("server");
 		}
-		return "http://oms.omfulfillment.com:9080";
+		return "http://oms.innovationcloud.info:9080";
 	}
 	
 	private static YFCElement getOrder(){

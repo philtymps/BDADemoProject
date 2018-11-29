@@ -45,9 +45,9 @@ public abstract class BDAEntityObject extends BDATable{
 		setDirty();
 	}
 	
-	public YFCElement save(){
+	public YFCElement save(YFSEnvironment env){
 		if(dirty){
-			YFCElement eResponse = saveRecord(eEntityData);
+			YFCElement eResponse = saveRecord(env, eEntityData);
 			if(!YFCCommon.isVoid(eResponse)){
 				dirty = false;
 			}
@@ -61,14 +61,14 @@ public abstract class BDAEntityObject extends BDATable{
 		eEntityData = eInput;
 	}
 	
-	protected void loadOneRecord(Map<String, String> nameValuePairs){
+	protected void loadOneRecord(YFSEnvironment env, Map<String, String> nameValuePairs){
 		dirty = false;
-		eEntityData = getOneRecord(nameValuePairs);
+		eEntityData = getOneRecord(env, nameValuePairs);
 	}
 	
-	protected void loadRecordForKey(int primaryKey){
+	protected void loadRecordForKey(YFSEnvironment env, int primaryKey){
 		dirty = false;
-		eEntityData = getRecordForKey(primaryKey);
+		eEntityData = getRecordForKey(env, primaryKey);
 	}
 	
 	public int getPrimaryKey(){

@@ -12,7 +12,7 @@ import com.yantra.yfs.japi.YFSEnvironment;
 public class CreateInventory {
 
 	private String getServer(){
-		return "http://oms.omfulfillment.com:9080";
+		return "http://oms.innovationcloud.info:9080";
 	}
 	
 	private static YFCDocument getInput(){

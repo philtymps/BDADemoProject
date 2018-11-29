@@ -65,7 +65,7 @@ public class Store extends BDASynchronization {
 	        count = 0;
 	        for(Store s : stores){
 	        	count++;
-	        	System.out.println(CallInteropServlet.invokeApi(s.getOrganization(s.getIndexID(), "Bonton"), null, "manageOrganizationHierarchy", "http://oms.omfulfillment.com:9080"));
+	        	System.out.println(CallInteropServlet.invokeApi(s.getOrganization(s.getIndexID(), "Bonton"), null, "manageOrganizationHierarchy", "http://oms.innovationcloud.info:9080"));
 	        }
 	        System.out.println("Loaded: " + count + " nodes");
 		} else {

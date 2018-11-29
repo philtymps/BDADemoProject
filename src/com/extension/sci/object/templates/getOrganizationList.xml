@@ -1,0 +1,7 @@
+<OrganizationList>
+<Organization OrganizationCode="" InventoryOrganizationCode="" OrganizationName="">
+<Node Latitude="" Longitude="" NodeType="">
+<ShipNodePersonInfo Country="" City="" State="" ZipCode="" AddressLine1="" />
+</Node>
+</Organization>
+</OrganizationList>

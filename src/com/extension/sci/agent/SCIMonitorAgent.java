@@ -54,10 +54,8 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 		
 		
 		for (YFCElement eOrder : eInput.getChildren()){
-			for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){
-				SCISalesOrder sciso = new SCISalesOrder(eOrderLine, eOrder);
-				upserts.put(sciso.getBulkObject());
-			}
+			SCISalesOrder sciso = new SCISalesOrder(eOrder);
+			upserts.put(sciso.getBulkObject());
 			YFCDate date = eOrder.getDateTimeAttribute("OrderDate");
 			sendOrder.invoke(env, eOrder);	
 		}

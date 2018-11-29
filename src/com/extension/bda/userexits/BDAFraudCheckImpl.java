@@ -40,7 +40,8 @@ public class BDAFraudCheckImpl implements YCDProcessOrderFraudCheckUE {
         	eCancel.setAttribute("ModificationReasonCode", "FRAUD_CANCEL");
         	eCancel.setAttribute("ModificationReasonText", msg);
         	try {
-        		CallInteropServlet.invokeApi(dCancelOrder, null, "cancelOrder", "http://oms.omfulfillment.com:9080");
+        		
+        		CallInteropServlet.invokeApi(dCancelOrder, null, "cancelOrder", "http://oms.innovationcloud.info:9080");
         	} catch (Exception e){
         		e.printStackTrace();
         	}

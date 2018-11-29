@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/sendgrid/|com/ibm/yoox/|com/github/scribejava/httpclient/" kind="src" path="src"/>
+	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/sendgrid/|com/ibm/yoox/|com/github/scribejava/httpclient/|com/pierbridge/services/PierbridgeRateShop.java|com/ibm/commerce/sterling/ue/|com/extension/inbalance/extract/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/javax.servlet_2.5.0.v200910301333.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/ojdbc14.jar"/>
 	<classpathentry kind="lib" path="lib/HdrHistogram-2.1.9.jar"/>
 	<classpathentry kind="lib" path="lib/hystrix-core-1.5.2.jar"/>
 	<classpathentry kind="lib" path="lib/hystrix-javanica-1.4.4.jar"/>
 	<classpathentry kind="lib" path="lib/javax.json-1.0.4.jar"/>
 	<classpathentry kind="lib" path="lib/rxjava-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_cuf_generator.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_uifwk_ide_ui.jar" sourcepath="/Users/pfaiola/RTC/afc.uiproduct/platform_uifwk_ide"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/platform_uifwk_ui.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/interact_client.jar"/>
-	<classpathentry kind="lib" path="lib/mongo-java-driver-3.3.0.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/force-wsc-40.0.0.jar" sourcepath="/Users/pfaiola/git/WebServiceConnector/wsc/target/force-wsc-40.0.0-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/DemoExtns.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycsbe.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Foundation-Core.jar"/>
@@ -29,10 +21,9 @@
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdjasper.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdshared.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/OTMZWebClient.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/wsc_ui.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_uifwk_ui.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_afc_ui.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_afc_ui_impl_ui.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/17_4/wsc/platform_afc_rest.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/fscontext.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/providerutil.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/jms.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/javax.servlet_2.5.0.v200910301333.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

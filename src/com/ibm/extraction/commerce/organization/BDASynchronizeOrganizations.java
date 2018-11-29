@@ -25,7 +25,7 @@ public class BDASynchronizeOrganizations extends BDASynchronization {
 		if (!YFCCommon.isVoid(getProperty("server"))){
 			return (String)getProperty("server");
 		}
-		return "http://oms.omfulfillment.com:9080";
+		return "http://oms.innovationcloud.info:9080";
 	}
 	
 	public static void main(String[] args){

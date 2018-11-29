@@ -6,14 +6,15 @@ import java.util.Map;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfs.japi.YFSEnvironment;
 
 public class FulfillmentDetails extends BDAEntityObject {
 
 	private FulfillmentPackage parent;
 	private int seqNo = -1;
 		
-	public FulfillmentDetails(int key){
-		loadRecordForKey(key);
+	public FulfillmentDetails(YFSEnvironment env, int key){
+		loadRecordForKey(env, key);
 	}
 	
 	public FulfillmentDetails(YFCElement eFulfillmentDetails){
@@ -40,15 +41,15 @@ public class FulfillmentDetails extends BDAEntityObject {
 		}
 	}
 	
-	public FulfillmentDetails(String sSourcingRuleDetailKey){
+	public FulfillmentDetails(YFSEnvironment env, String sSourcingRuleDetailKey){
 		Map<String, String> nameValuePairs = new HashMap<String, String>();
 		nameValuePairs.put("SOURCING_RULE_DETAIL_KEY", sSourcingRuleDetailKey);
-		loadOneRecord(nameValuePairs);
+		loadOneRecord(env, nameValuePairs);
 	}
 	
-	public FulfillmentPackage getFulfillmentPackage(){
+	public FulfillmentPackage getFulfillmentPackage(YFSEnvironment env){
 		if (parent == null){
-			parent = new FulfillmentPackage(eEntityData.getIntAttribute("FulfillmentPackageKey"));
+			parent = new FulfillmentPackage(env, eEntityData.getIntAttribute("FulfillmentPackageKey"));
 		}
 		return parent;
 	}	
@@ -57,9 +58,9 @@ public class FulfillmentDetails extends BDAEntityObject {
 		return seqNo;
 	}
 	
-	public YFCElement save(){
+	public YFCElement save(YFSEnvironment env){
 		if(isDirty()){
-			YFCElement eResponse = saveRecord(eEntityData);
+			YFCElement eResponse = saveRecord(env, eEntityData);
 			if(!YFCCommon.isVoid(eResponse)){
 				setClean();
 			} else {
@@ -67,10 +68,10 @@ public class FulfillmentDetails extends BDAEntityObject {
 				Map <String, String> m = new HashMap<String, String>();
 				m.put("SOURCING_RULE_DETAIL_KEY", eEntityData.getAttribute("SourcingRuleDetailKey"));
 				m.put("FULFILLMENT_PACKAGE_KEY", eEntityData.getAttribute("FulfillmentPackageKey"));
-				loadOneRecord(m);
+				loadOneRecord(env, m);
 				eDetails.setAttribute("FulfillmentDetailKey", getPrimaryKey());
 				loadEntityData(eDetails);
-				eResponse = saveRecord(eDetails);
+				eResponse = saveRecord(env, eDetails);
 			}
 			return eResponse;
 		}

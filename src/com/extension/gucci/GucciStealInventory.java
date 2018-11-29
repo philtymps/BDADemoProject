@@ -59,7 +59,7 @@ public class GucciStealInventory implements IBDAService {
 					sb.append("AND SUP.SUPPLY_TYPE = ? ");
 				}
 				try {
-					conn = DatabaseConnection.getConnection();
+					conn = DatabaseConnection.getConnection(env);
 					PreparedStatement ps = conn.prepareStatement(sb.toString());
 					ps.setString(1, eInput.getAttribute("ItemID"));
 					if(!YFCCommon.isVoid(eInput.getAttribute("StatusLessThan"))){
@@ -85,7 +85,7 @@ public class GucciStealInventory implements IBDAService {
 						eOrderRecord.setAttribute("ReleaseStatus", rs.getString("STATUS"));
 						eOrderRecord.setAttribute("SupplyQuantity", rs.getString("SUPPLY_QUANTITY"));
 					}
-				} catch(SQLException | ClassNotFoundException e){
+				} catch(SQLException e){
 					e.printStackTrace();
 				} finally {
 					if(!YFCCommon.isVoid(conn)){
@@ -114,9 +114,9 @@ public class GucciStealInventory implements IBDAService {
 			YFCElement eOrderHold = eOrderLine.createChild("OrderHoldTypes").createChild("OrderHoldType");
 			eOrderHold.setAttribute("HoldType", eInput.getAttribute("HoldType"));
 			eOrderHold.setAttribute("Status", "1100");
-			YFCDocument output = CallInteropServlet.invokeApi(dApiInput, null, "changeOrder", "http://oms.omfulfillment.com:9080");
+			YFCDocument output = CallInteropServlet.invokeApi(dApiInput, null, "changeOrder", "http://oms.innovationcloud.info:9080");
 			
-			YFCDocument output2 = CallInteropServlet.invokeApi(dApiInput, null, "unScheduleOrder", "http://oms.omfulfillment.com:9080");
+			YFCDocument output2 = CallInteropServlet.invokeApi(dApiInput, null, "unScheduleOrder", "http://oms.innovationcloud.info:9080");
 			return output2.getDocument();
 		}
 		return YFCDocument.createDocument("Order").getDocument();

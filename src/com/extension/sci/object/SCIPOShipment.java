@@ -7,11 +7,13 @@ import com.yantra.yfc.util.YFCCommon;
 public class SCIPOShipment extends SCIObject {
 
 	public SCIPOShipment(String _internalID){
-		super(_internalID);
+		super();
+		this.setString("_id", _internalID);
 	}
 	
 	public SCIPOShipment(YFCElement eShipment){
-		super(eShipment.getAttribute("ShipmentKey"));
+		super();
+		this.setString("_id", eShipment.getAttribute("ShipmentKey"));
 			
 		if(!YFCCommon.isVoid(eShipment.getAttribute("ActualShipmentDate"))){
 			setDate("actualShipDate", eShipment.getYDateAttribute("ActualShipmentDate"));
@@ -37,7 +39,7 @@ public class SCIPOShipment extends SCIObject {
 			setString("origin", eShipment.getAttribute("ShipNode"));
 		}
 		if(!YFCCommon.isVoid(eShipment.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine"))){
-			setString("salesOrder", eShipment.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine").getAttribute("OrderLineKey"));
+			setString("salesOrder", eShipment.getChildElement("ShipmentLines", true).getChildElement("ShipmentLine").getAttribute("OrderNo"));
 		}
 		if(!YFCCommon.isVoid(eShipment.getAttribute("CarrierServiceCode"))){
 			setBoolean("expeditedShipping", eShipment.getAttribute("CarrierServiceCode").toLowerCase().contains("express") || eShipment.getAttribute("CarrierServiceCode").toLowerCase().contains("priority"));		
@@ -54,8 +56,8 @@ public class SCIPOShipment extends SCIObject {
 			String parcelTrackingNumber, String predictedTimeOfArrivalLocation, String salesOrder,
 			String transportDescription, String transportMode, boolean expeditedShipping, double shippingCost,
 			double expeditedShippingCost) {
-		super(_internalID);
-		
+		super();
+		setString("_id", _internalID);
 		setDate("actualShipDate", actualShipDate);
 		setDate("actualTimeofArrival", actualTimeofArrival);
 		setDate("committedTimeOfArrival", committedTimeOfArrival);
