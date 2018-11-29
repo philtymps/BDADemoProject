@@ -250,7 +250,7 @@
         </javac>
     </target>
  <target name="jar" depends="clean, build">
-    	<jar destfile="/opt/Sterling/runtime/jar/bda/${version}/BDADemoProject.jar"
+    	<jar destfile="/opt/Sterling/runtime/jar/bda/18_3/BDADemoProject.jar"
     		basedir="bin" includes="**" />
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
