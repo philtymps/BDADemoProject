@@ -36,6 +36,7 @@ public class EasyServiceCollection {
 		map.put("processReturnOrder", new BDAProcessReturnOrder());
 		map.put("getDemandOrders", new BDAGetDemandOrders());
 		map.put("completeOrder", new CompleteOrder());
+		map.put("CompleteOrder", new CompleteOrder());
 		map.put("stealInventoryFromLine", new GucciStealInventory());
 		map.put("getOrdersToStealFrom", new GucciGetLinesToStealFrom());
 		map.put("resolveHoldsAndPayment", new BDAHoldsAndPayment());
