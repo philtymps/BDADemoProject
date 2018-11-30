@@ -15,6 +15,7 @@ import com.extension.bda.service.promotions.BDAGetPreviouslyViewedItems;
 import com.extension.bda.service.returns.BDACreateReturnTransfer;
 import com.extension.bda.service.shipments.BDASetCarrierOnShipmentIfRequired;
 import com.extension.bda.service.store.BDAGetNodeCapacityDetails;
+import com.extension.bda.userexits.BDADuplicateOrderImpl;
 import com.extension.gucci.GucciGetLinesToStealFrom;
 import com.extension.gucci.GucciStealInventory;
 import com.extension.silverpop.SilverpopEmailSegment;
@@ -47,6 +48,7 @@ public class EasyServiceCollection {
 		map.put("createReturnTransfer", new BDACreateReturnTransfer());
 		map.put("getNodeCapacityDetails", new BDAGetNodeCapacityDetails());
 		map.put("bdaDataProvider", new BDADataProvider());
+		map.put("getDuplicateOrders", new BDADuplicateOrderImpl());
 	}
 	
 	public IBDAService getService(String sServiceName){
