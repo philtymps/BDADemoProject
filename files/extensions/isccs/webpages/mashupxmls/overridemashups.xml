@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mashups>
+    <mashup
+        description="This mashup is used in product browsing to list the categories when the page is launched"
+        endpoint="EP_PRODUCT" id="itemBrowsing_searchCatalogindex"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="searchCatalogIndex">
+            <Input>
+                <CatalogSearch
+                    CallingOrganizationCode="xml:scControllerInput:/CatalogSearch/@CallingOrganizationCode"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    PageNumber="1" PageSize="">
+                    <Item CallingOrganizationCode="" Currency=""
+                        ExcludeChildItemsOfModelItems="Y"
+                        GetAvailabilityFromCache="Y" IgnoreInvalidItems="N">
+                        <CustomerInformation BuyerUserId=""
+                            CustomerContactID="xml:scControllerInput:/CatalogSearch/CustomerInformation/@CustomerContactID" CustomerID="xml:scControllerInput:/CatalogSearch/CustomerInformation/@CustomerID"/>
+                    </Item>
+                </CatalogSearch>
+            </Input>
+            <Template>
+                <CatalogSearch PageNumber="" PageSize="" TotalHits="" TotalPages="">
+                    <CategoryList>
+                        <Category CategoryPath="" Count="" ShortDescription="">
+                            <ChildCategoryList>
+                                <Category CategoryPath="" Count="" ShortDescription=""/>
+                            </ChildCategoryList>
+                        </Category>
+                    </CategoryList>
+                    <ItemAttribute ItemAttributeDescription="" ItemAttributeName="">
+                        <AssignedValueList>
+                            <AssignedValue Count="" Value=""/>
+                        </AssignedValueList>
+                    </ItemAttribute>
+                </CatalogSearch>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="itemBrowsing_searchCatalogindex_input" outputNS="itemBrowsing_searchCatalogindex_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="This mashup is used in product browsing to list the items and the corresponding categories"
+        endpoint="EP_PRODUCT" id="itemBrowsing_searchCatalog"
+        mashuptype="XAPI" resourceId="" transactional="true">
+        <API Name="searchCatalogIndex">
+            <Input>
+                <CatalogSearch CallingOrganizationCode=""
+                    CategoryPath=""
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    PageNumber="1" PageSize="" SortDescending="" SortField="">
+                    <Filters>
+                        <Filter IndexFieldName="" Value=""/>
+                    </Filters>
+                    <Item CallingOrganizationCode="" Currency=""
+                        ExcludeChildItemsOfModelItems="Y"
+                        GetAvailabilityFromCache="Y" IgnoreInvalidItems="N">
+                        <CustomerInformation BuyerUserId=""
+                            CustomerContactID="" CustomerID=""/>
+                    </Item>
+                    <Terms>
+                        <Term Condition="" Value=""/>
+                    </Terms>
+                </CatalogSearch>
+            </Input>
+            <Template>
+                <CatalogSearch CallingOrganizationCode="" PageNumber=""
+                    PageSize="" SortDescending="" SortField=""
+                    TotalHits="" TotalPages="">
+                    <FacetList>
+                        <ItemAttribute IndexFieldName=""
+                            ItemAttributeDescription="" ItemAttributeName="">
+                            <Attribute ShortDescription=""/>
+                            <AssignedValueList>
+                                <AssignedValue Count=""
+                                    ShortDescription="" Value=""/>
+                            </AssignedValueList>
+                        </ItemAttribute>
+                    </FacetList>
+                    <ItemList CallingOrganizationCode="" Currency="">
+                        <Item ItemGroupCode="" ItemID=""
+                            OrganizationCode="" UnitOfMeasure="">
+                            <Availability CurrentAvailableQty=""
+                                FirstFutureAvailableDate=""
+                                FutureAvailableDate=""
+                                FutureAvailableQuantity=""
+                                OnhandAvailableDate="" OnhandAvailableQuantity=""/>
+                            <ComputedPrice BundleTotal="" ListPrice="" UnitPrice=""/>
+                            <PrimaryInformation BundleFulfillmentMode=""
+                                DefaultProductClass="" Description=""
+                                ExtendedDisplayDescription="" ImageID=""
+                                ImageLocation="" IsConfigurable=""
+                                IsModelItem="" IsPickupAllowed=""
+                                IsPreConfigured="" IsShippingAllowed="" KitCode=""/>
+                        </Item>
+                    </ItemList>
+                    <CategoryList>
+                        <Category CategoryPath="" Count="" ShortDescription="">
+                            <ChildCategoryList>
+                                <Category CategoryPath="" Count="" ShortDescription=""/>
+                            </ChildCategoryList>
+                        </Category>
+                    </CategoryList>
+                    <ItemAttribute ItemAttributeDescription="" ItemAttributeName="">
+                        <AssignedValueList>
+                            <AssignedValue Count="" Value=""/>
+                        </AssignedValueList>
+                    </ItemAttribute>
+                </CatalogSearch>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace inputNS="itemBrowsing_searchCatalog_input" outputNS="itemBrowsing_searchCatalog_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+    <mashup
+        description="Get List of Organizations applicable for current user"
+        endpoint="EP_CONFIG"
+        id="productBrowsing_getSearchIndexFieldList" mashuptype="XAPI"
+        resourceId="" transactional="true">
+        <API Name="getSearchIndexFieldList">
+            <Input>
+                <SearchIndexField
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    IncludeCanUseAsFilter="N" IncludeSearchable="N"
+                    IncludeSortable="Y" MaximumRecords=""/>
+            </Input>
+            <Template>
+                <SearchIndexFieldList>
+                    <SearchField IndexFieldName="" Name=""/>
+                </SearchIndexFieldList>
+            </Template>
+        </API>
+        <classInformation name="com.ibm.isccs.common.mashups.SCCSBaseMashup"/>
+        <APINamespace
+            inputNS="productBrowsing_getSearchIndexFieldList_input" outputNS="productBrowsing_getSearchIndexFieldList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="ISCPROD00001"/>
+        </AlternateResourceIds>
+    </mashup>
+</mashups>

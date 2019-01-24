@@ -1,0 +1,60 @@
+		<div>
+		 	<div data-dojo-type="idx/form/RadioButtonSet"
+	 					data-dojo-props="data_dojo_props_diff: {
+	 								_sc_extensibility_operation : 'insert' ,
+		groupAlignment : 'horizontal' ,
+		_sc_extensibility_moveOrder : '1' ,
+		_sc_extensibility_referenceUId : 'radReadFromHistory' ,
+		name : 'OrderType' ,
+		uId : 'extn_radCustomerOrder' ,
+		_sc_extensibility_position : 'before'
+ 		,scExtensionDataFn :
+		 function() {
+			return {
+			 	bindingData : 	{
+		 targetBinding : 	[
+	 		{
+		 scExtensibilityArrayItemId : 			'extn_TargetBindings_0'
+,
+		 path : 			'Order.OrderType'
+,
+		 namespace : 			'getAdvancedOrderList_input'
+	}
+	]
+,
+		 sourceBinding : 	{
+		 path : 			'Order.OrderType'
+,
+		 namespace : 			'screenInput'
+	}
+,
+		 radioBinding : 	{
+		 options : 	[
+	 		{
+
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_0'
+,
+		 value : 			'CustomerOrder'
+,
+		 label : 			this.getSimpleBundleString('extn_Customer_Order')
+	}
+,
+	 		{
+				selected : 			true
+			,
+		 scExtensibilityArrayItemId : 			'extn_RadioBinding_1'
+,
+		 value : 			'All'
+,
+		 label : 			this.getSimpleBundleString('extn_All')
+	}
+	]
+	}
+	}
+,
+			 	label : 			this.getSimpleBundleString('extn_Order_Type')
+			}
+		}
+	 					}">
+		 	</div>
+		</div>

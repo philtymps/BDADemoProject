@@ -12,7 +12,7 @@ import com.yantra.yfs.japi.YFSEnvironment;
 public class CreateInventory {
 
 	private String getServer(){
-		return "http://oms.innovationcloud.info:9080";
+		return "http://docker.innovationcloud.skytapdns.com:9080";
 	}
 	
 	private static YFCDocument getInput(){
@@ -80,7 +80,7 @@ public class CreateInventory {
 		for (YFCElement eItem : dItemList.getDocumentElement().getChildren()){
 			if (eItem.getAttribute("ItemID").length() <= 40){
 				for (String sShipNode : nodes){
-					if(count % 1000 == 0){
+					if(count % 100 == 0){
 						CallInteropServlet.invokeApi(dItems, null, "adjustInventory", getServer());
 						dItems = YFCDocument.createDocument("Items");
 						eItems = dItems.getDocumentElement();

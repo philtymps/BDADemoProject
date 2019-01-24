@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.home.portlets.BusinessActivityPortletExtnBundle" screenId="extn.home.portlets.BusinessActivityPortletExtn">
+    <BundleEntries>
+        <BundleEntry bundleEntryId="bOrderStates_Link_label"
+            bundleKey="blank" bundleValueFn="_scSimpleBundle"
+            property="label" type="WIDGET" uId="bOrderStates"/>
+    </BundleEntries>
+</ScreenBundle>

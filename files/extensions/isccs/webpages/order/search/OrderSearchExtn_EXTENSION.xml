@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionMetaData>
+    <ScreenExtension extnClassName="OrderSearchExtn"
+        extnPackage="extn.order.search"
+        originalScreen="isccs.order.search.OrderSearch"
+        originalScreenPackage="isccs.order.search" type="diffrential">
+        <Items>
+            <RadioButtonSet _sc_extensibility_moveOrder="1"
+                _sc_extensibility_operation="insert"
+                _sc_extensibility_position="before"
+                _sc_extensibility_referenceUId="radReadFromHistory"
+                groupAlignment="horizontal"
+                label="$(_scSimpleBundle:extn_Order_Type)"
+                name="OrderType" uId="extn_radCustomerOrder">
+                <BindingData>
+                    <RadioBinding>
+                        <Option
+                            label="$(_scSimpleBundle:extn_Customer_Order)"
+                            scExtensibilityArrayItemId="extn_RadioBinding_0"
+                            value="CustomerOrder"/>
+                        <Option label="$(_scSimpleBundle:extn_All)"
+                            selected="true" scExtensibilityArrayItemId="extn_RadioBinding_1" value="All"/>
+                    </RadioBinding>
+                    <SourceBinding namespace="screenInput" path="Order.OrderType"/>
+                    <TargetBindings>
+                        <TargetBinding
+                            namespace="getAdvancedOrderList_input"
+                            path="Order.OrderType" scExtensibilityArrayItemId="extn_TargetBindings_0"/>
+                    </TargetBindings>
+                </BindingData>
+            </RadioButtonSet>
+        </Items>
+        <Subscribers>
+            <Local>
+                <Subscriber eventId="beforeBehaviorMashupCall"
+                    isExtn="true" sequence="51">
+                    <Handler methodName="customBeforeBehaviourMashup"/>
+                </Subscriber>
+            </Local>
+        </Subscribers>
+    </ScreenExtension>
+</ExtensionMetaData>

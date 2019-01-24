@@ -1,0 +1,113 @@
+<div class="sc-platform-screen-default businessActivityeditor">
+
+	<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="spanLabel : true , 
+		'class' : 'screenTitleContainer', 
+		uId : 'titleMessagePanel'  
+		">
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 spanLabel : true , 
+			'class' : 'screenTitlePanel' , 
+			uId : 'pnlTitleBar'  
+			">
+			<div data-dojo-type="sc/plat/dojo/layout/AdvancedTableLayout" data-dojo-props=" showLabels : false , 
+				cols : 2 , 
+				customClass : 'screenTitleTableContainer'  
+				">
+				<div data-dojo-type="sc/plat/dojo/widgets/Image" data-dojo-props="	'class' : 'icon-screen-order screenTitleImage' , 
+					uId : 'lb_titleImage'  
+					"></div>
+				<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 spanLabel : true , 
+					uId : 'pnlTitleContainer'  
+					">
+					<div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="	spanLabel : true , 
+						'class' : 'screenTitle' , 
+						uId : 'lb_screenTitle'  
+						"></div>
+					<div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="	spanLabel : true , 
+						'class' : 'screenSubTitle' , 
+						uId : 'lb_screenSubTitle'  
+						,scParamDataFn :
+						function() { 
+						return { 
+						title : this.getSimpleBundleString('blank')
+						,	
+						value : this.getSimpleBundleString('blank')
+						}
+						}
+						"></div>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+	<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 spanLabel : true , 
+		'class' : 'csrMessagePanel' , 
+		uId : 'customerMessagePanel'  
+		" role='alert'>
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 spanLabel : true , 
+			'class' : 'customerMessageBox' , 
+			uId : 'lb_customerMessageBox' , 
+			renderHidden : true  
+			">
+			<div data-dojo-type="sc/plat/dojo/widgets/Image" data-dojo-props="	'class' : 'customer-message' , 
+				uId : 'imgCustomer'  
+				,scParamDataFn :
+				function() { 
+				return { 
+				title :this.getSimpleBundleString('CUST_ImageAlt')
+				,	
+				imageAlt :this.getSimpleBundleString('CUST_ImageAlt')
+				}
+				}
+				"></div>
+			<div data-dojo-type="sc/plat/dojo/widgets/Link" data-dojo-props="imageStyleClass : 'idxMessageCloseIcon' , 
+				hasImage : true , 
+				'class' : 'idxMessageRightAligned' , 
+				uId : 'linkclose'  
+				,scParamDataFn :
+				function() { 
+				return { 
+				title : this.getSimpleBundleString('CUST_closeAlt')
+				,	
+				imageAlt : this.getSimpleBundleString('CUST_closeAlt')
+				}
+				}
+				"></div>
+			<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 'class' : 'customerMessageText' , 
+				uId : 'pnlCustomerMessageText'  
+				">
+				<div data-dojo-type="sc/plat/dojo/widgets/Label" data-dojo-props="	uId : 'messageDescriptionText'  
+					"></div>
+			</div>
+		</div>
+	</div>
+	<div data-dojo-type="idx/layout/ContentPane" data-dojo-props=" spanLabel : true , 
+		uId : 'systemMessagePanel' , 
+		renderHidden : true  
+		"></div>
+	<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 spanLabel : true , 
+		'class' : 'editorContent' , 
+		uId : 'editorContent'  
+		" role='main'>
+		<div data-dojo-type="idx/layout/ContentPane" data-dojo-props="	 spanLabel : true , 
+			uId : 'scScreenHolder'  
+			" role='main'></div>
+
+<!--The following div element is required to embed the Related Task screen -->
+<div data-dojo-type="sc/plat/dojo/widgets/ControllerWidget" data-dojo-props="
+	uId: 'RelatedTaskScreenHolder',
+	packageName: 'isccs.editors',
+	className: 'HomeEditorRT',
+	handleInit: false,
+	'class': 'relatedTaskHolder',
+   dynamicLoading: true,
+   renderHidden: true,
+	 scParamDataFn: function() {
+		return {
+		}
+	}">
+</div>
+
+<!--End of code to embed the Related Task screen -->
+	</div>
+</div>

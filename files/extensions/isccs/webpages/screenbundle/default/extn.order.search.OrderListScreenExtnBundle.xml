@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScreenBundle
+    screenBundleId="extn.order.search.OrderListScreenExtnBundle" screenId="extn.order.search.OrderListScreenExtn">
+    <BundleEntries>
+        <BundleEntry
+            bundleEntryId="extn_listGrid_viewOrderName_View_name"
+            bundleKey="extn_Order_Name" bundleValueFn="_scSimpleBundle"
+            property="name" type="WIDGET" uId="extn_listGrid_viewOrderName"/>
+    </BundleEntries>
+</ScreenBundle>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed Materials - Property of IBM Sterling Order Management Store (5725-D10)
+  (C) Copyright IBM Corp. 2015 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<mashups>
+   <mashup description="Get Item List" endpoint="EP_PRODUCT"
+      id="itemSearch_searchCatalogIndex" mashuptype="XAPI" skipDataProvider="false"
+      transactional="true">
+      <classInformation name="com.ibm.wsc.order.addItems.WSCSearchCatalogIndexMashup" />
+      <API Name="searchCatalogIndex">
+         <Input>
+            <CatalogSearch CallingOrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode"
+               DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode" IgnoreOrdering="Y"
+               PageSize="" PageNumber="">
+               <Item ExcludeChildItemsOfModelItems="Y" IgnoreInvalidItems="N"
+                  ItemGroupCode="PROD">
+                  <CustomerInformation BuyerUserId="" CustomerID="" CustomerContactID=""/>
+               </Item>
+                  <Terms>
+                     <Term Condition="MUST" Value="" />
+                  </Terms>
+            </CatalogSearch>
+         </Input>
+         <Template>
+            <CatalogSearch CallingOrganizationCode="" PageNumber=""
+               PageSize="" TotalPages="">
+               <ItemList Currency="">
+                  <Item ItemID="" UnitOfMeasure="" DisplayUnitOfMeasure="" ItemGroupCode="" ItemKey="">
+                     <PrimaryInformation BundleFulfillmentMode=""
+                        DefaultProductClass="" Description="" ImageURL=""
+                        ExtendedDisplayDescription="" ImageID="" ImageLocation=""
+                        IsConfigurable="" IsModelItem="" IsPreConfigured="" />
+                     <ComputedPrice BundleTotal="" ListPrice=""
+                        UnitPrice="" />
+                  </Item>
+               </ItemList>
+            </CatalogSearch>
+         </Template>
+      </API>
+      <APINamespace inputNS="searchCatalogIndex_InputNS"
+         outputNS="searchCatalogIndex_OutputNS" />
+      <AlternateResourceIds>
+         <AlternateResourceId altResourceId="WSCSYS00001" />
+      </AlternateResourceIds>
+   </mashup>
+   <mashup description="create order" endpoint="EP_ORDER"
+      id="itemSearch_getCompleteOrderDetails" mashuptype="XAPI" skipDataProvider="false"
+      transactional="true">
+      <classInformation name="com.ibm.wsc.common.mashups.WSCBaseMashup" />
+      <API Name="getCompleteOrderDetails">
+         <Input>
+            <Order OrderHeaderKey="" 
+               EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+               SellerOrganizationCode="xml:CurrentStore:/Store/@ShipNode"
+               DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode">
+            </Order>
+         </Input>
+         <Template>
+               <Order DocumentType="" SellerOrganizationCode="" DraftOrderFlag="" EnterpriseCode=""
+                    EntryType="" OrderDate="" OrderHeaderKey="" OrderName="" BillToID=""
+                    OrderNo="">
+                    <OrderLines TotalNumberOfRecords="">
+                        <OrderLine OrderLineKey=""/>
+                    </OrderLines>
+                </Order>
+         </Template>
+      </API>
+      <APINamespace inputNS="getCompleteOrderDetails_InputNS"
+         outputNS="getCompleteOrderDetails_OutputNS" />
+      <AlternateResourceIds>
+         <AlternateResourceId altResourceId="WSCSYS00001" />
+      </AlternateResourceIds>
+   </mashup>
+</mashups>
