@@ -233,6 +233,12 @@
     <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
+    <target name="update-extensions">
+    	<copy includeemptydirs="false" todir="/opt/Sterling/runtime">
+    		<fileset dir="files" />
+    	</copy>
+    </target>
+              	
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
@@ -249,7 +255,7 @@
             <classpath refid="BDADemoProject.classpath"/>
         </javac>
     </target>
- <target name="jar" depends="clean, build">
+    <target name="jar" depends="clean, update-extensions, build">
     	<jar destfile="/opt/Sterling/runtime/jar/bda/18_3/BDADemoProject.jar"
     		basedir="bin" includes="**" />
     </target>
