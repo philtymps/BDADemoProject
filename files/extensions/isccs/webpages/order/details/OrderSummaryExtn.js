@@ -1,6 +1,6 @@
-scDefine(["scbase/loader!dojo/_base/declare","scbase/loader!extn/order/details/OrderSummaryExtnUI","scbase/loader!sc/plat/dojo/utils/BaseUtils","scbase/loader!isccs/utils/UIUtils","scbase/loader!sc/plat/dojo/utils/ScreenUtils","scbase/loader!sc/plat/dojo/utils/ModelUtils","scbase/loader!sc/plat/dojo/utils/EventUtils","scbase/loader!isccs/utils/BaseTemplateUtils" ,"scbase/loader!isccs/utils/ModelUtils","scbase/loader!sc/plat/dojo/utils/GridxUtils","scbase/loader!dojo/_base/lang","scbase/loader!sc/plat/dojo/info/ApplicationInfo", "scbase/loader!sc/plat/dojo/utils/WidgetUtils","scbase/loader!isccs/utils/OrderUtils", "scbase/loader!isccs/d3/d3"]
+scDefine(["scbase/loader!dojo/_base/declare","scbase/loader!extn/order/details/OrderSummaryExtnUI","scbase/loader!sc/plat/dojo/utils/BaseUtils","scbase/loader!isccs/utils/UIUtils","scbase/loader!sc/plat/dojo/utils/ScreenUtils","scbase/loader!sc/plat/dojo/utils/ModelUtils","scbase/loader!sc/plat/dojo/utils/EventUtils","scbase/loader!isccs/utils/BaseTemplateUtils" ,"scbase/loader!isccs/utils/ModelUtils","scbase/loader!sc/plat/dojo/utils/GridxUtils","scbase/loader!dojo/_base/lang","scbase/loader!sc/plat/dojo/info/ApplicationInfo", "scbase/loader!sc/plat/dojo/utils/WidgetUtils","scbase/loader!isccs/utils/OrderUtils", "scbase/loader!extn/d3/d3"]
 ,
-function(			 
+function(
 			    _dojodeclare,
 			    _extnOrderSummaryExtnUI,
 			    _scBaseUtils,
@@ -17,13 +17,13 @@ function(
 				_isccsOrderUtils,
 			d3
 
-){ 
+){
 	return _dojodeclare("extn.order.details.OrderSummaryExtn", [_extnOrderSummaryExtnUI],{
 	// custom code here
 	CSGDoubleClickHandler: function(event,bEvent,ctrl,args){
 		var item=null;
 		item = _scBaseUtils.getModelValueFromBean("item",args);
-		
+
 		var sOrderHeaderKey = _scModelUtils.getStringValueFromPath("LinkedOrderHeaderKey",item);
 		if(_scBaseUtils.isVoid(sOrderHeaderKey)){
 			 var newOrderModel = null;
@@ -31,15 +31,15 @@ function(
             _scModelUtils.setStringValueAtModelPath("Order.OrderNo", item.LinkedOrderNo, newOrderModel);
             _scModelUtils.setStringValueAtModelPath("Order.DraftOrderFlag", "N", newOrderModel);
 			_scModelUtils.setStringValueAtModelPath("Order.DocumentType", "0001", newOrderModel);
-			_isccsUIUtils.callApi(this,newOrderModel,"extn_getOrderList",null);	
+			_isccsUIUtils.callApi(this,newOrderModel,"extn_getOrderList",null);
 		}
-		else 
+		else
 		{
 			this.openOrderDetails(item);
 		}
 	},
 
-	
+
 	/*
 	*
 	* This method save the change made on the More Attribute grid
@@ -62,7 +62,7 @@ function(
 				_scModelUtils.setStringValueAtModelPath("Order.OrderLines.OrderLine", arr , changeOrderInput);
 				_scModelUtils.setStringValueAtModelPath("Order.OrderHeaderKey",_scModelUtils.getStringValueFromPath("Order.OrderHeaderKey",orderModel),changeOrderInput);
 			   	_scModelUtils.setStringValueAtModelPath("Order.Override","Y",changeOrderInput);
-				_scModelUtils.setStringValueAtModelPath("Order.Action","MODIFY",changeOrderInput);	
+				_scModelUtils.setStringValueAtModelPath("Order.Action","MODIFY",changeOrderInput);
 			    var length = 0;
 			    length = orderline.length;
 			    for(var i = 0; i<length; i++ ){
@@ -154,10 +154,10 @@ function(
 		var sModelObjItem = _scModelUtils.getStringValueFromPath("mashupArray.0.mashupRefId",inputData);
 		if(hasError){
 			_isccsBaseTemplateUtils.showMessage(this, "Save Operation Failed","error", null);
-		} 
+		}
 		else {
 			this.isDirtyCheckRequired = false;
-			if(_scBaseUtils.equals("extn_getOrderList",sModelObj) || _scBaseUtils.equals("extn_getOrderList",sModelObjItem) 
+			if(_scBaseUtils.equals("extn_getOrderList",sModelObj) || _scBaseUtils.equals("extn_getOrderList",sModelObjItem)
 				|| _scBaseUtils.equals("extn_OrderSummaryLins_getOrderList",sModelObj) || _scBaseUtils.equals("extn_OrderSummaryLins_getOrderList",sModelObjItem)
 			|| _scBaseUtils.equals("extn_GetOrderHierarchyBehavior",sModelObj) || _scBaseUtils.equals("extn_GetOrderHierarchyBehavior",sModelObjItem)){
 				_isccsBaseTemplateUtils.handleMashupCompletion(
@@ -176,14 +176,14 @@ function(
 						}else if(sStatus && _scBaseUtils.equals(sStatus,"1100.020")){
 							_scScreenUtils.showInfoMessageBox(this,"Order submitted for Retry successfully");
 						}
-					}					
+					}
 				}else if(_scBaseUtils.equals("extn_OHSCChangeOrder",sModelObj) || _scBaseUtils.equals("extn_OHSCChangeOrder",sModelObjItem)){
 					_scScreenUtils.showInfoMessageBox(this,"Save completed Successfully");
 				}
 			}
 		}
 	},
-	
+
 	 handleMashupOutput: function(
         mashupRefId, modelOutput, mashupInput, mashupContext, applySetModel) {
             if (
@@ -198,9 +198,9 @@ function(
             }
 			if(_scBaseUtils.equals(mashupRefId, "extn_getOrderList")){
 				var newItem = _scModelUtils.createNewModelObjectWithRootKey("item");
-				_scModelUtils.setStringValueAtModelPath("LinkedOrderHeaderKey", 
+				_scModelUtils.setStringValueAtModelPath("LinkedOrderHeaderKey",
 						_scModelUtils.getStringValueFromPath("OrderList.Order.0.OrderHeaderKey",modelOutput), newItem);
-				_scModelUtils.setStringValueAtModelPath("LinkedOrderNo", 
+				_scModelUtils.setStringValueAtModelPath("LinkedOrderNo",
 						_scModelUtils.getStringValueFromPath("OrderList.Order.0.OrderNo",modelOutput), newItem);
 				this.openOrderDetails(newItem);
 			}
@@ -209,20 +209,20 @@ function(
 					_scScreenUtils.setModel(this, "extn_OrderSummaryLins_getOrderList_output", modelOutput, null);
 					this.updateItemIDToOrderLinkGrid(modelOutput);
 				}
-				
-				
+
+
 			}
 			if(_scBaseUtils.equals(mashupRefId,"extn_GetOrderHierarchyBehavior")){
 				_scScreenUtils.setModel(this, "extn_GetOrderHierarchy_output", modelOutput, null);
 				this.updateDataTree(modelOutput);
 			}
         },
-		
+
 	/*
 	*
 	*This method recreate a d3 tree after getOrderHierarchy call is complete.
 	*
-	*/	
+	*/
 	updateDataTree:function(getOrderHierarchy_output){
 		var orderModel = null;
         orderModel = _scScreenUtils.getModel(this, "getCompleteOrderDetails_output");
@@ -248,15 +248,15 @@ function(
 				_scWidgetUtils.hideWidget(this, "extn_treeLegend_contentpane", true);
 			}
         }
-	},	
-		
+	},
+
 	openOrderDetails: function(item){
 		var editorInput = {Order:{}};
 		editorInput.Order.OrderHeaderKey=_scModelUtils.getStringValueFromPath("LinkedOrderHeaderKey",item);
-		
+
 		editorInput.Order.OrderNo=_scModelUtils.getStringValueFromPath("LinkedOrderNo",item);
 		editorInput.Order.DraftOrderFlag="N";
-		
+
 		_isccsUIUtils.openWizardInEditor("isccs.order.wizards.orderSummary.OrderSummaryWizard",editorInput,"isccs.editors.OrderEditor",this);
 	},
 
@@ -269,7 +269,7 @@ function(
 				var extn_MoreAttributeListNS = _scModelUtils.createNewModelObjectWithRootKey("MoreAttributeList");
 				var arr = _scBaseUtils.getNewArrayInstance();
 				_scModelUtils.setStringValueAtModelPath("MoreAttributeList.MoreAttribute", arr , extn_MoreAttributeListNS);
-				length = orderline.length;				
+				length = orderline.length;
 				for (i=0;length>i; i++){
 					var eOrderLine = orderline[i];
 					var sItemID = _scModelUtils.getStringValueFromPath("ItemDetails.ItemID", eOrderLine);
@@ -294,21 +294,21 @@ function(
 								}
 								_scBaseUtils.appendToArray(arr, eventDefn);
 							}
-							
-						}					
+
+						}
 					}
 				}
 				_scScreenUtils.setModel(this, "extn_orderMoreCharactersticks", extn_MoreAttributeListNS, null);
 			}
-		}	
+		}
 	},
-	
+
 	loadTestData: function(event,bEvent,ctrl,args){
 		//TODO
 	},
-	
+
 	extnAfterScreenInit:function(event,bEvent,ctrl,args){
-		
+
 		//PhaseII -- Show CustomerOrder summary in a tree structure.
 		var getOrderHierarchy_output = null;
 		var orderModel = null;
@@ -319,7 +319,7 @@ function(
         	if(!_scBaseUtils.isVoid(sTreeOrderType) && !_scBaseUtils.equals(sTreeOrderType,"BuildPlan")){
 				var treeData = null;
 				treeData = _scModelUtils.getStringValueFromPath("OrderHierarchyForD3Tree.ChartInput",getOrderHierarchy_output);
-/*				treeData = treeData.replace(/\\n/g, "\\n")  
+/*				treeData = treeData.replace(/\\n/g, "\\n")
 								   .replace(/\\'/g, "\\'")
 								   .replace(/\\"/g, '\\"')
 								   .replace(/\\&/g, "\\&")
@@ -342,7 +342,7 @@ function(
 				}
 
 
-				if(!_scBaseUtils.isVoid(sTreeOrderType) && _scBaseUtils.equals(sTreeOrderType,"CustomerOrder")){					
+				if(!_scBaseUtils.isVoid(sTreeOrderType) && _scBaseUtils.equals(sTreeOrderType,"CustomerOrder")){
 					_scWidgetUtils.showWidget(this, "extn_Retry_Validation_btn");
 					_scWidgetUtils.hideWidget(this, "extn_Retrybtn", true);
 					_scWidgetUtils.hideWidget(this, "extn_MarkAsComplete_btn", true);
@@ -361,12 +361,12 @@ function(
 			}
         }
 		//
-        //creating getOrderList Input 
+        //creating getOrderList Input
 		var getOrderListInput = _scBaseUtils.getNewBeanInstance();
 		var arr  = _scBaseUtils.getNewArrayInstance();
 		_scModelUtils.setStringValueAtModelPath("Order.ComplexQuery.And.Or.Exp", arr , getOrderListInput);
 		_scModelUtils.setStringValueAtModelPath("Order.ComplexQuery.Operator", "AND" , getOrderListInput);
-		_scModelUtils.setStringValueAtModelPath("Order.EnterpriseCode",	
+		_scModelUtils.setStringValueAtModelPath("Order.EnterpriseCode",
 					 _scModelUtils.getStringValueFromPath("Order.EnterpriseCode",orderModel), getOrderListInput);
 		_scModelUtils.setStringValueAtModelPath("Order.DocumentType", "0001" , getOrderListInput);
 		//
@@ -385,17 +385,17 @@ function(
 							_scBaseUtils.setAttributeValue("Name", "OrderNo", eventDefn);
 							_scBaseUtils.setAttributeValue("Value", sLinkedOrderNo, eventDefn);
 							_scBaseUtils.setAttributeValue("QryType", "EQ", eventDefn);
-							_scBaseUtils.appendToArray(arr, eventDefn);							
+							_scBaseUtils.appendToArray(arr, eventDefn);
 						}
 					}
 				}
-			
+
 			var sLinkedOrderArray = _scModelUtils.getStringValueFromPath("Order.ComplexQuery.And.Or.Exp",getOrderListInput);
 			if(!_scBaseUtils.isVoid(sLinkedOrderArray) && sLinkedOrderArray.length>0)
-			_isccsUIUtils.callApi(this,getOrderListInput,"extn_OrderSummaryLins_getOrderList",null);	
+			_isccsUIUtils.callApi(this,getOrderListInput,"extn_OrderSummaryLins_getOrderList",null);
 		}
 	},
-	
+
 	callGetOrderDetailsWithExtnCustomerOrderNo:function(event,bEvent,ctrl,args){
 		var orderModel = _scScreenUtils.getModel(this,"getCompleteOrderDetails_output");
 		if(orderModel){
@@ -410,15 +410,15 @@ function(
 				_scModelUtils.setStringValueAtModelPath("Order.DocumentType",sDocumentType,orderModeInput);
 				_scModelUtils.setStringValueAtModelPath("Order.Extn.ExtnCustomerOrderNo",sExtnCustOrderNo,orderModeInput);
 				_isccsUIUtils.callApi(this,orderModeInput,"extn_GetOrderHierarchyBehavior",null);
-			}			
+			}
 		}
 	},
-	
+
 	getItemIDForLinkedOrderNo:function(event,bEvent,ctrl,args){
 		var orderModel = null;
         orderModel = _scScreenUtils.getModel(this, "extn_OrderSummaryLins_getOrderList_output");
 	},
-	
+
 	updateItemIDToOrderLinkGrid:function(data){
 		var orderModel = null;
         orderModel = _scScreenUtils.getModel(this, "getCompleteOrderDetails_output");
@@ -450,19 +450,19 @@ function(
 									if(!_scBaseUtils.isVoid(sExtendedDisplayDescription)){
 										_scModelUtils.setStringValueAtModelPath("ExtendedDisplayDescription",  sExtendedDisplayDescription, eEXTNOrderHeaderLink);
 									}
-									
+
 									break;
 								}
-								
+
 							}
-						}							
+						}
 					}
 				}
 			}
 		}
 		this.updateGrid(orderModel);//LinkedOrderNoItemID
 	},
-	
+
 	updateGrid: function(newModelData) {
 			var initialRowCount = null;
             initialRowCount = _scGridxUtils.getRowCount(this, "extn_gridOrderLinks");
@@ -485,30 +485,30 @@ function(
             _scGridxUtils.deselectAllRowsInGridUsingUId(
             this, "extn_gridOrderLinks");
         },
-	
+
 
 	/*
 	*
 	*This method creates the d3 tree.
 	*It represend the relate order to the cusotmer order in a tree line structure.
 	*
-	*/	
+	*/
 	loadOrderTree:function(treeData){
-		
+
 		var that =  this;
 		var cp = this.getWidgetByUId("extn_OrderTreePanel");
-		
+
 		var linearScale = d3.scale.linear()
             .domain([0,1000])
            .range([0,900]);
-		   
+
 		var verticalScale = d3.scale.linear()
             .domain([0,1000])
-           .range([0,700]);   
-		
+           .range([0,700]);
+
 		var totalNodes = 0;
 		var maxLabelLength = 0;
-		
+
 		function visit(parent, visitFn, childrenFn) {
 			if (!parent) return;
 
@@ -530,8 +530,8 @@ function(
 
 		}, function(d) {
 			return d.children && d.children.length > 0 ? d.children : null;
-		});		
-		
+		});
+
 		var levelWidth = [1];
         var childCount = function(level, n) {
 
@@ -545,8 +545,8 @@ function(
             }
         };
         childCount(0, treeData);
-        var newHeight = d3.max(levelWidth) * 80;		
-		
+        var newHeight = d3.max(levelWidth) * 80;
+
 		var tree = d3.layout.tree()
 		.size([newHeight, 1000])
 		.separation(function(a, b) { return ((a.parent == b.parent)) ? 1 : 1; });
@@ -556,8 +556,8 @@ function(
 			.attr("width",1230)
 			.attr("height", 50)
 			.append("g")
-			.attr("transform", "translate(" + 50 + "," + 10 + ")");		
-		
+			.attr("transform", "translate(" + 50 + "," + 10 + ")");
+
 		var svg = d3.select(cp.domNode)
 			.append("svg")
 			.attr("width",1230)
@@ -568,19 +568,19 @@ function(
 
 		//necessary so that zoom knows where to zoom and unzoom from
 		zm.translate([115, 10]);
-		
+
 		var nodes = tree.nodes(treeData),
         links = tree.links(nodes);
-		
-		
+
+
 		// Set widths between levels based on maxLabelLength.
         nodes.forEach(function(d) {
             d.y = (d.depth * (maxLabelLength * 10)); //maxLabelLength * 10px
 
         });
-		
+
 		//Select ContentPane dom node and create an SVG element.
-		
+
 		svg.selectAll(".link")
 			.data(links)
 			.enter()
@@ -591,19 +591,19 @@ function(
 			.attr("stroke-width",2)
 			.attr("shape-rendering", "crispEdges")
 			.attr("d",elbow)
-		
+
 		var node = svg.selectAll("g.node")
 			.data(nodes)
 			.enter()
 			.append("g")
 				.attr("transform", function(d){return "translate("+(d.y)+","+(d.x)+")";})
-				
+
 		node.append("image")
 		   .attr("id", "bg")
-		   .attr("xlink:href", function (d){			   
+		   .attr("xlink:href", function (d){
 			   //Image path
-			   //"/isccsdev/extn/isccs/resources/css/icons/images/CCOrder.png"; 
-				var sImageToDisplay = "/extn/isccs/resources/css/icons/images/CCOrder.png"; 
+			   //"/isccsdev/extn/isccs/resources/css/icons/images/CCOrder.png";
+				var sImageToDisplay = "/extn/isccs/resources/css/icons/images/CCOrder.png";
 				if(d){
 					if(d.orderType){
 						if(d.orderType === "CustomerOrder" ){
@@ -638,8 +638,8 @@ function(
 		    .attr("x", -15)
 			.attr("y", -16)
 			.attr("width", 30)
-			.attr("height", 30);		
-		
+			.attr("height", 30);
+
 		//ItemID to be displayed in the tree nodes
 		node.append("svg:a")
 			.attr("xlink:href", function(d){return "#";})
@@ -665,11 +665,11 @@ function(
 					}
 				}
 			})
-			.on("click", function(d) { 
+			.on("click", function(d) {
 				toggle(d);
 			});
-		
-		//Purpose to be displayed in the tree nodes			
+
+		//Purpose to be displayed in the tree nodes
 		node.append("svg:a")
 			.attr("xlink:href", function(d){return "#";})
 			.append("text")
@@ -679,16 +679,16 @@ function(
 			//.attr("font-family", "Arial")
             .attr('y', 12)
             .attr('fill', 'black')
-		    .text(function(d) { 
+		    .text(function(d) {
 				if(d && d.purpose){
 					if(d.orderType && d.orderType !="CustomerOrder")
 					return d.purpose;
 				}
-			}).on("click", function(d) { 
+			}).on("click", function(d) {
 				toggle(d);
-			});	
-			
-		//Order number to be displayed in the tree nodes			
+			});
+
+		//Order number to be displayed in the tree nodes
 		node.append("svg:a")
 			.attr("xlink:href", function(d){return "#";})
 			.append("text")
@@ -696,25 +696,25 @@ function(
 			.attr('x', function(d) { return "15px";})
 			.attr("font-size","10px")
 			//.attr("font-family", "Arial")
-            .attr('y', function(d) { 
+            .attr('y', function(d) {
 				if(d && d.purpose){
 					if(d.orderType && d.orderType !="CustomerOrder"){
 						return 22;
 					}else{
 						return 12;
-					}					
+					}
 				}
 			})
             .attr('fill', 'black')
-		    .text(function(d) { 
+		    .text(function(d) {
 				if(d && d.orderNo){
 					return d.orderNo;
 				}
-			}).on("click", function(d) { 
+			}).on("click", function(d) {
 				toggle(d);
 			});
-				
-		//Order Status to be displayed in the tree nodes	
+
+		//Order Status to be displayed in the tree nodes
 		node.append("svg:a")
 			.attr("xlink:href", function(d){return "#";})
 			.append("text")
@@ -722,25 +722,25 @@ function(
 			.attr('x', function(d) { return "15px";})
 			.attr("font-size","10px")
 			//.attr("font-family", "Arial")
-            .attr('y', function(d) { 
+            .attr('y', function(d) {
 				if(d && d.purpose){
 					if(d.orderType && d.orderType !="CustomerOrder"){
 						return 32;
 					}else{
 						return 22;
-					}					
+					}
 				}
 			})
             .attr('fill', 'black')
 		    .text(function(d) {
-				if(d && d.status){				
+				if(d && d.status){
 					return d.status;
 				}
 			})
-			.on("click", function(d) { 
+			.on("click", function(d) {
 				toggle(d);
-			});	
-				
+			});
+
 		function toggle(d) {
 		  if (d && d.orderHeaderKey) {
 			var newOrderModel = null;
@@ -756,7 +756,7 @@ function(
 			_isccsOrderUtils.openOrder(that, newOrderModel);
 		  }
 		}
-			
+
 		//Redraw for zoom
 		function redraw() {
 		  //console.log("here", d3.event.translate, d3.event.scale);
@@ -771,11 +771,11 @@ function(
 			   + "H" + d.target.y + "V" + d.target.x
 			   + (d.target.children ? "" : "h" + 110);
 		}
-		
-		
-	
+
+
+
 	//legend   extn_treeLegend_contentpane
-		
+
 	svgLegend.append("image")
 		   .attr("id", "bg")
 		   .attr("xlink:href",  _scApplicationInfo.getApplicationContext() +"/extn/isccs/resources/css/icons/images/redPersonCust.png")
@@ -791,7 +791,7 @@ function(
 			.attr("y", 0)
 			.attr("width", 30)
 			.attr("height", 30);
-			
+
 	svgLegend.append("image")
 		   .attr("id", "bg")
 		   .attr("xlink:href",  _scApplicationInfo.getApplicationContext() +"/extn/isccs/resources/css/icons/images/purpleWheelService.png")
@@ -799,7 +799,7 @@ function(
 			.attr("y", 0)
 			.attr("width", 30)
 			.attr("height", 30);
-		
+
 	svgLegend.append("image")
 		   .attr("id", "bg")
 		   .attr("xlink:href",  _scApplicationInfo.getApplicationContext() +"/extn/isccs/resources/css/icons/images/blueFileResource.png")
@@ -829,7 +829,7 @@ function(
 			//.attr("font-weight","bold")
 			.attr("font-family", "calibri")
 		    .text("Product Order");
-	
+
 	svgLegend.append("text")
 		    .style("text-anchor", "left")
 			.attr('x', 500)
@@ -839,8 +839,8 @@ function(
             .attr('fill', 'black')
 			//.attr("font-weight","bold")
 			.attr("font-family", "calibri")
-		    .text("Service Order");	
-	
+		    .text("Service Order");
+
 	svgLegend.append("text")
 		    .style("text-anchor", "left")
 			.attr('x', 700)
@@ -850,7 +850,7 @@ function(
             .attr('fill', 'black')
 			//.attr("font-weight","bold")
 			.attr("font-family", "calibri")
-		    .text("Resource Order");		
+		    .text("Resource Order");
 
 	svgLegend.append("path")
 			.attr("fill","none")
@@ -860,12 +860,12 @@ function(
 			.attr("d",function(d) {
 				return "M" + 40 + "," + 40
 			   + "H" + 810;
-			});			
+			});
 
-						
-		
-	},	
-	
+
+
+	},
+
 	/*
 	*
 	*Called when Retry Validation button is clicked.
@@ -885,10 +885,10 @@ function(
 				_scModelUtils.setStringValueAtModelPath("Order.EnterpriseCode",sEnterpriseCode,orderModeInput);
 				_scModelUtils.setStringValueAtModelPath("Order.DocumentType",sDocumentType,orderModeInput);
 				_isccsUIUtils.callApi(this,orderModeInput,"extn_RetryValidationService",null);
-			}			
+			}
 		}
 	},
-	
+
 	/*
 	*
 	*Called when Mark as complete button is clicked.
@@ -909,10 +909,10 @@ function(
 				_scModelUtils.setStringValueAtModelPath("Order.DocumentType",sDocumentType,orderModeInput);
 				_scModelUtils.setStringValueAtModelPath("Order.Status","1100.040",orderModeInput);
 				_isccsUIUtils.callApi(this,orderModeInput,"extn_UpdateServiceOrderStatus",null);
-			}			
+			}
 		}
 	},
-	
+
 	/*
 	*
 	*Called when Retry button is clicked.
@@ -933,10 +933,9 @@ function(
 				_scModelUtils.setStringValueAtModelPath("Order.DocumentType",sDocumentType,orderModeInput);
 				_scModelUtils.setStringValueAtModelPath("Order.Status","1100.020",orderModeInput);
 				_isccsUIUtils.callApi(this,orderModeInput,"extn_UpdateServiceOrderStatus",null);
-			}			
+			}
 		}
 	}
 
 });
 });
-
