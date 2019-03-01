@@ -6,6 +6,7 @@ import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
 import com.extension.bda.service.fulfillment.BDAServiceApi;
+import com.yantra.yfc.date.YDate;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
@@ -59,6 +60,7 @@ public class BDARemoveInventoryOnBackorder extends BDAServiceApi implements IBDA
 		eReduceItem.setAttribute("SupplyType", "ONHAND");
 		YFCElement eIncreaseItem = dInput.getDocumentElement().createChild("Item");
 		eIncreaseItem.setAttribute("SupplyType", "MISSING.ex");
+		eIncreaseItem.setAttribute("ETA", YDate.newDate());
 		if(removeAll) {
 			eReduceItem.setAttribute("Quantity", "-" + eExistingSupply.getAttribute("Quantity"));
 			eIncreaseItem.setAttribute("Quantity", eExistingSupply.getAttribute("Quantity"));
