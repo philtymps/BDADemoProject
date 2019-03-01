@@ -13,6 +13,7 @@ import com.extension.bda.service.giv.BDAProcessPurchaseOrder;
 import com.extension.bda.service.giv.BDAProcessReturnOrder;
 import com.extension.bda.service.promotions.BDAGetPreviouslyViewedItems;
 import com.extension.bda.service.returns.BDACreateReturnTransfer;
+import com.extension.bda.service.shipments.BDARemoveInventoryOnBackorder;
 import com.extension.bda.service.shipments.BDASetCarrierOnShipmentIfRequired;
 import com.extension.bda.service.store.BDAGetNodeCapacityDetails;
 import com.extension.bda.userexits.BDADuplicateOrderImpl;
@@ -49,6 +50,7 @@ public class EasyServiceCollection {
 		map.put("getNodeCapacityDetails", new BDAGetNodeCapacityDetails());
 		map.put("bdaDataProvider", new BDADataProvider());
 		map.put("getDuplicateOrders", new BDADuplicateOrderImpl());
+		map.put("removeInventoryOnBackorder", new BDARemoveInventoryOnBackorder());
 	}
 	
 	public IBDAService getService(String sServiceName){
