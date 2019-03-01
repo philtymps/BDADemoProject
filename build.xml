@@ -255,7 +255,7 @@
             <classpath refid="BDADemoProject.classpath"/>
         </javac>
     </target>
-    <target name="jar" depends="clean, update-extensions, build">
+    <target name="jar" depends="clean, build">
     	<jar destfile="/opt/Sterling/runtime/jar/bda/19_1/BDADemoProject.jar"
     		basedir="bin" includes="**" />
     </target>
