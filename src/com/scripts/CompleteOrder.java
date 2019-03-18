@@ -102,9 +102,15 @@ public class CompleteOrder implements IBDAService {
 	public Document completeOrder(YFSEnvironment env, Document inputDoc){
 		YFCDocument output = YFCDocument.createDocument("Results");
 		YFCElement eResults = output.getDocumentElement();
+		boolean chargePayment = true;
 		try {	
 			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
 			Document l_OutputXml = null;
+			YFCElement eInput = YFCDocument.getDocumentFor(inputDoc).getDocumentElement();
+			if(!YFCCommon.isVoid(eInput.getAttribute("ChargePayment"))) {
+				chargePayment = eInput.getBooleanAttribute("ChargePayment");
+				eInput.removeAttribute("ChargePayment");
+			}
 			try {
 				env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
 				l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
@@ -171,7 +177,7 @@ public class CompleteOrder implements IBDAService {
 				            	}
 				            	invoicedOrder = true;
 			            	}
-			            	if(invoicedOrder){
+			            	if(chargePayment && invoicedOrder){
 			            		processOrderPayments(env, l_OutputXml, false, eResults, localApi);
 			            	}
 			            }
