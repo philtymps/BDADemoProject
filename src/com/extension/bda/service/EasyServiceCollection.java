@@ -3,6 +3,7 @@ package com.extension.bda.service;
 import java.util.HashMap;
 
 import com.extension.afg.BDARepriceOrderFromLine;
+import com.extension.bda.service.ecomm.BDAGetEcommConfig;
 import com.extension.bda.service.expose.BDADataProvider;
 import com.extension.bda.service.expose.BDAEntityApi;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
@@ -55,6 +56,7 @@ public class EasyServiceCollection {
 		map.put("removeInventoryOnBackorder", new BDARemoveInventoryOnBackorder());
 		map.put("getRecommendedProducts", new BDAStoreCustomerProfile());
 		map.put("setRequestedDeliveryDateFromClassification", new BDASetRequestedDeliveryFromClassification());
+		map.put("getECommConfig", new BDAGetEcommConfig());
 	}
 	
 	public IBDAService getService(String sServiceName){
