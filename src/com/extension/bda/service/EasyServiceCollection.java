@@ -6,6 +6,7 @@ import com.extension.afg.BDARepriceOrderFromLine;
 import com.extension.bda.service.expose.BDADataProvider;
 import com.extension.bda.service.expose.BDAEntityApi;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
+import com.extension.bda.service.fulfillment.BDASetRequestedDeliveryFromClassification;
 import com.extension.bda.service.giv.BDAGetDemandOrders;
 import com.extension.bda.service.giv.BDAGetMyAlerts;
 import com.extension.bda.service.giv.BDAInventoryShortAlert;
@@ -16,6 +17,7 @@ import com.extension.bda.service.returns.BDACreateReturnTransfer;
 import com.extension.bda.service.shipments.BDARemoveInventoryOnBackorder;
 import com.extension.bda.service.shipments.BDASetCarrierOnShipmentIfRequired;
 import com.extension.bda.service.store.BDAGetNodeCapacityDetails;
+import com.extension.bda.service.store.BDAStoreCustomerProfile;
 import com.extension.bda.userexits.BDADuplicateOrderImpl;
 import com.extension.gucci.GucciGetLinesToStealFrom;
 import com.extension.gucci.GucciStealInventory;
@@ -51,6 +53,8 @@ public class EasyServiceCollection {
 		map.put("bdaDataProvider", new BDADataProvider());
 		map.put("getDuplicateOrders", new BDADuplicateOrderImpl());
 		map.put("removeInventoryOnBackorder", new BDARemoveInventoryOnBackorder());
+		map.put("getRecommendedProducts", new BDAStoreCustomerProfile());
+		map.put("setRequestedDeliveryDateFromClassification", new BDASetRequestedDeliveryFromClassification());
 	}
 	
 	public IBDAService getService(String sServiceName){

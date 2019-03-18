@@ -9,6 +9,6 @@ import com.yantra.yfs.japi.YFSEnvironment;
 public interface IBDAService {
 
 	public String getServiceName();
-	public void setProperties(Properties props);
+	public void setProperties(Properties props) throws Exception;
 	public Document invoke (YFSEnvironment env, Document input) throws Exception;
 }

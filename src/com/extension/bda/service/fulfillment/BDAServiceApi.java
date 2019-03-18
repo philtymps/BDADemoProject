@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.ibm.CallInteropServlet;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -42,28 +43,34 @@ public class BDAServiceApi {
 		return this.p.get(sProp);
 	}
 	protected Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
-		YIFApi localApi;
-	    Document dOrderOutput = null;
-		try {
-			localApi = YIFClientFactory.getInstance().getLocalApi();
-			if(!YFCCommon.isVoid(dTemplate)){
-				env.setApiTemplate(sApiName, dTemplate);
-			}			
-			dOrderOutput = localApi.invoke(env, sApiName, inDoc);
-		} catch (YIFClientCreationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (YFSException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if(!YFCCommon.isVoid(env)) {
+			YIFApi localApi;
+		    Document dOrderOutput = null;
+			try {
+				localApi = YIFClientFactory.getInstance().getLocalApi();
+				if(!YFCCommon.isVoid(dTemplate)){
+					env.setApiTemplate(sApiName, dTemplate);
+				}			
+				dOrderOutput = localApi.invoke(env, sApiName, inDoc);
+			} catch (YIFClientCreationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (YFSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(!YFCCommon.isVoid(dOrderOutput)){
+				return dOrderOutput;
+			}
+			return null;
+		} else {
+			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "http://oms.omfulfillment.com").getDocument();
 		}
-		if(!YFCCommon.isVoid(dOrderOutput)){
-			return dOrderOutput;
-		}
-		return null;
+		
+	
 	}
 	
 	public boolean writeXML(String sPath, String sFile, YFCDocument output){
