@@ -1,0 +1,12 @@
+{ "nodes" :
+[
+		{"id" : "Yorkdale Centre", "name" : "Yorkdale Centre",        "type" : "store", "sfsCapacity" : "200", "bopisCapacity" : "200" },
+		{"id" : "Warden Plaza",    "name" : "Warden Plaza",           "type" : "store", "sfsCapacity" : "200", "bopisCapacity" : "200" },
+		{"id" : "Vancouver Mall",  "name" : "Vancouver Mall",         "type" : "store", "sfsCapacity" : "200", "bopisCapacity" : "200" },
+		{"id" : "Auro_Store_500",  "name" : "Aurora - Lowell",        "type" : "store", "sfsCapacity" : "100", "bopisCapacity" : "100" },
+		{"id" : "Auro_Store_198",  "name" : "Aurora - Grand Central", "type" : "store", "sfsCapacity" : "100", "bopisCapacity" : "100" },
+		{"id" : "Auro_Store_3",    "name" : "Aurora - San Francisco", "type" : "store", "sfsCapacity" : "200", "bopisCapacity" : "200" },
+		{"id" : "Auro_Store_95",   "name" : "Aurora - The Galleria",  "type" : "store", "sfsCapacity" : "200", "bopisCapacity" : "200" },
+		{"id" : "Auro_Store_1",    "name" : "Aurora - Boston",        "type" : "store", "sfsCapacity" : "100", "bopisCapacity" : "100" }
+]	
+}	

@@ -1,6 +1,7 @@
 package com.extension.bda.service.giv;
 
 import java.io.File;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Properties;
 
@@ -15,6 +16,7 @@ import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
+import com.yantra.yfs.japi.YFSException;
 
 public class BDAProcessPurchaseOrder implements IBDAService {
 
@@ -36,7 +38,7 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 
 	
 	
-	public static String confirmShipment(YFSEnvironment env, YFCElement eResults, boolean confirm) throws YIFClientCreationException {
+	public static String confirmShipment(YFSEnvironment env, YFCElement eResults, boolean confirm) throws YIFClientCreationException, YFSException, RemoteException {
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", eResults.getAttribute("OrderHeaderKey"));
@@ -66,7 +68,7 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 						}
 						if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 							YFCDocument dShipment;
-							if(!confirm || YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0006")){
+							if(!confirm || (YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0006"))){
 								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, null, null, createShipments);
 							} else {
 								dShipment = CompleteOrder.createShipment(shipmentID, eOrderLineStatus, false, null, null, confirmShipments);

@@ -1,0 +1,7 @@
+{ "workspaceNodeIds" :
+[
+	{ "nodeIds" : [ "Yorkdale Centre", "Warden Plaza" ] },
+	{ "nodeIds" : [ "Warden Plaza" ] },
+	{ "nodeIds" : [ "Yorkdale Centre" ] }
+]
+}

@@ -1,0 +1,8 @@
+{ "alerts" :
+[
+		{"type" : "fill-rate",               "nodeIds" : ["Yorkdale Centre", "Warden Plaza"] },
+		{"type" : "sla-rate",                "nodeIds" : [] },
+		{"type" : "utilization-rate-ship",   "nodeIds" : ["Auro_Store_500"] },
+		{"type" : "utilization-rate-pickup", "nodeIds" : ["Auro_Store_95"] }
+]
+}

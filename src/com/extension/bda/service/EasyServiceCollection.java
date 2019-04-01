@@ -6,6 +6,7 @@ import com.extension.afg.BDARepriceOrderFromLine;
 import com.extension.bda.service.ecomm.BDAGetEcommConfig;
 import com.extension.bda.service.expose.BDADataProvider;
 import com.extension.bda.service.expose.BDAEntityApi;
+import com.extension.bda.service.fulfillment.BDADecomposeDates;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
 import com.extension.bda.service.fulfillment.BDASetRequestedDeliveryFromClassification;
 import com.extension.bda.service.giv.BDAGetDemandOrders;
@@ -57,6 +58,7 @@ public class EasyServiceCollection {
 		map.put("getRecommendedProducts", new BDAStoreCustomerProfile());
 		map.put("setRequestedDeliveryDateFromClassification", new BDASetRequestedDeliveryFromClassification());
 		map.put("getECommConfig", new BDAGetEcommConfig());
+		map.put("decomposeAvailability", new BDADecomposeDates());
 	}
 	
 	public IBDAService getService(String sServiceName){

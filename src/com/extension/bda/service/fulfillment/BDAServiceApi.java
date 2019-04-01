@@ -67,7 +67,10 @@ public class BDAServiceApi {
 			}
 			return null;
 		} else {
-			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "http://oms.omfulfillment.com").getDocument();
+			if(!YFCCommon.isVoid(dTemplate)) {
+				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
+			}
+			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
 		}
 		
 	

@@ -83,6 +83,7 @@ public class BDAGetReturnOrderPrice extends BDAServiceApi implements OMPGetRetur
 	}
 	
 	private void updateResponse(YFCElement eOriginalSalesOrder, YFCElement eRepricedOrder, YFCElement eResponseOrder) {
+		
 		if(!YFCCommon.isVoid(eResponseOrder.getChildElement("HeaderCharges"))) {
 			eResponseOrder.removeChild(eResponseOrder.getChildElement("HeaderCharges"));
 		}
@@ -118,7 +119,7 @@ public class BDAGetReturnOrderPrice extends BDAServiceApi implements OMPGetRetur
 		for(YFCElement eCharge : eOriginal.getChildElement(sChargeLevel + "Charges").getChildren()) {
 			if(eCharge.getBooleanAttribute("IsRefundable", true)) {
 				boolean found = false;
-				for(YFCElement eAdjustment : eRepriced.getChildElement(sAdjustment + "Adjustments").getChildren()) {
+				for(YFCElement eAdjustment : eRepriced.getChildElement(sAdjustment + "Adjustments", true).getChildren()) {
 					if(YFCCommon.equals(eCharge.getAttribute("ChargeCategory"), eAdjustment.getAttribute("ChargeCategory"))) {
 						if(YFCCommon.equals(eCharge.getAttribute("ChargeName"), eAdjustment.getAttribute("ChargeName"))) {
 							found = true;

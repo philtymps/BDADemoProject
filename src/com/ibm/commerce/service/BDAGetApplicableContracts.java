@@ -8,7 +8,7 @@ import com.yantra.yfs.japi.YFSEnvironment;
 
 public class BDAGetApplicableContracts {
 
-	public Document getApplicableContracts(YFSEnvironment env, Document input){
+	public Document getApplicableContracts(YFSEnvironment env, Document input) {
 		YFCDocument dOutput = YFCDocument.createDocument("Contracts");
 		YFCElement eContracts = dOutput.getDocumentElement();
 		YFCElement eContract = eContracts.createChild("Contract");
