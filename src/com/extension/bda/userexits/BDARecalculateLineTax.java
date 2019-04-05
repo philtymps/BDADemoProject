@@ -4,6 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -55,7 +56,8 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 					sb.append(new String(content, 0, bytesRead));
 				}
 				System.out.println("Response: " + sb.toString());
-				return gson.fromJson(sb.toString(), YFSExtnTaxCalculationOutStruct.class);
+				JSONObject output = new JSONObject(sb.toString());
+				return convertFromJson(output);
 			}
 			return null;
 		} catch (Exception e) {
@@ -64,6 +66,33 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 
 		return null;
 	
+	}
+	
+	private YFSExtnTaxCalculationOutStruct convertFromJson(JSONObject obj) {
+		YFSExtnTaxCalculationOutStruct output = new YFSExtnTaxCalculationOutStruct();
+		List<YFSExtnTaxBreakup> taxes = new ArrayList<YFSExtnTaxBreakup>();
+		output.tax = 0;
+		output.taxPercentage = 0;
+		output.colTax = taxes;
+		if(obj.getDouble("tax") > 0) {
+			output.tax = obj.getDouble("tax");
+			output.taxPercentage = obj.getDouble("taxPercentage");
+			for(int i = 0; i < obj.getJSONArray("colTax").length(); i++) {
+				addSalesTax((JSONObject) obj.getJSONArray("colTax").get(i), output.colTax);
+			}
+		}
+		return output;
+	}
+	
+	private void addSalesTax(JSONObject output, List<YFSExtnTaxBreakup> taxes){
+		YFSExtnTaxBreakup tb = new YFSExtnTaxBreakup();
+		tb.chargeCategory = output.getString("chargeCategory");
+		tb.chargeName = output.getString("chargeName");
+		tb.tax = output.getDouble("tax");
+		tb.taxName = output.getString("taxName");
+		tb.taxPercentage = output.getDouble("taxPercentage");
+		tb.taxableFlag = output.getString("taxableFlag");
+		taxes.add(tb);
 	}
 	
 	private JSONObject convertToJson(YFSExtnLineTaxCalculationInputStruct struct) {
