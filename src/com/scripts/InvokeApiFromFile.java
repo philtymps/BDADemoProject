@@ -1,11 +1,13 @@
 package com.scripts;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.ibm.icu.util.Calendar;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.date.YDate;
@@ -57,6 +59,33 @@ public class InvokeApiFromFile {
 							String[] args = content.split("[-]");
 							int days = Integer.parseInt(args[1]);
 							eParent.setAttribute(sAttribute, YDate.newDate(now, (days * -1)));
+						}
+					} else if (content.startsWith("TODAY")) {
+						Calendar now = Calendar.getInstance();
+						SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+						if (content.contains("+")) {
+							String[] args = content.split("[+]");
+							int days = Integer.parseInt(args[1]);
+							now.add(Calendar.DATE, days);
+						} else if(content.contains("-")) {
+							String[] args = content.split("[-]");
+							int days = Integer.parseInt(args[1]);
+							now.add(Calendar.DATE, (days * -1));
+						}
+						String newValue = sVariable.replaceAll("#\\{" + content + "\\}", sdf.format(now.getTime()));
+						eParent.setAttribute(sAttribute, newValue);
+					} else if(content.startsWith("MINUTE")){
+						Calendar now = Calendar.getInstance();
+						if(YFCCommon.equals(content, "MINUTE")){
+							eParent.setAttribute(sAttribute, YDate.newDate(now.getTimeInMillis()));
+						} else if (content.contains("+")) {
+							String[] args = content.split("[+]");
+							int days = Integer.parseInt(args[1]);
+							eParent.setAttribute(sAttribute, YDate.newDate(now.getTimeInMillis() + (days * 60000)));
+						} else {
+							String[] args = content.split("[-]");
+							int days = Integer.parseInt(args[1]);
+							eParent.setAttribute(sAttribute, YDate.newDate(now.getTimeInMillis() - (days * 60000)));
 						}
 					} else if (variables.containsKey(content)){
 						try {
