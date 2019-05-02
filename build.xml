@@ -89,6 +89,7 @@
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jakarta-oro-2.0.8.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jasperReport.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jasperreports-5.5.0.jar"/>
+    	<pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/java.jwt-3.8.0.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/javax.json-1.0.4.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jaxrpc.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jest-0.1.7.jar"/>
@@ -119,11 +120,6 @@
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/OTMZWebClient.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/owasp-esapi-full-java-1.4.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/Performance-Profiler.jar"/>
-        <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/PitneyBowes_1.jar"/>
-        <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/PitneyBowes_2.jar"/>
-        <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/PitneyBowes_3.jar"/>
-        <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/PitneyBowes_4.jar"/>
-        <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/PitneyBowes_old.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/PitneyBowes.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/platform_activity.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/platform_afc_ui_impl_be.jar"/>
