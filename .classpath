@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/sendgrid/|com/ibm/yoox/|com/github/scribejava/httpclient/|com/pierbridge/services/PierbridgeRateShop.java|com/ibm/commerce/sterling/ue/|com/extension/inbalance/extract/" kind="src" path="src"/>
+	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/sendgrid/|com/ibm/yoox/|com/github/scribejava/httpclient/|com/pierbridge/services/PierbridgeRateShop.java" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/HdrHistogram-2.1.9.jar"/>
 	<classpathentry kind="lib" path="lib/hystrix-core-1.5.2.jar"/>
@@ -10,7 +10,6 @@
 	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/interact_client.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycsbe.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Foundation-Core.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Catalog-Client.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Catalog-DataObjects.jar"/>
@@ -25,5 +24,8 @@
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/providerutil.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/jms.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/javax.servlet_2.5.0.v200910301333.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/java-jwt-3.8.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS191"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/mongo-java-driver-3.8.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

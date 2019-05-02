@@ -131,8 +131,11 @@ public class BDARestCall implements IBDAService {
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 				connection.setDoOutput(true);
 				connection.setRequestMethod(this.getMethod());
+		
 				connection.setRequestProperty("Content-Type", "application/json");
+				
 				connection.setConnectTimeout(5000);
+				updateConnection(env, connection);
 				if(obj != null && YFCCommon.equals(getMethod(), "POST") || YFCCommon.equals(getMethod(), "PUT")) {
 					OutputStreamWriter outputStreamWriter = new OutputStreamWriter(connection.getOutputStream());
 					outputStreamWriter.write(obj.toString());
@@ -152,6 +155,10 @@ public class BDARestCall implements IBDAService {
 			}
 		}
 		return dInput;
+	}
+	
+	protected void updateConnection(YFSEnvironment env, HttpURLConnection connection) {
+		
 	}
 
 }
