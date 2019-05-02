@@ -89,7 +89,7 @@
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jakarta-oro-2.0.8.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jasperReport.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jasperreports-5.5.0.jar"/>
-    	<pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/java.jwt-3.8.0.jar"/>
+    	<pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/java-jwt-3.8.0.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/javax.json-1.0.4.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jaxrpc.jar"/>
         <pathelement location="/opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/aaNode01Cell/Sterling Applications.ear/jest-0.1.7.jar"/>
