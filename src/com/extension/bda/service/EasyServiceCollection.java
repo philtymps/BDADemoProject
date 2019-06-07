@@ -7,6 +7,7 @@ import com.extension.bda.service.ecomm.BDAGetEcommConfig;
 import com.extension.bda.service.expose.BDADataProvider;
 import com.extension.bda.service.expose.BDAEntityApi;
 import com.extension.bda.service.expose.BDARestCall;
+import com.extension.bda.service.expose.BDAWriteXMLToLog;
 import com.extension.bda.service.fulfillment.BDADecomposeDates;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
 import com.extension.bda.service.fulfillment.BDASetRequestedDeliveryFromClassification;
@@ -61,6 +62,7 @@ public class EasyServiceCollection {
 		map.put("getECommConfig", new BDAGetEcommConfig());
 		map.put("decomposeAvailability", new BDADecomposeDates());
 		map.put("callRestService", new BDARestCall());
+		map.put("writeXMLToLog", new BDAWriteXMLToLog());
 	}
 	
 	public IBDAService getService(String sServiceName){

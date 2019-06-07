@@ -4,6 +4,7 @@ import java.io.BufferedInputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.rmi.RemoteException;
 import java.util.Properties;
 
 import javax.xml.xpath.XPath;
@@ -14,11 +15,16 @@ import org.apache.commons.json.JSONObject;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.ibm.CallInteropServlet;
 import com.ibm.sterling.afc.jsonutil.PLTJSONUtils;
+import com.yantra.interop.japi.YIFApi;
+import com.yantra.interop.japi.YIFClientCreationException;
+import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
+import com.yantra.yfs.japi.YFSException;
 
 public class BDARestCall implements IBDAService {
 
@@ -65,6 +71,8 @@ public class BDARestCall implements IBDAService {
 		}
 		return "GET";
 	}
+	
+
 
 	public String getQueryString(YFCElement eInput) {
 		StringBuilder sb = new StringBuilder();
@@ -106,6 +114,9 @@ public class BDARestCall implements IBDAService {
 		return sOutput;
 	}
 	
+	public void setHeaders (HttpURLConnection connection) {
+		
+	}
 	
 	@Override
 	public Document invoke(YFSEnvironment env, Document dInput) throws Exception {
@@ -131,9 +142,8 @@ public class BDARestCall implements IBDAService {
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 				connection.setDoOutput(true);
 				connection.setRequestMethod(this.getMethod());
-		
 				connection.setRequestProperty("Content-Type", "application/json");
-				
+				setHeaders(connection);
 				connection.setConnectTimeout(5000);
 				updateConnection(env, connection);
 				if(obj != null && YFCCommon.equals(getMethod(), "POST") || YFCCommon.equals(getMethod(), "PUT")) {
@@ -161,4 +171,71 @@ public class BDARestCall implements IBDAService {
 		
 	}
 
+	protected Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
+		if(!YFCCommon.isVoid(env)) {
+			YIFApi localApi;
+		    Document dOrderOutput = null;
+			try {
+				localApi = YIFClientFactory.getInstance().getLocalApi();
+				if(!YFCCommon.isVoid(dTemplate)){
+					env.setApiTemplate(sApiName, dTemplate);
+				}			
+				dOrderOutput = localApi.invoke(env, sApiName, inDoc);
+			} catch (YIFClientCreationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (YFSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(!YFCCommon.isVoid(dOrderOutput)){
+				return dOrderOutput;
+			}
+			return null;
+		} else {
+			if(!YFCCommon.isVoid(dTemplate)) {
+				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
+			}
+			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
+		}
+		
+	
+	}
+	protected Document callService(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
+		if(!YFCCommon.isVoid(env)) {
+			YIFApi localApi;
+		    Document dOrderOutput = null;
+			try {
+				localApi = YIFClientFactory.getInstance().getLocalApi();
+				if(!YFCCommon.isVoid(dTemplate)){
+					env.setApiTemplate(sApiName, dTemplate);
+				}			
+				dOrderOutput = localApi.executeFlow(env, sApiName, inDoc);
+			} catch (YIFClientCreationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (YFSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(!YFCCommon.isVoid(dOrderOutput)){
+				return dOrderOutput;
+			}
+			return null;
+		} else {
+			if(!YFCCommon.isVoid(dTemplate)) {
+				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
+			}
+			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
+		}
+		
+	
+	}
+	
 }

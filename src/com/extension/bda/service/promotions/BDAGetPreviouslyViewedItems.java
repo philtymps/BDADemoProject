@@ -57,8 +57,7 @@ public class BDAGetPreviouslyViewedItems implements IBDAService {
 		return dOutput.getDocument();
 	}
 	
-	private ArrayList<String> getEmailForCustomer(YFSEnvironment env, YFCElement eLastViewed){
-		ArrayList<String> emails = new ArrayList<String>();
+	public static YFCElement getCustomerDetails(YFSEnvironment env, YFCElement eLastViewed){
 		try {
 			YFCDocument dInput = YFCDocument.createDocument("Customer");
 			dInput.getDocumentElement().setAttribute("CustomerKey", eLastViewed.getChildElement("Customer").getAttribute("CustomerKey"));
@@ -74,19 +73,26 @@ public class BDAGetPreviouslyViewedItems implements IBDAService {
 			env.setApiTemplate("getCustomerDetails", dTemplate.getDocument());
 			Document l_OutputXml = localApi.invoke(env, "getCustomerDetails", dInput.getDocument());
 			YFCElement eResponse = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
-			if(!YFCCommon.isVoid(eResponse)){
-				for(YFCElement eContact : eResponse.getChildElement("CustomerContactList", true).getChildren()){
-					if(!YFCCommon.isVoid(eContact.getAttribute("EmailID"))){
-						emails.add(eContact.getAttribute("EmailID"));
-					}					
-				}
-			}
+			return eResponse;
+			
 		} catch(Exception yex) {
 			yex.printStackTrace();
         } 
-		return emails;
+		return null;
 	}
 
+	public static ArrayList<String> getEmailForCustomer(YFSEnvironment env, YFCElement eLastViewed){
+		ArrayList<String> emails = new ArrayList<String>();
+		YFCElement eResponse = BDAGetPreviouslyViewedItems.getCustomerDetails(env, eLastViewed);
+		if(!YFCCommon.isVoid(eResponse)){
+			for(YFCElement eContact : eResponse.getChildElement("CustomerContactList", true).getChildren()){
+				if(!YFCCommon.isVoid(eContact.getAttribute("EmailID"))){
+					emails.add(eContact.getAttribute("EmailID"));
+				}					
+			}
+		}
+		return emails;
+	}
 	@Override
 	public String getServiceName() {
 		// TODO Auto-generated method stub

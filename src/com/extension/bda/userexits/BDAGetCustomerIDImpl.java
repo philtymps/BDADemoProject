@@ -20,8 +20,10 @@ import com.yantra.yfs.japi.ue.YFSGetCustomerIDUE;
 public class BDAGetCustomerIDImpl implements YFSGetCustomerIDUE {
 
 	@Override
-	public String getCustomerID(YFSEnvironment env, Document eInput) throws YFSUserExitException {
-		String highestID = getNewCustomerID(env, eInput.getDocumentElement().getAttribute("OrganizationCode"));
+	public String getCustomerID(YFSEnvironment env, Document inputDoc) throws YFSUserExitException {
+		YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
+		YFCElement eInput = dInput.getDocumentElement();
+		String highestID = getNewCustomerID(env, eInput.getAttribute("OrganizationCode"));
 		if (!YFCCommon.isVoid(highestID)){
 			System.out.println("CustomerID: " + highestID);
 			return highestID;

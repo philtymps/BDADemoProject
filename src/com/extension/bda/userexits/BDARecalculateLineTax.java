@@ -13,6 +13,8 @@ import org.w3c.dom.Document;
 
 import com.extension.bda.service.expose.BDARestCall;
 import com.google.gson.Gson;
+import com.yantra.yfc.dom.YFCDocument;
+import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSExtnLineChargeStruct;
@@ -28,7 +30,7 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 	public YFSExtnTaxCalculationOutStruct recalculateLineTax(YFSEnvironment env,
 			YFSExtnLineTaxCalculationInputStruct inStruct) throws YFSUserExitException {
 		Gson gson = new Gson();
-		JSONObject obj = convertToJson(inStruct);
+		JSONObject obj = convertToJson(env, inStruct);
 		
 		String sURL = "https://remoteomsservices.us-south.cf.appdomain.cloud/oms/userexits/recalculateLineTax";
 
@@ -68,6 +70,29 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 	
 	}
 	
+	private Document getOrgTemplate() {
+		YFCDocument dOutput = YFCDocument.createDocument("Organization");
+		YFCElement eOrg = dOutput.getDocumentElement();
+		eOrg.setAttribute("OrganizationCode", "");
+		YFCElement eNode = eOrg.createChild("Node");
+		eNode.setAttribute("ShipNode", "");
+		YFCElement eShipNodePersonInfo = eNode.createChild("ShipNodePersonInfo");
+		eShipNodePersonInfo.setAttribute("Country", "");
+		eShipNodePersonInfo.setAttribute("City", "");
+		eShipNodePersonInfo.setAttribute("State", "");
+		eShipNodePersonInfo.setAttribute("ZipCode", "");
+		eShipNodePersonInfo.setAttribute("AddressLine1", "");
+		return dOutput.getDocument();
+	}
+	
+	private Document getShipNodeAddress(YFSEnvironment env, String sShipNode) {
+		YFCDocument dInput = YFCDocument.createDocument("Organization");
+		YFCElement eOrg = dInput.getDocumentElement();
+		eOrg.setAttribute("OrganizationCode", sShipNode);
+		
+		return this.callApi(env, dInput.getDocument(), getOrgTemplate(), "getOrganizationHierarchy");
+	}
+	
 	private YFSExtnTaxCalculationOutStruct convertFromJson(JSONObject obj) {
 		YFSExtnTaxCalculationOutStruct output = new YFSExtnTaxCalculationOutStruct();
 		List<YFSExtnTaxBreakup> taxes = new ArrayList<YFSExtnTaxBreakup>();
@@ -95,7 +120,7 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 		taxes.add(tb);
 	}
 	
-	private JSONObject convertToJson(YFSExtnLineTaxCalculationInputStruct struct) {
+	private JSONObject convertToJson(YFSEnvironment env, YFSExtnLineTaxCalculationInputStruct struct) {
 		JSONObject obj = new JSONObject();
 		obj.put("orderHeaderKey", struct.orderHeaderKey);
 		obj.put("orderLineKey", struct.orderLineKey);
@@ -114,10 +139,28 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 		obj.put("currentQty", struct.currentQty);
 		obj.put("invoicedQty", struct.invoicedQty);
 		obj.put("shipToId", struct.shipToId);
-		obj.put("shipToCity", struct.shipToCity);
-		obj.put("shipToState", struct.shipToState);
-		obj.put("shipToZipCode", struct.shipToZipCode);
-		obj.put("shipToCountry", struct.shipToCountry);
+		if(!YFCCommon.isVoid(struct.shipToCountry) || YFCCommon.isVoid(struct.sShipNode)) {
+			obj.put("shipToCity", struct.shipToCity);
+			obj.put("shipToState", struct.shipToState);
+			obj.put("shipToZipCode", struct.shipToZipCode);
+			obj.put("shipToCountry", struct.shipToCountry);
+		} else {
+			Document dOrg = getShipNodeAddress(env, struct.sShipNode);
+			if(!YFCCommon.isVoid(dOrg)) {
+				YFCElement eOrg = YFCDocument.getDocumentFor(dOrg).getDocumentElement();
+				obj.put("shipToCity", eOrg.getChildElement("Node", true).getChildElement("ShipNodePersonInfo", true).getAttribute("City"));
+				obj.put("shipToState", eOrg.getChildElement("Node", true).getChildElement("ShipNodePersonInfo", true).getAttribute("State"));
+				obj.put("shipToZipCode", eOrg.getChildElement("Node", true).getChildElement("ShipNodePersonInfo", true).getAttribute("ZipCode"));
+				obj.put("shipToCountry", eOrg.getChildElement("Node", true).getChildElement("ShipNodePersonInfo", true).getAttribute("Country"));
+			} else {
+				obj.put("shipToCity", struct.shipToCity);
+				obj.put("shipToState", struct.shipToState);
+				obj.put("shipToZipCode", struct.shipToZipCode);
+				obj.put("shipToCountry", struct.shipToCountry);
+			}
+
+		}
+
 		obj.put("purpose", struct.purpose);
 		obj.put("enterpriseCode", struct.enterpriseCode);
 		obj.put("documentType", struct.documentType);

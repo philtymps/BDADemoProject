@@ -75,6 +75,39 @@ public class BDAServiceApi {
 		
 	
 	}
+	protected Document callService(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
+		if(!YFCCommon.isVoid(env)) {
+			YIFApi localApi;
+		    Document dOrderOutput = null;
+			try {
+				localApi = YIFClientFactory.getInstance().getLocalApi();
+				if(!YFCCommon.isVoid(dTemplate)){
+					env.setApiTemplate(sApiName, dTemplate);
+				}			
+				dOrderOutput = localApi.executeFlow(env, sApiName, inDoc);
+			} catch (YIFClientCreationException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (YFSException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if(!YFCCommon.isVoid(dOrderOutput)){
+				return dOrderOutput;
+			}
+			return null;
+		} else {
+			if(!YFCCommon.isVoid(dTemplate)) {
+				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
+			}
+			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
+		}
+		
+	
+	}
 	
 	public boolean writeXML(String sPath, String sFile, YFCDocument output){
 		validatePath(sPath);
