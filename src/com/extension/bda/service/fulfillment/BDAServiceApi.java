@@ -5,13 +5,16 @@ import java.io.FileWriter;
 import java.rmi.RemoteException;
 import java.util.Properties;
 
+
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 import com.ibm.CallInteropServlet;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
+import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.log.YFCLogCategory;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
@@ -107,6 +110,24 @@ public class BDAServiceApi {
 		}
 		
 	
+	}
+	
+	public String getDatabaseProperty(YFSEnvironment env, String category, String property) {
+		YFCDocument dInput = YFCDocument.createDocument("GetProperty");
+		YFCElement eInput = dInput.getDocumentElement();
+		if(!YFCCommon.isVoid(category)) {
+			eInput.setAttribute("Category", category);
+		}
+		
+		eInput.setAttribute("PropertyName", property);
+		Document dOutput = this.callApi(env, dInput.getDocument(), null, "getProperty");
+		if(!YFCCommon.isVoid(dOutput)) {
+			Element eOutput = dOutput.getDocumentElement();
+			if(!YFCCommon.isVoid(eOutput.getAttribute("PropertyValue"))) {
+				return eOutput.getAttribute("PropertyValue");
+			}
+		}
+		return null;
 	}
 	
 	public boolean writeXML(String sPath, String sFile, YFCDocument output){

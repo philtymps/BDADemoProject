@@ -47,7 +47,7 @@ public class OptimizerNode extends BDASynchronization {
 			Calendar c = Calendar.getInstance();
 			c.setTime(new Date());
 			for(int i = 0; i < 7; i++){
-				capMap.put(formatter.format(c.getTime()), OptimizerCostOptions.getCapacityInfo(array, i).get(getNodeId()));
+				//capMap.put(formatter.format(c.getTime()), OptimizerCostOptions.getCapacityInfo(array, i).get(getNodeId()));
 				c.add(Calendar.DATE, 1);
 			}
 		}
