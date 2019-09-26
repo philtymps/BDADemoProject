@@ -83,7 +83,7 @@ public class GenerateAdjustInventory {
 		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
 		if(!YFCCommon.isVoid(dVariables)){
 			BDAEntityApi entity = new BDAEntityApi();
-			YFCDocument dBaseRule = YFCDocument.getDocumentFor("BaseRule");
+			YFCDocument dBaseRule = YFCDocument.createDocument("BaseRule");
 			YFCElement eBaseRule = dBaseRule.getDocumentElement();
 			eBaseRule.setAttribute("ApiName", "getBaseRules");
 			eBaseRule.setAttribute("BaseRulesKey", "IV_1");
