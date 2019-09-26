@@ -16,6 +16,8 @@ import com.extension.bda.service.giv.BDAGetMyAlerts;
 import com.extension.bda.service.giv.BDAInventoryShortAlert;
 import com.extension.bda.service.giv.BDAProcessPurchaseOrder;
 import com.extension.bda.service.giv.BDAProcessReturnOrder;
+import com.extension.bda.service.iv.BDAGetDemandDetails;
+import com.extension.bda.service.iv.BDAGetSupplyDetails;
 import com.extension.bda.service.promotions.BDAGetPreviouslyViewedItems;
 import com.extension.bda.service.returns.BDACreateReturnTransfer;
 import com.extension.bda.service.shipments.BDARemoveInventoryOnBackorder;
@@ -63,6 +65,9 @@ public class EasyServiceCollection {
 		map.put("decomposeAvailability", new BDADecomposeDates());
 		map.put("callRestService", new BDARestCall());
 		map.put("writeXMLToLog", new BDAWriteXMLToLog());
+		map.put("getSupplyDetails", new BDAGetSupplyDetails());
+		map.put("getDemandDetails", new BDAGetDemandDetails());
+		map.put("clearPropertyCache", new ClearPropertyCache());
 	}
 	
 	public IBDAService getService(String sServiceName){

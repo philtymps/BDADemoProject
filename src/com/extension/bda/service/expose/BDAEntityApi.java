@@ -35,17 +35,16 @@ public class BDAEntityApi implements IBDAService {
 		return this.p.get(sProp);
 	}
 	
-	public String getEntityApiName(YFCDocument dInput) throws Exception{
+	public static String getEntityApiName(YFCDocument dInput, Properties p) throws Exception{
 		if(!YFCCommon.isVoid(dInput)){
 			YFCElement eInput = dInput.getDocumentElement();
 			if(eInput.hasAttribute("ApiName")){
 				String sApiName = eInput.getAttribute("ApiName");
-				p.setProperty("ApiName", eInput.getAttribute("ApiName"));
 				eInput.removeAttribute("ApiName");
 				return sApiName;
 			}
 		}
-		if (p.containsKey("ApiName")){
+		if (!YFCCommon.isVoid(p) && p.containsKey("ApiName")){
 			if(!YFCCommon.isVoid(p.get("ApiName")) && p.get("ApiName") instanceof String){
 				return (String) p.getProperty("ApiName");
 			}
@@ -55,7 +54,7 @@ public class BDAEntityApi implements IBDAService {
 	
 	public Document invoke (YFSEnvironment env, Document dInput) {
 		try {
-			return getEntityApi(env, dInput);
+			return getEntityApi(env, dInput, p);
 		} catch (Exception e){
 			YFCDocument dOutput = YFCDocument.createDocument("Error");
 			YFCElement eOutput = dOutput.getDocumentElement();
@@ -65,10 +64,10 @@ public class BDAEntityApi implements IBDAService {
 		}
 		
 	}
-	public Document getEntityApi(YFSEnvironment env, Document dInput) throws Exception{
+	public static Document getEntityApi(YFSEnvironment env, Document dInput, Properties properties) throws Exception{
 		YCPEntityApi api = YCPEntityApi.getInstance();
 		YFCDocument inputDoc = YFCDocument.getDocumentFor(dInput);
-        return api.invoke((YFSContext) env, getEntityApiName(inputDoc), inputDoc ).getDocument();
+        return api.invoke((YFSContext) env, BDAEntityApi.getEntityApiName(inputDoc, properties), inputDoc ).getDocument();
 	}
 	
 	public Document getApiList(YFSEnvironment env, Document dInput) throws Exception {

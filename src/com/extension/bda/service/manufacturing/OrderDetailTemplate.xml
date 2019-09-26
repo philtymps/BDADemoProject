@@ -1,0 +1,7 @@
+<Order OrderNo="" OrderHeaderKey="" DocumentType="" EnterpriseCode="" SellerOrganizationCode="" BillToKey="" ShipToKey="">
+	<OrderLines>
+		<OrderLine PrimeLineNo="" SubLineNo="" OrderedQty="" DeliveryMethod="" ShipNode="" ReceivingNode="" ReqShipDate="" OrderLineKey="" ShipToKey="" DerivedFromOrderHeaderKey="">
+			<Item ItemID="" UnitOfMeasure="" />
+		</OrderLine>
+	</OrderLines>
+</Order>

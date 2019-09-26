@@ -143,7 +143,82 @@ public class CallInteropServlet {
             	sb.append(response);
             }
             in.close();
-            System.out.println("Invoked: " + url.toString() + " for " + sApiName);
+            //System.out.println("Invoked: " + url.toString() + " for " + sApiName);
+           //  System.out.println(sb.toString());
+            return YFCDocument.getDocumentFor(sb.toString());
+           
+		} catch(MalformedURLException e){
+			e.printStackTrace();
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public static YFCDocument invokeService(YFCDocument dInput, YFCDocument dTemplate, String sApiName, String sServer){
+		try {
+			URL url = new URL(sServer + "/smcfs/interop/InteropHttpServlet");
+			//System.out.println("Connecting to: " + url.toString());
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();	
+			conn.setDoOutput(true);
+			conn.setConnectTimeout(5000);
+			conn.setReadTimeout(5000);
+			BufferedWriter out = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
+			out.write("YFSEnvironment.progId=");
+            out.write(URLEncoder.encode("ProgId"));
+            out.write('&');
+
+            out.write("YFSEnvironment.adapterName=");
+            out.write(URLEncoder.encode("adapterName"));
+            out.write('&');
+
+            out.write("YFSEnvironment.systemName=");
+            out.write(URLEncoder.encode("systemName"));
+            out.write('&');
+            
+            out.write("YFSEnvironment.userId=admin&YFSEnvironment.password=password&");
+            /*
+             * TODO: Remove or expose... if (false) {
+             * out.write("YFSEnvironment.rollbackOnly=");
+             * out.write(URLEncoder.encode("Y")); out.write('&'); }
+             */
+
+            out.write("InteropApiName=");
+            out.write(URLEncoder.encode(sApiName));
+            out.write("&IsFlow=Y&");
+
+            if(!YFCCommon.isVoid(dTemplate)){
+            	  out.write("TemplateData=");
+                  out.write(URLEncoder.encode(dTemplate.getString()));
+                  out.write('&');
+            }
+          
+            
+            out.write("InteropApiData=");
+            // InteropEnvHelper.getInstance().addEnvToDocument(envStub, apiName,
+            // apiData, _props);        
+
+
+            String apiString = URLEncoder.encode(dInput.getString());
+            out.write(apiString);
+
+           /* if(_invokeAsService){
+                out.write("IsFlow=");
+                out.write(URLEncoder.encode("Y"));
+                out.write('&');
+            }*/
+
+            out.flush();
+            out.close();
+            
+            BufferedReader in = new BufferedReader (new InputStreamReader(conn.getInputStream()));
+           
+            StringBuffer sb = new StringBuffer();
+            String response;
+            while ((response = in.readLine()) != null){
+            	sb.append(response);
+            }
+            in.close();
+            //System.out.println("Invoked: " + url.toString() + " for " + sApiName);
            //  System.out.println(sb.toString());
             return YFCDocument.getDocumentFor(sb.toString());
            

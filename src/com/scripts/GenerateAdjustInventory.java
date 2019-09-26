@@ -10,6 +10,8 @@ import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.expose.BDAEntityApi;
+import com.extension.bda.service.iv.BDAClearInventory;
 import com.ibm.CallInteropServlet;
 import com.utilities.WSConnection;
 import com.yantra.yfc.dom.YFCDocument;
@@ -80,24 +82,42 @@ public class GenerateAdjustInventory {
 		YFCElement eOutput = dOutput.getDocumentElement();
 		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
 		if(!YFCCommon.isVoid(dVariables)){
-			HashMap<String, String> vars = replaceVariables(dVariables);
-			WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
-			String sStatement = "DELETE FROM " + demoConn.getSchema() + ".YFS_INVENTORY_SUPPLY WHERE INVENTORY_ITEM_KEY IN (SELECT INVENTORY_ITEM_KEY FROM " + demoConn.getSchema() + ".YFS_INVENTORY_ITEM WHERE ITEM_ID = ?)";
-			try {
-				PreparedStatement ps = demoConn.getDBConnection().prepareStatement(sStatement);
-				for (String itemid : vars.values()){
-					YFCElement eItem = eOutput.createChild("Item");
-					eItem.setAttribute("ItemID", itemid);
-					ps.setString(1, itemid);
-					ps.executeUpdate();
+			BDAEntityApi entity = new BDAEntityApi();
+			YFCDocument dBaseRule = YFCDocument.getDocumentFor("BaseRule");
+			YFCElement eBaseRule = dBaseRule.getDocumentElement();
+			eBaseRule.setAttribute("ApiName", "getBaseRules");
+			eBaseRule.setAttribute("BaseRulesKey", "IV_1");
+			Document dResponse = entity.invoke(env, dBaseRule.getDocument());
+			if(!YFCCommon.isVoid(dResponse.getDocumentElement().getAttribute("RuleSetValue")) && dResponse.getDocumentElement().getAttribute("RuleSetValue").indexOf("2") > -1) {
+				BDAClearInventory bdaci = new BDAClearInventory();
+				try {
+					dOutput = YFCDocument.getDocumentFor(bdaci.invoke(env, null));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} else {
+				HashMap<String, String> vars = replaceVariables(dVariables);
+				WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
+				String sStatement = "DELETE FROM " + demoConn.getSchema() + ".YFS_INVENTORY_SUPPLY WHERE INVENTORY_ITEM_KEY IN (SELECT INVENTORY_ITEM_KEY FROM " + demoConn.getSchema() + ".YFS_INVENTORY_ITEM WHERE ITEM_ID = ?)";
+				try {
+					PreparedStatement ps = demoConn.getDBConnection().prepareStatement(sStatement);
+					for (String itemid : vars.values()){
+						YFCElement eItem = eOutput.createChild("Item");
+						eItem.setAttribute("ItemID", itemid);
+						ps.setString(1, itemid);
+						ps.executeUpdate();
+					}
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
+	
+			
 
 		}
 		return dOutput.getDocument();
@@ -109,6 +129,7 @@ public class GenerateAdjustInventory {
 		if(!YFCCommon.isVoid(input)){
 			YFCDocument dInput = YFCDocument.getDocumentFor(input);
 			YFCElement eInput = dInput.getDocumentElement();
+			eInput.setAttribute("DistRuleId", "Aurora_Shipping_Network");
 			if(!YFCCommon.isVoid(eInput.getAttribute("CatalogOrganizationCode")) && !YFCCommon.isVoid(eInput.getAttribute("InventoryOrganizationCode"))){
 				createStandardInventoryForOrg(env, eOutput, eInput, eInput.getAttribute("CatalogOrganizationCode"), eInput.getAttribute("InventoryOrganizationCode"));
 			}
@@ -128,7 +149,7 @@ public class GenerateAdjustInventory {
 			}
 			
 			WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
-			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_GROUP_CODE = 'PROD' AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = ? GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
+			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_ID LIKE 'SAMS%' AND I.ITEM_GROUP_CODE = 'PROD' AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = ? GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
 			Connection conn = null;
 			try {
 				conn = demoConn.getDBConnection();
@@ -308,7 +329,7 @@ public class GenerateAdjustInventory {
 		eItem.setAttribute("AdjustmentType", "ADJUSTMENT");
 		eItem.setAttribute("Availability", "TRACK");
 		eItem.setAttribute("ItemID", sItemID);
-		eItem.setAttribute("Quantity", 300);	
+		eItem.setAttribute("Quantity", Math.round(Math.random() * 20));	
 		eItem.setAttribute("ShipNode", sNode);
 		eItem.setAttribute("SupplyType", "ONHAND");
 		eItem.setAttribute("UnitOfMeasure", sUnitOfMeasure);

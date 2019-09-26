@@ -4,7 +4,6 @@ import java.rmi.RemoteException;
 
 import org.w3c.dom.Document;
 
-import com.ibm.CallInteropServlet;
 import com.ibm.iv.adapter.IVReadCachedAvailabilityUEImpl;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
@@ -66,15 +65,9 @@ public class BDAReadCachedAvailabilityUEImpl extends IVReadCachedAvailabilityUEI
 			if(!YFCCommon.isVoid(dOrderOutput)){
 				return dOrderOutput;
 			}
-			return null;
-		} else {
-			if(!YFCCommon.isVoid(dTemplate)) {
-				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
-			}
-			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
-		}
-		
-	
+			
+		} 	
+		return null;
 	}
 
 }

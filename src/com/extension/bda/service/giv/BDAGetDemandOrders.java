@@ -87,6 +87,9 @@ public class BDAGetDemandOrders implements IBDAService {
 					}
 					sb.append(") ");
 				}
+				if(!YFCCommon.isVoid(eItemDemand.getAttribute("DistributionRuleId"))) {
+					sb.append("AND ID.SHIPNODE_KEY IN (SELECT SHIPNODE_KEY FROM OMDB.YFS_ITEM_SHIP_NODE WHERE DISTRIBUTION_RULE_ID = '" + eItemDemand.getAttribute("DistributionRuleId") + "') ");
+				}
 				sb.append("AND ID.QUANTITY > 0 AND ORS.STATUS_QUANTITY > 0 ");
 				if(!YFCCommon.isVoid(eItemDemand.getAttribute("DemandType"))){
 					 sb.append("AND ID.DEMAND_TYPE = ? ");

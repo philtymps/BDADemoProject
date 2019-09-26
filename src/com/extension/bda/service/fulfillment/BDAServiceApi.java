@@ -21,7 +21,7 @@ import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSException;
 
 public class BDAServiceApi {
-	
+	protected static String BASE_URL = "http://localhost:9080";
 	protected Properties p;
 	
 	public BDAServiceApi(){
@@ -45,7 +45,7 @@ public class BDAServiceApi {
 	public Object getProperty(String sProp){
 		return this.p.get(sProp);
 	}
-	protected Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
+	public static Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
 		if(!YFCCommon.isVoid(env)) {
 			YIFApi localApi;
 		    Document dOrderOutput = null;
@@ -71,14 +71,14 @@ public class BDAServiceApi {
 			return null;
 		} else {
 			if(!YFCCommon.isVoid(dTemplate)) {
-				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
+				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, BASE_URL).getDocument();
 			}
-			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
+			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, BASE_URL).getDocument();
 		}
 		
 	
 	}
-	protected Document callService(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
+	public static Document callService(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
 		if(!YFCCommon.isVoid(env)) {
 			YIFApi localApi;
 		    Document dOrderOutput = null;
@@ -104,14 +104,13 @@ public class BDAServiceApi {
 			return null;
 		} else {
 			if(!YFCCommon.isVoid(dTemplate)) {
-				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
+				return CallInteropServlet.invokeService(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, BASE_URL).getDocument();
 			}
-			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
+			return CallInteropServlet.invokeService(YFCDocument.getDocumentFor(inDoc), null, sApiName, BASE_URL).getDocument();
 		}
 		
 	
 	}
-	
 	public String getDatabaseProperty(YFSEnvironment env, String category, String property) {
 		YFCDocument dInput = YFCDocument.createDocument("GetProperty");
 		YFCElement eInput = dInput.getDocumentElement();

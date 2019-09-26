@@ -41,7 +41,7 @@ public class WSConnection {
 	}
 	
 	public WSConnection() throws IOException {
-		this(WSConnection.class.getResourceAsStream("connection.properties"));
+		this(WSConnection.class.getResourceAsStream("oms.properties"));
 	}
 	
 	public Properties getProperties(){

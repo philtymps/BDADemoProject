@@ -27,7 +27,7 @@ public class CreateGenericInventory {
 	
 	public CreateGenericInventory(){
 		nonStandardInventory = new ArrayList<String>();
-		try {	
+		/*try {	
 			YFCDocument dAdjustInventory = YFCDocument.getDocumentForXMLFile("/home/pfaiola/workspace/OMS/Use Cases/PreDemo_adjustInventory.xml");
 			if (!YFCCommon.isVoid(dAdjustInventory)){
 				for (YFCElement eItem : dAdjustInventory.getDocumentElement().getChildren()){
@@ -40,7 +40,7 @@ public class CreateGenericInventory {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+*/
 		Connection insertConn = null; 
 		Connection getConn = null; 
 		String sStatement = null;
@@ -48,7 +48,7 @@ public class CreateGenericInventory {
 			demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
 			getConn = demoConn.getDBConnection();
 			insertConn = demoConn.getDBConnection();
-			String sSql = "SELECT TRIM(ITEM_ID) ITEM_ID FROM "+ demoConn.getSchema() + ".YFS_ITEM WHERE ITEM_ID NOT IN (SELECT ITEM_ID FROM "+ demoConn.getSchema() + ".YFS_INVENTORY_ITEM)";
+			String sSql = "SELECT TRIM(ITEM_ID) ITEM_ID FROM "+ demoConn.getSchema() + ".YFS_ITEM WHERE ORGANIZATION_CODE = 'Aurora-Corp' AND LENGTH(TRIM(ITEM_ID)) < 24 AND ITEM_ID NOT IN (SELECT ITEM_ID FROM "+ demoConn.getSchema() + ".YFS_INVENTORY_ITEM)";
 			PreparedStatement ps = getConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
 			while ( rs.next() ) {
