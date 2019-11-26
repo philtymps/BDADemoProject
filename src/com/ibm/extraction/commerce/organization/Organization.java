@@ -8,7 +8,7 @@ import java.util.Map;
 import org.xml.sax.SAXException;
 
 import com.ibm.CallInteropServlet;
-import com.ibm.commerce.sterling.ue.CommerceIntegrationMap;
+//import com.ibm.commerce.sterling.ue.CommerceIntegrationMap;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
@@ -60,7 +60,7 @@ public class Organization {
 	
 	public Organization(ResultSet rs, Map<String, Organization> organizations, String sServer) throws SQLException{
 		sCommerceCode = rs.getString("STOREENT_ID");
-		String sOMSOrgCode = CommerceIntegrationMap.getOMSValue("storeIdToOrganizationCode", sCommerceCode);
+		String sOMSOrgCode = "Aurora";// CommerceIntegrationMap.getOMSValue("storeIdToOrganizationCode", sCommerceCode);
 		if (!YFCCommon.isVoid(sOMSOrgCode)){
 			YFCDocument input = YFCDocument.createDocument("Organization");
 			YFCElement eInput = input.getDocumentElement();
@@ -107,14 +107,15 @@ public class Organization {
 			}
 			if (rs.getString("CATALOG_STOREENT_ID").equals(sCommerceCode)){
 				catalogOrg = sOrgCode;
-			} else if (!YFCCommon.isVoid(CommerceIntegrationMap.getOMSValue("storeIdToCatalogOrganizationCode", sCommerceCode))){
+			/*} else if (!YFCCommon.isVoid(CommerceIntegrationMap.getOMSValue("storeIdToCatalogOrganizationCode", sCommerceCode))){
 				catalogOrg = CommerceIntegrationMap.getOMSValue("storeIdToCatalogOrganizationCode", sCommerceCode);
 			} else if (!YFCCommon.isVoid(organizations.get(rs.getString("CATALOG_STOREENT_ID")))){
-				catalogOrg = organizations.get(rs.getString("CATALOG_STOREENT_ID")).getOrgCode();
+				catalogOrg = organizations.get(rs.getString("CATALOG_STOREENT_ID")).getOrgCode();*/
 			}
-			if (!YFCCommon.isVoid(CommerceIntegrationMap.getOMSValue("storeIdToInventoryOrganizationCode", sCommerceCode))){
+			/*if (!YFCCommon.isVoid(CommerceIntegrationMap.getOMSValue("storeIdToInventoryOrganizationCode", sCommerceCode))){
 				inventoryOrg = CommerceIntegrationMap.getOMSValue("storeIdToInventoryOrganizationCode", sCommerceCode);
-			} else if (!catalogOrg.equals(sOrgCode)) {
+			} else */
+			if (!catalogOrg.equals(sOrgCode)) {
 				for (Organization org : organizations.values()){
 					if (org.getOrgCode().equals(catalogOrg)){
 						inventoryOrg = org.getInventoryOrg();

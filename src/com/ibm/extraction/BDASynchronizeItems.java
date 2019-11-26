@@ -14,7 +14,6 @@ import java.util.TreeMap;
 import org.w3c.dom.Document;
 
 import com.ibm.CallInteropServlet;
-import com.ibm.commerce.sterling.ue.CommerceIntegrationMap;
 import com.ibm.extraction.commerce.BDASynchronization;
 import com.ibm.extraction.commerce.catalog.AdditionalAttribute;
 import com.ibm.extraction.commerce.catalog.AllowedValue;
@@ -563,7 +562,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 	
 	private HashMap<String, String> getOrgToCatalog(){
 		if (orgToCatalog == null){
-			orgToCatalog = CommerceIntegrationMap.getOMSValues("catalogIdToOrganizationCode");
+		//	orgToCatalog = CommerceIntegrationMap.getOMSValues("catalogIdToOrganizationCode");
 		}
 		return orgToCatalog;
 	}
