@@ -119,7 +119,7 @@ public class Organization {
 				for (Organization org : organizations.values()){
 					if (org.getOrgCode().equals(catalogOrg)){
 						inventoryOrg = org.getInventoryOrg();
-					}
+					} 
 				}
 			} else {
 				inventoryOrg = sOrgCode;
