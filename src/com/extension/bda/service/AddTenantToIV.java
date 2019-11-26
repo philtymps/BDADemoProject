@@ -51,6 +51,8 @@ public class AddTenantToIV extends BDAServiceApi implements IBDAService {
 			for(int i = 0; i < parts.length; i++) {
 				if((i - 1) > 0 && parts[i - 1].equals("inventory")) {
 					sUrl += (getPropertyValue(env, "bda.iv.integration.tenant_id") + "/");
+				} else if(parts[i].indexOf("ibm.com") > -1) {
+					sUrl += getPropertyValue(env, "bda.iv.integration.url") + "/";
 				} else if(i+1 < parts.length) {
 					sUrl += (parts[i] + "/");
 				} else {

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.apache.commons.json.JSONArray;
@@ -22,8 +23,12 @@ import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 
+import edu.emory.mathcs.backport.java.util.Arrays;
+
 public class BDAClearInventory extends BDAServiceApi implements IBDAService {
-	private static ArrayList<String> _nodes;
+	private static String[] stores = {"tmobile_S1", "tmobile_S2", "tmobile_S3", "tmobile_S4", "tmobile_S5", "tmobile_S6", "tmobile_S7", "tmobile_S8", "tmobile_wh1"};
+	private static String[] items = {"ACCESSORIES97A0_0020_0", "ACCESSORIES97A0_0030_0", "TABLETSA774_0004_0", "PHONES_DEVICES490A_0009_0", "ACCESSORIES97A0_0004_0", "PHONES_DEVICES490A_0034_0" };
+	private static List<String> _nodes;
 	
 	@Override
 	public String getServiceName() {
@@ -32,7 +37,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	}
 
 	public static void main(String[] args) throws Exception {
-		BASE_URL = "https://oms-master.innovationcloud.info";
+		BASE_URL = "https://oms.innovationcloud.info";
 		BDAClearInventory bdaci = new BDAClearInventory();
 		System.out.println(BDAXmlUtil.getString(bdaci.invoke(null, null)));
 	}
@@ -63,23 +68,36 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	}
 	
 	private Collection<String> getVariableItems() {
-		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
-		if(!YFCCommon.isVoid(dVariables)){
-			HashMap<String, String> vars = replaceVariables(dVariables);
-			return vars.values();
+		try {
+			YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
+			if(!YFCCommon.isVoid(dVariables)){
+				HashMap<String, String> vars = replaceVariables(dVariables);
+				return vars.values();
+			}
+		} catch (Exception e) {
+			
 		}
-		return null;
+
+		List<String> list = Arrays.asList(items);
+		return list;
 	}
 			
-	private synchronized static ArrayList<String> getShipNodes(YFSEnvironment env) {
+	private synchronized static Collection<String> getShipNodes(YFSEnvironment env) {
 		if(YFCCommon.isVoid(_nodes)) {
-			_nodes = new ArrayList<String>();
-			YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
-			for (YFCElement eChild : temp.getDocumentElement().getChildren()){
-				if(YFCCommon.equals(eChild.getAttribute("TYPE"), "NODE")) {
-					_nodes.add(eChild.getAttribute("Value"));
-				}			
+			try {
+				_nodes = new ArrayList<String>();
+				YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
+				for (YFCElement eChild : temp.getDocumentElement().getChildren()){
+					if(YFCCommon.equals(eChild.getAttribute("TYPE"), "NODE")) {
+						_nodes.add(eChild.getAttribute("Value"));
+					}			
+				}
+			} catch (Exception e) {
+				
 			}
+		}
+		if(_nodes.size() == 0) {
+			_nodes = Arrays.asList(stores);
 		}
 		
 		return _nodes;
@@ -177,6 +195,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 
 		for(Element eSupply : BDAXmlUtil.getChildrenList(dResponse.getDocumentElement())) {
 			if(BDAXmlUtil.getDoubleAttribute(eSupply, "quantity") != 0) {
+				System.out.println(BDAXmlUtil.getString(eSupply));
 				JSONObject obj = new JSONObject();
 				obj.put("itemId", eSupply.getAttribute("itemId"));
 				obj.put("unitOfMeasure", eSupply.getAttribute("unitOfMeasure"));
@@ -201,12 +220,16 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 					obj.put("reference", eSupply.getAttribute("reference"));
 				if(!BDACommon.isVoid(eSupply.getAttribute("referenceType")))
 					obj.put("referenceType", eSupply.getAttribute("referenceType"));
+				if(!BDACommon.isVoid(eSupply.getAttribute("lineReference"))) {
+					obj.put("lineReference", eSupply.getAttribute("lineReference"));
+				}
 				TimeZone tz = TimeZone.getTimeZone("UTC");
 				DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
 				df.setTimeZone(tz);
 				String nowAsISO = df.format(new Date());
 				obj.put("sourceTs", nowAsISO);
 				array.add(obj);
+				System.out.println(obj.toString());
 				
 				Element eSup = BDAXmlUtil.createChild(eSupplies, "Supply");
 				eSup.setAttribute("itemId", eSupply.getAttribute("itemId"));
@@ -249,6 +272,9 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 					obj.put("reference", eSupply.getAttribute("reference"));
 				if(!BDACommon.isVoid(eSupply.getAttribute("referenceType")))
 					obj.put("referenceType", eSupply.getAttribute("referenceType"));
+				if(!BDACommon.isVoid(eSupply.getAttribute("lineReference"))) {
+					obj.put("lineReference", eSupply.getAttribute("lineReference"));
+				}
 				TimeZone tz = TimeZone.getTimeZone("UTC");
 				DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
 				df.setTimeZone(tz);
