@@ -26,8 +26,8 @@ import com.yantra.yfs.japi.YFSEnvironment;
 import edu.emory.mathcs.backport.java.util.Arrays;
 
 public class BDAClearInventory extends BDAServiceApi implements IBDAService {
-	private static String[] stores = {"tmobile_S1", "tmobile_S2", "tmobile_S3", "tmobile_S4", "tmobile_S5", "tmobile_S6", "tmobile_S7", "tmobile_S8", "tmobile_wh1"};
-	private static String[] items = {"ACCESSORIES97A0_0020_0", "ACCESSORIES97A0_0030_0", "TABLETSA774_0004_0", "PHONES_DEVICES490A_0009_0", "ACCESSORIES97A0_0004_0", "PHONES_DEVICES490A_0034_0" };
+	private static String[] stores = {"tmobile_S1", "tmobile_S2", "tmobile_S3", "tmobile_S4", "tmobile_S5", "tmobile_S6", "tmobile_S7", "tmobile_S8"};
+	private static String[] items = {"TABLETSA774_0003_0" };
 	private static List<String> _nodes;
 	
 	@Override

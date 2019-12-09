@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.icu.util.Calendar;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -137,6 +138,7 @@ public class InvokeApiFromFile {
 		YFCDocument dInput = YFCDocument.getDocumentFor(inputDoc);
 		YFCElement eInput = dInput.getDocumentElement();
 		String sApiName = eInput.getAttribute("ApiName");
+		boolean isService = eInput.getBooleanAttribute("IsService");
 		String sFileName = eInput.getAttribute("FileName");
 		YFCElement eVariables = eInput.getChildElement("Variables");
 		loadVariableFile();
@@ -149,50 +151,39 @@ public class InvokeApiFromFile {
 			File tmp = new File(sFileName);
 			if (tmp.exists()){
 				YFCDocument dFileInput = YFCDocument.getDocumentForXMLFile(sFileName);
-				try {	
-					dFileInput = replaceVariables(dFileInput);
-					YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
-					return localApi.invoke(env, sApiName, dFileInput.getDocument());
-				} catch(YFSException yex) {
-					try {
-						YFCDocument temp = YFCDocument.parse(yex.getMessage());
-						return temp.getDocument();
-					} catch (Exception e){
-						logger.debug(yex.toString());
-					}
-				} catch (Exception yex) {
-					logger.debug(yex.toString());
-				} 
+	
+				dFileInput = replaceVariables(dFileInput);
+				if(isService) {
+					return BDAServiceApi.callService(env, dFileInput.getDocument(), null, sApiName);
+				} else {
+					return BDAServiceApi.callApi(env, dFileInput.getDocument(), null, sApiName);
+				}
+			
 			}
 		} else if (!YFCCommon.isVoid(eInput.hasChildNodes())) {
 			YFCDocument dOutput = YFCDocument.createDocument("Output");
 			YFCElement eOutput = dOutput.getDocumentElement();
 			for (YFCElement eApi : eInput.getChildren()){
 				sApiName = eApi.getAttribute("ApiName");
+				isService = eInput.getBooleanAttribute("IsService");
 				sFileName = eApi.getAttribute("FileName");
 				if (!YFCCommon.isVoid(sApiName) && !YFCCommon.isVoid(sFileName)){
 					File tmp = new File(sFileName);
 					if (tmp.exists()){
 						YFCDocument dFileInput = YFCDocument.getDocumentForXMLFile(sFileName);
-						try {	
-							dFileInput = replaceVariables(dFileInput);
-							YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
-							Document temp = localApi.invoke(env, sApiName, dFileInput.getDocument());
-							YFCElement eApiOut = eOutput.createChild("Api");
-							eApiOut.setAttribute("API", sApiName);
-							if (!YFCCommon.isVoid(temp)){
-								eApiOut.importNode(YFCDocument.getDocumentFor(temp).getDocumentElement());
-							}
-						} catch(YFSException yex) {
-							try {
-								YFCDocument temp = YFCDocument.parse(yex.getMessage());
-								return temp.getDocument();
-							} catch (Exception e){
-								logger.debug(yex.toString());
-							}
-						} catch(Exception yex) {
-							logger.debug(yex.toString());
-						} 
+						dFileInput = replaceVariables(dFileInput);
+						Document temp;
+						if(isService) {
+							temp = BDAServiceApi.callService(env, dFileInput.getDocument(), null, sApiName);
+						} else {
+							temp = BDAServiceApi.callApi(env, dFileInput.getDocument(), null, sApiName);
+						}
+						YFCElement eApiOut = eOutput.createChild("Api");
+						eApiOut.setAttribute("API", sApiName);
+						if (!YFCCommon.isVoid(temp)){
+							eApiOut.importNode(YFCDocument.getDocumentFor(temp).getDocumentElement());
+						}
+					
 					}
 				}
 			}
