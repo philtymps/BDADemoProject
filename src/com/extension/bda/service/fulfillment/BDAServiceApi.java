@@ -118,20 +118,23 @@ public class BDAServiceApi {
 	}
 	
 	public static synchronized String getPropertyValue(YFSEnvironment env, String sProperty) {
-		if(_properties.containsKey(sProperty)) {
-			return _properties.get(sProperty);
+		if(YFCCommon.isVoid(_properties)) {
+			_properties = new HashMap<String, String>();
 		}
-		YFCDocument input = YFCDocument.createDocument("GetProperty");
-		YFCElement eInput = input.getDocumentElement();
-		eInput.setAttribute("Propertyname", sProperty);
-		
-		try {
-			Document dResponse = BDAServiceApi.callApi(env, input.getDocument(), null, "getProperty");
-			_properties.put(sProperty, dResponse.getDocumentElement().getAttribute("PropertyValue"));
-			return dResponse.getDocumentElement().getAttribute("PropertyValue");
-		} catch (Exception e) {
-			return "";
-		}	
+		if(!_properties.containsKey(sProperty)) {
+
+			YFCDocument input = YFCDocument.createDocument("GetProperty");
+			YFCElement eInput = input.getDocumentElement();
+			eInput.setAttribute("PropertyName", sProperty);
+			
+			try {
+				Document dResponse = BDAServiceApi.callApi(env, input.getDocument(), null, "getProperty");
+				_properties.put(sProperty, dResponse.getDocumentElement().getAttribute("PropertyValue"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}	
+		}
+		return _properties.get(sProperty);
 	}
 	
 	public static synchronized String getScriptsPath(YFSEnvironment env) {
