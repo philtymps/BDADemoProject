@@ -20,6 +20,7 @@ import org.w3c.dom.Document;
 
 import com.bda.sfdc.SFDCOrder;
 import com.bda.sfdc.SFDCUtils;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.extraction.commerce.BDASynchronization;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -102,10 +103,10 @@ public class SFDCOrderStatusAgent extends YCPAbstractAgent {
 		boolean ordersFound = false;
 		Connection conn = null;
 		try {
-			conn = BDASynchronization.getOMSConnection();
+			conn = BDASynchronization.getOMSConnection(env);
 			PreparedStatement ps = conn.prepareStatement(sSql);
 			ps.setString(1, critertiaElem.getAttribute("EnterpriseCode"));
-			ps.setTimestamp(2, getLastCommittedDate());
+			ps.setTimestamp(2, getLastCommittedDate(env));
 			ResultSet rs = ps.executeQuery();
 			int j = 0;
 			while (rs.next()){
@@ -172,12 +173,12 @@ public class SFDCOrderStatusAgent extends YCPAbstractAgent {
 		return list;
 	}
 	
-	private Timestamp getLastCommittedDate(){
-		File dir = new File("/opt/Sterling/Agents");
+	private Timestamp getLastCommittedDate(YFSEnvironment env){
+		File dir = new File(BDAServiceApi.getAgentsPath(env));
 		if(!dir.exists()){
 			dir.mkdirs();
 		}
-		File sfdcLastOrderCommit = new File("/opt/Sterling/Agents/SFDCLastOrderCommit.txt");
+		File sfdcLastOrderCommit = new File(BDAServiceApi.getAgentsPath(env) + "/SFDCLastOrderCommit.txt");
 		if(sfdcLastOrderCommit.exists()){
 			try {
 				BufferedReader br = new BufferedReader(new FileReader(sfdcLastOrderCommit.getAbsolutePath()));

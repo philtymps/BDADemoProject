@@ -58,7 +58,7 @@ public class OptimizerNode extends BDASynchronization {
 		ArrayList<OptimizerNode> nodes = new ArrayList<OptimizerNode>();
 		Connection dbConn = null;
 		try {
-			dbConn = getOMSConnection();
+			dbConn = getOMSConnection("oms.innovationcloud.info");
 			String sSql = "	SELECT TRIM(S.SHIP_NODE), P.ZIP_CODE, S.NODE_TYPE, L.TIMEZONE, S.DESCRIPTION, P.LATITUDE, P.LONGITUDE, S.NODE_TYPE FROM OMDB.YFS_SHIP_NODE S INNER JOIN OMDB.YFS_PERSON_INFO P ON P.PERSON_INFO_KEY = S.SHIP_NODE_ADDRESS_KEY INNER JOIN OMDB.YFS_LOCALE L ON L.LOCALECODE = S.LOCALECODE WHERE S.OWNER_KEY = 'Bonton'";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();

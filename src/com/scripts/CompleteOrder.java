@@ -9,6 +9,7 @@ import java.util.Properties;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.shared.ycp.YFSContext;
@@ -613,9 +614,9 @@ public class CompleteOrder implements IBDAService {
 								
 								boolean serialize = false;
 								if(confirm){
-									File temp = new File("/opt/Sterling/Scripts/serialItems.xml");
+									File temp = new File(BDAServiceApi.getScriptsPath(env) + "/serialItems.xml");
 									if(temp.exists()){
-										YFCDocument serialItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/serialItems.xml");
+										YFCDocument serialItems = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/serialItems.xml");
 										YFCElement eSerialItems = serialItems.getDocumentElement();
 										for(YFCElement eSerialItem : eSerialItems.getChildren()){
 											if(YFCCommon.equals(eOrderLine.getChildElement("Item", true).getAttribute("ItemID"), eSerialItem.getAttribute("ItemID"))){

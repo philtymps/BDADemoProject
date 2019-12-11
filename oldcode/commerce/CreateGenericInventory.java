@@ -8,9 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.utilities.WSConnection;
-import com.yantra.yfc.dom.YFCDocument;
-import com.yantra.yfc.dom.YFCElement;
-import com.yantra.yfc.util.YFCCommon;
 
 public class CreateGenericInventory {
 

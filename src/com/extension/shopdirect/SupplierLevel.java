@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.ycp.japi.YCPDynamicConditionEx;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -17,7 +18,7 @@ public class SupplierLevel implements YCPDynamicConditionEx {
 	@Override
 	public boolean evaluateCondition(YFSEnvironment env, String sName, Map mapData, Document inDoc) {
 	
-		YFCDocument dSupplierLevels = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/supplierLevel.xml");
+		YFCDocument dSupplierLevels = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/supplierLevel.xml");
 		if(!YFCCommon.isVoid(dSupplierLevels)){
 			YFCElement eSupplierLevels = dSupplierLevels.getDocumentElement();
 			String sLevel = "Platinum";
@@ -43,7 +44,7 @@ public class SupplierLevel implements YCPDynamicConditionEx {
 				}
 			}
 		} else {
-			System.out.println("/opt/Sterling/Scripts/supplierLevel.xml is empty or undefined");
+			System.out.println(BDAServiceApi.getScriptsPath(env) + "/supplierLevel.xml is empty or undefined");
 		}
 		
 		return false;

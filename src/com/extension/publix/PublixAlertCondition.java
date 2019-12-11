@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.ycp.japi.YCPDynamicConditionEx;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -18,10 +19,10 @@ public class PublixAlertCondition implements YCPDynamicConditionEx {
 	private ArrayList<String> aAlcohol;
 
 	
-	private ArrayList<String> getSteak(){
+	private ArrayList<String> getSteak(YFSEnvironment env){
 		if(YFCCommon.isVoid(aSteak)){
 			aSteak = new ArrayList<String>();
-			YFCDocument dA = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/Steak.xml");
+			YFCDocument dA = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/Steak.xml");
 			if(!YFCCommon.isVoid(dA)){
 				YFCElement eItems = dA.getDocumentElement();
 				for(YFCElement eItem : eItems.getChildren()){
@@ -32,10 +33,10 @@ public class PublixAlertCondition implements YCPDynamicConditionEx {
 		return aSteak;
 	}
 	
-	private ArrayList<String> getAlcohol(){
+	private ArrayList<String> getAlcohol(YFSEnvironment env){
 		if(YFCCommon.isVoid(aAlcohol)){
 			aAlcohol = new ArrayList<String>();
-			YFCDocument dA = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/Alcohol.xml");
+			YFCDocument dA = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/Alcohol.xml");
 			if(!YFCCommon.isVoid(dA)){
 				YFCElement eItems = dA.getDocumentElement();
 				for(YFCElement eItem : eItems.getChildren()){
@@ -57,10 +58,10 @@ public class PublixAlertCondition implements YCPDynamicConditionEx {
 		for(YFCElement eOrderLine : eInput.getChildElement("OrderLines").getChildren()){
 			YFCElement eItem = eOrderLine.getChildElement("Item", true);
 			
-			if(getAlcohol().contains(eItem.getAttribute("ItemID"))){
+			if(getAlcohol(env).contains(eItem.getAttribute("ItemID"))){
 				alcohol += eOrderLine.getChildElement("LinePriceInfo").getDoubleAttribute("ExtendedPrice");
 			}
-			if(getSteak().contains(eItem.getAttribute("ItemID"))){
+			if(getSteak(env).contains(eItem.getAttribute("ItemID"))){
 				steak += eOrderLine.getChildElement("LinePriceInfo").getDoubleAttribute("ExtendedPrice");
 			}
 		}

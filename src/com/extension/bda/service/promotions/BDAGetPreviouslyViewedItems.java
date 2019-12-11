@@ -7,6 +7,7 @@ import java.util.Properties;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
@@ -21,11 +22,11 @@ public class BDAGetPreviouslyViewedItems implements IBDAService {
 		this.props = props;
 	}
 	
-	public String getFileName() {
+	public String getFileName(YFSEnvironment env) {
 		if(!YFCCommon.isVoid(this.props.getProperty("FileName"))) {
 			return this.props.getProperty("FileName");
 		}
-		return "/opt/Sterling/Scripts/recentlyViewedItems.xml";
+		return BDAServiceApi.getScriptsPath(env) + "/recentlyViewedItems.xml";
 	}
 	public Document getPreviouslyViewedItems(YFSEnvironment env, Document inDoc){
 		YFCDocument dOutput = YFCDocument.createDocument("RecommendedItemList");
@@ -37,10 +38,10 @@ public class BDAGetPreviouslyViewedItems implements IBDAService {
 			YFCElement eLastViewed = YFCDocument.getDocumentFor(inDoc).getDocumentElement();
 			System.out.println("Previously Viewed input: " + eLastViewed);
 			
-			File recentlyViewed = new File(getFileName());
+			File recentlyViewed = new File(getFileName(env));
 			if(recentlyViewed.exists()){
 				ArrayList<String> emailAddress = getEmailForCustomer(env, eLastViewed);
-				YFCDocument dCustomers = YFCDocument.getDocumentForXMLFile(getFileName());
+				YFCDocument dCustomers = YFCDocument.getDocumentForXMLFile(getFileName(env));
 				for (YFCElement eCustomer : dCustomers.getDocumentElement().getChildren()){
 					if (emailAddress.contains(eCustomer.getAttribute("Email"))){
 						for(YFCElement eItem : eCustomer.getChildElement("ItemList").getChildren()){

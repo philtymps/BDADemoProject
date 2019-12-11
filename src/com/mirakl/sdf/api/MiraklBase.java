@@ -3,9 +3,11 @@ package com.mirakl.sdf.api;
 import java.util.HashMap;
 import java.util.Properties;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.mirakl.entity.MiraklTranslation;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfs.japi.YFSEnvironment;
 
 public class MiraklBase {
 	private Properties p;
@@ -18,11 +20,11 @@ public class MiraklBase {
 		return p;
 	}
 	
-	protected String getMiraklTranslationDoc(){
+	protected String getMiraklTranslationDoc(YFSEnvironment env){
 		if(p != null && p.contains("TRANSFORM-DOC")){
 			return p.getProperty("TRANSFORM-DOC");
 		}
-		return "/opt/Sterling/Scripts/MiraklTranslate.xml";
+		return BDAServiceApi.getScriptsPath(env) + "/MiraklTranslate.xml";
 	}
 	
 	public String getApiKey() {
@@ -93,9 +95,9 @@ public class MiraklBase {
 		}
 	}
 	
-	protected void createNodeTranslate(YFCElement eParent, String sNodeName, String sValue, boolean required){
+	protected void createNodeTranslate(YFSEnvironment env, YFCElement eParent, String sNodeName, String sValue, boolean required){
 		if(!YFCCommon.isVoid(sNodeName) && !YFCCommon.isVoid(sValue) && !YFCCommon.isVoid(eParent)){
-			String sMiraklValue = MiraklTranslation.getInstance(getMiraklTranslationDoc(), false).getMiraklValue(sNodeName, sValue);
+			String sMiraklValue = MiraklTranslation.getInstance(getMiraklTranslationDoc(env), false).getMiraklValue(sNodeName, sValue);
 			if(!YFCCommon.isVoid(sMiraklValue)){
 				createNode(eParent, sNodeName, sMiraklValue);
 			} else if(!required){
@@ -104,12 +106,12 @@ public class MiraklBase {
 		} 
 	}
 	
-	protected void createNodeTranslate(YFCElement eParent, String sNodeName, String sValue, boolean required, String sDefault){
+	protected void createNodeTranslate(YFSEnvironment env, YFCElement eParent, String sNodeName, String sValue, boolean required, String sDefault){
 		if(!YFCCommon.isVoid(sNodeName) && (!YFCCommon.isVoid(sValue) || !YFCCommon.isVoid(sDefault)) && !YFCCommon.isVoid(eParent)){
 			if(!YFCCommon.isVoid(sValue)){
-				createNodeTranslate(eParent, sNodeName, sValue, required);
+				createNodeTranslate(env, eParent, sNodeName, sValue, required);
 			} else {
-				createNodeTranslate(eParent, sNodeName, sDefault, required);
+				createNodeTranslate(env, eParent, sNodeName, sDefault, required);
 			}
 		}
 	}

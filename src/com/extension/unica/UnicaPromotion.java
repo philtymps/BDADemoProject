@@ -12,6 +12,7 @@ import java.util.Properties;
 import org.apache.commons.json.JSONException;
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.unicacorp.interact.api.BatchResponse;
 import com.unicacorp.interact.api.Command;
 import com.unicacorp.interact.api.CommandImpl;
@@ -116,12 +117,12 @@ public class UnicaPromotion {
 		//return "WebStore";
 	}
 	
-	private double getCustomerID(String sBillToID){
+	private double getCustomerID(YFSEnvironment env, String sBillToID){
 		if (YFCCommon.isVoid(sBillToID)){
 			return 0;
 		}
 		try {
-			YFCDocument customerMap = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/Unica/customerMap.xml");
+			YFCDocument customerMap = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/Unica/customerMap.xml");
 			if (!YFCCommon.isVoid(customerMap)){
 				for (YFCElement eCustomer : customerMap.getDocumentElement().getChildren()){
 					if (YFCCommon.equals(eCustomer.getAttribute("CustomerID"), sBillToID)){
@@ -135,7 +136,7 @@ public class UnicaPromotion {
 		return 1;
 	}
 	
-	private Response[] callUnica(String sBillToID) throws JSONException, RemoteException{
+	private Response[] callUnica(YFSEnvironment env, String sBillToID) throws JSONException, RemoteException{
 		
 		String url = getUnicaURL();
 		url += "/servlet/RestServlet";
@@ -145,7 +146,7 @@ public class UnicaPromotion {
 		int numberRequested = getNumberOfRequests();
 
 		List<Command> cmds = new ArrayList<Command>();
-		cmds.add(0, createStartSessionCommand(icName, getCustomerID(sBillToID)));
+		cmds.add(0, createStartSessionCommand(icName, getCustomerID(env, sBillToID)));
 		cmds.add(1, createGetOffersCommand(ipName, numberRequested));
 		cmds.add(2, createGetProfileCommand());
 		cmds.add(3, createEndSessionCommand());
@@ -272,7 +273,7 @@ public class UnicaPromotion {
 							for (YFCElement eShipmentLine : eShipmentLines.getChildren()){
 								YFCElement eOrder = eShipmentLine.getChildElement("Order");
 								try {
-									Response[] temp  = callUnica(eOrder.getAttribute("BillToID"));
+									Response[] temp  = callUnica(env, eOrder.getAttribute("BillToID"));
 									return convertResponseIntoXml(temp[1],temp[2]);
 								} catch(JSONException e){
 									e.printStackTrace();
@@ -292,7 +293,7 @@ public class UnicaPromotion {
 				YFCElement eOrder = dInput.getDocumentElement();
 				if (YFCCommon.equals(eOrder.getAttribute("DocumentType"),"0001")){
 					try {
-						Response[] temp  = callUnica(eOrder.getAttribute("BillToID"));
+						Response[] temp  = callUnica(env, eOrder.getAttribute("BillToID"));
 						return convertResponseIntoXml(temp[1],temp[2]);
 					} catch(JSONException e){
 						e.printStackTrace();

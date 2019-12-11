@@ -52,13 +52,13 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	}
 
 	
-	private static String getVariableFile(){
-		return "/opt/Sterling/Scripts/variables.xml";
+	private static String getVariableFile(YFSEnvironment env){
+		return BDAServiceApi.getScriptsPath(env) + "/variables.xml";
 	}
 	
-	private HashMap<String, String> replaceVariables(YFCDocument dFileInput){
+	private HashMap<String, String> replaceVariables(YFSEnvironment env, YFCDocument dFileInput){
 		HashMap<String, String> variable = new HashMap<String, String>();
-		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
+		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		for (YFCElement eChild : temp.getDocumentElement().getChildren()){
 			if(YFCCommon.equals(eChild.getAttribute("TYPE"), "ITEM")) {
 				variable.put(eChild.getAttribute("Name"), eChild.getAttribute("Value"));
@@ -67,11 +67,11 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		return variable;
 	}
 	
-	private Collection<String> getVariableItems() {
+	private Collection<String> getVariableItems(YFSEnvironment env) {
 		try {
-			YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
+			YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 			if(!YFCCommon.isVoid(dVariables)){
-				HashMap<String, String> vars = replaceVariables(dVariables);
+				HashMap<String, String> vars = replaceVariables(env, dVariables);
 				return vars.values();
 			}
 		} catch (Exception e) {
@@ -86,7 +86,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		if(YFCCommon.isVoid(_nodes)) {
 			try {
 				_nodes = new ArrayList<String>();
-				YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
+				YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 				for (YFCElement eChild : temp.getDocumentElement().getChildren()){
 					if(YFCCommon.equals(eChild.getAttribute("TYPE"), "NODE")) {
 						_nodes.add(eChild.getAttribute("Value"));
@@ -112,7 +112,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 			e.printStackTrace();
 		}
 	
-		for(String p : getVariableItems()) {
+		for(String p : getVariableItems(env)) {
 			System.out.println("Retrieve Supply for " + p);
 			for(String sNode : getShipNodes(env)) {
 				Document dResponse = this.callService(env, getSupplyForNode(p, "EACH", sNode), null, "BDACallIVService");
@@ -155,7 +155,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 			e.printStackTrace();
 		}
 	
-		for(String p : getVariableItems()) {
+		for(String p : getVariableItems(env)) {
 			System.out.println("Retrieving Demand for " + p);
 			for(String sNode : getShipNodes(env)) {
 				Document dResponse = this.callService(env, getDemandForNode(p, "EACH", sNode), null, "BDACallIVService");

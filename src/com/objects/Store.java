@@ -71,7 +71,7 @@ public class Store extends BDASynchronization {
 		} else {
 			Connection dbConn = null;
 			try {
-				dbConn = getOMSConnection();
+				dbConn = getOMSConnection("oms.innovationcloud.info");
 				String sSql = "SELECT PERSON_INFO_KEY, ADDRESS_LINE1, ADDRESS_LINE2, CITY, STATE, ZIP_CODE, COUNTRY FROM OMDB.YFS_PERSON_INFO WHERE LATITUDE IS NULL AND PERSON_INFO_KEY IN (SELECT SHIP_NODE_ADDRESS_KEY FROM OMDB.YFS_SHIP_NODE)";
 				PreparedStatement ps = dbConn.prepareStatement(sSql);
 				ResultSet rs = ps.executeQuery();
@@ -94,7 +94,7 @@ public class Store extends BDASynchronization {
 				}
 			}
 			try {
-				dbConn = getOMSConnection();
+				dbConn = getOMSConnection("oms.innovationcloud.info");
 				String sSql = "UPDATE OMDB.YFS_PERSON_INFO SET LATITUDE = ?, LONGITUDE = ? WHERE PERSON_INFO_KEY = ?";
 				String sUpdateStore = "UPDATE OMDB.YFS_SHIP_NODE SET LATITUDE = ?, LONGITUDE = ? WHERE SHIP_NODE_ADDRESS_KEY = ?";
 				

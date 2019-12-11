@@ -8,6 +8,7 @@ import java.util.Properties;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.scripts.CompleteOrder;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
@@ -77,9 +78,9 @@ public class BDAProcessPurchaseOrder implements IBDAService {
 							YFCElement eShipmentLine = CompleteOrder.createShipmentLine(dShipment, eOrderLine, eOrderLineStatus, ++i, eOrderOut.getAttribute("DocumentType")); 
 							YFCElement eSchedule = CompleteOrder.getScheduleForScheduleKey(eOrderLine, eOrderLineStatus.getAttribute("OrderLineScheduleKey"));
 							boolean serialize = false;
-							File temp = new File("/opt/Sterling/Scripts/serialItems.xml");
+							File temp = new File(BDAServiceApi.getScriptsPath(env) + "/serialItems.xml");
 							if(temp.exists()){
-								YFCDocument serialItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/serialItems.xml");
+								YFCDocument serialItems = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/serialItems.xml");
 								YFCElement eSerialItems = serialItems.getDocumentElement();
 								for(YFCElement eSerialItem : eSerialItems.getChildren()){
 									if(YFCCommon.equals(eOrderLine.getChildElement("Item", true).getAttribute("ItemID"), eSerialItem.getAttribute("ItemID"))){

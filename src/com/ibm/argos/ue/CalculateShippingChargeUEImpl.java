@@ -2,6 +2,7 @@ package com.ibm.argos.ue;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.log.YFCLogCategory;
@@ -15,10 +16,10 @@ public class CalculateShippingChargeUEImpl implements YPMCalculateShippingCharge
 
 	private static YFCLogCategory logger = YFCLogCategory.instance(CalculateShippingChargeUEImpl.class);
 		
-	private static YFCDocument getShippingPrices(){
+	private static YFCDocument getShippingPrices(YFSEnvironment env){
 		YFCDocument dShipmentPrices;
 		try {
-			dShipmentPrices = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/ue/shipmentPricing.xml");
+			dShipmentPrices = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/ue/shipmentPricing.xml");
 		} catch (Exception e) {
 			dShipmentPrices = YFCDocument.createDocument("ShippingCharges");
 			YFCElement eShippingCharges = dShipmentPrices.getDocumentElement();
@@ -47,7 +48,7 @@ public class CalculateShippingChargeUEImpl implements YPMCalculateShippingCharge
 		YFCDocument dOutput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = dOutput.getDocumentElement();
 		if (!YFCCommon.isVoid(dInput)){
-			YFCDocument dShipmentPrices = getShippingPrices();
+			YFCDocument dShipmentPrices = getShippingPrices(env);
 			YFCElement eInput = dInput.getDocumentElement();
 			String sDefaultDelivery = eInput.getAttribute("DeliveryMethod");
 			String sDefaultCarrier = eInput.getAttribute("CarrierServiceCode");
@@ -84,7 +85,7 @@ public class CalculateShippingChargeUEImpl implements YPMCalculateShippingCharge
 	@Override
 	public Document getCarrierServiceOptionsForOrdering(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
 		YFCElement eOrder = YFCDocument.getDocumentFor(inDoc).getDocumentElement();
-		YFCDocument dShipmentPrices = getShippingPrices();
+		YFCDocument dShipmentPrices = getShippingPrices(env);
 		String sCurrency =  dShipmentPrices.getDocumentElement().getAttribute("Currency", "USD");
 		for (YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){
 			YFCElement eItemLine = eOrderLine.getChildElement("Item");

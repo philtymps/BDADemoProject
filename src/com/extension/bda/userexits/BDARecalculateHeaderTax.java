@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
@@ -21,9 +22,9 @@ public class BDARecalculateHeaderTax implements YFSRecalculateHeaderTaxUE, YFSRe
 
 	private YFCElement taxDetails = null;
 	
-	private YFCElement getTaxDetails(){
+	private YFCElement getTaxDetails(YFSEnvironment env){
 		if(YFCCommon.isVoid(taxDetails)){
-			YFCDocument dTD = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/TaxDetails.xml");
+			YFCDocument dTD = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/TaxDetails.xml");
 			if(!YFCCommon.isVoid(dTD)){
 				taxDetails = dTD.getDocumentElement();
 				return taxDetails;
@@ -62,7 +63,7 @@ public class BDARecalculateHeaderTax implements YFSRecalculateHeaderTaxUE, YFSRe
 		output.taxPercentage = 0;
 		output.colTax = taxes;
 		if(!YFCCommon.equals(input.taxExemptFlag, "Y")){
-			YFCElement td = this.getTaxDetails();
+			YFCElement td = this.getTaxDetails(env);
 
 			YFCElement eExemptList = td.getChildElement("TaxExempt");
 			for (YFCElement eItem : eExemptList.getChildren()){

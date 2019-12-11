@@ -8,6 +8,7 @@ import java.util.HashMap;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -35,7 +36,7 @@ public class BDACalculateShippingCharge implements YPMCalculateShippingChargeUE 
 			Document dOrder = getOrderDetails(localApi, env, eInput.getAttribute("OrderReference"));
 			if(!YFCCommon.isVoid(dOrder)){
 				YFCElement eOrder = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
-				eOutputShipping.setAttribute("ShippingCharge", generateShippingCharges(eOrder));
+				eOutputShipping.setAttribute("ShippingCharge", generateShippingCharges(env, eOrder));
 			}
 			
 		} catch (YIFClientCreationException e) {
@@ -44,11 +45,11 @@ public class BDACalculateShippingCharge implements YPMCalculateShippingChargeUE 
 		return dOutput.getDocument();
 	}
 	
-	private HashMap<String, YFCElement> getCarrierServiceData(HashMap<String, YFCElement> mapCarriers){
+	private HashMap<String, YFCElement> getCarrierServiceData(YFSEnvironment env, HashMap<String, YFCElement> mapCarriers){
 		if(mapCarriers.size() > 0){
 			return mapCarriers;
 		}
-		File external = new File("/opt/Sterling/Scripts/carrierService.xml");
+		File external = new File(BDAServiceApi.getScriptsPath(env) + "/carrierService.xml");
 		YFCDocument dOutput = YFCDocument.createDocument("CarrierServiceCodes");
 		if(external.exists()){
 			dOutput = YFCDocument.getDocumentFor(external);
@@ -69,9 +70,9 @@ public class BDACalculateShippingCharge implements YPMCalculateShippingChargeUE 
 		return mapCarriers;
 	}
 
-	private double generateShippingCharges(YFCElement eOrder){
+	private double generateShippingCharges(YFSEnvironment env, YFCElement eOrder){
 		HashMap<String, YFCElement> carriers = new HashMap<String, YFCElement>();
-		carriers = getCarrierServiceData(carriers);
+		carriers = getCarrierServiceData(env, carriers);
 		double shippingCharge = 0;
 		HashMap<String, ShippingChargeBreakdown> charges = new HashMap<String, ShippingChargeBreakdown>();
 		for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){

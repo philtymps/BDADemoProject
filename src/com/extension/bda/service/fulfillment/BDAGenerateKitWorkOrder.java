@@ -109,7 +109,7 @@ public class BDAGenerateKitWorkOrder implements IBDAService {
 					}
 					if(!hasWorkOrder) {
 						YFCElement eItem = eLine.getChildElement("Item");
-						File kitServiceItems = new File("/opt/Sterling/Scripts/kitServiceItems.xml");
+						File kitServiceItems = new File(BDAServiceApi.getScriptsPath(env) + "/kitServiceItems.xml");
 						if(kitServiceItems.exists()){
 							YFCDocument dBundleItemList = YFCDocument.getDocumentFor(kitServiceItems);
 							for (YFCElement eBundleItem : dBundleItemList.getDocumentElement().getChildren()){

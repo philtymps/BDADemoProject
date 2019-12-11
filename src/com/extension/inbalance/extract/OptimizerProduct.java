@@ -204,7 +204,7 @@ public class OptimizerProduct extends BDASynchronization {
 	private void updateItem(){
 		Connection dbConn = null;
 		try {
-			dbConn = getOMSConnection();
+			dbConn = getOMSConnection("oms.innovationcloud.info");
 			String sSql = "UPDATE OMDB.YFS_ITEM SET UNIT_WEIGHT = ?, UNIT_HEIGHT = ?, UNIT_LENGTH = ?, UNIT_WIDTH = ? WHERE ITEM_ID = ?";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ps.setDouble(1, getNewWeight());
@@ -250,7 +250,7 @@ public class OptimizerProduct extends BDASynchronization {
 	public static void updateDimensions(ArrayList<OptimizerProduct> products){
 		Connection dbConn = null;
 		try {
-			dbConn = getOMSConnection();
+			dbConn = getOMSConnection("oms.innovationcloud.info");
 			String sSql = "SELECT TRIM(I.ITEM_ID) ITEM_ID, I.SHORT_DESCRIPTION, I.UNIT_COST, PL.LIST_PRICE, I.IS_PICKUP_ALLOWED, I.MANUFACTURER_NAME, I.DEPARTMENT, I.ALLOW_GIFT_WRAP, I.ITEM_GROUP_CODE, I.ITEM_TYPE, I.UNIT_WEIGHT, I.UNIT_WEIGHT_UOM, I.UNIT_HEIGHT, I.UNIT_HEIGHT_UOM, I.UNIT_LENGTH, I.UNIT_LENGTH_UOM, I.UNIT_WIDTH, I.UNIT_WIDTH_UOM, A.VALUE AS ITEM_SIZE, B.VALUE AS ITEM_COLOR" 
 			+ " FROM OMDB.YFS_ITEM I "
 			+ " LEFT JOIN OMDB.YFS_ADDITIONAL_ATTRIBUTE A ON (A.PARENT_KEY = I.ITEM_KEY AND LOWER(A.name) LIKE '%size%') "

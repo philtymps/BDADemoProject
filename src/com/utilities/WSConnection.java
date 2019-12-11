@@ -28,7 +28,7 @@ public class WSConnection {
 		_sPassword = sPassword;
 	}
 	
-	public WSConnection (InputStream input) throws IOException {
+	/* public WSConnection (InputStream input) throws IOException {
 		_properties = new Properties();
 		_properties.load(input);
 		_dbType = _properties.getProperty("dbType", "DB2");
@@ -38,11 +38,11 @@ public class WSConnection {
 		_sSchema = _properties.getProperty("schema", "DEMO");
 		_sUsername = _properties.getProperty("username", "db2inst1");
 		_sPassword = _properties.getProperty("password", "db2inst1");
-	}
+	} 
 	
 	public WSConnection() throws IOException {
 		this(WSConnection.class.getResourceAsStream("oms.properties"));
-	}
+	} */
 	
 	public Properties getProperties(){
 		return _properties;

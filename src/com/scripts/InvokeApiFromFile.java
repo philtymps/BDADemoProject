@@ -35,11 +35,11 @@ public class InvokeApiFromFile {
 		return this.properties.get(sProp);
 	}
 	
-	private String getVariableFile(){
+	private String getVariableFile(YFSEnvironment env){
 		/*if (!YFCCommon.isVoid(getProperty("variableFile"))){
 			return (String) getProperty("variableFile");
 		}*/
-		return "/opt/Sterling/Scripts/variables.xml";
+		return BDAServiceApi.getScriptsPath(env) + "/variables.xml";
 	}
 	
 	private void replaceChildVariables(YFCElement eParent){
@@ -126,8 +126,8 @@ public class InvokeApiFromFile {
 		return dFileInput;
 	}
 	
-	private void loadVariableFile(){
-		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
+	private void loadVariableFile(YFSEnvironment env){
+		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		for (YFCElement eChild : temp.getDocumentElement().getChildren()){
 			addVariable(eChild.getAttribute("Name"), eChild);
 		}
@@ -141,7 +141,7 @@ public class InvokeApiFromFile {
 		boolean isService = eInput.getBooleanAttribute("IsService");
 		String sFileName = eInput.getAttribute("FileName");
 		YFCElement eVariables = eInput.getChildElement("Variables");
-		loadVariableFile();
+		loadVariableFile(env);
 		if(!YFCCommon.isVoid(eVariables)){
 			for(YFCElement eVariable : eVariables.getChildren()){
 				addVariable(eVariable.getAttribute("Name"), eVariable);

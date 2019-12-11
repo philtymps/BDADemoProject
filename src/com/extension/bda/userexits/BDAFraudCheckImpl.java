@@ -2,6 +2,7 @@ package com.extension.bda.userexits;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.CallInteropServlet;
 import com.yantra.pca.ycd.japi.ue.YCDProcessOrderFraudCheckUE;
 import com.yantra.shared.ycp.YFSContext;
@@ -40,8 +41,7 @@ public class BDAFraudCheckImpl implements YCDProcessOrderFraudCheckUE {
         	eCancel.setAttribute("ModificationReasonCode", "FRAUD_CANCEL");
         	eCancel.setAttribute("ModificationReasonText", msg);
         	try {
-        		
-        		CallInteropServlet.invokeApi(dCancelOrder, null, "cancelOrder", "http://oms.innovationcloud.info:9080");
+        		BDAServiceApi.callApi(env, dCancelOrder.getDocument(), null, "cancelOrder");
         	} catch (Exception e){
         		e.printStackTrace();
         	}

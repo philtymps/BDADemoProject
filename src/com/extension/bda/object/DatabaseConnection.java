@@ -1,12 +1,8 @@
 package com.extension.bda.object;
-
-import static com.yantra.yfc.dom.YFCDocument.parse;
-
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Properties;
 
-import com.ibm.utilities.ConnectionUtils;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
@@ -40,8 +36,10 @@ private static YFCElement eProperties = null;
 		return eProperties;
 	}
 	
-	public static Object getProperty(String sProp){
-		if (!YFCCommon.isVoid(properties) && properties.containsKey(sProp)){
+	public static Object getProperty(YFSEnvironment env, String sProp){
+		if (!YFCCommon.isVoid(env) && !YFCCommon.isVoid(BDAServiceApi.getPropertyValue(env, "bda." + sProp))) {
+			return BDAServiceApi.getPropertyValue(env, "bda." + sProp);
+		} else if (!YFCCommon.isVoid(properties) && properties.containsKey(sProp)){
 			return properties.get(sProp);
 		} else if (!YFCCommon.isVoid(getXmlProps()) && getXmlProps().hasAttribute(sProp)){
 			return getXmlProps().getAttribute(sProp);
@@ -50,50 +48,50 @@ private static YFCElement eProperties = null;
 	}
 	
 	protected static String getDBType(){
-		if (!YFCCommon.isVoid(getProperty("DBType"))){
-			return (String) getProperty("DBType");
+		if (!YFCCommon.isVoid(getProperty(null, "DBType"))){
+			return (String) getProperty(null, "DBType");
 		}		
 		return "DB2";
 	}
 	
-	public static String getDBServer(){
-		if (!YFCCommon.isVoid(getProperty("DBServer"))){
-			return (String) getProperty("DBServer");
+	public static String getDBServer(YFSEnvironment env){
+		if (!YFCCommon.isVoid(getProperty(env, "DBServer"))){
+			return (String) getProperty(env, "DBServer");
 		}
 		return "oms.innovationcloud.info";
 	}
 		
-	protected static String getDBPort(){
-		if (!YFCCommon.isVoid(getProperty("DBPort"))){
-			return (String) getProperty("DBPort");
+	protected static String getDBPort(YFSEnvironment env){
+		if (!YFCCommon.isVoid(getProperty(env, "DBPort"))){
+			return (String) getProperty(env, "DBPort");
 		}
 		return "50000";
 	}
 	
-	protected static String getDatabase(){
-		if (!YFCCommon.isVoid(getProperty("Database"))){
-			return (String) getProperty("Database");
+	protected static String getDatabase(YFSEnvironment env){
+		if (!YFCCommon.isVoid(getProperty(env, "Database"))){
+			return (String) getProperty(env, "Database");
 		}
 		return "OMDB";
 	}	
 	
-	protected static String getDBUsername(){
-		if (!YFCCommon.isVoid(getProperty("Username"))){
-			return (String) getProperty("Username");
+	protected static String getDBUsername(YFSEnvironment env){
+		if (!YFCCommon.isVoid(getProperty(env, "Username"))){
+			return (String) getProperty(env, "Username");
 		}
 		return "demouser";
 	}
 	
-	protected static String getDBPassword(){
-		if (!YFCCommon.isVoid(getProperty("Password"))){
-			return (String) getProperty("Password");
+	protected static String getDBPassword(YFSEnvironment env){
+		if (!YFCCommon.isVoid(getProperty(env, "Password"))){
+			return (String) getProperty(env, "Password");
 		}
 		return "meeting265bridge";
 	}
 	
-	public static String getDBSchema(){
-		if (!YFCCommon.isVoid(getProperty("Schema"))){
-			return (String) getProperty("Schema");
+	public static String getDBSchema(YFSEnvironment env){
+		if (!YFCCommon.isVoid(getProperty(env, "Schema"))){
+			return (String) getProperty(env, "Schema");
 		}
 		return "OMDB";
 	}

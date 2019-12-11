@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.extension.bda.object.DatabaseConnection;
 import com.utilities.WSConnection;
 
 public class PostalCode {
@@ -26,8 +27,7 @@ public class PostalCode {
 		int i = 0;
 		ArrayList<String> used = new ArrayList<String>();
 		try {
-			WSConnection conn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
-			Connection getConn = conn.getDBConnection();
+			Connection getConn = DatabaseConnection.getConnection(null);
 			fis = new FileInputStream("C:\\Users\\IBM_ADMIN\\workspace\\BDADemoProject\\src\\com\\objects\\UKZips.txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(fis, Charset.forName("UTF-8")));
 			while ((line = br.readLine()) != null) {
@@ -43,9 +43,6 @@ public class PostalCode {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {

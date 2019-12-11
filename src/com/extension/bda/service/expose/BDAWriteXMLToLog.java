@@ -22,16 +22,16 @@ public class BDAWriteXMLToLog extends BDAServiceApi implements IBDAService {
 		return "output.xml";
 	}
 	
-	public String getPath() {
+	public String getPath(YFSEnvironment env) {
 		if(!YFCCommon.isVoid(this.getProperty("Path"))) {
 			return (String) this.getProperty("Path");
 		}
-		return "/opt/Sterling/Scripts";
+		return BDAServiceApi.getScriptsPath(env);
 	}
 
 	@Override
 	public Document invoke(YFSEnvironment env, Document input) throws Exception {
-		this.writeXML(getPath(), getFileName(), YFCDocument.getDocumentFor(input));
+		this.writeXML(getPath(env), getFileName(), YFCDocument.getDocumentFor(input));
 		return input;
 	}
 

@@ -29,12 +29,9 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 
 	
 	private static HashMap<String, String> _nodeTypes;
-	private static HashMap<String, String> _properties;
-	private static JSONObject currentToken;
+
 	
-	public static synchronized void clearMap() {
-		_properties = new HashMap<String, String>();
-	}
+	private static JSONObject currentToken;
 	
 	public static synchronized String getNodeTypeForNode(YFSEnvironment env, String node) {
 		if(_nodeTypes == null) {
@@ -153,26 +150,6 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			return "0.0";
 		}
 	}
-	
-	public static synchronized String getPropertyValue(YFSEnvironment env, String sProperty) {
-		if(_properties.containsKey(sProperty)) {
-			return _properties.get(sProperty);
-		}
-		YFCDocument input = YFCDocument.createDocument("GetProperty");
-		YFCElement eInput = input.getDocumentElement();
-		eInput.setAttribute("Propertyname", sProperty);
-		
-		try {
-			Document dResponse = BDAServiceApi.callApi(env, input.getDocument(), null, "getProperty");
-			_properties.put(sProperty, dResponse.getDocumentElement().getAttribute("PropertyValue"));
-			return dResponse.getDocumentElement().getAttribute("PropertyValue");
-		} catch (Exception e) {
-			return "";
-		}
-		
-	}
-	
-
 	
 	private void createAttributeIfDefined(JSONObject obj, YFCElement ele, String objAttribute, String eleAttribute) throws JSONException {
 		if (YFCCommon.equals("Quantity", eleAttribute)) {

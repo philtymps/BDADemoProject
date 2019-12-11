@@ -32,7 +32,7 @@ public abstract class BDATable {
 		try {
 			conn = DatabaseConnection.getConnection(env);
 			if (eElement.hasAttribute(getEntity().getXmlTableKeyName())){
-				String sSql = "UPDATE " + DatabaseConnection.getDBSchema() + "." + getEntity().getTableName() + " SET ";
+				String sSql = "UPDATE " + DatabaseConnection.getDBSchema(env) + "." + getEntity().getTableName() + " SET ";
 				boolean first = true;
 				ArrayList<YFCElement> values = new ArrayList<YFCElement>();
 				for (String sKey : eElement.getAttributes().keySet()){
@@ -57,7 +57,7 @@ public abstract class BDATable {
 				}
 				return null;
 			} else {
-				String sSql = "INSERT INTO " + DatabaseConnection.getDBSchema() + "." + getEntity().getTableName() + " (";
+				String sSql = "INSERT INTO " + DatabaseConnection.getDBSchema(env) + "." + getEntity().getTableName() + " (";
 				boolean first = true;
 				ArrayList<YFCElement> values = new ArrayList<YFCElement>();
 				String sValues = "VALUES (";
@@ -119,7 +119,7 @@ public abstract class BDATable {
 		Connection conn = null;
 		try {
 			conn = DatabaseConnection.getConnection(env);
-			String sSql = "SELECT * FROM " + DatabaseConnection.getDBSchema() + "." + getEntity().getTableName() + " WHERE " + getEntity().getTableKeyName() + " = ?"; 
+			String sSql = "SELECT * FROM " + DatabaseConnection.getDBSchema(env) + "." + getEntity().getTableName() + " WHERE " + getEntity().getTableKeyName() + " = ?"; 
 			System.out.println("SQL: " + sSql);
 			PreparedStatement ps = conn.prepareStatement(sSql);
 			ps.setInt(1, primaryKey);
@@ -146,7 +146,7 @@ public abstract class BDATable {
 		try {
 			conn = DatabaseConnection.getConnection(env);
 			
-			String sSql = "SELECT * FROM " + DatabaseConnection.getDBSchema() + "." + entity.getTableName() + " WHERE "; 
+			String sSql = "SELECT * FROM " + DatabaseConnection.getDBSchema(env) + "." + entity.getTableName() + " WHERE "; 
 			boolean first = true;
 			ArrayList<YFCElement> values = new ArrayList<YFCElement>();
 			YFCElement eValues = YFCDocument.createDocument("Values").getDocumentElement();

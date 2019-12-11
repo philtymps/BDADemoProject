@@ -6,6 +6,7 @@ import java.rmi.RemoteException;
 import org.w3c.dom.Document;
 
 import com.custom.yantra.util.YFSXMLUtil;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -33,13 +34,13 @@ public class BDABeforeChangeOrder implements YFSBeforeChangeOrderUE, YFSBeforeCr
 	@Override
 	public Document beforeCreateOrder(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
 		setSellerCurrency(env, inDoc);		
-		addExtraItem(inDoc);
+		addExtraItem(env, inDoc);
 		return inDoc;
 	}
 
 	@Override
 	public Document beforeChangeOrder(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
-		addExtraItem(inDoc);
+		addExtraItem(env, inDoc);
 		return inDoc;
 	}
 	
@@ -89,8 +90,8 @@ public class BDABeforeChangeOrder implements YFSBeforeChangeOrderUE, YFSBeforeCr
 			}
 		}
 	}
-	private void addExtraItem(Document inDoc){
-		YFCElement automaticItems = getAutomaticRelatedItems();
+	private void addExtraItem(YFSEnvironment env, Document inDoc){
+		YFCElement automaticItems = getAutomaticRelatedItems(env);
 		if(!YFCCommon.isVoid(automaticItems) && automaticItems.hasChildNodes()){
 			YFCDocument dInput = YFCDocument.getDocumentFor(inDoc);
 			YFCElement eOrder = dInput.getDocumentElement();
@@ -142,10 +143,10 @@ public class BDABeforeChangeOrder implements YFSBeforeChangeOrderUE, YFSBeforeCr
 		}
 	}
 	
-	private YFCElement getAutomaticRelatedItems(){
-		File fAutomatic = new File("/opt/Sterling/Scripts/AutomaticRelatedItems.xml");
+	private YFCElement getAutomaticRelatedItems(YFSEnvironment env){
+		File fAutomatic = new File(BDAServiceApi.getScriptsPath(env) + "/AutomaticRelatedItems.xml");
 		if(fAutomatic.exists()){
-			YFCDocument dARI = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/AutomaticRelatedItems.xml");
+			YFCDocument dARI = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/AutomaticRelatedItems.xml");
 			if(!YFCCommon.isVoid(dARI)){
 				return dARI.getDocumentElement();
 			}

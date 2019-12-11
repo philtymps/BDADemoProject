@@ -23,7 +23,7 @@ public class BDABeforeCreateShipment implements YDMBeforeCreateShipment {
 		YFCElement eShipment = inDoc.getDocumentElement();
 		for(YFCElement eShipmentLine : eShipment.getChildElement("ShipmentLines", true).getChildren()){
 			if(YFCCommon.isVoid(eShipmentLine.getAttribute("DepartmentCode"))){
-				String sDepartment = getDepartmentForSku(eShipmentLine.getAttribute("ItemID"));
+				String sDepartment = getDepartmentForSku(env, eShipmentLine.getAttribute("ItemID"));
 				if(!YFCCommon.isVoid(sDepartment)){
 					eShipmentLine.setAttribute("DepartmentCode", sDepartment);
 				}
@@ -39,11 +39,11 @@ public class BDABeforeCreateShipment implements YDMBeforeCreateShipment {
 		return inDoc.getDocument();
 	}
 
-	private String getDepartmentForSku(String sSku){
+	private String getDepartmentForSku(YFSEnvironment env, String sSku){
 		Connection conn = null;
 		String sDepartment = "";
 		try {
-			conn = BDASynchronization.getOMSConnection();
+			conn = BDASynchronization.getOMSConnection(env);
 			String sSql = "SELECT DEPARTMENT FROM OMDB.YFS_ITEM WHERE TRIM(ITEM_ID) = ?";
 			PreparedStatement ps = conn.prepareStatement(sSql);
 			ps.setString(1, sSku);

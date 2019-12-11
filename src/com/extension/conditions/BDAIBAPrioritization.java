@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.ycp.japi.YCPDynamicConditionEx;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -16,7 +17,7 @@ public class BDAIBAPrioritization implements YCPDynamicConditionEx {
 	
 	@Override
 	public boolean evaluateCondition(YFSEnvironment env, String name, Map mapData, Document doc) {
-		YFCDocument dPriorityCustomers = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/priorityCustomers.xml");
+		YFCDocument dPriorityCustomers = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/priorityCustomers.xml");
 		if(!YFCCommon.isVoid(dPriorityCustomers)){
 			YFCElement ePriorityCustomers = dPriorityCustomers.getDocumentElement();
 			String sLevel = getProperty("Level", mapData);
@@ -44,7 +45,7 @@ public class BDAIBAPrioritization implements YCPDynamicConditionEx {
 			}
 			
 		} else {
-			System.out.println("/opt/Sterling/Scripts/priorityCustomers.xml is empty or undefined");
+			System.out.println(BDAServiceApi.getScriptsPath(env) + "/priorityCustomers.xml is empty or undefined");
 		}
 		
 		return false;

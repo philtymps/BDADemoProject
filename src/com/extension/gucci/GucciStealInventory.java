@@ -10,6 +10,7 @@ import org.w3c.dom.Document;
 
 import com.extension.bda.object.DatabaseConnection;
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.CallInteropServlet;
 import com.yantra.yfc.date.YTimestamp;
 import com.yantra.yfc.dom.YFCDocument;
@@ -114,10 +115,9 @@ public class GucciStealInventory implements IBDAService {
 			YFCElement eOrderHold = eOrderLine.createChild("OrderHoldTypes").createChild("OrderHoldType");
 			eOrderHold.setAttribute("HoldType", eInput.getAttribute("HoldType"));
 			eOrderHold.setAttribute("Status", "1100");
-			YFCDocument output = CallInteropServlet.invokeApi(dApiInput, null, "changeOrder", "http://oms.innovationcloud.info:9080");
+			BDAServiceApi.callApi(env, dApiInput.getDocument(), null, "changeOrder");
 			
-			YFCDocument output2 = CallInteropServlet.invokeApi(dApiInput, null, "unScheduleOrder", "http://oms.innovationcloud.info:9080");
-			return output2.getDocument();
+			return BDAServiceApi.callApi(env, dApiInput.getDocument(), null, "unScheduleOrder");
 		}
 		return YFCDocument.createDocument("Order").getDocument();
 	}

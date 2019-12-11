@@ -20,7 +20,7 @@ public class BDAGetEcommConfig extends BDAServiceApi implements IBDAService {
 	
 	@Override
 	public Document invoke(YFSEnvironment env, Document input) throws Exception {
-		String file = "/opt/Sterling/Scripts/eCommConfig.xml";
+		String file = BDAServiceApi.getScriptsPath(env) + "/eCommConfig.xml";
 		if(!YFCCommon.isVoid(this.getProperty("filename"))) {
 			file = (String) this.getProperty("filename");
 		}

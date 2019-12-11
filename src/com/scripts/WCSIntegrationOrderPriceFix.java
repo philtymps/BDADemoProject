@@ -5,6 +5,7 @@ import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -49,9 +50,9 @@ public class WCSIntegrationOrderPriceFix {
 			YFCElement eExtra = dExtra.getDocumentElement();
 			boolean found = false;
 			
-			File services = new File("/opt/Sterling/Scripts/service_items.xml");
+			File services = new File(BDAServiceApi.getScriptsPath(env) + "/service_items.xml");
 			if(services.exists()){
-				YFCDocument dServiceItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/service_items.xml");
+				YFCDocument dServiceItems = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/service_items.xml");
 				if(!YFCCommon.isVoid(dServiceItems)){
 					YFCElement eServiceItems = dServiceItems.getDocumentElement();
 					for(YFCElement eServiceItem : eServiceItems.getChildren()){
@@ -83,10 +84,10 @@ public class WCSIntegrationOrderPriceFix {
 			YFCDocument dExtra = YFCDocument.createDocument("LineItems");
 			YFCElement eExtra = dExtra.getDocumentElement();
 			boolean found = false;
-			File services = new File("/opt/Sterling/Scripts/service_items.xml");
+			File services = new File(BDAServiceApi.getScriptsPath(env) + "/service_items.xml");
 			
 			if(services.exists()){
-				YFCDocument dServiceItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/service_items.xml");
+				YFCDocument dServiceItems = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/service_items.xml");
 				if(!YFCCommon.isVoid(dServiceItems)){
 					YFCElement eServiceItems = dServiceItems.getDocumentElement();
 					for(YFCElement eServiceItem : eServiceItems.getChildren()){
@@ -178,11 +179,11 @@ public class WCSIntegrationOrderPriceFix {
 		if (!eInput.getNodeName().equals("Errors")){
 			if(!YFCCommon.isVoid(env.getTxnObject("serviceItems"))){
 				YFCDocument dServiceItems = (YFCDocument) env.getTxnObject("serviceItems");
-				File services = new File("/opt/Sterling/Scripts/service_items.xml");
+				File services = new File(BDAServiceApi.getScriptsPath(env) + "/service_items.xml");
 				YFCDocument dExternalServiceItems = null;
 				env.setTxnObject("removedAll", "N");
 				if(services.exists()){
-					dExternalServiceItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/service_items.xml");
+					dExternalServiceItems = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/service_items.xml");
 				}		
 				if(eInput.getNodeName().equals("ItemPrice")){
 					for(YFCElement eLine : dServiceItems.getDocumentElement().getChildren()){

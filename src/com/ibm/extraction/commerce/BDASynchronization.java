@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.extension.bda.object.DatabaseConnection;
 import com.ibm.utilities.ConnectionUtils;
 import com.yantra.yfc.util.YFCCommon;
+import com.yantra.yfs.japi.YFSEnvironment;
 
 public class BDASynchronization {
 
@@ -123,9 +125,8 @@ public class BDASynchronization {
 		return dbConn;
 	}
 	
-	public static Connection getOMSConnection() throws SQLException, ClassNotFoundException {
-		Connection dbConn = ConnectionUtils.getDBConnection(getDBType(), getOMSDBServer(), getOMSDBPort(), getOMSDatabase(), getOMSDBUsername(), getOMSDBPassword());
-		return dbConn;
+	public static Connection getOMSConnection(YFSEnvironment env) throws SQLException, ClassNotFoundException {
+		return DatabaseConnection.getConnection(env);
 	}
 	
 	public static Connection getOMSConnection(String sHost) throws SQLException, ClassNotFoundException {

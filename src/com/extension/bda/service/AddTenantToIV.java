@@ -116,18 +116,6 @@ public class AddTenantToIV extends BDAServiceApi implements IBDAService {
 		return inputDoc;
 	}
 
-	private String getPropertyValue(YFSEnvironment env, String input) {
-		if(!YFCCommon.isVoid(getCachedValue(input))) {
-			return getCachedValue(input);
-		}
-		YFCDocument dInput = YFCDocument.createDocument("Property");
-		YFCElement eInput = dInput.getDocumentElement();
-		eInput.setAttribute("PropertyName", input);
-		Document response = this.callApi(env, dInput.getDocument(), null, "getProperty");
-		LOG.debug("Property::" + input + "::Value::" + response.getDocumentElement().getAttribute("PropertyValue"));
-		AddTenantToIV.addToCache(input, response.getDocumentElement().getAttribute("PropertyValue"));
-		return response.getDocumentElement().getAttribute("PropertyValue");
-	}
 
 	@Override
 	public String getServiceName() {

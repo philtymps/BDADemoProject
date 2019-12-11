@@ -22,6 +22,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.mirakl.entity.MiraklOffer;
 import com.mirakl.entity.MiraklOrder;
 import com.mirakl.entity.MiraklShop;
@@ -181,7 +182,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 		return transactionid;
 	}
 	
-	public String getTranslationFile(Document criteria) {
+	public String getTranslationFile(YFSEnvironment env, Document criteria) {
 		if(!YFCCommon.isVoid(translationfile)){
 			return translationfile;
 		}
@@ -191,8 +192,8 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 				return translationfile;
 			}
 		}
-		System.out.println("Set TRANSFORM-DOC in your MiraklOfferAgent defaulting to /opt/Sterling/Scripts/MiraklTranslate.xml");
-		translationfile = "/opt/Sterling/Scripts/MiraklTranslate.xml";
+		System.out.println("Set TRANSFORM-DOC in your MiraklOfferAgent defaulting to" + BDAServiceApi.getScriptsPath(env) + "/MiraklTranslate.xml");
+		translationfile = BDAServiceApi.getScriptsPath(env) + "/MiraklTranslate.xml";
 		return translationfile;
 	}
 	
@@ -423,7 +424,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 		}
 	}
 	
-	protected int parseOrderUpdateReponse(InputStream input, ArrayList<Document> jobs, Document criteria) throws IOException, SAXException {
+	protected int parseOrderUpdateReponse(YFSEnvironment env, InputStream input, ArrayList<Document> jobs, Document criteria) throws IOException, SAXException {
 		//System.out.println("parseOrderUpdateResponse");
 		YFCDocument dBody = YFCDocument.parse(input);
 		//System.out.println(dBody);
@@ -431,7 +432,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 		for(YFCElement eOrder : eBody.getChildElement("orders", true).getChildren()){
 			//System.out.println("Order: " + eOrder);
 			Document dJob = new MiraklOrder(eOrder).getObjectXML();
-			dJob.getDocumentElement().setAttribute("Translation", this.getTranslationFile(criteria));
+			dJob.getDocumentElement().setAttribute("Translation", this.getTranslationFile(env, criteria));
 			dJob.getDocumentElement().setAttribute("TransactionId", this.getTransactionID(criteria));
 			jobs.add(dJob);
 		}
@@ -439,7 +440,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 		return (int) eBody.getChildElement("total_count", true).getLongNodeValue();
 	}
 	
-	private void getOrderUpdates(Document criteria, ArrayList<Document> jobs, int offset){
+	private void getOrderUpdates(YFSEnvironment env, Document criteria, ArrayList<Document> jobs, int offset){
 		URL url;
 		try {
 			System.out.println("getOrderUpdates - Start");
@@ -460,9 +461,9 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 				throw new RuntimeException("Failed: HTTP error code return : " + conn.getResponseCode());
 			}
 			
-			int count = parseOrderUpdateReponse(conn.getInputStream(), jobs, criteria);
+			int count = parseOrderUpdateReponse(env, conn.getInputStream(), jobs, criteria);
 			if(count == 100){
-				getOrderUpdates(criteria, jobs, offset + 1);
+				getOrderUpdates(env, criteria, jobs, offset + 1);
 			}
 			System.out.println("Added " + count + " orders for processing.");
 			conn.disconnect();
@@ -480,7 +481,7 @@ public class MiraklOfferAgent extends YCPAbstractAgent {
 		if ((MiraklOfferAgent.lastRun + (1000 * 60 * 5)) < System.currentTimeMillis()){
 			getShopUpdates(criteria, jobs, 0);
 			getOfferUpdates(criteria, jobs);
-			getOrderUpdates(criteria, jobs, 0);
+			getOrderUpdates(env, criteria, jobs, 0);
 			this.saveCurrentTime();
 			MiraklOfferAgent.lastRun = System.currentTimeMillis();
 		}

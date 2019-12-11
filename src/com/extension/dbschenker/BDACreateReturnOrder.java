@@ -26,7 +26,7 @@ public class BDACreateReturnOrder extends BDAServiceApi implements IBDAService {
 		eRental.setAttribute("EnterpriseCode", eInput.getAttribute("EnterpriseCode"));
 		eRental.setAttribute("BillToKey", eInput.getAttribute("ToAddressKey"));
 		for(YFCElement eShipmentLine : eInput.getChildElement("ShipmentLines", true).getChildren()){
-			if(BDAContainsRental.isRentalItem(eShipmentLine.getAttribute("ItemID"))){
+			if(BDAContainsRental.isRentalItem(env, eShipmentLine.getAttribute("ItemID"))){
 				createRentalLine(eRental, eShipmentLine, eInput.getAttribute("ShipNode"));
 				hasLines = true;
 			}

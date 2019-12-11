@@ -32,6 +32,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.mirakl.entity.MiraklOrder;
 import com.yantra.ycp.agent.server.YCPAbstractAgent;
 import com.yantra.yfc.dom.YFCDocument;
@@ -71,7 +72,7 @@ private String apikey = "", domain = "", translationfile = "";
 		return domain;
 	}
 	
-	public String getTranslationFile(Document criteria) {
+	public String getTranslationFile(YFSEnvironment env, Document criteria) {
 		if(!YFCCommon.isVoid(translationfile)){
 			return translationfile;
 		}
@@ -81,16 +82,16 @@ private String apikey = "", domain = "", translationfile = "";
 				return translationfile;
 			}
 		}
-		System.out.println("Set TRANSFORM-DOC in your MiraklShopAgent defaulting to /opt/Sterling/Scripts/MiraklTranslate.xml");
-		translationfile = "/opt/Sterling/Scripts/MiraklTranslate.xml";
+		System.out.println("Set TRANSFORM-DOC in your MiraklShopAgent defaulting to" + BDAServiceApi.getScriptsPath(env) + "/MiraklTranslate.xml");
+		translationfile = BDAServiceApi.getScriptsPath(env) + "/MiraklTranslate.xml";
 		return translationfile;
 	}
 	
-	protected String getMiraklShopDirectory(Document criteria){
+	protected String getMiraklShopDirectory(YFSEnvironment env, Document criteria){
 		if(criteria.getDocumentElement().hasAttribute("DIRECTORY")){
 			return criteria.getDocumentElement().getAttribute("DIRECTORY");
 		}
-		return "/opt/Sterling/Scripts/MiraklShopData";
+		return BDAServiceApi.getScriptsPath(env) + "/MiraklShopData";
 	}
 	
 	private String getURL(Document criteria, String sRestPath){
@@ -168,12 +169,12 @@ private String apikey = "", domain = "", translationfile = "";
 		conn.disconnect();
 	}
 	
-	private String getLastCommittedDate(){
-		File dir = new File("/opt/Sterling/Agents");
+	private String getLastCommittedDate(YFSEnvironment env){
+		File dir = new File(BDAServiceApi.getAgentsPath(env));
 		if(!dir.exists()){
 			dir.mkdirs();
 		}
-		File sfdcLastOrderCommit = new File("/opt/Sterling/Agents/MiraklShopAgent.txt");
+		File sfdcLastOrderCommit = new File(BDAServiceApi.getAgentsPath(env) + "/MiraklShopAgent.txt");
 		if(sfdcLastOrderCommit.exists()){
 			try {
 				BufferedReader br = new BufferedReader(new FileReader(sfdcLastOrderCommit.getAbsolutePath()));
@@ -190,13 +191,13 @@ private String apikey = "", domain = "", translationfile = "";
 		return null;
 	}
 	
-	private void saveCurrentTime(){
+	private void saveCurrentTime(YFSEnvironment env){
 		System.out.println("Save Current Time");
-		File dir = new File("/opt/Sterling/Agents");
+		File dir = new File(BDAServiceApi.getAgentsPath(env));
 		if(!dir.exists()){
 			dir.mkdirs();
 		}
-		File sfdcLastOrderCommit = new File("/opt/Sterling/Agents/MiraklShopAgent.txt");
+		File sfdcLastOrderCommit = new File(BDAServiceApi.getAgentsPath(env) + "/MiraklShopAgent.txt");
 		if(sfdcLastOrderCommit.exists()){
 			sfdcLastOrderCommit.delete();
 		}
@@ -215,11 +216,11 @@ private String apikey = "", domain = "", translationfile = "";
 		}	
 	}
 
-	private void getOrdersForValidation(Document criteria, ArrayList<Document> jobs, int offset){
+	private void getOrdersForValidation(YFSEnvironment env, Document criteria, ArrayList<Document> jobs, int offset){
 		URL url;
 		try {
 			System.out.println("getOrderUpdates - Start");
-			String date = this.getLastCommittedDate();
+			String date = this.getLastCommittedDate(env);
 			if(!YFCCommon.isVoid(date)){
 				url = new URL(getURL(criteria, "/api/orders?order_state_codes=WAITING_ACCEPTANCE&max=100&offset=" + offset + "&start_update_date=" + date));
 			} else {
@@ -234,9 +235,9 @@ private String apikey = "", domain = "", translationfile = "";
 				throw new RuntimeException("Failed: HTTP error code return : " + conn.getResponseCode());
 			}
 			
-			int count = parseOrderReponse(new InputStreamReader(conn.getInputStream()), jobs, criteria);
+			int count = parseOrderReponse(env, new InputStreamReader(conn.getInputStream()), jobs, criteria);
 			if(count >= 99){
-				getOrdersForValidation(criteria, jobs, offset + 1);
+				getOrdersForValidation(env, criteria, jobs, offset + 1);
 			}
 			System.out.println("Added " + count + " orders for processing.");
 			conn.disconnect();
@@ -245,7 +246,7 @@ private String apikey = "", domain = "", translationfile = "";
 		}
 	}
 	
-	protected int parseOrderReponse(InputStreamReader input, ArrayList<Document> jobs, Document criteria) throws IOException {
+	protected int parseOrderReponse(YFSEnvironment env, InputStreamReader input, ArrayList<Document> jobs, Document criteria) throws IOException {
 		BufferedReader br = new BufferedReader(input);
 		StringBuilder responseStrBuilder = new StringBuilder();
 		
@@ -258,7 +259,7 @@ private String apikey = "", domain = "", translationfile = "";
 		
 		for(int i = 0; i < orders.length(); i++){
 			Document dJob = new MiraklOrder(orders.getJSONObject(i)).getObjectXML();
-			dJob.getDocumentElement().setAttribute("Translation", this.getTranslationFile(criteria));
+			dJob.getDocumentElement().setAttribute("Translation", this.getTranslationFile(env, criteria));
 			dJob.getDocumentElement().setAttribute("Action", "Validate");
 			jobs.add(dJob);
 		}
@@ -273,7 +274,7 @@ private String apikey = "", domain = "", translationfile = "";
 		ArrayList<Document> jobs = new ArrayList<Document>();
 		System.out.println("Get Jobs");
 	
-		String sDirectory = getMiraklShopDirectory(criteria);
+		String sDirectory = getMiraklShopDirectory(env, criteria);
 		File f = new File(sDirectory);
 		YFCDocument dRoot = YFCDocument.createDocument("body");
 		
@@ -296,7 +297,7 @@ private String apikey = "", domain = "", translationfile = "";
 			jobs.add(dRoot.getDocument());
 		}
 		
-		getOrdersForValidation(criteria, jobs, 0);
+		getOrdersForValidation(env, criteria, jobs, 0);
 		
 		return jobs;
 	}

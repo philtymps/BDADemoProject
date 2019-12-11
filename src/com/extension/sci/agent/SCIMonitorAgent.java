@@ -18,6 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.extension.sci.object.SCISalesOrder;
 import com.extension.sci.services.BDASendOrderToSCI;
 import com.extension.sci.util.BDAPushToSCI;
@@ -60,7 +61,7 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 			sendOrder.invoke(env, eOrder);	
 		}
 		if(upserts.length() > 0){
-			saveLastCommittedDate();
+			saveLastCommittedDate(env);
 			sendOrder.callRequest(BDAPushToSCI.SCI_BULK_SALES_ORDER, bulk);
 		}
 	}
@@ -77,7 +78,7 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 	}
 	
 	private void addOrdersToList(YFSEnvironment env, String sDocumentType, String sEnterpriseCode, List<Document> list){
-		YFCDocument input = getOrdersToProcess(sEnterpriseCode, sDocumentType);
+		YFCDocument input = getOrdersToProcess(env, sEnterpriseCode, sDocumentType);
 		env.setApiTemplate("getOrderList", SCISalesOrder.getSalesOrderListTemplate().getDocument());
 		try {
 			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
@@ -111,7 +112,7 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 	}
 	
 	private void addShipmentsToList(YFSEnvironment env, String sDocumentType, String sEnterpriseCode, List<Document> list){
-		YFCDocument input = getShipmentsToProcess(sEnterpriseCode, sDocumentType);
+		YFCDocument input = getShipmentsToProcess(env, sEnterpriseCode, sDocumentType);
 		env.setApiTemplate("get", SCISalesOrder.getSalesOrderListTemplate().getDocument());
 		try {
 			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
@@ -144,7 +145,7 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 	
 	}
 
-	private YFCDocument getOrdersToProcess(String sEnterpriseCode, String sDocumentType){
+	private YFCDocument getOrdersToProcess(YFSEnvironment env, String sEnterpriseCode, String sDocumentType){
 		
 		String sSql = "SELECT DISTINCT RS.ORDER_HEADER_KEY, MAX(RS.STATUS_DATE) FROM OMDB.YFS_ORDER_RELEASE_STATUS RS INNER JOIN OMDB.YFS_ORDER_HEADER OH ON OH.ORDER_HEADER_KEY = RS.ORDER_HEADER_KEY WHERE TRIM(OH.ENTERPRISE_KEY) = ? AND TRIM(OH.DOCUMENT_TYPE) = ? AND RS.STATUS_DATE > ? GROUP BY RS.ORDER_HEADER_KEY ORDER BY MAX(RS.STATUS_DATE)";
 		YFCDocument orderInput = YFCDocument.createDocument("Order");
@@ -153,11 +154,11 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 		
 		Connection conn = null;
 		try {
-			conn = BDASynchronization.getOMSConnection();
+			conn = BDASynchronization.getOMSConnection(env);
 			PreparedStatement ps = conn.prepareStatement(sSql);
 			ps.setString(1, sEnterpriseCode);
 			ps.setString(2,  sDocumentType);
-			ps.setTimestamp(3, getLastCommittedDate());
+			ps.setTimestamp(3, getLastCommittedDate(env));
 			ResultSet rs = ps.executeQuery();
 			int j = 0;
 			while (rs.next()){
@@ -184,7 +185,7 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 		return null;
 	}
 	
-	private YFCDocument getShipmentsToProcess(String sEnterpriseCode, String sDocumentType){
+	private YFCDocument getShipmentsToProcess(YFSEnvironment env, String sEnterpriseCode, String sDocumentType){
 		
 		String sSql = "SELECT DISTINCT RS.SHIPMENT_KEY FROM OMDB.YFS_SHIPMENT WHERE TRIM(ENTERPRISE_CODE) = ? AND TRIM(DOCUMENT_TYPE) = ? AND MODIFYTS > ? ORDER BY MODIFYTS";
 		YFCDocument orderInput = YFCDocument.createDocument("Shipment");
@@ -193,11 +194,11 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 		
 		Connection conn = null;
 		try {
-			conn = BDASynchronization.getOMSConnection();
+			conn = BDASynchronization.getOMSConnection(env);
 			PreparedStatement ps = conn.prepareStatement(sSql);
 			ps.setString(1, sEnterpriseCode);
 			ps.setString(2,  sDocumentType);
-			ps.setTimestamp(3, getLastCommittedDate());
+			ps.setTimestamp(3, getLastCommittedDate(env));
 			ResultSet rs = ps.executeQuery();
 			int j = 0;
 			while (rs.next()){
@@ -231,12 +232,12 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 		return list;
 	}
 	
-	private Timestamp getLastCommittedDate(){
-		File dir = new File("/opt/Sterling/Agents");
+	private Timestamp getLastCommittedDate(YFSEnvironment env){
+		File dir = new File(BDAServiceApi.getAgentsPath(env));
 		if(!dir.exists()){
 			dir.mkdirs();
 		}
-		File sfdcLastOrderCommit = new File("/opt/Sterling/Agents/SCILastOrderCommit.txt");
+		File sfdcLastOrderCommit = new File(BDAServiceApi.getAgentsPath(env) + "/SCILastOrderCommit.txt");
 		if(sfdcLastOrderCommit.exists()){
 			try {
 				BufferedReader br = new BufferedReader(new FileReader(sfdcLastOrderCommit.getAbsolutePath()));
@@ -252,22 +253,22 @@ public class SCIMonitorAgent extends YCPAbstractAgent {
 		return Timestamp.valueOf("2017-01-05 00:00:00");
 	}
 	
-	private void saveLastCommittedDate(){
+	private void saveLastCommittedDate(YFSEnvironment env){
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		Date d = new Date();
 		String ts = sf.format(d);
 		if(!YFCCommon.isVoid(ts)){
-			File dir = new File("/opt/Sterling/Agents");
+			File dir = new File(BDAServiceApi.getAgentsPath(env));
 			if(!dir.exists()){
 				dir.mkdirs();
 			}
-			File sfdcLastOrderCommit = new File("/opt/Sterling/Agents/SCICLastOrderCommit.txt");
+			File sfdcLastOrderCommit = new File(BDAServiceApi.getAgentsPath(env) + "/SCICLastOrderCommit.txt");
 			if(sfdcLastOrderCommit.exists()){
 				sfdcLastOrderCommit.delete();
 			}
 			byte data[] = ts.getBytes();
 			try {
-				FileOutputStream out = new FileOutputStream("/opt/Sterling/Agents/SCILastOrderCommit.txt");
+				FileOutputStream out = new FileOutputStream(BDAServiceApi.getAgentsPath(env) + "/SCILastOrderCommit.txt");
 				out.write(data);
 				out.close();
 			} catch (Exception e){

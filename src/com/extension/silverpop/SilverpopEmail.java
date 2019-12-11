@@ -25,6 +25,7 @@ import org.xml.sax.SAXException;
 
 import com.bda.Utilities;
 import com.custom.yantra.xmlmapper.Converter;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.util.YFCXSLTransformer;
 import com.yantra.util.YFCXSLTransformerImpl;
 import com.yantra.yfc.dom.YFCDocument;
@@ -729,7 +730,7 @@ public class SilverpopEmail {
 	
 	public static void main(String[] args){
 		SilverpopEmail temp = new SilverpopEmail();
-		temp.setProperty("XSLFile", "/opt/Sterling/Scripts/gucci_shipping.xsl");
+		temp.setProperty("XSLFile", BDAServiceApi.getScriptsPath(null) + "/gucci_shipping.xsl");
 		YFCDocument dInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = dInput.getDocumentElement();
 		eOrder.setAttribute("OrderNo", "1000001");

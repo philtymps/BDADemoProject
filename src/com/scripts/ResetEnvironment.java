@@ -4,12 +4,15 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import com.extension.bda.object.DatabaseConnection;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.CallInteropServlet;
 import com.utilities.WSConnection;
 import com.yantra.shared.ycp.YFSContext;
@@ -24,9 +27,9 @@ public class ResetEnvironment {
 	public Document resetEnvironment(YFSEnvironment env, Document input){
 		YFCDocument dReset = YFCDocument.createDocument("Reset");
 		YFCElement eReset = dReset.getDocumentElement();
-		WSConnection demoConn;
+		Connection conn;
 		try {
-			demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
+			conn = DatabaseConnection.getConnection(env);
 			File file = new File(ResetEnvironment.class.getResource("Truncate.sql").getFile());
 			// FileReader reads text files in the default encoding.
 	        FileReader fileReader = new FileReader(file);
@@ -38,7 +41,7 @@ public class ResetEnvironment {
 	        YFCElement eSqlList = eReset.createChild("SQLList");
 	        while((line = bufferedReader.readLine()) != null) {
 	        	line = line.replace(";", "");
-	        	PreparedStatement ps = demoConn.getDBConnection().prepareStatement(line);
+	        	PreparedStatement ps = conn.prepareStatement(line);
 	        	ps.executeQuery();
 	        	YFCElement eSql = eSqlList.createChild("SQL");
 	        	eSql.setNodeValue(line);
@@ -48,9 +51,6 @@ public class ResetEnvironment {
 	        bufferedReader.close(); 
 	        ((YFSContext)env).commit();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -77,12 +77,12 @@ public class ResetEnvironment {
 				}
 				t += .1;
 			}
-			YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.innovationcloud.info:9080");
+			Document output = BDAServiceApi.callApi(env, createOrder.getDocument(), null, "multiApi");
 			YFCElement eCreateOrder = eReset.createChild("CreateOrder");
 			YFCElement eInput = eCreateOrder.createChild("Input");
 			eInput.importNode(createOrder);
 			YFCElement eOutput = eCreateOrder.createChild("Output");
-			eOutput.importNode(dOutput);
+			eOutput.importNode(YFCDocument.getDocumentFor(output));
 			created = true;
 			((YFSContext)env).commit();
 		} catch (IOException e) {
@@ -99,7 +99,7 @@ public class ResetEnvironment {
 		if(created){
 			try{
 				YFCDocument createOrder = YFCDocument.parse(ResetEnvironment.class.getResourceAsStream("multiApi_completeOrder.xml"));
-				YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.innovationcloud.info:9080");
+				YFCDocument dOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(env, createOrder.getDocument(), null, "multiApi"));
 				YFCElement eComplete = eReset.createChild("CompleteOrder1");
 				YFCElement eInput = eComplete.createChild("Input");
 				eInput.importNode(createOrder);
@@ -119,7 +119,7 @@ public class ResetEnvironment {
 			
 			try{
 				YFCDocument createOrder = YFCDocument.parse(ResetEnvironment.class.getResourceAsStream("multiApi_completeOrder.xml"));
-				YFCDocument dOutput = CallInteropServlet.invokeApi(createOrder, null, "multiApi", "http://oms.innovationcloud.info:9080");
+				YFCDocument dOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(env, createOrder.getDocument(), null, "multiApi"));
 				YFCElement eComplete = eReset.createChild("CompleteOrder2");
 				YFCElement eInput = eComplete.createChild("Input");
 				eInput.importNode(createOrder);

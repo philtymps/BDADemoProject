@@ -15,6 +15,7 @@ import org.apache.commons.json.JSONObject;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.CallInteropServlet;
 import com.ibm.sterling.afc.jsonutil.PLTJSONUtils;
 import com.yantra.interop.japi.YIFApi;
@@ -171,71 +172,5 @@ public class BDARestCall implements IBDAService {
 		
 	}
 
-	protected Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
-		if(!YFCCommon.isVoid(env)) {
-			YIFApi localApi;
-		    Document dOrderOutput = null;
-			try {
-				localApi = YIFClientFactory.getInstance().getLocalApi();
-				if(!YFCCommon.isVoid(dTemplate)){
-					env.setApiTemplate(sApiName, dTemplate);
-				}			
-				dOrderOutput = localApi.invoke(env, sApiName, inDoc);
-			} catch (YIFClientCreationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (YFSException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(!YFCCommon.isVoid(dOrderOutput)){
-				return dOrderOutput;
-			}
-			return null;
-		} else {
-			if(!YFCCommon.isVoid(dTemplate)) {
-				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
-			}
-			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
-		}
-		
-	
-	}
-	protected Document callService(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
-		if(!YFCCommon.isVoid(env)) {
-			YIFApi localApi;
-		    Document dOrderOutput = null;
-			try {
-				localApi = YIFClientFactory.getInstance().getLocalApi();
-				if(!YFCCommon.isVoid(dTemplate)){
-					env.setApiTemplate(sApiName, dTemplate);
-				}			
-				dOrderOutput = localApi.executeFlow(env, sApiName, inDoc);
-			} catch (YIFClientCreationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (YFSException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (RemoteException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(!YFCCommon.isVoid(dOrderOutput)){
-				return dOrderOutput;
-			}
-			return null;
-		} else {
-			if(!YFCCommon.isVoid(dTemplate)) {
-				return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), YFCDocument.getDocumentFor(dTemplate), sApiName, "https://oms.innovationcloud.info").getDocument();
-			}
-			return CallInteropServlet.invokeApi(YFCDocument.getDocumentFor(inDoc), null, sApiName, "https://oms.innovationcloud.info").getDocument();
-		}
-		
-	
-	}
 	
 }

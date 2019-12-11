@@ -12,6 +12,7 @@ import java.util.HashMap;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.extension.bda.userexits.ShippingChargeBreakdown;
 import com.mirakl.entity.MiraklTranslation;
 import com.yantra.interop.japi.YIFApi;
@@ -41,7 +42,7 @@ public class CalculateMiraklShippingCharges extends MiraklBase implements YPMCal
 			Document dOrder = getOrderDetails(localApi, env, eInput.getAttribute("OrderReference"));
 			if(!YFCCommon.isVoid(dOrder)){
 				YFCElement eOrder = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
-				eOutputShipping.setAttribute("ShippingCharge", generateShippingCharges(eOrder));
+				eOutputShipping.setAttribute("ShippingCharge", generateShippingCharges(env, eOrder));
 			}
 			
 		} catch (YIFClientCreationException e) {
@@ -51,7 +52,7 @@ public class CalculateMiraklShippingCharges extends MiraklBase implements YPMCal
 	}
 
 	
-	private double generateMiraklShippingCharges(YFCElement eOrder){
+	private double generateMiraklShippingCharges(YFSEnvironment env, YFCElement eOrder){
 		double shippingCharge = 0;
 	
 		String sQueryString = "offers=";
@@ -62,7 +63,7 @@ public class CalculateMiraklShippingCharges extends MiraklBase implements YPMCal
 						sQueryString += ",";
 					}
 					sQueryString += eOrderLine.getChildElement("Item").getAttribute("ItemID").replace("MKO_", "") + "|" + eOrderLine.getAttribute("OrderedQty");
-					String sCode = MiraklTranslation.getInstance(getMiraklTranslationDoc(), false).getMiraklValue("shipping_type_code", eOrderLine.getAttribute("CarrierServiceCode", eOrder.getAttribute("CarrierServiceCode", "STANDARD")));
+					String sCode = MiraklTranslation.getInstance(getMiraklTranslationDoc(env), false).getMiraklValue("shipping_type_code", eOrderLine.getAttribute("CarrierServiceCode", eOrder.getAttribute("CarrierServiceCode", "STANDARD")));
 					if(!YFCCommon.isVoid(sCode)){
 						sQueryString += "|" + sCode;
 					}
@@ -119,9 +120,9 @@ public class CalculateMiraklShippingCharges extends MiraklBase implements YPMCal
 		
 	}
 	
-	private double generateShippingCharges(YFCElement eOrder){
+	private double generateShippingCharges(YFSEnvironment env, YFCElement eOrder){
 		HashMap<String, YFCElement> carriers = new HashMap<String, YFCElement>();
-		carriers = getCarrierServiceData(carriers);
+		carriers = getCarrierServiceData(env, carriers);
 		double shippingCharge = 0;
 		HashMap<String, ShippingChargeBreakdown> charges = new HashMap<String, ShippingChargeBreakdown>();
 		for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){
@@ -156,15 +157,15 @@ public class CalculateMiraklShippingCharges extends MiraklBase implements YPMCal
 		for(String sKey : charges.keySet()){
 			shippingCharge += charges.get(sKey).getFee();
 		}
-		shippingCharge += this.generateMiraklShippingCharges(eOrder);
+		shippingCharge += this.generateMiraklShippingCharges(env, eOrder);
 		return shippingCharge;
 	}
 	
-	private HashMap<String, YFCElement> getCarrierServiceData(HashMap<String, YFCElement> mapCarriers){
+	private HashMap<String, YFCElement> getCarrierServiceData(YFSEnvironment env, HashMap<String, YFCElement> mapCarriers){
 		if(mapCarriers.size() > 0){
 			return mapCarriers;
 		}
-		File external = new File("/opt/Sterling/Scripts/carrierService.xml");
+		File external = new File(BDAServiceApi.getScriptsPath(env) + "/carrierService.xml");
 		YFCDocument dOutput = YFCDocument.createDocument("CarrierServiceCodes");
 		if(external.exists()){
 			dOutput = YFCDocument.getDocumentFor(external);

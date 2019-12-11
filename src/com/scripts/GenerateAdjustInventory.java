@@ -10,7 +10,9 @@ import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.object.DatabaseConnection;
 import com.extension.bda.service.expose.BDAEntityApi;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.extension.bda.service.iv.BDAClearInventory;
 import com.ibm.CallInteropServlet;
 import com.utilities.WSConnection;
@@ -57,16 +59,16 @@ public class GenerateAdjustInventory {
 		return this.properties.get(sProp);
 	}
 
-	private String getVariableFile() {
+	private String getVariableFile(YFSEnvironment env) {
 		if (!YFCCommon.isVoid(getProperty("variablefile"))) {
 			return (String) getProperty("variablefile");
 		}
-		return "/opt/Sterling/Scripts/variables.xml";
+		return BDAServiceApi.getScriptsPath(env) + "/variables.xml";
 	}
 
-	private HashMap<String, String> replaceVariables(YFCDocument dFileInput) {
+	private HashMap<String, String> replaceVariables(YFSEnvironment env, YFCDocument dFileInput) {
 		HashMap<String, String> variable = new HashMap<String, String>();
-		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile());
+		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		for (YFCElement eChild : temp.getDocumentElement().getChildren()) {
 			variable.put(eChild.getAttribute("Name"), eChild.getAttribute("Value"));
 		}
@@ -80,7 +82,7 @@ public class GenerateAdjustInventory {
 	public Document removeSpecialInventory(YFSEnvironment env, Document input) throws IOException {
 		YFCDocument dOutput = YFCDocument.createDocument("Output");
 		YFCElement eOutput = dOutput.getDocumentElement();
-		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
+		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		if (!YFCCommon.isVoid(dVariables)) {
 			BDAEntityApi entity = new BDAEntityApi();
 			YFCDocument dBaseRule = YFCDocument.createDocument("BaseRule");
@@ -98,13 +100,13 @@ public class GenerateAdjustInventory {
 					e.printStackTrace();
 				}
 			} else {
-				HashMap<String, String> vars = replaceVariables(dVariables);
-				WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
-				String sStatement = "DELETE FROM " + demoConn.getSchema()
+				HashMap<String, String> vars = replaceVariables(env, dVariables);
+				Connection conn = DatabaseConnection.getConnection(env);
+				String sStatement = "DELETE FROM " + DatabaseConnection.getDBSchema(env)
 						+ ".YFS_INVENTORY_SUPPLY WHERE INVENTORY_ITEM_KEY IN (SELECT INVENTORY_ITEM_KEY FROM "
-						+ demoConn.getSchema() + ".YFS_INVENTORY_ITEM WHERE ITEM_ID = ?)";
+						+ DatabaseConnection.getDBSchema(env) + ".YFS_INVENTORY_ITEM WHERE ITEM_ID = ?)";
 				try {
-					PreparedStatement ps = demoConn.getDBConnection().prepareStatement(sStatement);
+					PreparedStatement ps = conn.prepareStatement(sStatement);
 					for (String itemid : vars.values()) {
 						YFCElement eItem = eOutput.createChild("Item");
 						eItem.setAttribute("ItemID", itemid);
@@ -112,9 +114,6 @@ public class GenerateAdjustInventory {
 						ps.executeUpdate();
 					}
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -142,9 +141,9 @@ public class GenerateAdjustInventory {
 
 	private void createStandardInventoryForOrg(YFSEnvironment env, YFCElement eOutput, YFCElement eInput,
 			String sCatOrgCode, String sInventoryOrg) throws IOException {
-		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile());
+		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		if (!YFCCommon.isVoid(dVariables)) {
-			HashMap<String, String> vars = replaceVariables(dVariables);
+			HashMap<String, String> vars = replaceVariables(env, dVariables);
 			YFCElement eShipNodes;
 			if (!YFCCommon.isVoid(eInput.getAttribute("DistRuleId"))) {
 				eShipNodes = getOptimizerShipNodes(env, eInput, sInventoryOrg);
@@ -152,11 +151,11 @@ public class GenerateAdjustInventory {
 				eShipNodes = getShipNodes(env, eInput, sInventoryOrg);
 			}
 
-			WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
+			
 			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_ID LIKE 'SAMS%' AND I.ITEM_GROUP_CODE = 'PROD' AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = ? GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
 			Connection conn = null;
 			try {
-				conn = demoConn.getDBConnection();
+				conn = DatabaseConnection.getConnection(env);
 				PreparedStatement ps = conn.prepareStatement(sStatement);
 				ps.setString(1, sCatOrgCode);
 				ps.setString(2, sInventoryOrg);
@@ -175,9 +174,6 @@ public class GenerateAdjustInventory {
 					}
 				}
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (Exception e) {
@@ -205,11 +201,10 @@ public class GenerateAdjustInventory {
 					YFCElement eShipNode = eShipNodes.createChild("ShipNode");
 					eShipNode.setAttribute("ShipNode", eInput.getAttribute("ShipNode"));
 				} else {
-					WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
 					String sStatement = "SELECT DISTINCT TRIM(SHIPNODE_KEY) SHIPNODE_KEY FROM OMDB.YFS_SHIP_NODE WHERE SHIPNODE_KEY LIKE '%SG%' OR SHIPNODE_KEY LIKE '%VN%' OR SHIPNODE_KEY LIKE '%TH%'";
 					Connection conn = null;
 					try {
-						conn = demoConn.getDBConnection();
+						conn = DatabaseConnection.getConnection(env);
 						PreparedStatement ps = conn.prepareStatement(sStatement);
 						// ps.setString(1, sOrgCode);
 						ResultSet rso = ps.executeQuery();
@@ -218,9 +213,6 @@ public class GenerateAdjustInventory {
 							eShipNode.setAttribute("ShipNode", rso.getString("SHIPNODE_KEY"));
 						}
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} finally {
@@ -250,11 +242,10 @@ public class GenerateAdjustInventory {
 					YFCElement eShipNode = eShipNodes.createChild("ShipNode");
 					eShipNode.setAttribute("ShipNode", eInput.getAttribute("ShipNode"));
 				} else {
-					WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
 					String sStatement = "SELECT DISTINCT TRIM(SHIPNODE_KEY) SHIPNODE_KEY FROM OMDB.YFS_ITEM_SHIP_NODE WHERE TRIM(DISTRIBUTION_RULE_ID) = ?";
 					Connection conn = null;
 					try {
-						conn = demoConn.getDBConnection();
+						conn = DatabaseConnection.getConnection(env);
 						PreparedStatement ps = conn.prepareStatement(sStatement);
 						ps.setString(1, eInput.getAttribute("DistRuleId"));
 						ResultSet rso = ps.executeQuery();
@@ -263,9 +254,6 @@ public class GenerateAdjustInventory {
 							eShipNode.setAttribute("ShipNode", rso.getString("SHIPNODE_KEY"));
 						}
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} finally {
@@ -294,11 +282,10 @@ public class GenerateAdjustInventory {
 					YFCElement eShipNode = eShipNodes.createChild("ShipNode");
 					eShipNode.setAttribute("ShipNode", eInput.getAttribute("ShipNode"));
 				} else {
-					WSConnection demoConn = new WSConnection(WSConnection.class.getResourceAsStream("oms.properties"));
 					String sStatement = "SELECT DISTINCT TRIM(SHIPNODE_KEY) SHIPNODE_KEY FROM OMDB.YFS_ITEM_SHIP_NODE WHERE PRIORITY IN (1,2,5,7) AND TRIM(OWNER_KEY) in (SELECT TRIM(INVENTORY_ORGANIZATION_CODE) FROM OMDB.YFS_ORGANIZATION WHERE TRIM(ORGANIZATION_CODE) = ?)";
 					Connection conn = null;
 					try {
-						conn = demoConn.getDBConnection();
+						conn = DatabaseConnection.getConnection(env);
 						PreparedStatement ps = conn.prepareStatement(sStatement);
 						ps.setString(1, sOrgCode);
 						ResultSet rso = ps.executeQuery();
@@ -307,9 +294,6 @@ public class GenerateAdjustInventory {
 							eShipNode.setAttribute("ShipNode", rso.getString("SHIPNODE_KEY"));
 						}
 					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} finally {

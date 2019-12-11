@@ -3,6 +3,7 @@ package com.extension.bda.service.fulfillment;
 import java.io.File;
 import java.io.FileWriter;
 import java.rmi.RemoteException;
+import java.util.HashMap;
 import java.util.Properties;
 
 
@@ -15,7 +16,6 @@ import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
-import com.yantra.yfc.log.YFCLogCategory;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSException;
@@ -111,24 +111,45 @@ public class BDAServiceApi {
 		
 	
 	}
-	public String getDatabaseProperty(YFSEnvironment env, String category, String property) {
-		YFCDocument dInput = YFCDocument.createDocument("GetProperty");
-		YFCElement eInput = dInput.getDocumentElement();
-		if(!YFCCommon.isVoid(category)) {
-			eInput.setAttribute("Category", category);
-		}
-		
-		eInput.setAttribute("PropertyName", property);
-		Document dOutput = this.callApi(env, dInput.getDocument(), null, "getProperty");
-		if(!YFCCommon.isVoid(dOutput)) {
-			Element eOutput = dOutput.getDocumentElement();
-			if(!YFCCommon.isVoid(eOutput.getAttribute("PropertyValue"))) {
-				return eOutput.getAttribute("PropertyValue");
-			}
-		}
-		return null;
+	
+	private static HashMap<String, String> _properties;
+	public static synchronized void clearMap() {
+		_properties = new HashMap<String, String>();
 	}
 	
+	public static synchronized String getPropertyValue(YFSEnvironment env, String sProperty) {
+		if(_properties.containsKey(sProperty)) {
+			return _properties.get(sProperty);
+		}
+		YFCDocument input = YFCDocument.createDocument("GetProperty");
+		YFCElement eInput = input.getDocumentElement();
+		eInput.setAttribute("Propertyname", sProperty);
+		
+		try {
+			Document dResponse = BDAServiceApi.callApi(env, input.getDocument(), null, "getProperty");
+			_properties.put(sProperty, dResponse.getDocumentElement().getAttribute("PropertyValue"));
+			return dResponse.getDocumentElement().getAttribute("PropertyValue");
+		} catch (Exception e) {
+			return "";
+		}	
+	}
+	
+	public static synchronized String getScriptsPath(YFSEnvironment env) {
+		String path = getPropertyValue(env, "bda.scripts.filepath");
+		if(YFCCommon.isVoid(path)) {
+			path = "/opt/Sterling/Scripts";
+		}
+		return path;
+	}
+	
+	public static synchronized String getAgentsPath(YFSEnvironment env) {
+		String path = getPropertyValue(env, "bda.agents.filepath");
+		if(YFCCommon.isVoid(path)) {
+			path = "/opt/Sterling/Agents";
+		}
+		return path;
+	}
+
 	public boolean writeXML(String sPath, String sFile, YFCDocument output){
 		validatePath(sPath);
 		FileWriter fout;

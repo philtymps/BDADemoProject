@@ -10,6 +10,7 @@ import java.util.Properties;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.mirakl.entity.MiraklTranslation;
 import com.mirakl.utilities.MiraklUtils;
 import com.yantra.yfc.dom.YFCDocument;
@@ -75,18 +76,18 @@ public class UpdateInventory implements IBDAService {
 		return "SS_USA_DC";
 	}
 	
-	protected String getMiraklTranslationDoc(){
+	protected String getMiraklTranslationDoc(YFSEnvironment env){
 		if(p != null && p.contains("TRANSFORM-DOC")){
 			return p.getProperty("TRANSFORM-DOC");
 		}
-		return "/opt/Sterling/Scripts/MiraklTranslate.xml";
+		return BDAServiceApi.getScriptsPath(env) + "/MiraklTranslate.xml";
 	}
 	
-	protected String getMiraklShopDirectory(){
+	protected String getMiraklShopDirectory(YFSEnvironment env){
 		if(p != null && p.containsKey("DIRECTORY")){
 			return p.getProperty("DIRECTORY");
 		}
-		return "/opt/Sterling/Scripts/MiraklShopData";
+		return BDAServiceApi.getScriptsPath(env) + "/MiraklShopData";
 	}
 	
 	@Override
@@ -105,14 +106,14 @@ public class UpdateInventory implements IBDAService {
 				eOffer.createChild("internal_description").setNodeValue("null");
 				eOffer.createChild("shop_sku").setNodeValue(eInventoryItem.getAttribute("ItemID"));
 				eOffer.createChild("update_delete").setNodeValue("update");
-				String sMiraklValue = MiraklTranslation.getInstance(getMiraklTranslationDoc(), false).getMiraklValue("state_code", eInventoryItem.getAttribute("ProductClass", "Good"));
+				String sMiraklValue = MiraklTranslation.getInstance(getMiraklTranslationDoc(env), false).getMiraklValue("state_code", eInventoryItem.getAttribute("ProductClass", "Good"));
 				if(YFCCommon.isVoid(sMiraklValue)){
 					sMiraklValue = "11";
 				}
 				eOffer.createChild("state_code").setNodeValue(sMiraklValue);
 				eOffer.createChild("quantity").setNodeValue(eAvailabilityChange.getIntAttribute("OnhandAvailableQuantity", 0));
 				eOffer.createChild("price").setNodeValue(getItemPrice(env, getSellerOrg(), eInventoryItem.getAttribute("ItemID"), eInventoryItem.getAttribute("UnitOfMeasure")));
-				MiraklUtils.writeXML(getMiraklShopDirectory(), eInventoryItem.getAttribute("ItemID") + "_update.xml", dOffer);
+				MiraklUtils.writeXML(getMiraklShopDirectory(env), eInventoryItem.getAttribute("ItemID") + "_update.xml", dOffer);
 				return dOffer.getDocument();
 			}
 			

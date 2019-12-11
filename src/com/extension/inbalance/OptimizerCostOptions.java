@@ -39,10 +39,11 @@ import com.yantra.yfs.japi.ue.OMPGetExternalCostForOptionsUE;
 import com.yantra.yfs.japi.ue.OMPGetSourcingCorrectionsUE;
 import com.yantra.yfs.japi.ue.YFSCheckOrderBeforeProcessingUE;
 
-public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExternalCostForOptionsUE, YFSCheckOrderBeforeProcessingUE, OMPGetSourcingCorrectionsUE{
+public class OptimizerCostOptions extends BDAServiceApi
+		implements OMPGetExternalCostForOptionsUE, YFSCheckOrderBeforeProcessingUE, OMPGetSourcingCorrectionsUE {
 
 	private static final YFCLogCategory LOG = YFCLogCategory.instance(OMPGetExternalCostForOptionsUE.class.getName());
-	
+
 	public static final String E_COSTS = "Costs";
 	public static final String E_OTMZ_ERROR = "OptimizerError";
 	public static final String E_SHIP_TO_ADDRESS = "ShipToAddress";
@@ -60,48 +61,49 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 	public static final String INB_WEBSERVICE_GET_EXTERNAL_COST_OPTIONS_TIME = "inBalanceOTMZWebserviceTime";
 	public static final String INB_WEBSERVICE_ERROR = "InBalanceOptError";
 
-	public static final String[] VALID_PAYMENT_STATUSES = {"PAID","AUTHORIZED","INVOICED","NOT_APPLICABLE"};
-	//private final OptimizerRequest optRequest;
-	
-	public static void main(String[] args) throws SAXException, IOException, YFSUserExitException{
+	public static final String[] VALID_PAYMENT_STATUSES = { "PAID", "AUTHORIZED", "INVOICED", "NOT_APPLICABLE" };
+	// private final OptimizerRequest optRequest;
+
+	public static void main(String[] args) throws SAXException, IOException, YFSUserExitException {
 		OptimizerCostOptions o = new OptimizerCostOptions();
 		YFCDocument dInput = YFCDocument.getDocumentForXMLFile("/Users/pfaiola/DummyOrder.xml");
 		YFCElement eInput = dInput.getDocumentElement();
-		
-		eInput.setAttribute("OrderNo","OM" + System.currentTimeMillis());
+
+		eInput.setAttribute("OrderNo", "OM" + System.currentTimeMillis());
 		YFCDocument.getDocumentFor(o.getExternalCostForOptions(null, dInput.getDocument()));
 	}
-	
+
 	private static String getPropertyValue(String sPropertyName) {
 		String sPropertyValue = "";
-		if(!YFCCommon.isVoid(OTMZWebClient.props)){
-			if(!YFCCommon.isVoid(OTMZWebClient.props.getProperty(sPropertyName))){
+		if (!YFCCommon.isVoid(OTMZWebClient.props)) {
+			if (!YFCCommon.isVoid(OTMZWebClient.props.getProperty(sPropertyName))) {
 				return OTMZWebClient.props.getProperty(sPropertyName);
-			};
+			}
+			;
 		}
 		Properties props = new Properties();
 		try {
 			props.load(new FileInputStream("/opt/Sterling/runtime/properties/otmz.webclient.properties"));
-			if(!YFCCommon.isVoid(props.get(sPropertyName))){
+			if (!YFCCommon.isVoid(props.get(sPropertyName))) {
 				return props.getProperty(sPropertyName);
 			}
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		if(sPropertyName.equals("tenantId")){
+		if (sPropertyName.equals("tenantId")) {
 			return "sales";
-		} else if(sPropertyName.equals("rank.service.distance")){
+		} else if (sPropertyName.equals("rank.service.distance")) {
 			return "500";
-		} else if(sPropertyName.equals("rank.service.nodes.limit")){
+		} else if (sPropertyName.equals("rank.service.nodes.limit")) {
 			return "30";
 		}
 		return sPropertyValue;
 	}
-	
-	public OptimizerCostOptions(){
-	//	optRequest = new OptimizerRequest();
+
+	public OptimizerCostOptions() {
+		// optRequest = new OptimizerRequest();
 	}
-	
+
 	@Override
 	public boolean checkOrderBeforeProcessing(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
 		YFCDocument dInput = YFCDocument.getDocumentFor(inDoc);
@@ -109,63 +111,66 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 		env.setTxnObject("scheduleOrderInput", eOrder);
 		return Arrays.asList(VALID_PAYMENT_STATUSES).contains(eOrder.getAttribute("PaymentStatus").toUpperCase());
 	}
-	
+
 	public Document getExternalCostForOptions(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
 		LOG.beginTimer("getExternalCostForOptions");
 		Document outDoc = inDoc;
-		if(YFCCommon.equals(getDatabaseProperty(env, null, "woo.integration.enabled"), "true")) {
-			YFSContext ctx = (YFSContext)env;
+		if (YFCCommon.equals(getPropertyValue(env, "woo.integration.enabled"), "true")) {
+			YFSContext ctx = (YFSContext) env;
 			String sError = null;
 			long ts = System.currentTimeMillis();
-			try{
+			try {
 				Element inpEle = inDoc.getDocumentElement();
-	
+
 				LOG.debug("Input document to UE " + SCXmlUtil.getString(inDoc));
-				
+
 				String sOrderNo = inpEle.getAttribute("OrderNo");
 				removeAttributes(inpEle);
 				setOrderNoAndDate(ctx, inpEle, sOrderNo);
 				setCarrierService(inpEle);
 				LOG.debug("Input to Optimizer >>>" + SCXmlUtil.getString(inDoc));
-				
-				if(YFCCommon.equals(getDatabaseProperty(env, null, "woo.capture.input"), "true")) {
-					writeXML("/opt/Sterling/Woo/Orders", "Order_" + inpEle.getAttribute("OrderNo") + ".xml", YFCDocument.getDocumentFor(inDoc));
+
+				if (YFCCommon.equals(getPropertyValue(env, "woo.capture.input"), "true")) {
+					writeXML("/opt/Sterling/Woo/Orders", "Order_" + inpEle.getAttribute("OrderNo") + ".xml",
+							YFCDocument.getDocumentFor(inDoc));
 				}
-				
-				String srcPlanXmlStr = OTMZWebClient.getInstance("").invokeOptimizerApi(SCXmlUtil.getString(inDoc), MIME.APPLICATION_XML,"");
+
+				String srcPlanXmlStr = OTMZWebClient.getInstance("").invokeOptimizerApi(SCXmlUtil.getString(inDoc),
+						MIME.APPLICATION_XML, "");
 				outDoc = SCXmlUtil.createFromString(srcPlanXmlStr);
 				LOG.debug("Output from Optimizer >>>" + srcPlanXmlStr);
-	
-			}catch (OTMZWebClientException otex){
+
+			} catch (OTMZWebClientException otex) {
 				LOG.debug(otex);
 				otex.printStackTrace();
 				sError = "OTMZWebClientException : " + otex.getMessage();
-			}catch  (Exception ex){
+			} catch (Exception ex) {
 				LOG.debug(ex);
 				ex.printStackTrace();
 				sError = "Exception : " + ex.getMessage();
-			}		
-	
-			if(!SCUtil.isVoid(sError)){
+			}
+
+			if (!SCUtil.isVoid(sError)) {
 				Element eleOptimizerError = inDoc.createElement(E_OTMZ_ERROR);
 				inDoc.getDocumentElement().appendChild(eleOptimizerError);
-				eleOptimizerError.setAttribute(A_ERROR_STRING,	sError);
-	
+				eleOptimizerError.setAttribute(A_ERROR_STRING, sError);
+
 				inDoc.getDocumentElement().setAttribute(A_OTMZ_CALL_ERR, "YES");
 				LOG.debug("Error occurred in optimizer call ::" + sError);
 				LOG.debug("Error occurred returning input  ::" + SCXmlUtil.getString(inDoc));
-	
+
 				YFCStatisticsContextFactory.getContext().addToStatistic(INB_WEBSERVICE_ERROR, 1);
 				outDoc = inDoc;
-			}else{
+			} else {
 				outDoc = formUserExitOutput(outDoc);
 			}
-			YFCStatisticsContextFactory.getContext().addToStatistic(INB_WEBSERVICE_GET_EXTERNAL_COST_OPTIONS_TIME, (double)(System.currentTimeMillis() - ts));
+			YFCStatisticsContextFactory.getContext().addToStatistic(INB_WEBSERVICE_GET_EXTERNAL_COST_OPTIONS_TIME,
+					(double) (System.currentTimeMillis() - ts));
 		}
 		LOG.endTimer("getExternalCostForOptions");
 		return outDoc;
 	}
-	
+
 	public static void removeAttributes(Element ele) {
 		NamedNodeMap attrs = ele.getAttributes();
 		while (attrs.getLength() > 0) {
@@ -173,81 +178,88 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 		}
 	}
 
-	private String getTranslatedCarrierService(String sCarrierService){
-		if(!YFCCommon.isVoid(sCarrierService)){
-			if (sCarrierService.equals("1BUSDAY") || sCarrierService.contains("1") || sCarrierService.toUpperCase().contains("PREMIUM")){
+	private String getTranslatedCarrierService(String sCarrierService) {
+		if (!YFCCommon.isVoid(sCarrierService)) {
+			if (sCarrierService.equals("1BUSDAY") || sCarrierService.contains("1")
+					|| sCarrierService.toUpperCase().contains("PREMIUM")) {
 				return "FS";
-			} else if (sCarrierService.equals("2BUSDAY") || sCarrierService.contains("2") || sCarrierService.toUpperCase().contains("EXPRESS")){
+			} else if (sCarrierService.equals("2BUSDAY") || sCarrierService.contains("2")
+					|| sCarrierService.toUpperCase().contains("EXPRESS")) {
 				return "PS";
 			}
 		}
 		return "BW";
 	}
-	
+
 	private void setOrderNoAndDate(YFSContext ctx, Element inpEle, String sOrderNo) {
-		if(!YFCCommon.isVoid(sOrderNo)) {
+		if (!YFCCommon.isVoid(sOrderNo)) {
 			inpEle.setAttribute("OrderNo", sOrderNo);
 			inpEle.setAttribute("OrderDate", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(ctx.getDBDate()));
-		}else if(ctx == null || (!YFCCommon.isVoid(ctx.getCallName()) && ctx.getCallName().toUpperCase().contains("SCHEDULE"))){
-			if(ctx != null){
-				if(!YFCCommon.isVoid(ctx.getTxnObject("scheduleOrderInput"))){
+		} else if (ctx == null
+				|| (!YFCCommon.isVoid(ctx.getCallName()) && ctx.getCallName().toUpperCase().contains("SCHEDULE"))) {
+			if (ctx != null) {
+				if (!YFCCommon.isVoid(ctx.getTxnObject("scheduleOrderInput"))) {
 					YFCElement eOrderIn = (YFCElement) ctx.getTxnObject("scheduleOrderInput");
-					if(eOrderIn.hasAttribute("OrderNo")){
+					if (eOrderIn.hasAttribute("OrderNo")) {
 						String ip = RemoteServiceRequest.getPublicIP();
-						if(!ip.contains("127.0.0.1") && !ip.contains("10.0.0.2")){
+						if (!ip.contains("127.0.0.1") && !ip.contains("10.0.0.2")) {
 							inpEle.setAttribute("OrderNo", eOrderIn.getAttribute("OrderNo") + "_" + ip);
 						} else {
-							inpEle.setAttribute("OrderNo", eOrderIn.getAttribute("OrderNo") + "_" + Math.round(Math.random() * 10000));
+							inpEle.setAttribute("OrderNo",
+									eOrderIn.getAttribute("OrderNo") + "_" + Math.round(Math.random() * 10000));
 						}
 					} else {
 						inpEle.setAttribute("OrderNo", UUID.randomUUID().toString());
 					}
-					if(eOrderIn.hasAttribute("OrderDate")){
+					if (eOrderIn.hasAttribute("OrderDate")) {
 						inpEle.setAttribute("OrderDate", eOrderIn.getAttribute("OrderDate"));
 					} else {
-						inpEle.setAttribute("OrderDate", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(new Date()));
+						inpEle.setAttribute("OrderDate",
+								new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(new Date()));
 					}
-					
+
 				}
-			} 
-			
-			if(YFCCommon.isVoid(inpEle.getAttribute("OrderNo"))) {
+			}
+
+			if (YFCCommon.isVoid(inpEle.getAttribute("OrderNo"))) {
 				inpEle.setAttribute("OrderNo", UUID.randomUUID().toString());
 				inpEle.setAttribute("OrderDate", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(new Date()));
 			}
 		} else {
-	
-			//inpEle.setAttribute("OrderNo", UUID.randomUUID().toString());
-			if(YFCCommon.isVoid(inpEle.getAttribute("OrderNo"))) {
+
+			// inpEle.setAttribute("OrderNo", UUID.randomUUID().toString());
+			if (YFCCommon.isVoid(inpEle.getAttribute("OrderNo"))) {
 				inpEle.setAttribute("OrderNo", "Unpromised");
 			}
-	
-			if(ctx != null){
-				inpEle.setAttribute("OrderDate", new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(ctx.getDBDate()));
-			} 
-		}		
+
+			if (ctx != null) {
+				inpEle.setAttribute("OrderDate",
+						new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX").format(ctx.getDBDate()));
+			}
+		}
 	}
-	
-	
-	private void setCarrierService(Element ePromise){
+
+	private void setCarrierService(Element ePromise) {
 		String sCarrierService = null;
-		
-		for(Element ePromiseLine : SCXmlUtil.getChildrenList(SCXmlUtil.getChildElement(ePromise, "PromiseLines", true))) {
-			for(Element eAssignment : SCXmlUtil.getChildrenList(SCXmlUtil.getChildElement(ePromiseLine, "PossibleAssignments", true))){
-				if(sCarrierService != null){
+
+		for (Element ePromiseLine : SCXmlUtil
+				.getChildrenList(SCXmlUtil.getChildElement(ePromise, "PromiseLines", true))) {
+			for (Element eAssignment : SCXmlUtil
+					.getChildrenList(SCXmlUtil.getChildElement(ePromiseLine, "PossibleAssignments", true))) {
+				if (sCarrierService != null) {
 					eAssignment.setAttribute("CarrierServiceCode", sCarrierService);
-				} else if(SCUtil.isVoid(eAssignment.getAttribute("CarrierServiceCode"))){
+				} else if (SCUtil.isVoid(eAssignment.getAttribute("CarrierServiceCode"))) {
 					eAssignment.setAttribute("CarrierServiceCode", "BW");
 					sCarrierService = "BW";
 				} else {
-					sCarrierService =  getTranslatedCarrierService(eAssignment.getAttribute("CarrierServiceCode"));
+					sCarrierService = getTranslatedCarrierService(eAssignment.getAttribute("CarrierServiceCode"));
 					eAssignment.setAttribute("CarrierServiceCode", sCarrierService);
 				}
 			}
-			
-			if(sCarrierService != null){
+
+			if (sCarrierService != null) {
 				ePromiseLine.setAttribute("CarrierServiceCode", sCarrierService);
-			} else if(SCUtil.isVoid(ePromiseLine.getAttribute("CarrierServiceCode"))){
+			} else if (SCUtil.isVoid(ePromiseLine.getAttribute("CarrierServiceCode"))) {
 				ePromiseLine.setAttribute("CarrierServiceCode", "BW");
 				sCarrierService = "BW";
 			} else {
@@ -256,7 +268,7 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 			}
 		}
 	}
-	
+
 	public Document formUserExitOutput(Document optimizerOutput) {
 		LOG.beginTimer("formUserExitOutput");
 
@@ -266,22 +278,21 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 		for (int i = 0; i < iLength; i++) {
 			Element eleCost = (Element) nlCosts.item(i);
 
-			eleCost.setAttribute(A_NODE_PRIORITY_COST_PER_UNIT,	ZERO_COST);
-			eleCost.setAttribute(A_NODE_SHP_CAPACITY_COST_PER_UNIT,	ZERO_COST);
-			eleCost.setAttribute(A_OB_SHP_HANDLING_COST_PER_UNIT,ZERO_COST);
+			eleCost.setAttribute(A_NODE_PRIORITY_COST_PER_UNIT, ZERO_COST);
+			eleCost.setAttribute(A_NODE_SHP_CAPACITY_COST_PER_UNIT, ZERO_COST);
+			eleCost.setAttribute(A_OB_SHP_HANDLING_COST_PER_UNIT, ZERO_COST);
 			if (!SCUtil.isVoid(eleCost.getAttribute(A_ASSIGNMENT_PRIORITY))) {
-				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT,eleCost.getAttribute(A_ASSIGNMENT_PRIORITY));
+				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT, eleCost.getAttribute(A_ASSIGNMENT_PRIORITY));
 				eleCost.removeAttribute(A_ASSIGNMENT_PRIORITY);
 			} else {
-				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT,ZERO_COST);
+				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT, ZERO_COST);
 			}
 		}
 
 		LOG.endTimer("formUserExitOutput");
 		return optimizerOutput;
 	}
-	
-	
+
 	public Document formUserExitOutput(Document optimizerOutput, HashMap<String, ArrayList<Element>> promiseLineSku) {
 		LOG.beginTimer("formUserExitOutput");
 
@@ -291,21 +302,21 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 		for (int i = 0; i < iLength; i++) {
 			Element eleCost = (Element) nlCosts.item(i);
 
-			eleCost.setAttribute(A_NODE_PRIORITY_COST_PER_UNIT,	ZERO_COST);
-			eleCost.setAttribute(A_NODE_SHP_CAPACITY_COST_PER_UNIT,	ZERO_COST);
-			eleCost.setAttribute(A_OB_SHP_HANDLING_COST_PER_UNIT,ZERO_COST);
+			eleCost.setAttribute(A_NODE_PRIORITY_COST_PER_UNIT, ZERO_COST);
+			eleCost.setAttribute(A_NODE_SHP_CAPACITY_COST_PER_UNIT, ZERO_COST);
+			eleCost.setAttribute(A_OB_SHP_HANDLING_COST_PER_UNIT, ZERO_COST);
 			if (!SCUtil.isVoid(eleCost.getAttribute(A_ASSIGNMENT_PRIORITY))) {
-				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT,eleCost.getAttribute(A_ASSIGNMENT_PRIORITY));
+				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT, eleCost.getAttribute(A_ASSIGNMENT_PRIORITY));
 				eleCost.removeAttribute(A_ASSIGNMENT_PRIORITY);
 			} else {
-				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT,ZERO_COST);
+				eleCost.setAttribute(A_ITEM_INV_COST_PER_UNIT, ZERO_COST);
 			}
 		}
 		Element ePromiseLine = SCXmlUtil.getChildElement(optimizerOutput.getDocumentElement(), "PromiseLines", true);
-		for(String sSku : promiseLineSku.keySet()){
+		for (String sSku : promiseLineSku.keySet()) {
 			ArrayList<Element> aPromiseLine = promiseLineSku.get(sSku);
-			if(aPromiseLine.size() > 1){
-				for(int i = 1; i < aPromiseLine.size(); i++){
+			if (aPromiseLine.size() > 1) {
+				for (int i = 1; i < aPromiseLine.size(); i++) {
 					SCXmlUtil.importElement(ePromiseLine, aPromiseLine.get(i));
 				}
 			}
@@ -318,33 +329,34 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 	public Document getSourcingCorrections(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
 		LOG.beginTimer("getSourcingCorrections in GetSourcingCorrection");
 		Document outDoc = inDoc;
-		if(YFCCommon.equals(getDatabaseProperty(env, null, "woo.integration.enabled"), "true")) {
-			if(!YFCCommon.isVoid(inDoc)){
+		if (YFCCommon.equals(getPropertyValue(env, "woo.integration.enabled"), "true")) {
+			if (!YFCCommon.isVoid(inDoc)) {
 				YFCDocument root = YFCDocument.getDocumentFor(inDoc);
-				try  {
+				try {
 					String inputJson = convertXml2Json(root);
 					LOG.debug("Converted2JSON: " + inputJson);
 					String tenantID = getPropertyValue("tenantId");
 					String serviceName = "rank";
 					LOG.debug("tenantID:: " + tenantID + " serviceName::" + serviceName);
-					String outputJson = OTMZWebClient.getInstance(tenantID).invokeOptimizerApi(inputJson, MIME.APPLICATION_JSON, serviceName);
-	
+					String outputJson = OTMZWebClient.getInstance(tenantID).invokeOptimizerApi(inputJson,
+							MIME.APPLICATION_JSON, serviceName);
+
 					LOG.debug("\n outputJson >>>>>>>>>" + outputJson);
-	
+
 					YFCDocument outputDoc = convertJson2Xml(outputJson);
 					LOG.debug("\n" + outputDoc.toString());
 					outDoc = outputDoc.getDocument();
-				} catch (Exception e){
+				} catch (Exception e) {
 					e.printStackTrace();
 					outDoc = inDoc;
 				}
 			}
 		}
 		LOG.endTimer("getSourcingCorrections in GetSourcingCorrection");
-		
+
 		return outDoc;
 	}
-	
+
 	private YFCDocument convertJson2Xml(String outputJson) throws JSONException {
 
 		LOG.debug("outputJson : " + outputJson);
@@ -374,22 +386,25 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 
 		return outDoc;
 	}
-	
 
-	private String convertXml2Json(YFCDocument documentFor)	throws JSONException {
+	private String convertXml2Json(YFCDocument documentFor) throws JSONException {
 		YFCElement rootElem = documentFor.getDocumentElement();
 		JSONObject inputJson = new JSONObject();
 
-		//Element firstPromiseLine = SCXmlUtil.getFirstChildElement(SCXmlUtil
-		//		.getChildElement(inDoc.getDocumentElement(), "PromiseLines"));
-		/*if(!YFCCommon.isVoid(rootElem.getChildElement("PromiseLines", true).getChildElement("PromiseLine"))){
-			inputJson.put("orderId", rootElem.getChildElement("PromiseLines", true).getChildElement("PromiseLine").getAttribute("OrderLineReference", "MissingOrderLineReference"));
-		}*/
-		
-		//inputJson.put("orderId", "Junk-Number-111");
+		// Element firstPromiseLine = SCXmlUtil.getFirstChildElement(SCXmlUtil
+		// .getChildElement(inDoc.getDocumentElement(), "PromiseLines"));
+		/*
+		 * if(!YFCCommon.isVoid(rootElem.getChildElement("PromiseLines",
+		 * true).getChildElement("PromiseLine"))){ inputJson.put("orderId",
+		 * rootElem.getChildElement("PromiseLines",
+		 * true).getChildElement("PromiseLine").getAttribute("OrderLineReference",
+		 * "MissingOrderLineReference")); }
+		 */
+
+		// inputJson.put("orderId", "Junk-Number-111");
 		inputJson.put("orderId", rootElem.getAttribute("OrderNo"));
-		inputJson.put("distToConsider",	getPropertyValue("rank.service.distance"));
-		inputJson.put("rankNodesLimit",	getPropertyValue("rank.service.nodes.limit"));
+		inputJson.put("distToConsider", getPropertyValue("rank.service.distance"));
+		inputJson.put("rankNodesLimit", getPropertyValue("rank.service.nodes.limit"));
 
 		YFCElement addressElem = rootElem.getChildElement("ShipToAddress");
 		JSONObject address = new JSONObject();
@@ -404,11 +419,12 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 			line.put("lineId", lineElem.getAttribute("LineId"));
 			line.put("requiredQuantity", lineElem.getAttribute("RequiredQty"));
 			line.put("unitOfMeasure", "EACH");
-			if(!YFCCommon.isVoid(lineElem.getAttribute("CarrierServiceCode"))){
-				line.put("carrierServiceCode",this.getTranslatedCarrierService(lineElem.getAttribute("CarrierServiceCode")));
+			if (!YFCCommon.isVoid(lineElem.getAttribute("CarrierServiceCode"))) {
+				line.put("carrierServiceCode",
+						this.getTranslatedCarrierService(lineElem.getAttribute("CarrierServiceCode")));
 			} else {
 				line.put("carrierServiceCode", "BW");
-			}			
+			}
 			YFCElement lineAddressElem = lineElem.getChildElement("ShipToAddress");
 			JSONObject lineAddress = new JSONObject();
 			lineAddress.put("zipCode", lineAddressElem.getAttribute("ZipCode"));
@@ -433,7 +449,4 @@ public class OptimizerCostOptions extends BDAServiceApi implements OMPGetExterna
 		return inputJson.toString();
 	}
 
-
 }
-
-

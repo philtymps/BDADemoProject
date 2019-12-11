@@ -8,6 +8,7 @@ import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.ycp.japi.YCPDynamicConditionEx;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -24,7 +25,7 @@ private Map props = null;
 		YFCElement eShipment = dInput.getDocumentElement();
 		for(YFCElement eShipmentLine : eShipment.getChildElement("ShipmentLines", true).getChildren()){
 			if(!YFCCommon.isVoid(eShipmentLine.getAttribute("ItemID"))){
-				if(isRentalItem(eShipmentLine.getAttribute("ItemID"))){
+				if(isRentalItem(env, eShipmentLine.getAttribute("ItemID"))){
 					return true;
 				}
 			}
@@ -32,10 +33,10 @@ private Map props = null;
 		return false;
 	}
 
-	public static boolean isRentalItem(String sItemID){
-		File temp = new File("/opt/Sterling/Scripts/rentalItems.xml");
+	public static boolean isRentalItem(YFSEnvironment env, String sItemID){
+		File temp = new File(BDAServiceApi.getScriptsPath(env) + "/rentalItems.xml");
 		if(temp.exists()){
-			YFCDocument rentalItems = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/rentalItems.xml");
+			YFCDocument rentalItems = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/rentalItems.xml");
 			YFCElement eRentalItems = rentalItems.getDocumentElement();
 			for(YFCElement eRentalItem : eRentalItems.getChildren()){
 				if(YFCCommon.equals(eRentalItem.getAttribute("ItemID"), sItemID)){

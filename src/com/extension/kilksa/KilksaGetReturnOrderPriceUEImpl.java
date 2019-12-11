@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientFactory;
 import com.yantra.yfc.dom.YFCDocument;
@@ -18,10 +19,10 @@ public class KilksaGetReturnOrderPriceUEImpl implements OMPGetReturnOrderPriceUE
 
 	private static HashMap<String, ArrayList<String>> itemMap = null;
 	
-	private void loadMap(boolean reload){
+	private void loadMap(YFSEnvironment env, boolean reload){
 		if (itemMap == null || reload){
 			itemMap = new HashMap<String, ArrayList<String>>();
-			YFCDocument eLookFor = YFCDocument.getDocumentForXMLFile("/opt/Sterling/Scripts/ue/KilkReturnItems.xml");
+			YFCDocument eLookFor = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/ue/KilkReturnItems.xml");
 			for (YFCElement eItem : eLookFor.getDocumentElement().getChildren()){
 				if (!YFCCommon.isVoid(eItem.getAttribute("ItemID"))){
 					ArrayList<String> children = null;
@@ -78,7 +79,7 @@ public class KilksaGetReturnOrderPriceUEImpl implements OMPGetReturnOrderPriceUE
 	@Override
 	public Document getReturnOrderPrice(YFSEnvironment env, Document inDoc) throws YFSUserExitException {
 		HashMap<String, YFCElement> dOrders = new HashMap<String, YFCElement>();
-		loadMap(true);
+		loadMap(env, true);
 		if(!YFCCommon.isVoid(itemMap) && !itemMap.isEmpty()){
 			YFCElement eOrder = YFCDocument.getDocumentFor(inDoc).getDocumentElement();
 			for(YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){

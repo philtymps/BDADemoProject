@@ -229,10 +229,6 @@ public class CallInteropServlet {
 		}
 		return null;
 	}
-	public static void main(String[] args) {
-		
-		System.out.println(invokeApi(getFindInventoryInput(), getFindInventoryTemplate(), "findInventory", "http://oms.innovationcloud.info:9080"));
 
-	}
 
 }

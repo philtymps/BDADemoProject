@@ -12,6 +12,7 @@ import org.json.JSONObject;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.expose.BDARestCall;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.google.gson.Gson;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
@@ -90,7 +91,7 @@ public class BDARecalculateLineTax extends BDARestCall implements YFSRecalculate
 		YFCElement eOrg = dInput.getDocumentElement();
 		eOrg.setAttribute("OrganizationCode", sShipNode);
 		
-		return this.callApi(env, dInput.getDocument(), getOrgTemplate(), "getOrganizationHierarchy");
+		return BDAServiceApi.callApi(env, dInput.getDocument(), getOrgTemplate(), "getOrganizationHierarchy");
 	}
 	
 	private YFSExtnTaxCalculationOutStruct convertFromJson(JSONObject obj) {

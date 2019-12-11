@@ -139,11 +139,11 @@ public class BDASynchronizeItems extends BDASynchronization {
 	}
 	
 	
-	private ArrayList<String> getExistingCategoryDomains(){
+	private ArrayList<String> getExistingCategoryDomains(YFSEnvironment env){
 		ArrayList<String> cDomains = new ArrayList<String>();
 		Connection dbConn = null;
 		try {
-			dbConn = getOMSConnection();
+			dbConn = getOMSConnection(env);
 			String sSql = "SELECT CATEGORY_DOMAIN_KEY, CATEGORY_DOMAIN, ORGANIZATION_CODE, ATTRIBUTE_NAME, AUTH_SUB_CAT_ORG_CODE FROM OMDB.YFS_CATEGORY_DOMAIN";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
@@ -165,11 +165,11 @@ public class BDASynchronizeItems extends BDASynchronization {
 		return cDomains;
 	}
 	
-	private HashMap<String, HashMap<String, String>> getExistingItems(){
+	private HashMap<String, HashMap<String, String>> getExistingItems(YFSEnvironment env){
 		HashMap<String, HashMap<String, String>> existingItems = new HashMap<String, HashMap<String, String>>();
 		Connection dbConn = null;
 		try {
-			dbConn = getOMSConnection();
+			dbConn = getOMSConnection(env);
 			String sSql = "SELECT TRIM(ITEM_KEY) ITEM_KEY, TRIM(ITEM_ID) ITEM_ID, TRIM(ORGANIZATION_CODE) ORGANIZATION_CODE FROM OMDB.YFS_ITEM";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
@@ -198,14 +198,14 @@ public class BDASynchronizeItems extends BDASynchronization {
 	
 	private static ArrayList<String> existingCategories = null;
 	
-	public static ArrayList<String> getExistingCategories(){
+	public static ArrayList<String> getExistingCategories(YFSEnvironment env){
 		if(existingCategories != null){
 			return existingCategories;
 		}
 		existingCategories = new ArrayList<String>();
 		Connection dbConn = null;
 		try {
-			dbConn = getOMSConnection();
+			dbConn = getOMSConnection(env);
 			String sSql = "SELECT TRIM(CATEGORY_KEY) CATEGORY_KEY FROM OMDB.YFS_CATEGORY";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
@@ -275,7 +275,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 						}
 					}
 				}
-				ArrayList<String> existingDomains = getExistingCategoryDomains();
+				ArrayList<String> existingDomains = getExistingCategoryDomains(env);
 				//YFCElement eCatDomains = YFCDocument.createDocument("MultiApi").getDocumentElement();
 				YFCElement eCatDomains = eMultiDoc;
 				for(String sKey : categories.keySet()){
@@ -382,16 +382,16 @@ public class BDASynchronizeItems extends BDASynchronization {
 	            yex.printStackTrace();
 	            return dMultiDoc.getDocument();
 	        }*/
-			getListPrices(eMultiDoc);
+			getListPrices(env, eMultiDoc);
 		}
 		if (eServiceInput.getBooleanAttribute("LoadCatalogItems", true)){
 			
 			try {
-				Connection dbConn = getOMSConnection();
+				Connection dbConn = getOMSConnection(env);
 				/*String sDeleteSql = "DELETE FROM " + this.getOMSDBSchema() + ".YFS_CATEGORY_ITEM WHERE MODIFYTS > '2015-01-01'";
 				PreparedStatement p = dbConn.prepareStatement(sDeleteSql);
 				p.execute();*/
-				HashMap<String, ArrayList<String>> map = getExistingCategoryMap();
+				HashMap<String, ArrayList<String>> map = getExistingCategoryMap(env);
 				String sSql = "INSERT INTO " + this.getOMSDBSchema() + ".YFS_CATEGORY_ITEM (CATEGORY_ITEM_KEY, CATEGORY_KEY, ITEM_KEY) VALUES (?,?,?)";
 				String sCheck = "Select * from " + this.getOMSDBSchema() + ".YFS_CATEGORY_ITEM WHERE ITEM_KEY = ? AND CATEGORY_KEY = ?";
 				String sCategoryCheck = "SELECT * FROM " + this.getOMSDBSchema() + ".YFS_CATEGORY WHERE CATEGORY_KEY = ?";
@@ -567,7 +567,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 		return orgToCatalog;
 	}
 	
-	private void getListPrices(YFCElement eMultiDoc){
+	private void getListPrices(YFSEnvironment env, YFCElement eMultiDoc){
 		Connection dbConn = null;
 		Connection omdbConn = null;
 		try {
@@ -578,7 +578,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 			
 			ResultSet rs = ps.executeQuery();
 			
-			omdbConn = getOMSConnection();
+			omdbConn = getOMSConnection(env);
 			String sOMSql = "SELECT TRIM(I.ITEM_ID) ITEM_ID, TRIM(C.CATEGORY_DOMAIN_KEY) CATEGORY_DOMAIN_KEY FROM OMDB.YFS_ITEM I INNER JOIN OMDB.YFS_CATEGORY_ITEM CI ON I.ITEM_KEY = CI.ITEM_KEY INNER JOIN OMDB.YFS_CATEGORY C ON C.CATEGORY_KEY = CI.CATEGORY_KEY WHERE C.CATEGORY_DOMAIN_KEY LIKE '%_CD5%' AND I.ITEM_ID NOT IN (SELECT ITEM_ID FROM OMDB.YPM_PRICELIST_LINE) ORDER BY C.CATEGORY_DOMAIN_KEY";
 			PreparedStatement pso = omdbConn.prepareStatement(sOMSql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			ResultSet rso = pso.executeQuery();
@@ -755,7 +755,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 	}
 	
 	private void getProductRecords (Map<String, Item> createdItems, YFSEnvironment env){
-		HashMap<String, HashMap<String, String>> existing = getExistingItems();
+		HashMap<String, HashMap<String, String>> existing = getExistingItems(env);
 		try {
 			Connection dbConn = getCommerceConnection();
 			String sSql = "SELECT C.BASEITEM_ID, C.CATENTRY_ID, C.ITEMSPC_ID, C.PARTNUMBER AS ITEM_ID, 'PROD' AS ITEM_GROUP_CODE, TRIM(CD.NAME) AS NAME, CD.SHORTDESCRIPTION, CD.LONGDESCRIPTION, "
@@ -982,7 +982,7 @@ public class BDASynchronizeItems extends BDASynchronization {
 	
 	private void removeExistingRelationships(HashMap<String, HashMap<String, Category>> categories, Map<String, Item> items, YFSEnvironment env){
 		try {
-			Connection dbConn = getOMSConnection();
+			Connection dbConn = getOMSConnection(env);
 			String sSql = "SELECT TRIM(C.CATEGORY_ID) CATEGORY_ID, TRIM(C.ORGANIZATION_CODE) ORGANIZATION_CODE, TRIM(I.ITEM_ID) ITEM_ID, TRIM(C.CATEGORY_KEY) CATEGORY_KEY FROM " + this.getOMSDBSchema() + ".YFS_CATEGORY_ITEM CI INNER JOIN " + this.getOMSDBSchema() + ".YFS_CATEGORY C ON C.CATEGORY_KEY = CI.CATEGORY_KEY INNER JOIN " + this.getOMSDBSchema() + ".YFS_ITEM I ON CI.ITEM_KEY = I.ITEM_KEY";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
 			ResultSet rs = ps.executeQuery();
@@ -1016,10 +1016,10 @@ public class BDASynchronizeItems extends BDASynchronization {
 		}
 	}
 	
-	private HashMap<String, ArrayList<String>> getExistingCategoryMap(){
+	private HashMap<String, ArrayList<String>> getExistingCategoryMap(YFSEnvironment env){
 		HashMap<String, ArrayList<String>> t = new HashMap<String, ArrayList<String>>();
 		try {
-			Connection dbConn = getOMSConnection();
+			Connection dbConn = getOMSConnection(env);
 			
 			String sSql = "Select TRIM(CATEGORY_KEY) CATEGORY_KEY, TRIM(ITEM_KEY) ITEM_KEY FROM OMDB.YFS_CATEGORY_ITEM ORDER BY CATEGORY_KEY, ITEM_KEY";
 			PreparedStatement ps = dbConn.prepareStatement(sSql);
