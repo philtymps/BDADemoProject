@@ -23,4 +23,8 @@ public class BDACommon {
 			return a == b;
 		}
 	}
+	
+	public static String getValue(Object c) {
+		return (String) c;
+	}
 }
