@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'docker cp /opt/Sterling/runtime/jar/yfsextn/1_0/yfsextn.jar om-runtime:/opt/SSFS_9.5/runtime/external_deployments/smcfs.ear/lib/yfsextn.jar'
+        sh 'docker cp /opt/Sterling/runtime/jar/yfsextn/1_0/yfsextn.jar om-runtime:/opt/SSFS_9.5/runtime/jar/yfsextn/1_0/yfsextn.jar'
+      }
+    }
+
   }
 }
