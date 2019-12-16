@@ -7,19 +7,17 @@
  ******************************************************************************/
 package com.ibm.mobile.dataprovider;
 
-
-import com.yantra.interop.japi.YIFApi;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 
 public class BDAUnitOfMeasureProvider implements IBDADataProvider {
 		
-	public void addAdditionalData(YIFApi localApi, YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
+	public void addAdditionalData(YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
 		if(interestingElement.hasAttribute("DistanceUOM") && !interestingElement.hasAttribute("DistanceUOMDesc") && YFCCommon.equals(sAttribute,"DistanceUOMDesc")){
 			String uom = interestingElement.getAttribute("DistanceUOM");
 			if(!YFCCommon.isVoid(uom)){
-				interestingElement.setAttribute("DistanceUOMDesc", BDADataProviderUtils.getUomDescription(context, localApi, uom, "DIMENSION"));
+				interestingElement.setAttribute("DistanceUOMDesc", BDADataProviderUtils.getUomDescription(context, uom, "DIMENSION"));
 			}
 		}
 	}

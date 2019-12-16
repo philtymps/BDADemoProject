@@ -7,7 +7,6 @@
  ******************************************************************************/
 package com.ibm.mobile.dataprovider;
 
-import com.yantra.interop.japi.YIFApi;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.log.YFCLogCategory;
 import com.yantra.yfc.util.YFCCommon;
@@ -18,17 +17,17 @@ public class BDAOrderLineDataProvider implements IBDADataProvider {
 	private static YFCLogCategory cat = YFCLogCategory.instance(BDAOrderLineDataProvider.class.getName());
 	
 	@Override
-	public void addAdditionalData(YIFApi localApi, YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
+	public void addAdditionalData(YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
 		if(interestingElement != null){
 			String callingOrg = BDADataProviderUtils.getOrganizationCode(apiInput, apiOutput, interestingElement);
 			if (interestingElement.hasAttribute("DeliveryMethod") && !interestingElement.hasAttribute("DeliveryMethodName") && YFCCommon.equals(sAttribute, "DeliveryMethodName")){
-				String temp = BDADataProviderUtils.getCommonCodeShortDescription(context, localApi, interestingElement.getAttribute("DeliveryMethod"), "DELIVERY_METHOD", null, null);
+				String temp = BDADataProviderUtils.getCommonCodeShortDescription(context, interestingElement.getAttribute("DeliveryMethod"), "DELIVERY_METHOD", null, null);
 				if(!YFCCommon.isVoid(temp)){
 					interestingElement.setAttribute("DeliveryMethodName", temp);
 				}
 			}
 			if (interestingElement.hasAttribute("ReturnReason") && !interestingElement.hasAttribute("ReturnReasonDesc") && YFCCommon.equals(sAttribute, "ReturnReasonDesc")){
-				String temp = BDADataProviderUtils.getCommonCodeShortDescription(context, localApi, interestingElement.getAttribute("ReturnReason"), "RETURN_REASON", callingOrg, null);
+				String temp = BDADataProviderUtils.getCommonCodeShortDescription(context, interestingElement.getAttribute("ReturnReason"), "RETURN_REASON", callingOrg, null);
 				if(!YFCCommon.isVoid(temp)){
 					interestingElement.setAttribute("ReturnReasonDesc", temp);
 				}
@@ -41,17 +40,17 @@ public class BDAOrderLineDataProvider implements IBDADataProvider {
 				}
 			}*/
 			if (interestingElement.hasAttribute("CarrierServiceCode") && !interestingElement.hasAttribute("CarrierServiceName") && !YFCCommon.isVoid(interestingElement.getAttribute("CarrierServiceCode")) && YFCCommon.equals(sAttribute, "CarrierServiceName")) {
-				interestingElement.setAttribute("CarrierServiceName", BDADataProviderUtils.getCarrierServiceDescription(context, localApi, callingOrg, interestingElement.getAttribute("CarrierServiceCode")));
+				interestingElement.setAttribute("CarrierServiceName", BDADataProviderUtils.getCarrierServiceDescription(context, callingOrg, interestingElement.getAttribute("CarrierServiceCode")));
 			}
 			if (interestingElement.hasAttribute("SCAC") && !interestingElement.hasAttribute("SCACName") && !YFCCommon.isVoid(interestingElement.getAttribute("SCAC")) && YFCCommon.equals(sAttribute, "SCACName")) {
-				interestingElement.setAttribute("SCACName", BDADataProviderUtils.getSCACName(context, localApi, callingOrg, interestingElement.getAttribute("SCAC")));
+				interestingElement.setAttribute("SCACName", BDADataProviderUtils.getSCACName(context, callingOrg, interestingElement.getAttribute("SCAC")));
 			}
 			/* if (interestingElement.hasAttribute("ShipToKey") && !interestingElement.hasAttribute("AddressDisplay") && !YFCCommon.isVoid(interestingElement.getAttribute("ShipToKey"))) {
 				interestingElement.setAttribute("AddressDisplay", SCCSDataProviderUtils.getPersonInfoDescription(context, localApi, interestingElement.getAttribute("ShipToKey")));
 			} */
 
 			if(interestingElement.hasAttribute("TransactionalUOM") && !interestingElement.hasAttribute("DisplayTransactionalUOM") && YFCCommon.equals(sAttribute, "DisplayTransactionalUOM")){
-				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, localApi, callingOrg);
+				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, callingOrg);
 				
 				if(YFCCommon.equals("Y",sHideUOMRule)){
 					YFCElement elemOrderLine = (YFCElement) interestingElement.getParentNode();
@@ -67,7 +66,7 @@ public class BDAOrderLineDataProvider implements IBDADataProvider {
 					if(YFCCommon.isVoid(uom)) {
 						interestingElement.setAttribute("DisplayTransactionalUOM", "");
 					} else if(!YFCCommon.isVoid(callingOrg) && !YFCCommon.isVoid(itemGroupCode)){
-						String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context, localApi,uom,callingOrg,itemGroupCode);
+						String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context, uom,callingOrg,itemGroupCode);
 						interestingElement.setAttribute("DisplayTransactionalUOM", desc);
 						//Rule is configured to use transactional UOM. Evaluating transaction UOM description and set display format from bundle entry.
 						interestingElement.setAttribute("UOMDisplayFormat", "formattedQty");
@@ -88,7 +87,7 @@ public class BDAOrderLineDataProvider implements IBDADataProvider {
 			}
 			
 			if(interestingElement.hasAttribute("UnitOfMeasure") && !interestingElement.hasAttribute("DisplayUnitOfMeasure") && YFCCommon.equals(sAttribute, "DisplayUnitOfMeasure")){
-				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, localApi, callingOrg);
+				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, callingOrg);
 				
 				if(YFCCommon.equals("Y",sHideUOMRule)){
 					String itemGroupCode = null;
@@ -117,7 +116,7 @@ public class BDAOrderLineDataProvider implements IBDADataProvider {
 					if(YFCCommon.isVoid(uom)) {
 						interestingElement.setAttribute("DisplayUnitOfMeasure", "");
 					} else if(!YFCCommon.isVoid(callingOrg) && !YFCCommon.isVoid(itemGroupCode)){
-						String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context, localApi,uom,callingOrg,itemGroupCode);
+						String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context, uom,callingOrg,itemGroupCode);
 						interestingElement.setAttribute("DisplayUnitOfMeasure", desc);
 						//Rule is configured to use inventory UOM. Evaluating inventory UOM description and set display format from bundle entry.
 						interestingElement.setAttribute("UOMDisplayFormat", "formattedQty");

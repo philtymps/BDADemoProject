@@ -20,6 +20,7 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import com.ibm.sterling.afc.jsonutil.PLTJSONUtils;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.ibm.mobile.dataprovider.IBDADataProvider;
 import com.ibm.sterling.G11N;
 import com.ibm.sterling.Utils;
@@ -48,48 +49,41 @@ public class InteropJSONServlet extends InteropHttpServlet {
 	private static HashMap<String, IBDADataProvider> dataProviders;
 	
 	
-	private static HashMap<String, IBDADataProvider> getDataProviders(){
+	private static HashMap<String, IBDADataProvider> getDataProviders(YFSEnvironment env){
 		if(dataProviders == null){
 			dataProviders = new HashMap<String, IBDADataProvider>();
-			try {
-				YFCDocument dDocument = YFCDocument.parse(InteropJSONServlet.class.getResourceAsStream("BDADataProvider.xml"));
-				YFCElement eAdditionalDataProviders = dDocument.getDocumentElement();
-				HashMap<String, IBDADataProvider> existingClasses = new HashMap<String, IBDADataProvider>();
-				for(YFCElement eAdditionalDataProvider : eAdditionalDataProviders.getChildren()){
-					try {
-						if (!existingClasses.containsKey(eAdditionalDataProvider.getAttribute("class"))){
-							Class<?> clazz = Class.forName(eAdditionalDataProvider.getAttribute("class"));
-							IBDADataProvider temp = (IBDADataProvider) clazz.newInstance();
-							existingClasses.put(eAdditionalDataProvider.getAttribute("class"), temp);
-						}
-						IBDADataProvider dataClass = existingClasses.get(eAdditionalDataProvider.getAttribute("class"));
-						if (!YFCCommon.isVoid(dataClass)){
-							YFCElement eInterestedIn = eAdditionalDataProvider.getChildElement("InterestedIn", true);
-							for(YFCElement eElement : eInterestedIn.getChildren("Element")){
-								for(YFCElement eNewAttribute : eAdditionalDataProvider.getChildElement("NewAttributes", true).getChildren()){
-									String sXPath = eElement.getAttribute("path") + "/@" + eNewAttribute.getAttribute("name");
-									dataProviders.put(sXPath, dataClass);
-								}
+			YFCDocument dDocument = YFCDocument.getDocumentForXMLFile(BDAServiceApi.getScriptsPath(env) + "/BDADataProvider.xml");
+
+			YFCElement eAdditionalDataProviders = dDocument.getDocumentElement();
+			HashMap<String, IBDADataProvider> existingClasses = new HashMap<String, IBDADataProvider>();
+			for(YFCElement eAdditionalDataProvider : eAdditionalDataProviders.getChildren()){
+				try {
+					if (!existingClasses.containsKey(eAdditionalDataProvider.getAttribute("class"))){
+						Class<?> clazz = Class.forName(eAdditionalDataProvider.getAttribute("class"));
+						IBDADataProvider temp = (IBDADataProvider) clazz.newInstance();
+						existingClasses.put(eAdditionalDataProvider.getAttribute("class"), temp);
+					}
+					IBDADataProvider dataClass = existingClasses.get(eAdditionalDataProvider.getAttribute("class"));
+					if (!YFCCommon.isVoid(dataClass)){
+						YFCElement eInterestedIn = eAdditionalDataProvider.getChildElement("InterestedIn", true);
+						for(YFCElement eElement : eInterestedIn.getChildren("Element")){
+							for(YFCElement eNewAttribute : eAdditionalDataProvider.getChildElement("NewAttributes", true).getChildren()){
+								String sXPath = eElement.getAttribute("path") + "/@" + eNewAttribute.getAttribute("name");
+								dataProviders.put(sXPath, dataClass);
 							}
 						}
-					} catch (ClassNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (InstantiationException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IllegalAccessException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
 					}
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (InstantiationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IllegalAccessException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
-			} catch (SAXException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} 
+			}
 		}
 		return dataProviders;
 	}
@@ -124,7 +118,7 @@ public class InteropJSONServlet extends InteropHttpServlet {
 			if(!YFCCommon.isVoid(input)){
 				String apiName = input.getString("InteropApiName");
 				if(isAuthorized(apiName, request)){
-					HttpSession session = request.getSession(false);
+					request.getSession(false);
 					if(apiName != null){
 						handleJSONApiRequest(request, input, response);
 					}
@@ -254,14 +248,6 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		if(input.has("IsFlow")){
 			isFlow = input.getString("IsFlow");
 		}
-		String envProgId = null;
-		if(input.has("progId")){
-			envProgId = input.getString("progId");
-		}
-		
-		String envUserId = getParameter(req, "YFSEnvironment.userId");
-		
-
 		JSONObject apiData = null;
 		if(input.has("InteropApiData")){
 			apiData = input.getJSONObject("InteropApiData");
@@ -455,16 +441,15 @@ public class InteropJSONServlet extends InteropHttpServlet {
 		}
 	}
 	private void runDataProviderLogic(YFSEnvironment context, IBDADataProvider dataProvider, YFCDocument response, YFCDocument dInput, String sNode, String sAttribute){
-		YFCNodeList nodes = response.getElementsByTagName(sNode);
-		for (Object node : nodes){
-			YFCElement eElement = (YFCElement) node;
-			dataProvider.addAdditionalData(localApi, context, dInput.getDocumentElement(), response.getDocumentElement(), eElement, sAttribute);
+		YFCNodeList<YFCElement> nodes = response.getElementsByTagName(sNode);
+		for (YFCElement eElement : nodes){
+			dataProvider.addAdditionalData(context, dInput.getDocumentElement(), response.getDocumentElement(), eElement, sAttribute);
 		}
 	}
 	
 	private void evaluateDataProviders(YFSEnvironment context, YFCDocument dTemplate, YFCDocument response, YFCDocument dInput){
 		YFCElement eTemplate = dTemplate.getDocumentElement();
-		for(String sPath : getDataProviders().keySet()){
+		for(String sPath : getDataProviders(context).keySet()){
 			YFCElement eEvalNode = eTemplate;
 			String evalPath = sPath;
 			if (evalPath.startsWith("/")){
@@ -474,7 +459,7 @@ public class InteropJSONServlet extends InteropHttpServlet {
 			if (YFCCommon.equals(eTemplate.getNodeName(), elements[0])){
 				for(int i = 1; i < elements.length; i++){
 					if (elements[i].startsWith("@") && eEvalNode.hasAttribute(elements[i].substring(1))){
-						IBDADataProvider clazz = getDataProviders().get(sPath);
+						IBDADataProvider clazz = getDataProviders(context).get(sPath);
 						runDataProviderLogic(context, clazz, response, dInput, elements[i-1], elements[i].substring(1));
 					} else if (!YFCCommon.isVoid(eEvalNode.getChildElement(elements[i]))){
 						eEvalNode = eEvalNode.getChildElement(elements[i]);

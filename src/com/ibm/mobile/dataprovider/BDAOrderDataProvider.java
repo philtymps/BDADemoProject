@@ -7,7 +7,6 @@
  ******************************************************************************/
 package com.ibm.mobile.dataprovider;
 
-import com.yantra.interop.japi.YIFApi;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
@@ -15,11 +14,11 @@ import com.yantra.yfs.japi.YFSEnvironment;
 public class BDAOrderDataProvider implements IBDADataProvider {
 	
 	@Override
-	public void addAdditionalData(YIFApi localApi, YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
+	public void addAdditionalData(YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
 		if(interestingElement != null){
 			if (interestingElement.hasAttribute("EntryType") && !interestingElement.hasAttribute("DisplayEntryType") && !YFCCommon.isVoid(interestingElement.getAttribute("EntryType")) && YFCCommon.equals(sAttribute, "DisplayEntryType")){
 				String sCodeValue = interestingElement.getAttribute("EntryType");
-				String description = BDADataProviderUtils.getCommonCodeShortDescription(context, localApi, sCodeValue,  "YCD_CHANNEL",  null, null);
+				String description = BDADataProviderUtils.getCommonCodeShortDescription(context, sCodeValue,  "YCD_CHANNEL",  null, null);
 				if(YFCCommon.isVoid(description)){
 					description=sCodeValue;
 				}
@@ -27,7 +26,7 @@ public class BDAOrderDataProvider implements IBDADataProvider {
 			}
 			if (interestingElement.hasAttribute("ExchangeType") && !interestingElement.hasAttribute("DisplayExchangeType") && !YFCCommon.isVoid(interestingElement.getAttribute("ExchangeType")) && YFCCommon.equals(sAttribute, "DisplayEntryType")){
 				String sCodeValue = interestingElement.getAttribute("ExchangeType");
-				String description = BDADataProviderUtils.getCommonCodeShortDescription(context, localApi, sCodeValue,  "EXCHANGE_TYPE",  null, null);
+				String description = BDADataProviderUtils.getCommonCodeShortDescription(context, sCodeValue,  "EXCHANGE_TYPE",  null, null);
 				if(YFCCommon.isVoid(description)){
 					description=sCodeValue;
 				}
@@ -35,7 +34,7 @@ public class BDAOrderDataProvider implements IBDADataProvider {
 			}
 			if (interestingElement.hasAttribute("PaymentStatus") && !interestingElement.hasAttribute("PaymentStatusDesc") && !YFCCommon.isVoid(interestingElement.getAttribute("PaymentStatus")) && YFCCommon.equals(sAttribute, "PaymentStatusDesc")){
 				String sCodeValue = interestingElement.getAttribute("PaymentStatus");
-				String description = BDADataProviderUtils.getPaymentStatusDesc(context, localApi, sCodeValue);
+				String description = BDADataProviderUtils.getPaymentStatusDesc(context, sCodeValue);
 				if(YFCCommon.isVoid(description)){
 					description=sCodeValue;
 				}
@@ -43,7 +42,7 @@ public class BDAOrderDataProvider implements IBDADataProvider {
 			}
 			if (interestingElement.hasAttribute("BillToID") && !interestingElement.hasAttribute("CustomerMasterOrganizationCode") && !YFCCommon.isVoid(interestingElement.getAttribute("BillToID")) && !YFCCommon.isVoid(interestingElement.getAttribute("EnterpriseCode")) && YFCCommon.equals(sAttribute, "DisplayEntryType")){
 				String enterpriseCode = interestingElement.getAttribute("EnterpriseCode");
-				interestingElement.setAttribute("CustomerMasterOrganizationCode", BDADataProviderUtils.getCustomerMasterOrg(context, localApi, enterpriseCode));
+				interestingElement.setAttribute("CustomerMasterOrganizationCode", BDADataProviderUtils.getCustomerMasterOrg(context, enterpriseCode));
 			}
 		}
 	}

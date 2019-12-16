@@ -7,7 +7,6 @@
  ******************************************************************************/
 package com.ibm.mobile.dataprovider;
 
-import com.yantra.interop.japi.YIFApi;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
@@ -15,12 +14,12 @@ import com.yantra.yfs.japi.YFSEnvironment;
 public class BDAStatusDataProvider implements IBDADataProvider {
 	
 	@Override
-	public void addAdditionalData(YIFApi localApi, YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
+	public void addAdditionalData(YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
 		if(interestingElement != null) {
 			if (YFCCommon.equals(interestingElement.getNodeName(), "Customer")) {
 				if (interestingElement.hasAttribute("AggregateStatus") && !interestingElement.hasAttribute("AggregateStatusDescription") && YFCCommon.equals(sAttribute, "AggregateStatusDescription")) {
 					String sCodeValue = interestingElement.getAttribute("AggregateStatus");
-					String description = BDADataProviderUtils.getCommonCodeShortDescription(context, localApi, sCodeValue,  "CUSTOMER_STATUS",  null, null);
+					String description = BDADataProviderUtils.getCommonCodeShortDescription(context, sCodeValue,  "CUSTOMER_STATUS",  null, null);
 					if(!YFCCommon.isVoid(description)){
 						interestingElement.setAttribute("AggregateStatusDescription", description);
 					}
@@ -30,7 +29,7 @@ public class BDAStatusDataProvider implements IBDADataProvider {
 					String sStatus = interestingElement.getAttribute("Status");
 					String sOrgCode = BDADataProviderUtils.getOrganizationCode(apiInput, apiOutput, interestingElement);
 					if(!YFCCommon.isVoid(sStatus) && !YFCCommon.isVoid(sOrgCode)){
-						String sDescription = BDADataProviderUtils.getShipmentStatusDescription(context, localApi, sStatus, sOrgCode);
+						String sDescription = BDADataProviderUtils.getShipmentStatusDescription(context, sStatus, sOrgCode);
 						if(!YFCCommon.isVoid(sDescription)){
 							interestingElement.setAttribute("StatusDescription", sDescription);
 						} else {

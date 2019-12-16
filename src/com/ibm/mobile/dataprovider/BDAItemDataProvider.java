@@ -7,7 +7,6 @@
  ******************************************************************************/
 package com.ibm.mobile.dataprovider;
 
-import com.yantra.interop.japi.YIFApi;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
@@ -15,7 +14,7 @@ import com.yantra.yfs.japi.YFSEnvironment;
 public class BDAItemDataProvider implements IBDADataProvider {
 
 	@Override
-	public void addAdditionalData(YIFApi localApi, YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
+	public void addAdditionalData(YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
 	
 		if(interestingElement != null){
 			String callingOrg = getOrganizationCode(apiOutput, interestingElement, apiInput);
@@ -23,14 +22,14 @@ public class BDAItemDataProvider implements IBDADataProvider {
 				callingOrg = getOrganizationCode(apiOutput, interestingElement.getParentElement().getParentElement(), apiInput);
 			}
 			if(interestingElement.hasAttribute("UnitOfMeasure") && !interestingElement.hasAttribute("DisplayUnitOfMeasure")){
-				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, localApi, callingOrg);
+				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, callingOrg);
 				String uom = interestingElement.getAttribute("UnitOfMeasure");
 				String itemGroupCode = interestingElement.getAttribute("ItemGroupCode");
 				if (interestingElement.getNodeName().equals("AlternateUOM") && YFCCommon.isVoid(itemGroupCode)){
 					itemGroupCode = interestingElement.getParentElement().getParentElement().getAttribute("ItemGroupCode");
 				}
 				if(!YFCCommon.isVoid(uom) && !YFCCommon.isVoid(callingOrg) && !YFCCommon.isVoid(itemGroupCode)){
-					String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context,localApi,uom,callingOrg,itemGroupCode);
+					String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context,uom,callingOrg,itemGroupCode);
 					interestingElement.setAttribute("DisplayUnitOfMeasure", desc);
 				}
 				if(!YFCCommon.equals("H",sHideUOMRule)){
@@ -43,7 +42,7 @@ public class BDAItemDataProvider implements IBDADataProvider {
 			}
 			
 			if(interestingElement.hasAttribute("ComponentUnitOfMeasure") && !interestingElement.hasAttribute("DisplayComponentUnitOfMeasure")){
-				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, localApi, callingOrg);
+				String sHideUOMRule = BDADataProviderUtils.getUOMDisplayRuleValue(context, callingOrg);
 				
 				if(!YFCCommon.equals("H",sHideUOMRule)){
 					//Rule is configured to use transactional UOM. Evaluating transaction UOM description and set display format from bundle entry.
@@ -53,7 +52,7 @@ public class BDAItemDataProvider implements IBDADataProvider {
 					String itemGroupCode = interestingElement.getAttribute("ComponentItemGroupCode");
 					
 					if(!YFCCommon.isVoid(uom) && !YFCCommon.isVoid(callingOrg) && !YFCCommon.isVoid(itemGroupCode)){
-						String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context,localApi,uom,callingOrg,itemGroupCode);
+						String desc = BDADataProviderUtils.getUnitOfMeasureDescription(context,uom,callingOrg,itemGroupCode);
 						interestingElement.setAttribute("DisplayComponentUnitOfMeasure", desc);
 					}
 				}else {

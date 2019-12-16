@@ -7,11 +7,9 @@
  ******************************************************************************/
 package com.ibm.mobile.dataprovider;
 
-import java.rmi.RemoteException;
 import java.text.MessageFormat;
-import org.w3c.dom.Document;
 
-import com.yantra.interop.japi.YIFApi;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.dom.YFCNodeList;
@@ -20,7 +18,6 @@ import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfc.util.YFCI18NUtils;
 import com.yantra.yfc.util.YFCLocale;
 import com.yantra.yfs.japi.YFSEnvironment;
-import com.yantra.yfs.japi.YFSException;
 
 public class BDADataProviderUtils {
 
@@ -191,7 +188,7 @@ public class BDADataProviderUtils {
 		}
 	}
 	
-	public static String getUomDescription (YFSEnvironment context, YIFApi localApi, String sUnitOfMeasure, String sUomType) {
+	public static String getUomDescription (YFSEnvironment context, String sUnitOfMeasure, String sUomType) {
 		BDASimpleCache<String, String> map = getUnitOfMeasureMap();
 		if (!map.containsKey(sUomType + "_" + sUnitOfMeasure)) {
 			YFCDocument dInput = YFCDocument.createDocument("Uom");
@@ -209,7 +206,7 @@ public class BDADataProviderUtils {
 			eU.setAttribute("UomDescription", "");
 			eU.setAttribute("UomType", "");
 			
-			YFCElement eOutput = invokeApi(localApi, context,"getUomList", dInput.getDocument(), null);
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), null, "getUomList")).getDocumentElement();
 			for (YFCElement eOrg : eOutput.getChildren()){
 				map.put(eOrg.getAttribute("UomType") + "_" + eOrg.getAttribute("Uom"), eOrg.getAttribute("UomDescription"));
 			}
@@ -217,7 +214,7 @@ public class BDADataProviderUtils {
 		return map.get(sUomType + "_" + sUnitOfMeasure);
 	}
 	
-	public static String getShipmentStatusDescription (YFSEnvironment context, YIFApi localApi, String sStatus, String sOrganizationCode) {
+	public static String getShipmentStatusDescription (YFSEnvironment context, String sStatus, String sOrganizationCode) {
 		BDASimpleCache<String, String> map = getStatusMap();
 		if (!map.containsKey(sStatus + "_" + sOrganizationCode)) {
 			YFCDocument dInput = YFCDocument.createDocument("Status");
@@ -232,7 +229,8 @@ public class BDADataProviderUtils {
 			eU.setAttribute("Description", "");
 			eU.setAttribute("StatusName", "");
 			
-			YFCElement eOutput = invokeApi(localApi, context,"getStatusList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getStatusList")).getDocumentElement();
+
 			for (YFCElement eStatus : eOutput.getChildren()){
 				map.put(eStatus.getAttribute("Status") + "_" + sOrganizationCode, eStatus.getAttribute("StatusName"));
 			}
@@ -240,7 +238,7 @@ public class BDADataProviderUtils {
 		return map.get(sStatus + "_" + sOrganizationCode);
 	}
 	
-	public static String getCarrierServiceDescription (YFSEnvironment context, YIFApi localApi, String sCallingOrg, String sCarrierServiceCode) {
+	public static String getCarrierServiceDescription (YFSEnvironment context, String sCallingOrg, String sCarrierServiceCode) {
 		BDASimpleCache<String, String> map = getCarrierServiceCodeMap();
 		if (!map.containsKey("CARRIER_" + sCallingOrg + "_" + sCarrierServiceCode)) {
 			YFCDocument dInput = YFCDocument.createDocument("CarrierService");
@@ -252,7 +250,7 @@ public class BDADataProviderUtils {
 			YFCElement eC = dTemplate.getDocumentElement().createChild("CarrierService");
 			eC.setAttribute("CarrierServiceCode", "");
 			eC.setAttribute("CarrierServiceDesc", "");
-			YFCElement eOutput = invokeApi(localApi, context,"getCarrierServiceList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getCarrierServiceList")).getDocumentElement();
 			for (YFCElement eOrg : eOutput.getChildren()){
 				map.put("CARRIER_" + sCallingOrg + "_" + eOrg.getAttribute("CarrierServiceCode"), eOrg.getAttribute("CarrierServiceDesc"));
 			}
@@ -260,7 +258,7 @@ public class BDADataProviderUtils {
 		return map.get("CARRIER_" + sCallingOrg + "_" + sCarrierServiceCode);
 	}
 	
-	public static String getSCACName (YFSEnvironment context, YIFApi localApi, String sCallingOrg, String sScac) {
+	public static String getSCACName (YFSEnvironment context, String sCallingOrg, String sScac) {
 		BDASimpleCache<String, String> map = getCarrierServiceCodeMap();
 		if (!map.containsKey("SCAC_" + sCallingOrg + "_" + sScac)) {
 			YFCDocument dInput = YFCDocument.createDocument("Scac");
@@ -273,7 +271,7 @@ public class BDADataProviderUtils {
 			eO.setAttribute("Scac", "");
 			eO.setAttribute("ScacDesc", "");
 			eO.setAttribute("OrganizationCode", "");
-			YFCElement eOutput = invokeApi(localApi, context,"getScacList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getScacList")).getDocumentElement();
 			for (YFCElement eOrg : eOutput.getChildren()){
 				map.put("SCAC_" + sCallingOrg + "_" + eOrg.getAttribute("Scac"), eOrg.getAttribute("ScacDesc"));
 			}
@@ -281,34 +279,34 @@ public class BDADataProviderUtils {
 		return map.get("SCAC_" + sCallingOrg + "_" + sScac);
 	}
 	
-	public static String getPaymentStatusDesc(YFSEnvironment context, YIFApi localApi, String sPaymentStatus){
+	public static String getPaymentStatusDesc(YFSEnvironment context, String sPaymentStatus){
 		BDASimpleCache<String, String> map = getPaymentStatusMap();
 		if (!map.containsKey(sPaymentStatus)) {
 			YFCDocument dInput = YFCDocument.createDocument("PaymentStatus");
-			YFCElement eInput = dInput.getDocumentElement();
 			YFCDocument dTemplate = YFCDocument.createDocument("PaymentStatusList");
 			YFCElement eO = dTemplate.getDocumentElement().createChild("PaymentStatus");
 			eO.setAttribute("CodeType", "");
 			eO.setAttribute("Description", "");
-			YFCElement eOutput = invokeApi(localApi, context,"getPaymentStatusList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getPaymentStatusList")).getDocumentElement();
+			
 			for (YFCElement eOrg : eOutput.getChildren()){
 				map.put(eOrg.getAttribute("CodeType"), eOrg.getAttribute("Description"));
 			}
 		}
 		return map.get(sPaymentStatus);
 	}
-	public static String getUnitOfMeasureDescription(YFSEnvironment context, YIFApi localApi,String uom, String callingOrg, String itemGroupCode) {
+	public static String getUnitOfMeasureDescription(YFSEnvironment context, String uom, String callingOrg, String itemGroupCode) {
 		BDASimpleCache<String, String> mapDesc = getUnitOfMeasureMap();
 		String key = getUOMKey(uom, callingOrg, itemGroupCode);
 		if (mapDesc.containsKey(key)){
 			return mapDesc.get(key);
 		} else {
-			populateUOMDesc(context, localApi, uom, callingOrg, itemGroupCode, mapDesc);
+			populateUOMDesc(context, uom, callingOrg, itemGroupCode, mapDesc);
 			return mapDesc.get(key);
 		}
 	}
 	
-	private static void populateUOMDesc(YFSEnvironment context, YIFApi localApi, String uom,String callingOrg, String itemGroupCode, BDASimpleCache<String, String> mapDesc) {
+	private static void populateUOMDesc(YFSEnvironment context, String uom,String callingOrg, String itemGroupCode, BDASimpleCache<String, String> mapDesc) {
 		YFCDocument dInput = YFCDocument.createDocument("ItemUOMMaster");
 		YFCElement eInput = dInput.getDocumentElement();
 
@@ -322,7 +320,8 @@ public class BDADataProviderUtils {
 		eU.setAttribute("UnitOfMeasure","");
 		eU.setAttribute("ItemGroupCode","");
 		
-		YFCElement eOutput = invokeApi(localApi, context,"getItemUOMMasterList", dInput.getDocument(), dTemplate.getDocument());
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getItemUOMMasterList")).getDocumentElement();
+
 		for (YFCElement eUOM : eOutput.getChildren()){
 			mapDesc.put(getUOMKey(eUOM.getAttribute("UnitOfMeasure"), callingOrg, itemGroupCode), eUOM.getAttribute("Description"));
 		}
@@ -333,7 +332,7 @@ public class BDADataProviderUtils {
 		return uom+callingOrg+itemGroupCode;
 	}
 	
-	public static YFCElement getOrgAndDocTypeForOrderHeaderKey(YFSEnvironment context, YIFApi localApi, String sOrderHeaderKey){
+	public static YFCElement getOrgAndDocTypeForOrderHeaderKey(YFSEnvironment context, String sOrderHeaderKey){
 		YFCDocument dInput = YFCDocument.createDocument("Order");
 		YFCElement eInput = dInput.getDocumentElement();
 		
@@ -345,7 +344,8 @@ public class BDADataProviderUtils {
 			eOrder.setAttribute("DocumentType", "");
 			eOrder.setAttribute("EnterpriseCode", "");
 			eOrder.setAttribute("SellerOrganizationCode", "");
-			YFCElement eOutput = invokeApi(localApi, context,"getOrderList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getOrderList")).getDocumentElement();
+
 			if (!YFCCommon.isVoid(eOutput.getChildElement("Order"))){
 				return eOutput.getChildElement("Order");
 			}
@@ -353,7 +353,7 @@ public class BDADataProviderUtils {
 		return null;
 	}
 	
-	public static String getUOMDisplayRuleValue(YFSEnvironment context, YIFApi localApi, String callingOrg){
+	public static String getUOMDisplayRuleValue(YFSEnvironment context,  String callingOrg){
 		BDASimpleCache<String, String> map = getRuleMap();
 		String key = callingOrg + "_" + "YCD_USE_TRANSACTIONAL_QUANTITY";
 		if (!map.containsKey(key)) {
@@ -367,7 +367,8 @@ public class BDADataProviderUtils {
 			eR.setAttribute("RuleType","");
 			eR.setAttribute("OrganizationCode","");
 			eR.setAttribute("DocumentType","");
-			YFCElement ruleOutput = invokeApi(localApi, context,"getRuleDetails", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement ruleOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getRuleDetails")).getDocumentElement();
+
 			String ruleValue = ruleOutput.getAttribute("RuleSetValue");
 			
 			map.put(key, ruleValue);
@@ -384,19 +385,19 @@ public class BDADataProviderUtils {
 	public static String getPaymentTypeDescription (YFSEnvironment context, YIFApi localApi, String sPaymentType, String sEnterpriseCode){
 		return getPaymenType(context, sEnterpriseCode, sPaymentType);
 	}*/
-	public static String getLocaleForOrg(YFSEnvironment context, YIFApi localApi, String sOrganizationCode){ 
+	public static String getLocaleForOrg(YFSEnvironment context, String sOrganizationCode){ 
 		BDASimpleCache<String, String> map = getOrgLocaleMap();
 		if (map != null && map.containsKey(sOrganizationCode)){
 			return map.get(sOrganizationCode);
 		}
-		populateOrgLocale(map, context, localApi, sOrganizationCode);
+		populateOrgLocale(map, context, sOrganizationCode);
 		return map.get(sOrganizationCode);
 	}
 	
-	public static String getCurrencyForOrg(YFSEnvironment context, YIFApi localApi, String sOrganizationCode){
-		String sLocale = getLocaleForOrg(context, localApi, sOrganizationCode);
+	public static String getCurrencyForOrg(YFSEnvironment context, String sOrganizationCode){
+		String sLocale = getLocaleForOrg(context, sOrganizationCode);
 		if(!YFCCommon.isVoid(sLocale)){
-			YFCElement eLocale = getLocaleDetails(context, localApi, sLocale);
+			YFCElement eLocale = getLocaleDetails(context, sLocale);
 			if (!YFCCommon.isVoid(eLocale)){
 				return eLocale.getAttribute("Currency");
 			}
@@ -404,57 +405,57 @@ public class BDADataProviderUtils {
 		return null;
 	}
 	
-	public static String getPaymentTypeDescription (YFSEnvironment context, YIFApi localApi, String sPaymentType, String sEnterpriseCode){
+	public static String getPaymentTypeDescription (YFSEnvironment context, String sPaymentType, String sEnterpriseCode){
 		BDASimpleCache<String, String> map = getCodeShortDescriptionMap();
 		String codeKey = getCodeKey(sPaymentType, sEnterpriseCode, "PAYMENT_TYPE");
 		if (map != null && map.containsKey(codeKey)){
 			return map.get(codeKey);
 		}
-		populatePaymenType(map, context, localApi, sEnterpriseCode, sPaymentType);
+		populatePaymenType(map, context, sEnterpriseCode, sPaymentType);
 		return map.get(codeKey);
 	}
 	
-	public static String getCommonCodeDescription (YFSEnvironment context, YIFApi localApi, String sCodeValue, String sCodeType, String sEnterpriseCode, String sDocumentType){
+	public static String getCommonCodeDescription (YFSEnvironment context,  String sCodeValue, String sCodeType, String sEnterpriseCode, String sDocumentType){
 		BDASimpleCache<String, String> map = getCodeLongDescriptionMap();
 		String codeKey = getCodeKey(sCodeValue, sEnterpriseCode, sDocumentType, sCodeType);
 		if (map != null && map.containsKey(codeKey)){
 			return map.get(codeKey);
 		}
-		populateCode(map, context, localApi, sEnterpriseCode, sDocumentType, sCodeType);
+		populateCode(map, context,  sEnterpriseCode, sDocumentType, sCodeType);
 		return map.get(codeKey);
 	}
 	
-	public static String getCommonCodeShortDescription(YFSEnvironment context, YIFApi localApi, String sCodeValue, String sCodeType, String sEnterpriseCode, String sDocumentType){
+	public static String getCommonCodeShortDescription(YFSEnvironment context, String sCodeValue, String sCodeType, String sEnterpriseCode, String sDocumentType){
 		BDASimpleCache<String, String> map = getCodeShortDescriptionMap();
 		String codeKey = getCodeKey(sCodeValue, sEnterpriseCode, sDocumentType, sCodeType);
 		if (map != null && map.containsKey(codeKey)){
 			return map.get(codeKey);
 		}
-		populateShortCode(map, context, localApi, sEnterpriseCode, sDocumentType, sCodeType);
+		populateShortCode(map, context, sEnterpriseCode, sDocumentType, sCodeType);
 		return map.get(codeKey);
 	}
 	
-	public static String getChargeNameDescription (YFSEnvironment context, YIFApi localApi, String sChargeName, String sEnterpriseCode, String sDocumentType){
+	public static String getChargeNameDescription (YFSEnvironment context,  String sChargeName, String sEnterpriseCode, String sDocumentType){
 		BDASimpleCache<String, String> map = getChargeNameMap();
 		String codeKey = getCodeKey(sChargeName, sEnterpriseCode, sDocumentType);
 		if (map != null && map.containsKey(codeKey)){
 			return map.get(codeKey);
 		}
-		populateChargeName(map, context, localApi, sEnterpriseCode, sDocumentType, sChargeName);
+		populateChargeName(map, context, sEnterpriseCode, sDocumentType, sChargeName);
 		return map.get(codeKey);
 	}
 	
-	public static String getHoldTypeDescription (YFSEnvironment context, YIFApi localApi, String sHoldType, String sEnterpriseCode, String sDocumentType, String sProcessTypeKey){
+	public static String getHoldTypeDescription (YFSEnvironment context, String sHoldType, String sEnterpriseCode, String sDocumentType, String sProcessTypeKey){
 		BDASimpleCache<String, String> map = getHoldTypeCache();
 		String codeKey = getCodeKey(sHoldType, sEnterpriseCode, sDocumentType, sProcessTypeKey);
 		if (map != null && map.containsKey(codeKey)){
 			return map.get(codeKey);
 		}
-		populateHoldType(map, context, localApi, sEnterpriseCode, sDocumentType, sHoldType, sProcessTypeKey);
+		populateHoldType(map, context, sEnterpriseCode, sDocumentType, sHoldType, sProcessTypeKey);
 		return map.get(codeKey);
 	}
 	
-	public static String getCustomerMasterOrg(YFSEnvironment context, YIFApi localApi, String org){
+	public static String getCustomerMasterOrg(YFSEnvironment context, String org){
 		BDASimpleCache<String, String> mapOrg = getCustomerMasterOrg();
 		if (mapOrg.containsKey(org)){
 			return mapOrg.get(org);
@@ -468,7 +469,8 @@ public class BDADataProviderUtils {
 			eOrganization.setAttribute("LocaleCode", "");
 			eOrganization.setAttribute("OrganizationName", "");
 			eOrganization.setAttribute("CustomerMasterOrganizationCode", "");
-			YFCElement eOutput = invokeApi(localApi, context,"getOrganizationList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getOrganizationList")).getDocumentElement();
+
 			for (YFCElement eOrg : eOutput.getChildren()){
 				mapOrg.put(eOrg.getAttribute("OrganizationCode"), eOrg.getAttribute("CustomerMasterOrganizationCode"));
 			}
@@ -477,7 +479,7 @@ public class BDADataProviderUtils {
 
 	}
 	
-	public static String getOrganizationName(YFSEnvironment context, YIFApi localApi, String sCode){
+	public static String getOrganizationName(YFSEnvironment context, String sCode){
 		BDASimpleCache<String, String> mapOrg = getOrgNameMap();
 		if (mapOrg.containsKey(sCode)){
 			return mapOrg.get(sCode);
@@ -490,7 +492,8 @@ public class BDADataProviderUtils {
 			eOrganization.setAttribute("OrganizationCode", "");
 			eOrganization.setAttribute("LocaleCode", "");
 			eOrganization.setAttribute("OrganizationName", "");
-			YFCElement eOutput = invokeApi(localApi, context,"getOrganizationList", dInput.getDocument(), dTemplate.getDocument());
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getOrganizationList")).getDocumentElement();
+
 			for (YFCElement eOrg : eOutput.getChildren()){
 				mapOrg.put(eOrg.getAttribute("OrganizationCode"), eOrg.getAttribute("OrganizationName"));
 			}
@@ -498,7 +501,7 @@ public class BDADataProviderUtils {
 		}
 	}
 	
-	public static String getShipnodeDescription(YFSEnvironment context, YIFApi localApi, String shipnodeKey) {
+	public static String getShipnodeDescription(YFSEnvironment context, String shipnodeKey) {
 		BDASimpleCache<String, String> mapOrg = getOrgNameMap();
 		if (mapOrg.containsKey("SHIP_NODE_" + shipnodeKey)){
 			return mapOrg.get("SHIP_NODE_" + shipnodeKey);
@@ -510,8 +513,7 @@ public class BDADataProviderUtils {
 	        YFCElement eShipNode = dTemplate.getDocumentElement().createChild("ShipNode");
 	        eShipNode.setAttribute("ShipNode","");
 	        eShipNode.setAttribute("Description","");
-	        
-			YFCElement eOutput = invokeApi(localApi, context,"getShipNodeList", dInput.getDocument(), null);
+	        YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getShipNodeList")).getDocumentElement();
 
 			for (YFCElement eOrg : eOutput.getChildren()){
 				mapOrg.put("SHIP_NODE_" + shipnodeKey, eOrg.getAttribute("Description"));
@@ -520,7 +522,7 @@ public class BDADataProviderUtils {
 		}
 	}
 	
-	public static String getShipnodeFullDescription(YFSEnvironment context, YIFApi localApi, String shipnodeKey){
+	public static String getShipnodeFullDescription(YFSEnvironment context, String shipnodeKey){
 		BDASimpleCache<String, String> mapOrg = getOrgNameMap();
 		if (mapOrg.containsKey("SHIP_NODE_DESC" + shipnodeKey)){
 			return mapOrg.get("SHIP_NODE_DESC" + shipnodeKey);
@@ -534,12 +536,12 @@ public class BDADataProviderUtils {
 	        eShipNode.setAttribute("Description","");
 	        eShipNode.setAttribute("ShipNodeKey","");
 	        eShipNode.createChild("ShipNodePersonInfo");
-			YFCElement eOutput = invokeApi(localApi, context,"getShipNodeList", dInput.getDocument(), dTemplate.getDocument());
-            String city = "";
+	        YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getShipNodeList")).getDocumentElement();
+
+		    String city = "";
            
 			for (YFCElement eOrg : eOutput.getChildren()){
-				String shipNodeDesc = eOrg.getAttribute("Description");
-				YFCNodeList list  = eOrg.getElementsByTagName("ShipNodePersonInfo");
+				YFCNodeList<YFCElement> list  = eOrg.getElementsByTagName("ShipNodePersonInfo");
 				for(int  i = 0; i < list.getLength(); i++){
 					YFCElement shipNodePersonInfo = (YFCElement)list.item(i);
 					city = shipNodePersonInfo.getAttribute("City");
@@ -556,13 +558,14 @@ public class BDADataProviderUtils {
 	}
 
 	
-	public static YFCElement getLocaleDetails(YFSEnvironment context, YIFApi localApi, String localeCode){
+	public static YFCElement getLocaleDetails(YFSEnvironment context, String localeCode){
 		BDASimpleCache<String, YFCElement> mapLocale = getLocaleMap();
 		if (mapLocale.containsKey(localeCode)){
 			return mapLocale.get(localeCode);
 		} else {
 			YFCDocument dInput = YFCDocument.createDocument("Locale");
-			YFCElement eOutput = invokeApi(localApi, context,"getLocaleList", dInput.getDocument(), null);
+			YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dInput.getDocument(), "getLocaleList")).getDocumentElement();
+
 			for (YFCElement eLocale : eOutput.getChildren()){
 				mapLocale.put(eLocale.getAttribute("Localecode"), eLocale);
 			}
@@ -590,7 +593,7 @@ public class BDADataProviderUtils {
 		return temp;
 	}
 
-	private static void populateCode(BDASimpleCache<String, String> codes, YFSEnvironment context, YIFApi localApi, String sEnterpriseCode, String sDocumentType, String sCodeType){
+	private static void populateCode(BDASimpleCache<String, String> codes, YFSEnvironment context, String sEnterpriseCode, String sDocumentType, String sCodeType){
 		YFCDocument dInput = YFCDocument.createDocument("CommonCode");
 		YFCElement eInput = dInput.getDocumentElement();
 		if (!YFCCommon.isVoid(sEnterpriseCode)){
@@ -609,13 +612,14 @@ public class BDADataProviderUtils {
 		eChargeName.setAttribute("CodeName","");
 		eChargeName.setAttribute("CodeType","");
 		eChargeName.setAttribute("CodeLongDescription","");
-		YFCElement eOutput = invokeApi(localApi, context,"getCommonCodeList", dInput.getDocument(), dTemplate.getDocument());
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getCommonCodeList")).getDocumentElement();
+
 		for (YFCElement eOrg : eOutput.getChildren()){
 			codes.put(getCodeKey(eOrg.getAttribute("CodeValue"), sEnterpriseCode, sDocumentType, eOrg.getAttribute("CodeType")), eOrg.getAttribute("CodeLongDescription"));
 		}
 	}
 
-	private static void populateShortCode(BDASimpleCache<String, String> codes, YFSEnvironment context, YIFApi localApi, String sEnterpriseCode, String sDocumentType, String sCodeType){
+	private static void populateShortCode(BDASimpleCache<String, String> codes, YFSEnvironment context, String sEnterpriseCode, String sDocumentType, String sCodeType){
 		YFCDocument dInput = YFCDocument.createDocument("CommonCode");
 		YFCElement eInput = dInput.getDocumentElement();
 		if (!YFCCommon.isVoid(sEnterpriseCode)){
@@ -634,14 +638,14 @@ public class BDADataProviderUtils {
 		eChargeName.setAttribute("CodeName","");
 		eChargeName.setAttribute("CodeType","");
 		eChargeName.setAttribute("CodeShortDescription","");
-		YFCElement eOutput = invokeApi(localApi, context,"getCommonCodeList", dInput.getDocument(), dTemplate.getDocument());
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getCommonCodeList")).getDocumentElement();
 		for (YFCElement eOrg : eOutput.getChildren()){
 			codes.put(getCodeKey(eOrg.getAttribute("CodeValue"), sEnterpriseCode, sDocumentType, eOrg.getAttribute("CodeType")), eOrg.getAttribute("CodeShortDescription"));
 		}
 	}
 
 	
-	private static void populateHoldType(BDASimpleCache<String, String> holds, YFSEnvironment context, YIFApi localApi, String sEnterpriseCode, String sDocumentType, String sHoldType, String sProcessType){
+	private static void populateHoldType(BDASimpleCache<String, String> holds, YFSEnvironment context, String sEnterpriseCode, String sDocumentType, String sHoldType, String sProcessType){
 		YFCDocument dInput = YFCDocument.createDocument("HoldType");
 		YFCElement holdsInput = dInput.getDocumentElement();
 		holdsInput.setAttribute("CallingOrganizationCode", sEnterpriseCode);
@@ -651,13 +655,14 @@ public class BDADataProviderUtils {
 		YFCElement eChargeName = dTemplate.getDocumentElement().createChild("HoldType");
 		eChargeName.setAttribute("HoldType","");
 		eChargeName.setAttribute("HoldTypeDescription","");
-		YFCElement holdList = invokeApi(localApi, context,"getHoldTypeList", dInput.getDocument(), dTemplate.getDocument());
+		YFCElement holdList = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getHoldTypeList")).getDocumentElement();
+
 		for (YFCElement eOrg : holdList.getChildren()){
 			holds.put(getCodeKey(eOrg.getAttribute("HoldType"), sEnterpriseCode, sDocumentType, sProcessType), eOrg.getAttribute("HoldTypeDescription"));
 		}
 	}	
 	
-	private static void populateChargeName(BDASimpleCache<String, String> charges, YFSEnvironment context, YIFApi localApi, String sEnterpriseCode, String sDocumentType, String sChargeName){
+	private static void populateChargeName(BDASimpleCache<String, String> charges, YFSEnvironment context, String sEnterpriseCode, String sDocumentType, String sChargeName){
 		YFCDocument dInput = YFCDocument.createDocument("ChargeName");
 		YFCElement eInput = YFCDocument.createDocument("ChargeName").getDocumentElement();
 		if (!YFCCommon.isVoid(sEnterpriseCode)){
@@ -673,13 +678,13 @@ public class BDADataProviderUtils {
 		YFCElement eChargeName = dTemplate.getDocumentElement().createChild("ChargeName");
 		eChargeName.setAttribute("ChargeName","");
 		eChargeName.setAttribute("Description","");
-		YFCElement eOutput = invokeApi(localApi, context,"getChargeNameList", dInput.getDocument(), dTemplate.getDocument());
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getChargeNameList")).getDocumentElement();
 		for (YFCElement eOrg : eOutput.getChildren()){
 			charges.put(getCodeKey(eOrg.getAttribute("ChargeName"), sEnterpriseCode, sDocumentType), eOrg.getAttribute("Description"));
 		}
 	}	
 	
-	private static void populatePaymenType(BDASimpleCache<String, String> codes, YFSEnvironment context, YIFApi localApi, String sEnterpriseCode, String sPaymentType){
+	private static void populatePaymenType(BDASimpleCache<String, String> codes, YFSEnvironment context, String sEnterpriseCode, String sPaymentType){
 		YFCDocument dInput = YFCDocument.createDocument("PaymentType");
 		YFCElement eInput = dInput.getDocumentElement();
 		if (!YFCCommon.isVoid(sEnterpriseCode)){
@@ -689,34 +694,34 @@ public class BDADataProviderUtils {
 		YFCElement ePaymentType = dTemplate.getDocumentElement().createChild("PaymentType");
 		ePaymentType.setAttribute("PaymentType","");
 		ePaymentType.setAttribute("PaymentTypeDescription","");
-		YFCElement eOutput = invokeApi(localApi, context,"getPaymentTypeList", dInput.getDocument(), dTemplate.getDocument());
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getPaymentTypeList")).getDocumentElement();
 		for (YFCElement eOrg : eOutput.getChildren()){
 			codes.put(getCodeKey(eOrg.getAttribute("PaymentType"), sEnterpriseCode, "PAYMENT_TYPE"), eOrg.getAttribute("PaymentTypeDescription"));
 		}
 	}
 	
-	private static void populateOrgLocale(BDASimpleCache<String, String>map, YFSEnvironment context, YIFApi localApi, String sOrganizationCode){
+	private static void populateOrgLocale(BDASimpleCache<String, String>map, YFSEnvironment context, String sOrganizationCode){
 		YFCDocument dInput = YFCDocument.createDocument("Organization");
 		YFCElement eInput = dInput.getDocumentElement();
 		if (!YFCCommon.isVoid(sOrganizationCode)){
 			eInput.setAttribute("OrganizationCode", sOrganizationCode);
 		}
-		YFCDocument dOrganizationTemplate = YFCDocument.createDocument("OrganizationList");
-		YFCElement eOrganization = dOrganizationTemplate.getDocumentElement().createChild("Organization");
+		YFCDocument dTemplate = YFCDocument.createDocument("OrganizationList");
+		YFCElement eOrganization = dTemplate.getDocumentElement().createChild("Organization");
 		eOrganization.setAttribute("OrganizationCode", "");
 		eOrganization.setAttribute("LocaleCode", "");
 		eOrganization.setAttribute("OrganizationName", "");
-		YFCElement eOutput = invokeApi(localApi, context,"getOrganizationList", dInput.getDocument(), dOrganizationTemplate.getDocument());
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dInput.getDocument(), dTemplate.getDocument(), "getOrganizationList")).getDocumentElement();
 		for (YFCElement eOrg : eOutput.getChildren()){
 			map.put(eOrg.getAttribute("OrganizationCode"), eOrg.getAttribute("LocaleCode"));
 		}
 	}
 	
-	public static String getReturnOrderType(YIFApi localApi, YFSEnvironment context){
+	public static String getReturnOrderType(YFSEnvironment context){
 		if(!YFCCommon.isVoid(sReturnDocType)){
 			return sReturnDocType;
 		}
-		YFCElement list = getDocTypeDeter(localApi, context);
+		YFCElement list = getDocTypeDeter(context);
 		if(!YFCCommon.isVoid(list)){
 			for (YFCElement eDocTypeDeter : list.getChildren()){
 				if (YFCCommon.equals(eDocTypeDeter.getAttribute("DocumentTypeName"), "RETURN_ORDER")){
@@ -728,11 +733,11 @@ public class BDADataProviderUtils {
 		return sReturnDocType;
 	}
 	
-	public static String getSalesOrderType(YIFApi localApi, YFSEnvironment context){
+	public static String getSalesOrderType(YFSEnvironment context){
 		if(!YFCCommon.isVoid(sSalesDocType)){
 			return sSalesDocType;
 		}
-		YFCElement list = getDocTypeDeter(localApi, context);
+		YFCElement list = getDocTypeDeter(context);
 		if(!YFCCommon.isVoid(list)){
 			for (YFCElement eDocTypeDeter : list.getChildren()){
 				if (YFCCommon.equals(eDocTypeDeter.getAttribute("DocumentTypeName"), "SALES_ORDER")){
@@ -744,27 +749,27 @@ public class BDADataProviderUtils {
 		return sSalesDocType;
 	}
 	
-	public static YFCElement getDocTypeDeter(YIFApi localApi, YFSEnvironment context) {
+	public static YFCElement getDocTypeDeter(YFSEnvironment context) {
 		YFCDocument dDoc = YFCDocument.createDocument("DocTypeDeter");
 		YFCElement eDocTypeDeter = dDoc.getDocumentElement();
 		eDocTypeDeter.setAttribute("PCAModuleCode", "YCD");
 		
 		try {
-			return invokeApi(localApi, context,"getDocTypeDeterminationList", dDoc.getDocument(), null);
+			return YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dDoc.getDocument(), null, "getDocTypeDeterminationList")).getDocumentElement();
 		}catch (APIManager.XMLExceptionWrapper e) {
 			throw e;
 		}
 	}
 	
-	public static String getOrderCurrency(String sOrderHeaderKey, YIFApi localApi, YFSEnvironment context){
+	public static String getOrderCurrency(String sOrderHeaderKey, YFSEnvironment context){
 		if (!YFCCommon.isVoid(sOrderHeaderKey)){
 			YFCDocument dOrder = YFCDocument.createDocument("Order");
 			YFCElement eOrder = dOrder.getDocumentElement();
 			eOrder.setAttribute("OrderHeaderKey", sOrderHeaderKey);
-			YFCDocument dOrderTemplate = YFCDocument.createDocument("Order");
-			dOrderTemplate.getDocumentElement().createChild("PriceInfo").setAttribute("Currency","");
+			YFCDocument dTemplate = YFCDocument.createDocument("Order");
+			dTemplate.getDocumentElement().createChild("PriceInfo").setAttribute("Currency","");
 			try {
-				YFCElement eOutput = invokeApi(localApi, context,"getOrderDetails", dOrder.getDocument(), dOrderTemplate.getDocument());
+				YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context, dOrder.getDocument(), dTemplate.getDocument(), "getOrderDetails")).getDocumentElement();
 				YFCElement ePriceInfo = eOutput.getChildElement("PriceInfo");
 				return ePriceInfo.getAttribute("Currency");
 			} catch (APIManager.XMLExceptionWrapper e){
@@ -774,86 +779,50 @@ public class BDADataProviderUtils {
 		return null;
 	}
 	
-	public static String getChargeCategoryDescription (YFSEnvironment context, YIFApi localApi, String sChargeCategory, String sEnterpriseCode, String sDocumentType){
+	public static String getChargeCategoryDescription (YFSEnvironment context, String sChargeCategory, String sEnterpriseCode, String sDocumentType){
 		BDASimpleCache<String, String> map = getChargeNameMap();
 		String codeKey = getCodeKey(sChargeCategory, sEnterpriseCode, sDocumentType);
 		if (map != null && map.containsKey(codeKey)){
 			return map.get(codeKey);
 		}
-		populateChargeName(map, context, localApi, sEnterpriseCode, sDocumentType, sChargeCategory);
+		populateChargeName(map, context, sEnterpriseCode, sDocumentType, sChargeCategory);
 		return map.get(codeKey);
 	}	
 	
-	public static String getSupplyTypeDesc(YFSEnvironment context, YIFApi localApi, String sSupplyType){
+	public static String getSupplyTypeDesc(YFSEnvironment context, String sSupplyType){
 		BDASimpleCache<String, String> map = getCodeShortDescriptionMap();
 		if(map != null && map.containsKey("SupplyType_" + sSupplyType)){
 			return map.get("SupplyType_" + sSupplyType);
 		}
-		populateSupplyTypes(map, context, localApi);
+		populateSupplyTypes(map, context);
 		return map.get("SupplyType_" + sSupplyType);
 	}
 	
-	public static String getDemandTypeDesc(YFSEnvironment context, YIFApi localApi, String sDemandType){
+	public static String getDemandTypeDesc(YFSEnvironment context, String sDemandType){
 		BDASimpleCache<String, String> map = getCodeShortDescriptionMap();
 		if(map != null && map.containsKey("DemandType_" + sDemandType)){
 			return map.get("DemandType_" + sDemandType);
 		}
-		populateDemandTypes(map, context, localApi);
+		populateDemandTypes(map, context);
 		return map.get("DemandType_" + sDemandType);
 	}
 	
-	private static void populateSupplyTypes(BDASimpleCache<String, String> codes, YFSEnvironment context, YIFApi localApi){
-		YFCElement eOutput = invokeApi(localApi, context,"getInventorySupplyTypeList", YFCDocument.createDocument("InventorySupplyType").getDocument(), null);
+	private static void populateSupplyTypes(BDASimpleCache<String, String> codes, YFSEnvironment context){
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context,YFCDocument.createDocument("InventorySupplyType").getDocument(), null, "getInventorySupplyTypeList")).getDocumentElement();
 		for (YFCElement eOrg : eOutput.getChildren()){
 			codes.put("SupplyType_" + eOrg.getAttribute("SupplyType"), eOrg.getAttribute("Description"));
 		}
 	}
 	
-	private static void populateDemandTypes(BDASimpleCache<String, String> codes, YFSEnvironment context, YIFApi localApi){
-		YFCElement eOutput = invokeApi(localApi, context,"getInventoryDemandTypeList", YFCDocument.createDocument("InventoryDemandType").getDocument(), null);
+	private static void populateDemandTypes(BDASimpleCache<String, String> codes, YFSEnvironment context){
+		YFCElement eOutput = YFCDocument.getDocumentFor(BDAServiceApi.callApi(context,YFCDocument.createDocument("InventoryDemandType").getDocument(), null, "getInventoryDemandTypeList")).getDocumentElement();
+		
 		for (YFCElement eOrg : eOutput.getChildren()){
 			codes.put("DemandType_" + eOrg.getAttribute("DemandType"), eOrg.getAttribute("Description"));
 		}
 	}
 	
-	private static void populateChargeCategory(BDASimpleCache<String, String> charges, YFSEnvironment context, YIFApi localApi, String sEnterpriseCode, String sDocumentType, String sChargeCategory){
-		YFCDocument dInput = YFCDocument.createDocument("ChargeName");
-		YFCElement eInput = dInput.getDocumentElement();
-		if (!YFCCommon.isVoid(sEnterpriseCode)){
-			eInput.setAttribute("CallingOrganizationCode", sEnterpriseCode);
-		}
-		if (!YFCCommon.isVoid(sDocumentType)){
-			eInput.setAttribute("DocumentType", sDocumentType);
-		}
-		if (!YFCCommon.isVoid(sDocumentType)){
-			eInput.setAttribute("ChargeName", sChargeCategory);
-		}
-		
-		YFCElement eOutput = invokeApi(localApi, context, "getChargeCategoryList", dInput.getDocument(), null);
-		for (YFCElement eOrg : eOutput.getChildren()){
-			charges.put(getCodeKey(eOrg.getAttribute("ChargeCategory"), sEnterpriseCode, sDocumentType), eOrg.getAttribute("Description"));
-		}
-	}	
 	
-	private static YFCElement invokeApi(YIFApi localApi, YFSEnvironment context, String sApiName, Document dInput, Document dTemplate){
-		if (!YFCCommon.isVoid(dTemplate)){
-			context.setApiTemplate(sApiName, dTemplate);	
-		}
-		
-		Document output;
-		try {
-			output = localApi.invoke(context, sApiName, dInput);
-			YFCDocument dOutput = YFCDocument.getDocumentFor(output);
-			return dOutput.getDocumentElement();
-		} catch (YFSException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
-	}
 	// ===================================================================================================================================================
 	
 }

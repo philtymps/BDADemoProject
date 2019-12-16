@@ -1,16 +1,14 @@
 package com.ibm.mobile.dataprovider;
 
-import com.yantra.interop.japi.YIFApi;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
-import com.yantra.yfc.dom.YFCNodeList;
 import com.yantra.yfc.util.YFCCommon;
 import com.yantra.yfs.japi.YFSEnvironment;
 
 public class BDAServiceDataProvider implements IBDADataProvider {
 
 	@Override
-	public void addAdditionalData(YIFApi localApi, YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
+	public void addAdditionalData(YFSEnvironment context, YFCElement apiInput, YFCElement apiOutput, YFCElement interestingElement, String sAttribute) {
 		if(interestingElement != null){
 			if(interestingElement.getNodeName().equals("SubFlow")){
 				if (interestingElement.hasAttribute("ConfigXML") && YFCCommon.isVoid(interestingElement.getChildElement("ConfigXML"))){
