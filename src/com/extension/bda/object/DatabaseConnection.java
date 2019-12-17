@@ -1,8 +1,11 @@
 package com.extension.bda.object;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 import com.extension.bda.service.fulfillment.BDAServiceApi;
+import com.ibm.utilities.ConnectionUtils;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
@@ -58,7 +61,7 @@ private static YFCElement eProperties = null;
 		if (!YFCCommon.isVoid(getProperty(env, "DBServer"))){
 			return (String) getProperty(env, "DBServer");
 		}
-		return "oms.innovationcloud.info";
+		return "localhost";
 	}
 		
 	protected static String getDBPort(YFSEnvironment env){
@@ -96,9 +99,10 @@ private static YFCElement eProperties = null;
 		return "OMDB";
 	}
 
-	public static Connection getConnection(YFSEnvironment env){
-	    YFSConnectionHolder yfsConnHolder = (YFSConnectionHolder)env;
-	    return yfsConnHolder.getDBConnection();
+	public static Connection getConnection(YFSEnvironment env) throws ClassNotFoundException, SQLException{
+		Class.forName(ConnectionUtils.getJDBCDriver(getDBType()));
+		Connection jdbcConnection = (Connection)DriverManager.getConnection(ConnectionUtils.getDBURL(getDBType(), getDBServer(env), getDBPort(env), getDatabase(env)), getDBUsername(env), getDBPassword(env));
+		return jdbcConnection;
 	}
 	
 }

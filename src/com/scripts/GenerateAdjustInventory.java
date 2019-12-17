@@ -101,11 +101,12 @@ public class GenerateAdjustInventory {
 				}
 			} else {
 				HashMap<String, String> vars = replaceVariables(env, dVariables);
-				Connection conn = DatabaseConnection.getConnection(env);
-				String sStatement = "DELETE FROM " + DatabaseConnection.getDBSchema(env)
-						+ ".YFS_INVENTORY_SUPPLY WHERE INVENTORY_ITEM_KEY IN (SELECT INVENTORY_ITEM_KEY FROM "
-						+ DatabaseConnection.getDBSchema(env) + ".YFS_INVENTORY_ITEM WHERE ITEM_ID = ?)";
+				
 				try {
+					Connection conn = DatabaseConnection.getConnection(env);
+					String sStatement = "DELETE FROM " + DatabaseConnection.getDBSchema(env)
+							+ ".YFS_INVENTORY_SUPPLY WHERE INVENTORY_ITEM_KEY IN (SELECT INVENTORY_ITEM_KEY FROM "
+							+ DatabaseConnection.getDBSchema(env) + ".YFS_INVENTORY_ITEM WHERE ITEM_ID = ?)";
 					PreparedStatement ps = conn.prepareStatement(sStatement);
 					for (String itemid : vars.values()) {
 						YFCElement eItem = eOutput.createChild("Item");
@@ -114,6 +115,9 @@ public class GenerateAdjustInventory {
 						ps.executeUpdate();
 					}
 				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -215,6 +219,9 @@ public class GenerateAdjustInventory {
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					} finally {
 						try {
 							conn.close();
@@ -253,7 +260,7 @@ public class GenerateAdjustInventory {
 							YFCElement eShipNode = eShipNodes.createChild("ShipNode");
 							eShipNode.setAttribute("ShipNode", rso.getString("SHIPNODE_KEY"));
 						}
-					} catch (SQLException e) {
+					} catch (SQLException | ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} finally {
@@ -293,7 +300,7 @@ public class GenerateAdjustInventory {
 							YFCElement eShipNode = eShipNodes.createChild("ShipNode");
 							eShipNode.setAttribute("ShipNode", rso.getString("SHIPNODE_KEY"));
 						}
-					} catch (SQLException e) {
+					} catch (SQLException | ClassNotFoundException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} finally {

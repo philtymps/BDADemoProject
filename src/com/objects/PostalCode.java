@@ -21,7 +21,7 @@ public class PostalCode {
 	private String _country, _postalcode, _city, _state;
 	private float _longitude, _latitude;
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws ClassNotFoundException{
 		String line;
 		InputStream fis;
 		int i = 0;

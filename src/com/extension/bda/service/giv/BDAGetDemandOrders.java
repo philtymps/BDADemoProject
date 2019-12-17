@@ -144,6 +144,9 @@ public class BDAGetDemandOrders implements IBDAService {
 					}
 				} catch(SQLException e){
 					e.printStackTrace();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				} finally {
 					if(!YFCCommon.isVoid(conn)){
 						try {
