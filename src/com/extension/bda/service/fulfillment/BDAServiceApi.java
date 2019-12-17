@@ -45,8 +45,13 @@ public class BDAServiceApi {
 	public Object getProperty(String sProp){
 		return this.p.get(sProp);
 	}
-	public static Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName){
-		if(!YFCCommon.isVoid(env)) {
+	
+	public static Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName) {
+		return callApi(env, inDoc, dTemplate, sApiName, false);
+	}
+	
+	public static Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName, boolean externalScope){
+		if(!YFCCommon.isVoid(env) && !externalScope) {
 			YIFApi localApi;
 		    Document dOrderOutput = null;
 			try {

@@ -28,6 +28,10 @@ public class CompleteOrder implements IBDAService {
 	
 	}
 	
+	private static Document callApi(YFSEnvironment env, Document dInput, Document dTemplate, String sApiName) {
+		return BDAServiceApi.callApi(env, dInput, dTemplate, sApiName, true);
+	}
+	
 	public static boolean hasStatusBetween(YFCElement eOrder, String lowStatus, String highStatus){
 		for (YFCElement eOrderLine : eOrder.getChildElement("OrderLines", true).getChildren()){
 			for (YFCElement eOrderStatus : eOrderLine.getChildElement("OrderStatuses", true).getChildren()){
@@ -52,14 +56,14 @@ public class CompleteOrder implements IBDAService {
 	}
 	
 	
-	public static void createOrderInvoice(YFSEnvironment env, Document dOrder, YIFApi m_YifApi){
+	public static void createOrderInvoice(YFSEnvironment env, Document dOrder){
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
 		eOrder.setAttribute("TransactionId", "TenderOrder.0001.ex");
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
 		try {
-			m_YifApi.invoke(env, "createOrderInvoice", getOrderDetailsInput.getDocument());
+			callApi(env, getOrderDetailsInput.getDocument(), null, "createOrderInvoice");
 		} catch(Exception yex) {
         	System.out.println("The api call scheduleOrder failed using the following input xml: " + eOrder);
         	System.out.println("The error thrown was: " );    
@@ -68,26 +72,23 @@ public class CompleteOrder implements IBDAService {
         } 
 	}
 	
-	public void completeTPOrder(YFSEnvironment env, Document dOrder, YFCElement eResults, YIFApi localApi, Document inputDoc){
+	public void completeTPOrder(YFSEnvironment env, Document dOrder, YFCElement eResults, Document inputDoc){
 		if(!YFCCommon.isVoid(dOrder)){
 			try {
-				removeHolds(env, dOrder, eResults, localApi);
+				removeHolds(env, dOrder, eResults);
 				if (statusLessThan(getBaseStatus(dOrder.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-	            	scheduleOrder(env, dOrder, localApi);
+	            	scheduleOrder(env, dOrder);
 	            	eResults.setAttribute("ScheduleInvoked", "Y");
 	            	env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-					dOrder = localApi.invoke(env, "getOrderDetails", inputDoc);
+					dOrder = callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
             	}
 				YFCElement eGetOrderDetailsOutput = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
             	if (hasStatusBetween(eGetOrderDetailsOutput,"1500","3200")){
-		            releaseOrder(env, dOrder, localApi, "Y");
+		            releaseOrder(env, dOrder, "Y");
 		            eResults.setAttribute("ReleaseInvoked", "Y");
-		            env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-					dOrder = localApi.invoke(env, "getOrderDetails", inputDoc);
-            	}
+		    	}
             	//confirmShipment(env, dOrder, eResults, localApi, false, false);
-            	env.setApiTemplate("getCompleteOrderDetails", getOrderDetailsTemplate());
-    			dOrder = localApi.invoke(env, "getCompleteOrderDetails", inputDoc);
+    			dOrder = callApi(env, inputDoc, getOrderDetailsTemplate(), "getCompleteOrderDetails");
     			eGetOrderDetailsOutput = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
 			} catch (Exception e){
 				e.printStackTrace();
@@ -105,61 +106,52 @@ public class CompleteOrder implements IBDAService {
 		YFCElement eResults = output.getDocumentElement();
 		boolean chargePayment = true;
 		try {	
-			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
 			Document l_OutputXml = null;
 			YFCElement eInput = YFCDocument.getDocumentFor(inputDoc).getDocumentElement();
 			if(!YFCCommon.isVoid(eInput.getAttribute("ChargePayment"))) {
 				chargePayment = eInput.getBooleanAttribute("ChargePayment");
 				eInput.removeAttribute("ChargePayment");
 			}
-			try {
-				env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-				l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
-				eResults.setAttribute("OrderHeaderKey", l_OutputXml.getDocumentElement().getAttribute("OrderHeaderKey"));
-			} catch(Exception yex) {
-	        	System.out.println("The error thrown was: " );    
-	        	System.out.println(yex.toString());
-	            yex.printStackTrace();
-	        } 
+
+			l_OutputXml = callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
+			eResults.setAttribute("OrderHeaderKey", l_OutputXml.getDocumentElement().getAttribute("OrderHeaderKey"));
+			
 			boolean invoicedOrder = false;
 			if (!YFCCommon.isVoid(l_OutputXml)){
 				YFCElement eOrder = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 				if(YFCCommon.equals(eOrder.getAttribute("DocumentType"), "0005") || YFCCommon.equals(eOrder.getAttribute("DocumentType"), "0006")){
-					completeTPOrder(env,l_OutputXml,eResults, localApi,inputDoc);
+					completeTPOrder(env,l_OutputXml,eResults, inputDoc);
 					invoicedOrder = false;
 				} else {
 					try {
-			            removeHolds(env, l_OutputXml, eResults, localApi);
-			            if (processOrderPayments(env, l_OutputXml, true, eResults, localApi)){
+			            removeHolds(env, l_OutputXml, eResults);
+			            if (processOrderPayments(env, l_OutputXml, true, eResults)){
 			            	YFCElement eGetOrderDetailsOutput = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 			            	if(hasStatus(eGetOrderDetailsOutput, "1100.90")){
-			            		createOrderInvoice(env, l_OutputXml, localApi);
+			            		createOrderInvoice(env, l_OutputXml);
 			            		invoicedOrder = true;
 		
 			            	}
 			            	if (statusLessThan(getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-				            	scheduleOrder(env, l_OutputXml, localApi);
+				            	scheduleOrder(env, l_OutputXml);
 				            	eResults.setAttribute("ScheduleInvoked", "Y");
-				            	env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-								l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
+				            	l_OutputXml = callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
 			            	}
 			            	eGetOrderDetailsOutput = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 			            	if (hasStatusBetween(eGetOrderDetailsOutput,"1500","3200")){
-					            releaseOrder(env, l_OutputXml, localApi, "Y");
+					            releaseOrder(env, l_OutputXml, "Y");
 					            eResults.setAttribute("ReleaseInvoked", "Y");
-					            env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-								l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
+					            l_OutputXml = callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
 			            	}
-			            	confirmShipment(env, l_OutputXml, eResults, localApi, false, false);
-			            	env.setApiTemplate("getCompleteOrderDetails", getOrderDetailsTemplate());
-	            			l_OutputXml = localApi.invoke(env, "getCompleteOrderDetails", inputDoc);
+			            	confirmShipment(env, l_OutputXml, eResults, false, false);
+	            			l_OutputXml = callApi(env, inputDoc, getOrderDetailsTemplate(), "getCompleteOrderDetails");
 	            			eGetOrderDetailsOutput = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 			            	if (statusGreaterThan(getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MaxOrderStatus")), "3700")){
 				            	YFCElement eShipments = eGetOrderDetailsOutput.getChildElement("Shipments");
 				            	if (!YFCCommon.isVoid(eShipments)){
 				            		for (YFCElement eShipment : eShipments.getChildren()){
 				            			if (statusGreaterThan(getBaseStatus(eShipment.getAttribute("Status")), "1400") && !eShipment.getBooleanAttribute("InvoiceComplete", false)){
-				            				createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"), localApi);
+				            				createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"));
 				            				YFCElement eOutputShipments = eResults.getChildElement("Shipments", true);
 				            				boolean foundShipment = false;
 				            				for (YFCElement eOutputShipment : eOutputShipments.getChildren()){
@@ -179,7 +171,7 @@ public class CompleteOrder implements IBDAService {
 				            	invoicedOrder = true;
 			            	}
 			            	if(chargePayment && invoicedOrder){
-			            		processOrderPayments(env, l_OutputXml, false, eResults, localApi);
+			            		processOrderPayments(env, l_OutputXml, false, eResults);
 			            	}
 			            }
 			        } catch(Exception yex) {
@@ -247,7 +239,7 @@ public class CompleteOrder implements IBDAService {
 		return output.getDocument();
 	}
 	
-	public static void removeHolds (YFSEnvironment env, Document getOrderDetailsOutput, YFCElement eResults, YIFApi m_YifApi) throws Exception {
+	public static void removeHolds (YFSEnvironment env, Document getOrderDetailsOutput, YFCElement eResults) throws Exception {
 		if (!YFCCommon.isVoid(getOrderDetailsOutput)){
 			boolean resolve = false;
 			YFCDocument changeOrder = YFCDocument.createDocument("Order");
@@ -284,7 +276,7 @@ public class CompleteOrder implements IBDAService {
 			if (resolve){
 				try {
 					//m_YfsEnv.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-					getOrderDetailsOutput = m_YifApi.invoke(env, "changeOrder", changeOrder.getDocument());
+					getOrderDetailsOutput = callApi(env, changeOrder.getDocument(), null,"changeOrder");
 					eResults.getChildElement("ResolveHold", true).setAttribute("Successful", "Y");
 				} catch(Exception yex) {
 		        	System.out.println("The api call changeOrder failed using the following input xml: " + eChangeOrderInput);
@@ -296,7 +288,7 @@ public class CompleteOrder implements IBDAService {
 		}
 	}
 	
-	public static boolean processOrderPayments(YFSEnvironment env, Document dOrder, boolean auth, YFCElement eOutput, YIFApi m_YifApi){
+	public static boolean processOrderPayments(YFSEnvironment env, Document dOrder, boolean auth, YFCElement eOutput){
 		if(dOrder.getDocumentElement().getAttribute("PaymentStatus").equals("NOT_APPLICABLE")){
 			eOutput.setAttribute("Authorized", "NA");
 			return true;
@@ -314,11 +306,12 @@ public class CompleteOrder implements IBDAService {
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
 		Document processOrderPaymentsOutput = null;
 		try {
-			env.setApiTemplate("requestCollection", getOrderDetailsTemplate());
-			processOrderPaymentsOutput = m_YifApi.invoke(env, "requestCollection", getOrderDetailsInput.getDocument());
-			((YFSContext)env).commit();
-			m_YifApi.invoke(env, "executeCollection", getOrderDetailsInput.getDocument());
-			processOrderPaymentsOutput = m_YifApi.invoke(env, "requestCollection", getOrderDetailsInput.getDocument());
+			processOrderPaymentsOutput = callApi(env, getOrderDetailsInput.getDocument(), getOrderDetailsTemplate(), "requestCollection");
+			//((YFSContext)env).commit();
+			callApi(env, getOrderDetailsInput.getDocument(), null, "executeCollection");
+			processOrderPaymentsOutput = callApi(env, getOrderDetailsInput.getDocument(), getOrderDetailsTemplate(), "requestCollection");
+			//((YFSContext)env).commit();
+
 		} catch(Exception yex) {
         	System.out.println("The api call processOrderPayments failed using the following input xml: " + eOrder);
         	System.out.println("The error thrown was: " );    
@@ -337,27 +330,20 @@ public class CompleteOrder implements IBDAService {
 		return false;
 	}
 	
-	public static void scheduleOrder(YFSEnvironment env, Document dOrder, YIFApi m_YifApi){
+	public static void scheduleOrder(YFSEnvironment env, Document dOrder){
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
-		try {
-			m_YifApi.invoke(env, "scheduleOrder", getOrderDetailsInput.getDocument());
-		} catch(Exception yex) {
-        	System.out.println("The api call scheduleOrder failed using the following input xml: " + eOrder);
-        	System.out.println("The error thrown was: " );    
-        	System.out.println(yex.toString());
-            yex.printStackTrace();
-        } 
+		callApi(env, getOrderDetailsInput.getDocument(), null, "scheduleOrder");
 	}
 	
-	public static void releaseOrder(YFSEnvironment env, Document dOrder, YIFApi m_YifApi, String sIgnoreReleaseDate){
+	public static void releaseOrder(YFSEnvironment env, Document dOrder, String sIgnoreReleaseDate){
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
 		eOrder.setAttribute("IgnoreReleaseDate", sIgnoreReleaseDate);
 		try {
-			m_YifApi.invoke(env, "releaseOrder", getOrderDetailsInput.getDocument());
+			callApi(env, getOrderDetailsInput.getDocument(), null, "releaseOrder");
 		} catch(Exception yex) {
         	System.out.println("The api call releaseOrder failed using the following input xml: " + eOrder);
         	System.out.println("The error thrown was: " );    
@@ -534,14 +520,15 @@ public class CompleteOrder implements IBDAService {
 		return dTemp.getDocument();
 	}
 	
-	public static boolean isStoreNode(YFSEnvironment env, YIFApi m_YifApi, String sShipNode) throws YFSException, RemoteException{
+	public static boolean isStoreNode(YFSEnvironment env, String sShipNode) throws YFSException, RemoteException{
 		if(!getNodeCache().containsKey(sShipNode)){
 			YFCDocument dInput = YFCDocument.createDocument("ShipNode");
 			YFCElement eInput = dInput.getDocumentElement();
 			eInput.setAttribute("ShipNode", sShipNode);
 			
 			env.setApiTemplate("getShipNodeList", getNodeTemplate());
-			Document dResponse = m_YifApi.invoke(env, "getShipNodeList", dInput.getDocument());
+			
+			Document dResponse = callApi(env, dInput.getDocument(), getNodeTemplate(), "getShipNodeList");
 			YFCDocument dShipNodeList = YFCDocument.getDocumentFor(dResponse);
 			for(YFCElement eShipNode : dShipNodeList.getDocumentElement().getChildren()){
 				getNodeCache().put(eShipNode.getAttribute("ShipNode"), eShipNode);
@@ -556,14 +543,14 @@ public class CompleteOrder implements IBDAService {
 		}
 	}
 	
-	public static String confirmShipment(YFSEnvironment env, Document dOrder, YFCElement eOutput, YIFApi m_YifApi, boolean pushBackroom, boolean bCashAndCarry) throws YFSException, RemoteException {
+	public static String confirmShipment(YFSEnvironment env, Document dOrder, YFCElement eOutput, boolean pushBackroom, boolean bCashAndCarry) throws YFSException, RemoteException {
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
 		Document getOrderDetailsOutput = null;
 		try {
 			env.setApiTemplate("getCompleteOrderDetails", getOrderDetailsForShipmentTemplate());
-			getOrderDetailsOutput = m_YifApi.invoke(env, "getCompleteOrderDetails", getOrderDetailsInput.getDocument());
+			getOrderDetailsOutput = callApi(env, getOrderDetailsInput.getDocument(), getOrderDetailsForShipmentTemplate(), "getCompleteOrderDetails");
 		} catch(Exception yex) {
         	System.out.println("The api call getOrderDetails failed using the following input xml: " + eOrder);
         	System.out.println("The error thrown was: " );    
@@ -593,7 +580,7 @@ public class CompleteOrder implements IBDAService {
 							if (!eOrderLine.getBooleanAttribute("IsBundleParent", false)){
 								YFCDocument dShipment;
 								boolean confirm = false;
-								if(!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001") || YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) || !isStoreNode(env, m_YifApi, eOrderLineStatus.getAttribute("ShipNode"))){
+								if(!YFCCommon.equals(eOrderOut.getAttribute("DocumentType"), "0001") || YFCCommon.isVoid(eOrderLineStatus.getAttribute("ShipNode")) || !isStoreNode(env, eOrderLineStatus.getAttribute("ShipNode"))){
 									dShipment = createShipment("OrderReleaseKey", eOrderLineStatus, bCashAndCarry, sCarrierServiceCode, sScac, confirmShipments);
 									confirm = true;
 								} else {
@@ -687,7 +674,7 @@ public class CompleteOrder implements IBDAService {
 			if (linesExist){
 				for(String key : confirmShipments.keySet()){
 					try {
-						getOrderDetailsOutput = m_YifApi.invoke(env, "confirmShipment", confirmShipments.get(key).getDocument());
+						getOrderDetailsOutput = callApi(env, confirmShipments.get(key).getDocument(), null, "confirmShipment");
 						createShipmentResponse(eOutput, key + "_S", true, true, null);
 					} catch(Exception yex) {
 						createShipmentResponse(eOutput, key + "_S", false, false, yex.toString());
@@ -700,11 +687,11 @@ public class CompleteOrder implements IBDAService {
 				env.setApiTemplate("createShipment", getCreateShipmentTemplate());
 				for(String key : createShipments.keySet()){
 					try {
-						getOrderDetailsOutput = m_YifApi.invoke(env, "createShipment", createShipments.get(key).getDocument());
+						getOrderDetailsOutput = callApi(env, createShipments.get(key).getDocument(), getCreateShipmentTemplate(), "createShipment");
 						createShipmentResponse(eOutput, key + "_S", false, true, null);
 						YFCElement eCreatedShipment = createShipmentResponse(eOutput, key + "_S", false, true, null);
 						if (pushBackroom){
-							backroomPick(env, getOrderDetailsOutput, eCreatedShipment, m_YifApi);
+							backroomPick(env, getOrderDetailsOutput, eCreatedShipment);
 						}
 						
 					} catch(Exception yex) {
@@ -723,7 +710,7 @@ public class CompleteOrder implements IBDAService {
 	
 
 	
-	private static void backroomPick(YFSEnvironment env, Document dShipment, YFCElement eCreatedShipment, YIFApi m_YifApi) {
+	private static void backroomPick(YFSEnvironment env, Document dShipment, YFCElement eCreatedShipment) {
 		YFCElement eShipment = YFCDocument.getDocumentFor(dShipment).getDocumentElement();
 		YFCDocument dChangeShipment = YFCDocument.createDocument("Shipment");
 		YFCElement eInput = dChangeShipment.getDocumentElement();
@@ -737,7 +724,7 @@ public class CompleteOrder implements IBDAService {
 			eInputLine.setAttribute("ShipmentLineNo", eShipmentLine.getAttribute("ShipmentLineNo"));
 		}
 		try{
-			m_YifApi.invoke(env, "changeShipment", dChangeShipment.getDocument());
+			callApi(env, dChangeShipment.getDocument(), null, "changeShipment");
 			eCreatedShipment.setAttribute("BackroomPick", "Y");
 		} catch(Exception yex) {
 			System.out.println("The error thrown was: " );    
@@ -750,7 +737,7 @@ public class CompleteOrder implements IBDAService {
 		eInput.setAttribute("ShipmentKey", eShipment.getAttribute("ShipmentKey"));
 		eInput.setAttribute("TransactionId", "YCD_BACKROOM_PICK");
 		try{
-			m_YifApi.invoke(env, "changeShipmentStatus", dChangeStatus.getDocument());
+			callApi(env, dChangeShipment.getDocument(), null, "changeShipmentStatus");
 			eCreatedShipment.setAttribute("UpdateStatus", "Y");
 		} catch(Exception yex) {
 			System.out.println("The error thrown was: " );    
@@ -777,7 +764,7 @@ public class CompleteOrder implements IBDAService {
 		return dShipment.getDocument();
 	}
 	
-	public static void createShipmentInvoice (YFSEnvironment env, String sShipmentKey, String sDocumentType, YIFApi m_YifApi){
+	public static void createShipmentInvoice (YFSEnvironment env, String sShipmentKey, String sDocumentType){
 		YFCDocument shipment = YFCDocument.createDocument("Shipment");
 		YFCElement eShipment = shipment.getDocumentElement();
 		eShipment.setAttribute("ShipmentKey", sShipmentKey);
@@ -787,23 +774,13 @@ public class CompleteOrder implements IBDAService {
 			eShipment.setAttribute("TransactionId", "CREATE_DROP_SHIP_INVOICE.0005.ex");
 		}
 		try {
-			m_YifApi.invoke(env, "createShipmentInvoice", shipment.getDocument());
+			callApi(env, shipment.getDocument(), null, "createShipmentInvoice");
 		} catch(Exception yex) {
         	System.out.println("The api call createShipmentInvoice failed using the following input xml: " + eShipment);
         	System.out.println("The error thrown was: " );    
         	System.out.println(yex.toString());
             yex.printStackTrace();
         } 
-	}
-	public void callAPI(YFSEnvironment env, Document inputXml, String sAPI, YIFApi m_YifApi) throws Exception {
-		try {
-			m_YifApi.invoke(env, sAPI, inputXml);
-		} catch(Exception yex) {
-	        	System.out.println("The api call " + sAPI + " failed using the following input xml: " + YFCDocument.getDocumentFor(inputXml));
-	        	System.out.println("The error thrown was: " );    
-	        	System.out.println(yex.toString());
-	            yex.printStackTrace();
-	        }
 	}
 
 	@Override
