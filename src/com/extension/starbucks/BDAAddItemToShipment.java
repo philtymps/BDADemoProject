@@ -32,7 +32,7 @@ public class BDAAddItemToShipment {
 						eOrderLine.setAttribute("OrderedQty", 1);
 					}
 					if(eOrderLine.hasAttribute("OriginalOrderLineKey")){
-						YFCElement eShipmentLines = getShipmentLines(env, localApi, eOrderLine.getAttribute("OriginalOrderLineKey"));
+						YFCElement eShipmentLines = getShipmentLines(env, eOrderLine.getAttribute("OriginalOrderLineKey"));
 						if(!YFCCommon.isVoid(eShipmentLines)){
 							for(YFCElement eShipmentLine : eShipmentLines.getChildren()){
 								String sShipmentLineKey = eShipmentLine.getAttribute("ShipmentLineKey");
@@ -40,7 +40,7 @@ public class BDAAddItemToShipment {
 								sShipmentKey = eShipmentLine.getAttribute("ShipmentKey");
 								eOrderLine.setAttribute("ShipNode", eShipmentLine.getChildElement("Shipment").getAttribute("ShipNode"));
 								eOrderLine.setAttribute("DeliveryMethod", eShipmentLine.getChildElement("Shipment").getAttribute("DeliveryMethod"));
-								cancelShipmentLine(env, localApi, sShipmentKey, sShipmentLineKey);
+								cancelShipmentLine(env, sShipmentKey, sShipmentLineKey);
 							}
 						}
 						eOrderLine.removeAttribute("OriginalOrderLineKey");
@@ -53,9 +53,9 @@ public class BDAAddItemToShipment {
 				eOrder.setAttribute("OrderHeaderKey", eInput.getAttribute("OrderHeaderKey"));
 				eOrder.setAttribute("PaymentStatus", "AUTHORIZED");
 				dOrderOutput = changeOrder(env, localApi, dOrderInput.getDocument());
-				updateOrder(env, localApi, dOrderOutput, dOrderInput.getDocument());
+				updateOrder(env, dOrderOutput, dOrderInput.getDocument());
 				System.out.println("updateOrder: " + dOrderOutput);
-				addToShipment(env, localApi, dOrderInput.getDocument(), sShipmentKey);
+				addToShipment(env, dOrderInput.getDocument(), sShipmentKey);
 			}
 		} catch (YIFClientCreationException e) {
 			e.printStackTrace();
@@ -75,30 +75,28 @@ public class BDAAddItemToShipment {
 		return null;
 	}
 	
-	private void updateOrder(YFSEnvironment env, YIFApi localApi, Document l_OutputXml, Document inputDoc){
+	private void updateOrder(YFSEnvironment env, Document l_OutputXml, Document inputDoc){
 		YFCDocument dOutput = YFCDocument.createDocument("Order");
 		YFCElement eOutput = dOutput.getDocumentElement();
 		eOutput.setAttribute("OrderHeaderKey", l_OutputXml.getDocumentElement().getAttribute("OrderHeaderKey"));
 		if (!YFCCommon.isVoid(l_OutputXml)){
 			try {
-	            CompleteOrder.removeHolds(env, l_OutputXml, eOutput, localApi);
-	            if (CompleteOrder.processOrderPayments(env, l_OutputXml, true, eOutput, localApi)){
+	            CompleteOrder.removeHolds(env, l_OutputXml, eOutput);
+	            if (CompleteOrder.processOrderPayments(env, l_OutputXml, true, eOutput)){
 	            	YFCElement eGetOrderDetailsOutput = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 	            	if(CompleteOrder.hasStatus(eGetOrderDetailsOutput, "1100.90")){
-	            		CompleteOrder.createOrderInvoice(env, l_OutputXml, localApi);
+	            		CompleteOrder.createOrderInvoice(env, l_OutputXml);
 	            	}
 	            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-		            	CompleteOrder.scheduleOrder(env, l_OutputXml, localApi);
+		            	CompleteOrder.scheduleOrder(env, l_OutputXml);
 		            	eOutput.setAttribute("ScheduleInvoked", "Y");
-		            	env.setApiTemplate("getOrderDetails", CompleteOrder.getOrderDetailsTemplate());
-						l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
+		            	l_OutputXml = CompleteOrder.callApi(env, inputDoc, CompleteOrder.getOrderDetailsTemplate(), "getOrderDetails");
 	            	}
 	            	eGetOrderDetailsOutput = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 	            	if (CompleteOrder.hasStatusBetween(eGetOrderDetailsOutput,"1500","3200")){
-			            CompleteOrder.releaseOrder(env, l_OutputXml, localApi, "N");
+			            CompleteOrder.releaseOrder(env, l_OutputXml, "N");
 			            eOutput.setAttribute("ReleaseInvoked", "Y");
-			            env.setApiTemplate("getOrderDetails", CompleteOrder.getOrderDetailsTemplate());
-						l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
+			            l_OutputXml = CompleteOrder.callApi(env, inputDoc, CompleteOrder.getOrderDetailsTemplate(), "getOrderDetails");
 	            	}
 	            }
 			} catch(Exception yex) {
@@ -109,19 +107,12 @@ public class BDAAddItemToShipment {
 		}
 	}
 	
-	public static void addToShipment(YFSEnvironment env, YIFApi m_YifApi, Document dOrder, String sShipmentKey) {
+	public static void addToShipment(YFSEnvironment env, Document dOrder, String sShipmentKey) {
 		YFCDocument getOrderDetailsInput = YFCDocument.createDocument("Order");
 		YFCElement eOrder = getOrderDetailsInput.getDocumentElement();
 		eOrder.setAttribute("OrderHeaderKey", dOrder.getDocumentElement().getAttribute("OrderHeaderKey"));
 		Document getOrderDetailsOutput = null;
-		try {
-			env.setApiTemplate("getCompleteOrderDetails", CompleteOrder.getOrderDetailsForShipmentTemplate());
-			getOrderDetailsOutput = m_YifApi.invoke(env, "getCompleteOrderDetails", getOrderDetailsInput.getDocument());
-		} catch(Exception yex) {
-        	System.out.println("The api call getOrderDetails failed using the following input xml: " + eOrder);
-        	System.out.println("The error thrown was: " );    
-            yex.printStackTrace();
-        } 
+		getOrderDetailsOutput = CompleteOrder.callApi(env, getOrderDetailsInput.getDocument(), CompleteOrder.getOrderDetailsForShipmentTemplate(), "getCompleteOrderDetails");
 		
 		if (!YFCCommon.isVoid(getOrderDetailsOutput)){
 			boolean linesExist = false;
@@ -159,17 +150,10 @@ public class BDAAddItemToShipment {
 			}
 			
 			if (linesExist){
-			
-				try {
-					((YFSContext)env).commit();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 			 
 			//	env.setApiTemplate("changeShipment", CompleteOrder.getCreateShipmentTemplate());
 				try {
-					getOrderDetailsOutput = m_YifApi.invoke(env, "changeShipment", dShipment.getDocument());
+					getOrderDetailsOutput = CompleteOrder.callApi(env, dShipment.getDocument(), null, "changeShipment");
 					
 					
 				} catch(Exception yex) {
@@ -183,7 +167,7 @@ public class BDAAddItemToShipment {
 					YFCElement eShip = dShip.getDocumentElement();
 					eShip.setAttribute("TransactionId", "Shipment_Fixed.0001.ex");
 					eShip.setAttribute("ShipmentKey", dShipment.getDocumentElement().getAttribute("ShipmentKey"));
-					m_YifApi.invoke(env,  "changeShipmentStatus", dShip.getDocument());
+					CompleteOrder.callApi(env, dShip.getDocument(), null, "changeShipmentStatus");
 				} catch(Exception yex) {
 		        	System.out.println("The error thrown was: " );    
 		        	System.out.println(yex.toString());
@@ -193,7 +177,7 @@ public class BDAAddItemToShipment {
 		}		
 	}
 	
-	private void cancelShipmentLine(YFSEnvironment env, YIFApi localApi, String sShipmentKey, String sShipmentLineKey){
+	private void cancelShipmentLine(YFSEnvironment env, String sShipmentKey, String sShipmentLineKey){
 		YFCDocument dShipment = YFCDocument.createDocument("Shipment");
 		YFCElement eShipment = dShipment.getDocumentElement();
 		eShipment.setAttribute("ShipmentKey", sShipmentKey);
@@ -201,31 +185,19 @@ public class BDAAddItemToShipment {
 		YFCElement eShipmentLine = eShipment.createChild("ShipmentLines").createChild("ShipmentLine");
 		eShipmentLine.setAttribute("ShipmentLineKey", sShipmentLineKey);
 		eShipmentLine.setAttribute("Action", "Cancel");
-		try {
-			localApi.changeShipment(env, dShipment.getDocument());
-		} catch (YFSException e) {
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
+		CompleteOrder.callApi(env, dShipment.getDocument(), null, "changeShipment");
 	}
-	private YFCElement getShipmentLines(YFSEnvironment env, YIFApi localApi, String sOrderLineKey){
+	private YFCElement getShipmentLines(YFSEnvironment env, String sOrderLineKey){
 		YFCDocument dOrder = YFCDocument.createDocument("ShipmentLine");
 		YFCElement eInput = dOrder.getDocumentElement();
 		eInput.setAttribute("OrderLineKey", sOrderLineKey);
 		
-		try {
-			env.setApiTemplate("getShipmentLineList", getShipmentLineListTemplate());
-			Document dOutput = localApi.getShipmentLineList(env, dOrder.getDocument());
-			
-			if(!YFCCommon.isVoid(dOutput)){
-				return YFCDocument.getDocumentFor(dOutput).getDocumentElement();
-			}
-		} catch (YFSException e) {
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			e.printStackTrace();
+		Document dOutput = CompleteOrder.callApi(env, dOrder.getDocument(), getShipmentLineListTemplate(), "getShipmentLineList");
+		
+		if(!YFCCommon.isVoid(dOutput)){
+			return YFCDocument.getDocumentFor(dOutput).getDocumentElement();
 		}
+		
 		return null;
 	}
 	

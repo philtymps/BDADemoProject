@@ -31,28 +31,17 @@ public class BDAHoldsAndPayment implements IBDAService {
 	public Document invoke(YFSEnvironment env, Document inputDoc) {
 		YFCDocument output = YFCDocument.createDocument("Results");
 		YFCElement eResults = output.getDocumentElement();
-		try {	
-			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
-			Document l_OutputXml = null;
+		Document l_OutputXml = null;
+		l_OutputXml = CompleteOrder.callApi(env, inputDoc, CompleteOrder.getOrderDetailsTemplate(), "getOrderDetails");
+		eResults.setAttribute("OrderHeaderKey", l_OutputXml.getDocumentElement().getAttribute("OrderHeaderKey"));
+	
+		if (!YFCCommon.isVoid(l_OutputXml)){
 			try {
-				env.setApiTemplate("getOrderDetails", CompleteOrder.getOrderDetailsTemplate());
-				l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
-				eResults.setAttribute("OrderHeaderKey", l_OutputXml.getDocumentElement().getAttribute("OrderHeaderKey"));
-			} catch(Exception yex) {
-	        	System.out.println("The error thrown was: " );    
-	        	System.out.println(yex.toString());
-	            yex.printStackTrace();
-	        } 
-			if (!YFCCommon.isVoid(l_OutputXml)){
-				try {
-		            CompleteOrder.removeHolds(env, l_OutputXml, eResults, localApi);
-		            CompleteOrder.processOrderPayments(env, l_OutputXml, true, eResults, localApi);
-				} catch(Exception ex){
-					eResults.setAttribute("Error", ex.toString());
-				}
+	            CompleteOrder.removeHolds(env, l_OutputXml, eResults);
+	            CompleteOrder.processOrderPayments(env, l_OutputXml, true, eResults);
+			} catch(Exception ex){
+				eResults.setAttribute("Error", ex.toString());
 			}
-		} catch(Exception e){
-			e.printStackTrace();
 		}
 		return eResults.getOwnerDocument().getDocument();
 	}

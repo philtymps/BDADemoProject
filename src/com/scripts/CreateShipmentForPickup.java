@@ -100,7 +100,7 @@ public class CreateShipmentForPickup {
 	}
 	
 	
-	public static void updateChargeAmount(YFSEnvironment env, YFCElement eOrder, YFCElement eOutput, YIFApi localApi){
+	public static void updateChargeAmount(YFSEnvironment env, YFCElement eOrder, YFCElement eOutput){
 		double orderTotal = eOrder.getChildElement("PriceInfo", true).getDoubleAttribute("TotalAmount", 0);
 		if (orderTotal > 0){
 			double maxCharge = 0;
@@ -134,7 +134,7 @@ public class CreateShipmentForPickup {
 				ePayDetails.setAttribute("ProcessedAmount", remainder + 1);
 				try {
 					//m_YfsEnv.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-					localApi.invoke(env, "changeOrder", eInput.getOwnerDocument().getDocument());
+					CompleteOrder.callApi(env, eInput.getOwnerDocument().getDocument(), null, "changeOrder");
 					eOutput.setAttribute("AdjustedPayment", "Y");
 				} catch(Exception yex) {
 		        	System.out.println("The api call changeOrder failed using the following input xml: " + eInput);
@@ -164,33 +164,33 @@ public class CreateShipmentForPickup {
 				YFCElement eOrder = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
 				if (newWithReadylines(eOrder)){
 					try {
-			            CompleteOrder.removeHolds(env, l_OutputXml, eOutput, localApi);
-			            updateChargeAmount(env, eOrder, eOutput, localApi);
-			            if (CompleteOrder.processOrderPayments(env, l_OutputXml, true, eOutput, localApi)){
+			            CompleteOrder.removeHolds(env, l_OutputXml, eOutput);
+			            updateChargeAmount(env, eOrder, eOutput);
+			            if (CompleteOrder.processOrderPayments(env, l_OutputXml, true, eOutput)){
 			            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-			            		CompleteOrder.scheduleOrder(env, l_OutputXml, localApi);
+			            		CompleteOrder.scheduleOrder(env, l_OutputXml);
 				            	eOutput.setAttribute("ScheduleInvoked", "Y");
 				            	env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
 								l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
 			            	}
 			            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "3200") && CompleteOrder.statusGreaterThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-			            		CompleteOrder. releaseOrder(env, l_OutputXml, localApi, "N");
+			            		CompleteOrder. releaseOrder(env, l_OutputXml, "N");
 					            eOutput.setAttribute("ReleaseInvoked", "Y");
 					            env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
 								l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
 			            	}
-			            	CompleteOrder.confirmShipment(env, l_OutputXml, eOutput, localApi, true, true);
+			            	CompleteOrder.confirmShipment(env, l_OutputXml, eOutput, true, true);
 			            	YFCElement eShipments = eOutput.getChildElement("Shipments");
 			            	if (!YFCCommon.isVoid(eShipments)){
 			            		for (YFCElement eShipment : eShipments.getChildren()){
 			            			if (eShipment.getBooleanAttribute("Confirm", false)){
-			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"), localApi);
+			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"));
 				            			eShipment.setAttribute("ShipmentInvoiced", "Y");
 			            			}
 			            		}
 			            	}
 			            	if (CompleteOrder.statusGreaterThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MaxOrderStatus")), "3700")){
-			            		CompleteOrder.processOrderPayments(env, l_OutputXml, false, eOutput, localApi);
+			            		CompleteOrder.processOrderPayments(env, l_OutputXml, false, eOutput);
 			            	}
 			            }
 			        }
@@ -212,61 +212,47 @@ public class CreateShipmentForPickup {
 	public Document processPickupLines(YFSEnvironment env, Document inputDoc){
 		YFCDocument output = YFCDocument.createDocument("Results");
 		YFCElement eOutput = output.getDocumentElement();
-		try {	
-			YIFApi localApi = YIFClientFactory.getInstance().getLocalApi();
-			Document l_OutputXml = null;
-			try {
-				env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-				l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
-			} catch(Exception yex) {
-				logger.debug("The error thrown was: " );    
-				logger.debug(yex.toString());
-	        } 
-			if (!YFCCommon.isVoid(l_OutputXml)){
-				YFCElement eOrder = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
-				if (onlyPickup(eOrder)){
-					try {
-			            CompleteOrder.removeHolds(env, l_OutputXml, eOutput, localApi);
-			            if (CompleteOrder.processOrderPayments(env, l_OutputXml, true, eOutput, localApi)){
-			            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-			            		CompleteOrder.scheduleOrder(env, l_OutputXml, localApi);
-				            	eOutput.setAttribute("ScheduleInvoked", "Y");
-				            	env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-								l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
-			            	}
-			            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "3200") && CompleteOrder.statusGreaterThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
-			            		CompleteOrder. releaseOrder(env, l_OutputXml, localApi, "N");
-					            eOutput.setAttribute("ReleaseInvoked", "Y");
-					            env.setApiTemplate("getOrderDetails", getOrderDetailsTemplate());
-								l_OutputXml = localApi.invoke(env, "getOrderDetails", inputDoc);
-			            	}
-			            	CompleteOrder.confirmShipment(env, l_OutputXml, eOutput, localApi, processBackroomPick(), false);
-			            	YFCElement eShipments = eOutput.getChildElement("Shipments");
-			            	if (!YFCCommon.isVoid(eShipments)){
-			            		for (YFCElement eShipment : eShipments.getChildren()){
-			            			if (eShipment.getBooleanAttribute("Confirm", false)){
-			            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"), localApi);
-				            			eShipment.setAttribute("ShipmentInvoiced", "Y");
-			            			}
-			            		}
-			            	}
-			            	if (CompleteOrder.statusGreaterThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MaxOrderStatus")), "3700")){
-			            		CompleteOrder.processOrderPayments(env, l_OutputXml, false, eOutput, localApi);
-			            	}
-			            }
-			        }
-			        catch(Exception yex) {
-			        	System.out.println("The error thrown was: " );    
-			        	System.out.println(yex.toString());
-			            yex.printStackTrace();
-			        }
-				}
+
+		Document l_OutputXml = CompleteOrder.callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
+		if (!YFCCommon.isVoid(l_OutputXml)){
+			YFCElement eOrder = YFCDocument.getDocumentFor(l_OutputXml).getDocumentElement();
+			if (onlyPickup(eOrder)){
+				try {
+		            CompleteOrder.removeHolds(env, l_OutputXml, eOutput);
+		            if (CompleteOrder.processOrderPayments(env, l_OutputXml, true, eOutput)){
+		            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
+		            		CompleteOrder.scheduleOrder(env, l_OutputXml);
+			            	eOutput.setAttribute("ScheduleInvoked", "Y");
+			            	l_OutputXml = CompleteOrder.callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
+		            	}
+		            	if (CompleteOrder.statusLessThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "3200") && CompleteOrder.statusGreaterThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MinOrderStatus")), "1500")){
+		            		CompleteOrder. releaseOrder(env, l_OutputXml, "N");
+				            eOutput.setAttribute("ReleaseInvoked", "Y");
+				            l_OutputXml = CompleteOrder.callApi(env, inputDoc, getOrderDetailsTemplate(), "getOrderDetails");
+		            	}
+		            	CompleteOrder.confirmShipment(env, l_OutputXml, eOutput, processBackroomPick(), false);
+		            	YFCElement eShipments = eOutput.getChildElement("Shipments");
+		            	if (!YFCCommon.isVoid(eShipments)){
+		            		for (YFCElement eShipment : eShipments.getChildren()){
+		            			if (eShipment.getBooleanAttribute("Confirm", false)){
+		            				CompleteOrder.createShipmentInvoice(env, eShipment.getAttribute("ShipmentKey"), eOrder.getAttribute("DocumentType"));
+			            			eShipment.setAttribute("ShipmentInvoiced", "Y");
+		            			}
+		            		}
+		            	}
+		            	if (CompleteOrder.statusGreaterThan(CompleteOrder.getBaseStatus(l_OutputXml.getDocumentElement().getAttribute("MaxOrderStatus")), "3700")){
+		            		CompleteOrder.processOrderPayments(env, l_OutputXml, false, eOutput);
+		            	}
+		            }
+		        }
+		        catch(Exception yex) {
+		        	System.out.println("The error thrown was: " );    
+		        	System.out.println(yex.toString());
+		            yex.printStackTrace();
+		        }
 			}
-		} catch (Exception e ) {
-			logger.debug("Could not initialize the yifclient.properties.");
-			logger.debug("Bad stuff happened trying to initialize the Yif Client.");
-			logger.debug(e);
 		}
-		return output.getDocument();
+			
+			return output.getDocument();
 	}
 }

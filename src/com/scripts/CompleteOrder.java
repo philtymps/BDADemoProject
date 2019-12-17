@@ -28,7 +28,7 @@ public class CompleteOrder implements IBDAService {
 	
 	}
 	
-	private static Document callApi(YFSEnvironment env, Document dInput, Document dTemplate, String sApiName) {
+	public static Document callApi(YFSEnvironment env, Document dInput, Document dTemplate, String sApiName) {
 		return BDAServiceApi.callApi(env, dInput, dTemplate, sApiName, true);
 	}
 	
