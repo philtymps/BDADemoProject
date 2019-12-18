@@ -96,11 +96,14 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 				JSONArray supplies = new JSONArray();
 				objInput.put("supplies", supplies);
 				for(YFCElement eItem : eItemList.getChildren()) {
-			
+					YFCElement eItemResponse = eResponse.getChildElement("ItemResponses", true).createChild("ItemResponse");
+					eItemResponse.setAttribute("ItemID", eItem.getAttribute("ItemID"));
+					eItemResponse.setAttribute("ShipNode", eItem.getAttribute("ShipNode"));
 					if(level == 2 || !YFCCommon.equals(eItem.getAttribute("SupplyType"), "ONHAND") || !isStoreAdjustment(env, eItem.getAttribute("ShipNode"))) {
 						if(isStoreAdjustment(env, eItem.getAttribute("ShipNode"))) {
 							System.out.println("Adjusting inventory for: " + eItem.getAttribute("ItemID") + " :: " + eItem.getAttribute("ShipNode"));
 						}
+						eItemResponse.setAttribute("Invoked", "IV");
 						supplies.add(convertInventoryAdjustment(eItem));
 						if(supplies.size() >= 200) { 
 							YFCElement eIVCall = eResponse.getChildElement("IVCalls", true).createChild("IVCall");
@@ -111,10 +114,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 							objInput.put("supplies", supplies);
 						}
 					} else {
-						System.out.println("Adjust SIM for " + eItem.getAttribute("ShipNode"));
-						YFCElement eSIMCall = eResponse.getChildElement("SIMCalls", true).createChild("SIMCall");
-						eSIMCall.setAttribute("ShipNode", eItem.getAttribute("ShipNode"));
-						eSIMCall.setAttribute("Location", eItem.getAttribute("Location"));
+						eItemResponse.setAttribute("Invoked", "SIM");
 						callSIMService(env, convertStoreInventoryAdjustment(eItem), eItem.getAttribute("ShipNode"), YFCCommon.isVoid(eItem.getAttribute("Location")) ? "LOC-1" : eItem.getAttribute("Location"));
 									
 					}
@@ -171,6 +171,8 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			obj.put(objAttribute, ele.getDoubleAttribute(eleAttribute));
 		} else if(!YFCCommon.isVoid(ele.getAttribute(eleAttribute))) {
 			obj.put(objAttribute, ele.getAttribute(eleAttribute));
+		} else if (YFCCommon.equals("InventoryStatus", objAttribute)) {
+			obj.put(objAttribute,  "GOOD");
 		} else if(YFCCommon.equals("ETA", eleAttribute) || YFCCommon.equals("SourceTS", eleAttribute)) {
 			TimeZone tz = TimeZone.getTimeZone("UTC");
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
