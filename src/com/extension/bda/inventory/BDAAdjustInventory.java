@@ -42,7 +42,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			return _nodeTypes.get(node);
 		} else {
 			YFCDocument dInput = YFCDocument.createDocument("ShipNode");
-			YFCElement eInput = dInput.getDocumentElement();
+			// YFCElement eInput = dInput.getDocumentElement();
 
 			YFCDocument dTemplate = YFCDocument.createDocument("ShipNodeList");
 			YFCElement eNode = dTemplate.getDocumentElement().createChild("ShipNode");
@@ -58,6 +58,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			if(_nodeTypes.containsKey(node)) {
 				return _nodeTypes.get(node);
 			} else {
+				System.out.println("Node Type Undefined for: " + node);
 				return "Undefined";
 			}
 		}
@@ -70,7 +71,9 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 
 	private boolean isStoreAdjustment(YFSEnvironment env, String sNode) {
 		String nodeType = getNodeTypeForNode(env, sNode);
+		
 		if(!YFCCommon.isVoid(nodeType) && YFCCommon.equalsIgnoreCase(sNode, "store")) {
+			System.out.println("Is Store: " + sNode);
 			return true;
 		}
 		return false;
@@ -93,8 +96,11 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 				JSONArray supplies = new JSONArray();
 				objInput.put("supplies", supplies);
 				for(YFCElement eItem : eItemList.getChildren()) {
+			
 					if(level == 2 || !YFCCommon.equals(eItem.getAttribute("SupplyType"), "ONHAND") || !isStoreAdjustment(env, eItem.getAttribute("ShipNode"))) {
-						
+						if(isStoreAdjustment(env, eItem.getAttribute("ShipNode"))) {
+							System.out.println("Adjusting inventory for: " + eItem.getAttribute("ItemID") + " :: " + eItem.getAttribute("ShipNode"));
+						}
 						supplies.add(convertInventoryAdjustment(eItem));
 						if(supplies.size() >= 200) { 
 							YFCElement eIVCall = eResponse.getChildElement("IVCalls", true).createChild("IVCall");
@@ -105,6 +111,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 							objInput.put("supplies", supplies);
 						}
 					} else {
+						System.out.println("Adjust SIM for " + eItem.getAttribute("ShipNode"));
 						YFCElement eSIMCall = eResponse.getChildElement("SIMCalls", true).createChild("SIMCall");
 						eSIMCall.setAttribute("ShipNode", eItem.getAttribute("ShipNode"));
 						eSIMCall.setAttribute("Location", eItem.getAttribute("Location"));
@@ -294,7 +301,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 				return currentToken.getString("access_token");
 			}
 		}
-		String sURL = "https://sim.watsoncommerce.ibm.com/";
+		String sURL = getPropertyValue(env, "bda.sim.integration.url") + "/";
 		sURL += getPropertyValue(env, "bda.sim.integration.tenant_id");
 		sURL += "/auth/oauth2/token";
 		
