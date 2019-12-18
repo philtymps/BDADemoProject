@@ -49,7 +49,6 @@ public class BDAServiceApi {
 	public static Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName) {
 		return callApi(env, inDoc, dTemplate, sApiName, false);
 	}
-	
 	public static Document callApi(YFSEnvironment env, Document inDoc, Document dTemplate, String sApiName, boolean externalScope){
 		if(!YFCCommon.isVoid(env) && !externalScope) {
 			YIFApi localApi;

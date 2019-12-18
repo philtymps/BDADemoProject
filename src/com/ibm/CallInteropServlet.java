@@ -85,8 +85,8 @@ public class CallInteropServlet {
 			//System.out.println("Connecting to: " + url.toString());
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();	
 			conn.setDoOutput(true);
-			conn.setConnectTimeout(5000);
-			conn.setReadTimeout(5000);
+			conn.setConnectTimeout(50000);
+			conn.setReadTimeout(50000);
 			BufferedWriter out = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
 			out.write("YFSEnvironment.progId=");
             out.write(URLEncoder.encode("ProgId"));

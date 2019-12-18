@@ -684,7 +684,6 @@ public class CompleteOrder implements IBDAService {
 			            yex.printStackTrace();
 			        }
 				}
-				env.setApiTemplate("createShipment", getCreateShipmentTemplate());
 				for(String key : createShipments.keySet()){
 					try {
 						getOrderDetailsOutput = callApi(env, createShipments.get(key).getDocument(), getCreateShipmentTemplate(), "createShipment");
