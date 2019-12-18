@@ -38,21 +38,28 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			_nodeTypes = new HashMap<String, String>();
 		}
 	
-		if(!YFCCommon.isVoid(_nodeTypes.get(node))) {
+		if(_nodeTypes.containsKey(node)) {
 			return _nodeTypes.get(node);
 		} else {
 			YFCDocument dInput = YFCDocument.createDocument("ShipNode");
 			YFCElement eInput = dInput.getDocumentElement();
-			eInput.setAttribute("ShipnodeKey", node);
-			
+
 			YFCDocument dTemplate = YFCDocument.createDocument("ShipNodeList");
 			YFCElement eNode = dTemplate.getDocumentElement().createChild("ShipNode");
 			eNode.setAttribute("NodeType", "");
 			eNode.setAttribute("ShipnodeKey", "");
 			YFCDocument response = YFCDocument.getDocumentFor(callApi(env, dInput.getDocument(), dTemplate.getDocument(), "getShipNodeList"));
+		
 			YFCElement eOutput = response.getDocumentElement();
-			_nodeTypes.put(node, eOutput.getChildElement("ShipNode").getAttribute("NodeType"));
-			return eOutput.getChildElement("ShipNode").getAttribute("NodeType");
+			for(YFCElement eShipNode : eOutput.getChildren()) {
+				_nodeTypes.put(eShipNode.getAttribute("ShipnodeKey"), eShipNode.getAttribute("NodeType"));
+			}
+			
+			if(_nodeTypes.containsKey(node)) {
+				return _nodeTypes.get(node);
+			} else {
+				return "Undefined";
+			}
 		}
 	}
 	
@@ -101,7 +108,8 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 						YFCElement eSIMCall = eResponse.getChildElement("SIMCalls", true).createChild("SIMCall");
 						eSIMCall.setAttribute("ShipNode", eItem.getAttribute("ShipNode"));
 						eSIMCall.setAttribute("Location", eItem.getAttribute("Location"));
-						callSIMService(env, convertStoreInventoryAdjustment(eItem), eItem.getAttribute("ShipNode"), YFCCommon.isVoid(eItem.getAttribute("Location")) ? "STORE" : eItem.getAttribute("Location"));
+						callSIMService(env, convertStoreInventoryAdjustment(eItem), eItem.getAttribute("ShipNode"), YFCCommon.isVoid(eItem.getAttribute("Location")) ? "LOC-1" : eItem.getAttribute("Location"));
+									
 					}
 				}
 				
@@ -244,7 +252,8 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 	}
 	
 	private void callSIMService(YFSEnvironment env, JSONObject obj, String sShipNode, String sLocation) throws JSONException {
-		StringBuilder url = new StringBuilder("https://sim.watsoncommerce.ibm.com/");
+		StringBuilder url = new StringBuilder(getPropertyValue(env, "bda.sim.integration.url"));
+		url.append("/");
 		url.append(getPropertyValue(env, "bda.sim.integration.tenant_id"));
 		url.append("/v1/stores/");
 		url.append(sShipNode);
