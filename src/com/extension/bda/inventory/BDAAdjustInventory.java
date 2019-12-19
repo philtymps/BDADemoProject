@@ -39,6 +39,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		}
 	
 		if(_nodeTypes.containsKey(node)) {
+			System.out.println("Contains key: " + node + " :: " + _nodeTypes.get(node));
 			return _nodeTypes.get(node);
 		} else {
 			YFCDocument dInput = YFCDocument.createDocument("ShipNode");
@@ -52,6 +53,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		
 			YFCElement eOutput = response.getDocumentElement();
 			for(YFCElement eShipNode : eOutput.getChildren()) {
+				System.out.println("Adding key: " + eShipNode.getAttribute("ShipnodeKey") + " :: " + eShipNode.getAttribute("NodeType"));
 				_nodeTypes.put(eShipNode.getAttribute("ShipnodeKey"), eShipNode.getAttribute("NodeType"));
 			}
 			
@@ -81,6 +83,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 	
 	@Override
 	public Document invoke(YFSEnvironment env, Document input) throws Exception {
+		System.out.println("Adjusting Inventory");
 		YFCDocument dResponse  = YFCDocument.createDocument("AdjustInventory");
 		YFCElement eResponse = dResponse.getDocumentElement();
 		if(!YFCCommon.isVoid(input)) {
