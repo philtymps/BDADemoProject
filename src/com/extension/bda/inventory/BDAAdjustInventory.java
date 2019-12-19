@@ -264,8 +264,8 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 	}
 	
 	private void callSIMService(YFSEnvironment env, JSONObject obj, String sShipNode, String sLocation) throws JSONException {
-		StringBuilder url = new StringBuilder(getPropertyValue(env, "bda.sim.integration.url"));
-		url.append("/");
+		StringBuilder url = new StringBuilder();
+		url.append("https://store.supply-chain.ibm.com/");
 		url.append(getPropertyValue(env, "bda.sim.integration.tenant_id"));
 		url.append("/v1/stores/");
 		url.append(sShipNode);
@@ -306,7 +306,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 				return currentToken.getString("access_token");
 			}
 		}
-		String sURL = getPropertyValue(env, "bda.sim.integration.url") + "/";
+		String sURL = "https://store.supply-chain.ibm.com/";
 		sURL += getPropertyValue(env, "bda.sim.integration.tenant_id");
 		sURL += "/auth/oauth2/token";
 		
