@@ -39,7 +39,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		}
 	
 		if(_nodeTypes.containsKey(node)) {
-			System.out.println("Contains key: " + node + " :: " + _nodeTypes.get(node));
+			//System.out.println("Contains key: " + node + " :: " + _nodeTypes.get(node));
 			return _nodeTypes.get(node);
 		} else {
 			YFCDocument dInput = YFCDocument.createDocument("ShipNode");
@@ -53,14 +53,14 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		
 			YFCElement eOutput = response.getDocumentElement();
 			for(YFCElement eShipNode : eOutput.getChildren()) {
-				System.out.println("Adding key: " + eShipNode.getAttribute("ShipnodeKey") + " :: " + eShipNode.getAttribute("NodeType"));
+			//	System.out.println("Adding key: " + eShipNode.getAttribute("ShipnodeKey") + " :: " + eShipNode.getAttribute("NodeType"));
 				_nodeTypes.put(eShipNode.getAttribute("ShipnodeKey"), eShipNode.getAttribute("NodeType"));
 			}
 			
 			if(_nodeTypes.containsKey(node)) {
 				return _nodeTypes.get(node);
 			} else {
-				System.out.println("Node Type Undefined for: " + node);
+			//	System.out.println("Node Type Undefined for: " + node);
 				return "Undefined";
 			}
 		}
@@ -74,8 +74,8 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 	private boolean isStoreAdjustment(YFSEnvironment env, String sNode) {
 		String nodeType = getNodeTypeForNode(env, sNode);
 		
-		if(!YFCCommon.isVoid(nodeType) && YFCCommon.equalsIgnoreCase(sNode, "store")) {
-			System.out.println("Is Store: " + sNode);
+		if(!YFCCommon.isVoid(nodeType) && YFCCommon.equalsIgnoreCase(nodeType, "store")) {
+			//System.out.println("Is Store: " + sNode);
 			return true;
 		}
 		return false;
