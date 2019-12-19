@@ -288,9 +288,6 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			outputStreamWriter.write(obj.toString());
 			outputStreamWriter.flush();
 			int responseCode = connection.getResponseCode();
-			if(responseCode < 300) {
-				new JSONObject(new BufferedInputStream(connection.getInputStream()));
-			}
 		} catch (ProtocolException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
