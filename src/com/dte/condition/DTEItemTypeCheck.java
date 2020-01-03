@@ -25,7 +25,7 @@ public class DTEItemTypeCheck implements YCPDynamicConditionEx  {
 	@Override
 	public boolean evaluateCondition(YFSEnvironment env, String name, Map mapData, Document doc) {
 		
-		if(!YFCCommon.isVoid(doc)) {
+		/*if(!YFCCommon.isVoid(doc)) {
 			System.out.println("Input Condition");
 			System.out.println(YFCDocument.getDocumentFor(doc));
 		}
@@ -42,13 +42,13 @@ public class DTEItemTypeCheck implements YCPDynamicConditionEx  {
 			for(Object key : properties.keySet()) {
 				System.out.println(key + " :: " + properties.get(key));
 			}
-		}
+		}*/
 
 		if(mapData.containsKey("ItemID") && !YFCCommon.isVoid(mapData.get("ItemID"))){
 			YFCDocument dItemInput = YFCDocument.createDocument("Item");
 			YFCElement eItemInput = dItemInput.getDocumentElement();
 			eItemInput.setAttribute("ItemID", (String) mapData.get("ItemID"));
-			eItemInput.setAttribute("CallingOrganizationCode", (String) mapData.get("EnterpriseCode"));
+			eItemInput.setAttribute("CallingOrganizationCode", (String) mapData.get("SellerOrganizationCode"));
 			
 			if(!YFCCommon.isVoid(properties) && properties.containsKey("ItemAttribute") && properties.containsKey("AttributeValue")) {
 				Document dItemResponse = BDAServiceApi.callApi(env, dItemInput.getDocument(), getTemplate((String) properties.get("ItemAttribute")), "getItemList");
