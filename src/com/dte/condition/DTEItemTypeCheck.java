@@ -57,8 +57,11 @@ public class DTEItemTypeCheck implements YCPDynamicConditionEx  {
 				if(!YFCCommon.isVoid(eItem)) {
 					YFCElement ePrimaryInfo = eItem.getChildElement("PrimaryInformation");
 					if(!YFCCommon.isVoid(ePrimaryInfo)) {
-						if(YFCCommon.equalsIgnoreCase(ePrimaryInfo.getAttribute("ItemAttribute"), (String) properties.get("AttributeValue"))) {
-							return true;
+						String[] values = ((String)properties.get("AttributeValue")).split(",");
+						for(String value : values) {
+							if(YFCCommon.equalsIgnoreCase(ePrimaryInfo.getAttribute((String) properties.get("ItemAttribute")), value.trim())) {
+								return true;
+							}
 						}
 					}
 				}
