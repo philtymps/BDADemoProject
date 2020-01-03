@@ -24,16 +24,26 @@ public class DTEItemTypeCheck implements YCPDynamicConditionEx  {
 	}
 	@Override
 	public boolean evaluateCondition(YFSEnvironment env, String name, Map mapData, Document doc) {
-		System.out.println("Input Condition");
-		System.out.println(YFCDocument.getDocumentFor(doc));
-		System.out.println("Map Data");
-		for(Object key : mapData.keySet()) {
-			System.out.println(key + " :: " + mapData.get(key));
+		
+		if(!YFCCommon.isVoid(doc)) {
+			System.out.println("Input Condition");
+			System.out.println(YFCDocument.getDocumentFor(doc));
 		}
-		System.out.println("Properties");
-		for(Object key : properties.keySet()) {
-			System.out.println(key + " :: " + properties.get(key));
+
+		if(!YFCCommon.isVoid(mapData)) {
+			System.out.println("Map Data");
+			for(Object key : mapData.keySet()) {
+				System.out.println(key + " :: " + mapData.get(key));
+			}
 		}
+
+		if(!YFCCommon.isVoid(properties)) {
+			System.out.println("Properties");
+			for(Object key : properties.keySet()) {
+				System.out.println(key + " :: " + properties.get(key));
+			}
+		}
+
 		if(mapData.containsKey("ItemID") && !YFCCommon.isVoid(mapData.get("ItemID"))){
 			YFCDocument dItemInput = YFCDocument.createDocument("Item");
 			YFCElement eItemInput = dItemInput.getDocumentElement();
