@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/sendgrid/|com/ibm/yoox/|com/github/scribejava/httpclient/|com/pierbridge/services/PierbridgeRateShop.java" kind="src" path="src"/>
+	<classpathentry excluding="com/ibm/commerce/msgservice/|com/extension/ilog/|com/extension/twitter/|com/ibm/yoox/|com/github/scribejava/httpclient/|com/pierbridge/services/PierbridgeRateShop.java|com/sendgrid/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/HdrHistogram-2.1.9.jar"/>
 	<classpathentry kind="lib" path="lib/hystrix-core-1.5.2.jar"/>

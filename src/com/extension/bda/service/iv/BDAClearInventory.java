@@ -43,12 +43,26 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	}
 	@Override
 	public Document invoke(YFSEnvironment env, Document input) throws Exception {
-		Document dResponse = BDAXmlUtil.createDocument("Items");
+		Document dResponse = BDAXmlUtil.createDocument("Response");
+		if(RunInventoryRequests.isRunning()) {
+			dResponse.getDocumentElement().setAttribute("Message", "Already running!");
+		} else {
+			RunInventoryRequests.setRunning(true);
+			dResponse.getDocumentElement().setAttribute("Message", "Starting synch!");
+			RunInventoryRequests myRunnable = new RunInventoryRequests(env, dResponse);
+			Thread t = new Thread(myRunnable);
+			t.start();
+		}
+		return dResponse;
+
+	}
+	
+	public static void wipeData(YFSEnvironment env, Document dResponse) {
+		
 		Element eSupplies = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Supplies");
 		wipeSupplies(env, eSupplies, true);
 		Element eDemands = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Demands");
 		wipeDemands(env, eDemands, true);
-		return dResponse;
 	}
 
 	
@@ -56,7 +70,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		return BDAServiceApi.getScriptsPath(env) + "/variables.xml";
 	}
 	
-	private HashMap<String, String> replaceVariables(YFSEnvironment env, YFCDocument dFileInput){
+	private static HashMap<String, String> replaceVariables(YFSEnvironment env, YFCDocument dFileInput){
 		HashMap<String, String> variable = new HashMap<String, String>();
 		YFCDocument temp = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		for (YFCElement eChild : temp.getDocumentElement().getChildren()){
@@ -67,7 +81,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		return variable;
 	}
 	
-	private Collection<String> getVariableItems(YFSEnvironment env) {
+	private static Collection<String> getVariableItems(YFSEnvironment env) {
 		try {
 			YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 			if(!YFCCommon.isVoid(dVariables)){
@@ -103,7 +117,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		return _nodes;
 	}
 	
-	private void wipeSupplies(YFSEnvironment env, Element output, boolean adjust) {
+	private static void wipeSupplies(YFSEnvironment env, Element output, boolean adjust) {
 		JSONObject obj = new JSONObject();
 		JSONArray array = new JSONArray();
 		try {
@@ -115,7 +129,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		for(String p : getVariableItems(env)) {
 			System.out.println("Retrieve Supply for " + p);
 			for(String sNode : getShipNodes(env)) {
-				Document dResponse = this.callService(env, getSupplyForNode(p, "EACH", sNode), null, "BDACallIVService");
+				Document dResponse = BDAServiceApi.callService(env, getSupplyForNode(p, "EACH", sNode), null, "BDACallIVService");
 			
 				//System.out.println(BDAXmlUtil.getString(dResponse));
 				try {
@@ -146,7 +160,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		
 	}
 	
-	private void wipeDemands(YFSEnvironment env, Element eDemands, boolean adjust) {
+	private static void wipeDemands(YFSEnvironment env, Element eDemands, boolean adjust) {
 		JSONObject obj = new JSONObject();
 		JSONArray array = new JSONArray();
 		try {
@@ -158,7 +172,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		for(String p : getVariableItems(env)) {
 			System.out.println("Retrieving Demand for " + p);
 			for(String sNode : getShipNodes(env)) {
-				Document dResponse = this.callService(env, getDemandForNode(p, "EACH", sNode), null, "BDACallIVService");
+				Document dResponse = BDAServiceApi.callService(env, getDemandForNode(p, "EACH", sNode), null, "BDACallIVService");
 			
 				//System.out.println(BDAXmlUtil.getString(dResponse));
 				try {
@@ -302,7 +316,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		return callService(env, dInput, null, "BDACallIVService");
 	}
 	
-	private void pushSupplyUpdate(YFSEnvironment env, JSONObject obj, boolean adjust) {
+	private static void pushSupplyUpdate(YFSEnvironment env, JSONObject obj, boolean adjust) {
 		Document dInput = BDAXmlUtil.createDocument("InventoryVisibilityAPI");
 		Element eInput = dInput.getDocumentElement();
 		eInput.setAttribute("Content-Type", "application/json");
@@ -320,7 +334,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		
 	}
 	
-	private void pushDemandUpdate(YFSEnvironment env, JSONObject obj, boolean adjust) {
+	private static void pushDemandUpdate(YFSEnvironment env, JSONObject obj, boolean adjust) {
 		Document dInput = BDAXmlUtil.createDocument("InventoryVisibilityAPI");
 		Element eInput = dInput.getDocumentElement();
 		eInput.setAttribute("Content-Type", "application/json");

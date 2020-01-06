@@ -2,14 +2,13 @@ package com.dte.agent;
 
 import org.w3c.dom.Document;
 
-import com.yantra.interop.japi.YIFApi;
-import com.yantra.interop.japi.YIFClientFactory;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.ycp.japi.util.YCPBaseTaskAgent;
 import com.yantra.yfc.dom.YFCDocument;
+import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfs.japi.YFSEnvironment;
 
 public class DTESendAssetDetails extends YCPBaseTaskAgent {
-	protected static YIFApi api = null;
 	
 	/*
 	 *
@@ -22,17 +21,71 @@ public class DTESendAssetDetails extends YCPBaseTaskAgent {
    			ProcessTypeKey="ORDER_FULFILLMENT" TransactionId="DELETE_DRAFT_ORDER_AUTO.0001.ex" TransactionKey="2017111223535276390" />
 		</TaskQueue>
 	 */
+	
 	@Override
 	public Document executeTask(YFSEnvironment env, Document doc) throws Exception {
+		YFCDocument dTaskQueue = YFCDocument.getDocumentFor(doc);
+		YFCElement eTaskQueue = dTaskQueue.getDocumentElement();
+		YFCDocument dInput = YFCDocument.createDocument("Order");
+		YFCElement eInput = dInput.getDocumentElement();
+		eInput.setAttribute("OrderHeaderKey", eTaskQueue.getAttribute("DataKey"));
+		Document dOrder = BDAServiceApi.callApi(env, dInput.getDocument(), getOrderDetailTemplate(), "getCompleteOrderDetails");
+		
 		System.out.println("Input executeTask: " + YFCDocument.getDocumentFor(doc));
+		deleteTask(env, eTaskQueue.getAttribute("TaskQKey"));
 		return doc;
 	}
 	
-	protected YIFApi getApi() throws Exception {
-		if(api == null) {
-			api = YIFClientFactory.getInstance().getLocalApi();
+	private Document getOrderDetailTemplate() {
+		YFCDocument dOrder = YFCDocument.createDocument("Order");
+		YFCElement eOrder = dOrder.getDocumentElement();
+		eOrder.setAttribute("OrderNo", "");
+		eOrder.setAttribute("DocumentType", "");
+		eOrder.setAttribute("EnterpriseCode", "");
+		eOrder.setAttribute("SellerOrganizationCode", "");
+		eOrder.setAttribute("CustomerEMailID", "");
+		eOrder.setAttribute("CustomerFirstName", "");
+		eOrder.setAttribute("CustomerLastName", "");
+		eOrder.setAttribute("OrderType", "");
+		YFCElement eOrderLine = eOrder.createChild("OrderLines").createChild("OrderLine");
+		eOrderLine.setAttribute("OrderLineKey", "");
+		eOrderLine.setAttribute("OrderedQty", "");
+		eOrderLine.setAttribute("PrimeLineNo", "");
+		eOrderLine.setAttribute("SubLineNo", "");
+		eOrderLine.setAttribute("ItemGroupCode", "");
+		eOrderLine.setAttribute("KitCode", "");
+		eOrderLine.setAttribute("Status", "");
+		eOrderLine.setAttribute("StatusQuantity", "");
+		YFCElement eItemDetails = eOrderLine.createChild("ItemDetails");
+		eItemDetails.setAttribute("ItemID", "");
+		eItemDetails.setAttribute("UnitOfMeasure", "");
+		eItemDetails.setAttribute("ItemKey", "");
+		YFCElement ePrimaryInfo = eItemDetails.createChild("PrimaryInformation");
+		ePrimaryInfo.setAttribute("ShortDescription", "");
+		ePrimaryInfo.setAttribute("ItemType", "");
+		ePrimaryInfo.setAttribute("KitCode", "");
+		ePrimaryInfo.setAttribute("ManufacturerName", "");
+		YFCElement eAsset = eItemDetails.createChild("AssetList").createChild("Asset");
+		eAsset.setAttribute("AssetID", "");
+		eAsset.setAttribute("Type", "");
+		eAsset.setAttribute("ContentID", "");
+		eAsset.setAttribute("Description", "");
+		eAsset.setAttribute("Label", "");
+		eAsset.setAttribute("ContentLocation", "");
+		return dOrder.getDocument();
+	}
+	
+	private boolean deleteTask(YFSEnvironment env, String taskQKey) {
+		YFCDocument dInput = YFCDocument.createDocument("TaskQueue");
+		YFCElement eInput = dInput.getDocumentElement();
+		eInput.setAttribute("TaskQKey", taskQKey);
+		eInput.setAttribute("Operation", "Delete");
+		try {
+			BDAServiceApi.callApi(env, dInput.getDocument(), null, "manageTaskQueue");
+		} catch(Exception e) {
+			return false;
 		}
-    	return api;
-    }
+		return true;
+	}
 
 }
