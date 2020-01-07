@@ -132,8 +132,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 			Element eSupplies = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Supplies");
 			Element eDemands = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Demands");	
 			
-			ExecutorService supplyPool = Executors.newFixedThreadPool(10);
-			ExecutorService demandPool = Executors.newFixedThreadPool(10);
+			ExecutorService pool = Executors.newFixedThreadPool(20);
 			
 			ArrayList<GetSupplyDetailAsync> supplyThreads = new ArrayList<GetSupplyDetailAsync>();
 			ArrayList<GetDemandDetailAsync> demandThreads = new ArrayList<GetDemandDetailAsync>();
@@ -142,17 +141,14 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 				for(String sNode : getShipNodes(env)) {
 					GetSupplyDetailAsync supplyRunnable = new GetSupplyDetailAsync(p, sNode, true);
 					supplyThreads.add(supplyRunnable);
-					supplyPool.execute(supplyRunnable);
+					pool.execute(supplyRunnable);
 					GetDemandDetailAsync demandRunnable = new GetDemandDetailAsync(p, sNode, true);
 					demandThreads.add(demandRunnable);
-					demandPool.execute(demandRunnable);
+					pool.execute(demandRunnable);
 				}
 			}
-			supplyPool.shutdown();
-			supplyPool.awaitTermination(1, TimeUnit.MINUTES);
-			
-			demandPool.shutdown();
-			demandPool.awaitTermination(1, TimeUnit.MINUTES);
+			pool.shutdown();
+			pool.awaitTermination(1, TimeUnit.MINUTES);
 			
 			JSONObject supplyObj = new JSONObject();
 			JSONArray array = new JSONArray();
