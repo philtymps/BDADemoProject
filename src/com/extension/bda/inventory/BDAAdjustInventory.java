@@ -350,7 +350,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		url.append("/inventory:remove?productId=");
 		url.append(sItemID);
 		url.append("&unitOfMeasure=EACH");
-		
+		System.out.println("callSIMRemoveService::" + url);
 		try {
 			URL requestURL = new URL(url.toString());
 			HttpURLConnection connection = (HttpURLConnection) requestURL.openConnection();
@@ -375,10 +375,13 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 	}
 	
 	public static synchronized String getAuthToken(YFSEnvironment env, String tenant, String clientId, String secret) throws JSONException {
-		if(!YFCCommon.isVoid(currentToken)) {
-			if(currentToken.getInt("expires_at") > System.currentTimeMillis()) {
-				return currentToken.getString("access_token");
-			}
+		if(YFCCommon.isVoid(currentToken)) {
+			System.out.println("getAuthToken::Current Token is not set");
+		} else if(currentToken.getLong("expires_at") < System.currentTimeMillis()){
+			System.out.println("getAuthToken::Current Token expired");
+		}
+		if(!YFCCommon.isVoid(currentToken) && currentToken.getLong("expires_at") > System.currentTimeMillis()) {
+			return currentToken.getString("access_token");
 		}
 		String sURL = "https://store.supply-chain.ibm.com/";
 		sURL += getPropertyValue(env, "bda.sim.integration.tenant_id");
@@ -410,7 +413,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 				JSONObject response = new JSONObject(new BufferedInputStream(connection.getInputStream()));
 				response.put("expires_at", System.currentTimeMillis() + (response.getInt("expires_in") * 1000) - 5000);
 				currentToken = response;
-				System.out.println(response);
+				System.out.println("getAuthToken::Requested new token");
 				return currentToken.getString("access_token");
 			}
 			
