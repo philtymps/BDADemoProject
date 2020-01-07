@@ -71,7 +71,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		return "BDAAdjustInventory";
 	}
 
-	private boolean isStoreAdjustment(YFSEnvironment env, String sNode) {
+	private static boolean isStoreAdjustment(YFSEnvironment env, String sNode) {
 		String nodeType = getNodeTypeForNode(env, sNode);
 		
 		if(!YFCCommon.isVoid(nodeType) && YFCCommon.equalsIgnoreCase(nodeType, "store")) {
@@ -155,6 +155,13 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		return 2;
 	}
 	
+	public static boolean storeRequiresIV(YFSEnvironment env, String sStore) {
+		if(getLevelOfIntegration(env) < 3) {
+			return false;
+		}
+		return isStoreAdjustment(env, sStore);
+	}
+
 	public static String getIVIntegrationLevel(YFSEnvironment env) {
 		YFCDocument input = YFCDocument.createDocument("Event");
 		YFCElement eInput = input.getDocumentElement();
@@ -162,7 +169,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		eInput.setAttribute("BaseRulesKey", "IV_1");
 		
 		try {
-			Document dResponse = BDAEntityApi.getEntityApi(env, input.getDocument(), null);
+			Document dResponse = BDAServiceApi.callEasyService(env, input.getDocument(), null, "callEntityApi");
 			return dResponse.getDocumentElement().getAttribute("RuleSetValue");
 		} catch (Exception e) {
 			return "0.0";
@@ -272,7 +279,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		url.append("/locations/");
 		url.append(sLocation);
 		url.append("/inventory:add");
-		
+		System.out.println("callSIMService::" + url);
 		try {
 			URL requestURL = new URL(url.toString());
 			HttpURLConnection connection = (HttpURLConnection) requestURL.openConnection();

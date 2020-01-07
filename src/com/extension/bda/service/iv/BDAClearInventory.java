@@ -271,7 +271,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	
 	private static void createSupplyRecord(Document dResponse,  JSONArray array, Element eResponse, boolean adjust) throws Exception {
 		for(Element eSupply : BDAXmlUtil.getChildrenList(dResponse.getDocumentElement())) {
-			if(BDAXmlUtil.getDoubleAttribute(eSupply, "quantity") != 0) {
+			if(BDAXmlUtil.getDoubleAttribute(eSupply, "quantity") != 0 && (!BDAAdjustInventory.storeRequiresIV(null, eSupply.getAttribute("shipNode")) || !YFCCommon.equals(eSupply.getAttribute("type"), "ONHAND"))) {
 				JSONObject obj = new JSONObject();
 				obj.put("itemId", eSupply.getAttribute("itemId"));
 				obj.put("unitOfMeasure", eSupply.getAttribute("unitOfMeasure"));
