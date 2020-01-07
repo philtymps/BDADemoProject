@@ -12,8 +12,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
 
-import javax.net.ssl.HttpsURLConnection;
-
 import org.apache.commons.json.JSONArray;
 import org.apache.commons.json.JSONException;
 import org.apache.commons.json.JSONObject;
@@ -73,7 +71,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		return "BDAAdjustInventory";
 	}
 
-	public static boolean isStoreAdjustment(YFSEnvironment env, String sNode) {
+	private boolean isStoreAdjustment(YFSEnvironment env, String sNode) {
 		String nodeType = getNodeTypeForNode(env, sNode);
 		
 		if(!YFCCommon.isVoid(nodeType) && YFCCommon.equalsIgnoreCase(nodeType, "store")) {
@@ -120,7 +118,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 						}
 					} else {
 						eItemResponse.setAttribute("Invoked", "SIM");
-						callSIMAddService(env, convertStoreInventoryAdjustment(eItem), eItem.getAttribute("ShipNode"), YFCCommon.isVoid(eItem.getAttribute("Location")) ? "LOC-1" : eItem.getAttribute("Location"));
+						callSIMService(env, convertStoreInventoryAdjustment(eItem), eItem.getAttribute("ShipNode"), YFCCommon.isVoid(eItem.getAttribute("Location")) ? "LOC-1" : eItem.getAttribute("Location"));
 									
 					}
 				}
@@ -265,7 +263,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		return YFCDocument.getDocumentFor(BDAServiceApi.callService(env, dInput, null, "BDA_IVInvokeRestAPI"));
 	}
 	
-	private void callSIMAddService(YFSEnvironment env, JSONObject obj, String sShipNode, String sLocation) throws JSONException {
+	private void callSIMService(YFSEnvironment env, JSONObject obj, String sShipNode, String sLocation) throws JSONException {
 		StringBuilder url = new StringBuilder();
 		url.append("https://store.supply-chain.ibm.com/");
 		url.append(getPropertyValue(env, "bda.sim.integration.tenant_id"));
@@ -288,11 +286,6 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 
 			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(connection.getOutputStream());
 			outputStreamWriter.write(obj.toString());
-			
-			JSONObject response = new JSONObject(connection.getInputStream());
-			
-		
-			
 			outputStreamWriter.flush();
 			int responseCode = connection.getResponseCode();
 		} catch (ProtocolException e) {
