@@ -42,15 +42,13 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	}
 	
 	class GetDetailAsync {
-		protected YFSEnvironment env;
 		protected String itemID;
 		protected String shipNode;
 		protected JSONArray array;
 		protected boolean adjust;
 		protected Document output;
 		
-		public GetDetailAsync(YFSEnvironment env, String sItemID, String sShipNode, boolean adjust) {
-			this.env = env;
+		public GetDetailAsync(String sItemID, String sShipNode, boolean adjust) {
 			this.itemID = sItemID;
 			this.shipNode = sShipNode;
 			this.array = new JSONArray();
@@ -71,8 +69,8 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	class GetSupplyDetailAsync extends GetDetailAsync implements Runnable {
 
 	
-		public GetSupplyDetailAsync(YFSEnvironment env, String sItemID, String sShipNode, boolean adjust) {
-			super(env, sItemID, sShipNode, adjust);
+		public GetSupplyDetailAsync(String sItemID, String sShipNode, boolean adjust) {
+			super(sItemID, sShipNode, adjust);
 			output = BDAXmlUtil.createDocument("Supply");
 			output.getDocumentElement().setAttribute("ItemID", sItemID);
 			output.getDocumentElement().setAttribute("sShipNode", sShipNode);
@@ -80,7 +78,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		
 		@Override
 		public void run() {
-			Document dSupplies = BDAServiceApi.callService(env, getSupplyForNode(itemID, "EACH", shipNode), null, "BDACallIVService");
+			Document dSupplies = BDAServiceApi.callService(null, getSupplyForNode(itemID, "EACH", shipNode), null, "BDACallIVService");
 			try {
 				createSupplyRecord(dSupplies, array, output.getDocumentElement(), adjust);
 			} catch (Exception e) {
@@ -93,8 +91,8 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	
 	class GetDemandDetailAsync extends GetDetailAsync implements Runnable {
 		
-		public GetDemandDetailAsync(YFSEnvironment env, String sItemID, String sShipNode, boolean adjust) {
-			super(env, sItemID, sShipNode, adjust);
+		public GetDemandDetailAsync(String sItemID, String sShipNode, boolean adjust) {
+			super(sItemID, sShipNode, adjust);
 			output = BDAXmlUtil.createDocument("Demand");
 			output.getDocumentElement().setAttribute("ItemID", sItemID);
 			output.getDocumentElement().setAttribute("sShipNode", sShipNode);
@@ -102,7 +100,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		
 		@Override
 		public void run() {
-			Document dDemands = BDAServiceApi.callService(env, getDemandForNode(itemID, "EACH", shipNode), null, "BDACallIVService");
+			Document dDemands = BDAServiceApi.callService(null, getDemandForNode(itemID, "EACH", shipNode), null, "BDACallIVService");
 			try {
 				createDemandRecord(dDemands, array, output.getDocumentElement(), adjust);
 			} catch (Exception e) {
@@ -142,10 +140,10 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 			
 			for(String p : getVariableItems(env)) {
 				for(String sNode : getShipNodes(env)) {
-					GetSupplyDetailAsync supplyRunnable = new GetSupplyDetailAsync(env, p, sNode, true);
+					GetSupplyDetailAsync supplyRunnable = new GetSupplyDetailAsync(p, sNode, true);
 					supplyThreads.add(supplyRunnable);
 					supplyPool.execute(supplyRunnable);
-					GetDemandDetailAsync demandRunnable = new GetDemandDetailAsync(env, p, sNode, true);
+					GetDemandDetailAsync demandRunnable = new GetDemandDetailAsync(p, sNode, true);
 					demandThreads.add(demandRunnable);
 					demandPool.execute(demandRunnable);
 				}
