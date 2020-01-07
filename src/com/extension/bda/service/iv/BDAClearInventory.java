@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.TimeZone;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.json.JSONArray;
 import org.apache.commons.json.JSONObject;
@@ -18,6 +21,7 @@ import com.bda.utils.BDACommon;
 import com.bda.utils.BDAXmlUtil;
 import com.extension.bda.service.IBDAService;
 import com.extension.bda.service.fulfillment.BDAServiceApi;
+import com.extension.bda.service.iv.BDAGetSupplyDetails.GetSupplyDetailAsync;
 import com.yantra.yfc.dom.YFCDocument;
 import com.yantra.yfc.dom.YFCElement;
 import com.yantra.yfc.util.YFCCommon;
@@ -29,6 +33,85 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	private static String[] stores = {"tmobile_S1", "tmobile_S2", "tmobile_S3", "tmobile_S4", "tmobile_S5", "tmobile_S6", "tmobile_S7", "tmobile_S8"};
 	private static String[] items = {"TABLETSA774_0003_0" };
 	private static List<String> _nodes;
+	private static boolean running = false;
+	public static synchronized boolean isRunning() {
+		return running;
+	}
+	public static synchronized void setRunning(boolean value) {
+		running = value;
+	}
+	
+	class GetDetailAsync {
+		protected YFSEnvironment env;
+		protected String itemID;
+		protected String shipNode;
+		protected JSONArray array;
+		protected boolean adjust;
+		protected Document output;
+		
+		public GetDetailAsync(YFSEnvironment env, String sItemID, String sShipNode, boolean adjust) {
+			this.env = env;
+			this.itemID = sItemID;
+			this.shipNode = sShipNode;
+			this.array = new JSONArray();
+			this.adjust = adjust;
+			
+		}
+		
+		public JSONArray getAdjustmentArray() {
+			return array;
+		}
+		
+		public Element getAdjustmentElements() {
+			return output.getDocumentElement();
+		}
+		
+	}
+	
+	class GetSupplyDetailAsync extends GetDetailAsync implements Runnable {
+
+	
+		public GetSupplyDetailAsync(YFSEnvironment env, String sItemID, String sShipNode, boolean adjust) {
+			super(env, sItemID, sShipNode, adjust);
+			output = BDAXmlUtil.createDocument("Supply");
+			output.getDocumentElement().setAttribute("ItemID", sItemID);
+			output.getDocumentElement().setAttribute("sShipNode", sShipNode);
+		}
+		
+		@Override
+		public void run() {
+			Document dSupplies = BDAServiceApi.callService(env, getSupplyForNode(itemID, "EACH", shipNode), null, "BDACallIVService");
+			try {
+				createSupplyRecord(dSupplies, array, output.getDocumentElement(), adjust);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	
+	}
+	
+	class GetDemandDetailAsync extends GetDetailAsync implements Runnable {
+		
+		public GetDemandDetailAsync(YFSEnvironment env, String sItemID, String sShipNode, boolean adjust) {
+			super(env, sItemID, sShipNode, adjust);
+			output = BDAXmlUtil.createDocument("Demand");
+			output.getDocumentElement().setAttribute("ItemID", sItemID);
+			output.getDocumentElement().setAttribute("sShipNode", sShipNode);
+		}
+		
+		@Override
+		public void run() {
+			Document dDemands = BDAServiceApi.callService(env, getDemandForNode(itemID, "EACH", shipNode), null, "BDACallIVService");
+			try {
+				createDemandRecord(dDemands, array, output.getDocumentElement(), adjust);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
 	
 	@Override
 	public String getServiceName() {
@@ -44,25 +127,88 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	@Override
 	public Document invoke(YFSEnvironment env, Document input) throws Exception {
 		Document dResponse = BDAXmlUtil.createDocument("Response");
-		if(RunInventoryRequests.isRunning()) {
+		if(isRunning()) {
 			dResponse.getDocumentElement().setAttribute("Message", "Already running!");
 		} else {
-			RunInventoryRequests.setRunning(true);
-			dResponse.getDocumentElement().setAttribute("Message", "Starting synch!");
-			RunInventoryRequests myRunnable = new RunInventoryRequests(env, dResponse);
-			Thread t = new Thread(myRunnable);
-			t.start();
+			setRunning(true);
+			Element eSupplies = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Supplies");
+			Element eDemands = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Demands");	
+			
+			ExecutorService supplyPool = Executors.newFixedThreadPool(30);
+			ExecutorService demandPool = Executors.newFixedThreadPool(30);
+			
+			ArrayList<GetSupplyDetailAsync> supplyThreads = new ArrayList<GetSupplyDetailAsync>();
+			ArrayList<GetDemandDetailAsync> demandThreads = new ArrayList<GetDemandDetailAsync>();
+			
+			for(String p : getVariableItems(env)) {
+				for(String sNode : getShipNodes(env)) {
+					GetSupplyDetailAsync supplyRunnable = new GetSupplyDetailAsync(env, p, sNode, true);
+					supplyThreads.add(supplyRunnable);
+					supplyPool.execute(supplyRunnable);
+					GetDemandDetailAsync demandRunnable = new GetDemandDetailAsync(env, p, sNode, true);
+					demandThreads.add(demandRunnable);
+					demandPool.execute(demandRunnable);
+				}
+			}
+			supplyPool.shutdown();
+			supplyPool.awaitTermination(1, TimeUnit.MINUTES);
+			
+			demandPool.shutdown();
+			demandPool.awaitTermination(1, TimeUnit.MINUTES);
+			
+			JSONObject supplyObj = new JSONObject();
+			JSONArray array = new JSONArray();
+			supplyObj.put("supplies", array);
+			for(GetSupplyDetailAsync supply : supplyThreads) {
+				if(array.size() >= 200) {
+					
+					pushSupplyUpdate(env, supplyObj, true);
+					array = new JSONArray();
+					
+					supplyObj.put("supplies", array);
+				}
+				if(supply.getAdjustmentArray().size() > 0) {
+					array.addAll(supply.getAdjustmentArray());
+					BDAXmlUtil.importElement(eSupplies, supply.getAdjustmentElements());
+				}
+			}
+			try {
+				if(array.size() >= 0) {
+					pushSupplyUpdate(env, supplyObj, true);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			JSONObject demandObj = new JSONObject();
+			array = new JSONArray();
+			demandObj.put("demands", array);
+			for(GetDemandDetailAsync demand : demandThreads) {
+				if(array.size() >= 200) {
+					
+					pushDemandUpdate(env, demandObj, true);
+					array = new JSONArray();
+					
+					demandObj.put("demands", array);
+				}
+				if(demand.getAdjustmentArray().size() > 0) {
+					array.addAll(demand.getAdjustmentArray());
+					BDAXmlUtil.importElement(eDemands, demand.getAdjustmentElements());
+				}
+			}
+			try {
+				if(array.size() >= 0) {
+					pushDemandUpdate(env, demandObj, true);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			setRunning(false);
 		}
+		
 		return dResponse;
 
-	}
-	
-	public static void wipeData(YFSEnvironment env, Document dResponse) {
-		
-		Element eSupplies = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Supplies");
-		wipeSupplies(env, eSupplies, true);
-		Element eDemands = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Demands");
-		wipeDemands(env, eDemands, true);
 	}
 
 	
@@ -116,97 +262,9 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 		
 		return _nodes;
 	}
-	
-	private static void wipeSupplies(YFSEnvironment env, Element output, boolean adjust) {
-		JSONObject obj = new JSONObject();
-		JSONArray array = new JSONArray();
-		try {
-			obj.put("supplies", array);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	
-		for(String p : getVariableItems(env)) {
-			System.out.println("Retrieve Supply for " + p);
-			for(String sNode : getShipNodes(env)) {
-				Document dResponse = BDAServiceApi.callService(env, getSupplyForNode(p, "EACH", sNode), null, "BDACallIVService");
-			
-				//System.out.println(BDAXmlUtil.getString(dResponse));
-				try {
-					if(array.size() >= 200) {
-						
-						pushSupplyUpdate(env, obj, adjust);
-						array = new JSONArray();
-						
-						obj.put("supplies", array);
-					}
-					// System.out.println(obj.toString());
-					createSupplyRecord(dResponse, array, output, adjust);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				
-				
-			}	
-		}
-		try {
-			if(array.size() >= 0) {
-				obj.put("supplies", array);
-				pushSupplyUpdate(env, obj, adjust);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	private static void wipeDemands(YFSEnvironment env, Element eDemands, boolean adjust) {
-		JSONObject obj = new JSONObject();
-		JSONArray array = new JSONArray();
-		try {
-			obj.put("demands", array);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	
-		for(String p : getVariableItems(env)) {
-			System.out.println("Retrieving Demand for " + p);
-			for(String sNode : getShipNodes(env)) {
-				Document dResponse = BDAServiceApi.callService(env, getDemandForNode(p, "EACH", sNode), null, "BDACallIVService");
-			
-				//System.out.println(BDAXmlUtil.getString(dResponse));
-				try {
-					if(array.size() >= 200) {
-						
-						
-						pushDemandUpdate(env, obj, adjust);
-						array = new JSONArray();
-						
-						obj.put("demands", array);
-					}
-					// System.out.println(obj.toString());
-					createDemandRecord(dResponse, array, eDemands, adjust);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-				
-				
-			}	
-		}
-		try {
-			if(array.size() >= 0) {
-				obj.put("demands", array);
-				pushDemandUpdate(env, obj, adjust);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	private static void createSupplyRecord(Document dResponse,  JSONArray array, Element eSupplies, boolean adjust) throws Exception {
-		Element eResponse = dResponse.getDocumentElement();
 
+	
+	private static void createSupplyRecord(Document dResponse,  JSONArray array, Element eResponse, boolean adjust) throws Exception {
 		for(Element eSupply : BDAXmlUtil.getChildrenList(dResponse.getDocumentElement())) {
 			if(BDAXmlUtil.getDoubleAttribute(eSupply, "quantity") != 0) {
 				System.out.println(BDAXmlUtil.getString(eSupply));
@@ -245,14 +303,12 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 				array.add(obj);
 				System.out.println(obj.toString());
 				
-				Element eSup = BDAXmlUtil.createChild(eSupplies, "Supply");
-				eSup.setAttribute("itemId", eSupply.getAttribute("itemId"));
-				eSup.setAttribute("shipNode", eSupply.getAttribute("shipNode"));
+				Element eSup = BDAXmlUtil.createChild(eResponse, "Supply");
+				eSup.setAttribute("Type", eSupply.getAttribute("type"));
 				BDAXmlUtil.setAttribute(eSup, "changedQuantity", -(BDAXmlUtil.getDoubleAttribute(eSupply, "quantity")));
 			}
 	
 		}
-		
 	}
 	
 	private static void createDemandRecord(Document dResponse, JSONArray array, Element eDemands, boolean adjust) throws Exception {
