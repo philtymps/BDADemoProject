@@ -104,7 +104,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 					eItemResponse.setAttribute("ShipNode", eItem.getAttribute("ShipNode"));
 					if(level == 2 || !YFCCommon.equals(eItem.getAttribute("SupplyType"), "ONHAND") || !isStoreAdjustment(env, eItem.getAttribute("ShipNode"))) {
 						if(isStoreAdjustment(env, eItem.getAttribute("ShipNode"))) {
-							System.out.println("Adjusting inventory for: " + eItem.getAttribute("ItemID") + " :: " + eItem.getAttribute("ShipNode"));
+							System.out.println("Adjusting inventory for: " + eItem.getAttribute("ItemID") + " :: " + eItem.getAttribute("ShipNode") + " :: " + eItem.getAttribute("SupplyType"));
 						}
 						eItemResponse.setAttribute("Invoked", "IV");
 						supplies.add(convertInventoryAdjustment(eItem));
@@ -296,8 +296,85 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		}
 	}
 	
+	public static void clearInventoryFromStore(YFSEnvironment env, String sShipNode, String sItemID) throws JSONException {
+		StringBuilder url = new StringBuilder();
+		url.append("https://store.supply-chain.ibm.com/");
+		url.append(getPropertyValue(env, "bda.sim.integration.tenant_id"));
+		url.append("/v1/stores/");
+		url.append(sShipNode);
+		url.append("/inventory?productId=");
+		url.append(sItemID);
+		url.append("&unitOfMeasure=EACH");
+		
+		try {
+			URL requestURL = new URL(url.toString());
+			HttpURLConnection connection = (HttpURLConnection) requestURL.openConnection();
+			connection.setDoOutput(true);
+			connection.setRequestMethod("GET");
+			connection.setRequestProperty("Content-Type", "application/json");
+			connection.setRequestProperty("Accept", "application/json");
+			connection.setRequestProperty("Authorization", "Bearer " + getAuthToken(env, getPropertyValue(env, "bda.sim.integration.tenant_id"), getPropertyValue(env, "bda.sim.integration.client_id"), getPropertyValue(env, "bda.sim.integration.secret")));
+			connection.setConnectTimeout(5000);
+		
+			if(connection.getResponseCode() == 200) {
+				JSONArray response = new JSONArray(new BufferedInputStream(connection.getInputStream()));
+				for(int i = 0; i < response.size(); i++) {
+					if(response.getJSONObject(i).getDouble("quantity") > 0) {
+						callSIMRemoveService(env, convertStoreInventoryAdjustment(response.getJSONObject(i).getDouble("quantity")), sShipNode, response.getJSONObject(i).getString("locationId"), sItemID);
+					}
+				}
+				
+			}
+		} catch (ProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
-	public static String getAuthToken(YFSEnvironment env, String tenant, String clientId, String secret) throws JSONException{
+	private static JSONObject convertStoreInventoryAdjustment(double quantity) throws JSONException {
+		JSONObject supply = new JSONObject();
+		supply.put("removeQuantity", quantity);
+		return supply;	
+	}
+	
+	private static void callSIMRemoveService(YFSEnvironment env, JSONObject obj, String sShipNode, String sLocation, String sItemID) throws JSONException {
+		StringBuilder url = new StringBuilder();
+		url.append("https://store.supply-chain.ibm.com/");
+		url.append(getPropertyValue(env, "bda.sim.integration.tenant_id"));
+		url.append("/v1/stores/");
+		url.append(sShipNode);
+		url.append("/locations/");
+		url.append(sLocation);
+		url.append("/inventory:remove?productId=");
+		url.append(sItemID);
+		url.append("&unitOfMeasure=EACH");
+		
+		try {
+			URL requestURL = new URL(url.toString());
+			HttpURLConnection connection = (HttpURLConnection) requestURL.openConnection();
+			connection.setDoOutput(true);
+			connection.setRequestMethod("POST");
+			connection.setRequestProperty("Content-Type", "application/json");
+			connection.setRequestProperty("Accept", "application/json");
+			connection.setRequestProperty("Authorization", "Bearer " + getAuthToken(env, getPropertyValue(env, "bda.sim.integration.tenant_id"), getPropertyValue(env, "bda.sim.integration.client_id"), getPropertyValue(env, "bda.sim.integration.secret")));
+			connection.setConnectTimeout(5000);
+		
+
+			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(connection.getOutputStream());
+			outputStreamWriter.write(obj.toString());
+			outputStreamWriter.flush();
+			int responseCode = connection.getResponseCode();
+		} catch (ProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static synchronized String getAuthToken(YFSEnvironment env, String tenant, String clientId, String secret) throws JSONException {
 		if(!YFCCommon.isVoid(currentToken)) {
 			if(currentToken.getInt("expires_at") > System.currentTimeMillis()) {
 				return currentToken.getString("access_token");
@@ -325,13 +402,15 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			outputStreamWriter.write(obj.toString());
 			outputStreamWriter.flush();
 			
-			System.out.println("Before Request");
+			//System.out.println("Before Request");
 			int responseCode = connection.getResponseCode();
-			System.out.println("Response Code: " + responseCode);
+			//System.out.println("Response Code: " + responseCode);
 			if(responseCode < 300) {
+				
 				JSONObject response = new JSONObject(new BufferedInputStream(connection.getInputStream()));
-				response.put("expires_at", System.currentTimeMillis() + response.getInt("expires_in") - 10);
+				response.put("expires_at", System.currentTimeMillis() + (response.getInt("expires_in") * 1000) - 5000);
 				currentToken = response;
+				System.out.println(response);
 				return currentToken.getString("access_token");
 			}
 			

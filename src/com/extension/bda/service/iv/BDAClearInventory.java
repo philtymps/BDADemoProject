@@ -19,6 +19,7 @@ import org.w3c.dom.Element;
 
 import com.bda.utils.BDACommon;
 import com.bda.utils.BDAXmlUtil;
+import com.extension.bda.inventory.BDAAdjustInventory;
 import com.extension.bda.service.IBDAService;
 import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.extension.bda.service.iv.BDAGetSupplyDetails.GetSupplyDetailAsync;
@@ -129,6 +130,15 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 			dResponse.getDocumentElement().setAttribute("Message", "Already running!");
 		} else {
 			setRunning(true);
+			if(BDAAdjustInventory.getLevelOfIntegration(env) == 3) {
+				for(String p : getVariableItems(env)) {
+					for(String sNode : getShipNodes(env)) {
+						if(YFCCommon.equals(BDAAdjustInventory.getNodeTypeForNode(env, sNode), "Store")) {
+							BDAAdjustInventory.clearInventoryFromStore(env, sNode, p);
+						}
+					}
+				}
+			}
 			Element eSupplies = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Supplies");
 			Element eDemands = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Demands");	
 			
@@ -147,6 +157,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 					pool.execute(demandRunnable);
 				}
 			}
+			
 			pool.shutdown();
 			pool.awaitTermination(1, TimeUnit.MINUTES);
 			
@@ -261,7 +272,6 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 	private static void createSupplyRecord(Document dResponse,  JSONArray array, Element eResponse, boolean adjust) throws Exception {
 		for(Element eSupply : BDAXmlUtil.getChildrenList(dResponse.getDocumentElement())) {
 			if(BDAXmlUtil.getDoubleAttribute(eSupply, "quantity") != 0) {
-				System.out.println(BDAXmlUtil.getString(eSupply));
 				JSONObject obj = new JSONObject();
 				obj.put("itemId", eSupply.getAttribute("itemId"));
 				obj.put("unitOfMeasure", eSupply.getAttribute("unitOfMeasure"));
@@ -295,7 +305,7 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 				String nowAsISO = df.format(new Date());
 				obj.put("sourceTs", nowAsISO);
 				array.add(obj);
-				System.out.println(obj.toString());
+				// System.out.println(obj.toString());
 				
 				Element eSup = BDAXmlUtil.createChild(eResponse, "Supply");
 				eSup.setAttribute("Type", eSupply.getAttribute("type"));
