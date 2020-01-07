@@ -132,8 +132,8 @@ public class BDAClearInventory extends BDAServiceApi implements IBDAService {
 			Element eSupplies = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Supplies");
 			Element eDemands = BDAXmlUtil.createChild(dResponse.getDocumentElement(), "Demands");	
 			
-			ExecutorService supplyPool = Executors.newFixedThreadPool(30);
-			ExecutorService demandPool = Executors.newFixedThreadPool(30);
+			ExecutorService supplyPool = Executors.newFixedThreadPool(10);
+			ExecutorService demandPool = Executors.newFixedThreadPool(10);
 			
 			ArrayList<GetSupplyDetailAsync> supplyThreads = new ArrayList<GetSupplyDetailAsync>();
 			ArrayList<GetDemandDetailAsync> demandThreads = new ArrayList<GetDemandDetailAsync>();
