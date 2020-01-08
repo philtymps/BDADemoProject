@@ -181,7 +181,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			obj.put(objAttribute, ele.getDoubleAttribute(eleAttribute));
 		} else if(!YFCCommon.isVoid(ele.getAttribute(eleAttribute))) {
 			obj.put(objAttribute, ele.getAttribute(eleAttribute));
-		} else if (YFCCommon.equals("InventoryStatus", objAttribute)) {
+		} else if (YFCCommon.equals("inventoryStatus", objAttribute)) {
 			obj.put(objAttribute,  "GOOD");
 		} else if(YFCCommon.equals("ETA", eleAttribute) || YFCCommon.equals("SourceTS", eleAttribute)) {
 			TimeZone tz = TimeZone.getTimeZone("UTC");
