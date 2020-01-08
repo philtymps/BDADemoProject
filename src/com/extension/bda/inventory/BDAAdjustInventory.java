@@ -187,8 +187,13 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 			TimeZone tz = TimeZone.getTimeZone("UTC");
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
 			df.setTimeZone(tz);
-			String nowAsISO = df.format(new Date());
-			obj.put(objAttribute, nowAsISO);
+			if(YFCCommon.equals("ETA", eleAttribute)) {
+				obj.put(objAttribute, "1900-01-01T00:00:00Z");
+			} else {
+				String nowAsISO = df.format(new Date());
+				obj.put(objAttribute, nowAsISO);
+			}
+			
 		} else if(YFCCommon.equals("ShipByDate", eleAttribute)) {
 			obj.put(objAttribute, "2500-01-01T00:00:00Z");
 		} else if(YFCCommon.equals("Tag", eleAttribute)) {
