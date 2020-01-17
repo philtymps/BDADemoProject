@@ -29,6 +29,7 @@ import com.extension.bda.userexits.BDADuplicateOrderImpl;
 import com.extension.gucci.GucciGetLinesToStealFrom;
 import com.extension.gucci.GucciStealInventory;
 import com.extension.silverpop.SilverpopEmailSegment;
+import com.extension.workorders.BDAGetWorkOrderAppointmentOptions;
 import com.scripts.CompleteOrder;
 import com.yantra.yfc.util.YFCCommon;
 
@@ -70,6 +71,7 @@ public class EasyServiceCollection {
 		map.put("getDemandDetails", new BDAGetDemandDetails());
 		map.put("clearPropertyCache", new ClearPropertyCache());
 		map.put("adjustInventory", new BDAAdjustInventory());
+		map.put("getWorkOrderAppointmentOptions", new BDAGetWorkOrderAppointmentOptions());
 	}
 	
 	public IBDAService getService(String sServiceName){
