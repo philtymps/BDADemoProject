@@ -3,9 +3,11 @@ package com.extension.workorders;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Properties;
 
 import org.w3c.dom.Document;
 
+import com.extension.bda.service.IBDAService;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -19,7 +21,7 @@ import com.yantra.yfc.util.YFCDate;
 import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSException;
 
-public class BDAGetWorkOrderAppointmentOptions {
+public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
 
 	private Document getAppointmentOptionsTemplate(){
 		YFCDocument dOutput = YFCDocument.createDocument("Promise");
@@ -60,7 +62,7 @@ public class BDAGetWorkOrderAppointmentOptions {
 		return dOutput.getDocument();
 	}
 	
-	public Document getWorkOrderAppointmentOptions(YFSEnvironment env, Document inputDoc) {
+	public Document invoke(YFSEnvironment env, Document inputDoc) {
 		YFCDocument dOutput = YFCDocument.createDocument("Appointments");
 		YIFApi localApi;
 		try {
@@ -147,5 +149,17 @@ public class BDAGetWorkOrderAppointmentOptions {
 
 		return dOutput.getDocument();
 
+	}
+
+	@Override
+	public String getServiceName() {
+		// TODO Auto-generated method stub
+		return "getWorkOrderAppointmentOptions";
+	}
+
+	@Override
+	public void setProperties(Properties props) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }
