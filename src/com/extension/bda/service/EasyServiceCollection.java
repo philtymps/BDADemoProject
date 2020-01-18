@@ -10,6 +10,7 @@ import com.extension.bda.service.expose.BDAEntityApi;
 import com.extension.bda.service.expose.BDARestCall;
 import com.extension.bda.service.expose.BDAWriteXMLToLog;
 import com.extension.bda.service.fulfillment.BDADecomposeDates;
+import com.extension.bda.service.fulfillment.BDAGetAlternateWorkOrderNodes;
 import com.extension.bda.service.fulfillment.BDAHoldsAndPayment;
 import com.extension.bda.service.fulfillment.BDASetRequestedDeliveryFromClassification;
 import com.extension.bda.service.giv.BDAGetDemandOrders;
@@ -71,6 +72,7 @@ public class EasyServiceCollection {
 		map.put("getDemandDetails", new BDAGetDemandDetails());
 		map.put("clearPropertyCache", new ClearPropertyCache());
 		map.put("adjustInventory", new BDAAdjustInventory());
+		map.put("getAlternateWorkOrderNodes", new BDAGetAlternateWorkOrderNodes());
 		map.put("getWorkOrderAppointmentOptions", new BDAGetWorkOrderAppointmentOptions());
 	}
 	
