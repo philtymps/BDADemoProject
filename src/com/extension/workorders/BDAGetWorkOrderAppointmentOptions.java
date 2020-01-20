@@ -8,6 +8,7 @@ import java.util.Properties;
 import org.w3c.dom.Document;
 
 import com.extension.bda.service.IBDAService;
+import com.extension.bda.service.fulfillment.BDAServiceApi;
 import com.yantra.interop.japi.YIFApi;
 import com.yantra.interop.japi.YIFClientCreationException;
 import com.yantra.interop.japi.YIFClientFactory;
@@ -22,6 +23,18 @@ import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSException;
 
 public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
+	
+	public static void main(String[] args) {
+		YFCDocument dInput = YFCDocument.createDocument("Promise");
+		YFCElement eInput = dInput.getDocumentElement();
+		eInput.setAttribute("WorkOrderKey", "2020012016284629748215");
+		eInput.setAttribute("ReturnMultipleSrvcSlots", "Y");
+		BDAGetWorkOrderAppointmentOptions t = new BDAGetWorkOrderAppointmentOptions();
+		
+		Document dResponse = t.invoke(null, dInput.getDocument());
+		System.out.println(YFCDocument.getDocumentFor(dResponse));
+		
+	}
 
 	private Document getAppointmentOptionsTemplate(){
 		YFCDocument dOutput = YFCDocument.createDocument("Promise");
@@ -42,6 +55,7 @@ public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
 		YFCElement eSlot = eSlots.createChild("Slot");
 		eSlot.setAttribute("EndTime", "");
 		eSlot.setAttribute("StartTime", "");
+		eSlot.setAttribute("ServiceSlotDesc", "");
 		YFCElement eAvailableDate = eSlot.createChild("AvailableDates").createChild("AvailableDate");
 		eAvailableDate.setAttribute("CapacityAvailable", "");
 		eAvailableDate.setAttribute("Date", "");
@@ -67,17 +81,13 @@ public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
 	
 	public Document invoke(YFSEnvironment env, Document inputDoc) {
 		YFCDocument dOutput = YFCDocument.createDocument("Appointments");
-		YIFApi localApi;
 		try {
-			localApi = YIFClientFactory.getInstance().getLocalApi();
 			YFCElement eInput = YFCDocument.getDocumentFor(inputDoc).getDocumentElement();
 			Document dAppointmentOptions = null;
-			env.setApiTemplate("getWorkOrderAppointmentOptions", getAppointmentOptionsTemplate());
-			Document dPromise = localApi.invoke(env, "getWorkOrderAppointmentOptions", inputDoc);
+			Document dPromise = BDAServiceApi.callApi(env,inputDoc, getAppointmentOptionsTemplate(), "getWorkOrderAppointmentOptions");
 			YFCElement ePromise = YFCDocument.getDocumentFor(dPromise).getDocumentElement();
 			YFCElement eOutput = dOutput.getDocumentElement();
 			HashMap<String, ArrayList<YFCElement>> temp = new HashMap<String, ArrayList<YFCElement>>();
-			HashMap<String, YFCElement> slotDate = new HashMap<String, YFCElement>();
 			if (!YFCCommon.isVoid(ePromise)) {
 				if (!YFCCommon.isVoid(ePromise.getChildElement("SuggestedOption")) && !YFCCommon.isVoid(ePromise.getChildElement("SuggestedOption").getChildElement("Option"))) {
 					YFCElement eSuggestedOption = ePromise.getChildElement("SuggestedOption").getChildElement("Option");
@@ -100,8 +110,10 @@ public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
 											slots = new ArrayList<YFCElement>();
 											temp.put(d.getString(), slots);
 										}
-										slotDate.put(d.getString() + "_" + eSlot.getAttribute("StartTime"), eAvailableDate);
-										slots.add(eSlot);
+										YFCElement eSlotClone = (YFCElement) eSlot.cloneNode(true);
+										eSlotClone.removeChild(eSlotClone.getChildElement("AvailableDates"));
+										eSlotClone.importNode(eAvailableDate);
+										slots.add(eSlotClone);
 									}
 								}
 							}
@@ -124,9 +136,10 @@ public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
 										eAppointment.setAttributes(slot.getAttributes());
 										eAppointment.setAttribute("ApptStart", start);
 										eAppointment.setAttribute("ApptEnd", end);
-										eAppointment.setAttribute("ServiceSlotDesc", slot.getAttribute("ServiceSlotDesc"));
-										YFCElement eAvailableDate = slotDate.get(startDate.getString() + slot.getAttribute("StartTime"));
+										
+										YFCElement eAvailableDate = slot.getChildElement("AvailableDate");
 										if(!YFCCommon.isVoid(eAvailableDate)) {
+											eAppointment.setAttribute("ServiceSlotDesc", slot.getAttribute("ServiceSlotDesc"));
 											eAppointment.setAttribute("ResourcePoolId", eAvailableDate.getChildElement("ResourcePools").getChildElement("ResourcePool").getAttribute("ResourcePoolId"));
 											eAppointment.setAttribute("ResourcePoolKey", eAvailableDate.getChildElement("ResourcePools").getChildElement("ResourcePool").getAttribute("ResourcePoolKey"));
 										}
@@ -146,13 +159,7 @@ public class BDAGetWorkOrderAppointmentOptions implements IBDAService {
 
 				}
 			}
-		} catch (YIFClientCreationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (YFSException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -23,7 +23,7 @@ import com.yantra.yfs.japi.YFSEnvironment;
 import com.yantra.yfs.japi.YFSException;
 
 public class BDAServiceApi {
-	protected static String BASE_URL = "http://oms.innovationcloud.info:9080";
+	protected static String BASE_URL = "http://localhost:9080";
 	protected Properties p;
 
 	public BDAServiceApi() {
