@@ -26,6 +26,7 @@ public class GenerateAdjustInventory {
 	private Properties properties;
 	private static YFCLogCategory logger = YFCLogCategory.instance(GenerateAdjustInventory.class);
 
+	private static String lastItem = "01567815796_SKU";
 	public static void main(String[] args) throws IOException {
 		System.out.println("Started");
 		GenerateAdjustInventory t = new GenerateAdjustInventory();
@@ -34,20 +35,20 @@ public class GenerateAdjustInventory {
 		YFCElement eInput = dInput.getDocumentElement();
 		eInput.setAttribute("CatalogOrganizationCode", "Aurora-Corp");
 		eInput.setAttribute("InventoryOrganizationCode", "Aurora");
-		Document dOutput = t.createStandardInventory(null, dInput.getDocument());
+		Document dOutput = t.createStandardInventory(null, dInput.getDocument(), lastItem);
 
 		if (!YFCCommon.isVoid(dOutput)) {
 			YFCDocument output = YFCDocument.getDocumentFor(dOutput);
 			while (!YFCCommon.isVoid(output.getDocumentElement().getChildElement("Item"))) {
 				System.out.println("Output: " + output.toString());
-				CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
-				dOutput = t.createStandardInventory(null, dInput.getDocument());
+				CallInteropServlet.invokeService(output, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
+				dOutput = t.createStandardInventory(null, dInput.getDocument(), lastItem);
 				if (!YFCCommon.isVoid(dOutput)) {
 					output = YFCDocument.getDocumentFor(dOutput);
 				}
 			}
 			System.out.println("Output: " + output.toString());
-			CallInteropServlet.invokeApi(output, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
+			CallInteropServlet.invokeService(output, null, "adjustInventory", "http://oms.innovationcloud.info:9080");
 		}
 	}
 
@@ -127,7 +128,7 @@ public class GenerateAdjustInventory {
 		return dOutput.getDocument();
 	}
 
-	public Document createStandardInventory(YFSEnvironment env, Document input) throws IOException {
+	public Document createStandardInventory(YFSEnvironment env, Document input, String lastItem) throws IOException {
 		YFCDocument dOutput = YFCDocument.createDocument("Items");
 		YFCElement eOutput = dOutput.getDocumentElement();
 		if (!YFCCommon.isVoid(input)) {
@@ -137,39 +138,39 @@ public class GenerateAdjustInventory {
 			if (!YFCCommon.isVoid(eInput.getAttribute("CatalogOrganizationCode"))
 					&& !YFCCommon.isVoid(eInput.getAttribute("InventoryOrganizationCode"))) {
 				createStandardInventoryForOrg(env, eOutput, eInput, eInput.getAttribute("CatalogOrganizationCode"),
-						eInput.getAttribute("InventoryOrganizationCode"));
+						eInput.getAttribute("InventoryOrganizationCode"), lastItem);
 			}
 		}
 		return dOutput.getDocument();
 	}
 
 	private void createStandardInventoryForOrg(YFSEnvironment env, YFCElement eOutput, YFCElement eInput,
-			String sCatOrgCode, String sInventoryOrg) throws IOException {
+			String sCatOrgCode, String sInventoryOrg, String lastItem) throws IOException {
 		YFCDocument dVariables = YFCDocument.getDocumentForXMLFile(getVariableFile(env));
 		if (!YFCCommon.isVoid(dVariables)) {
 			HashMap<String, String> vars = replaceVariables(env, dVariables);
 			YFCElement eShipNodes;
-			if (!YFCCommon.isVoid(eInput.getAttribute("DistRuleId"))) {
-				eShipNodes = getOptimizerShipNodes(env, eInput, sInventoryOrg);
-			} else {
+	
 				eShipNodes = getShipNodes(env, eInput, sInventoryOrg);
-			}
+	
 
 			
-			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_ID LIKE 'SAMS%' AND I.ITEM_GROUP_CODE = 'PROD' AND I.ITEM_ID NOT IN (SELECT II.ITEM_ID FROM OMDB.YFS_INVENTORY_ITEM II INNER JOIN OMDB.YFS_INVENTORY_SUPPLY IS ON IS.INVENTORY_ITEM_KEY = II.INVENTORY_ITEM_KEY WHERE II.ORGANIZATION_CODE = ? GROUP BY II.ITEM_ID HAVING SUM(IS.QUANTITY) > 0)";
+			String sStatement = "SELECT DISTINCT TRIM(I.ITEM_ID) ITEM_ID, TRIM(I.UOM) UOM FROM OMDB.YFS_ITEM I WHERE TRIM(I.ORGANIZATION_CODE) = ? AND I.ITEM_GROUP_CODE = 'PROD' AND I.ITEM_ID >= ? ORDER BY ITEM_ID";
 			Connection conn = null;
 			try {
 				conn = DatabaseConnection.getConnection(env);
 				PreparedStatement ps = conn.prepareStatement(sStatement);
 				ps.setString(1, sCatOrgCode);
-				ps.setString(2, sInventoryOrg);
+				ps.setString(2, lastItem);
 				ResultSet rso = ps.executeQuery();
 				int count = 0;
 				while (rso.next()) {
 					if (count > 800) {
+						
 						break;
 					}
 					if (!vars.containsValue(rso.getString("ITEM_ID"))) {
+						GenerateAdjustInventory.lastItem = rso.getString("ITEM_ID");
 						for (YFCElement eShipNode : eShipNodes.getChildren()) {
 							createAdjustmentRecords(eOutput, rso.getString("ITEM_ID"),
 									eShipNode.getAttribute("ShipNode"), rso.getString("UOM"));

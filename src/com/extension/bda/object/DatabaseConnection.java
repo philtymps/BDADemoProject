@@ -82,14 +82,14 @@ private static YFCElement eProperties = null;
 		if (!YFCCommon.isVoid(getProperty(env, "Username"))){
 			return (String) getProperty(env, "Username");
 		}
-		return "demouser";
+		return "db2inst1";
 	}
 	
 	protected static String getDBPassword(YFSEnvironment env){
 		if (!YFCCommon.isVoid(getProperty(env, "Password"))){
 			return (String) getProperty(env, "Password");
 		}
-		return "meeting265bridge";
+		return "diet4coke";
 	}
 	
 	public static String getDBSchema(YFSEnvironment env){
