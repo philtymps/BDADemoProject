@@ -56,11 +56,12 @@ static DOMParser parser = new DOMParser();
 		StringWriter strWriter = new StringWriter();
 		xmlOP.setOutputCharStream( strWriter );
 		xmlOP.serialize( doc );
-		return encodeSpecialChars (strWriter.toString());
+		return strWriter.toString();
+		//return encodeSpecialChars (strWriter.toString());
 
 	}//getXMLString(Document)
 
-	public static	boolean hasSpecialChars(String sXMLString)
+	/*public static	boolean hasSpecialChars(String sXMLString)
 	{
 		for (int i=0; i<sSpecialChars.length(); i++)
 		{
@@ -87,7 +88,7 @@ static DOMParser parser = new DOMParser();
                 sNewXMLString.append(ch);
 		}
 		return sNewXMLString.toString();
-	}
+	}*/
 
 	public static void writeToFile(Document doc, String fileName) throws Exception {
 		if (doc == null)
@@ -241,7 +242,7 @@ String elementName, Object hashAttribs ) {
 	}
 
 	// (R) and TM characters handled specially
-	private static final String	sSpecialChars = "®™–—";
+	//private static final String	sSpecialChars = "ï¿½ï¿½ï¿½ï¿½";
 
 /*
 Pusedo logic for other XML Field parsing routines

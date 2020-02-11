@@ -48,7 +48,7 @@ public class InvokeCreateASN
 		Element extn                 = (Element)lst.item(0);
 		String extnSupplierName = extn.getAttribute( "ExtnSupplierName" );
 		//get Warehouse and other order extensions here
-		//if WHSE is "YD1" or  "BD1" throw exception with appropriate error msg from here…
+		//if WHSE is "YD1" or  "BD1" throw exception with appropriate error msg from here
 
 		inPar.reset();
 		inPar = new YFSXMLParser();
