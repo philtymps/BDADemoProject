@@ -10,22 +10,58 @@
 	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/interact_client.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycsbe.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Foundation-Core.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Catalog-Client.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/Catalog-DataObjects.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdbe.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdbridge.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdclientbe.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdfop.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdjasper.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdshared.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/OTMZWebClient.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/fscontext.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/providerutil.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/jms.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/javax.servlet_2.5.0.v200910301333.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/java-jwt-3.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/hahtsite.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS191"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/mongo-java-driver-3.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/avalon-framework-4.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/axis.jar"/>
+	<classpathentry kind="lib" path="lib/batik-all-1.7.jar"/>
+	<classpathentry kind="lib" path="lib/Catalog-Client.jar"/>
+	<classpathentry kind="lib" path="lib/Catalog-DataObjects.jar"/>
+	<classpathentry kind="lib" path="lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3.jar"/>
+	<classpathentry kind="lib" path="lib/DemoExtns.jar"/>
+	<classpathentry kind="lib" path="lib/Enroute.jar"/>
+	<classpathentry kind="lib" path="lib/extra.jar"/>
+	<classpathentry kind="lib" path="lib/fop.jar"/>
+	<classpathentry kind="lib" path="lib/Foundation-Core.jar"/>
+	<classpathentry kind="lib" path="lib/Foundation-DataObjects.jar"/>
+	<classpathentry kind="lib" path="lib/Foundation-Server.jar"/>
+	<classpathentry kind="lib" path="lib/fscontext.jar"/>
+	<classpathentry kind="lib" path="lib/groovy-all-2.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/iText-2.1.7.js2.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/jasperReport.jar"/>
+	<classpathentry kind="lib" path="lib/jasperreports-5.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/java-jwt-3.8.0.jar"/>
+	<classpathentry kind="lib" path="lib/javax.servlet_2.5.0.v200910301333.jar"/>
+	<classpathentry kind="lib" path="lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="lib/jms.jar"/>
+	<classpathentry kind="lib" path="lib/kafka-clients-2.3.1.jar"/>
+	<classpathentry kind="lib" path="lib/LiveDataAgent.jar"/>
+	<classpathentry kind="lib" path="lib/lz4-java-1.6.0.jar"/>
+	<classpathentry kind="lib" path="lib/mongo-java-driver-3.3.0.jar"/>
+	<classpathentry kind="lib" path="lib/OTMZWebClient.jar"/>
+	<classpathentry kind="lib" path="lib/Performance-Profiler.jar"/>
+	<classpathentry kind="lib" path="lib/PitneyBowes.jar"/>
+	<classpathentry kind="lib" path="lib/Price-Client.jar"/>
+	<classpathentry kind="lib" path="lib/Price-DataObjects.jar"/>
+	<classpathentry kind="lib" path="lib/providerutil.jar"/>
+	<classpathentry kind="lib" path="lib/saaj.jar"/>
+	<classpathentry kind="lib" path="lib/sfdcintegration.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="lib/snappy-java-1.1.7.3.jar"/>
+	<classpathentry kind="lib" path="lib/SterlingCommerceServerExtensionsLogic.jar"/>
+	<classpathentry kind="lib" path="lib/TelcoPOC.jar"/>
+	<classpathentry kind="lib" path="lib/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/xmlgraphics-commons-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/zstd-jni-1.4.0-1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
