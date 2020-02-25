@@ -1,0 +1,78 @@
+<mashups>
+	<mashup id="addItems_createOrder">
+		<API>
+			<Input>
+				<Order>
+					<OrderLines>
+						<OrderLine>
+							<OrderLineInvAttRequest LotNumber="" />
+						</OrderLine>
+					</OrderLines>
+				</Order>
+			</Input>
+		</API>
+	</mashup>
+	<mashup id="addItems_ovp_createOrder">
+		<API>
+			<Input>
+				<Order>
+					<OrderLines>
+						<OrderLine>
+							<OrderLineInvAttRequest LotNumber="" />
+						</OrderLine>
+					</OrderLines>
+				</Order>
+			</Input>
+		</API>
+	</mashup>
+	<mashup id="changeVariation_changeOrderPendingChanges">
+		<API>
+			<Input>
+				<Order>
+					<OrderLines>
+						<OrderLine>
+							<OrderLineInvAttRequest LotNumber="" />
+						</OrderLine>
+					</OrderLines>
+				</Order>
+			</Input>
+		</API>
+	</mashup>
+	<mashup id="addItems_modifyFulfillmentOptions">
+		<API>
+			<Input>
+				<Order>
+					<OrderLines>
+						<OrderLine>
+							<OrderLineInvAttRequest LotNumber="" />
+						</OrderLine>
+					</OrderLines>
+				</Order>
+			</Input>
+		</API>
+	</mashup>
+	<mashup id="addItems_ovp_modifyFulfillmentOptions">
+		<API>
+			<Input>
+				<Order>
+					<OrderLines>
+						<OrderLine>
+							<OrderLineInvAttRequest LotNumber="" />
+						</OrderLine>
+					</OrderLines>
+				</Order>
+			</Input>
+		</API>
+	</mashup>
+	<mashup id="addItems_miniCart_getCompleteOrderLineListForStore">
+		<API>
+			<Template>
+				<OrderLineList>
+					<OrderLine>
+						<InventoryTagAttributes LotNumber="" />
+					</OrderLine>
+				</OrderLineList>
+			</Template>
+		</API>
+	</mashup>
+</mashups>

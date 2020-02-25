@@ -1,0 +1,160 @@
+<!--
+  Licensed Materials - Property of IBM Sterling Order Management Store (5725-D10), IBM Order Management (5737-D18), IBM Store Engagement (5737D58)
+  (C) Copyright IBM Corp.  2015, 2017 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<div class="view-cart-list-header table-columns" role="row">
+    <div role="rowheader" class="grp-hdr-txt product-image" isc-rule="ShowItemImage" isc-i18n="globals.LABEL_Product"></div>
+    <div class="row">
+            <div role="rowheader" class="col-sm-5 grp-hdr-txt" isc-i18n="globals.LABEL_Description"></div>
+            <div role="rowheader" class="col-sm-3 grp-hdr-txt" isc-i18n="viewcartdetails.LABEL_DeliveryMethod"></div>
+            <div role="rowheader" class="col-sm-2 grp-hdr-txt" isc-i18n="globals.LABEL_Quantity"></div>
+            <div role="rowheader" class="col-sm-2 grp-hdr-txt" isc-i18n="globals.LABEL_Price"></div>
+        </div>
+        <div role="rowheader" class="product-remove">
+                <span class="sr-only" isc-i18n="viewcartdetails.LABEL_RemoveProduct"></span>
+        </div>
+</div>
+
+<ul isc-pagination="{
+    'type': 'continuousScrolling',
+    'nextPageHandler': uiGetOrderLineListNext,
+    'requestedActionValidator': uiOLineScrollActionValidator, 
+    'elementWithScrollbar': 'parent'
+    }" class="view-cart-list-results repeating-panel-holder">
+
+    <li class="view-cart-list-repeating" ng-repeat="orderLine in model.orderLineList.OrderLineList.OrderLine | limitTo:ui.oLineShownCount track by orderLine.OrderLineKey">
+                <div role="row" class="table-columns">
+                        <div class="product-image" isc-rule="ShowItemImage" role="gridcell" isc-i18n="[i18n:aria-label]globals.LABEL_Product">
+                                <div class="item-image item-image-small" ng-click="uiGetItemDetails(orderLine.ItemDetails.ItemID,orderLine.ItemDetails.UnitOfMeasure)"
+                                ng-class="{'item-image-blank':(orderLine.ImageURL === null || orderLine.ImageURL === '' || orderLine.ImageURL === undefined)}" isc-i18n="[i18n:aria-label]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})globals.aria_productDescriptionLink">
+                                        <img class="img-responsive" ng-src="{{orderLine.ImageURL}}" isc-encode-attr="src" alt="" isc-item-image-resize >
+                                        <span class="app-glyphicons app-icon-image_notAvailable"></span>
+                                        <span class="app-glyphicons app-icon-gift_outlined" ng-if="orderLine.GiftFlag == 'Y'">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                                <span class="path3"></span>
+                                                <span class="path4"></span>
+                                                <span class="path5"></span>
+                                        </span>
+                                </div>
+                        </div>
+                        <div class="row product-additional-details">
+                                <div class="col-sm-5 product-description" role="gridcell">
+                                        <div>
+                                                <div class="form-view column-header">
+                                                        <a href="#" class="primary-link-text" ng-bind="orderLine.ItemDetails.PrimaryInformation.ExtendedDisplayDescription" ng-click="uiGetItemDetails(orderLine.ItemDetails.ItemID,orderLine.ItemDetails.UnitOfMeasure)" title={{orderLine.ItemDetails.PrimaryInformation.ExtendedDisplayDescription}} isc-i18n="[i18n:aria-label]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})globals.aria_productDescriptionLink"></a>
+                                                </div>
+
+                                                <div class="form-view">
+                                                        <span class="comapps-label zero-width-label hash-number-align" isc-i18n="[sep]globals.LABEL_Sku_No"></span>
+                                                        <span class="comapps-label zero-width-label" ng-bind="orderLine.ItemDetails.ItemID"></span>
+                                                </div>
+
+                                                <div ng-if="orderLine.ItemDetails.PrimaryInformation.Department" class="form-view">
+                                                        <span class="comapps-label zero-width-label" isc-i18n="viewcartdetails.LABEL_Department"></span>
+                                                        <span class="comapps-label zero-width-label" ng-bind="orderLine.ItemDetails.PrimaryInformation.Department"></span>
+                                                </div>
+                                                <div ng-if="orderLine.InventoryTagAttributes && orderLine.InventoryTagAttributes.LotNumber" class="form-view">
+                                                	<span class="comapps-label zero-width-label">Lot Number</span>
+                                                	<span class="comapps-label zero-width-label" ng-bind="orderLine.InventoryTagAttributes.LotNumber"></span>
+                                                </div>
+                                                
+                                                <span class="block-component label-text" ng-if="orderLine.variation != null && orderLine.variation != '' && orderLine.variation != undefined" ng-bind="orderLine.variation"></span>
+
+                                                <a class="gift-options" href="" isc-i18n="viewcartdetails.ACTION_MakeItemGift;[title]viewcartdetails.ACTION_MakeItemGift;[i18n:aria-label]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_makeItemGift" ng-if="orderLine.GiftFlag!='Y'" ng-click="uiOpenGiftOptionsForOrderLine(orderLine)"></a>
+                                                <a class="gift-options" href="" isc-i18n="viewcartdetails.ACTION_GiftItem;[title]viewcartdetails.ACTION_GiftItem;[i18n:aria-label]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_GiftItem" ng-if="orderLine.GiftFlag=='Y'" ng-click="uiOpenGiftOptionsForOrderLine(orderLine)"></a>
+                                                <div class="form-view" isc-panel-loading isc-show-loading="ui.availabilityInfoLoading">
+                                                <span class="comapps-label zero-width-label red-text" isc-i18n="viewcartdetails.MSG_UnavailableLine" ng-if="orderLine.HasAnyUnavailableQty=='Y'"></span>
+                                                 </div>
+                                        </div>
+                                        <div class="product-remove-alt">
+                                                <a class="app-glyphicons app-icon-delete_30 anchor-icon"  ng-click="uiConfirmDeletion(orderLine)" isc-i18n="[i18n:aria-label]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_removeProductLink">
+                                                        <span class="sr-only" isc-i18n="globals.ACTION_RemoveProduct"></span>
+                                                </a>
+                                        </div>
+
+                                </div>
+
+                                <div class="col-sm-3 col-xs-5 col-xs-left-pad" ng-switch on="orderLine.DeliveryMethod" role="gridcell">
+                                        <div class="form-view column-header">
+                                                <span ng-bind="orderLine.DeliveryMethodName" class="edit-icon comapps-label zero-width-label"></span>
+                                                <a class="glyphicon glyphicon-edit anchor-icon" ng-click="uiChangeDeliveryMethod(orderLine)" isc-i18n="[title]viewcartdetails.ACTION_ChangeDeliveryMethod" href="">
+                                                        <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_changeDeliveryMethodLink"></span>
+                                                </a>
+                                        </div>
+
+                                        <div ng-switch-when="SHP" class="delivery-address">
+                                                <div class="label-text" ng-if="orderLine.IsEarliestShipDateToday == 'Y'" isc-i18n="globals.LABEL_ItemShpAvailableToday"></div>
+                                                <div class="label-text" ng-if="orderLine.CarrierServiceName" ng-bind="orderLine.CarrierServiceName"></div>
+                                                <div class="label-text" ng-if="orderLine.IsEarliestShipDateToday == 'N' && !orderLine.CommittedDate">{{orderLine.EarliestShipDate | date:'fullDate'}}</div>
+                                                <div class="label-text" ng-if="orderLine.IsEarliestShipDateToday == 'N' && orderLine.CommittedDate">{{orderLine.CommittedDate | date:'fullDate'}}</div>
+
+                                                <a class="secondary-link-text" href="" isc-i18n="viewcartdetails.LABEL_AddShipaddress;[i18n:aria-label]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_addShippingAddressLink" ng-if="!orderLine.PersonInfoShipTo.PersonInfoKey && !model.getCompleteOrderDetails.Order.PersonInfoShipTo.PersonInfoKey" ng-click="uiAddOrEditAddress('Add',orderLine)">
+                                                        <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_addShippingAddressLink"></span>
+                                                </a>
+                                                <a href="" ng-click="uiAddOrEditAddress('Edit',orderLine)" ng-if="orderLine.PersonInfoShipTo.PersonInfoKey" isc-i18n="[title]globals.ACTION_EditShippingAddress" >
+                                                        <isc-Address-Display  person-Info="orderLine.PersonInfoShipTo" display-Format="mini"> </isc-Address-Display>
+                                                        <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_changeShippingAddressOrderLineLink"></span>
+                                                </a>
+                                                 <a href="" ng-click="uiAddOrEditAddress('Edit',orderLine)" isc-i18n="[title]globals.ACTION_EditShippingAddress" ng-if="model.getCompleteOrderDetails.Order.PersonInfoShipTo.PersonInfoKey && !orderLine.PersonInfoShipTo.PersonInfoKey">
+                                                        <div>
+                                                          <isc-Address-Display  person-Info="model.getCompleteOrderDetails.Order.PersonInfoShipTo" display-Format="mini"> </isc-Address-Display>
+                                                          <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_changeShippingAddressOrderLink"></span>
+                                                        </div>
+                                                </a>
+                                        </div>
+                
+                                        <div ng-switch-when="PICK" class="delivery-address">
+                                                <div class="label-text inline-block" ng-if="orderLine.IsReqShipDateToday == 'Y'" isc-i18n="viewcartdetails.LABEL_PickDateToday"></div>
+                                                <div ng-if="orderLine.IsReqShipDateToday == 'Y'" class="label-text inline-block">{{orderLine.ReqShipDate | date:'mediumDate'}}</div>
+                                                <div ng-if="orderLine.IsReqShipDateToday == 'N'" class="label-text">{{orderLine.ReqShipDate | date:'fullDate'}}</div>
+                                                 <a href="" ng-click="uiOpenStoreSearch(orderLine)" isc-i18n="[title]viewcartdetails.ACTION_ChangeStore">
+                                                        <div ng-bind="orderLine.Shipnode.Description" class="label-text"></div>
+                                                        <isc-Address-Display person-Info="orderLine.Shipnode.ShipNodePersonInfo" display-Format="mini"></isc-Address-Display>
+                                                        <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_changeStoreLink"></span>
+                                                 </a>
+                                        </div>
+                                </div>
+                     
+                                <div class="col-sm-2 col-xs-3 form-group" ng-form="quantityForm" role="gridcell">
+                                        <input type="number" isc-number-formatter ng-focus="uiOnQuantityFieldFocus(this,orderLine)" name="qty" ng-if="ui.oLineQtyEditResourcePermission"  ng-model="orderLine.OrderLineTranQuantity.OrderedQty" isc-datatype="{
+                'customValidator': uiValidateQuantity,
+                'useOnlyCustomValidator':false}" ng-change="quantityForm.qty.$valid ? uiShowUpdateButton(this,orderLine) : uiHideUpdateButton(orderLine)"  isc-enter="quantityForm.qty.$valid ? uiValidateQuantityAndUpdate(this,orderLine) : null" class="form-control quantity-box" isc-i18n="[aria-label]viewcartdetails.aria_Quantity" aria-describedby="quantity_with_error_{{$index}}"/>
+                                        <span ng-if="!ui.oLineQtyEditResourcePermission" class="comapps-label zero-width-label" isc-i18n = "[i18n]({'quantity':'{{orderLine.OrderLineTranQuantity.OrderedQty | number:$root.ui.quantityFractionSize}}','uom':'{{orderLine.ItemDetails | iscUOM}}'})formats.Quantity_UOM"></span>
+                                        <span ng-bind="orderLine.ItemDetails.DisplayUnitOfMeasure" ng-if="ui.oLineQtyEditResourcePermission"></span>
+                                        <div ng-show="quantityForm.qty.$error.iscDatatypeValidator || quantityForm.qty.$error.iscCustomValidator" class="field-error error-text block-component">
+                                                <span class="app-glyphicons app-icon-delete_30"></span>
+                                                <span class="iwErrorMsg"  id="quantity_with_error_{{$index}}">{{quantityForm.qty.$error.iscValidation_msg}}</span>
+                                        </div>
+                                        
+                                        <a href="#" ng-if="orderLine.showQtyUpdate  == 'Y'" class="primary-link-text block-component update-button" isc-i18n="globals.Action_Update" ng-click="quantityForm.qty.$valid ? uiValidateQuantityAndUpdate(this,orderLine) : null">
+                                        </a>
+                                                
+                                </div>          
+                                <div class="col-sm-2 col-xs-4 column-price" role="gridcell">
+                                        <span class="edit-icon form-view">
+                                                <label id="unitpricenotoverriddenlabel_{{$index}}" class="sr-only" ng-if="orderLine.LinePriceInfo.ListPrice === orderLine.LinePriceInfo.UnitPrice" isc-i18n="ordersummary.aria_UnitPrice"></label>
+                                                <span class="comapps-label zero-width-label" ng-if="orderLine.LinePriceInfo.ListPrice === orderLine.LinePriceInfo.UnitPrice" ng-bind="orderLine.LinePriceInfo.UnitPrice | iscCurrency:model.getCompleteOrderDetails.Order.PriceInfo.Currency" aria-labelledby="unitpricenotoverriddenlabel_{{$index}}"></span>
+                                       
+                                                <label id="unitpricelabel_{{$index}}" class="sr-only" ng-if="orderLine.LinePriceInfo.ListPrice !== orderLine.LinePriceInfo.UnitPrice" isc-i18n="ordersummary.aria_UnitPrice"></label>
+                                                <span class="comapps-label zero-width-label override-price block-component" ng-if="orderLine.LinePriceInfo.ListPrice !== orderLine.LinePriceInfo.UnitPrice" ng-bind="orderLine.LinePriceInfo.UnitPrice | iscCurrency:model.getCompleteOrderDetails.Order.PriceInfo.Currency" aria-labelledby="unitpricelabel_{{$index}}" ></span>                         
+                                              
+                                                <label id="listpricelabel_{{$index}}" class="sr-only" ng-if="orderLine.LinePriceInfo.ListPrice !== orderLine.LinePriceInfo.UnitPrice" isc-i18n="ordersummary.aria_ListPrice"></label>
+                                                <span class="comapps-label zero-width-label strike" ng-if="orderLine.LinePriceInfo.ListPrice !== orderLine.LinePriceInfo.UnitPrice" ng-bind="orderLine.LinePriceInfo.ListPrice | iscCurrency:model.getCompleteOrderDetails.Order.PriceInfo.Currency" aria-labelledby="listpricelabel_{{$index}}"></span>
+                                        </span>             
+                                        <a class="glyphicon glyphicon-edit anchor-icon" isc-resource-id="WSC000030" ng-click="uiOpenOverridePriceModal(orderLine)" isc-i18n="[title]globals.ACTION_Overrideprice" href="">
+                                                <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_overridePriceLink"></span>
+                                        </a>    
+                                </div>                  
+                                                        
+                        </div>                  
+
+                        <div class="product-remove" role="gridcell">
+                                <a class="app-glyphicons app-icon-delete_30 anchor-icon"  ng-click="uiConfirmDeletion(orderLine)" isc-i18n="[title]globals.ACTION_RemoveProduct" href="">
+                                        <span class="sr-only" isc-i18n="[i18n]({'itemId':'{{orderLine.ItemDetails.ItemID}}'})viewcartdetails.aria_removeProductLink"></span>
+                                </a>            
+                        </div>                  
+                </div>
+    </li>                                       
+</ul>                                        

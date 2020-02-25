@@ -1,0 +1,27 @@
+<mashups>
+	<mashup id="viewcart_getCompleteOrderLineList">
+		<API>
+			<Template>
+				<OrderLineList>
+					<OrderLine>
+						<InventoryTagAttributes LotNumber="" />
+					</OrderLine>
+				</OrderLineList>
+			</Template>
+		</API>
+	</mashup>
+	<mashup id="viewcart_getCompleteorderDetailsUpdated">
+		<API>
+			<Template>
+				<Order>
+					<OrderLines>
+						<OrderLine>
+							<InventoryTagAttributes LotNumber="" />
+						</OrderLine>
+					</OrderLines>
+					
+				</Order>
+			</Template>
+		</API>
+	</mashup>
+</mashups>
