@@ -208,6 +208,9 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 				dealWithTag(tag, eTag, "LotNumber");
 				dealWithTag(tag, eTag, "ManufacturingDate");
 				dealWithTag(tag, eTag, "RevisionNo");
+				obj.put(objAttribute, tag);
+			} else {
+				obj.put(objAttribute, "|||");
 			}
 		}
 	}
@@ -215,7 +218,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 	private void dealWithTag(String currentTag, YFCElement eTag, String attribute) {
 		if(!YFCCommon.isVoid(eTag.getAttribute(attribute))) {
 			if(!YFCCommon.isVoid(currentTag)) {
-				currentTag += ":";
+				currentTag += "|";
 			}
 			currentTag += eTag.getAttribute(attribute);
 		}

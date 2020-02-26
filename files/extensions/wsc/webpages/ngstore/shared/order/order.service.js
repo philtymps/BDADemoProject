@@ -60,7 +60,7 @@ angular.module('isc.shared').factory('iscOrder', ['$http','$filter','$q','iscApp
 						orderLines[orderLines.length-1].OrderLineTranQuantity.OrderedQty = $filter('number')(orderLines[orderLines.length-1].OrderLineTranQuantity.OrderedQty);
 		 				orderLines[orderLines.length-1].OrderedQty = $filter('number')(orderLines[orderLines.length-1].OrderedQty);
 		 				if(lotNumber){
-		 					orderLines[orderLines.length-1].["InventoryTagAttributes"] = {"LotNumber": lotNumber};
+		 					orderLines[orderLines.length-1]["InventoryTagAttributes"] = {"LotNumber": lotNumber};
 						}
 						if(!iscCore.isVoid(orderLines[orderLines.length-1].LineSeqNo)) {
 							orderLines[orderLines.length-1].LineSeqNumber = orderLines[orderLines.length-1].LineSeqNo.split('.')[0];

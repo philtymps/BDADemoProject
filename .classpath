@@ -9,15 +9,7 @@
 	<classpathentry kind="lib" path="lib/rxjava-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
 	<classpathentry kind="lib" path="lib/interact_client.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycsbe.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdbe.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdbridge.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdclientbe.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdfop.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdjasper.jar"/>
-	<classpathentry kind="lib" path="/Users/pfaiola/RT/18_1/ycdshared.jar"/>
 	<classpathentry kind="lib" path="lib/hahtsite.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS191"/>
 	<classpathentry kind="lib" path="lib/avalon-framework-4.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/axis.jar"/>
 	<classpathentry kind="lib" path="lib/batik-all-1.7.jar"/>
@@ -63,5 +55,8 @@
 	<classpathentry kind="lib" path="lib/wsdl4j-1.5.1.jar"/>
 	<classpathentry kind="lib" path="lib/xmlgraphics-commons-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/zstd-jni-1.4.0-1.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/201/wsc_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/RT/201/platform_afc_ui_impl_ui.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS201"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

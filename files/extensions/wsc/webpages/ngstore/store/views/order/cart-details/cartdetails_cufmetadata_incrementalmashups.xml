@@ -24,4 +24,7 @@
 			</Template>
 		</API>
 	</mashup>
+	<mashup id="vc_getCompleteItemList">
+		<classInformatio name="com.extension.wsc.order.cartDetails.BDAScanAndAddItemToOrder" />
+	</mashup>
 </mashups>
