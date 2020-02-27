@@ -1,0 +1,46 @@
+<mashups>
+	 <mashup
+                description="Called when product is scanned in cart details.If the item is valid modifyFulfillmentOptions api is called to add the product to the order."
+                endpoint="EP_PRODUCT" id="vc_getCompleteItemList" mashuptype="XAPI"
+                skipDataProvider="false" transactional="true">
+                <classInformation name="com.extension.wsc.order.cartDetails.BDAScanAndAddItemToOrder" />
+                <API Name="getCompleteItemList">
+                        <Input>
+                                <Item ApplyDeliveryMethodOverrides="Y"
+                                        CallingOrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                                        Currency="" DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                                        ExecuteQueries="Y" GetAvailabilityFromCache="Y" IgnoreInvalidItems="N"
+                                        IgnoreOrdering="Y" IsForOrdering="Y" ItemID=""
+                                        PurposeForDisplayClassification="Specification" UnitOfMeasure=""
+                                        ShowFinalSupersededItemOnly="Y" SellerOrganizationCode="xml:CurrentStore:/Store/@ShipNode">
+                                        <BarCode BarCodeData="" BarCodeType="Item" MultipleTranslationsError="Y">
+                                                <ContextualInfo EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                                                        OrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode" />
+                                        </BarCode>
+                                        <ComplexQuery>
+                                                <And>
+                                                        <Exp Name="ItemGroupCode" QryType="NE" Value="DSOPT"/>
+                                                        <Exp Name="ItemGroupCode" QryType="NE" Value="DS"/>
+                                                        <Exp Name="ItemGroupCode" QryType="NE" Value="PS"/>
+                                                </And>
+                                        </ComplexQuery>
+                                </Item>
+                        </Input>
+                        <Template>
+                                <ItemList CallingOrganizationCode="" Currency="" TotalNumberOfRecords="">
+                                        <Item HasVisibleAssociations="" IsItemSuperseded=""
+                                                ItemGroupCode="" ItemID="" ItemKey="" OrganizationCode=""
+                                                UnitOfMeasure="" DisplayUnitOfMeasure="">
+                                                 <PrimaryInformation KitCode="" />
+                                        </Item>
+                                </ItemList>
+                        </Template>
+                </API>
+                <APINamespace inputNS="getCompleteItemList_input"
+                        outputNS="getCompleteItemList_output" />
+                <AlternateResourceIds>
+                        <AlternateResourceId altResourceId="WSCSYS00001" />
+                </AlternateResourceIds>
+        </mashup>
+
+</mashups>
