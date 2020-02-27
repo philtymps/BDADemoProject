@@ -149,8 +149,8 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 		if (!inLevel.startsWith("2")) {
 			return 1;
 		}
-		String simTenantId = getPropertyValue(env, "yfs.jwt.create.claims.simTenantId.value");
-		if (!YFCCommon.isVoid(simTenantId)) {
+		String simTenantId = getPropertyValue(env, "yfs.sim.enabled");
+		if (!YFCCommon.equals(simTenantId, "Y")) {
 			return 3;
 		}
 		return 2;
