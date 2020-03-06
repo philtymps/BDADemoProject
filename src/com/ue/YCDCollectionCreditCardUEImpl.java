@@ -19,10 +19,11 @@ public class YCDCollectionCreditCardUEImpl implements YFSCollectionCreditCardUE 
 			YFSEnvironment arg0, YFSExtnPaymentCollectionInputStruct arg1)
 			throws YFSUserExitException {
 		YFSExtnPaymentCollectionOutputStruct output = new YFSExtnPaymentCollectionOutputStruct();
-		
+		System.out.println("In Payment Collection");
 		if(arg1.chargeType.equals("AUTHORIZATION")){
 			if(isValid(arg1)){
 				if(isSystemDown(arg1)){
+					System.out.println("System Down");
 					YFSUserExitException ue = new YFSUserExitException();
 					ue.setErrorCode("YFS023");
 					ue.setErrorDescription("Payment_System_Down");
@@ -31,31 +32,18 @@ public class YCDCollectionCreditCardUEImpl implements YFSCollectionCreditCardUE 
 				if(!missingName(arg1)){
 					if(!expired(arg1)){
 						if (invalidCVV(arg1)){
+							System.out.println("Invalid CVV");
 							output.holdOrderAndRaiseEvent = true;
 							output.internalReturnCode="10005";
 							output.internalReturnMessage="Invalid_CVV_Used";
 							output.suspendPayment = "Y";
 						} else if (!hasAddress(arg1)){
-							output.holdOrderAndRaiseEvent = false;
-							output.authAVS="FAILED";
-							output.authCode= "T"+System.currentTimeMillis();
-							output.authorizationAmount = arg1.requestAmount;
-							SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-							GregorianCalendar now = new GregorianCalendar();
-							now.setTime(new Date());
-							now.add(Calendar.DAY_OF_MONTH, 5);
-							output.authorizationExpirationDate = dateFormat.format(now.getTime());
-							output.authorizationId = "A"+System.currentTimeMillis();
-							output.authReturnCode = "10000";
-							output.authReturnFlag = "Y";
-							output.authReturnMessage="Invalid_Address";
+							System.out.println("Invalid Addess");
+							output.holdOrderAndRaiseEvent = true;
 							output.internalReturnCode="10005";
-							output.internalReturnFlag = "Y";
-							output.internalReturnMessage="Invalid_Address";
-							output.bPreviousInvocationSuccessful = false;
-							output.requestID = "R" + System.currentTimeMillis();
-							output.sCVVAuthCode = "10000";
+							output.internalReturnMessage="Invalid_Address_Used";
 						} else {
+							System.out.println("Successful Authorization");
 							output.holdOrderAndRaiseEvent = false;
 							output.authAVS="PASSED";
 							output.authCode= "T"+System.currentTimeMillis();
@@ -82,18 +70,21 @@ public class YCDCollectionCreditCardUEImpl implements YFSCollectionCreditCardUE 
 							output.sCVVAuthCode = "10000";
 						}
 					} else {
+						System.out.println("Expired");
 						output.holdOrderAndRaiseEvent = true;
 						output.internalReturnCode="10002";
 						output.internalReturnMessage="Credit_Card_Expired";
 						output.suspendPayment = "Y";
 					}
 				} else {
+					System.out.println("No Name");
 					output.holdOrderAndRaiseEvent = true;
 					output.internalReturnCode="10003";
 					output.internalReturnMessage="Credit_Card_Name_Not_Passed_On_Card";
 					output.suspendPayment = "Y";
 				}			
 			} else {
+				System.out.println("Expired");
 				output.holdOrderAndRaiseEvent = true;
 				output.internalReturnCode="10001";
 				output.internalReturnMessage="Invalid_Credit_Card";

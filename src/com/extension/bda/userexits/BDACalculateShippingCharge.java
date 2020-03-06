@@ -31,17 +31,20 @@ public class BDACalculateShippingCharge implements YPMCalculateShippingChargeUE 
 		YIFApi localApi;
 		YFCDocument dInput = YFCDocument.getDocumentFor(input);
 		YFCElement eInput = dInput.getDocumentElement();
-		try {
-			localApi = YIFClientFactory.getInstance().getLocalApi();
-			Document dOrder = getOrderDetails(localApi, env, eInput.getAttribute("OrderReference"));
-			if(!YFCCommon.isVoid(dOrder)){
-				YFCElement eOrder = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
-				eOutputShipping.setAttribute("ShippingCharge", generateShippingCharges(env, eOrder));
+		if(!YFCCommon.isVoid(eInput.getAttribute("OrderReference"))) {
+			try {
+				localApi = YIFClientFactory.getInstance().getLocalApi();
+				Document dOrder = getOrderDetails(localApi, env, eInput.getAttribute("OrderReference"));
+				if(!YFCCommon.isVoid(dOrder)){
+					YFCElement eOrder = YFCDocument.getDocumentFor(dOrder).getDocumentElement();
+					eOutputShipping.setAttribute("ShippingCharge", generateShippingCharges(env, eOrder));
+				}
+				
+			} catch (YIFClientCreationException e) {
+				e.printStackTrace();
 			}
-			
-		} catch (YIFClientCreationException e) {
-			e.printStackTrace();
 		}
+
 		return dOutput.getDocument();
 	}
 	

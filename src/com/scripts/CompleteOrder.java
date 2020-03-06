@@ -475,8 +475,8 @@ public class CompleteOrder implements IBDAService {
 	public static YFCElement createShipmentLine(YFCDocument dShipment, YFCElement eOrderLine, YFCElement eOrderLineStatus, int lineNo, String sDocumentType){
 		YFCElement eShipmentLine = dShipment.getDocumentElement().getChildElement("ShipmentLines", true).createChild("ShipmentLine"); 
 		eShipmentLine.setAttribute("DocumentType", sDocumentType);
-		eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
-		eShipmentLine.setAttribute("UnitOfMeasure", eOrderLine.getChildElement("Item", true).getAttribute("UnitOfMeasure"));
+		// eShipmentLine.setAttribute("ItemID", eOrderLine.getChildElement("Item", true).getAttribute("ItemID"));
+		//eShipmentLine.setAttribute("UnitOfMeasure", eOrderLine.getChildElement("Item", true).getAttribute("UnitOfMeasure"));
 		eShipmentLine.setAttribute("ProductClass", eOrderLine.getChildElement("Item", true).getAttribute("ProductClass"));
 		eShipmentLine.setAttribute("PrimeLineNo", eOrderLine.getAttribute("PrimeLineNo"));
 		eShipmentLine.setAttribute("SubLineNo", eOrderLine.getAttribute("SubLineNo"));
