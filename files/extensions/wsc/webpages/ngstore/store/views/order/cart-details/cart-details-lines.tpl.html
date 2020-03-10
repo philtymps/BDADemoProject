@@ -55,9 +55,9 @@
                                                         <span class="comapps-label zero-width-label" isc-i18n="viewcartdetails.LABEL_Department"></span>
                                                         <span class="comapps-label zero-width-label" ng-bind="orderLine.ItemDetails.PrimaryInformation.Department"></span>
                                                 </div>
-                                                <div ng-if="orderLine.InventoryTagAttributes && orderLine.InventoryTagAttributes.LotNumber" class="form-view">
+                                                <div ng-if="orderLine.OrderLineInvAttRequest && orderLine.OrderLineInvAttRequest.LotNumber" class="form-view">
                                                 	<span class="comapps-label zero-width-label">Lot Number</span>
-                                                	<span class="comapps-label zero-width-label" ng-bind="orderLine.InventoryTagAttributes.LotNumber"></span>
+                                                	<span class="comapps-label zero-width-label" ng-bind="orderLine.OrderLineInvAttRequest.LotNumber"></span>
                                                 </div>
                                                 
                                                 <span class="block-component label-text" ng-if="orderLine.variation != null && orderLine.variation != '' && orderLine.variation != undefined" ng-bind="orderLine.variation"></span>

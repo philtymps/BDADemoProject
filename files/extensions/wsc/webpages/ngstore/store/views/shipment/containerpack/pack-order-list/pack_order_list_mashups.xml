@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed Materials - Property of IBM Sterling Order Management Store (5725-D10),  IBM Order Management (5737-D18), IBM Store Engagement (5737D58)
+ (C) Copyright IBM Corp. 2017 All Rights Reserved.
+ US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+<mashups>
+    <mashup description="Get list of shipments for the logged in user"
+        endpoint="EP_CONFIG" id="store.views.shipment.containerpack.getPackOrderList"
+        mashuptype="XAPI" skipDataProvider="false" transactional="true">
+        <classInformation name="com.ibm.ise.outboundShipment.common.ISEMassageGetShipmentListOutput"/>
+        <API Name="getShipmentList">
+            <Input>
+                <Shipment DeliveryMethod="" SCAC="" SCACQryType="EQ"
+                    DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                    MaximumRecords="" ShipNode="xml:CurrentStore:/Store/@ShipNode">
+                   <ShipmentLine ItemID="" ShipmentKey="">
+                     <OrderLine KitCode="BUNDLE" KitCodeQryType="NE"/>
+                   </ShipmentLine>
+                      <ComplexQuery>
+                         <And>
+                           <Or>
+								<Exp Name="Status" QryType="FLIKE" Value=""/>
+							</Or>
+                         </And>
+					</ComplexQuery>  
+                    <OrderBy>
+						<Attribute Desc="" Name="ExpectedShipmentDate"/>  
+					</OrderBy>
+                </Shipment>
+            </Input>
+            <Template>
+                <Shipments TotalNumberOfRecords="">
+                    <Shipment AssignedToUserId="" DeliveryMethod=""
+                        DisplayOrderNo="" ExpectedShipmentDate=""
+                        HoldLocation="" OrderNo="" SCAC=""
+                        ScacAndService="" ShipNode="" ShipmentKey=""
+                        ShipmentNo="" TotalNumOfSKUS="">
+                        <Status Description="" Status=""/>
+                        <BillToAddress AddressLine1="" AddressLine2=""
+                            City="" Country="" DayFaxNo="" DayPhone=""
+                            EMailID="" EveningFaxNo="" EveningPhone=""
+                            FirstName="" IsCommercialAddress=""
+                            LastName="" MiddleName="" MobilePhone=""
+                            PersonInfoKey="" PreferredShipAddress=""
+                            State="" ZipCode=""/>
+                        <ShipmentLines TotalNumberOfRecords="">
+                            <ShipmentLine OriginalQuantity="">
+                              <OrderLine OrderLineKey="" KitCode="">
+                                <PersonInfoMarkFor AddressLine1="" AddressLine2=""
+                            City="" Country="" DayFaxNo="" DayPhone=""
+                            EMailID="" EveningFaxNo="" EveningPhone=""
+                            FirstName="" IsCommercialAddress=""
+                            LastName="" MiddleName="" MobilePhone=""
+                            PersonInfoKey="" PreferredShipAddress=""
+                            State="" ZipCode=""/>
+                              </OrderLine>
+                            </ShipmentLine>
+                        </ShipmentLines>
+                    </Shipment>
+                </Shipments>
+            </Template>
+        </API>
+        <AdditionalDataProviders>
+            <AdditionalDataProvider class="com.ibm.ise.dataproviders.ISESLADataProvider">
+                <InterestedIn>
+                    <Element path="/Page/Output/Shipments/Shipment" />
+                    <Attribute path="Shipment" name="ExpectedShipmentDate" />
+                </InterestedIn>
+                <NewAttributes>
+                    <Attribute name="SLACssClass" />
+                </NewAttributes>
+            </AdditionalDataProvider>
+		</AdditionalDataProviders>
+        <APINamespace inputNS="getShipmentList_input" outputNS="getShipmentList_output"/>
+        <AlternateResourceIds>
+            <AlternateResourceId altResourceId="WSC000062"/>
+        </AlternateResourceIds>
+    </mashup>
+    
+</mashups>

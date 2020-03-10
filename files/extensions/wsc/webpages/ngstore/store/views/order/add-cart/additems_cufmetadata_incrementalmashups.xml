@@ -69,7 +69,7 @@
 			<Template>
 				<OrderLineList>
 					<OrderLine>
-						<InventoryTagAttributes LotNumber="" />
+						<OrderLineInvAttRequest LotNumber="" />
 					</OrderLine>
 				</OrderLineList>
 			</Template>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed Materials - Property of IBM Sterling Order Management Store (5725-D10),  IBM Order Management (5737-D18), IBM Store Engagement (5737D58)
+ (C) Copyright IBM Corp. 2017 All Rights Reserved.
+ US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+ -->
+
+
+
+
+
+
+<mashups>
+		
+	<mashup description="Call registerBarCodeForPacking api to pack the item" endpoint="EP_CONFIG"
+		id="store.views.shipment.containerpack.registerBarCodeForPacking" skipDataProvider="false" mashuptype="XAPI" transactional="true">
+		<classInformation name="com.ibm.ise.outboundShipment.containerPack.ISEUpdateRegisterBarcodeForPackOutput" />
+		<API FlowName="registerBarcodeForPacking">		
+			<Input>
+				 <BarCode BarCodeData="" BarCodeType="Item" DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode">
+                    <ContextualInfo
+                        EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode" OrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode"/>
+                    <ShipmentContextualInfo ContainerScm=""
+                        SellerOrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                        ShipNode="xml:CurrentStore:/Store/@ShipNode"
+                        ShipmentContainerKey="" ShipmentKey="" ShipmentNo=""/>
+                </BarCode>
+			</Input>
+			<Template>
+				 <BarCode>
+                    <Shipment SellerOrganizationCode="" DocumentType="" ShipNode=""
+                        ShipmentContainerizedFlag="" ShipmentKey=""
+                        ShipmentNo="" Status="">
+                        <ShipmentLine IsPackComplete=""
+                            PlacedQuantity="" Quantity="" ShipmentLineKey="" ShortageQty="" OriginalQuantity="">
+                            <OrderLine IsBundleParent=""
+                                ItemGroupCode="" KitCode="BUNDLE" KitCodeQryType="NE">
+                                <ItemDetails ItemGroupCode="" ItemID="" UnitOfMeasure="">
+                                    <PrimaryInformation
+                                    ExtendedDisplayDescription=""
+                                    ImageID="" ImageLabel="" ImageLocation=""/>
+                                    <ClassificationCodes Model=""/>
+                                    <ItemInstructionList>
+                                    <ItemInstruction
+                                    InstructionText="" InstructionType=""/>
+                                    </ItemInstructionList>
+                                </ItemDetails>
+                            </OrderLine>
+                            <ContainerDetail ContainerDetailsKey=""
+                                Quantity="" QuantityPlaced=""
+                                ShipmentContainerKey=""
+                                ShipmentLineKey="" UnitOfMeasure=""/>
+                            <Instructions>
+                                <Instruction InstructionText=""
+                                    InstructionType="" SeqNo=""/>
+                            </Instructions>
+                        </ShipmentLine>
+                        <Containers TotalNumberOfRecords="">
+                            <Container ContainerNo="" ContainerScm="" ShipmentContainerKey=""/>
+                        </Containers>
+                    </Shipment>
+                </BarCode>
+			</Template>
+		</API>
+		<AdditionalDataProviders>
+			<AdditionalDataProvider class="com.ibm.wsc.core.dataproviders.WSCUnitOfMeasureDisplayProvider">
+				<InterestedIn>
+					<Element path="/BarCode/Shipment/ShipmentLine/OrderLine/ItemDetails" />
+				</InterestedIn>
+				<NewAttributes>
+					<Attribute name="DisplayUnitOfMeasure" />
+				</NewAttributes>
+			</AdditionalDataProvider>
+		</AdditionalDataProviders>
+		<AlternateResourceIds>
+			<AlternateResourceId altResourceId="WSC000062"/>
+		</AlternateResourceIds>
+	</mashup>
+	
+		        
+</mashups>	

@@ -1,0 +1,80 @@
+/*******************************************************************************
+ * IBM Confidential
+ * OCO Source Materials
+ * IBM Sterling Order Management Store (5725-D10), IBM Order Management (5737-D18), IBM Store Engagement (5737D58)
+ * (C) Copyright IBM Corp. 2017 All Rights Reserved.
+ * The source code for this program is not published or otherwise divested of its trade secrets, irrespective of what has been deposited with the U.S. Copyright Office.
+ ******************************************************************************/
+
+
+@media (max-width: $breakpoint-mobile) {
+	.comapps .shipment-in-batch-dialog .modal-dialog {
+		height: 300px;
+		
+		.batch-list {
+			height: calc(100% - 80px);
+		}
+	}
+}
+
+@media (min-width: $breakpoint-mobile + 1) {
+	.comapps .shipment-in-batch-dialog .modal-dialog {
+		height: 300px;
+		
+		.batch-list {
+			height: calc(100% - 92px);
+		}
+	}
+}
+
+@media (max-width: $breakpoint-tablet) {
+.comapps .shipment-in-batch-dialog .modal-dialog {	
+		height: 300px;
+		
+		.batch-list {
+			@include left-padding(0px);
+			@include right-padding(0px);
+		}
+	}
+}
+
+
+.comapps .shipment-in-batch-dialog .modal-dialog {	
+	max-width: 600px !important;
+	min-width: 280px !important;
+	min-height: 300px !important;
+	
+	.shipment-in-batch-label {
+		padding-bottom: 15px;
+	}
+	
+	.startover-label {
+		padding-top: 15px;
+	}
+	
+	.batch-list {
+		border: none;
+		
+		.list-holder {
+			height: 100%;
+			overflow: auto;
+		}
+		
+		.repeating-panel {
+			
+			.detail-information {
+				.label-text {
+					line-height: 14px;
+				}
+				
+				.status-label {
+					margin-top: 5px;
+					color: $highlighted-text-purple;
+					font-weight: $font-weight-bold;
+				}
+
+			}
+		}
+	}
+	
+}

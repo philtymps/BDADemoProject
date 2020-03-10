@@ -1,0 +1,35 @@
+<!--
+  Licensed Materials - Property of IBM Sterling Order Management Store (5725-D10),  IBM Order Management (5737-D18), IBM Store Engagement (5737D58)
+  (C) Copyright IBM Corp. 2017 All Rights Reserved.
+  US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+
+
+
+
+
+
+<header class="modal-header" role="banner" isc-i18n="[aria-label]shipmentInBatch.aria_shipmentInBatchHeader">
+    <h4 id="modalTitle" class="modal-title" isc-i18n="shipmentInBatch.TITLE_Confirmation"></h4>
+</header>
+
+<section class="modal-body" role="region">
+	
+	<div class="form-view shipment-in-batch-label">
+	     <span class="comapps-label zero-width-label" isc-i18n="[i18n]({orderNo:'{{model.shipmentDetails.Shipment.DisplayOrderNo}}'})shipmentInBatch.LABEL_orderInBatch"></span>
+	</div>	
+	
+	<div class="batch-list tile-layout" id="batchList" ng-include="'./store/views/shipment/backroom-pick/common/shipment-in-batch/shipment-batch-list.tpl.html'"></div>
+	
+	<div class="form-view startover-label">
+	     <span class="comapps-label zero-width-label" isc-i18n="shipmentInBatch.MSG_startOverContinueInBatch"></span>
+	</div>	
+	
+</section>
+
+<footer class="modal-footer" role="contentinfo" isc-i18n="[aria-label]shipmentInBatch.aria_shipmentInBatchFooter">
+	<div class="actions">
+		<button id="cancelBtn" class="btn btn-default" type="button" ng-click="uiClose()" isc-i18n="popups.ACTION_Cancel"></button>
+		<button id="stratOverBtn"  class="btn btn-default btn-primary" type="submit"  ng-click="uiSubmit('START_OVER')" isc-i18n="shipmentInBatch.ACTION_StartOver"></button>
+	</div>
+</footer>

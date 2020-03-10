@@ -57,6 +57,7 @@
 	<classpathentry kind="lib" path="lib/zstd-jni-1.4.0-1.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/201/wsc_ui.jar"/>
 	<classpathentry kind="lib" path="/Users/pfaiola/RT/201/platform_afc_ui_impl_ui.jar"/>
+	<classpathentry kind="lib" path="/Users/pfaiola/Downloads/DemoExtns.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OMS201"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

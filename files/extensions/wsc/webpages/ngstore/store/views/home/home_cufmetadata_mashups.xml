@@ -1,0 +1,89 @@
+<mashups>
+	<mashup
+                description="This custom mashup is used to perform the following a)calls getCompleteItemList api to fetch variation item details if item is a model item.b)If showInUI rule is enabled for enterprise,calls getCompleteItemList api to get the item's corresponding association types and item details of first association type c)If item is superseded and substitution on order is not allowed then calls getCompleteItemList api to fetch Substited item details"
+                endpoint="EP_PRODUCT" id="quickCheckOut_getCompleteItemList" mashuptype="XAPI"
+                skipDataProvider="false" transactional="true">
+                <classInformation
+                        name="com.extension.wsc.order.quickCheckOut.BDAScanAndAddItemToOrder" />
+                <API Name="getCompleteItemList">
+                        <Input>
+                                <Item ApplyDeliveryMethodOverrides="Y"
+                                        CallingOrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                                        Currency="" DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode"
+                                        ExecuteQueries="Y" IgnoreInvalidItems="N"
+                                        IgnoreOrdering="Y" IsForOrdering="Y" ItemID=""
+                                        PurposeForDisplayClassification="Specification" UnitOfMeasure=""
+                                        ShowFinalSupersededItemOnly="Y" SellerOrganizationCode="xml:CurrentStore:/Store/@ShipNode">
+                                        <BarCode BarCodeData="" BarCodeType="Item" MultipleTranslationsError="Y">
+                                                <ContextualInfo EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                                                        OrganizationCode="xml:CurrentStore:/Store/@EnterpriseCode" />
+                                        </BarCode>
+                                        <ComplexQuery>
+                                                <And>
+                                                        <Exp Name="ItemGroupCode" QryType="NE" Value="DSOPT" />
+                                                        <Exp Name="ItemGroupCode" QryType="NE" Value="DS" />
+                                                        <Exp Name="ItemGroupCode" QryType="NE" Value="PS" />
+                                                </And>
+                                        </ComplexQuery>
+                                </Item>
+                        </Input>
+                        <Template>
+                                <ItemList TotalNumberOfRecords="">
+                                        <Item HasVisibleAssociations="" IsItemSuperseded=""
+                                                ItemGroupCode="" ItemID="" ItemKey="" OrganizationCode=""
+                                                UnitOfMeasure="" DisplayUnitOfMeasure="">
+                                                <PrimaryInformation KitCode="" DefaultProductClass=""/>
+                                        </Item>
+                                </ItemList>
+                        </Template>
+                </API>
+                <APINamespace inputNS="getCompleteItemList_input"
+                        outputNS="getCompleteItemList_output" />
+                <AlternateResourceIds>
+                        <AlternateResourceId altResourceId="WSCSYS00001" />
+                </AlternateResourceIds>
+        </mashup>
+        <mashup description="create order" endpoint="EP_CONFIG"
+                id="quickCheckOut_createOrder" mashuptype="XAPI" skipDataProvider="false"
+                transactional="true">
+                <classInformation name="com.extension.wsc.order.quickCheckOut.BDACreateOrder" />
+                <API Name="createOrder">
+                        <Input>
+                                <Order OrderHeaderKey="" 
+                                        EnterpriseCode="xml:CurrentStore:/Store/@EnterpriseCode"
+                                        SellerOrganizationCode="xml:CurrentStore:/Store/@ShipNode"
+                                        DocumentType="0001" DraftOrderFlag="Y" EntryType=""
+                                        DisplayLocalizedFieldInLocale="xml:CurrentUser:/User/@Localecode">
+                                        <OrderLines>
+                                                <OrderLine Action="" DeliveryMethod="" 
+                            KitCode="" OrderedQty="" GiftFlag="" GiftWrap=""
+                            ShipNode="" TransactionalLineId="" 
+                            ReqShipDate="" EarliestShipDate="">
+                            <OrderLineTranQuantity OrderedQty=""/>
+                            <OrderLineInvAttRequest LotNumber="" />
+                            <Item ItemID="" ProductClass="" UnitOfMeasure=""/>
+                            <LinePriceInfo ListPrice="" UnitPrice=""/>
+                            <PersonInfoMarkFor FirstName="" />
+                            <Instructions>
+                                <Instruction InstructionType="" InstructionText=""/>
+                            </Instructions>
+                        </OrderLine>
+                                        </OrderLines>
+                                </Order>
+                        </Input>
+                        <Template>
+                                <Order DocumentType="" SellerOrganizationCode="" DraftOrderFlag="" EnterpriseCode=""
+                    EntryType="" OrderDate="" OrderHeaderKey="" OrderName=""
+                    OrderNo="">
+                    <OrderLines TotalNumberOfRecords=""/>
+                </Order>
+                        </Template>
+                </API>
+                <APINamespace inputNS="createOrder_InputNS"
+                        outputNS="createOrder_OutputNS" />
+                <AlternateResourceIds>
+                        <AlternateResourceId altResourceId="WSC000031" />
+                </AlternateResourceIds>
+        </mashup>
+        
+</mashups>
