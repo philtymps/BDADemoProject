@@ -122,7 +122,7 @@ public class BDAAdjustInventory extends BDAServiceApi implements IBDAService {
 					} else {
 						eItemResponse.setAttribute("Invoked", "SIM");
 						callSIMService(env, convertStoreInventoryAdjustment(eItem), eItem.getAttribute("ShipNode"),
-								YFCCommon.isVoid(eItem.getAttribute("Location")) ? "LOC-1"
+								YFCCommon.isVoid(eItem.getAttribute("Location")) ? "FRONT"
 										: eItem.getAttribute("Location"));
 
 					}
