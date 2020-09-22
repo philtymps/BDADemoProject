@@ -54,8 +54,6 @@
 	<classpathentry kind="lib" path="lib/wsdl4j-1.5.1.jar"/>
 	<classpathentry kind="lib" path="lib/xmlgraphics-commons-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/zstd-jni-1.4.0-1.jar"/>
-	<classpathentry kind="lib" path="lib/wsc_ui.jar"/>
-	<classpathentry kind="lib" path="lib/platform_afc_ui_impl_ui.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/BDA201"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
