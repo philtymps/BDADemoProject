@@ -1,5 +1,5 @@
 <mashups>
-	 <mashup
+	 <!-- <mashup
                 description="Called when product is scanned in cart details.If the item is valid modifyFulfillmentOptions api is called to add the product to the order."
                 endpoint="EP_PRODUCT" id="vc_getCompleteItemList" mashuptype="XAPI"
                 skipDataProvider="false" transactional="true">
@@ -75,6 +75,7 @@
                         <AlternateResourceId altResourceId="WSC000033" />
                 </AlternateResourceIds>
         </mashup>
+        -->
         <mashup
                 description="Checks availability of all ship and pick lines in the order before navigating to payment screen"
                 endpoint="EP_ORDER" id="vc_getOrderFulfillmentDetails" mashuptype="XAPI"
